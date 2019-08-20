@@ -8,5 +8,5 @@ requires:['Default dataset*'],
 sheets:{
         'magixmod.png':'https://raw.githubusercontent.com/pelletsstarPL/Magixmod/master/magixmod.png'
 },//custom stylesheet (note : broken in IE and Edge for the time being)
-func:function()
+func:function() {
 })
