@@ -38,14 +38,14 @@ func:function()
 			name:'Miscellaneous',
 			base:[],
 		},
-		'magic essences'
-			name:'Magic essences'
-			base:[].
+		'magic essences':{
+			name:'Magic essences',
+			base:[],
 			side:['mana'],
 		},
 	};
 //Mana and essences. 
-			new G.Res({
+		new G.Res({
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
 		icon:[1,1,'magixmod'],
