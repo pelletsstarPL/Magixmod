@@ -176,7 +176,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Fire essence':2},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Fire essence':2,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
