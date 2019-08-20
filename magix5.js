@@ -38,10 +38,5 @@ func:function()
 			name:'Miscellaneous',
 			base:[],
 		},
-		'magic essences',
-			name:'Magic essences',
-			base:[],
-			side:[],
-		},
 	};
 }
