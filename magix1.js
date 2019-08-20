@@ -44,4 +44,12 @@ func:function()
 			side:['mana'],
 		},
 	};
+		new G.Res({
+		name:'Mana',
+		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
+		icon:[1,1,'magixmod'],
+		partOf:'mana',
+		limit:'max mana',
+		category:'magic essences',
+	});
 };
