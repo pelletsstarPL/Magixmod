@@ -41,7 +41,7 @@ func:function()
 		'magic essences'
 			name:'Magic essences'
 			base:[].
-			side:['mana'],
+			side:[],
 		},
 	};
 }
