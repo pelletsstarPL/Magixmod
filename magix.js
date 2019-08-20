@@ -192,7 +192,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0,025}},
-			{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}},
+			{type:'provide',what:{'wisdom':1,req:{'Wizard wisdom':true}},
 		category:'discovery',
 		limitPer:{'population':3},
 	});
@@ -205,7 +205,7 @@ func:function()
 		upkeep:{'food':5}
 		//require:{'wizard':3},
 		effects:[
-			turnToByContext:{'water':5:{'mana':4},
+			turnToByContext:{'water':5:{'mana':4}},
 		category:'gathering',
 		limitPer:{'population':7500},
 	});
@@ -219,7 +219,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Water essence':2},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Water essence':2,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
@@ -235,7 +235,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Dark essence':2},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Dark essence':2,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
@@ -251,7 +251,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Nature essence':2},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Nature essence':2,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
@@ -267,7 +267,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Lightning essence':2},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Lightning essence':2,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
@@ -283,7 +283,7 @@ func:function()
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Wind essence':2},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Wind essence':2,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
@@ -299,12 +299,12 @@ func:function()
 		//require:{'wizard':30},
 		effects:[
 			{type:'provide',what:{'housing':400}},
-			{type:'gather',context:'gather',what:{'Fire essence':6},use:{'mana':6}}},
-			{type:'gather',context:'gather',what:{'Water essence':6},use:{'mana':6}}},
-			{type:'gather',context:'gather',what:{'Nature essence':6},use:{'mana':6}}},
-			{type:'gather',context:'gather',what:{'Lightning essence':6},use:{'mana':6}}},
-			{type:'gather',context:'gather',what:{'Wind essence':6},use:{'mana':6}}},
-			{type:'gather',context:'gather',what:{'Dark essence':6},use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Fire essence':6,use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Water essence':6,use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Nature essence':6,use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Lightning essence':6,use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Wind essence':6,use:{'mana':6}}},
+			{type:'gather',context:'gather',what:{'Dark essence':6,use:{'mana':6}}},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		category:'housing',
