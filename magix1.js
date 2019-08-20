@@ -44,3 +44,4 @@ func:function()
 			side:['mana'],
 		},
 	};
+};
