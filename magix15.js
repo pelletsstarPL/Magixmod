@@ -17,19 +17,13 @@ func:function(){
 		category:'magic essences',
 	});
 		new G.Res({
-		name:'Max mana',
-		hidden:true,
-		icon:[0,0,'magixmod'],
-		category:'magic essences',
-	});
-		new G.Res({
 		name:'Fire essence',
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
 		// turnToByContext: {'eat': {'health':0.08,'happiness':0.2},'decay'}, //trying to make essences decaying    // ERROR
 		partOf:'magic essences',
 		category:'magic essences',
-	});G.Res
+	});
 		new G.Res({
 		name:'Water essence',
 		desc:'[Water essence] this essence is undrinkable but can be used to cast rain.',
