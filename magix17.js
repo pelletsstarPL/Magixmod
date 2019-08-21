@@ -13,47 +13,51 @@ func:function(){
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
 		icon:[1,1,'magixmod'],
-		partOf:'Mana',
-		category:'magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Fire essence',
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
 		// turnToByContext: {'eat': {'health':0.08,'happiness':0.2},'decay'}, //trying to make essences decaying    // ERROR
-		partOf:'magic essences',
-		category:'magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Water essence',
 		desc:'[Water essence] this essence is undrinkable but can be used to cast rain.',
 		icon:[0,1,'magixmod'],
-		partOf:'magic essences',
-		category:'Magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Nature essence',
 		desc:'[Nature essence] is used by wizards to reviewe their beloved flowers or make harvests more plentiful.',
 		icon:[1,2,'magixmod'],
-		category:'magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Dark essence',
 		desc:'[Dark essence] used to make a blackholes for graves or to even bigger spellworks like mirror world. .',
 		icon:[1,3,'magixmod'],
-		category:'magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Lightning essence',
 		desc:'[Lightning essence] can make a storms safer for people granting satisfaction  and good entertainment for storm hunters. Who knows what would happen if its essence can start elecricity age.',
 		icon:[0,3,'magixmod'],
-		category:'magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Wind essence',
 		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in mirror world spellcasting.',
 		icon:[1,1,'magixmod'],
-		category:'magic essences',
+		partOf:'misc materials',
+		category:'misc',
 	});
 //Trait to unlock a mirror dimension
 		new G.Trait({
