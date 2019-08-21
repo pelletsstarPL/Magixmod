@@ -62,7 +62,7 @@ func:function(){
 //Trait to unlock a mirror dimension
 		new G.Trait({
 		name:'Belief in portals',
-		desc:'@makes wizard attempting to create a mirrored world',
+		desc:'@Makes wizards attempting to create a mirrored world',
 		icon:[2,1],
 		cost:{'culture':30,'faith':3},
 		chance:10,
@@ -82,7 +82,7 @@ func:function(){
 		desc:'You can find a specimen who will convert water into mana.',
 		icon:[3,2,'magixmod'],
 		cost:{'insight':50},
-		req:{'wizardry':true},
+		req:{'Wizardry':true},
 	});
 		new G.Tech({
 		name:'Mana silos',
