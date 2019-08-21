@@ -1,6 +1,6 @@
 G.AddData({
 name:'Magix',
-author:'pelletsstarPL',
+author:'pelletsstarPL & kamis20 dad',
 desc:'Magic! Magic!. Fit more guys discover essences which have its secret use.',
 engineVersion:1,
 manifest:'ModManifest.js',
