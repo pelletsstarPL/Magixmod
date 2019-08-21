@@ -55,7 +55,7 @@ func:function(){
 		icon:[0,3,'magixmod'],
 		category:'magic essences',
 	});
-		new G.res({
+		new G.Res({
 		name: 'Wind essence',
 		desc: '[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in mirror world spellcasting.',
 		icon:[1,1,'magixmod'],
