@@ -3,7 +3,7 @@ name:'Magix',
 author:'pelletsstarPL & kamis20 dad',
 desc:'Magic! Magic!. Fit more guys discover essences which have its secret use.',
 engineVersion:1,
-manifest:0,
+manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'magixmod':'https://imgur.com/a/91Ln5DX'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
