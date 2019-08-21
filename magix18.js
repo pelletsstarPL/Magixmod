@@ -12,7 +12,7 @@ func:function(){
 		new G.Res({
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
-		icon:[1,1,'magixmod'],
+		icon:[2,3,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
 	});
@@ -66,7 +66,7 @@ func:function(){
 		icon:[2,1],
 		cost:{'culture':30,'faith':3},
 		chance:10,
-		req:{'belief in afterlife':true,'wizard complex':true},
+		req:{'belief in the afterlife':true,'wizard complex':true},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
@@ -80,49 +80,49 @@ func:function(){
 		new G.Tech({
 		name:'Mana brewery',
 		desc:'You can find a specimen who will convert water into mana.',
-		icon:[3,2,'imageSheet'],
+		icon:[3,2,'magixmod'],
 		cost:{'insight':50},
 		req:{'wizardry':true},
 	});
 		new G.Tech({
 		name:'Mana silos',
 		desc:'You have to get a place where you will store basic of all things of wizardry. And in addition it will give a housing to your population',
-		icon:[5,2,'imageSheet'],
+		icon:[5,2,'magixmod'],
 		cost:{'insight':45},
 		req:{'city planning':true,'cities':true,'construction':true},
 	});
 		new G.Tech({
 		name:'Well of Mana',
 		desc:'Now you may get a well which contains mana instead of water. ',
-		icon:[4,3,'imageSheet'], //WIP
+		icon:[4,3,'magixmod'], //WIP
 		cost:{'insight':40,'faith':4,'mana':20},
 		req:{'Mana brewery':true,'Mana silos':true},
 	});
 		new G.Tech({
 		name:'Wizard towers',
 		desc:'Now you can build wizard towers which can produce specified essences. Essences made depends on what type of tower you build. Provides additional housing. Making essences consumes mana.',
-		icon:[6,0,'imageSheet'], //WIP
+		icon:[6,0,'magixmod'], //WIP
 		cost:{'insight':125,'culture': 30,'mana':40,'infulence':10},
 		req:{'Mana brewery':true,'Mana silos':true},
 	});
 		new G.Tech({
 		name:'Wizard wisdom',
 		desc:'Now each wizard will increase wisdom.',
-		icon:[6,0,'imageSheet'], //WIP
+		icon:[6,0,'magixmod'], //WIP
 		cost:{'insight':85,'culture': 30,'mana':40,'infulence':10},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true},
 	});
 		new G.Tech({
 		name:'Wizard complex',
-		desc:'Complex of wizard towers. Expensive but The Complex produces all types of Essences three times better than usual towers. Each complex increases additionaly max [faith],[culture] & [infulence]. Boosts max mana too.',
-		icon:[6,0,'imageSheet'], //WIP
+		desc:'Complex of wizard towers. Expensive but The Complex produces all types of Essences three times better than usual towers. Each complex increases additionaly max [faith],[culture] & infulence. Boosts max mana too.',
+		icon:[2,2,'magixmod'], //WIP
 		cost:{'insight':480,'culture':30,'mana':100,'infulence':50},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard towers':true},
 	});
 		new G.Tech({
 		name:'Mirror dimension discovery',
 		desc:'Your wizards discovered and now they plan to open a mirror dimension. However buildings and everything except land will not double.',
-		icon:[6,0,'imageSheet'], //WIP
+		icon:[2,1,'magixmod'], //WIP
 		cost:{'insight':1400,'culture':30,'mana':2500,'infulence':70},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in power of mirror':true},
 	});
@@ -130,7 +130,7 @@ func:function(){
 		new G.Unit({
 		name:'Fire wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Fire essence] by consuming mana.',
-		icon:[2,4],
+		icon:[2,4,'magixmod'],
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
@@ -146,7 +146,7 @@ func:function(){
 		new G.Unit({
 		name:'Wizard',
 		desc:'A man needed to make his towers even exist. ',
-		icon:[2,4],
+		icon:[0,0,'magixmod'],
 		cost:{'insight':1,'wand':2},
 		use:{'worker':1},
 		upkeep:{'food':15},
@@ -161,7 +161,7 @@ func:function(){
 		new G.Unit({
 		name:'Mana maker',
 		desc:'A man who can make mana for you.',
-		icon:[4,2],
+		icon:[4,2,'magixmod'],
 		cost:{'insight':1,'wand':2},
 		use:{'worker':1},
 		upkeep:{'food':5},
@@ -175,7 +175,7 @@ func:function(){
 		new G.Unit({
 		name:'Water wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Water essence] by consuming mana.',
-		icon:[2,4],
+		icon:[0,4,'magixmod'],
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
@@ -191,7 +191,7 @@ func:function(){
 		new G.Unit({
 		name:'Dark wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Dark essence] by consuming mana.',
-		icon:[2,4],
+		icon:[1,4,'magixmod'],
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
@@ -207,7 +207,7 @@ func:function(){
 		new G.Unit({
 		name:'Nature wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Nature essence] by consuming mana.',
-		icon:[2,4],
+		icon:[3,4,'magixmod'],
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
@@ -223,7 +223,7 @@ func:function(){
 		new G.Unit({
 		name:'Lightning wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Lightning essence] by consuming mana.',
-		icon:[2,4],
+		icon:[5,4,'magixmod'],
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
@@ -239,7 +239,7 @@ func:function(){
 		new G.Unit({
 		name:'Wind wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Wind essence] by consuming mana.',
-		icon:[2,4],
+		icon:[4,4,'magixmod'],
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
@@ -255,7 +255,7 @@ func:function(){
 		new G.Unit({
 		name:'Wizard Complex',
 		desc:'@provides 250 [housing]<>A towers for 400 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana.',
-		icon:[2,4],
+		icon:[3,3,'magixmod'],
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
 		upkeep:{'Wizard':30},
@@ -279,7 +279,7 @@ func:function(){
 		new G.Unit({
 		name:'Brick house with mana silo',
 		desc:'@provides 15 [housing]<>This house can store up to 750 mana too due to its silo.',
-		icon:[2,4],
+		icon:[5,1,'magixmod'],
 		cost:{'brick':2000,'basic building materials':100},
 		use:{'land':1},
 		//require:{'wizard':3},
@@ -296,8 +296,7 @@ new G.Unit({
     name:'Mirror dimension passage',
     desc:'@opens a portal to a </b>Mirror dimension<>A creation made of ideas of wizards and dreams of population more exactly kids.//A It is getting more & more real. You got sure you may open this gateway but you have to consume a lot of mana and all 6 Essences you gather from towers.//A Good luck. It will double available land for your people. However houses , mines, kilns etc. will not get mirrorly doubled.',
     wonder:'mirror dimension passage',
-    icon:[1,14],
-    wideIcon:[0,14],
+    icon:[3,1],
     cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':75,'Water essence':75,'Dark essence':75,'Wind essence':75,'Lightning essence':75,'Nature essence':75},
     costPerStep:{'basic building materials':200,'precious building materials':20},
     steps:150,
