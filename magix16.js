@@ -13,7 +13,7 @@ func:function(){
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
 		icon:[1,1,'magixmod'],
-		partOf:'mana',
+		partOf:'Mana',
 		category:'magic essences',
 	});
 		new G.Res({
@@ -50,8 +50,8 @@ func:function(){
 		category:'magic essences',
 	});
 		new G.Res({
-		name: 'Wind essence',
-		desc: '[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in mirror world spellcasting.',
+		name:'Wind essence',
+		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in mirror world spellcasting.',
 		icon:[1,1,'magixmod'],
 		category:'magic essences',
 	});
