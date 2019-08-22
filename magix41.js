@@ -246,7 +246,7 @@ func:function(){
 		icon:[3,4,'magixmod'],
 		cost:{'precious building materials':10,'stone tools':10,'Mana':100,'Water essence':15},
 		use:{'land':1},
-		upkeep:{'Water essence':0,5},
+		upkeep:{'Water essence':1},
 		req:{'Wizardry':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
