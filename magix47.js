@@ -62,7 +62,7 @@ func:function(){
 //Trait to unlock a mirror dimension
 		new G.Trait({
 		name:'Belief in portals',
-		desc:'@Makes wizards attempting to create a mirrored world',
+		desc:'@Makes wizards attempting to create a new dimension',
 		icon:[2,1,'magixmod'],
 		cost:{'culture':30,'faith':3},
 		chance:10,
@@ -120,8 +120,8 @@ func:function(){
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard towers':true},
 	});
 		new G.Tech({
-		name:'Mirror dimension discovery',
-		desc:'Your wizards discovered and now they plan to open a mirror dimension. However buildings and everything except land will not double.',
+		name:'First portal to new world',
+		desc:'Your wizards discovered and now they plan to open a new dimension. What would it mean? It means, more place to build, more housing, more everything!',
 		icon:[2,1,'magixmod'], //WIP
 		cost:{'insight':1400,'culture':30,'Mana':2500,'influence':70},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
@@ -314,23 +314,23 @@ func:function(){
 		limitPer:{'land':3},
 	});
 //New Wonder. The portal to mirror dimension
-new G.Unit({
-    name:'Mirror dimension passage',
-    desc:'@opens a portal to a </b>Mirror dimension<>A creation made of ideas of wizards and dreams of population more exactly kids.//A It is getting more & more real. You got sure you may open this gateway but you have to consume a lot of mana and all 6 Essences you gather from towers.//A Good luck. It will double available land for your people. However houses , mines, kilns etc. will not get mirrorly doubled.',
-    wonder:'mirror dimension passage',
-    icon:[3,1],
-    cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':75,'Water essence':75,'Dark essence':75,'Wind essence':75,'Lightning essence':75,'Nature essence':75},
-    costPerStep:{'basic building materials':200,'precious building materials':20},
-    steps:150,
-    messageOnStart:'You begin the construction of the Mirror dimension passage. Its biggest mirror. Gain essence, gain. The portal is opening. Double your land and double your happiness.',
-    finalStepCost:{'population':35000,'Mana':4000,'insight':500,'faith':25,'Fire essence':575,'Water essence':575,'Dark essence':575,'Wind essence':575,'Lightning essence':575,'Nature essence':575},
-    finalStepDesc:'To complete&activate the Passage, 35000 of your [population,People] must be sacrificed to scout land beyond portal. To keep portal activation stable for very long time 575 of each essences, 4000 mana, 500 insight & 25 faith will be sacrificed.',
-    effects:[
-    		{type:'provide',what:{'land':multiply by 2}}
-    ],
-    use:{'land':10},
-    req:{'Mirror dimension discovery':true,'Belief in portals':true},
-    limit:1,
+		new G.Unit({
+    		name:'Plain island portal',
+    		desc:'@opens a portal to a huge</b>Plain island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
+    		wonder:'plain island portal',
+    		icon:[3,1],
+    		cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':75,'Water essence':75,'Dark essence':75,'Wind essence':75,'Lightning essence':75,'Nature essence':75},
+    		costPerStep:{'basic building materials':200,'precious building materials':20},
+    		steps:150,
+    		messageOnStart:'You begin the construction of the Mirror dimension passage. Its biggest mirror. Gain essence, gain. The portal is opening. Double your land and double your happiness.',
+    		finalStepCost:{'population':35000,'Mana':4000,'insight':500,'faith':25,'Fire essence':575,'Water essence':575,'Dark essence':575,'Wind essence':575,'Lightning essence':575,'Nature essence':575},
+    		finalStepDesc:'To complete&activate the Passage, 35000 of your [population,People] must be sacrificed to scout land beyond portal. To keep portal activation stable for very long time 575 of each essences, 4000 mana, 500 insight & 25 faith will be sacrificed.',
+    		effects:[
+    			{type:'provide',what:{'land':25000}}
+    		],
+    		use:{'land':10},
+    		req:{'Mirror dimension discovery':true,'Belief in portals':true},
+    		limit:1,
     category:'wonder',
 });
 
