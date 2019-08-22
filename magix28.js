@@ -150,7 +150,6 @@ func:function(){
 		cost:{'insight':1,'stick':2},
 		use:{'worker':1},
 		upkeep:{'food':15},
-		gizmos:true,
 		req:{'Wizardry':true},
 		//require:{'wizard':3},
 		effects:[
@@ -167,11 +166,10 @@ func:function(){
 		cost:{'insight':1,'stick':2},
 		use:{'worker':1},
 		upkeep:{'food':5},
-		gizmos:true,
 		req:{'Wizardry':true,'Mana brewery':true},
 		//require:{'wizard':3},
 		effects:[
-            		{type:'convert',from:{'water':6},into:{'Mana':5}}
+			{type:'gather',what:{'Mana':2}},
         ],
 		category:'gathering',
 		limitPer:{'population':7500},
@@ -183,7 +181,6 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
-		gizmos:true,
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
@@ -201,7 +198,6 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
-		gizmos:true,
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
@@ -219,7 +215,6 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
-		gizmos:true,
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
@@ -237,7 +232,6 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
-		gizmos:true,
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
@@ -255,7 +249,6 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
-		gizmos:true,
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
@@ -273,7 +266,6 @@ func:function(){
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
 		upkeep:{'Wizard':30},
-		gizmos:true,
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		//require:{'wizard':30},
 		effects:[
@@ -301,7 +293,6 @@ func:function(){
 		icon:[5,1,'magixmod'],
 		cost:{'brick':2000,'basic building materials':100},
 		use:{'land':1},
-		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':15}},
