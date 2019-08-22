@@ -245,7 +245,7 @@ func:function(){
 		desc:'Source of mana. Once you spill some [Mana] & [Water essence] into the hole you will get mana source ',
 		icon:[3,4,'magixmod'],
 		cost:{'precious building materials':10,'stone tools':10,'Mana':100,'Water essence':15},
-		use:{'worker':1},
+		use:{'land':1},
 		upkeep:{'Water essence':0,5},
 		req:{'Wizardry':true,'Well of Mana':true},
 		//require:{'wizard':3},
@@ -253,7 +253,7 @@ func:function(){
 			{type:'gather',what:{'Mana':15}},
         ],
 		category:'gathering',
-		limitPer:{'land':75,'Wizard':10},
+		limitPer:{'land':75},
 	});
 		new G.Unit({
 		name:'Wind wizard tower',
