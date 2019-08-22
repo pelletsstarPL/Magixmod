@@ -326,7 +326,7 @@ new G.Unit({
     finalStepCost:{'population':35000,'Mana':4000,'insight':500,'faith':25,'Fire essence':575,'Water essence':575,'Dark essence':575,'Wind essence':575,'Lightning essence':575,'Nature essence':575},
     finalStepDesc:'To complete&activate the Passage, 35000 of your [population,People] must be sacrificed to scout land beyond portal. To keep portal activation stable for very long time 575 of each essences, 4000 mana, 500 insight & 25 faith will be sacrificed.',
     effects:[
-    		{type:'provide',what:{'land':double}}
+    		{type:'provide',what:{'land':multiply by 2}}
     ],
     use:{'land':10},
     req:{'Mirror dimension discovery':true,'Belief in portals':true},
