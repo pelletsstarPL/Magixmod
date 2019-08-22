@@ -252,7 +252,7 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'Mana':15}},
         ],
-		category:'gathering',
+		category:'crafting',
 		limitPer:{'land':75},
 	});
 		new G.Unit({
