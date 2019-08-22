@@ -171,7 +171,7 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'Mana':2}},
         ],
-		category:'gathering',
+		category:'discovery',
 		limitPer:{'population':7500},
 	});
 		new G.Unit({
