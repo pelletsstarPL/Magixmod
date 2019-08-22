@@ -72,7 +72,7 @@ func:function(){
 	new G.Tech({
 		name:'Wizardry',
 		desc:'@unlocks [Wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
-		icon:[5,3,'imageSheet'],
+		icon:[5,3,'magixmod'],
 		cost:{'insight':75,'faith':5},
 		req:{'well-digging':true},
 	});
@@ -109,7 +109,7 @@ func:function(){
 		name:'Wizard wisdom',
 		desc:'Now each wizard will increase wisdom.',
 		icon:[3,0,'magixmod'], //WIP
-		cost:{'insight':85,'culture': 30,'Mana':40,'infulence':10},
+		cost:{'insight':85,'culture': 30,'Mana':40,'influence':10},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true},
 	});
 		new G.Tech({
@@ -276,7 +276,7 @@ func:function(){
 		category:'housing',
 		limitPer:{'land':300},
 		limitPer:{'population':9000},
-		limitPer:{'wizards':150},
+		limitPer:{'Wizard':150},
 	});
 //House with mana silo to increase mana capacity
 		new G.Unit({
