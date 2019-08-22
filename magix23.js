@@ -66,7 +66,7 @@ func:function(){
 		icon:[2,1],
 		cost:{'culture':30,'faith':3},
 		chance:10,
-		req:{'belief in the afterlife':true,'wizard complex':true},
+		req:{'belief in the afterlife':true,'Wizard complex':true},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
@@ -124,7 +124,7 @@ func:function(){
 		desc:'Your wizards discovered and now they plan to open a mirror dimension. However buildings and everything except land will not double.',
 		icon:[2,1,'magixmod'], //WIP
 		cost:{'insight':1400,'culture':30,'Mana':2500,'infulence':70},
-		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in power of mirror':true},
+		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
