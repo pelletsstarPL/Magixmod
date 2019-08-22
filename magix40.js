@@ -242,7 +242,7 @@ func:function(){
 	});	
 		new G.Unit({
 		name:'Well of Mana',
-		desc:'Source of mana. Once you spill some [Mana] & [Water essence] into the hole you will get mana source ',
+		desc:'Source of mana. Once you spill some [Mana] & [Water essence] into the hole you will get mana source.',
 		icon:[3,4,'magixmod'],
 		cost:{'precious building materials':10,'stone tools':10,'Mana':100,'Water essence':15},
 		use:{'land':1},
@@ -250,7 +250,7 @@ func:function(){
 		req:{'Wizardry':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'Mana':15}},
+			{type:'gather',what:{'Mana':13}},
         ],
 		category:'crafting',
 		limitPer:{'land':75},
