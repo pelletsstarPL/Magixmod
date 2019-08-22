@@ -329,7 +329,7 @@ func:function(){
     			{type:'provide',what:{'land':25000}}
     		],
     		use:{'land':10},
-    		req:{'Mirror dimension discovery':true,'Belief in portals':true},
+    		req:{'First portal to new world':true,'Belief in portals':true},
     		limit:1,
     category:'wonder',
 });
