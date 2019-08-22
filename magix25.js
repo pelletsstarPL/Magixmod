@@ -102,7 +102,7 @@ func:function(){
 		name:'Wizard towers',
 		desc:'Now you can build wizard towers which can produce specified essences. Essences made depends on what type of tower you build. Provides additional housing. Making essences consumes mana. @unlocks [Fire wizard tower],[Water wizard tower],[Nature wizard tower],[Dark wizard tower],[Lightning wizard tower],[Wind wizard tower].',
 		icon:[6,0,'magixmod'], //WIP
-		cost:{'insight':125,'culture': 30,'Mana':40,'infulence':10},
+		cost:{'insight':125,'culture': 30,'Mana':40,'influence':10},
 		req:{'Mana brewery':true,'Mana silos':true},
 	});
 		new G.Tech({
@@ -123,7 +123,7 @@ func:function(){
 		name:'Mirror dimension discovery',
 		desc:'Your wizards discovered and now they plan to open a mirror dimension. However buildings and everything except land will not double.',
 		icon:[2,1,'magixmod'], //WIP
-		cost:{'insight':1400,'culture':30,'Mana':2500,'infulence':70},
+		cost:{'insight':1400,'culture':30,'Mana':2500,'influence':70},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
