@@ -1,7 +1,7 @@
 G.AddData({
 name:'Magix',
 author:'pelletsstarPL',
-desc:'Magic! Magic!. Fit more guys discover essences which have its secret use.',
+desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. At the moment you can reach mirror dimension which will double your max land soon. More housing so you can fit more people.',
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
@@ -71,7 +71,7 @@ func:function(){
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
-		desc:'Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
+		desc:'@unlocks [Wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
 		icon:[5,3,'imageSheet'],
 		cost:{'insight':75,'faith':5},
 		req:{'well-digging':true},
@@ -100,7 +100,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Wizard towers',
-		desc:'Now you can build wizard towers which can produce specified essences. Essences made depends on what type of tower you build. Provides additional housing. Making essences consumes mana.',
+		desc:'Now you can build wizard towers which can produce specified essences. Essences made depends on what type of tower you build. Provides additional housing. Making essences consumes mana. @unlocks [Fire wizard tower],[Water wizard tower],[Nature wizard tower],[Dark wizard tower],[Lightning wizard tower],[Wind wizard tower].',
 		icon:[6,0,'magixmod'], //WIP
 		cost:{'insight':125,'culture': 30,'Mana':40,'infulence':10},
 		req:{'Mana brewery':true,'Mana silos':true},
@@ -108,15 +108,15 @@ func:function(){
 		new G.Tech({
 		name:'Wizard wisdom',
 		desc:'Now each wizard will increase wisdom.',
-		icon:[6,0,'magixmod'], //WIP
+		icon:[3,0,'magixmod'], //WIP
 		cost:{'insight':85,'culture': 30,'Mana':40,'infulence':10},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true},
 	});
 		new G.Tech({
 		name:'Wizard complex',
-		desc:'Complex of wizard towers. Expensive but The Complex produces all types of Essences three times better than usual towers. Each complex increases additionaly max [faith],[culture] & infulence. Boosts max mana too.',
+		desc:'Complex of wizard towers. Expensive but The Complex produces all types of Essences three times better than usual towers. Each complex increases additionaly max [faith],[culture] & [influence]. Boosts max mana too.',
 		icon:[2,2,'magixmod'], //WIP
-		cost:{'insight':480,'culture':30,'Mana':100,'infulence':50},
+		cost:{'insight':480,'culture':30,'Mana':100,'influence':20},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard towers':true},
 	});
 		new G.Tech({
@@ -262,6 +262,9 @@ func:function(){
 		//require:{'wizard':30},
 		effects:[
 			{type:'provide',what:{'housing':400}},
+			{type:'provide',what:{'authority':15}},
+			{type:'provide',what:{'spirituality':15}},
+			{type:'provide',what:{'inspiration':30}},
 			{type:'gather',context:'gather',what:{'Fire essence':6},use:{'Mana':6}},
 			{type:'gather',context:'gather',what:{'Water essence':6},use:{'Mana':6}},
 			{type:'gather',context:'gather',what:{'Nature essence':6},use:{'Mana':6}},
