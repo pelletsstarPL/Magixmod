@@ -168,10 +168,10 @@ func:function(){
 		req:{'Wizardry':true,'Mana brewery':true},
 		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'Mana':9}},
+			{type:'gather',what:{'Mana':20}},
         ],
 		category:'discovery',
-		limitPer:{'population':4500},
+		limitPer:{'population':4000},
 	});
 		new G.Unit({
 		name:'Water wizard tower',
@@ -296,7 +296,7 @@ func:function(){
 		],
 		req:{'construction':true,'Mana silos':true,'Well of Mana':true},
 		category:'housing',
-		limitPer:{'land':5},
+		limitPer:{'land':3},
 	});
 //New Wonder. The portal to mirror dimension
 new G.Unit({
