@@ -274,15 +274,15 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Wizard Complex',
-		desc:'@provides 250 [housing]<>A towers for 400 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana.',
+		desc:'@provides 690 [housing]<>A towers for 660 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana.',
 		icon:[3,3,'magixmod'],
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
-		upkeep:{'mana':36},
+		upkeep:{'Mana':36},
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		//require:{'wizard':30},
 		effects:[
-			{type:'provide',what:{'housing':400}},
+			{type:'provide',what:{'housing':690}},
 			{type:'provide',what:{'authority':15}},
 			{type:'provide',what:{'spirituality':15}},
 			{type:'provide',what:{'inspiration':30}},
