@@ -63,7 +63,7 @@ func:function(){
 		new G.Trait({
 		name:'Belief in portals',
 		desc:'@Makes wizards attempting to create a mirrored world',
-		icon:[2,1],
+		icon:[2,1,'magixmod'],
 		cost:{'culture':30,'faith':3},
 		chance:10,
 		req:{'belief in the afterlife':true,'Wizard complex':true},
@@ -278,6 +278,7 @@ func:function(){
 		icon:[3,3,'magixmod'],
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
+		upkeep:{'mana':36},
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		//require:{'wizard':30},
 		effects:[
