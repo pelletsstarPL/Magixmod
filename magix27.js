@@ -151,6 +151,7 @@ func:function(){
 		use:{'worker':1},
 		upkeep:{'food':15},
 		gizmos:true,
+		req:{'Wizardry':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.025}},
@@ -167,6 +168,7 @@ func:function(){
 		use:{'worker':1},
 		upkeep:{'food':5},
 		gizmos:true,
+		req:{'Wizardry':true,'Mana brewery':true},
 		//require:{'wizard':3},
 		effects:[
             		{type:'convert',from:{'water':6},into:{'Mana':5}}
@@ -182,6 +184,7 @@ func:function(){
 		use:{'land':1},
 		upkeep:{'Wizard':3},
 		gizmos:true,
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -199,6 +202,7 @@ func:function(){
 		use:{'land':1},
 		upkeep:{'Wizard':3},
 		gizmos:true,
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -216,6 +220,7 @@ func:function(){
 		use:{'land':1},
 		upkeep:{'Wizard':3},
 		gizmos:true,
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -233,6 +238,7 @@ func:function(){
 		use:{'land':1},
 		upkeep:{'Wizard':3},
 		gizmos:true,
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -250,6 +256,7 @@ func:function(){
 		use:{'land':1},
 		upkeep:{'Wizard':3},
 		gizmos:true,
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -267,6 +274,7 @@ func:function(){
 		use:{'land':9},
 		upkeep:{'Wizard':30},
 		gizmos:true,
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		//require:{'wizard':30},
 		effects:[
 			{type:'provide',what:{'housing':400}},
