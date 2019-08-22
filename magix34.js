@@ -168,10 +168,10 @@ func:function(){
 		req:{'Wizardry':true,'Mana brewery':true},
 		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'Mana':3}},
+			{type:'gather',what:{'Mana':9}},
         ],
 		category:'discovery',
-		limitPer:{'population':7500},
+		limitPer:{'population':4500},
 	});
 		new G.Unit({
 		name:'Water wizard tower',
