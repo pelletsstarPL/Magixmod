@@ -150,10 +150,11 @@ func:function(){
 		cost:{'insight':1,'stick':2},
 		use:{'worker':1},
 		upkeep:{'food':15},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.025}},
-            {type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}}
+            		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}}
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -165,9 +166,10 @@ func:function(){
 		cost:{'insight':1,'stick':2},
 		use:{'worker':1},
 		upkeep:{'food':5},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
-            // turnToByContext:{'water':5:{'mana':4}    //// ERROR
+            		{type:'convert',from:{'water':6},into:{'Mana':5}}
         ],
 		category:'gathering',
 		limitPer:{'population':7500},
@@ -179,6 +181,7 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -195,6 +198,7 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -211,6 +215,7 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -227,6 +232,7 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -243,6 +249,7 @@ func:function(){
 		cost:{'basic building materials':1000,'precious building materials':100},
 		use:{'land':1},
 		upkeep:{'Wizard':3},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
@@ -259,6 +266,7 @@ func:function(){
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
 		upkeep:{'Wizard':30},
+		gizmos:true,
 		//require:{'wizard':30},
 		effects:[
 			{type:'provide',what:{'housing':400}},
@@ -285,6 +293,7 @@ func:function(){
 		icon:[5,1,'magixmod'],
 		cost:{'brick':2000,'basic building materials':100},
 		use:{'land':1},
+		gizmos:true,
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':15}},
