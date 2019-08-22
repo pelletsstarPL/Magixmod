@@ -137,7 +137,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',context:'gather',what:{'Fire essence':2},use:{'Mana':6}},
+			{type:'gather',what:{'Fire essence'}:2,'use':{'Mana'}:6},
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
@@ -169,7 +169,7 @@ func:function(){
 		req:{'Wizardry':true,'Mana brewery':true},
 		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'Mana':2}},
+			{type:'gather',what:{'Mana':3}},
         ],
 		category:'discovery',
 		limitPer:{'population':7500},
