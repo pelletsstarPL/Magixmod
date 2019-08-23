@@ -6,8 +6,7 @@ engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'magixmod':'https://i.imgur.com/hqL76TX.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
-func:function()
-	{
+func:function(){
 //Kategorie wiem, że przepisałem ale ciul/Categories i know i rewrote but anyway i will be able to implement magic one.
 //Mana and essences. 
 		new G.Res({
@@ -360,6 +359,4 @@ func:function()
 	});
 		
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wizardry':true}});
-	});
-
 }});
