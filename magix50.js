@@ -316,22 +316,22 @@ func:function(){
 //New Wonder. The portal to mirror dimension
 		new G.Unit({
     		name:'Plain island portal',
-    		desc:'@opens a portal to a huge</b>Plain island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
+    		desc:'@opens a portal to a huge </b>Plain island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
     		wonder:'plain island portal',
-    		icon:[3,1],
-    		cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':75,'Water essence':75,'Dark essence':75,'Wind essence':75,'Lightning essence':75,'Nature essence':75},
+    		icon:[3,1,'magixmod'],
+    		cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':375,'Water essence':475,'Dark essence':175,'Wind essence':275,'Lightning essence':775,'Nature essence':1075},
     		costPerStep:{'basic building materials':200,'precious building materials':20},
     		steps:150,
     		messageOnStart:'You begin the construction of the Mirror dimension passage. Its biggest mirror. Gain essence, gain. The portal is opening. Double your land and double your happiness.',
-    		finalStepCost:{'population':35000,'Mana':4000,'insight':500,'faith':25,'Fire essence':575,'Water essence':575,'Dark essence':575,'Wind essence':575,'Lightning essence':575,'Nature essence':575},
-    		finalStepDesc:'To complete&activate the Passage, 35000 of your [population,People] must be sacrificed to scout land beyond portal. To keep portal activation stable for very long time 575 of each essences, 4000 mana, 500 insight & 25 faith will be sacrificed.',
+    		finalStepCost:{'population':35000,'Mana':450000,'insight':900,'faith':125,'Fire essence':5575,'Water essence':5575,'Dark essence':5575,'Wind essence':5575,'Lightning essence':5575,'Nature essence':5575},
+    		finalStepDesc:'To complete&activate the Passage, 35000 of your [population,People] must be sacrificed to scout land beyond portal. To keep portal activation stable for very long time 5575 of each essences, 450000 mana, 900 insight & 125 faith will be sacrificed.',
     		effects:[
     			{type:'provide',what:{'land':25000}}
     		],
     		use:{'land':10},
     		req:{'First portal to new world':true,'Belief in portals':true},
     		limit:1,
-    category:'wonder',
+    category:'civil',
 });
 
 }});
