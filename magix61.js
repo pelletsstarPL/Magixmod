@@ -168,7 +168,7 @@ func:function(){
 		desc:'A man needed to make his towers even exist. ',
 		icon:[6,1,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
-		use:{'worker':1,'wand':3},
+		use:{'worker':1,'Wand':3},
 		upkeep:{'food':15},
 		req:{'Wizardry':true},
 		//require:{'wizard':3},
@@ -357,6 +357,7 @@ func:function(){
     		limit:1,
     		category:'civil',
 	});
-		
-		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wizardry':true}});
+	//Artisans will make wands for wizards. Mode for it.
+		G.getDict('artisan').modes['Wandmaking']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
+		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wandmaking':true}});
 }});
