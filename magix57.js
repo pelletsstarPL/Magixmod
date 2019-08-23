@@ -355,7 +355,8 @@ func:function(){
     		use:{'land':10},
     		req:{'First portal to new world':true,'Belief in portals':true},
     		limit:1,
-    category:'civil',
+    		category:'civil',
+	});
 		
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wizardry':true}});
 });
