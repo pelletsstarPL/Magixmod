@@ -321,7 +321,7 @@ func:function(){
     		icon:[3,1,'magixmod'],
 		
     		cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':375,'Water essence':475,'Dark essence':175,'Wind essence':275,'Lightning essence':775,'Nature essence':1075},
-    		costPerStep:{'basic building materials':200,'precious building materials':20},
+    		costPerStep:{'basic building materials':200,'precious building materials':20,'insight':150,'faith':10,'Fire essence':375,'Water essence':475,'Dark essence':175,'Wind essence':275,'Lightning essence':775,'Nature essence':1075},
     		steps:150,
     		messageOnStart:'You begin the construction of the first portal to Plain Island. Its biggest single island. Gain essence, gain. The portal is opening. Gain more land, gain more people, unlock future researches, gain everything i one word.',
     		finalStepCost:{'population':35000,'Mana':450000,'insight':900,'faith':125,'Fire essence':5575,'Water essence':5575,'Dark essence':5575,'Wind essence':5575,'Lightning essence':5575,'Nature essence':5575},
