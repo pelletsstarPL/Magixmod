@@ -20,7 +20,7 @@ func:function(){
 		new G.Res({
 		name:'Wand',
 		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. ',
-		icon:[2,3,'magixmod'],
+		icon:[6,4,'magixmod'],
 		category:'gear',
 		displayUsed:true,
 	});
@@ -330,7 +330,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':15}},
-			{type:'provide',what:{'max mana':2500}},
+			{type:'provide',what:{'max mana':2500}}
 		],
 		req:{'construction':true,'Mana silos':true,'Well of Mana':true},
 		category:'housing',
