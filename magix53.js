@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/Ze77ITE.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/hqL76TX.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Kategorie wiem, że przepisałem ale ciul/Categories i know i rewrote but anyway i will be able to implement magic one.
 //Mana and essences. 
@@ -14,6 +14,20 @@ func:function(){
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
 		icon:[2,3,'magixmod'],
 		partOf:'misc materials',
+		category:'misc',
+		limit:'max mana'
+	});
+		new G.Res({
+		name:'Wand',
+		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. ',
+		icon:[2,3,'magixmod'],
+		category:'gear',
+		displayUsed:true,
+	});
+		new G.Res({
+		name:'max mana',
+		hidden:true,
+		icon:[0,0],
 		category:'misc',
 	});
 		new G.Res({
@@ -121,10 +135,17 @@ func:function(){
 	});
 		new G.Tech({
 		name:'First portal to new world',
-		desc:'Your wizards discovered and now they plan to open a new dimension. What would it mean? It means, more place to build, more housing, more everything!',
+		desc:'Your wizards discovered way to make a portal and now they plan to open a new dimension. What would it mean? It means, more place to build, more housing, more everything!',
 		icon:[2,1,'magixmod'], //WIP
 		cost:{'insight':1400,'culture':30,'Mana':2500,'influence':70},
 		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
+	});
+		new G.Tech({
+		name:'Essence storages',
+		desc:'Essence has to be stored somewhere. So do not wait and build!',
+		icon:[5,0,'magixmod'], //WIP
+		cost:{'insight':100,'Mana':300,'faith':25,'Wand':260},
+		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -145,9 +166,9 @@ func:function(){
 		new G.Unit({
 		name:'Wizard',
 		desc:'A man needed to make his towers even exist. ',
-		icon:[0,0,'magixmod'],
-		cost:{'insight':1,'stick':2},
-		use:{'worker':1},
+		icon:[6,1,'magixmod'],
+		cost:{'insight':1,'stick':2,'food':1,'water':1},
+		use:{'worker':1,'wand':3},
 		upkeep:{'food':15},
 		req:{'Wizardry':true},
 		//require:{'wizard':3},
@@ -243,7 +264,7 @@ func:function(){
 		new G.Unit({
 		name:'Well of mana',
 		desc:'Source of mana. Once you spill some [Mana] & [Water essence] into the hole you will get mana source.',
-		icon:[4,3,'magixmod'],
+		icon:[6,2,'magixmod'],
 		cost:{'precious building materials':10,'stone tools':10,'Mana':100,'Water essence':15},
 		use:{'land':1},
 		upkeep:{'Water essence':1},
@@ -291,7 +312,8 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Nature essence':6}},
 			{type:'gather',context:'gather',what:{'Lightning essence':6}},
 			{type:'gather',context:'gather',what:{'Wind essence':6}},
-			{type:'gather',context:'gather',what:{'Dark essence':6}}
+			{type:'gather',context:'gather',what:{'Dark essence':6}},
+			{type:'provide',what:{'max mana':25000}}
 		],
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		category:'housing',
@@ -301,13 +323,14 @@ func:function(){
 //House with mana silo to increase mana capacity
 		new G.Unit({
 		name:'Brick house with mana silo',
-		desc:'@provides 15 [housing]<>This house can store up to 750 mana too due to its silo.',
+		desc:'@provides 15 [housing]<>This house can store up to 2500 mana too due to its silo.',
 		icon:[5,1,'magixmod'],
 		cost:{'brick':2000,'basic building materials':100},
 		use:{'land':1},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':15}},
+			{type:'provide',what:{'max mana':2500}},
 		],
 		req:{'construction':true,'Mana silos':true,'Well of Mana':true},
 		category:'housing',
