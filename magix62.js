@@ -358,6 +358,6 @@ func:function(){
     		category:'civil',
 	});
 	//Artisans will make wands for wizards. Mode for it.
-		G.getDict('artisan').modes['Wandmaking']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
-		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wandmaking':true}});
+		G.getDict('artisan').modes['Craft wands']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
+		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Craft wands':true}});
 }});
