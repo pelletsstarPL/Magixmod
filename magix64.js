@@ -22,7 +22,6 @@ func:function(){
 		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. ',
 		icon:[6,4,'magixmod'],
 		category:'gear',
-		displayUsed:true,
 	});
 		new G.Res({
 		name:'max mana',
