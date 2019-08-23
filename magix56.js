@@ -357,7 +357,7 @@ func:function(){
     		limit:1,
     category:'civil',
 		
-		G.getDict('artisan').effects.push({type:'convert',from:{'sticks':6,'stone':2},into:'Wand',every:6,mode:{'Wizardry':true}});
+		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wizardry':true}});
 });
 
 }});
