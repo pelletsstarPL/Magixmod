@@ -359,6 +359,6 @@ func:function(){
 	});
 		
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':6,'stone':2},into:'Wand',every:6,mode:{'Wizardry':true}});
-});
+	});
 
 }});
