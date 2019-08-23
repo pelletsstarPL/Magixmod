@@ -22,6 +22,7 @@ func:function(){
 		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. ',
 		icon:[6,4,'magixmod'],
 		category:'gear',
+		displayUsed:true,
 	});
 		new G.Res({
 		name:'max mana',
@@ -359,4 +360,5 @@ func:function(){
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':4,'stone':2},into:{'Wand':1},every:5,mode:'Craftwands'});
+	//Kilns will be able to make glass out of sand
 }});
