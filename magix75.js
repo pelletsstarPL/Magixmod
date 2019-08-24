@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/nsyfK7I.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/0pzQ2nz.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Kategorie wiem, że przepisałem ale ciul/Categories i know i rewrote but anyway i will be able to implement magic one.
 //Mana and essences. 
@@ -123,7 +123,7 @@ func:function(){
 		desc:'Now each wizard will increase wisdom.',
 		icon:[3,0,'magixmod'], //WIP
 		cost:{'insight':85,'culture': 30,'Mana':40,'influence':10},
-		req:{'Mana brewery':true,'More useful housings':true,'Wizardry':true},
+		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true},
 	});
 		new G.Tech({
 		name:'Wizard complex',
@@ -149,7 +149,7 @@ func:function(){
 		new G.Tech({
 		name:'floating islands',
 		desc:'Wizards got knowledge enough to start making floating isles.',
-		icon:[6,3,'magixmod'], //WIP
+		icon:[7,3,'magixmod'], //WIP
 		cost:{'insight':95},
 		req:{'Wizardry':true,'Wizard wisdom':true},
 	});
@@ -362,7 +362,7 @@ func:function(){
     		name:'Plain island portal',
     		desc:'@opens a portal to a huge </b>Plain Island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
     		wonder:'plain island portal',
-    		icon:[3,1,'magixmod'],
+    		wideIcon:[3,1,'magixmod'],
     		cost:{'precious building materials':5000,'insight':1500,'faith':100,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750},
     		effects:[
     			{type:'provide',what:{'Land of the Plain Island':25000}},//SOON NEW CATEGORY & BUILDINGS WHICH CAN ONLY BE BUILT THERE
