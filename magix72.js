@@ -110,7 +110,7 @@ func:function(){
 		desc:'Now you may get a well which contains mana instead of water. ',
 		icon:[4,3,'magixmod'], //WIP
 		cost:{'insight':40,'faith':4,'Mana':20},
-		req:{'Mana brewery':true,'Mana silos':true},
+		req:{'Mana brewery':true,'More useful housing':true},
 	});
 		new G.Tech({
 		name:'Wizard towers',
@@ -297,6 +297,20 @@ func:function(){
 		limitPer:{'land':2},
 	});
 		new G.Unit({
+		name:'Floating island',
+		desc:'@provides 6 [land]<> Land consumes nature essence, wind essence, a bit fire & water essences. Needs a bit of stones and mud to form its island',
+		icon:[4,4,'magixmod'],
+		cost:{'Mana':4000,'mud':1000,'stone':3000,'Nature essence':1500,'Wind essence':1500},
+		upkeep:{'Mana':6,'Nature essence':3,'Wind essence':5},
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
+		//require:{'wizard':3},
+		effects:[
+			{type:'provide',what:{'land':6}},
+	],
+		category:'housing',
+		limit:100
+	});
+		new G.Unit({
 		name:'Wizard Complex',
 		desc:'@provides 690 [housing]<>A towers for 660 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana.',
 		icon:[3,3,'magixmod'],
@@ -357,5 +371,5 @@ func:function(){
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':4,'stone':2},into:{'Wand':1},every:5,mode:'Craftwands'});
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
-		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craft glass'});
+		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
 }});
