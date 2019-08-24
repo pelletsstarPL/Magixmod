@@ -15,7 +15,6 @@ func:function(){
 		icon:[2,3,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
-		limit:'max mana'
 	});
 		new G.Res({
 		name:'Wand',
