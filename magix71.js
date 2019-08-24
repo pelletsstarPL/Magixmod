@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/hqL76TX.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/nsyfK7I.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Kategorie wiem, że przepisałem ale ciul/Categories i know i rewrote but anyway i will be able to implement magic one.
 //Mana and essences. 
@@ -25,16 +25,16 @@ func:function(){
 		displayUsed:true,
 	});
 		new G.Res({
-		name:'max mana',
-		hidden:true,
-		icon:[0,0],
-		category:'misc',
+		name:'Land of the Plain Island',
+		desc:'The land you got from activating a portal to Plain Island. Place for new buildings.',
+		icon:[7,0,'magixmod'],
+		category:'main',
+		displayUsed:true,
 	});
 		new G.Res({
 		name:'Fire essence',
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
-		// turnToByContext: {'eat': {'health':0.08,'happiness':0.2},'decay'}, //trying to make essences decaying    // ERROR
 		partOf:'misc materials',
 		category:'misc',
 	});
@@ -99,8 +99,8 @@ func:function(){
 		req:{'Wizardry':true},
 	});
 		new G.Tech({
-		name:'Mana silos',
-		desc:'You have to get a place where you will store basic of all things of wizardry. And in addition it will give a housing to your population',
+		name:'More useful housing',
+		desc:'Can store food. Building made out of hard bricks. And in addition it will give a housing to your population',
 		icon:[5,2,'magixmod'],
 		cost:{'insight':45},
 		req:{'city planning':true,'cities':true,'construction':true},
@@ -117,35 +117,42 @@ func:function(){
 		desc:'Now you can build wizard towers which can produce specified essences. Essences made depends on what type of tower you build. Provides additional housing. Making essences consumes mana. @unlocks [Fire wizard tower],[Water wizard tower],[Nature wizard tower],[Dark wizard tower],[Lightning wizard tower],[Wind wizard tower].',
 		icon:[6,0,'magixmod'], //WIP
 		cost:{'insight':125,'culture': 30,'Mana':40,'influence':10},
-		req:{'Mana brewery':true,'Mana silos':true},
+		req:{'Mana brewery':true,'More useful housing':true},
 	});
 		new G.Tech({
 		name:'Wizard wisdom',
 		desc:'Now each wizard will increase wisdom.',
 		icon:[3,0,'magixmod'], //WIP
 		cost:{'insight':85,'culture': 30,'Mana':40,'influence':10},
-		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true},
+		req:{'Mana brewery':true,'More useful housings':true,'Wizardry':true},
 	});
 		new G.Tech({
 		name:'Wizard complex',
 		desc:'Complex of wizard towers. Expensive but The Complex produces all types of Essences three times better than usual towers. Each complex increases additionaly max [faith],[culture] & [influence]. Boosts max mana too.',
 		icon:[2,2,'magixmod'], //WIP
 		cost:{'insight':480,'culture':30,'Mana':100,'influence':20},
-		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard towers':true},
+		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true,'Wizard towers':true},
 	});
 		new G.Tech({
 		name:'First portal to new world',
 		desc:'Your wizards discovered way to make a portal and now they plan to open a new dimension. What would it mean? It means, more place to build, more housing, more everything!',
 		icon:[2,1,'magixmod'], //WIP
 		cost:{'insight':1400,'culture':30,'Mana':2500,'influence':70},
-		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
+		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
 	});
 		new G.Tech({
-		name:'Essence storages',
+		name:'Crafting a glass',
+		desc:'Since now your kilns will be able to craft glass out of sand.',
+		icon:[7,1,'magixmod'], //WIP
+		cost:{'insight':45},
+		req:{'masonry':true,'smelting':true},
+	});
+		new G.Tech({
+		name:'Essence storages', //COMING SOON , RESEARCH AVAILABLE, BUT WON'T UNLOCK ANYTHING.
 		desc:'Essence has to be stored somewhere. So do not wait and build!',
 		icon:[5,0,'magixmod'], //WIP
-		cost:{'insight':100,'Mana':300,'faith':25,'Wand':260},
-		req:{'Mana brewery':true,'Mana silos':true,'Wizardry':true},
+		cost:{'insight':100,'Mana':317,'faith':8,'Wand':260},
+		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -223,7 +230,6 @@ func:function(){
 			{type:'provide',what:{'housing':33}},
 			{type:'gather',what:{'Dark essence':2}},
 	],
-		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':2},
 	});
@@ -240,7 +246,6 @@ func:function(){
 			{type:'provide',what:{'housing':33}},
 			{type:'gather',what:{'Nature essence':2}},
 	],
-		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':2},
 	});
@@ -257,7 +262,6 @@ func:function(){
 			{type:'provide',what:{'housing':33}},
 			{type:'gather',what:{'Lightning essence':2}},
 	],
-		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':2},
 	});	
@@ -289,7 +293,6 @@ func:function(){
 			{type:'provide',what:{'housing':33}},
 			{type:'gather',what:{'Wind essence':2}},
 	],
-		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':2},
 	});
@@ -313,52 +316,46 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Lightning essence':6}},
 			{type:'gather',context:'gather',what:{'Wind essence':6}},
 			{type:'gather',context:'gather',what:{'Dark essence':6}},
-			{type:'provide',what:{'max mana':25000}}
 		],
-		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		category:'housing',
 		limitPer:{'land':300},
 		limitPer:{'population':9000},
 	});
 //House with mana silo to increase mana capacity
 		new G.Unit({
-		name:'Brick house with mana silo',
-		desc:'@provides 15 [housing]<>This house can store up to 2500 mana too due to its silo.',
+		name:'Brick house with a silo',
+		desc:'@provides 15 [housing]<>. Even harder construction makes people feel more safe. Increases food storage by 65 per building.',
 		icon:[5,1,'magixmod'],
 		cost:{'brick':2000,'basic building materials':100},
 		use:{'land':1},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':15}},
-			{type:'provide',what:{'max mana':2500}}
+			{type:'provide',what:{'food storage':65}},
 		],
-		req:{'construction':true,'Mana silos':true,'Well of Mana':true},
+		req:{'construction':true,'More useful housing':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':3},
 	});
-//New Wonder. The portal to mirror dimension
+//New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
     		name:'Plain island portal',
     		desc:'@opens a portal to a huge </b>Plain Island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
     		wonder:'plain island portal',
     		icon:[3,1,'magixmod'],
-		
-    		cost:{'precious building materials':5000,'insight':150,'faith':10,'Fire essence':375,'Water essence':475,'Dark essence':175,'Wind essence':275,'Lightning essence':775,'Nature essence':1075},
-    		costPerStep:{'basic building materials':200,'precious building materials':20,'insight':150,'faith':10,'Fire essence':375,'Water essence':475,'Dark essence':175,'Wind essence':275,'Lightning essence':775,'Nature essence':1075},
-    		steps:150,
-    		messageOnStart:'You begin the construction of the first portal to Plain Island. Its biggest single island. Gain essence, gain. The portal is opening. Gain more land, gain more people, unlock future researches, gain everything i one word.',
-    		finalStepCost:{'population':35000,'Mana':450000,'insight':900,'faith':125,'Fire essence':5575,'Water essence':5575,'Dark essence':5575,'Wind essence':5575,'Lightning essence':5575,'Nature essence':5575},
-    		finalStepDesc:'To complete&activate the Passage, 35000 of your [population,People] must be sacrificed to scout land beyond portal. To keep portal activation stable for very long time 5575 of each essences, 450000 mana, 900 insight & 125 faith will be sacrificed.',
+    		cost:{'precious building materials':5000,'insight':1500,'faith':100,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750},
     		effects:[
-    			{type:'provide',what:{'land':25000}}
+    			{type:'provide',what:{'Land of the Plain Island':25000}},//
     		],
     		use:{'land':10},
     		req:{'First portal to new world':true,'Belief in portals':true},
     		limit:1,
-    		category:'civil',
+    		category:'wonder',
 	});
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':4,'stone':2},into:{'Wand':1},every:5,mode:'Craftwands'});
 	//Kilns will be able to make glass out of sand
+		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
+		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craft glass'});
 }});
