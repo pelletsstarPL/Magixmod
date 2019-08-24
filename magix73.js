@@ -148,6 +148,13 @@ func:function(){
 		req:{'masonry':true,'smelting':true},
 	});
 		new G.Tech({
+		name:'floating islands',
+		desc:'Wizards got knowledge enough to start making floating isles.',
+		icon:[6,3,'magixmod'], //WIP
+		cost:{'insight':95},
+		req:{'Wizardry':true,'Wizard wisdom':true},
+	});
+		new G.Tech({
 		name:'Essence storages', //COMING SOON , RESEARCH AVAILABLE, BUT WON'T UNLOCK ANYTHING.
 		desc:'Essence has to be stored somewhere. So do not wait and build!',
 		icon:[5,0,'magixmod'], //WIP
@@ -298,11 +305,11 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Floating island',
-		desc:'@provides 6 [land]<> Land consumes nature essence, wind essence, a bit fire & water essences. Needs a bit of stones and mud to form its island',
-		icon:[4,4,'magixmod'],
-		cost:{'Mana':4000,'mud':1000,'stone':3000,'Nature essence':1500,'Wind essence':1500},
+		desc:'@provides 6 [land]<> Land consumes nature essence, wind essence, a bit fire & water essences but only at first cast. Needs a bit of stones and mud to form its island',
+		icon:[6,3,'magixmod'],
+		cost:{'Mana':4000,'mud':1000,'stone':3000,'Nature essence':1500,'Wind essence':1500,'Fire essence':600,'Water essence':600},
 		upkeep:{'Mana':6,'Nature essence':3,'Wind essence':5},
-		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
+		req:{'floating islands':true},
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'land':6}},
@@ -359,7 +366,7 @@ func:function(){
     		icon:[3,1,'magixmod'],
     		cost:{'precious building materials':5000,'insight':1500,'faith':100,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750},
     		effects:[
-    			{type:'provide',what:{'Land of the Plain Island':25000}},//
+    			{type:'provide',what:{'Land of the Plain Island':25000}},//SOON NEW CATEGORY & BUILDINGS WHICH CAN ONLY BE BUILT THERE
     		],
     		use:{'land':10},
     		req:{'First portal to new world':true,'Belief in portals':true},
