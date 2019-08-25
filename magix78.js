@@ -1,13 +1,12 @@
 G.AddData({
 name:'Magix',
 author:'pelletsstarPL',
-desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. At the moment you can reach mirror dimension which will double your max land soon. More housing so you can fit more people.',
+desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. At the moment you can reach new dimensions which will double your max land soon. More housing so you can fit more people.',
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'magixmod':'https://i.imgur.com/MyWrIie.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
-//Kategorie wiem, że przepisałem ale ciul/Categories i know i rewrote but anyway i will be able to implement magic one.
 //Mana and essences. 
 		new G.Res({
 		name:'Mana',
@@ -370,7 +369,9 @@ func:function(){
 		icon:[26,3,25,2],
 		cost:{'basic building materials':1000},
 		use:{'land':1},
-		G.getDict('Concrete making shack').effects.push({type:'convert',from:{'limestone':3,'water':8},into:{'concrete':2},every:5,req:{'Concrete making':true}});
+		effects:[
+			{type:'convert',from:{'water':8,'limestone':2},into:{'concrete':2},every:7},
+		],
 		req:{'construction':true,'Concrete making':true},
 		category:'crafting',
 	});
