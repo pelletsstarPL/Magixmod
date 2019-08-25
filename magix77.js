@@ -370,9 +370,7 @@ func:function(){
 		icon:[26,3,25,2],
 		cost:{'basic building materials':1000},
 		use:{'land':1},
-		effects:[
-		G.getDict('Concrete making shack').effects.push({type:'convert',from:{'limestone':3,'water':8},into:{concrete:2},every:5,req:{'Concrete making':true}});
-		],
+		G.getDict('Concrete making shack').effects.push({type:'convert',from:{'limestone':3,'water':8},into:{'concrete':2},every:5,req:{'Concrete making':true}});
 		req:{'construction':true,'Concrete making':true},
 		category:'crafting',
 	});
