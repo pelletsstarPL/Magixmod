@@ -148,7 +148,7 @@ func:function(){
 		new G.Tech({
 		name:'floating islands',
 		desc:'Wizards got knowledge enough to start making floating isles.',
-		icon:[7,3,'magixmod'], //WIP
+		icon:[7,2,'magixmod'], //WIP
 		cost:{'insight':95},
 		req:{'Wizardry':true,'Wizard wisdom':true},
 	});
