@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/MyWrIie.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/IHvb0CS.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences. 
 		new G.Res({
@@ -166,6 +166,13 @@ func:function(){
 		cost:{'insight':75},
 		req:{'masonry':true,'smelting':true,'Crafting a glass':true},
 	});
+		new G.Tech({
+		name:'Plain island building',
+		desc:'Unlocks sheet of buildings which can be only built in new dimension.',
+		icon:[9,0,'magixmod'], 
+		cost:{'insight':0},
+		req:{'Plain island portal':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Fire wizard tower',
@@ -320,7 +327,7 @@ func:function(){
 			{type:'provide',what:{'land':6}},
 	],
 		category:'housing',
-		limit:100
+		limitPer:{'Land of the Plain Island':250},
 	});
 		new G.Unit({
 		name:'Wizard Complex',
@@ -387,8 +394,8 @@ func:function(){
     		],
     		use:{'land':10},
     		req:{'First portal to new world':true,'Belief in portals':true},
-    		limit:1,
-    		category:'wonder',
+    		limitPer:{'land':100000000000000},//It is something like max 1
+    		category:'Portals',
 	});
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
@@ -396,4 +403,10 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
+	//Category for portals
+	G.unitCategories.unshift({
+			id:'dimensions',
+			name:'Portals'
+		});
+
 }});
