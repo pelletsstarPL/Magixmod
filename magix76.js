@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/0pzQ2nz.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/MyWrIie.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Kategorie wiem, że przepisałem ale ciul/Categories i know i rewrote but anyway i will be able to implement magic one.
 //Mana and essences. 
@@ -159,6 +159,13 @@ func:function(){
 		icon:[5,0,'magixmod'], //WIP
 		cost:{'insight':100,'Mana':317,'faith':8,'Wand':260},
 		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true},
+	});
+		new G.Tech({
+		name:'Concrete making',
+		desc:'Use limestone and water to craft a concret, an [advanced building materials].',
+		icon:[8,0,'magixmod'], //WIP
+		cost:{'insight':75},
+		req:{'masonry':true,'smelting':true,'Crafting a glass':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -357,12 +364,24 @@ func:function(){
 		category:'housing',
 		limitPer:{'land':3},
 	});
+		new G.Unit({
+		name:'Concrete making shack',
+		desc:'Allows to make you concrete using some [limestone] and [water].',
+		icon:[26,3,25,2],
+		cost:{'basic building materials':1000},
+		use:{'land':1},
+		effects:[
+		G.getDict('Concrete making shack').effects.push({type:'convert',from:{'limestone':3,'water':8},into:{concrete:2},every:5,req:{'Concrete making':true}});
+		],
+		req:{'construction':true,'Concrete making':true},
+		category:'crafting',
+	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
     		name:'Plain island portal',
     		desc:'@opens a portal to a huge </b>Plain Island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
     		wonder:'plain island portal',
-    		wideIcon:[3,1,'magixmod'],
+    		wideIcon:[7,3,'magixmod'],
     		cost:{'precious building materials':5000,'insight':1500,'faith':100,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750},
     		effects:[
     			{type:'provide',what:{'Land of the Plain Island':25000}},//SOON NEW CATEGORY & BUILDINGS WHICH CAN ONLY BE BUILT THERE
