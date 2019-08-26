@@ -409,7 +409,7 @@ func:function(){
 			name:'Portals'
 		});
 	//Category for buildings which can only be built on lands of Plain island
-		G.unitCategories.unshift({
+	G.unitCategories.unshift({
 			id:'plainisleunit',
 			name:'Plain Island'
 		});
