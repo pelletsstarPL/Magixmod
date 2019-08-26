@@ -395,7 +395,7 @@ func:function(){
     		use:{'land':10},
     		req:{'First portal to new world':true,'Belief in portals':true},
     		limitPer:{'land':100000000000000},//It is something like max 1
-    		category:'Portals',
+    		category:'dimensions',
 	});
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
