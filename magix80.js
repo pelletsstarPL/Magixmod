@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/IHvb0CS.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/uWCp78c.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences. 
 		new G.Res({
@@ -74,7 +74,7 @@ func:function(){
 		new G.Res({
 		name:'Cobalt ore',
 		desc:'Hard mineral. At least you may be able to smelt some cobalt and turn them into ingot of the Cobalt in mortal world.',
-		icon:[1,1,'magixmod'],
+		icon:[8,2,'magixmod'],
 		partOf:'misc materials',
 		category:'build',
 	});
@@ -395,6 +395,29 @@ func:function(){
 		],
 		req:{'construction':true,'Concrete making':true},
 		category:'crafting',
+	});
+		new G.Unit({
+		name:'Blockhouse',
+		desc:'@provides 50 [housing]. Hardly constructed at the lands of Plain Island blockhouse has very low chance to be wasted.',
+		icon:[9,1,'magixmod'],
+		cost:{'advanced building materials':3000},
+		use:{'Land of the Plain Island':3},
+		effects:[
+			{type:'provide',what:{'housing':50}},
+		],
+		req:{'construction II':true,'Concrete making':true},
+		category:'plainisleunit',
+		limitPer:{'land':35},
+	});
+		new G.Unit({
+		name:'Mine of the plain island',
+		desc:'@can mine new resource such as [Cobalt ore]. They will be able to mine few other resources.',
+		icon:[9,2,'magixmod'],
+		cost:{'basic building materials':100},
+		use:{'Land of the Plain Island':1,'worker':4,'metal tools':4},
+		req:{'Plain island building':true},
+		category:'plainisleunit',
+		limitPer:{'land':35},
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
