@@ -71,6 +71,13 @@ func:function(){
 		partOf:'misc materials',
 		category:'misc',
 	});
+		new G.Res({
+		name:'Cobalt ore',
+		desc:'Hard mineral. At least you may be able to smelt some cobalt and turn them into ingot of the Cobalt in mortal world.',
+		icon:[1,1,'magixmod'],
+		partOf:'misc materials',
+		category:'build',
+	});
 //Trait to unlock a mirror dimension
 		new G.Trait({
 		name:'Belief in portals',
@@ -161,7 +168,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Concrete making',
-		desc:'Use limestone and water to craft a concret, an [advanced building materials].',
+		desc:'Use limestone and water to craft a concrete, an [advanced building materials].',
 		icon:[8,0,'magixmod'], //WIP
 		cost:{'insight':75},
 		req:{'masonry':true,'smelting':true,'Crafting a glass':true},
@@ -172,6 +179,13 @@ func:function(){
 		icon:[9,0,'magixmod'], 
 		cost:{'insight':0},
 		req:{'Plain island portal':true},
+	});
+		new G.Tech({
+		name:'construction II',
+		desc:'Allows your people to build [blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
+		icon:[8,1,'magixmod'], 
+		cost:{'insight':65},
+		req:{'Plain island portal':true,'Plain island building':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
