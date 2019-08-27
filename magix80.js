@@ -182,7 +182,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'construction II',
-		desc:'Allows your people to build [blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
+		desc:'Allows your people to build [Blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
 		icon:[8,1,'magixmod'], 
 		cost:{'insight':65},
 		req:{'Plain island portal':true,'Plain island building':true},
