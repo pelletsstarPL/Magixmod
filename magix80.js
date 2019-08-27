@@ -415,6 +415,9 @@ func:function(){
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':1,'worker':4,'metal tools':4},
+		effects:[
+			{type:'gather',what:{'Cobalt ore':6}},
+		],
 		req:{'Plain island building':true},
 		category:'plainisleunit',
 		limitPer:{'land':35},
