@@ -422,7 +422,6 @@ func:function(){
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
-		gizmos:true,
 		req:{'Plain island building':true},
 		category:'plainisleunit',
 		limitPer:{'land':35},
