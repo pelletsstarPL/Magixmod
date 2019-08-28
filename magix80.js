@@ -429,7 +429,7 @@ func:function(){
 			'gold':{name:'Gold',icon:[11,8],desc:'Mine for [gold ore] mainly.',req:{'prospecting':true},use:{'worker':4,'metal tools':4}},
 		},
 		effects:[
-			{type:'gather',context:'mine',what:{'Cobalt ore':6},max:15,mode:'cobalt'},
+			{type:'gather',context:'gather',what:{'Cobalt ore':6},max:15,mode:'cobalt'},
 			{type:'gather',context:'mine',what:{'copper ore':20},max:30,mode:'copper'},
 			{type:'gather',context:'mine',what:{'salt':20},max:30,mode:'salt'},
 			{type:'gather',context:'mine',what:{'gold ore':10},max:13,mode:'gold'},			
