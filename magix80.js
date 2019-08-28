@@ -435,6 +435,7 @@ func:function(){
 			{type:'gather',context:'mine',what:{'salt':20},max:30,mode:'salt'},
 			{type:'gather',context:'mine',what:{'gold ore':10},max:13,mode:'gold'},			
 		],
+		gizmos:true,
 		req:{'Plain island building':true},
 		category:'plainisleunit',
 		limitPer:{'land':35},
