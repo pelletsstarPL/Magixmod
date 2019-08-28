@@ -422,16 +422,6 @@ func:function(){
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
-		modes:plainmine_modes,
-		effects:[
-			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
-			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
-			{type:'gather',context:'mine',what:{'iron ore':25},max:30,mode:'iron'},
-			{type:'gather',context:'mine',what:{'gold ore':25},max:30,mode:'gold'},
-			{type:'gather',context:'mine',what:{'Cobalt ore':15},max:30,mode:'cobalt'},
-			{type:'gather',context:'mine',what:{'salt':50},max:30,mode:'salt'},
-			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine collapsed, wounding its miners','mines collapsed, wounding their miners'),chance:1/50}
-		],
 		gizmos:true,
 		req:{'Plain island building':true},
 		category:'plainisleunit',
@@ -508,36 +498,14 @@ func:function(){
 			name:'Plain Island'
 		});
 	//Modes for mine from Plain Island
-	let plainmine_modes = {
-		'off':G.MODE_OFF,
-		'cobalt':{
-			name:'Cobalt',
-			icon: [8,2'magixmod'],
-			desc:'Gain [Cobalt ore] mainly from this mine. Consumes more than usual Plain Island mine due to hardness of the Cobalt.'
-		},
-		'copper':{
-			name:'Copper',
-			icon: [9,8],
-			desc:'Gain [copper ore] mainly from this mine.'
-		},
-		'gold':{
-			name:'Gold',
-			icon: [11,8],
-			desc:'Gain [gold ore] mainly from this mine. Prestigious one.'
-		},
-		'salt':{
-			name:'Salt',
-			icon: [9,8],
-			desc:'Gain [salt] mainly from this mine.'
-		},
-		'iron':{
-			name:'Iron',
-			icon: [10,8],
-			desc:'Gain [iron ore] mainly from this mine.'
-		},
-		'tin':{
-			name:'Tin',
-			icon: [13,8],
-			desc:'Gain [tin ore] mainly from this mine.'
-		},
+		G.getDict('Mine of the plain island').modes['Cobalt']={name:'Cobalt',desc:'Gain [Cobalt ore] mainly from this mine.',use:{'worker':5,'metal tools':5}};	
+		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'Cobalt ore':1},every:5,mode:'Cobalt'});
+		G.getDict('Mine of the plain island').modes['Salt']={name:'Salt',desc:'Gain [salt] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
+		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'salt':3},every:5,mode:'Salt'});
+		G.getDict('Mine of the plain island').modes['Copper']={name:'Copper',desc:'Gain [cooper ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
+		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'copper ore':3},every:5,mode:'Copper'});
+		G.getDict('Mine of the plain island').modes['Tin']={name:'Tin',desc:'Gain [tin ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
+		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'tin ore':3},every:5,mode:'Tin'});
+		G.getDict('Mine of the plain island').modes['Iron']={name:'Iron',desc:'Gain [iron ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
+		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'iron ore':3},every:5,mode:'Iron'});	
 }});
