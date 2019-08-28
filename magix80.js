@@ -422,7 +422,7 @@ func:function(){
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
-		modes:plainmine_mods,
+		modes:plainmine_modes,
 		effects:[
 			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
 			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
