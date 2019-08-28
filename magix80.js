@@ -441,7 +441,7 @@ func:function(){
 			{type:'gather',context:'mine',what:{'tin ore':50},max:30,mode:'tin'},
 			{type:'gather',context:'mine',what:{'iron ore':50},max:30,mode:'iron'},
 			{type:'gather',context:'mine',what:{'gold ore':50},max:30,mode:'gold'},
-			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine of the Plain Island has collapsed, wounding its miners','mines collapsed, wounding their miners'),chance:1/50}
+			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine of the Plain Island has collapsed, wounding its miners','mines of the Plain Island collapsed, wounding their miners'),chance:1/50}
 		],
 		gizmos:true,
 		req:{'Plain island building':true},
