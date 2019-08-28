@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/uWCp78c.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/nPWAsQo.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences. 
 		new G.Res({
@@ -184,6 +184,13 @@ func:function(){
 		name:'construction II',
 		desc:'Allows your people to build [Blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
 		icon:[8,1,'magixmod'], 
+		cost:{'insight':65},
+		req:{'Plain island portal':true,'Plain island building':true},
+	});
+		new G.Tech({
+		name:'Burial in new world',
+		desc:'Provides even better use of the Plain Island. You may build now few cemetries which consume much more [Land of the Plain Island], but they can store more corpses.',
+		icon:[1,6,'magixmod'], 
 		cost:{'insight':65},
 		req:{'Plain island portal':true,'Plain island building':true},
 	});
@@ -414,13 +421,26 @@ func:function(){
 		desc:'@can mine new resource such as [Cobalt ore]. They will be able to mine few other resources.',
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
-		use:{'Land of the Plain Island':1,'worker':4,'metal tools':4},
+		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
 		effects:[
-			{type:'gather',what:{'Cobalt ore':6}},
+			{type:'gather',context:'gather',what:{'Cobalt ore':6}},
 		],
 		req:{'Plain island building':true},
 		category:'plainisleunit',
 		limitPer:{'land':35},
+	});
+		new G.Unit({
+		name:'Cemetry of Plain Island',
+		desc:'@Big cemetry but stores a lot of corpses with a method of family burials. Uses workers to keep conservacy & keep Cemetry clean.',//Soon new policies which will decide how much you may store corpses
+		icon:[0,6,'magixmod'],
+		cost:{'basic building materials':300},
+		use:{'Land of the Plain Island':100,'worker':10},
+		effects:[
+			{type:'provide',what:{'burial spot':7500}},
+		],
+		req:{'Plain island building':true,'Burial in new world':true},
+		category:'plainisleunit',
+		limitPer:{'land':400},
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
