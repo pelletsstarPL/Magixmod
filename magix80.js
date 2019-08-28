@@ -423,6 +423,7 @@ func:function(){
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
 		modes:{
+			'off':G.MODE_OFF,
 			'cobalt':{name:'Cobalt',icon:[8,2,'magixmod'],desc:'Gain [Cobalt ore]. Will consume more due to hardness of Cobalt.',req:{'prospecting':true},use:{'worker':5,'stone tools':3,'metal tools':4}},
 			'copper':{name:'Copper',icon:[9,8],desc:'Mine for [copper ore] mainly.',req:{'prospecting':true},use:{'worker':4,'metal tools':4}},
 			'salt':{name:'Salt',icon:[11,7],desc:'Mine for [salt] mainly.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
@@ -430,9 +431,9 @@ func:function(){
 		},
 		effects:[
 			{type:'gather',context:'gather',what:{'Cobalt ore':6},max:15,mode:'cobalt'},
-			{type:'gather',context:'mine',what:{'copper ore':20},max:30,mode:'copper'},
-			{type:'gather',context:'mine',what:{'salt':20},max:30,mode:'salt'},
-			{type:'gather',context:'mine',what:{'gold ore':10},max:13,mode:'gold'},			
+			{type:'gather',context:'gather',what:{'copper ore':20},max:30,mode:'copper'},
+			{type:'gather',context:'gather',what:{'salt':20},max:30,mode:'salt'},
+			{type:'gather',context:'gather',what:{'gold ore':10},max:13,mode:'gold'},			
 		],
 		gizmos:true,
 		req:{'Plain island building':true},
