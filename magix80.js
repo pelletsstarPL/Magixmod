@@ -422,11 +422,18 @@ func:function(){
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
+		modes:{
+			'off':G.MODE_OFF,
+			'cobalt':{name:'Cobalt',icon:[8,2,'magixmod'],desc:'Gain [Cobalt ore]. Will consume more due to hardness of Cobalt.',use:{'worker':5,'stone tools':3,'metal tools':4}},
+			'copper':{name:'Copper',icon:[9,8],desc:'Mine for [copper ore] mainly.',req:{'prospecting':true},use:{'worker':4,'metal tools':4}},
+			'salt':{name:'Salt',icon:[11,7],desc:'Mine for [salt] mainly.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
+			'gold':{name:'Gold',icon:[11,8],desc:'Mine for [gold ore] mainly.',req:{'prospecting':true},use:{'worker':4,'metal tools':4}},
+		},
 		effects:[
-			{type:'gather',context:'mine',what:{'Cobalt ore':6},max:15,mode:'cobaltmining'},
-			{type:'gather',context:'mine',what:{'copper ore':20},max:30,mode:'coppermining'},
-			{type:'gather',context:'mine',what:{'salt':20},max:30,mode:'saltmining'},
-			{type:'gather',context:'mine',what:{'gold ore':10},max:13,mode:'goldmining'},			
+			{type:'gather',context:'mine',what:{'Cobalt ore':6},max:15,mode:'cobalt'},
+			{type:'gather',context:'mine',what:{'copper ore':20},max:30,mode:'copper'},
+			{type:'gather',context:'mine',what:{'salt':20},max:30,mode:'salt'},
+			{type:'gather',context:'mine',what:{'gold ore':10},max:13,mode:'gold'},			
 		],
 		req:{'Plain island building':true},
 		category:'plainisleunit',
@@ -492,10 +499,6 @@ func:function(){
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
 	//Mining modes for Plain Island mines
-		G.getDict('Mine of the plain island').modes['coopermining']={name:'Copper',desc:'Gather [copper ore] from Plain island',req:{'Plain island building':true}};
-		G.getDict('Mine of the plain island').modes['saltmining']={name:'Salt',desc:'Gather [salt] from Plain island',req:{'Plain island building':true}};
-		G.getDict('Mine of the plain island').modes['cobaltmining']={name:'Cobalt',desc:'Gather [Cobalt ore] from Plain island',req:{'Plain island building':true}};
-		G.getDict('Mine of the plain island').modes['goldmining']={name:'Gold',desc:'Gather [gold ore] from Plain island',req:{'Plain island building':true}};
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
