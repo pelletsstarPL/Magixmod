@@ -424,24 +424,17 @@ func:function(){
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
 		modes:{
 			'off':G.MODE_OFF,
-			'any':{name:'Any',icon:[8,8],desc:'Mine without focusing on specific ores.',use:{'worker':3,'stone tools':3}},
-			'coal':{name:'Coal',icon:[12,8],desc:'Mine for [coal] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
-			'salt':{name:'Salt',icon:[11,7],desc:'Mine for [salt].',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
 			'copper':{name:'Copper',icon:[9,8],desc:'Mine for [copper ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
 			'tin':{name:'Tin',icon:[13,8],desc:'Mine for [tin ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
 			'iron':{name:'Iron',icon:[10,8],desc:'Mine for [iron ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
 			'gold':{name:'Gold',icon:[11,8],desc:'Mine for [gold ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
 		},
 		effects:[
-			{type:'gather',context:'mine',amount:10,max:30,mode:'any'},
-			{type:'gather',context:'mine',what:{'stone':10},max:30,notMode:'off'},
-			{type:'gather',context:'mine',what:{'coal':50},max:30,mode:'coal'},
-			{type:'gather',context:'mine',what:{'salt':50},max:30,mode:'salt'},
 			{type:'gather',context:'mine',what:{'copper ore':50},max:30,mode:'copper'},
 			{type:'gather',context:'mine',what:{'tin ore':50},max:30,mode:'tin'},
 			{type:'gather',context:'mine',what:{'iron ore':50},max:30,mode:'iron'},
 			{type:'gather',context:'mine',what:{'gold ore':50},max:30,mode:'gold'},
-			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine of the Plain Island has collapsed, wounding its miners','mines of the Plain Island collapsed, wounding their miners'),chance:1/50}
+			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine collapsed, wounding its miners','mines collapsed, wounding their miners'),chance:1/50}
 		],
 		gizmos:true,
 		req:{'Plain island building':true},
