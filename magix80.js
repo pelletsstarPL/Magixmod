@@ -423,7 +423,10 @@ func:function(){
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
 		effects:[
-			{type:'gather',context:'gather',what:{'Cobalt ore':6}},
+			{type:'gather',context:'mine',what:{'Cobalt ore':6},max:15,mode:'cobaltmining'},
+			{type:'gather',context:'mine',what:{'copper ore':20},max:30,mode:'coppermining'},
+			{type:'gather',context:'mine',what:{'salt':20},max:30,mode:'saltmining'},
+			{type:'gather',context:'mine',what:{'gold ore':10},max:13,mode:'goldmining'},			
 		],
 		req:{'Plain island building':true},
 		category:'plainisleunit',
@@ -431,7 +434,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Cemetry of Plain Island',
-		desc:'@Big cemetry but stores a lot of corpses with a method of family burials. Uses workers to keep conservacy & keep Cemetry clean.',//Soon new policies which will decide how much you may store corpses
+		desc:'@Big cemetry but stores a lot of corpses with a method of family burials. Uses workers to keep conservacy & keep Cemetry clean. Provides 7500 [burial spot].',//Soon new policies which will decide how much you may store corpses
 		icon:[2,6,'magixmod'],
 		cost:{'basic building materials':300},
 		use:{'Land of the Plain Island':100,'worker':10},
@@ -444,7 +447,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Family graves',
-		desc:'On 5 pieces of new land you can store 10 family graves. Does not use [worker].',
+		desc:'On 5 pieces of new land you can store 10 family graves. Does not use [worker]. Provides 100 [burial spot].',
 		icon:[0,6,'magixmod'],
 		cost:{'basic building materials':300},
 		use:{'Land of the Plain Island':5},
@@ -457,7 +460,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Single grave',
-		desc:'Simple, single grave for 1 person. Does not use [worker].',
+		desc:'Simple, single grave for 1 person. Does not use [worker]. Provides 1 [burial spot].',
 		icon:[3,6,'magixmod'],
 		cost:{'basic building materials':300},
 		use:{'Land of the Plain Island':1},
@@ -488,6 +491,11 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
+	//Mining modes for Plain Island mines
+		G.getDict('Mine of the plain island').modes['coopermining']={name:'Copper',desc:'Gather [copper ore] from Plain island',req:{'Plain island building':true}},
+		G.getDict('Mine of the plain island').modes['saltmining']={name:'Salt',desc:'Gather [salt] from Plain island',req:{'Plain island building':true}},	
+		G.getDict('Mine of the plain island').modes['cobaltmining']={name:'Cobalt',desc:'Gather [Cobalt ore] from Plain island',req:{'Plain island building':true}},
+		G.getDict('Mine of the plain island').modes['goldmining']={name:'Gold',desc:'Gather [gold ore] from Plain island',req:{'Plain island building':true}},	
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
