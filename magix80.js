@@ -396,7 +396,7 @@ func:function(){
 		desc:'Allows to make you concrete using some [limestone] and [water].',
 		icon:[26,3,25,2],
 		cost:{'basic building materials':1000},
-		use:{'land':1},
+		use:{'land':1,'worker':1},
 		effects:[
 			{type:'convert',from:{'water':8,'limestone':2},into:{'concrete':2},every:7},
 		],
@@ -423,6 +423,7 @@ func:function(){
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
 		req:{'Plain island building':true},
+		gizmos:true,
 		category:'plainisleunit',
 		limitPer:{'land':35},
 	});
