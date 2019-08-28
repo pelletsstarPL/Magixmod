@@ -432,7 +432,7 @@ func:function(){
 		new G.Unit({
 		name:'Cemetry of Plain Island',
 		desc:'@Big cemetry but stores a lot of corpses with a method of family burials. Uses workers to keep conservacy & keep Cemetry clean.',//Soon new policies which will decide how much you may store corpses
-		icon:[0,6,'magixmod'],
+		icon:[2,6,'magixmod'],
 		cost:{'basic building materials':300},
 		use:{'Land of the Plain Island':100,'worker':10},
 		effects:[
@@ -441,6 +441,31 @@ func:function(){
 		req:{'Plain island building':true,'Burial in new world':true},
 		category:'plainisleunit',
 		limitPer:{'land':400},
+	});
+		new G.Unit({
+		name:'Family graves',
+		desc:'On 5 pieces of new land you can store 10 family graves. Does not use [worker].',
+		icon:[0,6,'magixmod'],
+		cost:{'basic building materials':300},
+		use:{'Land of the Plain Island':5},
+		effects:[
+			{type:'provide',what:{'burial spot':100}},
+		],
+		req:{'Plain island building':true,'Burial in new world':true},
+		category:'plainisleunit',
+		limitPer:{'land':40},
+	});
+		new G.Unit({
+		name:'Single grave',
+		desc:'Simple, single grave for 1 person. Does not use [worker].',
+		icon:[3,6,'magixmod'],
+		cost:{'basic building materials':300},
+		use:{'Land of the Plain Island':1},
+		effects:[
+			{type:'provide',what:{'burial spot':1}},
+		],
+		req:{'Plain island building':true,'Burial in new world':true},
+		category:'plainisleunit',
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
