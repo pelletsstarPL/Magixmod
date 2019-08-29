@@ -434,7 +434,7 @@ func:function(){
 		},
 		effects:[
 			{type:'gather',context:'mine',what:{'stone':10},max:30,notMode:'off'},
-			{type:'gather',context:'mine',what:{'Cobalt ore':10},max:30,mode:'cobalt'},
+			{type:'gather',context:'gather',what:{'Cobalt ore':10},max:30,mode:'cobalt'},
 			{type:'gather',context:'mine',what:{'salt':25},max:30,mode:'salt'},
 			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
 			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
