@@ -439,7 +439,7 @@ func:function(){
 			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
 			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
 			{type:'gather',context:'mine',what:{'iron ore':25},max:30,mode:'iron'},
-			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','Plain island mine collapsed, wounding its workers','Plain island mines collapsed, wounding their workers'),chance:1/50}
+			//{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','Plain island mine collapsed, wounding its workers','Plain island mines collapsed, wounding their workers'),chance:1/50} ERROR
 		],
 		category:'plainisleunit',
 		limitPer:{'land':35},
