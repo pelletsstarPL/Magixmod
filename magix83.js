@@ -424,6 +424,9 @@ func:function(){
 		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
 		req:{'Plain island building':true},
 		gizmos:true,
+		effects:[
+			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine of the Plain Island collapsed, wounding its workers','mines of the Plain Island collapsed, wounding their workers'),chance:1/50}
+		],
 		category:'plainisleunit',
 		limitPer:{'land':35},
 	});
@@ -498,7 +501,7 @@ func:function(){
 			name:'Plain Island'
 		});
 	//Modes for mine from Plain Island
-		G.getDict('Mine of the plain island').modes['cobalt']={name:'Cobalt',desc:'Gain [Cobalt ore] mainly from this mine.',use:{'worker':5,'metal tools':5}};	
+		G.getDict('Mine of the plain island').modes['cobalt']={name:'Cobalt',desc:'Gain [Cobalt ore] mainly from this mine.',use:{'worker':5,'metal tools':5},icon:[8,2,'magixmod']};	
 		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'Cobalt ore':1},every:5,mode:'cobalt'});
 		G.getDict('Mine of the plain island').modes['salt']={name:'Salt',desc:'Gain [salt] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
 		G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'salt':3},every:5,mode:'salt'});
