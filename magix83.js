@@ -468,6 +468,20 @@ func:function(){
 		req:{'Plain island building':true,'Burial in new world':true},
 		category:'plainisleunit',
 	});
+		new G.Unit({
+		name:'well of the Plain Island',
+		desc:'@produces fresh [water], up to 20 per day<>The [well] is a steady source of drinkable water.',
+		icon:[25,3],
+		cost:{'stone':70,'archaic building materials':30,'basic building materials':15},
+		use:{'Land of the Plain Island':1},
+		effects:[
+			{type:'gather',what:{'water':20}},
+		],
+		category:'plainisleunit',
+		req:{'well-digging':true,'First portal to new world':true,'Plain island building':true},
+		limitPer:{'Land of the Plain Island':10},
+	});
+	
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
     		name:'Plain island portal',
