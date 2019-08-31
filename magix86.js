@@ -5,9 +5,16 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/nPWAsQo.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/dJubhEE.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
-//Mana and essences. 
+//Mana and essences.
+		G.resCategories={
+		'flowersanddyes':{
+			name:'Flowers & Dyes',
+			base:[],
+			side:[],
+	},
+};
 		new G.Res({
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
@@ -77,6 +84,28 @@ func:function(){
 		icon:[8,2,'magixmod'],
 		partOf:'misc materials',
 		category:'build',
+	});
+//FLOWERS!,DYES!
+		new G.Res({
+		name:'Lavender',
+		desc:'Nice flower. Has relaxing smell.',
+		icon:[0,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Salvia',
+		desc:'Plant which may be used to heal [wounded].',
+		icon:[1,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Bachelor\'s button',
+		desc:'Known as cornflower too. It looks cool while planted near house.',
+		icon:[0,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
 	});
 //Trait to unlock a mirror dimension
 		new G.Trait({
