@@ -546,7 +546,9 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
-	//Mining modes for Plain Island mines
+	//Mode for Gatherers to allow them pick flowers instead of food/water rations. I gotta test it to get answer on question... will it work? So it won't work as it should yet.
+		G.getDict('gatherer').modes['Florist']={name:'Pick Flowers',desc:'Gatherer in this mode will collect flowers instead of [food] or [water].',req:{'scouting':true},use:{'worker':1}};	
+		G.getDict('gatherer').effects.push({type:'gather',what:{'Lavender':3},every:2,mode:'Florist'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
