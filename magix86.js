@@ -9,11 +9,43 @@ sheets:{'magixmod':'https://i.imgur.com/dJubhEE.png'},//custom stylesheet (note 
 func:function(){
 //Mana and essences.
 		G.resCategories={
+
+			'main':{
+				name:'Essentials',
+				base:[],
+				side:['population','worker','happiness','health','land','coin'],
+		},
+			'demog':{
+				name:'Demographics',
+				base:['baby','child','adult','elder','worker','sick','wounded'],
+				side:['population','housing','corpse','burial spot'],
+		},
+			'food':{
+				name:'Food & Water',
+				base:[],
+				side:['food','spoiled food','water','muddy water','food storage'],
+		},
+			'build':{
+				name:'Crafting & Construction',
+				base:[],
+				side:['archaic building materials','basic building materials','advanced building materials','precious building materials','material storage'],
+		},
+			'gear':{
+				name:'Gear',
+				base:[],
+				side:[],
+		},
+			'misc':{
+				name:'Miscellaneous',
+				base:[],
+		},
 			'flowersanddyes':{
 				name:'Flowers & Dyes',
 				base:[],
 				side:[],
-			},
+		},
+	};
+			
 	};
 		new G.Res({
 		name:'Mana',
