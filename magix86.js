@@ -9,12 +9,12 @@ sheets:{'magixmod':'https://i.imgur.com/dJubhEE.png'},//custom stylesheet (note 
 func:function(){
 //Mana and essences.
 		G.resCategories={
-		'flowersanddyes':{
-			name:'Flowers & Dyes',
-			base:[],
-			side:[],
-	},
-};
+			'flowersanddyes':{
+				name:'Flowers & Dyes',
+				base:[],
+				side:[],
+			},
+	};
 		new G.Res({
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
