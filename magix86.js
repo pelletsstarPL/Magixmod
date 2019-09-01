@@ -44,8 +44,11 @@ func:function(){
 				base:[],
 				side:[],
 		},
-	};
-			
+			'alchemy':{
+				name:'Alchemy', //It won't be added quickly but i will code this category
+				base:[],
+				side:[],
+		},
 	};
 		new G.Res({
 		name:'Mana',
