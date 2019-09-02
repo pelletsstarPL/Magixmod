@@ -212,6 +212,55 @@ func:function(){
 		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
+		new G.Res({
+		name:'Red tulip',
+		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
+		icon:[5,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Green Zinnia',
+		desc:'Zinnia is a genus of plants of the sunflower tribe within the daisy family.',
+		icon:[4,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Cactus',
+		desc:'Spiky. Their main house is in desert. Can be used to make archaic caltrops and dye of course. Do not forget about decor use.',
+		icon:[5,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Lime rose',
+		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
+		icon:[5,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Lime tulip',
+		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
+		icon:[4,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Azure bluet',
+		desc:'Azure bluet is a perennial species in the Rubiaceae family.',
+		icon:[6,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Daisy',
+		desc:'Daisy(Bellis perennis) is a common European species of daisy, of the family Asteraceae, often considered the archetypal species of that name.',
+		icon:[7,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
 //Trait to unlock a mirror dimension
 		new G.Trait({
 		name:'Belief in portals',
