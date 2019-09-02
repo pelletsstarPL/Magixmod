@@ -59,7 +59,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Wand',
-		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. ',
+		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. @Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[6,4,'magixmod'],
 		category:'gear',
 		displayUsed:true,
@@ -258,6 +258,48 @@ func:function(){
 		name:'Daisy',
 		desc:'Daisy(Bellis perennis) is a common European species of daisy, of the family Asteraceae, often considered the archetypal species of that name.',
 		icon:[7,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Sunflower',
+		desc:'From this flower except yellow dye you can gain edible seeds.',
+		icon:[6,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Dandelion',
+		desc:'Easiest source of yellow dye.',
+		icon:[7,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Black lily',
+		desc:'Black dye source. One of the types of lilies.',
+		icon:[6,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Black Hollyhock',
+		desc:'Sometimes, the genus name is given as Althea; but don\'t confuse the plant with rose of sharon, which may also go by that name.',
+		icon:[7,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Cattail',
+		desc:'Cattail (Typha)is a genus of about 30 species of monocotyledonous flowering plants in the family Typhaceae. These plants have a variety of common names such as reed or cattail.',
+		icon:[8,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Brown flower',
+		desc:'Basic brown flower',
+		icon:[9,7,'magixmod'],
 		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
