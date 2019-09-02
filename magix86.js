@@ -142,6 +142,27 @@ func:function(){
 		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
+		new G.Res({
+		name:'Dianella',
+		desc:'Commonly called flax lilies.',
+		icon:[1,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Desert rose',
+		desc:'Desert version of rose. As most plants these are good for flowerbeds.',
+		icon:[0,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Cosmos',
+		desc:'Cosmos is a genus, with the same common name of cosmos, consisting of flowering plants in the sunflower family.',
+		icon:[1,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
 //Trait to unlock a mirror dimension
 		new G.Trait({
 		name:'Belief in portals',
