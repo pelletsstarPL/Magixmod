@@ -122,6 +122,20 @@ func:function(){
 	});
 //FLOWERS!,DYES!
 		new G.Res({
+		name:'Flowers',
+		desc:'This defines the amount of flowers, which you have currently in total.',
+		icon:[11,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Dyes',
+		desc:'This defines the amount of dyes crafted out of flowers, which you have currently in total.',
+		icon:[11,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
 		name:'Lavender',
 		desc:'Nice flower. Has relaxing smell.',
 		icon:[0,9,'magixmod'],
