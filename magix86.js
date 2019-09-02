@@ -163,6 +163,55 @@ func:function(){
 		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
+		new G.Res({
+		name:'Pink rose',
+		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
+		icon:[2,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Pink tulip',
+		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
+		icon:[3,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Coreopsis',
+		desc:'Yellow flower. If you\'re looking for low maintenance, drought tolerant, long blooming and cheerful plants for a flower border or a filler, coreopses are a perfect choice.',
+		icon:[2,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Crown imperial',
+		desc:'The Crown imperial is a species of flowering plant in the lily family.',
+		icon:[3,8,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Cyan rose',
+		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
+		icon:[2,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Himalayan blue poopy',
+		desc:'It was first described by French botanist Viguier in 1814. The species have attractive flowers and have two distinct ranges.',
+		icon:[3,9,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
+		new G.Res({
+		name:'Cockscomb',
+		desc:'Cockscomb, is a flowering plant in the genus Rhinanthus.',
+		icon:[4,7,'magixmod'],
+		partOf:'misc materials',
+		category:'flowersanddyes',
+	});
 //Trait to unlock a mirror dimension
 		new G.Trait({
 		name:'Belief in portals',
