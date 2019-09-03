@@ -179,7 +179,7 @@ func:function(){
 		name:'Pink rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
 		icon:[2,7,'magixmod'],
-		partOf:'Flowerss',
+		partOf:'Flowers',
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -340,7 +340,7 @@ func:function(){
 		name:'Gray rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
 		icon:[10,9,'magixmod'],
-		partOf:'Flowerss',
+		partOf:'Flowers',
 		category:'flowersanddyes',
 	});
 		new G.Res({
