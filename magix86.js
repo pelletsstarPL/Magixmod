@@ -926,4 +926,22 @@ func:function(){
 		//G.getDict('Mine of the plain island').modes['iron']={name:'Iron',desc:'Gain [iron ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
 		//G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'iron ore':3},every:5,mode:'iron'});
 	G.contextNames['flowers']='Flowers';
+		new G.Goods({
+		name:'Tulips',
+		desc:'Cool flowers, can be used in most of events and decors.',
+		icon:[3,7,'magixmod'],
+		res:{
+			'flowers':{'Pink tulip':1,'White tulip':1,'Gray tulip':1,'Lime tulip':1},
+		},
+		mult:5,
+	});
+		new G.Goods({
+		name:'Roses',
+		desc:'Cool flowers, can be used in most of events and decors. Lovely.',
+		icon:[2,7,'magixmod'],
+		res:{
+			'flowers':{'Pink Rose':1,'Cyan rose':1,'Lime rose':1,'Desert rose':1},
+		},
+		mult:5,
+	});
 }});
