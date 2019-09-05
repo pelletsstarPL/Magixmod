@@ -68,7 +68,6 @@ func:function(){
 		name:'Land of the Plain Island',
 		desc:'The land you got from activating a portal to Plain Island. Place for new buildings.',
 		icon:[7,0,'magixmod'],
-		category:'main',
 		displayUsed:true,
 	});
 		new G.Res({
