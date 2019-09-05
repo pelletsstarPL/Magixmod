@@ -13,7 +13,7 @@ func:function(){
 			'main':{
 				name:'Essentials',
 				base:[],
-				side:['population','worker','happiness','health','land','coin'],
+				side:['population','worker','happiness','health','land','coin','Land of the Plain Island'],
 		},
 			'demog':{
 				name:'Demographics',
