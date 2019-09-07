@@ -901,8 +901,8 @@ func:function(){
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
 	//Mode for Gatherers to allow them pick flowers instead of food/water rations. I gotta test it to get answer on question... will it work? So it won't work as it should yet.
-		//G.getDict('gatherer').modes['Florist']={name:'Pick Flowers',desc:'Gatherer in this mode will collect flowers instead of [food] or [water].',req:{'scouting':true},use:{'worker':1}};	
-		//G.getDict('gatherer').effects.push({type:'gather',what:{'Lavender':3},every:2,mode:'Florist'});
+		G.getDict('gatherer').modes['Florist']={name:'Pick Flowers',desc:'Gatherer in this mode will collect flowers instead of [food] or [water].',req:{'scouting':true},use:{'worker':1}};	
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Lavender':1},every:4,mode:'Florist'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
@@ -942,5 +942,26 @@ func:function(){
 			'flowers':{'Pink Rose':1,'Cyan rose':1,'Lime rose':1,'Desert rose':1},
 		},
 		mult:5,
+	});
+		new G.Goods({
+		name:'Lavender',
+		desc:'Flower used in: Aromatotherapy, used as decor and many, many else.',
+		icon:[2,7,'magixmod'],
+		res:{
+			'flowers':{'Lavender':1},
+		},
+		mult:5,
+	});
+//New land for mortal world
+		new G.Land({
+		name:'Lavender fields',
+		names:['Lavender fields'],
+		modifier:true,
+		goods:[
+			{type:'oak',min:0.2,max:1},
+			{type:['Roses'],chance:0.02,min:0.01,max:0.03},
+			{type:'freshwater',min:0.2,max:0.6},
+			{type:'Lavender',min:0.2,max:0.6},
+		],
 	});
 }});
