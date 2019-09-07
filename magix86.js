@@ -946,7 +946,7 @@ func:function(){
 		new G.Goods({
 		name:'Lavender',
 		desc:'Flower used in: Aromatotherapy, used as decor and many, many else.',
-		icon:[2,7,'magixmod'],
+		icon:[0,9,'magixmod'],
 		res:{
 			'flowers':{'Lavender':1},
 		},
@@ -959,9 +959,10 @@ func:function(){
 		modifier:true,
 		goods:[
 			{type:'oak',min:0.2,max:1},
-			{type:['Roses'],chance:0.02,min:0.01,max:0.03},
+			{type:['Roses'],chance:0.005,min:0.01,max:0.03},
 			{type:'freshwater',min:0.2,max:0.6},
 			{type:'Lavender',min:0.2,max:0.6},
+			{type:['Roses'],chance:0.005,min:0.01,max:0.03},
 		],
 	});
 }});
