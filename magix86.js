@@ -901,8 +901,8 @@ func:function(){
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
 	//Mode for Gatherers to allow them pick flowers instead of food/water rations. I gotta test it to get answer on question... will it work? So it won't work as it should yet.
-		G.getDict('gatherer').modes['Florist']={name:'Pick Flowers',desc:'Gatherer in this mode will collect [Flowers] instead of [food] or [water].',use:{'worker':1}};	
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Lavender':1},every:4,mode:'Florist'});
+		G.getDict('gatherer').modes['florist']={name:'Pick Flowers',desc:'Gatherer in this mode will collect [Flowers] instead of [food] or [water].',use:{'worker':1}};	
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Lavender':1},amount:1,max:1,req:{'plant lore':true},mode:'florist'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
