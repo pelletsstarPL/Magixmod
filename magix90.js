@@ -891,10 +891,8 @@ func:function(){
 		icon:[0,2],
 		cost:{},
 		use:{'worker':1},
-		//upkeep:{'food':0.2},
-		//alternateUpkeep:{'food':'spoiled food'},
 		effects:[
-			{type:'gather',context:'lavender',amount:2,max:4},
+			{type:'gather',context:'gather',amount:2,max:4},
 			{type:'gather',context:'gather',what:{'Cockscomb':1,'Pink tulip':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
