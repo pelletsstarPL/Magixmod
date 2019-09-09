@@ -887,15 +887,14 @@ func:function(){
 		new G.Unit({
 		name:'Florist',
 		startWith:0,
-		desc:'@subclass of gatherer which instead of [food], [water] mainly, will collect flowers which will have its specific use.',
+		desc:'@subclass of gatherer which instead of </b>Food & water rations</b> mainly, will collect flowers which will have its specific use.',
 		icon:[0,2],
 		cost:{},
 		use:{'worker':1},
 		//upkeep:{'food':0.2},
 		//alternateUpkeep:{'food':'spoiled food'},
 		effects:[
-			{type:'gather',context:'lavender',amount:2,max:4},//,multMax:{'leather pouches':1.1}//TODO
-			//{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3,req:{'gathering focus':'water'}},
+			{type:'gather',context:'lavender',amount:2,max:4},
 			{type:'gather',context:'gather',what:{'Cockscomb':1,'Pink tulip':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
