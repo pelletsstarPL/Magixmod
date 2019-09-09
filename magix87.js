@@ -988,7 +988,7 @@ func:function(){
 		new G.Policy({
 		name:'harvest rituals for flowers',
 		desc:'Improves [Florist] efficiency by 20%. Consumes 1 [faith] & 1 [influence] every 20 days; will stop if you run out.',
-		icon:[8,12,4,7],
+		icon:[8,12,11,8,'magixmod'],
 		cost:{'faith':1,'influence':3},
 		startMode:'off',
 		req:{'ritualism':true},
