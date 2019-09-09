@@ -41,8 +41,8 @@ func:function(){
 		},
 			'flowersanddyes':{
 				name:'Flowers & Dyes',
-				base:[],
-				side:['Flowers','Dyes'],
+				base:['Dyes'],
+				side:['Flowers],
 		},
 			'alchemy':{
 				name:'Alchemy', //It won't be added quickly but i will code this category
