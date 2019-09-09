@@ -974,17 +974,9 @@ func:function(){
 			id:'plainisleunit',
 			name:'Plain Island'
 		});
-	//Modes for mine from Plain Island
-		//G.getDict('Mine of the plain island').modes['cobalt']={name:'Cobalt',desc:'Gain [Cobalt ore] mainly from this mine.',use:{'worker':5,'metal tools':5},icon:[8,2,'magixmod']};	
-		//G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'Cobalt ore':1},every:5,mode:'cobalt'});
-		//G.getDict('Mine of the plain island').modes['salt']={name:'Salt',desc:'Gain [salt] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
-		//G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'salt':3},every:5,mode:'salt'});
-		//G.getDict('Mine of the plain island').modes['copper']={name:'Copper',desc:'Gain [cooper ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
-		//G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'copper ore':3},every:5,mode:'copper'});
-		//G.getDict('Mine of the plain island').modes['tin']={name:'Tin',desc:'Gain [tin ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
-		//G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'tin ore':3},every:5,mode:'tin'});
-		//G.getDict('Mine of the plain island').modes['iron']={name:'Iron',desc:'Gain [iron ore] mainly from this mine.',use:{'worker':3,'metal tools':3}};	
-		//G.getDict('Mine of the plain island').effects.push({type:'gather',context:'mine',what:{'iron ore':3},every:5,mode:'iron'});
+	G.policyCategories.push(
+			{id:'Florists',name:'Florists gathering'}
+	);
 	G.contextNames['flowers']='Flowers';
 		new G.Goods({
 		name:'Tulips',
@@ -1013,6 +1005,24 @@ func:function(){
 		},
 		mult:5,
 	});
+		new G.Goods({
+		name:'Flowerhouse',
+		desc:'This flowerhouse has a few flowers that can be found there. In this type of Flowerhouse you may find: [Lily of the Valley],[Bachelor\'s button],[Dianella],[Dandelion],[Black lily] and [Flax].',
+		icon:[0,0,'magixmod'],
+		res:{
+			'flowers':{'Lily of the Valley':1,'Bachelor\'s button':1,'Dianella':1,'Dandelion':1,'Black lily':1,'Flax':1},
+		},
+		mult:6,
+	});
+		new G.Goods({
+		name:'Cactus',
+		desc:'Spiky but icon of the deserts.',
+		icon:[5,8,'magixmod'],
+		res:{
+			'flowers':{'Cactus':2},
+		},
+		mult:4,
+	});
 //New land for mortal world
 		new G.Land({
 		name:'Lavender fields',
@@ -1025,9 +1035,50 @@ func:function(){
 			{type:['Roses'],chance:0.005,min:0.01,max:0.03},
 			{type:'freshwater',min:0.2,max:0.6},
 			{type:'Lavender flowers',min:0.2,max:0.6},
-			{type:['Roses'],chance:0.005,min:0.01,max:0.03},
+			{type:['Tulips'],chance:0.005,min:0.01,max:0.03},
+			{type:'wild bugs'},
+			{type:'rocky substrate'},
 		],
 	});
+		new G.Land({
+		name:'Flower forest',
+		names:['Flower forest'],
+		modifier:true,
+		image:13,
+		score:9,
+		goods:[
+			{type:'oak',min:0.2,max:1},
+			{type:['Roses'],chance:0.1,min:0.01,max:0.03},
+			{type:'freshwater',min:0.2,max:0.6},
+			{type:'Flowerhouse',min:0.3,max:0.7},
+			{type:['Tulips'],chance:0.08,min:0.01,max:0.03},
+			{type:['wolves'],chance:0.1,min:0.1,max:0.3},
+			{type:'wild bugs'},
+			{type:'rocky substrate'},
+		],
+	});
+		new G.Land({
+		name:'Xeric shrubland',
+		names:['Xeric shrubland'],
+		modifier:true,
+		image:13,
+		score:7,
+		goods:[
+			{type:'dead tree',amount:0.5},
+			{type:'Cactus',amount:0.6,chance:0.4},
+			{type:'succulents',min:0.1,max:0.6},
+			{type:'grass',chance:0.3,amount:0.3},
+			{type:'wild rabbits',chance:0.05},
+			{type:['foxes'],chance:0.3,min:0.1,max:0.3},
+			{type:['wolves'],chance:0.1,min:0.1,max:0.3},
+			{type:'wild bugs',amount:0.15},
+			{type:'freshwater',amount:0.13},
+			{type:'sandy soil'},
+			{type:'rocky substrate'},
+		],
+		],
+	});
+
 		new G.Policy({
 		name:'harvest rituals for flowers',
 		desc:'Improves [Florist] efficiency by 20%. Consumes 1 [faith] & 1 [influence] every 20 days; will stop if you run out.',
