@@ -125,6 +125,12 @@ func:function(){
 		desc:'This defines the amount of flowers, which you have currently in total.',
 		icon:[11,8,'magixmod'],
 		category:'flowersanddyes',
+		tick:function(me,tick)
+		hidden:true,
+		{
+			var toSpoil=me.amount*0.002;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		}
 	});
 		new G.Res({
 		name:'Dyes',
