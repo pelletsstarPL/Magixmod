@@ -933,6 +933,7 @@ func:function(){
 		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use.',
 		icon:[0,2],
 		cost:{},
+		req:{},
 		use:{'worker':1},
 		effects:[
 			{type:'gather',context:'gather',what:{'Cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
