@@ -921,7 +921,6 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
-	//Mode for Gatherers to allow them pick flowers instead of food/water rations. I gotta test it to get answer on question... will it work? So it won't work as it should yet.
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
