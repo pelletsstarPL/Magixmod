@@ -126,7 +126,6 @@ func:function(){
 		icon:[11,8,'magixmod'],
 		partOf:'misc materials',
 		category:'flowersanddyes',
-		hidden:false,
 	});
 		new G.Res({
 		name:'Dyes',
