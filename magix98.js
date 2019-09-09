@@ -1018,6 +1018,8 @@ func:function(){
 		name:'Lavender fields',
 		names:['Lavender fields'],
 		modifier:true,
+		image:13,
+		score:8,
 		goods:[
 			{type:'oak',min:0.2,max:1},
 			{type:['Roses'],chance:0.005,min:0.01,max:0.03},
