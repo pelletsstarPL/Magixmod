@@ -126,6 +126,7 @@ func:function(){
 		icon:[11,8,'magixmod'],
 		partOf:'misc materials',
 		category:'flowersanddyes',
+		hidden:false,
 	});
 		new G.Res({
 		name:'Dyes',
@@ -938,7 +939,7 @@ func:function(){
 		category:'production',
 		effects:[
 			{type:'gather',context:'gather',what:{'Cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
-			{type:'gather',context:'gather',what:{'Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
+			{type:'gather',context:'gather',what:{'Green Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
 	});
@@ -963,6 +964,7 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
+	//Category for 
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
