@@ -884,7 +884,23 @@ func:function(){
 		req:{'well-digging':true,'First portal to new world':true,'Plain island building':true},
 		limitPer:{'Land of the Plain Island':10},
 	});
-	
+		new G.Unit({
+		name:'Florist',
+		startWith:0,
+		desc:'@subclass of gatherer which instead of [food], [water] mainly, will collect flowers which will have its specific use.',
+		icon:[0,2],
+		cost:{},
+		use:{'worker':1},
+		//upkeep:{'food':0.2},
+		//alternateUpkeep:{'food':'spoiled food'},
+		effects:[
+			{type:'gather',context:'lavender',amount:2,max:4},//,multMax:{'leather pouches':1.1}//TODO
+			//{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3,req:{'gathering focus':'water'}},
+			{type:'gather',context:'gather',what:{'Cockscomb':1,'Pink tulip':1},amount:1,max:3},
+			{type:'gather',context:'gather',what:{'Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
+			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
+		],
+	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
     		name:'Plain island portal',
@@ -907,8 +923,6 @@ func:function(){
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
 	//Mode for Gatherers to allow them pick flowers instead of food/water rations. I gotta test it to get answer on question... will it work? So it won't work as it should yet.
-		//G.getDict('gatherer').modes['florist']={name:'Pick Flowers',desc:'Gatherer in this mode will collect [Flowers] instead of [food] or [water].',use:{'worker':1}};	
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Lavender':1},amount:1,max:1,req:{'plant lore':true}});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
@@ -970,5 +984,14 @@ func:function(){
 			{type:'Lavender flowers',min:0.2,max:0.6},
 			{type:['Roses'],chance:0.005,min:0.01,max:0.03},
 		],
+	});
+		new G.Policy({
+		name:'harvest rituals for flowers',
+		desc:'Improves [Florist] efficiency by 20%. Consumes 1 [faith] & 1 [influence] every 20 days; will stop if you run out.',
+		icon:[8,12,4,7],
+		cost:{'faith':1,'influence':3},
+		startMode:'off',
+		req:{'ritualism':true},
+		category:'faith',
 	});
 }});
