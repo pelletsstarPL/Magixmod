@@ -124,8 +124,8 @@ func:function(){
 		name:'Flowers',
 		desc:'This defines the amount of flowers, which you have currently in total.',
 		icon:[11,8,'magixmod'],
+		partOf:'misc materials',
 		category:'flowersanddyes',
-		tick:function(me,tick)
 	});
 		new G.Res({
 		name:'Dyes',
