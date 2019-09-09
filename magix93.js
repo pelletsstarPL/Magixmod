@@ -131,41 +131,47 @@ func:function(){
 		name:'Dyes',
 		desc:'This defines the amount of dyes crafted out of flowers, which you have currently in total.',
 		icon:[11,7,'magixmod'],
+		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
 		new G.Res({
 		name:'Lavender',
 		desc:'Nice flower. Has relaxing smell.',
 		icon:[0,9,'magixmod'],
-		partOf:'Flowers','misc materials',
+		partOf:'Flowers',
+		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
 		new G.Res({
 		name:'Salvia',
 		desc:'Plant which may be used to heal [wounded].',
 		icon:[1,9,'magixmod'],
-		partOf:'Flowers','misc materials',
+		partOf:'Flowers',
+		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
 		new G.Res({
 		name:'Bachelor\'s button',
 		desc:'Known as cornflower too. It looks cool while planted near house.',
 		icon:[0,8,'magixmod'],
-		partOf:'Flowers','misc materials',
+		partOf:'Flowers',
+		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
 		new G.Res({
 		name:'Dianella',
 		desc:'Commonly called flax lilies.',
 		icon:[1,8,'magixmod'],
-		partOf:'Flowers','misc materials',
+		partOf:'Flowers',
+		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
 		new G.Res({
 		name:'Desert rose',
 		desc:'Desert version of rose. As most plants these are good for flowerbeds.',
 		icon:[0,7,'magixmod'],
-		partOf:'Flowers','misc materials',
+		partOf:'Flowers',
+		partOf:'misc materials',
 		category:'flowersanddyes',
 	});
 		new G.Res({
