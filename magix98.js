@@ -1076,7 +1076,6 @@ func:function(){
 			{type:'sandy soil'},
 			{type:'rocky substrate'},
 		],
-		],
 	});
 
 		new G.Policy({
