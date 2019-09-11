@@ -1501,5 +1501,4 @@ func:function(){
 			}
 		}
 		return lvl;
-	}
-}}));
+}});
