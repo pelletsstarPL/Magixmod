@@ -1296,6 +1296,13 @@ func:function(){
 					else if (wetTile>0.5) biomes.push('boreal forest');
 					else biomes.push('tundra');
 				}
+				else if (tempTile>0.3)
+				{
+					if (landTile=='ocean') biomes.push('ocean');
+					else if (wetTile<0.25) biomes.push('forestdesert');
+					else if (wetTile>0.5) biomes.push('Flower forest');
+					else biomes.push('forest');
+				}
 				else if (tempTile>1.1)
 				{
 					if (landTile=='ocean') biomes.push('tropical ocean');
@@ -1314,8 +1321,13 @@ func:function(){
 					else if (wetTile<0.25) biomes.push('shrubland');
 					else if (wetTile>0.5) biomes.push('forest');
 					else biomes.push('prairie');
+				}
+				else
+				{
+					if (landTile=='ocean') biomes.push('tropical ocean');
+					else if (wetTile<0.25) biomes.push('shrubland');
+					else if (wetTile>0.5) biomes.push('forest');
 					else biomes.push('Xeric shrubland');
-					else biomes.push('Flower forest');
 				}
 				if (biomes.length==0) biomes.push('prairie');
 				lvl[x][y]=choose(biomes);
