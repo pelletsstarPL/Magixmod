@@ -1502,4 +1502,4 @@ func:function(){
 		}
 		return lvl;
 	}
-}});
+}}));
