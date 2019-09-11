@@ -1468,8 +1468,8 @@ func:function(){
 				{
 					if (landTile=='ocean') biomes.push('ocean');
 					else if (wetTile<0.25) biomes.push('forestdesert');
-					else if (wetTile>0.5) biomes.push('Flower forest');
-					else biomes.push('forest');
+					else if (wetTile>0.5) biomes.push('Lavender fields');
+					else biomes.push('Flower forest');
 				}
 				else if (tempTile>1.1)
 				{
