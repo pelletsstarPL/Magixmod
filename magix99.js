@@ -139,6 +139,11 @@ func:function(){
 		desc:'Nice flower. Has relaxing smell.',
 		icon:[0,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -146,6 +151,11 @@ func:function(){
 		desc:'Plant which may be used to heal [wounded].',
 		icon:[1,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -153,6 +163,11 @@ func:function(){
 		desc:'Known as cornflower too. It looks cool while planted near house.',
 		icon:[0,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -160,6 +175,11 @@ func:function(){
 		desc:'Commonly called flax lilies.',
 		icon:[1,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -167,6 +187,11 @@ func:function(){
 		desc:'Desert version of rose. As most plants these are good for flowerbeds.',
 		icon:[0,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -174,6 +199,11 @@ func:function(){
 		desc:'Cosmos is a genus, with the same common name of cosmos, consisting of flowering plants in the sunflower family.',
 		icon:[1,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -181,6 +211,11 @@ func:function(){
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
 		icon:[2,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -188,6 +223,11 @@ func:function(){
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
 		icon:[3,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -195,6 +235,11 @@ func:function(){
 		desc:'Yellow flower. If you\'re looking for low maintenance, drought tolerant, long blooming and cheerful plants for a flower border or a filler, coreopses are a perfect choice.',
 		icon:[2,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -202,6 +247,11 @@ func:function(){
 		desc:'The Crown imperial is a species of flowering plant in the lily family.',
 		icon:[3,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -209,6 +259,11 @@ func:function(){
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
 		icon:[2,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -216,6 +271,11 @@ func:function(){
 		desc:'It was first described by French botanist Viguier in 1814. The species have attractive flowers and have two distinct ranges.',
 		icon:[3,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -223,6 +283,11 @@ func:function(){
 		desc:'Cockscomb, is a flowering plant in the genus Rhinanthus.',
 		icon:[4,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -230,6 +295,11 @@ func:function(){
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
 		icon:[5,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -237,6 +307,11 @@ func:function(){
 		desc:'Zinnia is a genus of plants of the sunflower tribe within the daisy family.',
 		icon:[4,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -244,6 +319,11 @@ func:function(){
 		desc:'Spiky. Their main house is in desert. Can be used to make archaic caltrops and dye of course. Do not forget about decor use.',
 		icon:[5,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -251,6 +331,11 @@ func:function(){
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
 		icon:[5,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -258,6 +343,11 @@ func:function(){
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
 		icon:[4,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -265,6 +355,11 @@ func:function(){
 		desc:'Azure bluet is a perennial species in the Rubiaceae family.',
 		icon:[6,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -272,6 +367,11 @@ func:function(){
 		desc:'Daisy(Bellis perennis) is a common European species of daisy, of the family Asteraceae, often considered the archetypal species of that name.',
 		icon:[7,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -286,6 +386,11 @@ func:function(){
 		desc:'Easiest source of yellow dye.',
 		icon:[7,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -293,6 +398,11 @@ func:function(){
 		desc:'Black dye source. One of the types of lilies.',
 		icon:[6,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -300,6 +410,11 @@ func:function(){
 		desc:'Sometimes, the genus name is given as Althea; but don\'t confuse the plant with rose of sharon, which may also go by that name.',
 		icon:[7,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -307,6 +422,11 @@ func:function(){
 		desc:'Cattail (Typha)is a genus of about 30 species of monocotyledonous flowering plants in the family Typhaceae. These plants have a variety of common names such as reed or cattail.',
 		icon:[8,7,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -314,6 +434,11 @@ func:function(){
 		desc:'Flax (Linum usitatissimum), also known as common flax or linseed, is a member of the genus Linum in the family Linaceae.',
 		icon:[8,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -321,6 +446,11 @@ func:function(){
 		desc:'An blue orchid',
 		icon:[9,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -328,6 +458,11 @@ func:function(){
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
 		icon:[8,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -335,6 +470,11 @@ func:function(){
 		desc:'Lily of the valley sometimes written lily-of-the-valley, is a highly poisonous woodland flowering plant with sweetly scented, pendent, bell-shaped white flowers borne in sprays in spring. It is native throughout the cool temperate Northern Hemisphere in Asia and Europe.',
 		icon:[9,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -342,6 +482,11 @@ func:function(){
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
 		icon:[10,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -349,6 +494,11 @@ func:function(){
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
 		icon:[11,9,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -356,6 +506,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,0,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -363,6 +518,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,0,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -370,6 +530,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,1,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -377,6 +542,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,1,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -384,6 +554,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,2,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -391,6 +566,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,2,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -398,6 +578,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,3,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -405,6 +590,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,3,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -412,6 +602,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,4,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -419,6 +614,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,4,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -426,6 +626,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,5,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -433,6 +638,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,5,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -440,6 +650,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,6,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -447,6 +662,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[11,6,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -454,6 +674,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,7,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -461,6 +686,11 @@ func:function(){
 		desc:'Dye used in art and many other.',
 		icon:[10,8,'magixmod'],
 		partOf:'Dyes',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
 	});
 //Trait to unlock a mirror dimension
