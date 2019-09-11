@@ -1272,4 +1272,61 @@ func:function(){
 		req:{'ritualism':true},
 		category:'faith',
 	});
+		for (var x=0;x<w;x++)
+		{
+			for (var y=0;y<h;y++)
+			{
+				var tempTile=temp[x][y];
+				var wetTile=wet[x][y];
+				var landTile=lvl[x][y];
+				
+				var biomes=[];
+				if (tempTile<-0.1)
+				{
+					if (landTile=='ocean') biomes.push('arctic ocean');
+					else biomes.push('ice desert');
+				}
+				else if (tempTile<0.15)
+				{
+					if (landTile=='ocean') biomes.push('arctic ocean');
+					else if (wetTile<0.25) biomes.push('ice desert');
+					else if (wetTile>0.5) biomes.push('boreal forest');
+					else biomes.push('tundra');
+				}
+				else if (tempTile>1.1)
+				{
+					if (landTile=='ocean') biomes.push('tropical ocean');
+					else biomes.push('desert');
+				}
+				else if (tempTile>0.85)
+				{
+					if (landTile=='ocean') biomes.push('tropical ocean');
+					else if (wetTile<0.25) biomes.push('desert');
+					else if (wetTile>0.5) biomes.push('jungle');
+					else biomes.push('savanna');
+				}
+				else
+				{
+					if (landTile=='ocean') biomes.push('ocean');
+					else if (wetTile<0.25) biomes.push('shrubland');
+					else if (wetTile>0.5) biomes.push('forest');
+					else biomes.push('prairie');
+					else biomes.push('Xeric shrubland');
+					else biomes.push('Flower forest');
+				}
+				if (biomes.length==0) biomes.push('prairie');
+				lvl[x][y]=choose(biomes);
+			}
+		}
+		
+		for (var x=0;x<w;x++)//clean all tiles with no terrain
+		{
+			for (var y=0;y<h;y++)
+			{
+				if (lvl[x][y]=='none') lvl[x][y]='forest';
+			}
+		}
+		return lvl;
+	}
+}
 }});
