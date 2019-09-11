@@ -125,11 +125,7 @@ func:function(){
 		desc:'This defines the amount of flowers, which you have currently in total.',
 		icon:[11,8,'magixmod'],
 		partOf:'misc materials',
-		tick:function(me,tick)
-		{
-			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-		},
+		tick:loseMaterialsTick,
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -137,11 +133,7 @@ func:function(){
 		desc:'This defines the amount of dyes crafted out of flowers, which you have currently in total.',
 		icon:[11,7,'magixmod'],
 		partOf:'misc materials',
-		tick:function(me,tick)
-		{
-			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-		},
+		tick:loseMaterialsTick,
 		category:'flowersanddyes',
 	});
 		new G.Res({
