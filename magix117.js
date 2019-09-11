@@ -1122,7 +1122,7 @@ func:function(){
 		use:{'worker':1},
 		category:'production',
 		effects:[
-			{type:'gather',context:'gather',what:{'Cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
+			{type:'gather',context:'gather',what:{'cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'Green Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
