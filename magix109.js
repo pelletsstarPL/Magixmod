@@ -125,7 +125,7 @@ func:function(){
 		desc:'This defines the amount of flowers, which you have currently in total.',
 		icon:[11,8,'magixmod'],
 		partOf:'misc materials',
-		tick:loseMaterialsTick,
+		meta:true,
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -133,7 +133,7 @@ func:function(){
 		desc:'This defines the amount of dyes crafted out of flowers, which you have currently in total.',
 		icon:[11,7,'magixmod'],
 		partOf:'misc materials',
-		tick:loseMaterialsTick,
+		meta:true,
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -317,7 +317,7 @@ func:function(){
 		category:'flowersanddyes',
 	});
 		new G.Res({
-		name:'Cactus',
+		name:'cactus',
 		desc:'Spiky. Their main house is in desert. Can be used to make archaic caltrops and dye of course. Do not forget about decor use.',
 		icon:[5,8,'magixmod'],
 		partOf:'Flowers',
@@ -1204,7 +1204,7 @@ func:function(){
 		desc:'Spiky but icon of the deserts.',
 		icon:[5,8,'magixmod'],
 		res:{
-			'flowers':{'Cactus':2},
+			'flowers':{'cactus':2},
 		},
 		mult:4,
 	});
