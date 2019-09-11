@@ -1336,4 +1336,4 @@ func:function(){
 		}
 		return lvl;
 	}
-}});
+}};
