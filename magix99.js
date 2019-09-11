@@ -1272,6 +1272,9 @@ func:function(){
 		req:{'ritualism':true},
 		category:'faith',
 	});
+		G.traitsCategories.push(
+		{id:'magic',name:'magic'},
+	);
 		for (var x=0;x<w;x++)
 		{
 			for (var y=0;y<h;y++)
