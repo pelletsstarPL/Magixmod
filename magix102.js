@@ -1322,13 +1322,6 @@ func:function(){
 					else if (wetTile>0.5) biomes.push('forest');
 					else biomes.push('prairie');
 				}
-				else
-				{
-					if (landTile=='ocean') biomes.push('tropical ocean');
-					else if (wetTile<0.25) biomes.push('shrubland');
-					else if (wetTile>0.5) biomes.push('forest');
-					else biomes.push('Xeric shrubland');
-				}
 				if (biomes.length==0) biomes.push('prairie');
 				lvl[x][y]=choose(biomes);
 			}
