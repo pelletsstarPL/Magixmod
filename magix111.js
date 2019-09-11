@@ -1272,8 +1272,6 @@ func:function(){
 		req:{'ritualism':true},
 		category:'faith',
 	});
-		G.funcs['create map']=function(w,h)
-	{
 		//generate basic geography using Conway's Game of Life (rule : births from 4 to 9 neighbors, survival from 6 to 9 neighbors)
 		
 		var generate=function(w,h)
