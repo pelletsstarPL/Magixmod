@@ -126,6 +126,7 @@ func:function(){
 		icon:[11,8,'magixmod'],
 		partOf:'misc materials',
 		meta:true,
+		visible:false,
 		category:'flowersanddyes',
 	});
 		new G.Res({
@@ -134,6 +135,7 @@ func:function(){
 		icon:[11,7,'magixmod'],
 		partOf:'misc materials',
 		meta:true,
+		visible:false,
 		category:'flowersanddyes',
 	});
 		new G.Res({
