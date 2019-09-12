@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/dJubhEE.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/SPjqocW.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -63,6 +63,32 @@ func:function(){
 		icon:[6,4,'magixmod'],
 		category:'gear',
 		displayUsed:true,
+	});
+		new G.Res({
+		name:'Cactus spikes',
+		desc:'Spikes out of [cactus]. May wound... a lot!',
+		icon:[12,0,'magixmod'],
+		category:'misc',
+		partOf:'misc materials',
+	});
+		new G.Res({
+		name:'Sunflower seeds',
+		desc:'Edible seeds out of [Sunflower].',
+		icon:[12,1,'magixmod'],
+		category:'food',
+		partOf:'food',
+	});
+		new G.Res({
+		name:'Painting',
+		desc:'The paint made by Painter. People are proud from its beauty.',
+		icon:[12,4,'magixmod'],
+		category:'misc',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 	});
 		new G.Res({
 		name:'Land of the Plain Island',
@@ -137,7 +163,7 @@ func:function(){
 		meta:true,
 		visible:false,
 		category:'flowersanddyes',
-	});
+	});//1
 		new G.Res({
 		name:'Lavender',
 		desc:'Nice flower. Has relaxing smell.',
@@ -149,7 +175,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//2
 		new G.Res({
 		name:'Salvia',
 		desc:'Plant which may be used to heal [wounded].',
@@ -161,7 +187,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//3
 		new G.Res({
 		name:'Bachelor\'s button',
 		desc:'Known as cornflower too. It looks cool while planted near house.',
@@ -173,7 +199,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//4
 		new G.Res({
 		name:'Dianella',
 		desc:'Commonly called flax lilies.',
@@ -185,7 +211,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//5
 		new G.Res({
 		name:'Desert rose',
 		desc:'Desert version of rose. As most plants these are good for flowerbeds.',
@@ -197,7 +223,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//6
 		new G.Res({
 		name:'Cosmos',
 		desc:'Cosmos is a genus, with the same common name of cosmos, consisting of flowering plants in the sunflower family.',
@@ -209,7 +235,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//7
 		new G.Res({
 		name:'Pink rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
@@ -221,7 +247,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//8
 		new G.Res({
 		name:'Pink tulip',
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
@@ -233,7 +259,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//9
 		new G.Res({
 		name:'Coreopsis',
 		desc:'Yellow flower. If you\'re looking for low maintenance, drought tolerant, long blooming and cheerful plants for a flower border or a filler, coreopses are a perfect choice.',
@@ -245,7 +271,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//10
 		new G.Res({
 		name:'Crown imperial',
 		desc:'The Crown imperial is a species of flowering plant in the lily family.',
@@ -257,7 +283,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//11
 		new G.Res({
 		name:'Cyan rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
@@ -269,7 +295,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//12
 		new G.Res({
 		name:'Himalayan blue poopy',
 		desc:'It was first described by French botanist Viguier in 1814. The species have attractive flowers and have two distinct ranges.',
@@ -281,7 +307,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//13
 		new G.Res({
 		name:'Cockscomb',
 		desc:'Cockscomb, is a flowering plant in the genus Rhinanthus.',
@@ -293,7 +319,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//14
 		new G.Res({
 		name:'Red tulip',
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
@@ -305,7 +331,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//15
 		new G.Res({
 		name:'Green Zinnia',
 		desc:'Zinnia is a genus of plants of the sunflower tribe within the daisy family.',
@@ -317,7 +343,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//16
 		new G.Res({
 		name:'cactus',
 		desc:'Spiky. Their main house is in desert. Can be used to make archaic caltrops and dye of course. Do not forget about decor use.',
@@ -329,7 +355,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//17
 		new G.Res({
 		name:'Lime rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
@@ -341,7 +367,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//18
 		new G.Res({
 		name:'Lime tulip',
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
@@ -353,7 +379,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//19
 		new G.Res({
 		name:'Azure bluet',
 		desc:'Azure bluet is a perennial species in the Rubiaceae family.',
@@ -365,7 +391,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//20
 		new G.Res({
 		name:'Daisy',
 		desc:'Daisy(Bellis perennis) is a common European species of daisy, of the family Asteraceae, often considered the archetypal species of that name.',
@@ -377,14 +403,19 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//21
 		new G.Res({
 		name:'Sunflower',
 		desc:'From this flower except yellow dye you can gain edible seeds.',
 		icon:[6,8,'magixmod'],
 		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'flowersanddyes',
-	});
+	});//22
 		new G.Res({
 		name:'Dandelion',
 		desc:'Easiest source of yellow dye.',
@@ -396,7 +427,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//23
 		new G.Res({
 		name:'Black lily',
 		desc:'Black dye source. One of the types of lilies.',
@@ -408,7 +439,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//24
 		new G.Res({
 		name:'Black Hollyhock',
 		desc:'Sometimes, the genus name is given as Althea; but don\'t confuse the plant with rose of sharon, which may also go by that name.',
@@ -420,7 +451,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//25
 		new G.Res({
 		name:'Cattail',
 		desc:'Cattail (Typha)is a genus of about 30 species of monocotyledonous flowering plants in the family Typhaceae. These plants have a variety of common names such as reed or cattail.',
@@ -432,7 +463,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//26
 		new G.Res({
 		name:'Flax',
 		desc:'Flax (Linum usitatissimum), also known as common flax or linseed, is a member of the genus Linum in the family Linaceae.',
@@ -444,7 +475,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//27
 		new G.Res({
 		name:'Blue orchid',
 		desc:'An blue orchid',
@@ -456,7 +487,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//28
 		new G.Res({
 		name:'White tulip',
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
@@ -468,7 +499,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//29
 		new G.Res({
 		name:'Lily of the Valley',
 		desc:'Lily of the valley sometimes written lily-of-the-valley, is a highly poisonous woodland flowering plant with sweetly scented, pendent, bell-shaped white flowers borne in sprays in spring. It is native throughout the cool temperate Northern Hemisphere in Asia and Europe.',
@@ -480,7 +511,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//30
 		new G.Res({
 		name:'Gray rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
@@ -492,11 +523,23 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'flowersanddyes',
-	});
+	});//31
 		new G.Res({
 		name:'Gray tulip',
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
 		icon:[11,9,'magixmod'],
+		partOf:'Flowers',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'flowersanddyes',
+	});//32
+		new G.Res({
+		name:'Brown flower',
+		desc:'Just a brown flower.',
+		icon:[9,7,'magixmod'],
 		partOf:'Flowers',
 		tick:function(me,tick)
 		{
@@ -828,6 +871,24 @@ func:function(){
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':2},
+	});//Usage for dyes
+		new G.Unit({
+		name:'Painter',
+		desc:'@generates [culture] by using [Dyes] to make a paintings. Requires artistic thinking.',
+		icon:[12,2,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		upkeep:{'coin':0.1,'Dyes':4},
+		limitPer:{'population':40},
+		effects:[
+			{type:'gather',what:{'culture':0.08}},
+			{type:'gather',what:{'Painting':0.08}},
+			{type:'gather',what:{'culture':0.03},req:{'symbolism':true}},
+			{type:'mult',value:1.3,req:{'artistic thinking':true}},
+			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
+		],
+		req:{'oral tradition':true,'artistic thinking':true},
+		category:'cultural',
 	});
 		new G.Unit({
 		name:'Wizard',
@@ -1157,6 +1218,35 @@ func:function(){
 		G.getDict('artisan').effects.push({type:'convert',from:{'Pink rose':3},into:{'Pink dye':1},every:5,mode:'Make dyes from flowers(Set 1)'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Pink tulip':2},into:{'Pink dye':1},every:5,mode:'Make dyes from flowers(Set 1)'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Coreopsis':2},into:{'Yellow dye':1},every:5,mode:'Make dyes from flowers(Set 1)'});
+//Set 2
+		G.getDict('artisan').modes['Make dyes from flowers(Set 2)']={name:'Make dyes from flowers(Set 2)',desc:'Your artisan will convert these flowers into dyes: [Crown imperial],[Cyan rose],[Himalayan blue poopy],[Cockscomb],[Red tulip],[Green Zinnia],[cactus],[Lime rose]. @Bonus: While crafting dyes out of [cactus] you will get its spikes and a dye as usual.',req:{'plant lore':true},use:{'worker':1}};	
+		G.getDict('artisan').effects.push({type:'convert',from:{'Crown imperial':2},into:{'Orange dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Cyan rose':2},into:{'Cyan dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Himalayan blue poopy':2},into:{'Cyan dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Cockscomb':2},into:{'Red dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Red tulip':2},into:{'Red dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Green Zinnia':3},into:{'Green dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'cactus':2},into:{'Green dye':1,'Cactus spikes':3},every:5,mode:'Make dyes from flowers(Set 2)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Lime rose':2},into:{'Lime dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
+//Set 3
+		G.getDict('artisan').modes['Make dyes from flowers(Set 3)']={name:'Make dyes from flowers(Set 3)',desc:'Your artisan will convert these flowers into dyes: [Lime tulip],[Azure bluet],[Daisy],[Sunflower],[Dandelion],[Black lily],[Black Hollyhock],[Cattail]. @Bonus: While crafting dyes out of [Sunflower] you will get its edible [Sunflower seeds] and a dye as usual.',req:{'plant lore':true},use:{'worker':1}};	
+		G.getDict('artisan').effects.push({type:'convert',from:{'Lime tulip':2},into:{'Lime dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Azure bluet':4},into:{'Light gray dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Daisy':2},into:{'Light gray dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Sunflower':1},into:{'Yellow dye':1,'Sunflower seeds':3},every:7,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Dandelion':2},into:{'Yellow dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Black lily':3},into:{'Black dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Black Hollyhock':2},into:{'Black dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Cattail':2},into:{'Brown dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
+//Set 4
+		G.getDict('artisan').modes['Make dyes from flowers(Set 4)']={name:'Make dyes from flowers(Set 4)',desc:'Your artisan will convert these flowers into dyes: [Flax],[Blue orchid],[White tulip],[Lily of the Valley],[Gray rose],[Gray tulip],[Brown flower].',req:{'plant lore':true},use:{'worker':1}};	
+		G.getDict('artisan').effects.push({type:'convert',from:{'Flax':3},into:{'Light blue dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Blue orchid':2},into:{'Light blue dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'White tulip':2},into:{'White dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Lily of the Valley':3},into:{'White dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Brown flower':2},into:{'Brown dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Gray rose':3},into:{'Gray dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Gray tulip':2},into:{'Gray dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
