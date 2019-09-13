@@ -882,7 +882,7 @@ func:function(){
 		limitPer:{'population':40},
 		effects:[
 			{type:'gather',what:{'culture':0.08}},
-			{type:'gather',what:{'Painting':0.08}},
+			{type:'gather',what:{'Painting':0.008}},
 			{type:'gather',what:{'culture':0.03},req:{'symbolism':true}},
 			{type:'mult',value:1.3,req:{'artistic thinking':true}},
 			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
