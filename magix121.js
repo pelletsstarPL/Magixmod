@@ -1217,7 +1217,7 @@ func:function(){
 		use:{'worker':1},
 		//upkeep:{'coin':0.2},
 		effects:[
-			type:'convert',from:{'insight':3,'audlt':1},into:{'Instructor':1},every:500;
+			{type:'convert',from:{'insight':3,'audlt':1},into:{'Instructor':1},every:500};
 		],
 		req:{'speech':true},
 		category:'discovery',
