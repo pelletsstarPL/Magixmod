@@ -159,12 +159,13 @@ func:function(){
 		},
 	});
 		new G.Res({
-		name:'Alchemists',
+		name:'Alchemists',//There is something more :)
 		desc:'This stat shows all alchemists you currently have in total(children + audlt alchemists).',
 		icon:[12,8,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
 		visible:false,
+		category:'demog',
 		tick:function(me,tick)
 		{
 			//this.displayName=G.getName('inhabs');
@@ -305,7 +306,6 @@ func:function(){
 				G.gain('health',-leftout*0.1,'cold & darkness');
 			}
 		}
-		category:'demog',
 	});
 		new G.Res({
 		name:'Alchemist',
