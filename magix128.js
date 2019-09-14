@@ -1,7 +1,7 @@
 G.AddData({
 name:'Magix',
 author:'pelletsstarPL',
-desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. At the moment you can reach new dimensions which will increase your max land soon. More housing so you can fit more people. Mod utilizes vanilla part of the game by adding new modes or new units.',
+desc:'Magic! Magic!. </b>Fit more people, discover essences which have its secret use</b>. @At the moment you can reach new dimensions which will increase your max land soon. @More housing so you can fit more people. @Mod utilizes vanilla part of the game by adding new modes or new units.',
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
