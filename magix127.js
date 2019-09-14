@@ -303,6 +303,8 @@ func:function(){
 				}
 				G.gain('happiness',-leftout*0.1,'cold & darkness');
 				G.gain('health',-leftout*0.1,'cold & darkness');
+			}
+		}
 		category:'demog',
 	});
 		new G.Res({
