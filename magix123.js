@@ -1217,6 +1217,7 @@ func:function(){
 		icon:[12,6,'magixmod'],
 		cost:{},
 		use:{'worker':1},
+		gizmos:true,
 		//upkeep:{'coin':0.2},
 		modes:{
 			'off':G.MODE_OFF,
