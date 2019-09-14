@@ -1209,6 +1209,20 @@ func:function(){
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
 	});
+	new G.Unit({
+		name:'Thoughts sharer',
+		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. It is way to make very smart and intelligent [Instructor] appear.',
+		icon:[1,2],
+		cost:{},
+		use:{'worker':1},
+		//upkeep:{'coin':0.2},
+		effects:[
+			type:'convert',from:{'insight':3,'audlt':1},into:{'Instructor':1},every:500;
+		],
+		req:{'speech':true},
+		category:'discovery',
+		priority:5,
+	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
     		name:'Plain island portal',
@@ -1269,9 +1283,6 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
-	//Dreamers will now be able to share their thoughts and if are correct, they will teach them so audlt will become instructor
-		G.getDict('dreamer').modes['sharedream']={name:'Share dreams and thoughts',desc:'Dreamer will now use [insight] to teach [audlt] some things. People teached by him will become [Instructor]',req:{'speech':true},use:{'worker':1}};	
-		G.getDict('dreamer').effects.push({type:'convert',from:{'audlt':1},into:{'Instructor':1},every:1200,mode:'sharedream'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
