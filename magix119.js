@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. 
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/SPjqocW.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/L2vOlLh.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -17,8 +17,8 @@ func:function(){
 		},
 			'demog':{
 				name:'Demographics',
-				base:['baby','child','adult','elder','worker','sick','wounded'],
-				side:['population','housing','corpse','burial spot'],
+				base:['baby','child','adult','elder','worker','sick','wounded','Instructor'],
+				side:['population','housing','corpse','burial spot','Alchemists'],
 		},
 			'food':{
 				name:'Food & Water',
@@ -144,6 +144,25 @@ func:function(){
 		icon:[8,2,'magixmod'],
 		partOf:'misc materials',
 		category:'build',
+	});
+//New types of people
+		new G.Res({
+		name:'Instructor',
+		desc:'Instructor can teach people any thing. Can teach alchemy or many other. If he will become [elder], he will retire.',
+		icon:[12,6,'magixmod'],
+		partOf:'population',
+		category:'demog',
+		tick:function(me,tick)
+		{
+			var n=randomFloor(G.getRes('Instructor').amount*0.002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
+		},
+	});
+		new G.Res({
+		name:'Alchemists',
+		desc:'This stat shows all alchemists you currently have in total(children + audlt alchemists).',
+		icon:[12,8,'magixmod'],
+		partOf:'population',
+		category:'demog',
 	});
 //FLOWERS!,DYES!
 		new G.Res({
@@ -1250,7 +1269,9 @@ func:function(){
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={name:'Craft glass',desc:'Your kiln will now use sand to make a glass.',req:{'Crafting a glass':true},use:{'worker':1,'stone tools':1}};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
-	//Category for 
+	//Dreamers will now be able to share their thoughts and if are correct, they will teach them so audlt will become instructor
+		G.getDict('dreamer').modes['sharedream']={name:'Share dreams and thoughts',desc:'Dreamer will now use [insight] to teach [audlt] some things. People teached by him will become [Instructor]',req:{'speech':true},use:{'worker':1}};	
+		G.getDict('dreamer').effects.push({type:'convert',from:{'audlt':1},into:{'Instructor':1},every:1200,mode:'sharedream'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
