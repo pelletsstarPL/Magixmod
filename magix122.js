@@ -152,6 +152,7 @@ func:function(){
 		icon:[12,6,'magixmod'],
 		partOf:'population',
 		category:'demog',
+		displayUsed:true,
 		tick:function(me,tick)
 		{
 			var n=randomFloor(G.getRes('Instructor').amount*0.002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
@@ -162,6 +163,7 @@ func:function(){
 		desc:'This stat shows all alchemists you currently have in total(children + audlt alchemists).',
 		icon:[12,8,'magixmod'],
 		partOf:'population',
+		displayUsed:true,
 		category:'demog',
 	});
 //FLOWERS!,DYES!
@@ -1211,13 +1213,17 @@ func:function(){
 	});
 	new G.Unit({
 		name:'Thoughts sharer',
-		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. It is way to make very smart and intelligent [Instructor] appear.',
-		icon:[1,2],
+		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
+		icon:[12,6,'magixmod'],
 		cost:{},
 		use:{'worker':1},
 		//upkeep:{'coin':0.2},
+		modes:{
+			'off':G.MODE_OFF,
+			'thoughts':{name:'Make scholar people',icon:[8,2,'magixmod'],desc:'He will teach your [audlt] people and make them [Instructor]s.',use:{'worker':1}},
+		},
 		effects:[
-			{type:'convert',from:{'insight':3,'audlt':1},into:{'Instructor':1},every:500};
+			{type:'convert',from:{'insight':4,'audlt':1},into:{'Instructor':1},every:600,mode:'thoughts'},
 		],
 		req:{'speech':true},
 		category:'discovery',
