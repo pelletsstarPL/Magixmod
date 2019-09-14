@@ -17,7 +17,7 @@ func:function(){
 		},
 			'demog':{
 				name:'Demographics',
-				base:['baby','child','adult','elder','worker','sick','wounded','Instructor'],
+				base:['baby','child','adult','elder','worker','sick','wounded'],
 				side:['population','housing','corpse','burial spot','Alchemists'],
 		},
 			'food':{
