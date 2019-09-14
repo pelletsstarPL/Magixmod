@@ -148,7 +148,7 @@ func:function(){
 //New types of people
 		new G.Res({
 		name:'Instructor',
-		desc:'Instructor can teach people any thing. Can teach alchemy or many other. If he will become [elder], he will retire.',
+		desc:'Instructor can teach people any thing. Can teach alchemy or many other. If he will become [elder], he will retire.//The number on the left is how many are currently being employed, while the number on the right is your total amount of instructors.',
 		icon:[12,6,'magixmod'],
 		partOf:'population',
 		category:'demog',
@@ -160,7 +160,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Alchemists',//There is something more :)
-		desc:'This stat shows all alchemists you currently have in total(children + audlt alchemists).',
+		desc:'This stat shows all alchemists you currently have in total(children + audlt alchemists).//The number on the left is how many are currently being employed, while the number on the right is your total amount of alchemists.',
 		icon:[12,8,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
@@ -309,7 +309,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Alchemist',
-		desc:'Adult alchemist. Can be hired to special category of jobs same as his younger version. While he will at [elder] age he will retire.',
+		desc:'Adult alchemist. Can be hired to special category of jobs same as his younger version. While he will at [elder] age he will retire.//The number on the left is how many are currently being employed, while the number on the right is your total amount of adult alchemists.',
 		icon:[12,5,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
@@ -321,7 +321,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Child alchemist',
-		desc:'Younger alchemist. Can be hired to special category of jobs but chance for accidents will grow. Soon he will grow to [Alchemist].',
+		desc:'Younger alchemist. Can be hired to special category of jobs but chance for accidents will grow. Soon he will grow to [Alchemist].//The number on the left is how many are currently being employed, while the number on the right is your total amount of child alchemists.',
 		icon:[12,7,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
