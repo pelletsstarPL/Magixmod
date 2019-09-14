@@ -1214,14 +1214,14 @@ func:function(){
 	new G.Unit({
 		name:'Thoughts sharer',
 		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
-		icon:[12,6,'magixmod'],
+		icon:[1,2],
 		cost:{},
 		use:{'worker':1},
 		gizmos:true,
 		//upkeep:{'coin':0.2},
 		modes:{
 			'off':G.MODE_OFF,
-			'thoughts':{name:'Make scholar people',icon:[8,2,'magixmod'],desc:'He will teach your [audlt] people and make them [Instructor]s.',use:{'worker':1}},
+			'thoughts':{name:'Make scholar people',icon:[12,6,'magixmod'],desc:'He will teach your [audlt] people and make them [Instructor]s.',use:{'worker':1}},
 		},
 		effects:[
 			{type:'convert',from:{'insight':4,'audlt':1},into:{'Instructor':1},every:600,mode:'thoughts'},
