@@ -1,7 +1,7 @@
 G.AddData({
 name:'Magix',
 author:'pelletsstarPL',
-desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. At the moment you can reach new dimensions which will double your max land soon. More housing so you can fit more people.',
+desc:'Magic! Magic!. Fit more guys discover essences which have its secret use. At the moment you can reach new dimensions which will increase your max land soon. More housing so you can fit more people. Mod utilizes vanilla part of the game by adding new modes or new units.',
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
@@ -155,7 +155,7 @@ func:function(){
 		displayUsed:true,
 		tick:function(me,tick)
 		{
-			var n=randomFloor(G.getRes('Instructor').amount*0.002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
+			var n=randomFloor(G.getRes('Instructor').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');	
 		},
 	});
 		new G.Res({
@@ -164,6 +164,169 @@ func:function(){
 		icon:[12,8,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
+		visible:false,
+		tick:function(me,tick)
+		{
+			//this.displayName=G.getName('inhabs');
+			
+			if (me.amount>0)
+			{
+				//note : we also sneak in some stuff unrelated to population here
+
+				if (tick%50==0)
+				{
+					var rituals=['harvest rituals for flowers'];
+					for (var i in rituals)
+					{
+						if (G.checkPolicy(rituals[i])=='on')
+						{
+							if (G.getRes('faith').amount<=0) G.setPolicyModeByName(rituals[i],'off');
+							else G.lose('faith',1,'rituals');
+							if (G.getRes('influence').amount<=0) G.setPolicyModeByName(rituals[i],'off');
+							else G.lose('influence',1,'rituals');
+						}
+					}
+				}
+				
+				var productionMult=G.doFunc('production multiplier',1);
+				
+				var deathUnhappinessMult=1;
+				if (G.has('fear of death')) deathUnhappinessMult*=2;
+				if (G.has('belief in the afterlife')) deathUnhappinessMult/=2;
+				if (tick%3==0 && G.checkPolicy('disable eating')=='off')
+				{
+					//drink water
+					var toConsume=0;
+					var weights={'Child alchemist':0.3,'Alchemist':0.5,'Instructor':0.5};
+					for (var i in weights)
+					{toConsume+=G.getRes(i).amount*weights[i];}
+					var rations=G.checkPolicy('water rations');
+					if (rations=='none') {toConsume=0;G.gain('happiness',-me.amount*3,'water rations');G.gain('health',-me.amount*2,'water rations');}
+					else if (rations=='meager') {toConsume*=0.5;G.gain('happiness',-me.amount*1,'water rations');G.gain('health',-me.amount*0.5,'water rations')}
+					else if (rations=='plentiful') {toConsume*=1.5;G.gain('happiness',me.amount*1,'water rations');}
+					toConsume=randomFloor(toConsume);
+					var lacking=toConsume-G.lose('water',toConsume,'drinking');
+					if (rations=='none') lacking=me.amount*0.5;
+					if (lacking>0)//are we out of water?
+					{
+						//resort to muddy water
+						if (rations!='none' && G.checkPolicy('drink muddy water')=='on') lacking=lacking-G.lose('muddy water',lacking,'drinking');
+						if (lacking>0 && G.checkPolicy('disable aging')=='off')//are we also out of muddy water?
+						{
+							G.gain('happiness',-lacking*5,'no water');
+							//die off
+							var toDie=(lacking/5)*0.05;
+							if (G.year<1) toDie/=5;//less deaths in the first year
+							var died=0;
+							var weights={'Child alchemist':0.2,'Alchemist':0.5,'Instructor':0.5};//the elderly are the first to starve off
+							var sum=0;for (var i in weights){sum+=weights[i];}for (var i in weights){weights[i]/=sum;}//normalize
+							for (var i in weights){var ratio=(G.getRes(i).amount/me.amount);weights[i]=ratio+(1-ratio)*weights[i];}
+							for (var i in weights)
+							{var n=G.lose(i,randomFloor((Math.random()*0.8+0.2)*toDie*weights[i]),'dehydration');died+=n;}
+							G.gain('corpse',died,'dehydration');
+							G.gain('happiness',-died*20*deathUnhappinessMult,'dehydration');
+							G.getRes('died this year').amount+=died;
+							if (died>0) G.Message({type:'bad',mergeId:'diedDehydration',textFunc:function(args){return B(args.died)+' '+(args.died==1?'person':'people')+' died from dehydration.';},args:{died:died},icon:[5,4]});
+						}
+					}
+					
+					//eat food
+					var toConsume=0;
+					var consumeMult=1;
+					var happinessAdd=0;
+					if (G.has('culture of moderation')) {consumeMult*=0.85;happinessAdd-=0.1;}
+					else if (G.has('joy of eating')) {consumeMult*=1.15;happinessAdd+=0.1;}
+					var weights={'Child alchemist':0.5,'Alchemist':1,'Instructor':1};
+					for (var i in weights)
+					{toConsume+=G.getRes(i).amount*weights[i];}
+					var rations=G.checkPolicy('food rations');
+					if (rations=='none') {toConsume=0;G.gain('happiness',-me.amount*3,'food rations');G.gain('health',-me.amount*2,'food rations');}
+					else if (rations=='meager') {toConsume*=0.5;G.gain('happiness',-me.amount*1,'food rations');G.gain('health',-me.amount*0.5,'food rations');}
+					else if (rations=='plentiful') {toConsume*=1.5;G.gain('happiness',me.amount*1,'food rations');}
+					toConsume=randomFloor(toConsume*consumeMult);
+					var consumed=G.lose('food',toConsume,'eating');
+					G.gain('happiness',G.lose('salt',randomFloor(consumed*0.1),'eating')*5,'salting food');//use salt
+					G.gain('happiness',consumed*happinessAdd,'food culture');
+					var lacking=toConsume-consumed;
+					if (rations=='none') lacking=me.amount*1;
+					
+					if (lacking>0)//are we out of food?
+					{
+						//resort to spoiled food
+						if (rations!='none' && G.checkPolicy('eat spoiled food')=='on') lacking=lacking-G.lose('spoiled food',lacking,'eating');
+						if (lacking>0 && G.checkPolicy('disable aging')=='off')//are we also out of spoiled food?
+						{
+							G.gain('happiness',-lacking*5,'no food');
+							//die off
+							var toDie=(lacking/5)*0.05;
+							if (G.year<1) toDie/=5;//less deaths in the first year
+							var died=0;
+							var weights={'Child alchemist':0.2,'Alchemist':0.5,'Instructor':0.5};//the elderly are the first to starve off
+							var sum=0;for (var i in weights){sum+=weights[i];}for (var i in weights){weights[i]/=sum;}//normalize
+							for (var i in weights){var ratio=(G.getRes(i).amount/me.amount);weights[i]=ratio+(1-ratio)*weights[i];}
+							for (var i in weights)
+							{var n=G.lose(i,randomFloor((Math.random()*0.8+0.2)*toDie*weights[i]),'starvation');died+=n;}
+							G.gain('corpse',died,'starvation');
+							G.gain('happiness',-died*20*deathUnhappinessMult,'starvation');
+							G.getRes('died this year').amount+=died;
+							if (died>0) G.Message({type:'bad',mergeId:'diedStarvation',textFunc:function(args){return B(args.died)+' '+(args.died==1?'person':'people')+' died from starvation.';},args:{died:died},icon:[5,4]});
+						}
+					}
+				}
+				
+				//clothing
+				var objects={'basic clothes':[0.1,0.1],'primitive clothes':[0,0]};
+				var leftout=me.amount;
+				var prev=leftout;
+				var fulfilled=0;
+				for (var i in objects)
+				{
+					fulfilled=Math.min(me.amount,Math.min(G.getRes(i).amount,leftout));
+					G.gain('happiness',fulfilled*objects[i][0],'clothing');
+					G.gain('health',fulfilled*objects[i][1],'clothing');
+					leftout-=fulfilled;
+				}
+				G.gain('happiness',-leftout*0.15,'no clothing');
+				G.gain('health',-leftout*0.15,'no clothing');
+				
+				//fire
+				var objects={'fire pit':[10,0.1,0.1]};
+				var leftout=me.amount;
+				var prev=leftout;
+				var fulfilled=0;
+				for (var i in objects)
+				{
+					fulfilled=Math.min(me.amount,Math.min(G.getRes(i).amount*objects[i][0],leftout));
+					G.gain('happiness',fulfilled*objects[i][1],'warmth & light');
+					G.gain('health',fulfilled*objects[i][2],'warmth & light');
+					leftout-=fulfilled;
+				}
+				G.gain('happiness',-leftout*0.1,'cold & darkness');
+				G.gain('health',-leftout*0.1,'cold & darkness');
+		category:'demog',
+	});
+		new G.Res({
+		name:'Alchemist',
+		desc:'Adult alchemist. Can be hired to special category of jobs same as his younger version. While he will at [elder] age he will retire.',
+		icon:[12,5,'magixmod'],
+		partOf:'population',
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var n=randomFloor(G.getRes('Alchemist').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Alchemist',n,'aging up');
+		},
+		category:'demog',
+	});
+		new G.Res({
+		name:'Child alchemist',
+		desc:'Younger alchemist. Can be hired to special category of jobs but chance for accidents will grow. Soon he will grow to [Alchemist].',
+		icon:[12,7,'magixmod'],
+		partOf:'population',
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
+		},
 		category:'demog',
 	});
 //FLOWERS!,DYES!
