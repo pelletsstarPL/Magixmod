@@ -1441,7 +1441,7 @@ func:function(){
 			'thoughts':{name:'Make scholar people',icon:[12,6,'magixmod'],desc:'He will teach your [adult] people and make them [Instructor]s.',use:{'worker':1}},
 		},
 		effects:[
-			{type:'convert',from:{'insight':4,'adult':1},into:{'Instructor':1},every:450,mode:'thoughts'},
+			{type:'convert',from:{'insight':4,'adult':1},into:{'Instructor':1},every:375,mode:'thoughts'},
 		],
 		req:{'speech':true},
 		category:'discovery',
@@ -1463,7 +1463,13 @@ func:function(){
     		category:'dimensions',
 	});
 	//Artisans will make wands for wizards. Mode for it.
-		G.getDict('artisan').modes['Craftwands']={name:'Craft wands',desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',req:{'Wizardry':true},use:{'worker':1,'stone tools':2}};	
+		G.getDict('artisan').modes['Craftwands']={
+			name:'Craft wands',
+			icon:[6,4,'magixmod'],
+			desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',
+			req:{'Wizardry':true},
+			use:{'worker':1,'stone tools':2},
+		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':4,'stone':2},into:{'Wand':1},every:5,mode:'Craftwands'});
 //4 modes for Artisans. Each of them can convert 8 different flowers into its dyes.
 		G.getDict('artisan').modes['Make dyes from flowers(Set 1)']={name:'Make dyes from flowers(Set 1)',desc:'Your artisan will convert these flowers into dyes: [Lavender],[Salvia],[Bachelor\'s button],[Desert rose],[Cosmos],[Pink rose],[Pink tulip],[Coreopsis].',req:{'plant lore':true},use:{'worker':1}};	
