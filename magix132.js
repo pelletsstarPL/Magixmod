@@ -1438,7 +1438,7 @@ func:function(){
 			'thoughts':{name:'Make scholar people',icon:[12,6,'magixmod'],desc:'He will teach your [adult] people and make them [Instructor]s.',use:{'worker':1}},
 		},
 		effects:[
-			{type:'convert',from:{'insight':4,'adult':1},into:{'Instructor':1},every:600,mode:'thoughts'},
+			{type:'convert',from:{'insight':4,'adult':1},into:{'Instructor':1},every:450,mode:'thoughts'},
 		],
 		req:{'speech':true},
 		category:'discovery',
