@@ -1407,8 +1407,8 @@ func:function(){
 		upkeep:{'water':5},
 		effects:[
 			{type:'waste',chance:0.001/1000},
-			{type:'convert',from:{'adult':1},into:{'Alchemist':1},every:500,req:{'Teach alchemists':on}},
-			{type:'convert',from:{'child':1},into:{'Child alchemist':1},every:500,req:{'Alchemy for children':on}},
+			{type:'convert',from:{'adult':1},into:{'Alchemist':1},every:500,req:{'Teach alchemists':true}},
+			{type:'convert',from:{'child':1},into:{'Child alchemist':1},every:500,req:{'Alchemy for children':true}},
 		],
 		req:{'construction II':true},
 		category:'plainisleunit',
