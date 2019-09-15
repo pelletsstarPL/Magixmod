@@ -165,6 +165,7 @@ func:function(){
 		partOf:'population',
 		displayUsed:true,
 		visible:true,
+		meta:true,
 		tick:function(me,tick)
 		{
 			//this.displayName=G.getName('inhabs');
