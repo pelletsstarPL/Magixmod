@@ -5,7 +5,7 @@ desc:'Magic! Magic!. </b>Fit more people, discover essences which have its secre
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/L2vOlLh.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/A7FJGUg.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -935,6 +935,15 @@ func:function(){
 		chance:10,
 		req:{'belief in the afterlife':true,'Wizard complex':true},
 	});
+		new G.Trait({
+		name:'Will to know more',
+		desc:'@After opening a portal to Plain Island people started to become more curious. @Curiosity has gotten even stronger with this trait',
+		icon:[7,12,7,5],
+		cost:{'culture':5,'wisdom':25},
+		chance:3,
+		category:'knowledge',
+		req:{'First portal to new world':true},
+	});
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -1252,6 +1261,7 @@ func:function(){
 		effects:[
 			{type:'provide',what:{'housing':15}},
 			{type:'provide',what:{'food storage':65}},
+			{type:'waste',chance:0.0004/1000},
 		],
 		req:{'construction':true,'More useful housing':true,'Well of Mana':true},
 		category:'housing',
@@ -1277,6 +1287,7 @@ func:function(){
 		use:{'Land of the Plain Island':3},
 		effects:[
 			{type:'provide',what:{'housing':50}},
+			{type:'waste',chance:0.00001/1000},
 		],
 		req:{'construction II':true,'Concrete making':true},
 		category:'plainisleunit',
@@ -1360,6 +1371,47 @@ func:function(){
 		category:'plainisleunit',
 		req:{'well-digging':true,'First portal to new world':true,'Plain island building':true},
 		limitPer:{'Land of the Plain Island':10},
+	});
+		new G.Unit({
+		name:'Hardened house',
+		desc:'@provides 18 [housing]. Bigger, made with hardened materials. Has lower chances to waste.',
+		icon:[6,6,'magixmod',4,6'magixmod'],
+		cost:{'basic building materials':1500,'glass':5},
+		use:{'Land of the Plain Island':1},
+		effects:[
+			{type:'waste',chance:0.001/1000},
+			{type:'provide',what:{'housing':18}},
+		],
+		req:{'construction II':true},
+		category:'plainisleunit',
+	});
+		new G.Unit({
+		name:'Hardened barn',
+		desc:'@provides 5000[food storage]. Bigger, harder barn has lower chance to be wasted. To keep stored food safe and fresh it will need 3 guys.',
+		icon:[7,6,'magixmod',4,6'magixmod'],
+		cost:{'basic building materials':1500,'glass':5},
+		use:{'Land of the Plain Island':1,'worker':3},
+		effects:[
+			{type:'waste',chance:0.001/1000},
+			{type:'provide',what:{'food storage':5000}},
+		],
+		req:{'construction II':true},
+		category:'plainisleunit',
+	});
+		new G.Unit({
+		name:'School of alchemy',
+		desc:'@The building where people may learn basics of alchemy. You can decide who may learn it in Policies tab. Needs water to work... you know why it does need water.',
+		icon:[5,6,'magixmod'],
+		cost:{'basic building materials':1500,'glass':5},
+		use:{'Land of the Plain Island':1,'Instructor':3},
+		upkeep:{'water':5},
+		effects:[
+			{type:'waste',chance:0.001/1000},
+			{type:'convert',from:{'adult':1},into:{'Alchemist':1},every:500,req:{'Teach alchemists':on}},
+			{type:'convert',from:{'child':1},into:{'Child alchemist':1},every:500,req:{'Alchemy for children':on}},
+		],
+		req:{'construction II':true},
+		category:'plainisleunit',
 	});
 		new G.Unit({
 		name:'Florist',
@@ -1467,6 +1519,9 @@ func:function(){
 		});
 	G.policyCategories.push(
 			{id:'Florists',name:'Florists gathering'}
+	);
+	G.policyCategories.push(
+			{id:'Education',name:'Education'}
 	);
 	G.contextNames['flowers']='Flowers';
 		new G.Goods({
@@ -1577,6 +1632,24 @@ func:function(){
 		startMode:'off',
 		req:{'ritualism':true},
 		category:'faith',
+	});
+		new G.Policy({
+		name:'Teach alchemists',
+		desc:'Will start teach alchemists. In short this option will allow you to start learning [adult] to become [Alchemist].',
+		icon:[12,9,'magixmod',12,5,'magixmod'],
+		cost:{'influence':15},
+		startMode:'on',
+		req:{'Will to know more':true},
+		category:'Education',
+	});
+		new G.Policy({
+		name:'Alchemy for children',
+		desc:'Will start teach children to become [Child alchemist]. @Note: teaching children will make more [wounded],[sick] or even dead, because of drinking too strong potion by children.',
+		icon:[12,9,'magixmod',12,7,'magixmod'],
+		cost:{'influence':15},
+		startMode:'off',
+		req:{'Will to know more':true},
+		category:'Education',
 	});
 		//New tile generation is InDev. I am open to any programming tips
 	
