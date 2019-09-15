@@ -326,7 +326,7 @@ func:function(){
 		displayUsed:true,
 		tick:function(me,tick)
 		{
-			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
+			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('Alchemist',n,'aging up');G.lose('Child alchemist',n,'aging up');
 		},
 		category:'demog',
 	});
