@@ -935,7 +935,7 @@ func:function(){
 		new G.Trait({
 		name:'Will to know more',
 		desc:'@After opening a portal to Plain Island people started to become more curious. @Curiosity has gotten even stronger with this trait',
-		icon:[8,12,8,6],
+		icon:[8,12,8,5],
 		cost:{'culture':5,'wisdom':25},
 		chance:3,
 		category:'knowledge',
