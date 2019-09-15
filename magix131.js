@@ -164,8 +164,7 @@ func:function(){
 		icon:[12,8,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
-		visible:false,
-		category:'demog',
+		visible:true,
 		tick:function(me,tick)
 		{
 			//this.displayName=G.getName('inhabs');
@@ -339,7 +338,6 @@ func:function(){
 		partOf:'misc materials',
 		meta:true,
 		visible:false,
-		category:'flowersanddyes',
 	});
 		new G.Res({
 		name:'Dyes',
@@ -348,7 +346,6 @@ func:function(){
 		partOf:'misc materials',
 		meta:true,
 		visible:false,
-		category:'flowersanddyes',
 	});//1
 		new G.Res({
 		name:'Lavender',
