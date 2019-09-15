@@ -1375,7 +1375,7 @@ func:function(){
 		new G.Unit({
 		name:'Hardened house',
 		desc:'@provides 18 [housing]. Bigger, made with hardened materials. Has lower chances to waste.',
-		icon:[6,6,'magixmod',4,6'magixmod'],
+		icon:[6,6,'magixmod',4,6,'magixmod'],
 		cost:{'basic building materials':1500,'glass':5},
 		use:{'Land of the Plain Island':1},
 		effects:[
@@ -1388,7 +1388,7 @@ func:function(){
 		new G.Unit({
 		name:'Hardened barn',
 		desc:'@provides 5000[food storage]. Bigger, harder barn has lower chance to be wasted. To keep stored food safe and fresh it will need 3 guys.',
-		icon:[7,6,'magixmod',4,6'magixmod'],
+		icon:[7,6,'magixmod',4,6,'magixmod'],
 		cost:{'basic building materials':1500,'glass':5},
 		use:{'Land of the Plain Island':1,'worker':3},
 		effects:[
