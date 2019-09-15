@@ -313,6 +313,7 @@ func:function(){
 		icon:[12,5,'magixmod'],
 		partOf:'Alchemists',
 		displayUsed:true,
+		meta:true,
 		tick:function(me,tick)
 		{
 			var n=randomFloor(G.getRes('Alchemist').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Alchemist',n,'aging up');
@@ -325,6 +326,7 @@ func:function(){
 		icon:[12,7,'magixmod'],
 		partOf:'Alchemists',
 		displayUsed:true,
+		meta:true,
 		tick:function(me,tick)
 		{
 			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('Alchemist',n,'aging up');G.lose('Child alchemist',n,'aging up');
