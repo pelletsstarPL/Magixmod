@@ -154,7 +154,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Colored clothing',
-		desc:'Sewn together from [leather] or textile fiber and in addition colored with help of [Dyes].//Each [population,Person] wearing clothing is slightly happier and healthier.'+clothesInfo,
+		desc:'Sewn together from [leather] or textile fiber and in addition colored with help of [Dyes].//Each [population,Person] wearing clothing is slightly happier and healthier.',
 		icon:[13,0,'magixmod'],
 		category:'gear',
 		tick:function(me,tick)
