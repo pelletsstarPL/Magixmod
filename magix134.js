@@ -160,11 +160,10 @@ func:function(){
 	});
 		new G.Res({
 		name:'Alchemists',//There is something more :)
-		desc:'This stat shows all alchemists you currently have in total(children + audlt alchemists).//The number on the left is how many are currently being employed, while the number on the right is your total amount of alchemists.',
+		desc:'This stat shows all alchemists you currently have in total(children + adult alchemists).//The number on the left is how many are currently being employed, while the number on the right is your total amount of alchemists.',
 		icon:[12,8,'magixmod'],
 		partOf:'population',
 		displayUsed:true,
-		visible:true,
 		meta:true,
 		tick:function(me,tick)
 		{
@@ -1407,8 +1406,8 @@ func:function(){
 		upkeep:{'water':5},
 		effects:[
 			{type:'waste',chance:0.001/1000},
-			{type:'convert',from:{'adult':1},into:{'Alchemist':1},every:500,req:{'Teach alchemists':'on'}},
-			{type:'convert',from:{'child':1},into:{'Child alchemist':1},every:500,req:{'Alchemy for children':'on'}},
+			{type:'convert',from:{'adult':1},into:{'Alchemist':1},every:400,req:{'Teach alchemists':'on'}},
+			{type:'convert',from:{'child':1},into:{'Child alchemist':1},every:400,req:{'Alchemy for children':'on'}},
 		],
 		req:{'construction II':true},
 		category:'plainisleunit',
