@@ -1,11 +1,11 @@
 G.AddData({
 name:'Magix',
 author:'pelletsstarPL',
-desc:'Magic! Magic!. </b>Fit more people, discover essences which have its secret use</b>. @At the moment you can reach new dimensions which will increase your max land soon. @More housing so you can fit more people. @Mod utilizes vanilla part of the game by adding new modes or new units.',
+desc:'Magic! Magic!. Fit more people, discover essences which have its secret use. At the moment you can reach new dimensions which will increase your max land soon. More housing so you can fit more people. @Mod utilizes vanilla part of the game by adding new modes or new units.',
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/A7FJGUg.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/l4efiX7.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -144,6 +144,37 @@ func:function(){
 		icon:[8,2,'magixmod'],
 		partOf:'misc materials',
 		category:'build',
+	});
+		new G.Res({
+		name:'Scobs',
+		desc:'Scobs are effect of carver working at [Wooden statuette].',
+		icon:[13,2,'magixmod'],
+		partOf:'misc materials',
+		category:'misc',
+	});
+		new G.Res({
+		name:'Colored clothing',
+		desc:'Sewn together from [leather] or textile fiber and in addition colored with help of [Dyes].//Each [population,Person] wearing clothing is slightly happier and healthier.'+clothesInfo,
+		icon:[13,0,'magixmod'],
+		category:'gear',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.002;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
+		new G.Res({
+		name:'Wooden statuette',
+		desc:'A small idol that was rudimentarily carved from [log] or [lumber].//May be used up over time, creating [culture].',
+		icon:[13,1,'magixmod'],
+		partOf:'misc materials',
+		category:'misc',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.03;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 	});
 //New types of people
 		new G.Res({
@@ -1542,6 +1573,29 @@ func:function(){
 			use:{'worker':1,'stone tools':1},
 		};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
+//Carving wooden statuettes
+		G.getDict('carver').modes['Carve wooden statuettes']={
+			name:'Carve wooden statuettes',
+			icon:[13,1,'magixmod'],
+			desc:'Your carver will now use carve statuettes out of [Log].',
+			use:{'worker':1,'knapped tools':1},
+		};	
+		G.getDict('carver').effects.push({type:'convert',from:{'log':1},into:{'Wooden statuette':1,'Scobs':3},every:7,mode:'Carve wooden statuettes'});
+//Weaving colored clothing
+		G.getDict('clothier').modes['Weave leater colored clothing']={
+			name:'Weave colored clothing',
+			icon:[13,0,'magixmod'],
+			desc:'Your clothier will now weave [leather] but colored clothing.',
+			use:{'worker':1,'stone tools':1},
+		};	
+		G.getDict('clothier').effects.push({type:'convert',from:{'leather':2,'Dyes':3},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
+		G.getDict('clothier').modes['Weave fiber colored clothing']={
+			name:'Weave colored clothing',
+			icon:[13,0,'magixmod'],
+			desc:'Your clothier will now weave fiber but colored clothing.',
+			use:{'worker':1,'stone tools':1},
+		};
+		G.getDict('clothier').effects.push({type:'convert',from:{'herb':52,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
