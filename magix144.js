@@ -1510,7 +1510,8 @@ func:function(){
 			req:{'plant lore':true},
 			use:{'worker':1},
 			icon:[11,7,'magixmod'],
-		};	
+		};
+
 		G.getDict('artisan').effects.push({type:'convert',from:{'Lavender':2},into:{'Purple dye':1},every:5,mode:'Make dyes from flowers(Set 1)'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Salvia':3},into:{'Magenta dye':1},every:5,mode:'Make dyes from flowers(Set 1)'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Bachelor\'s button':2},into:{'Blue dye':1},every:5,mode:'Make dyes from flowers(Set 1)'});
@@ -1583,6 +1584,8 @@ func:function(){
 			use:{'worker':1,'knapped tools':1},
 		};	
 		G.getDict('carver').effects.push({type:'convert',from:{'log':1},into:{'Wooden statuette':1,'Scobs':3},every:7,mode:'Carve wooden statuettes'});
+//While woodcutter cuts tree to grant logs
+		G.getDict('woodcutter').effects.push({type:'gather',context:'gather',what:{'Scobs': 0.1},amount:1,max:1});
 //Weaving colored clothing
 		G.getDict('clothier').modes['Weave leather colored clothing']={
 			name:'Weave leather colored clothing',
