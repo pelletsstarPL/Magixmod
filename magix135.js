@@ -1602,7 +1602,7 @@ func:function(){
 			desc:'Your clothier will now dye already made [basic clothes] making them become[Colored clothing].',
 			use:{'worker':1,'stone tools':1},
 		};
-		G.getDict('clothier').effects.push({type:'convert',from:{'herb':52,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
+		G.getDict('clothier').effects.push({type:'convert',from:{'basic clothes':1,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
