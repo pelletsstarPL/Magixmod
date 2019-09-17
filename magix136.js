@@ -1452,6 +1452,7 @@ func:function(){
 		category:'production',
 		effects:[
 			{type:'gather',context:'gather',what:{'cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
+			{type:'gather',context:'gather',what:{'Lime rose':1,'Pink rose':1,'Gray rose':1,'Cyan rose':1,'Desert rose':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'Green Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
@@ -1747,6 +1748,15 @@ func:function(){
 		startMode:'off',
 		req:{'Will to know more':true},
 		category:'Education',
+	});
+		new G.Policy({
+		name:'Gather roses',
+		desc:'Makes florist start gathering all types of rose.',
+		icon:[0,7,'magixmod'],
+		cost:{'influence':15},
+		startMode:'off',
+		req:{'plant lore':true},
+		category:'Florists',
 	});
 		//New tile generation is InDev. I am open to any programming tips
 	
