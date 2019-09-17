@@ -1761,10 +1761,10 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
-		G.getDict('desert').res['gather']['cactus']=0.04;
-		G.getDict('desert').res['gather']['Brown flower']=0.04;
-		G.getDict('grass').res['gather']['Daisy']=0.06;
-		G.getDict('grass').res['gather']['Lavender']=0.03;
+	G.getDict('desert').res['gather']['cactus']=0.04;
+	G.getDict('desert').res['gather']['Brown flower']=0.04;
+	G.getDict('grass').res['gather']['Daisy']=0.06;
+	G.getDict('grass').res['gather']['Lavender']=0.03;
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
