@@ -1451,12 +1451,12 @@ func:function(){
 		use:{'worker':1},
 		category:'production',
 		effects:[
-			{type:'gather',context:'flowers',what:{'cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
+			{type:'gather',context:'gather',what:{'cactus':1,'Pink tulip':1,'Salvia':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'Lime rose':1,'Pink rose':1,'Gray rose':1,'Cyan rose':1,'Desert rose':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'Green Zinnia':1,'Sunflower':1},amount:1,max:1,req:{'plant lore':true}},
-			{type:'gather',context:'flowers',what:{'Lavender':1},amount:1,max:2,req:{'plant lore':true}},
-			{type:'gather',context:'flowers',what:{'Brown flower':1},amount:1,max:1,req:{'plant lore':true}},
-			{type:'gather',context:'flowers',what:{'Daisy':1},amount:1,max:1,req:{'plant lore':true}},
+			{type:'gather',context:'gather',what:{'Lavender':1},amount:1,max:2,req:{'plant lore':true}},
+			{type:'gather',context:'gather',what:{'Brown flower':1},amount:1,max:1,req:{'plant lore':true}},
+			{type:'gather',context:'gather',what:{'Daisy':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
 	});
@@ -1761,10 +1761,10 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
-		G.getDict('desert').res['flowers']['cactus']=0.04;
-		G.getDict('desert').res['flowers']['Brown flower']=0.04;
-		G.getDict('grass').res['flowers']['Daisy']=0.06;
-		G.getDict('grass').res['flowers']['Lavender']=0.03;
+		G.getDict('desert').res['gather']['cactus']=0.04;
+		G.getDict('desert').res['gather']['Brown flower']=0.04;
+		G.getDict('grass').res['gather']['Daisy']=0.06;
+		G.getDict('grass').res['gather']['Lavender']=0.03;
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
