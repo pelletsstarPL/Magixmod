@@ -147,7 +147,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Scobs',
-		desc:'Scobs are effect of carver working at [Wooden statuette].',
+		desc:'Scobs are effect of carver working at [Wooden statuette] and cutting trees.',
 		icon:[13,2,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
@@ -1758,6 +1758,7 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
+		G.getDict('desert').goods['flowers']['cactus']=0.04;
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
