@@ -1588,21 +1588,21 @@ func:function(){
 			desc:'Your clothier will now weave [leather] but colored clothing.',
 			use:{'worker':1,'stone tools':1},
 		};	
-		G.getDict('clothier').effects.push({type:'convert',from:{'leather':2,'Dyes':3},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
+		G.getDict('clothier').effects.push({type:'convert',from:{'leather':2,'Dyes':3},into:{'Colored clothing':1},every:6,mode:'Weave leather colored clothing'});
 		G.getDict('clothier').modes['Weave fiber colored clothing']={
 			name:'Weave fiber colored clothing',
 			icon:[13,0,'magixmod'],
 			desc:'Your clothier will now weave fiber but colored clothing.',
 			use:{'worker':1,'stone tools':1},
 		};
-		G.getDict('clothier').effects.push({type:'convert',from:{'herb':52,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
+		G.getDict('clothier').effects.push({type:'convert',from:{'herb':52,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave fiber colored clothing'});
 		G.getDict('clothier').modes['Dye already made clothing']={
 			name:'Weave fiber colored clothing',
 			icon:[13,0,'magixmod'],
 			desc:'Your clothier will now dye already made [basic clothes] making them become[Colored clothing].',
 			use:{'worker':1,'stone tools':1},
 		};
-		G.getDict('clothier').effects.push({type:'convert',from:{'basic clothes':1,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave colored clothing'});
+		G.getDict('clothier').effects.push({type:'convert',from:{'basic clothes':1,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Dye already made clothing'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
