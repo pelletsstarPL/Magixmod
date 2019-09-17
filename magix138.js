@@ -1758,7 +1758,7 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
-		G.getDict('desert').goods['flowers']['cactus']=0.04;
+		G.getDict('desert').goods['gather']['cactus']=0.04;
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
