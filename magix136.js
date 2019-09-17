@@ -306,7 +306,7 @@ func:function(){
 				}
 				
 				//clothing
-				var objects={'basic clothes':[0.1,0.1],'primitive clothes':[0,0]};
+				var objects={'basic clothes':[0.1,0.1],'primitive clothes':[0,0],'Colored clothing':[0.1,0.1]};
 				var leftout=me.amount;
 				var prev=leftout;
 				var fulfilled=0;
@@ -1577,7 +1577,7 @@ func:function(){
 		G.getDict('carver').modes['Carve wooden statuettes']={
 			name:'Carve wooden statuettes',
 			icon:[13,1,'magixmod'],
-			desc:'Your carver will now use carve statuettes out of [Log].',
+			desc:'Your carver will now use carve statuettes out of [log].',
 			use:{'worker':1,'knapped tools':1},
 		};	
 		G.getDict('carver').effects.push({type:'convert',from:{'log':1},into:{'Wooden statuette':1,'Scobs':3},every:7,mode:'Carve wooden statuettes'});
