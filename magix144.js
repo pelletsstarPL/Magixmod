@@ -176,6 +176,60 @@ func:function(){
 			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 	});
+		new G.Res({
+		name:'Dried leather',
+		desc:'Hardened version of [leather]. The one way to craft is putting [leather] into <b>Drying rack<b>.',
+		icon:[13,4,'magixmod'],
+		category:'build',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.03;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
+		new G.Res({
+		name:'Crossbow',
+		desc:'Weapon with a pro which [bow] does not have. Your hunter or soldier will now need just click to release belt. Remember about putting belt on before.',
+		icon:[13,6,'magixmod'],
+		category:'gear',
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.002;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
+		new G.Res({
+		name:'Crossbow belt',
+		desc:'An ammo for [Crossbow].',
+		icon:[13,7,'magixmod'],
+		category:'gear',
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.002;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
+		new G.Res({
+		name:'Fishing net',
+		desc:'An another way to catch [fish]. Solid net can be used to catch more fish. Can gather a little more fishes than line fishing',
+		icon:[13,8,'magixmod'],
+		category:'misc',
+		displayUsed:true,
+	});
+		new G.Res({
+		name:'Thread',
+		desc:'This item is really in need if you want to get at higher level of sewing.',
+		icon:[13,9,'magixmod'],
+		category:'misc',
+	});
+		new G.Res({
+		name:'Cobalt ingot',
+		desc:'This item is really in need if you want to get at higher level of sewing.',
+		icon:[14,0,'magixmod'],
+		category:'build',
+	});
 //New types of people
 		new G.Res({
 		name:'Instructor',
@@ -1079,6 +1133,13 @@ func:function(){
 		cost:{'insight':65},
 		req:{'Plain island portal':true,'Plain island building':true},
 	});
+		new G.Tech({
+		name:'Sewing II',
+		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing.',
+		icon:[13,5,'magixmod'], 
+		cost:{'insight':65},
+		req:{'Plain island portal':true,'Plain island building':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Fire wizard tower',
@@ -1604,7 +1665,7 @@ func:function(){
 		};
 		G.getDict('clothier').effects.push({type:'convert',from:{'herb':52,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave fiber colored clothing'});
 		G.getDict('clothier').modes['Dye already made clothing']={
-			name:'Weave fiber colored clothing',
+			name:'Dye already made clothing',
 			icon:[13,0,'magixmod'],
 			desc:'Your clothier will now dye already made [basic clothes] making them become[Colored clothing].',
 			req:{'weaving':true},
