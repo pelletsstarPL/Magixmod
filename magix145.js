@@ -226,7 +226,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Cobalt ingot',
-		desc:'This item is really in need if you want to get at higher level of sewing.',
+		desc:'An ingot made out of [Cobalt ore]. Has few or almost none of use. Wait, maybe as precious building material it may be used.',
 		icon:[14,0,'magixmod'],
 		category:'build',
 	});
@@ -1135,10 +1135,31 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Sewing II',
-		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing.',
+		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing. @Now clothiers can sew [Fishing net] and craft [Thread].',
 		icon:[13,5,'magixmod'], 
-		cost:{'insight':65},
-		req:{'Plain island portal':true,'Plain island building':true},
+		cost:{'insight':365,'wisdom':10},
+		req:{'Wizardry':true,'sewing':true,},
+	});
+		new G.Tech({
+		name:'Hunting II',
+		desc:'Upgrades hunting skills of your civilization. @Unlocks way to craft [Crossbow] - new weapon. Artisans can now craft [bow] & [Crossbow] and [Crossbow belt] in <b>Craft bows<b> mode.',
+		icon:[15,0,'magixmod'], 
+		cost:{'insight':330,'wisdom':10},
+		req:{'Wizardry':true,'hunting':true,},
+	});
+		new G.Tech({
+		name:'Fishing II',
+		desc:'Upgrades fishing skills of your civilization. @Makes [Fishing net] introduced into common use.',
+		icon:[8,12,25,1], 
+		cost:{'insight':350,'wisdom':10},
+		req:{'Wizardry':true,'fishing':true,},
+	});
+		new G.Tech({
+		name:'Cobalt-working',
+		desc:'@[furnace]s can now make [Cobalt ingot]s from [Cobalt ore]<>',
+		icon:[16,0,'magixmod'],
+		cost:{'insight':150},
+		req:{'smelting':true,'construction II':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -1503,6 +1524,19 @@ func:function(){
 		category:'plainisleunit',
 	});
 		new G.Unit({
+		name:'Drying rack',
+		desc:'@The building where people may learn basics of alchemy. You can decide who may learn it in Policies tab. Needs water to work... you know why it does need water.',
+		icon:[13,3,'magixmod'],
+		cost:{'basic building materials':100},
+		use:{'land':1},
+		effects:[
+			{type:'waste',chance:0.001/1000},
+			{type:'convert',from:{'leather':2},into:{'Dried leather':2},every:20},
+		],
+		req:{'Sewing II':true},
+		category:'crafting',
+	});
+		new G.Unit({
 		name:'Florist',
 		startWith:0,
 		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use.',
@@ -1564,6 +1598,15 @@ func:function(){
 			use:{'worker':1,'stone tools':2},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':4,'stone':2},into:{'Wand':1},every:5,mode:'Craftwands'});
+//Artisans will craft fishing nets for fishers
+		G.getDict('artisan').modes['Craftnet']={
+			name:'Craft fishing net',
+			icon:[13,8,'magixmod'],
+			desc:'Your artisan will craft [Fishing net]. Needs [Instructor] because net <b> must be strong. Will use [Dried leather] to make it stronger.',
+			req:{'Fishing II':true},
+			use:{'worker':1,'stone tools':2,'Instructor':1},
+		};
+		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':35,'Dried leather':1},into:{'Fishing net':1},every:5,mode:'Craftnet'});
 //4 modes for Artisans. Each of them can convert 8 different flowers into its dyes.
 		G.getDict('artisan').modes['Make dyes from flowers(Set 1)']={
 			name:'Make dyes from flowers(Set 1)',
@@ -1637,6 +1680,16 @@ func:function(){
 			use:{'worker':1,'stone tools':1},
 		};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
+//Furnaces will be now able to smelt Cobalt
+		G.getDict('furnace').modes['Cobalt smelting']={
+			name:'Cobalt smelting',
+			icon:[14,0,'magixmod'],
+			desc:'Cast 1[Cobalt ingot] out of 8[Cobalt ore].',
+			req:{'Cobalt-working':true},
+			use:{'worker':2,'metal tools':2,'stone tools':1},
+		};	
+		G.getDict('furnace').effects.push({type:'convert',from:{'Cobalt ore':8},into:{'Cobalt ingot':1},every:5,mode:'Cobalt smelting'});
+	
 //Carving wooden statuettes
 		G.getDict('carver').modes['Carve wooden statuettes']={
 			name:'Carve wooden statuettes',
@@ -1672,6 +1725,14 @@ func:function(){
 			use:{'worker':1,'stone tools':1},
 		};
 		G.getDict('clothier').effects.push({type:'convert',from:{'basic clothes':1,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Dye already made clothing'});
+		G.getDict('clothier').modes['Craft thread']={
+			name:'Craft thread',
+			icon:[13,9,'magixmod'],
+			desc:'Your clothier will now craft [Thread] out of [herb].',
+			req:{'Sewing II':true},
+			use:{'worker':1,'stone tools':1},
+		};
+		G.getDict('clothier').effects.push({type:'convert',from:{'herb':18},into:{'Thread':3},every:6,mode:'Craft thread'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
