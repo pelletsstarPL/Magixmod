@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/l4efiX7.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/eXabze8.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
