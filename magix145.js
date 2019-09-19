@@ -1490,7 +1490,26 @@ func:function(){
     		],
     		use:{'land':10},
 		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
-    		req:{'First portal to new world':true,'Belief in portals':true},
+    		req:{'First portal to new world':true,'Belief in portals':true,'plain island':true},
+    		limitPer:{'land':100000000000000},//It is something like max 1
+    		category:'dimensions',
+	});
+		new G.Unit({
+    		name:'plain island portal',
+    		desc:'@opens a portal to a huge </b>Plain Island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
+    		wideIcon:[7,3,'magixmod'],
+		wonder:'plain island portal',
+    		cost:{'precious building materials':1500,'insight':100,'faith':30,'Fire essence':450,'Water essence':475,'Dark essence':375,'Wind essence':275,'Lightning essence':377,'Nature essence':100},
+		costPerStep:{'precious building materials':800,'insight':1,'influence':1,'faith':2,'Fire essence':105,'Water essence':120,'Dark essence':75,'Wind essence':135,'Lightning essence':110,'Nature essence':140,'Mana':15},
+		steps:175,
+		finalStepCost:{'population':1000,'precious building materials':4500,'insight':300,'faith':80,'Fire essence':6450,'Water essence':9475,'Dark essence':6375,'Wind essence':7275,'Lightning essence':5377,'Nature essence':15000},
+		finalStepDesc:'To complete the Mausoleum, 100 of your [population,People] must be sacrificed to accompany you as servants in the afterlife.',
+    		effects:[
+    			{type:'provide',what:{'Land of the Plain Island':25000}},
+    		],
+    		use:{'land':15},
+		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
+    		req:{'First portal to new world':true,'Belief in portals':true,'plain island':false},
     		limitPer:{'land':100000000000000},//It is something like max 1
     		category:'dimensions',
 	});
@@ -1763,6 +1782,15 @@ func:function(){
 		startMode:'off',
 		req:{'plant lore':true},
 		category:'Florists',
+	});
+		new G.Achiev({
+		tier:0,
+		name:'plain island',
+		desc:'Your wizardry level got enough to start opening portals to new world. You built portal to Plain Island. After each ascension since now you will need just to pay as much as you paid for a final step to activate portal and unlock more things.',
+		fromUnit:'plain island portal',
+		effects:[
+			{type:'addFastTicksOnStart',amount:100},
+		],
 	});
 		//New tile generation is InDev. I am open to any programming tips
 	
