@@ -1672,7 +1672,8 @@ func:function(){
 		G.getDict('artisan').effects.push({type:'convert',from:{'Gray rose':3},into:{'Gray dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Gray tulip':2},into:{'Gray dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
 //Craft crossbows and ammo to it after researching Hunting II
-		G.getDict('artisan').effects.push({type:'convert',from:{'stick':3,'stone':2},into:{'Crossbow':1},every:5,mode:'bows',req:{'Hunting II':true});
+		G.getDict('artisan').effects.push({type:'convert',from:{'stick':3,'stone':2},into:{'Crossbow':1},every:5,req:{'Hunting II':true},mode:'bows');
+		G.getDict('artisan').effects.push({type:'convert',from:{'lumber':1,'stone':25},into:{'Crossbow belt':30},every:5,req:{'Hunting II':true},mode:'bows');
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={
 			name:'Craft glass',
