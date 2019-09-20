@@ -1135,7 +1135,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Sewing II',
-		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing. @Now clothiers can sew [Fishing net] and craft [Thread].',
+		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing. @Now artisans can sew [Fishing net] and craft [Thread].',
 		icon:[13,5,'magixmod'], 
 		cost:{'insight':365,'wisdom':10},
 		req:{'Wizardry':true,'sewing':true,},
@@ -1525,7 +1525,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Drying rack',
-		desc:'@The building where people may learn basics of alchemy. You can decide who may learn it in Policies tab. Needs water to work... you know why it does need water.',
+		desc:'@This small rack may dry [leather] making it become [Dried leather]. [Dried leather] is used to make even harder clothing, which decays much slower.',
 		icon:[13,3,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'land':1},
@@ -1585,7 +1585,7 @@ func:function(){
     		],
     		use:{'land':10},
 		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
-    		req:{'First portal to new world':true,'Belief in portals':true,'plain island':true},
+    		req:{'First portal to new world':true,'Belief in portals':true},
     		limitPer:{'land':100000000000000},//It is something like max 1
     		category:'dimensions',
 	});
@@ -1673,7 +1673,7 @@ func:function(){
 		G.getDict('artisan').effects.push({type:'convert',from:{'Gray tulip':2},into:{'Gray dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
 	//After researching Hunting II Artisans with Craft bows mode will now be able to craft Crossbows and ammo to it
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':3,'stone':2},into:{'Crossbow':1},every:5,req:{'Hunting II':true},mode:'bows'});
-		G.getDict('artisan').effects.push({type:'convert',from:{'lumber':1,'stone':25},into:{'Crossbow belt':30},every:5,req:{'Hunting II':true},mode:'bows'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'lumber':1,'stone':25},into:{'Crossbow belt':20},every:5,req:{'Hunting II':true},mode:'bows'});
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={
 			name:'Craft glass',
@@ -1736,6 +1736,24 @@ func:function(){
 			use:{'worker':1,'stone tools':1},
 		};
 		G.getDict('clothier').effects.push({type:'convert',from:{'herb':18},into:{'Thread':3},every:6,mode:'Craft thread'});
+//Hunter will now be able to hunt animals with Crossbow
+			G.getDict('hunter').modes['Crossbow hunting']={
+			name:'Crossbow hunting',
+			icon:[13,6,'magixmod'],
+			desc:'Hunt animals with crossbows.',
+			req:{'Hunting II':true},
+			use:{'worker':1,'Crossbow':1,'Crossbow belt':150},
+		};
+		G.getDict('hunter').effectspush({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
+//Fisher can fish with new fishing nets
+			G.getDict('fisher').modes['Net fishing']={
+			name:'Net fishing',
+			icon:[13,8,'magixmod'],
+			desc:'Catch fish with [Fishing net].',
+			req:{'Fishing II':true},
+			use:{'worker':1,'Fishing net':1},
+		};
+		G.getDict('fishing').effectspush({type:'gather',context:'fish',amount:5,max:6,mode:'Net fishing'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
