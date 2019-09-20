@@ -1744,7 +1744,7 @@ func:function(){
 			req:{'Hunting II':true},
 			use:{'worker':1,'Crossbow':1,'Crossbow belt':150},
 		};
-		G.getDict('hunter').effectspush({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
+		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
 //Fisher can fish with new fishing nets
 			G.getDict('fisher').modes['Net fishing']={
 			name:'Net fishing',
@@ -1753,7 +1753,7 @@ func:function(){
 			req:{'Fishing II':true},
 			use:{'worker':1,'Fishing net':1},
 		};
-		G.getDict('fishing').effectspush({type:'gather',context:'fish',amount:5,max:6,mode:'Net fishing'});
+		G.getDict('fishing').effects.push({type:'gather',context:'fish',amount:5,max:6,mode:'Net fishing'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
