@@ -1753,7 +1753,7 @@ func:function(){
 			req:{'Fishing II':true},
 			use:{'worker':1,'Fishing net':1},
 		};
-		G.getDict('fishing').effects.push({type:'gather',context:'fish',what:{'Seafood':5},amount:5,max:6,mode:'Net fishing'});
+		G.getDict('fishing').effects.push({type:'gather',context:'gather',what:{'Seafood':5},amount:5,max:6,mode:'Net fishing'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
