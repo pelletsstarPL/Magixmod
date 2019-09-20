@@ -213,7 +213,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Fishing net',
-		desc:'An another way to catch [fish]. Solid net can be used to catch more fish. Can gather a little more fishes than line fishing',
+		desc:'An another way to catch [seafood]. Solid net can be used to catch more fish. Can gather a little more fishes than line fishing',
 		icon:[13,8,'magixmod'],
 		category:'misc',
 		displayUsed:true,
