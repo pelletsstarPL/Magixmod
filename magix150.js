@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/auTt5zA.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/23hULEW.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -23,7 +23,7 @@ func:function(){
 			'food':{
 				name:'Food & Water',
 				base:[],
-				side:['food','spoiled food','water','muddy water','food storage'],
+				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices'],
 		},
 			'build':{
 				name:'Crafting & Construction',
@@ -228,6 +228,55 @@ func:function(){
 		name:'Cobalt ingot',
 		desc:'An ingot made out of [Cobalt ore]. Has few or almost none of use. Wait, maybe as precious building material it may be used.',
 		icon:[14,0,'magixmod'],
+		category:'build',
+	});
+		new G.Res({
+		name:'Watermelon',
+		desc:'Fresh fruit. Can be farmed at the lands of the Plain Island. You can make a juice out of it.',
+		icon:[15,1,'magixmod'],
+		turnToByContext:{'eat':{'health':0.055,'happiness':0.3},'decay':{'spoiled food':0.8}},
+		category:'food',
+		partOf:'fruit',
+	});
+		new G.Res({
+		name:'Watermelon juice',
+		desc:'Fresh, sweet, healthy and tasty juice. Grants more [happiness] and [health] than normal, common [water] but spoils little faster.',
+		icon:[15,3,'magixmod'],
+		category:'food',
+		partOf:'food',
+	});
+		new G.Res({
+		name:'Berry juice',
+		desc:'Fresh, sweet, healthy and tasty juice. Grants more [happiness] and [health] than normal, common [water] but spoils little faster.',
+		icon:[16,3,'magixmod'],
+		category:'food',
+		partOf:'fruit',
+	});
+		new G.Res({
+		name:'Juices',
+		desc:'This stat shows you how much juices of any type you have currently in total. Juices provide more [happiness] and [health] than normal, common [water] but spoils little faster. Can be used in few crafts like normal water.',
+		icon:[14,3,'magixmod'],
+		partOf:'water',
+	});
+		new G.Res({
+		name:'Spoiled juices',
+		desc:'This stat shows you how much spoiled juice of any type you have currently in total. Spoiled juice decreases [happiness] and [health] stronger than normal, common [muddy water]. Can be used in few crafts like muddy water.',
+		icon:[14,3,'magixmod'],
+		partOf:'water',
+	});
+		new G.Res({
+		name:'Berries',
+		desc:'[Berries] taste sweet, but spoil quickly.',
+		icon:[16,1,'magixmod'],
+		turnToByContext:{'eat':{'health':0.05,'happiness':0.3},'decay':{'spoiled food':0.8}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
+		partOf:'food',
+		category:'food',
+	});
+		new G.Res({
+		name:'Bamboo',
+		desc:'This tropical material can be used for archaic constructions.',
+		icon:[14,4,'magixmod'],
+		partOf:'archaic building materials',
 		category:'build',
 	});
 //New types of people
@@ -1573,6 +1622,20 @@ func:function(){
 		req:{'speech':true},
 		category:'discovery',
 		priority:5,
+	});
+		new G.Unit({
+		name:'bamboo hut',
+		desc:'@provides 6 [housing]<>Small dwelling with roof out of branches and walls out of [Bamboo].',
+		icon:[14,6,'magixmod'],
+		cost:{'archaic building materials':65,'Bamboo':55},
+		use:{'land':1},
+		//require:{'worker':2,'stone tools':2},
+		effects:[
+			{type:'provide',what:{'housing':6}},
+			{type:'waste',chance:0.13/1000}
+		],
+		req:{'building':true},
+		category:'housing',
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
