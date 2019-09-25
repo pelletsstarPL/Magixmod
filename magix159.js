@@ -324,14 +324,14 @@ func:function(){
 	});
 		new G.Res({
 		name:'Sugar cane',
-		desc:'These canes contains [Sugar] in them. You can get [Sugar] by giving this task to an artisan.',
+		desc:'These canes contains [sugar] in them. You can get [sugar] by giving this task to an artisan.',
 		icon:[15,4,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
 	});
 		new G.Res({
-		name:'Sugar',
-		desc:'If you want to start crafting tasty juices, [Sugar] is a must.',
+		name:'sugar',
+		desc:'If you want to start crafting tasty juices, [sugar] is a must.',
 		icon:[15,2,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
@@ -1299,7 +1299,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Crafting a juice',
-		desc:'@Makes juices possible to be crafted. Any [fruit] + [Sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juice grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
+		desc:'@Makes juices possible to be crafted. Any [fruit] + [sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juice grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
 		icon:[16,4,'magixmod'],
 		cost:{'insight':450,'wisdom':50},
 		req:{'Farms in the new land':true},
@@ -1740,13 +1740,13 @@ func:function(){
 		gizmos:true,
 		//upkeep:{'coin':0.2},
 		modes:{
-			'sugar':{name:'Extract sugar out of cane',icon:[15,2,'magixmod'],desc:'This artisan will only extract [Sugar] out of [Sugar cane]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
-			'juices':{name:'Craft juices',icon:[14,3,'magixmod'],desc:'This artisan will craft [Juices] out of [Watermelon] or [Berries] , [Sugar] and [water]. Have a good taste. <b>:)',use:{'worker':1}},
+			'sugar':{name:'Extract sugar out of cane',icon:[15,2,'magixmod'],desc:'This artisan will only extract [sugar] out of [Sugar cane]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
+			'juices':{name:'Craft juices',icon:[14,3,'magixmod'],desc:'This artisan will craft [Juices] out of [Watermelon] or [Berries] , [sugar] and [water]. Have a good taste. <b>:)',use:{'worker':1}},
 		},
 		effects:[
-			{type:'convert',from:{'Sugar cane':2},into:{'Sugar':1},every:5,mode:'sugar'},
-			{type:'convert',from:{'Sugar':1,'Berries':2,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
-			{type:'convert',from:{'Sugar':1,'Watermelon':1,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
+			{type:'convert',from:{'Sugar cane':2},into:{'sugar':1},every:5,mode:'sugar'},
+			{type:'convert',from:{'sugar':1,'Berries':2,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
+			{type:'convert',from:{'sugar':1,'Watermelon':1,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
 		],
 		req:{'Crafting a juice':true},
 		category:'crafting',
