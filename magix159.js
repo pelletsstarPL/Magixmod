@@ -251,7 +251,7 @@ func:function(){
 			{
 				var toSpoil=me.amount*0.02;
 				var spent=G.lose('Watermelon juice',randomFloor(toSpoil),'decay');
-				G.gain('Spoiled juices',randomFloor(spent),'decay');
+				G.gain('Spoiled juices',randomFloor(spent*1),'decay');
 			}
 		},
 		tick:function(me,tick)
@@ -273,7 +273,7 @@ func:function(){
 			{
 				var toSpoil=me.amount*0.02;
 				var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
-				G.gain('Spoiled juices',randomFloor(spent),'decay');
+				G.gain('Spoiled juices',randomFloor(spent*1),'decay');
 			}
 		},
 	});
@@ -339,14 +339,14 @@ func:function(){
 		new G.Res({
 		name:'Watermelon seeds',
 		desc:'If you want to start farming [Watermelon] and crafting tasty [Juices] these seeds are a must.',
-		icon:[15,6,'magixmod'],
+		icon:[16,6,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
 	});
 		new G.Res({
 		name:'Berry seeds',
 		desc:'If you want to start farming [Berries] and crafting tasty [Juices] these seeds are a must.',
-		icon:[16,6,'magixmod'],
+		icon:[15,6,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
 	});
