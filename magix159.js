@@ -325,14 +325,14 @@ func:function(){
 		new G.Res({
 		name:'Watermelon seeds',
 		desc:'If you want to start farming [Watermelon] and crafting tasty [Juices] these seeds are a must.',
-		icon:[15,7,'magixmod'],
+		icon:[15,6,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
 	});
 		new G.Res({
 		name:'Berry seeds',
 		desc:'If you want to start farming [Berries] and crafting tasty [Juices] these seeds are a must.',
-		icon:[16,7,'magixmod'],
+		icon:[16,6,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
 	});
