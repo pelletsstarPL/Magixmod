@@ -277,6 +277,7 @@ func:function(){
 		desc:'This stat shows you how much juices of any type you have currently in total. Juices provide more [happiness] and [health] than normal, common [water] but spoils little faster. Can be used in few crafts like normal water.',
 		icon:[14,3,'magixmod'],
 		meta:true,
+		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juices':0.2}},
 	});
 		new G.Res({
 		name:'Spoiled juices',
