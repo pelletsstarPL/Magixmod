@@ -311,8 +311,8 @@ func:function(){
 		name:'Sugar cane',
 		desc:'These canes contains [Sugar] in them. You can get [Sugar] by giving this task to an artisan.',
 		icon:[15,4,'magixmod'],
-		partOf:'archaic building materials',
-		category:'build',
+		partOf:'misc materials',
+		category:'misc',
 	});
 		new G.Res({
 		name:'Sugar',
