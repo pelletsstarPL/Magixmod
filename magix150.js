@@ -234,7 +234,7 @@ func:function(){
 		name:'Watermelon',
 		desc:'Fresh fruit. Can be farmed at the lands of the Plain Island. You can make a juice out of it.',
 		icon:[15,1,'magixmod'],
-		turnToByContext:{'eat':{'health':0.055,'happiness':0.3},'decay':{'spoiled food':0.8}},
+		turnToByContext:{'eat':{'health':0.045,'happiness':0.025},'decay':{'spoiled food':0.15}},
 		category:'food',
 		partOf:'fruit',
 	});
@@ -243,32 +243,60 @@ func:function(){
 		desc:'Fresh, sweet, healthy and tasty juice. Grants more [happiness] and [health] than normal, common [water] but spoils little faster.',
 		icon:[15,3,'magixmod'],
 		category:'food',
-		partOf:'food',
+		partOf:'Juices',
+		turnToByContext:{'drinking juice':{'health':0.01,'happiness':0,015}},
+		tick:function(me,tick)
+		{
+			if (G.checkPolicy('disable spoiling')=='off')
+			{
+				var toSpoil=me.amount*0.02;
+				var spent=G.lose('water',randomFloor(toSpoil),'decay');
+				G.gain('muddy water',randomFloor(spent),'decay');
+			}
+		},
 	});
 		new G.Res({
 		name:'Berry juice',
 		desc:'Fresh, sweet, healthy and tasty juice. Grants more [happiness] and [health] than normal, common [water] but spoils little faster.',
 		icon:[16,3,'magixmod'],
 		category:'food',
-		partOf:'fruit',
+		partOf:'Juices',
+		turnToByContext:{'drinking juice':{'health':0.01,'happiness':0,015}},
+		tick:function(me,tick)
+		{
+			if (G.checkPolicy('disable spoiling')=='off')
+			{
+				var toSpoil=me.amount*0.02;
+				var spent=G.lose('water',randomFloor(toSpoil),'decay');
+				G.gain('muddy water',randomFloor(spent),'decay');
+			}
+		},
 	});
 		new G.Res({
 		name:'Juices',
 		desc:'This stat shows you how much juices of any type you have currently in total. Juices provide more [happiness] and [health] than normal, common [water] but spoils little faster. Can be used in few crafts like normal water.',
 		icon:[14,3,'magixmod'],
-		partOf:'water',
+		meta:true,
 	});
 		new G.Res({
-		name:'Spoiled juices',
+		name:'Spoiled juice',
 		desc:'This stat shows you how much spoiled juice of any type you have currently in total. Spoiled juice decreases [happiness] and [health] stronger than normal, common [muddy water]. Can be used in few crafts like muddy water.',
 		icon:[14,3,'magixmod'],
-		partOf:'water',
+		turnToByContext:{'drinking spoiled juice':{'health':-0.037,'happiness':-0.062}},
+		tick:function(me,tick)
+		{
+			if (G.checkPolicy('disable spoiling')=='off')
+			{
+				var toSpoil=me.amount*0.01;
+				var spent=G.lose('muddy water',randomFloor(toSpoil),'decay');
+			}
+		},	
 	});
 		new G.Res({
 		name:'Berries',
 		desc:'[Berries] taste sweet, but spoil quickly.',
 		icon:[16,1,'magixmod'],
-		turnToByContext:{'eat':{'health':0.05,'happiness':0.3},'decay':{'spoiled food':0.8}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
+		turnToByContext:{'eat':{'health':0.035,'happiness':0.025},'decay':{'spoiled food':0.8}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
 		partOf:'food',
 		category:'food',
 	});
@@ -278,6 +306,34 @@ func:function(){
 		icon:[14,4,'magixmod'],
 		partOf:'archaic building materials',
 		category:'build',
+	});
+		new G.Res({
+		name:'Sugar cane',
+		desc:'These canes contains [Sugar] in them. You can get [Sugar] by giving this task to an artisan.',
+		icon:[15,4,'magixmod'],
+		partOf:'archaic building materials',
+		category:'build',
+	});
+		new G.Res({
+		name:'Sugar',
+		desc:'If you want to start crafting tasty juices, [Sugar] is a must.',
+		icon:[15,2,'magixmod'],
+		partOf:'misc materials',
+		category:'misc',
+	});
+		new G.Res({
+		name:'Watermelon seeds',
+		desc:'If you want to start farming [Watermelon] and crafting tasty [Juices] these seeds are a must.',
+		icon:[15,7,'magixmod'],
+		partOf:'misc materials',
+		category:'misc',
+	});
+		new G.Res({
+		name:'Berry seeds',
+		desc:'If you want to start farming [Berries] and crafting tasty [Juices] these seeds are a must.',
+		icon:[16,7,'magixmod'],
+		partOf:'misc materials',
+		category:'misc',
 	});
 //New types of people
 		new G.Res({
