@@ -250,9 +250,14 @@ func:function(){
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.02;
-				var spent=G.lose('water',randomFloor(toSpoil),'decay');
-				G.gain('muddy water',randomFloor(spent),'decay');
+				var spent=G.lose('Watermelon juice',randomFloor(toSpoil),'decay');
+				G.gain('Spoiled juices',randomFloor(spent),'decay');
 			}
+		},
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 	});
 		new G.Res({
@@ -267,8 +272,8 @@ func:function(){
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.02;
-				var spent=G.lose('water',randomFloor(toSpoil),'decay');
-				G.gain('muddy water',randomFloor(spent),'decay');
+				var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
+				G.gain('Spoiled juices',randomFloor(spent),'decay');
 			}
 		},
 	});
@@ -277,7 +282,11 @@ func:function(){
 		desc:'This stat shows you how much juices of any type you have currently in total. Juices provide more [happiness] and [health] than normal, common [water] but spoils little faster. Can be used in few crafts like normal water.',
 		icon:[14,3,'magixmod'],
 		meta:true,
-		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juices':0.2}},
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 	});
 		new G.Res({
 		name:'Spoiled juices',
@@ -292,6 +301,11 @@ func:function(){
 				var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
 			}
 		},	
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 	});
 		new G.Res({
 		name:'Berries',
