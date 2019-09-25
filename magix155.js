@@ -1138,7 +1138,7 @@ func:function(){
 		cost:{'Juices':2e5,'wisdom':25,'insight':30},
 		chance:0.03,
 		category:'knowledge',
-		req:{'juice crafting':true},
+		req:{'Crafting a juice':true},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
