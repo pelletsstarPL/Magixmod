@@ -2098,7 +2098,7 @@ func:function(){
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds': 0.0001},amount:1,max:1});
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.002},amount:1,max:1}); 
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.008},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.01},amount:1,max:1}); 
 		//New tile generation is InDev. I am open to any programming tips
 	
