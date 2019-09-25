@@ -244,7 +244,7 @@ func:function(){
 		icon:[15,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking juice':{'health':0.01,'happiness':0,015}},
+		turnToByContext:{'drinking':{'health':0.01,'happiness':0,015}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
@@ -261,7 +261,7 @@ func:function(){
 		icon:[16,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking juice':{'health':0.01,'happiness':0,015}},
+		turnToByContext:{'drinking':{'health':0.01,'happiness':0,015}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
@@ -282,7 +282,7 @@ func:function(){
 		name:'Spoiled juice',
 		desc:'This stat shows you how much spoiled juice of any type you have currently in total. Spoiled juice decreases [happiness] and [health] stronger than normal, common [muddy water]. Can be used in few crafts like muddy water.',
 		icon:[14,3,'magixmod'],
-		turnToByContext:{'drinking spoiled juice':{'health':-0.037,'happiness':-0.062}},
+		turnToByContext:{'drinking':{'health':-0.037,'happiness':-0.062}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
