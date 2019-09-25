@@ -1740,7 +1740,7 @@ func:function(){
 		name:'Berry farm',
 		desc:'@Specialized farm which will harvest tasty [Berries] at the better rate than [gatherer].',
 		icon:[14,1,'magixmod'],
-		cost:{},
+		cost:{'Berry seeds':200},
 		req:{'Farms in the new land':true},
 		use:{'worker':8,'Land of the Plain Island':35},
 		category:'plainisleunit',
@@ -1752,7 +1752,7 @@ func:function(){
 		name:'Watermelon farm',
 		desc:'@Specialized farm which will harvest tasty [Watermelon] at the better rate than [gatherer].',
 		icon:[14,2,'magixmod'],
-		cost:{},
+		cost:{'Watermelon seeds':200},
 		req:{'Farms in the new land':true},
 		use:{'worker':8,'Land of the Plain Island':35},
 		category:'plainisleunit',
@@ -2093,8 +2093,12 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
+	//New gains for gatherer
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berries': 0.005},amount:1,max:1});
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1});  
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1}); 
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds': 0.0001},amount:1,max:1});
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.002},amount:1,max:1}); 
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
