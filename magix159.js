@@ -244,7 +244,7 @@ func:function(){
 		icon:[15,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juice':0.2}},
+		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juices':0.2}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
@@ -261,7 +261,7 @@ func:function(){
 		icon:[16,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juice':0.2}},
+		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juices':0.2}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
@@ -279,7 +279,7 @@ func:function(){
 		meta:true,
 	});
 		new G.Res({
-		name:'Spoiled juice',
+		name:'Spoiled juices',
 		desc:'This stat shows you how much spoiled juice of any type you have currently in total. Spoiled juice decreases [happiness] and [health] stronger than normal, common [muddy water]. Can be used in few crafts like muddy water.',
 		icon:[14,3,'magixmod'],
 		turnToByContext:{'drinking spoiled juice':{'health':-0.037,'happiness':-0.062}},
@@ -288,7 +288,7 @@ func:function(){
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.01;
-				var spent=G.lose('Spoiled juice',randomFloor(toSpoil),'decay');
+				var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
 			}
 		},	
 	});
@@ -2099,6 +2099,7 @@ func:function(){
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds': 0.0001},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.002},amount:1,max:1}); 
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.002},amount:1,max:1}); 
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
