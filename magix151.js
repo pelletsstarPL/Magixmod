@@ -189,7 +189,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Crossbow',
-		desc:'Weapon with a pro which [bow] does not have. Your hunter or soldier will now need just click to release belt. Remember about putting belt on before.',
+		desc:'Weapon with a pro which [bow] does not have. Your hunter or soldier will now need just click to release belt. Remember about putting belt on before.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[13,6,'magixmod'],
 		category:'gear',
 		displayUsed:true,
@@ -201,7 +201,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Crossbow belt',
-		desc:'An ammo for [Crossbow].',
+		desc:'An ammo for [Crossbow].@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[13,7,'magixmod'],
 		category:'gear',
 		displayUsed:true,
@@ -213,7 +213,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Fishing net',
-		desc:'An another way to catch [seafood]. Solid net can be used to catch more fish. Can gather a little more fishes than line fishing',
+		desc:'An another way to catch [seafood]. Solid net can be used to catch more fish. Can gather a little more fishes than line fishing.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[13,8,'magixmod'],
 		category:'misc',
 		displayUsed:true,
@@ -1131,6 +1131,15 @@ func:function(){
 		category:'knowledge',
 		req:{'First portal to new world':true},
 	});
+		new G.Trait({
+		name:'Juicy expertise',
+		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft.',
+		icon:[16,5,'magixmod'],
+		cost:{'Juices':2e5,'wisdom':25,'insight':30},
+		chance:0,03,
+		category:'knowledge',
+		req:{'juice crafting':true},
+	});
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -1265,6 +1274,20 @@ func:function(){
 		icon:[16,0,'magixmod'],
 		cost:{'insight':150},
 		req:{'smelting':true,'construction II':true},
+	});
+		new G.Tech({
+		name:'Farms in the new land',
+		desc:'@Now at the Lands of Plain island you may start opening farms to let your people make more [Berries] & [Watermelon]. You are doing it here because you may have trouble to find free land in your mortal world.<>',
+		icon:[16,2,'magixmod'],
+		cost:{'insight':550},
+		req:{'construction II':true},
+	});
+		new G.Tech({
+		name:'Crafting a juice',
+		desc:'@Makes juices possible to be crafted. Any [fruit] + [Sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juices grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
+		icon:[16,4,'magixmod'],
+		cost:{'insight':450,'wisdom':50},
+		req:{'Farms in the new land':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -1660,7 +1683,7 @@ func:function(){
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
 	});
-	new G.Unit({
+		new G.Unit({
 		name:'Thoughts sharer',
 		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
 		icon:[1,2],
@@ -1692,6 +1715,50 @@ func:function(){
 		],
 		req:{'building':true},
 		category:'housing',
+	});
+		new G.Unit({
+		name:'artisan of juice',
+		desc:'@This subclass of [artisan] can make juices for you. In default he will extract sugar out of [Sugar cane]. Just switch mode to start crafting juices',
+		icon:[15,5,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		gizmos:true,
+		//upkeep:{'coin':0.2},
+		modes:{
+			'sugar':{name:'Extract sugar out of cane',icon:[15,2,'magixmod'],desc:'This artisan will only extract [Sugar] out of [Sugar cane]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
+			'juices':{name:'Craft juices',icon:[14,3,'magixmod'],desc:'This artisan will craft [Juices] out of [Watermelon] or [Berries] , [Sugar] and [water]. Have a good taste. <b>:)',use:{'worker':1}},
+		},
+		effects:[
+			{type:'convert',from:{'Sugar cane':2},into:{'Sugar':1},every:5,mode:'sugar'},
+			{type:'convert',from:{'Sugar':1,'Berries':2,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
+			{type:'convert',from:{'Sugar':1,'Watermelon':1,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
+		],
+		req:{'Crafting a juice':true},
+		category:'crafting',
+	});
+		new G.Unit({
+		name:'Berry farm',
+		desc:'@Specialized farm which will harvest tasty [Berries] at the better rate than [gatherer].',
+		icon:[14,1,'magixmod'],
+		cost:{},
+		req:{'Farms in the new land':true},
+		use:{'worker':8,'Land of the Plain Island':35},
+		category:'plainisleunit',
+		effects:[
+			{type:'gather',context:'gather',what:{'Berries':0,33}},
+		],
+	});
+		new G.Unit({
+		name:'Watermelon farm',
+		desc:'@Specialized farm which will harvest tasty [Watermelon] at the better rate than [gatherer].',
+		icon:[14,2,'magixmod'],
+		cost:{},
+		req:{'Farms in the new land':true},
+		use:{'worker':8,'Land of the Plain Island':35},
+		category:'plainisleunit',
+		effects:[
+			{type:'gather',context:'gather',what:{'Watermelon':0,14}},
+		],
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
@@ -2026,6 +2093,9 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
+		G.getDict('palm tree').res['gather']['Bamboo']=0.038;
+		G.getDict('grass').res['gather']['Berries']=0.001;
+		G.getDict('palm tree').res['gather']['Watermelon']=0.0003;
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
