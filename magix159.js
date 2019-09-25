@@ -236,7 +236,7 @@ func:function(){
 		icon:[15,1,'magixmod'],
 		turnToByContext:{'eat':{'health':0.045,'happiness':0.025},'decay':{'spoiled food':0.15}},
 		category:'food',
-		partOf:'fruit',
+		partOf:'food',
 	});
 		new G.Res({
 		name:'Watermelon juice',
