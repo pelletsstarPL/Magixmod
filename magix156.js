@@ -2093,9 +2093,8 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
-		G.getDict('palm tree').res['gather']['Bamboo']=0.038;
-		G.getDict('grass').res['gather']['Berries']=0.001;
-		G.getDict('palm tree').res['gather']['Watermelon']=0.0003;
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berries': 0.005},amount:1,max:1});
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1});  
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
