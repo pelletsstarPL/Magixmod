@@ -244,7 +244,7 @@ func:function(){
 		icon:[15,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking':{'health':0.01,'happiness':0,015}},
+		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juice':0.2}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
@@ -261,7 +261,7 @@ func:function(){
 		icon:[16,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking':{'health':0.01,'happiness':0,015}},
+		turnToByContext:{'drinking juice':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juice':0.2}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
@@ -1745,7 +1745,7 @@ func:function(){
 		use:{'worker':8,'Land of the Plain Island':35},
 		category:'plainisleunit',
 		effects:[
-			{type:'gather',context:'gather',what:{'Berries':0,33}},
+			{type:'gather',context:'gather',what:{'Berries':0.33}},
 		],
 	});
 		new G.Unit({
@@ -1757,7 +1757,7 @@ func:function(){
 		use:{'worker':8,'Land of the Plain Island':35},
 		category:'plainisleunit',
 		effects:[
-			{type:'gather',context:'gather',what:{'Watermelon':0,14}},
+			{type:'gather',context:'gather',what:{'Watermelon':0.14}},
 		],
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
