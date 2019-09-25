@@ -1743,6 +1743,7 @@ func:function(){
 		icon:[14,1,'magixmod'],
 		cost:{'Berry seeds':200},
 		req:{'Farms in the new land':true},
+		upkeep:{'water':12},
 		use:{'worker':8,'Land of the Plain Island':35},
 		category:'plainisleunit',
 		effects:[
@@ -1756,6 +1757,7 @@ func:function(){
 		cost:{'Watermelon seeds':200},
 		req:{'Farms in the new land':true},
 		use:{'worker':8,'Land of the Plain Island':35},
+		upkeep:{'water':12},
 		category:'plainisleunit',
 		effects:[
 			{type:'gather',context:'gather',what:{'Watermelon':0.14}},
