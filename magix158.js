@@ -282,13 +282,13 @@ func:function(){
 		name:'Spoiled juice',
 		desc:'This stat shows you how much spoiled juice of any type you have currently in total. Spoiled juice decreases [happiness] and [health] stronger than normal, common [muddy water]. Can be used in few crafts like muddy water.',
 		icon:[14,3,'magixmod'],
-		turnToByContext:{'drinking':{'health':-0.037,'happiness':-0.062}},
+		turnToByContext:{'drinking spoiled juice':{'health':-0.037,'happiness':-0.062}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.01;
-				var spent=G.lose('muddy water',randomFloor(toSpoil),'decay');
+				var spent=G.lose('Spoiled juice',randomFloor(toSpoil),'decay');
 			}
 		},	
 	});
@@ -1284,7 +1284,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Crafting a juice',
-		desc:'@Makes juices possible to be crafted. Any [fruit] + [Sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juices grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
+		desc:'@Makes juices possible to be crafted. Any [fruit] + [Sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juice grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
 		icon:[16,4,'magixmod'],
 		cost:{'insight':450,'wisdom':50},
 		req:{'Farms in the new land':true},
