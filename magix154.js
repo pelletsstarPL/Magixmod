@@ -1136,7 +1136,7 @@ func:function(){
 		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft.',
 		icon:[16,5,'magixmod'],
 		cost:{'Juices':2e5,'wisdom':25,'insight':30},
-		chance:0,03,
+		chance:0.03,
 		category:'knowledge',
 		req:{'juice crafting':true},
 	});
