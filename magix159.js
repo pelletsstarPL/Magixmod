@@ -215,20 +215,35 @@ func:function(){
 		name:'Fishing net',
 		desc:'An another way to catch [seafood]. Solid net can be used to catch more fish. Can gather a little more fishes than line fishing.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[13,8,'magixmod'],
-		category:'misc',
+		category:'gear',
 		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 	});
 		new G.Res({
 		name:'Thread',
 		desc:'This item is really in need if you want to get at higher level of sewing.',
 		icon:[13,9,'magixmod'],
 		category:'misc',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 	});
 		new G.Res({
 		name:'Cobalt ingot',
 		desc:'An ingot made out of [Cobalt ore]. Has few or almost none of use. Wait, maybe as precious building material it may be used.',
 		icon:[14,0,'magixmod'],
 		category:'build',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 	});
 		new G.Res({
 		name:'Watermelon',
