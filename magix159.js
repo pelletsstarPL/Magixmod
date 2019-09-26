@@ -2116,6 +2116,15 @@ func:function(){
 		req:{'plant lore':true},
 		category:'Florists',
 	});
+		new G.Policy({
+		name:'drink spoiled juice',
+		desc:'Your people will drink [Spoiled juices] when clean [water] gets scarce, with dire consequences for health and morale.',
+		icon:[6,12,14,5,'magixmod'],
+		cost:{'influence':3},
+		startMode:'off',
+		req:{'rules of food':true,'Crafting a juice':true},
+		category:'food',
+	});
 	//New gains for gatherer
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berries': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1}); 
