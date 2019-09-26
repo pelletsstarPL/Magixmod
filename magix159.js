@@ -292,6 +292,7 @@ func:function(){
 		desc:'This stat shows you how much juices of any type you have currently in total. Juices provide more [happiness] and [health] than normal, common [water] but spoils little faster. Can be used in few crafts like normal water.',
 		icon:[14,3,'magixmod'],
 		meta:true,
+		partOf:'water',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
