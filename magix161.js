@@ -264,11 +264,10 @@ func:function(){
 			var toSpoil=me.amount*0.02;
 			var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
 			var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);
-			G.gain((('happiness').amount*0,112)'drinking tasty juice');
-			G.gain((('health').amount*0,155)'drinking tasty juice');
-			G.gain((('Spoiled juices',randomFloor(spent*1),'decay');
-			G.lose((('Watermelon juice',n,'drinking tasty juice');
-
+			G.gain('happiness',randomFloor(spent*1.17),'drinking tasty juice');
+			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
+			G.gain('Spoiled juices',randomFloor(spent*1),'decay');
+			G.lose('Watermelon juice',n,'drinking tasty juice');
 		},
 	});
 		new G.Res({
@@ -282,10 +281,11 @@ func:function(){
 			var toSpoil=me.amount*0.02;
 			var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
 			var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);
-			G.gain((('happiness').amount*0,112)'drinking tasty juice');
-			G.gain((('health').amount*0,155)'drinking tasty juice');
-			G.lose((('Watermelon juice',n,'drinking tasty juice');
-			G.gain((('Spoiled juices',randomFloor(spent*1),'decay');
+			G.gain('happiness',randomFloor(spent*1.17),'drinking tasty juice');
+			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
+			G.gain('Spoiled juices',randomFloor(spent*1),'decay');
+			G.lose('Watermelon juice',n,'drinking tasty juice');
+
 		},
 	});
 		new G.Res({
