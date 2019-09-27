@@ -259,14 +259,15 @@ func:function(){
 		icon:[15,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juices':0.2}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.02;
-				var spent=G.lose('Watermelon juice',randomFloor(toSpoil),'decay');
+				var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
+				var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);G.gain('happiness',0.112,'health',0.155)'drinking tasty juice');G.lose('Watermelon juice',n,'drinking tasty juices');
 				G.gain('Spoiled juices',randomFloor(spent*1),'decay');
+
 			}
 		},
 	});
@@ -276,14 +277,15 @@ func:function(){
 		icon:[16,3,'magixmod'],
 		category:'food',
 		partOf:'Juices',
-		turnToByContext:{'drinking':{'health':0.1,'happiness':0.15},'decay':{'Spoiled juices':0.2}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.02;
 				var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
+				var n=randomFloor(G.getRes('Berry juice').amount*0.4);G.gain('happiness',0.112,'health',0.155)'drinking tasty juice');G.lose('Berry juice',n,'drinking tasty juices');
 				G.gain('Spoiled juices',randomFloor(spent*1),'decay');
+
 			}
 		},
 	});
@@ -303,13 +305,13 @@ func:function(){
 		name:'Spoiled juices',
 		desc:'This stat shows you how much spoiled juice of any type you have currently in total. Spoiled juice decreases [happiness] and [health] stronger than normal, common [muddy water]. Can be used in few crafts like muddy water.',
 		icon:[14,5,'magixmod'],
-		turnToByContext:{'drinking':{'health':-0.037,'happiness':-0.062}},
 		tick:function(me,tick)
 		{
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.01;
 				var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
+				var n=randomFloor(G.getRes('Spoiled juices').amount*0.4);G.gain('happiness',-0.062,'health',-0.037)'drinking spoiled juice');G.lose('Spoiled juices',n,'drinking spoiled juices');
 			}
 		},	
 	});
