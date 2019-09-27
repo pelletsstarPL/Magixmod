@@ -306,13 +306,19 @@ func:function(){
 		icon:[14,5,'magixmod'],
 		tick:function(me,tick)
 		{
-			if (G.checkPolicy('disable spoiling')=='off')
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		tick:function(me,tick)
+		{
+			if (G.checkPolicy('drink spoiled juice')=='on')
 			{
 				var toSpoil=me.amount*0.01;
-				var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
-				var n=randomFloor(G.getRes('Spoiled juices').amount*0.4);G.gain('happiness',-0.062,'health',-0.037)'drinking spoiled juice');G.lose('Spoiled juices',n,'drinking spoiled juices');
+				var spent=G.lose('happiness',randomFloor(toSpoil),'decay');
+				G.gain('happiness',randomFloor(spent*-1.17),'drinking spoiled juice');
+				G.gain('health',randomFloor(spent*-1.35),'drinking spoiled juice');
 			}
-		},	
+		},
 	});
 		new G.Res({
 		name:'Berries',
