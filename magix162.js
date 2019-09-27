@@ -2125,7 +2125,7 @@ func:function(){
 	});
 		new G.Policy({
 		name:'drink spoiled juice',
-		desc:'Your people will drink [Spoiled juices] when clean [water] gets scarce, with dire consequences for health and morale.',
+		desc:'Your people will drink [Spoiled juices] no matter when clean [water] gets scarce or not, with dire consequences for health and morale.',
 		icon:[6,12,14,5,'magixmod'],
 		cost:{'influence':3},
 		startMode:'off',
