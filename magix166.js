@@ -362,7 +362,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Plain Island emblem',
-		desc:'A thing you will get after activating a Plain Island portal. Needed to unlock further researching. A pass for further things. You can obtain only one Emblem of this type. <i>Your adventure has been finished... But portal hides a new secrets... so in fact your adventure has not ended yet.',
+		desc:'A thing you will get after activating a Plain Island portal. Needed to unlock further researching. A pass for further things. You can obtain only one Emblem of this type. <b>@Your adventure has been finished... But portal hides a new secrets... so in fact your adventure has not ended yet.<b>',
 		icon:[14,9,'magixmod'],
 		category:'main',
 	});
