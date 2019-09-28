@@ -1206,20 +1206,17 @@ func:function(){
 		name:'Juicy expertise',
 		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft.',
 		icon:[16,5,'magixmod'],
-		cost:{'Juices':2e5,'wisdom':25,'insight':30},
+		cost:{'Juices':2e4,'wisdom':25,'insight':30},
 		chance:0.03,
 		category:'knowledge',
 		req:{'Crafting a juice':true},
 	});
 		new G.Trait({
 		name:'Nurtrition',
-		desc:'Your dreamers were thinking once how to make eating more healthy. Then they shard its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait generates health by itself. People won\'t eat even more food so do not worry.',
+		desc:'Your dreamers were thinking once how to make eating more healthy. Then they shard its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait makes [healer] generate health. People won\'t eat even more food so do not worry.',
 		icon:[16,7,'magixmod'],
 		cost:{'culture':150,'wisdom':25,'insight':100,'influence':10},
 		chance:0.001,
-		effects:[
-			{type:'gather',what:{'health':1.25}},
-		],
 		req:{'joy of eating':true,'Crafting a juice':true},
 	});
 //Then we add a new technology for wizards:
@@ -1394,7 +1391,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'first aid',
-		desc:'@[sick],[wounded] will have bigger chance to get recovered. Obtaining this research will unlock better healers for you. <b>This research generates [health] by itself at low rate but it does.<>',
+		desc:'@[sick],[wounded] will have bigger chance to get recovered. Obtaining this research will unlock better healers for you. <b>This research generates [health] by [healer] at low rate but it does.<>',
 		icon:[15,9,'magixmod'],
 		cost:{'insight':650,'wisdom':60},
 		effects:[
@@ -2254,7 +2251,10 @@ func:function(){
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds': 0.0001},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.008},amount:1,max:1}); 
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.005},amount:1,max:1}); 
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.005},amount:1,max:1});
+//Healer generates health by trait and research(it is temporary)
+		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nurtrition':true}});
+		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'First aid':true}}); 
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
