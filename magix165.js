@@ -378,7 +378,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0008;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			amount+=G.getRes('food storage debug pots').amount*27;
 			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 	});
@@ -400,6 +399,13 @@ func:function(){
 		partOf:'food storage',
 		icon:[0,0,'magixmod'],
 		hidden:true,
+		tick:function(me,tick)
+		{
+			var amount=0;
+			amount+=G.getRes('Precious pot').amount*27;
+			amount+=G.getRes('added food storage').amount;
+			me.amount=amount;
+		},
 	});
 //New types of people
 		new G.Res({
