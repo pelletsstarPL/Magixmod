@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/23hULEW.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/2KNPtPI.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -362,6 +362,12 @@ func:function(){
 		icon:[15,6,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
+	});
+		new G.Res({
+		name:'Plain Island emblem',
+		desc:'A thing you will get after activating a Plain Island portal. Needed to unlock further researching. A pass for further things. You can obtain only one Emblem of this type. <i>Your adventure has been finished... But portal hides a new secrets... so in fact your adventure has not ended yet.',
+		icon:[14,9,'magixmod'],
+		category:'main',
 	});
 //New types of people
 		new G.Res({
@@ -1168,6 +1174,17 @@ func:function(){
 		category:'knowledge',
 		req:{'Crafting a juice':true},
 	});
+		new G.Trait({
+		name:'Nurtrition',
+		desc:'Your dreamers were thinking once how to make eating more healthy. Then they shard its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait generates health by itself. People won\'t eat even more food so do not worry.',
+		icon:[16,7,'magixmod'],
+		cost:{'culture':150,'wisdom':25,'insight':100,'influence':10},
+		chance:0.001,
+		effects:[
+			{type:'gather',what:{'health':1.25}},
+		],
+		req:{'joy of eating':true,'Crafting a juice':true},
+	});
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -1258,7 +1275,7 @@ func:function(){
 		name:'Plain island building',
 		desc:'Unlocks sheet of buildings which can be only built in new dimension.',
 		icon:[9,0,'magixmod'], 
-		cost:{'insight':0},
+		cost:{'insight':4,'Plain Island emblem':1},
 		req:{'Plain island portal':true},
 	});
 		new G.Tech({
@@ -1314,6 +1331,13 @@ func:function(){
 		name:'Crafting a juice',
 		desc:'@Makes juices possible to be crafted. Any [fruit] + [sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juice grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
 		icon:[16,4,'magixmod'],
+		cost:{'insight':450,'wisdom':50},
+		req:{'Farms in the new land':true},
+	});
+		new G.Tech({
+		name:'Farm of the Sugar cane',
+		desc:'@Makes [Sugar cane] farm possible to be built. This farm will have increased upkeep cost and will need more people to run.<>',
+		icon:[15,7,'magixmod'],
 		cost:{'insight':450,'wisdom':50},
 		req:{'Farms in the new land':true},
 	});
@@ -1588,7 +1612,7 @@ func:function(){
 		limitPer:{'land':35},
 	});
 		new G.Unit({
-		name:'Cemetry of Plain Island',
+		name:'Cemetary of Plain Island',
 		desc:'@Big cemetry but stores a lot of corpses with a method of family burials. Uses workers to keep conservacy & keep Cemetry clean. Provides 7500 [burial spot].',//Soon new policies which will decide how much you may store corpses
 		icon:[2,6,'magixmod'],
 		cost:{'basic building materials':300},
@@ -1788,6 +1812,19 @@ func:function(){
 		category:'plainisleunit',
 		effects:[
 			{type:'gather',context:'gather',what:{'Watermelon':0.14}},
+		],
+	});
+		new G.Unit({
+		name:'Sugar cane farm',
+		desc:'@Specialized farm which will harvest useful in [Juices] crafting [Sugar cane] at the better rate than [gatherer].',
+		icon:[14,2,'magixmod'],
+		cost:{'Sugar cane':500},
+		req:{'Farms in the new land':true,'Farm of the Sugar cane':true},
+		use:{'worker':8,'Land of the Plain Island':35,'Instructor':1},
+		upkeep:{'water':36},
+		category:'plainisleunit',
+		effects:[
+			{type:'gather',context:'gather',what:{'Sugar cane':0.85}},
 		],
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
