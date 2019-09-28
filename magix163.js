@@ -369,6 +369,30 @@ func:function(){
 		icon:[14,9,'magixmod'],
 		category:'main',
 	});
+		new G.Res({
+		name:'Precious pot',
+		desc:'Harder and more beautiful pot. Each one stores 27[food]. Decays slower , grants a really low amount of [culture].',
+		icon:[15,8,'magixmod'],
+		category:'misc',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			amount+=G.getRes('food storage').amount*27;
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
+	});
+		new G.Res({
+		name:'Potion pot',
+		desc:'Pot made specially for [Alchemists]. Hard , a little bit heavy but safe.',
+		icon:[14,9,'magixmod'],
+		category:'misc',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
 //New types of people
 		new G.Res({
 		name:'Instructor',
@@ -1341,6 +1365,30 @@ func:function(){
 		cost:{'insight':450,'wisdom':50},
 		req:{'Farms in the new land':true},
 	});
+		new G.Tech({
+		name:'Precious pottery',
+		desc:'@Improves pottery in your civilization. Now [pot] can become harder and more beautiful. Can make pots specialized for potions.<>',
+		icon:[16,8,'magixmod'],
+		cost:{'insight':650,'wisdom':60},
+		req:{'construction II':true},
+	});
+		new G.Tech({
+		name:'Beginnings of alchemy',
+		desc:'@Now you may start new adventure with... potions... You need to be expert at juices before you start alchemy.<>',
+		icon:[16,9,'magixmod'],
+		cost:{'insight':650,'wisdom':60},
+		req:{'Juicy expertise':true},
+	});
+		new G.Tech({
+		name:'first aid',
+		desc:'@[sick],[wounded] will have bigger chance to get recovered. Obtaining this research will unlock better healers for you. <b>This research generates [health] by itself at low rate but it does.<>',
+		icon:[15,9,'magixmod'],
+		cost:{'insight':650,'wisdom':60},
+		effects:[
+			{type:'gather',what:{'health':0.05}},
+		],
+		req:{'Juicy expertise':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Fire wizard tower',
@@ -2007,6 +2055,21 @@ func:function(){
 			use:{'worker':1,'Fishing net':1},
 		};
 		G.getDict('fishing').effects.push({type:'gather',context:'gather',what:{'Seafood':5},amount:5,max:6,mode:'Net fishing'});
+//2 new modes for potters. First one for precious pots, second for potion pots.
+		G.getDict('potter').modes['Craft precious pots']={
+			name:'Craft precious pots',
+			icon:[15,8,'magixmod'],
+			desc:'Your potter will craft [Precious pot] out of both [clay] and [mud].',
+			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':1},
+		};	
+		G.getDict('potter').effects.push({type:'convert',from:{'clay':5,'mud':12,'fire pit':0.03},into:{'Precious pot':1},every:3,repeat:2,mode:'Craft precious pots'});
+		G.getDict('potter').modes['Craft potion pots']={
+			name:'Craft potion pots',
+			icon:[14,8,'magixmod'],
+			desc:'Your potter will craft [Potion pot] out of both [clay] and [mud]. These pots do not provide additional [food storage].',
+			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':1},
+		};	
+		G.getDict('potter').effects.push({type:'convert',from:{'clay':4,'mud':11,'fire pit':0.025},into:{'Potion pot':1},every:3,repeat:1,mode:'Craft potion pots'});
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
