@@ -1879,7 +1879,7 @@ func:function(){
 		new G.Unit({
 		name:'Sugar cane farm',
 		desc:'@Specialized farm which will harvest useful in [Juices] crafting [Sugar cane] at the better rate than [gatherer].',
-		icon:[14,2,'magixmod'],
+		icon:[14,7,'magixmod'],
 		cost:{'Sugar cane':500},
 		req:{'Farms in the new land':true,'Farm of the Sugar cane':true},
 		use:{'worker':8,'Land of the Plain Island':35,'Instructor':1},
