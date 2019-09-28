@@ -378,7 +378,7 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0008;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			amount+=G.getRes('food storage').amount*27;
+			amount+=G.getRes('food storage debug pots').amount*27;
 			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 	});
@@ -392,6 +392,14 @@ func:function(){
 			var toSpoil=me.amount*0.0008;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+	});
+	//To make game not crash by precious pots i had to add it
+		new G.Res({
+		name:'food storage debug pots',
+		desc:'debug for precious pots.',
+		partOf:'food storage',
+		icon:[0,0,'magixmod'],
+		hidden:true,
 	});
 //New types of people
 		new G.Res({
