@@ -1214,7 +1214,7 @@ func:function(){
 		req:{'Crafting a juice':true},
 	});
 		new G.Trait({
-		name:'Nurtrition',
+		name:'Nutrition',
 		desc:'Your dreamers were thinking once how to make eating more healthy. Then they shard its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait makes [healer] generate health. People won\'t eat even more food so do not worry.',
 		icon:[16,7,'magixmod'],
 		cost:{'culture':150,'wisdom':25,'insight':100,'influence':10},
