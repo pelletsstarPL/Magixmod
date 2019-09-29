@@ -2255,7 +2255,7 @@ func:function(){
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.008},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.005},amount:1,max:1});
 //Healer generates health by trait and research(it is temporary)
-		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nurtrition':true}});
+		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nutrition':true}});
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'First aid':true}}); 
 		//New tile generation is InDev. I am open to any programming tips
 	
