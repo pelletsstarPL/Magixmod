@@ -44,8 +44,13 @@ func:function(){
 				base:[],
 				side:['Flowers','Dyes'],
 		},
-			'alchemy':{
-				name:'Alchemy', //It won't be added quickly but i will code this category
+			'alchemypotions':{
+				name:'Alchemy - Potions', //It won't be added quickly but i will code this category
+				base:[],
+				side:[],
+		},
+			'alchemyingredients':{
+				name:'Alchemy - Ingredients', //It won't be added quickly but i will code this category
 				base:[],
 				side:[],
 		},
