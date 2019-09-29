@@ -294,7 +294,6 @@ func:function(){
 			var toSpoil=me.amount*0.01;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 			G.gain('Spoiled juices',randomFloor(spent*0.4),'decay');
-			G.lose('Juices',n,'decay');
 		},
 	});
 		new G.Res({
