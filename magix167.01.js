@@ -308,7 +308,7 @@ func:function(){
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decaying');
 		},
 		tick:function(me,tick)
 		{
