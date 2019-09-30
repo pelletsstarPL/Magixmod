@@ -1840,8 +1840,8 @@ func:function(){
 		},
 		effects:[
 			{type:'convert',from:{'Sugar cane':2},into:{'sugar':1},every:5,mode:'sugar'},
-			{type:'convert',from:{'sugar':1,'Berries':2,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
-			{type:'convert',from:{'sugar':1,'Watermelon':1,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
+			{type:'convert',from:{'sugar':1,'Berries':0.95,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
+			{type:'convert',from:{'sugar':1,'Watermelon':0.4,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
 		],
 		req:{'Crafting a juice':true},
 		category:'crafting',
