@@ -267,7 +267,7 @@ func:function(){
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.02;
-			var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
+			var spent=G.lose('Watermelon juice',randomFloor(toSpoil),'decay');
 			var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);
 			G.gain('happiness',randomFloor(spent*0.77),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
@@ -296,9 +296,12 @@ func:function(){
 		partOf:'water',
 		tick:function(me,tick)
 		{
-			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decay / drinking');
-			G.gain('Spoiled juices',randomFloor(spent*0.4),'decay');
+			if (G.checkPolicy('disable spoiling')=='off')
+			{
+				var toSpoil=me.amount*0.01;
+				var spent=G.lose(me.name,randomFloor(toSpoil),'decay / drinking');
+				G.gain('Spoiled juices',randomFloor(spent*0.4),'decay');
+			}
 		},
 	});
 		new G.Res({
@@ -307,15 +310,10 @@ func:function(){
 		icon:[14,5,'magixmod'],
 		tick:function(me,tick)
 		{
-			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decaying');
-		},
-		tick:function(me,tick)
-		{
 			if (G.checkPolicy('drink spoiled juice')=='on')
 			{
 				var toSpoil=me.amount*0.01;
-				var spent=G.lose('happiness',randomFloor(toSpoil),'decay');
+				var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
 				G.gain('happiness',randomFloor(spent*-1.17),'drinking spoiled juice');
 				G.gain('health',randomFloor(spent*-1.35),'drinking spoiled juice');
 			}
