@@ -1452,7 +1452,7 @@ func:function(){
 		new G.Tech({
 		name:'Poetry',
 		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
-		icon:[18,7,'magixmod'],
+		icon:[18,8,'magixmod'],
 		cost:{'insight':650,'culture':300,'inspiration':25},
 		req:{'Plain island building':true,'Ink crafting':true},
 	});
@@ -1630,6 +1630,23 @@ func:function(){
 		category:'housing',
 		limitPer:{'Land of the Plain Island':250},
 	});
+		new G.Unit({
+		name:'Poet',
+		desc:'@generates [culture] every now and then<>[Poet]s spends his free time in his private life to write novels, stories, poems about any topic. Gathers a little bit more [culture] than storyteller but needs [Ink] as upkeep(he needs something with sense to write).',
+		icon:[18,5,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		upkeep:{'ink':0.35},
+		effects:[
+			{type:'gather',what:{'culture':0.13}},
+			{type:'gather',what:{'culture':0.05},req:{'symbolism':true}},
+			{type:'mult',value:1.31,req:{'artistic thinking':true}},
+			{type:'mult',value:1.21,req:{'wisdom rituals':'on'}}
+		],
+		req:{'oral tradition':true,'Poetry':true},
+		category:'cultural',
+	});
+	
 		new G.Unit({
 		name:'Wizard Complex',
 		desc:'@provides 690 [housing]<>A towers for 660 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana.',
