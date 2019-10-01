@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/2KNPtPI.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/BCCnBrn.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -1317,7 +1317,7 @@ func:function(){
 		desc:'Allows your people to build [Blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
 		icon:[8,1,'magixmod'], 
 		cost:{'insight':65},
-		req:{'Plain island portal':true,'Plain island building':true},
+		req:{'Plain island portal':true,'Plain island building':true,'Plain island building':true},
 	});
 		new G.Tech({
 		name:'Burial in new world',
@@ -1387,7 +1387,7 @@ func:function(){
 		desc:'@Now you may start new adventure with... potions... You need to be expert at juices before you start alchemy.<>',
 		icon:[16,9,'magixmod'],
 		cost:{'insight':650,'wisdom':60},
-		req:{'Juicy expertise':true},
+		req:{'Juicy expertise':true,'Intermediate maths':true},
 	});
 		new G.Tech({
 		name:'first aid',
@@ -1398,6 +1398,27 @@ func:function(){
 			{type:'gather',what:{'health':0.05}},
 		],
 		req:{'Juicy expertise':true},
+	});
+		new G.Tech({
+		name:'Basic maths',
+		desc:'@people will know basic math making them more intelligent and have chance to be good at more advanced technologies.<>',
+		icon:[17,1,'magixmod'],
+		cost:{'insight':20},
+		req:{'oral tradition':true},
+	});
+		new G.Tech({
+		name:'Intermediate maths',
+		desc:'@people will know more harder and advanced math making them even more intelligent and smart. @Your people have bigger chances to understand more advanced things.<>',
+		icon:[17,2,'magixmod'],
+		cost:{'insight':80},
+		req:{'oral tradition':true,'Basic maths':true,'city planning':true},
+	});
+		new G.Tech({
+		name:'Proportion',
+		desc:'@Without it you won\'t be able to start alchemy/chemistry. Without it people will use too much or less ingredient with bad consequences of it. I would research it now.',
+		icon:[18,4,'magixmod'],
+		cost:{'insight':380,'wisdom':10},
+		req:{'oral tradition':true,'Intermediate maths':true,'Plain island building':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
