@@ -391,6 +391,17 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 	});
+		new G.Res({
+		name:'Ink',
+		desc:'Can be used in writing. Not drinkable, not tasty.',
+		icon:[18,6,'magixmod'],
+		category:'misc',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -1404,6 +1415,9 @@ func:function(){
 		desc:'@people will know basic math making them more intelligent and have chance to be good at more advanced technologies.<>',
 		icon:[17,1,'magixmod'],
 		cost:{'insight':20},
+		effects:[
+			{type:'provide res',what:{'education':0.4}},
+		],
 		req:{'oral tradition':true},
 	});
 		new G.Tech({
@@ -1411,6 +1425,9 @@ func:function(){
 		desc:'@people will know more harder and advanced math making them even more intelligent and smart. @Your people have bigger chances to understand more advanced things.<>',
 		icon:[17,2,'magixmod'],
 		cost:{'insight':80},
+		effects:[
+			{type:'provide res',what:{'education':2}},
+		],
 		req:{'oral tradition':true,'Basic maths':true,'city planning':true},
 	});
 		new G.Tech({
@@ -1418,7 +1435,26 @@ func:function(){
 		desc:'@Without it you won\'t be able to start alchemy/chemistry. Without it people will use too much or less ingredient with bad consequences of it. I would research it now.',
 		icon:[18,4,'magixmod'],
 		cost:{'insight':380,'wisdom':10},
+		effects:[
+			{type:'provide res',what:{'education':0.6}},
+			{type:'provide res',what:{'science':1}},
+		],
+		],
 		req:{'oral tradition':true,'Intermediate maths':true,'Plain island building':true},
+	});
+		new G.Tech({
+		name:'Ink crafting',
+		desc:'Now [artisan] will be able to craft [Ink]. Ink will be used by [Poet] later. You can craft ink choosing new working mode for [artisan].',
+		icon:[18,7,'magixmod'],
+		cost:{'insight':350},
+		req:{'Plain island building':true},
+	});
+		new G.Tech({
+		name:'Poetry',
+		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
+		icon:[18,7,'magixmod'],
+		cost:{'insight':650,'culture':300,'inspiration':25},
+		req:{'Plain island building':true,'Ink crafting':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -1798,7 +1834,7 @@ func:function(){
 		new G.Unit({
 		name:'Florist',
 		startWith:0,
-		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use.',
+		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use. The further you will research the more types of [Flowers] he will be able to collect.',
 		icon:[0,2],
 		cost:{},
 		req:{},
@@ -1811,6 +1847,7 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Lavender':1},amount:1,max:2,req:{'plant lore':true}},
 			{type:'gather',context:'gather',what:{'Brown flower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'gather',context:'gather',what:{'Daisy':1},amount:1,max:1,req:{'plant lore':true}},
+			{type:'gather',context:'gather',what:{'Bachelor\'s button':1,'Black lily':1},amount:1,max:1,req:{'plant lore':true}},	
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
 		],
 	});
@@ -1940,6 +1977,17 @@ func:function(){
 			use:{'worker':1,'stone tools':2,'Instructor':1},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':35,'Dried leather':1},into:{'Fishing net':1},every:5,mode:'Craftnet'});
+//Artisans will craft fishing nets for fishers
+		G.getDict('artisan').modes['Craftink']={
+			name:'Craft ink',
+			icon:[18,6,'magixmod'],
+			desc:'Your artisan will craft [Ink]. Will use water and [Black dye],[Blue dye] or [Brown dye].',
+			req:{'Ink crafting':true},
+			use:{'worker':1},
+		};
+		G.getDict('artisan').effects.push({type:'convert',from:{'Black dye':1,'mud':0.001,'water':0.007},into:{'Ink':1},every:4,mode:'Craftink'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Brown dye':1,'mud':0.001,'water':0.007},into:{'Ink':1},every:4,mode:'Craftink'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Blue dye':1,'mud':0.001,'water':0.007},into:{'Ink':1},every:6,mode:'Craftink'});
 //4 modes for Artisans. Each of them can convert 8 different flowers into its dyes.
 		G.getDict('artisan').modes['Make dyes from flowers(Set 1)']={
 			name:'Make dyes from flowers(Set 1)',
