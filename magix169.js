@@ -1398,7 +1398,7 @@ func:function(){
 		desc:'@Now you may start new adventure with... potions... You need to be expert at juices before you start alchemy.<>',
 		icon:[16,9,'magixmod'],
 		cost:{'insight':650,'wisdom':60},
-		req:{'Juicy expertise':true,'Intermediate maths':true},
+		req:{'Juicy expertise':true,'Intermediate maths':true,'Proportion':true},
 	});
 		new G.Tech({
 		name:'first aid',
