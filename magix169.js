@@ -1635,7 +1635,7 @@ func:function(){
 		icon:[18,5,'magixmod'],
 		cost:{},
 		use:{'worker':1},
-		upkeep:{'ink':0.35},
+		upkeep:{'Ink':0.35},
 		effects:[
 			{type:'gather',what:{'culture':0.13}},
 			{type:'gather',what:{'culture':0.05},req:{'symbolism':true}},
