@@ -602,6 +602,12 @@ func:function(){
 		},
 		category:'demog',
 	});
+		new G.Res({
+		name:'drunk',
+		desc:'[adult,People] may get [drunk] due to drinking too much alcohol brews. They do not [worker,work], but may slowly get better over time. Common healer cannot aid with it. Unhealed by any (except) default [healer] alcohol sickness will lead [drunk,drunken] people to death. ',
+		partOf:'population',
+		icon:[17,0,'magixmod'],
+	});
 //FLOWERS!,DYES!
 		new G.Res({
 		name:'Flowers',
@@ -1218,7 +1224,7 @@ func:function(){
 		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft.',
 		icon:[16,5,'magixmod'],
 		cost:{'Juices':2e4,'wisdom':25,'insight':30},
-		chance:0.03,
+		chance:6,//experimental
 		category:'knowledge',
 		req:{'Crafting a juice':true},
 	});
@@ -1227,7 +1233,7 @@ func:function(){
 		desc:'Your dreamers were thinking once how to make eating more healthy. Then they shard its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait makes [healer] generate health. People won\'t eat even more food so do not worry.',
 		icon:[16,7,'magixmod'],
 		cost:{'culture':150,'wisdom':25,'insight':100,'influence':10},
-		chance:0.001,
+		chance:120,//experimental
 		req:{'joy of eating':true,'Crafting a juice':true},
 	});
 //Then we add a new technology for wizards:
