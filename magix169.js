@@ -1439,7 +1439,6 @@ func:function(){
 			{type:'provide res',what:{'education':0.6}},
 			{type:'provide res',what:{'science':1}},
 		],
-		],
 		req:{'oral tradition':true,'Intermediate maths':true,'Plain island building':true},
 	});
 		new G.Tech({
