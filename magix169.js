@@ -1498,6 +1498,13 @@ func:function(){
 		cost:{'insight':650,'culture':300,'inspiration':25},
 		req:{'Plain island building':true,'Ink crafting':true},
 	});
+		new G.Tech({
+		name:'Moar juices',
+		desc:'Allows you to craft juice out of [fruit]s.',
+		icon:[18,8,'magixmod'],
+		cost:{'insight':950},
+		req:{'Plain island building':true,'Ink crafting':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Fire wizard tower',
