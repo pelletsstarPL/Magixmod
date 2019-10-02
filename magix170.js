@@ -283,9 +283,16 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.02;
 			var spent=G.lose('Berry juice',randomFloor(toSpoil),'decay');
-			var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);
+			var n=randomFloor(G.getRes('Berry juice').amount*0.4);
 			G.gain('happiness',randomFloor(spent*0.77),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
+		}
+			if (G.has('Juicy expertise'))
+			{
+				var n=randomFloor(G.getRes('Berry juice').amount*0.4);
+				G.gain('happiness',randomFloor(spent*0.187),'drinking tasty juice');
+				G.gain('health',randomFloor(spent*0.27),'drinking tasty juice');
+			}
 		},
 	});
 		new G.Res({
@@ -429,6 +436,21 @@ func:function(){
 		icon:[15,10,'magixmod'],
 		category:'misc',
 		displayUsed:true,
+	});
+		new G.Res({
+		name:'Fruit juice',
+		desc:'Fresh, sweet, healthy and tasty juice. Grants less [happiness] and [health] than [Berry juice],[Watermelon juice] and spoils little slower than [Berry juice] & [Watermelon juice].',
+		icon:[17,3,'magixmod'],
+		category:'food',
+		partOf:'Juices',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.02;
+			var spent=G.lose('Fruit juice',randomFloor(toSpoil),'decay');
+			var n=randomFloor(G.getRes('Fruit juice').amount*0.4);
+			G.gain('happiness',randomFloor(spent*0.6),'drinking tasty juice');
+			G.gain('health',randomFloor(spent*1.15),'drinking tasty juice');
+		},
 	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
@@ -1249,7 +1271,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Juicy expertise',
-		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft.',
+		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft. @[artisan of juice] has a small chance to craft 1 additional [Juices,juice].',
 		icon:[16,5,'magixmod'],
 		cost:{'Juices':5e3,'wisdom':25,'insight':30},
 		chance:6,//experimental
@@ -1269,9 +1291,9 @@ func:function(){
 		desc:'Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [First aid], which will be obtainable in later stage of game.',
 		icon:[8,12,3,5],
 		cost:{'insight':50},
-		chance:1200,
+		chance:400,
 		category:'knowledge',
-		req:{'healing':true},
+		req:{'healing':true,'Will to know more':true},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
