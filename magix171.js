@@ -286,7 +286,9 @@ func:function(){
 			var n=randomFloor(G.getRes('Berry juice').amount*0.4);
 			G.gain('happiness',randomFloor(spent*0.77),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
-		}
+		},
+		tick:function(me,tick)
+		{
 			if (G.has('Juicy expertise'))
 			{
 				var n=randomFloor(G.getRes('Berry juice').amount*0.4);
