@@ -272,15 +272,6 @@ func:function(){
 			G.gain('happiness',randomFloor(spent*0.77),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
 		},
-		tick:function(me,tick)
-		{
-			if (G.has('Juicy expertise'))
-			{
-				var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);
-				G.gain('happiness',randomFloor(spent*0.187),'drinking tasty juice');
-				G.gain('health',randomFloor(spent*0.27),'drinking tasty juice');
-			}
-		},
 	});
 		new G.Res({
 		name:'Berry juice',
@@ -295,15 +286,6 @@ func:function(){
 			var n=randomFloor(G.getRes('Berry juice').amount*0.4);
 			G.gain('happiness',randomFloor(spent*0.77),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
-		},
-		tick:function(me,tick)
-		{
-			if (G.has('Juicy expertise'))
-			{
-				var n=randomFloor(G.getRes('Berry juice').amount*0.4);
-				G.gain('happiness',randomFloor(spent*0.187),'drinking tasty juice');
-				G.gain('health',randomFloor(spent*0.27),'drinking tasty juice');
-			}
 		},
 	});
 		new G.Res({
@@ -482,7 +464,7 @@ func:function(){
 		name:'Sweet brew',
 		desc:'Sweet brew. Can be used to craft more advanced brews/potions.',
 		icon:[0,10,'magixmod'],
-		category:'misc',
+		category:'alchemypotions',
 		displayUsed:true,
 	});
 	//To make game not crash by precious pots i had to add it
