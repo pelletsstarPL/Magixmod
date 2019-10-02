@@ -299,7 +299,7 @@ func:function(){
 			if (G.checkPolicy('disable spoiling')=='off')
 			{
 				var toSpoil=me.amount*0.01;
-				var spent=G.lose(me.name,randomFloor(toSpoil),'decay / drinking');
+				var spent=G.lose(me.name,randomFloor(toSpoil),'drinking juice');
 				G.gain('Spoiled juices',randomFloor(spent*0.4),'decay');
 			}
 		},
