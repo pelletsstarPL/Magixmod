@@ -402,6 +402,34 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 	});
+		new G.Res({
+		name:'Alchemy zone',
+		desc:'This part of land will be occupied by [Alchemists] and their seats. Here they brew potions, antidotums and many more.',
+		icon:[17,6,'magixmod'],
+		category:'main',
+		displayUsed:true,
+	});
+		new G.Res({
+		name:'Plaster',
+		desc:'Common, basic thing used in [health,First Aid] to prevent infections enter into the wound. They will prevent wound from bleeding too much',
+		icon:[16,10,'magixmod'],
+		category:'misc',
+		displayUsed:true,
+	});
+		new G.Res({
+		name:'Bandage',
+		desc:'Common, basic thing used in [health,First Aid] to prevent wounds from bleeding too much mainly.',
+		icon:[17,10,'magixmod'],
+		category:'misc',
+		displayUsed:true,
+	});
+		new G.Res({
+		name:'Triangular bandage',
+		desc:'Basic thing used in [health,First Aid] to immobilize arm-wounds. Can be used to bandage other type of wounds.',
+		icon:[15,10,'magixmod'],
+		category:'misc',
+		displayUsed:true,
+	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -1461,6 +1489,13 @@ func:function(){
 		cost:{'insight':650,'culture':300,'inspiration':25},
 		req:{'Plain island building':true,'Ink crafting':true},
 	});
+		new G.Tech({
+		name:'Poetry',
+		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
+		icon:[18,8,'magixmod'],
+		cost:{'insight':650,'culture':300,'inspiration':25},
+		req:{'Plain island building':true,'Ink crafting':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Fire wizard tower',
@@ -1927,6 +1962,22 @@ func:function(){
 		category:'crafting',
 	});
 		new G.Unit({
+		name:'First aid healer',
+		desc:'@uses [Bandage]s,[Plaster]s,[Triangular bandage]s to heal the [wounded] mainly and slowly. Sometimes may use herb to heal wounded if these things are not enough.<>The [healer] knows the solution to bunch of wound types so it makes pain stay away.',
+		icon:[18,1,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		staff:{'stone tools':1},
+		upkeep:{'coin':0.2},
+		effects:[
+			{type:'convert',from:{'wounded':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33},into:{'adult':1},chance:4/10,every:10},
+		],
+		req:{'healing':true,'First aid':true},
+		category:'spiritual',
+		priority:5,
+	});
+	
+		new G.Unit({
 		name:'Berry farm',
 		desc:'@Specialized farm which will harvest tasty [Berries] at the better rate than [gatherer].',
 		icon:[14,1,'magixmod'],
@@ -2007,9 +2058,21 @@ func:function(){
 			req:{'Ink crafting':true},
 			use:{'worker':1},
 		};
-		G.getDict('artisan').effects.push({type:'convert',from:{'Black dye':1,'mud':0.001,'water':0.007},into:{'Ink':1},every:4,mode:'Craftink'});
-		G.getDict('artisan').effects.push({type:'convert',from:{'Brown dye':1,'mud':0.001,'water':0.007},into:{'Ink':1},every:4,mode:'Craftink'});
-		G.getDict('artisan').effects.push({type:'convert',from:{'Blue dye':1,'mud':0.001,'water':0.007},into:{'Ink':1},every:6,mode:'Craftink'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Black dye':1,'mud':0.0015,'water':0.015},into:{'Ink':0.75},every:4,mode:'Craftink'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Brown dye':1,'mud':0.0015,'water':0.015},into:{'Ink':0.75},every:4,mode:'Craftink'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Blue dye':1,'mud':0.0015,'water':0.015},into:{'Ink':0.75},every:4,mode:'Craftink'});
+//Artisans will craft bandages, plasters for First Aid Healer.
+		G.getDict('artisan').modes['CraftFirstAid']={
+			name:'Craft first aid things',
+			icon:[16,10,'magixmod',15,10,'magixmod'],
+			desc:'Your artisan will craft equipment for [First Aid Healer]. He will craft: [Triangular bandage],[Bandage],[Plaster].',
+			req:{'First aid':true},
+			use:{'worker':1,'stone tools':1},
+		};
+		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':1.5,'herb':0.75},into:{'Bandage':1},every:5,mode:'CraftFirstAid'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':0.5,'herb':1},into:{'Plaster':1},every:5,mode:'CraftFirstAid'});
+		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':2,'herb':1.5,'hide':1},into:{'Triangular bandage':1},every:7,mode:'CraftFirstAid'});
+
 //4 modes for Artisans. Each of them can convert 8 different flowers into its dyes.
 		G.getDict('artisan').modes['Make dyes from flowers(Set 1)']={
 			name:'Make dyes from flowers(Set 1)',
