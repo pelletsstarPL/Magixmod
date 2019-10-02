@@ -467,8 +467,8 @@ func:function(){
 			if (G.has('Juicy expertise'))
 			{
 				var n=randomFloor(G.getRes('Fruit juice').amount*0.4);
-				G.gain('happiness',randomFloor(spent*0.187),'drinking tasty juice');
-				G.gain('health',randomFloor(spent*0.27),'drinking tasty juice');
+				G.gain('happiness',randomFloor(spent*0.15),'drinking tasty juice');
+				G.gain('health',randomFloor(spent*0.23),'drinking tasty juice');
 			}
 		},
 	});
