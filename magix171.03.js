@@ -1308,7 +1308,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'More healing ways',
-		desc:'Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [First aid], which will be obtainable in later stage of game.',
+		desc:'Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [first aid], which will be obtainable in later stage of legacy.',
 		icon:[8,12,3,5],
 		cost:{'insight':50},
 		chance:400,
@@ -1659,7 +1659,6 @@ func:function(){
 		use:{'land':1},
 		upkeep:{'Mana':6},
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
-		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
 			{type:'gather',what:{'Nature essence':2}},
@@ -2063,7 +2062,7 @@ func:function(){
 		effects:[
 			{type:'convert',from:{'wounded':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33},into:{'adult':1},chance:4/10,every:10},
 		],
-		req:{'healing':true,'First aid':true},
+		req:{'healing':true,'first aid':true},
 		category:'spiritual',
 		priority:5,
 	});
@@ -2157,7 +2156,7 @@ func:function(){
 			name:'Craft first aid things',
 			icon:[16,10,'magixmod',15,10,'magixmod'],
 			desc:'Your artisan will craft equipment for [First Aid Healer]. He will craft: [Triangular bandage],[Bandage],[Plaster].',
-			req:{'First aid':true},
+			req:{'first aid':true},
 			use:{'worker':1,'stone tools':1},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':1.5,'herb':0.75},into:{'Bandage':1},every:5,mode:'CraftFirstAid'});
