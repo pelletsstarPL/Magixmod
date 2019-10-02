@@ -47,7 +47,7 @@ func:function(){
 			'alchemypotions':{
 				name:'Alchemy - Potions', //It won't be added quickly but i will code this category
 				base:[],
-				side:[],
+				side:['Basic brews'],
 		},
 			'alchemyingredients':{
 				name:'Alchemy - Ingredients', //It won't be added quickly but i will code this category
@@ -471,6 +471,19 @@ func:function(){
 				G.gain('health',randomFloor(spent*0.23),'drinking tasty juice');
 			}
 		},
+	});
+		new G.Res({
+		name:'Basic brews',
+		desc:'[Basic brews] may be used to craft more advanced potions',
+		icon:[6,10,'magixmod'],
+		displayUsed:true,
+	});
+		new G.Res({
+		name:'Sweet brew',
+		desc:'Sweet brew. Can be used to craft more advanced brews/potions.',
+		icon:[0,10,'magixmod'],
+		category:'misc',
+		displayUsed:true,
 	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
