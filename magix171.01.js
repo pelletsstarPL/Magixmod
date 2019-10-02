@@ -272,6 +272,15 @@ func:function(){
 			G.gain('happiness',randomFloor(spent*0.77),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.35),'drinking tasty juice');
 		},
+		tick:function(me,tick)
+		{
+			if (G.has('Juicy expertise'))
+			{
+				var n=randomFloor(G.getRes('Watermelon juice').amount*0.4);
+				G.gain('happiness',randomFloor(spent*0.187),'drinking tasty juice');
+				G.gain('health',randomFloor(spent*0.27),'drinking tasty juice');
+			}
+		},
 	});
 		new G.Res({
 		name:'Berry juice',
@@ -452,6 +461,15 @@ func:function(){
 			var n=randomFloor(G.getRes('Fruit juice').amount*0.4);
 			G.gain('happiness',randomFloor(spent*0.6),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.15),'drinking tasty juice');
+		},
+		tick:function(me,tick)
+		{
+			if (G.has('Juicy expertise'))
+			{
+				var n=randomFloor(G.getRes('Fruit juice').amount*0.4);
+				G.gain('happiness',randomFloor(spent*0.187),'drinking tasty juice');
+				G.gain('health',randomFloor(spent*0.27),'drinking tasty juice');
+			}
 		},
 	});
 	//To make game not crash by precious pots i had to add it
@@ -1468,6 +1486,13 @@ func:function(){
 		req:{'Juicy expertise':true,'Intermediate maths':true,'Proportion':true},
 	});
 		new G.Tech({
+		name:'Terrain conservacy',
+		desc:'@Unlocks subclass of [architect] which instead of setting up new houses etc. will set up some part of ground due to requirements of job group, for example [Alchemists]. Their stands and their "toys" will use [Alchemy zone] instead of [land]  <>',
+		icon:[16,9,'magixmod'],
+		cost:{'insight':850,'wisdom':60},
+		req:{'Beginnings of alchemy':true,'Intermediate maths':true,'Proportion':true},
+	});
+		new G.Tech({
 		name:'first aid',
 		desc:'@[sick],[wounded] will have bigger chance to get recovered. Obtaining this research will unlock better healers for you. <b>This research generates [health] by [healer] at low rate but it does.<>',
 		icon:[15,9,'magixmod'],
@@ -1525,9 +1550,9 @@ func:function(){
 		new G.Tech({
 		name:'Moar juices',
 		desc:'Allows you to craft juice out of [fruit]s.',
-		icon:[18,8,'magixmod'],
+		icon:[17,4,'magixmod'],
 		cost:{'insight':950},
-		req:{'Plain island building':true,'Ink crafting':true},
+		req:{'Plain island building':true,'Crafting a juice':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -1892,6 +1917,39 @@ func:function(){
 		],
 		req:{'construction II':true},
 		category:'plainisleunit',
+	});
+		new G.Unit({
+		name:'Terrain conservator',
+		desc:'@Each one hired [Terrain conservator] will convert 25 [land] into 25 [Alchemy zone]. Hire them more to get more of its zone but not too much. @<b>WARNING! If you will fire one conservator you will lose [Alchemy zone] and you will not receive back your [land] so choose amount of them wisely!<b> ',
+		icon:[17,5,'magixmod'],
+		cost:{'land':25},
+		use:{'worker':1},
+		effects:[
+			{type:'provide',what:{'Alchemy zone':25}},
+		],
+		req:{'Beginnings of alchemy':true,'Terrain conservacy':true},
+		category:'alchemy',
+	});
+		new G.Unit({
+		name:'terrain conservator',
+		desc:'@Each one hired [terrain conservator] will convert 25 [Land of the Plain Island] into 25 [Alchemy zone]. Hire them more to get more of its zone but not too much. @<b>WARNING! If you will fire one conservator you will lose [Alchemy zone] and you will not receive back your [Land of the Plain Island] so choose amount of them wisely!<b> ',
+		icon:[17,6,'magixmod'],
+		cost:{'Land of the Plain Island':25},
+		use:{'worker':1},
+		effects:[
+			{type:'provide',what:{'Alchemy zone':25}},
+		],
+		req:{'Beginnings of alchemy':true,'Terrain conservacy':true},
+		category:'alchemy',
+	});
+		new G.Unit({
+		name:'Basic brewing stand',
+		desc:'There you can brew basic potions.',
+		icon:[17,6,'magixmod'],
+		cost:{'basic building materials':3},
+		use:{'Alchemists':1,'Alchemy zone':0.33},
+		req:{'Beginnings of alchemy':true},
+		category:'alchemy',
 	});
 		new G.Unit({
 		name:'School of alchemy',
@@ -2279,6 +2337,11 @@ func:function(){
 	G.unitCategories.unshift({
 			id:'plainisleunit',
 			name:'Plain Island'
+		});
+	//Category for Alchemy
+	G.unitCategories.unshift({
+			id:'alchemy',
+			name:'Alchemy'
 		});
 	G.policyCategories.push(
 			{id:'Florists',name:'Florists gathering'}
