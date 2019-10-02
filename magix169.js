@@ -1251,7 +1251,7 @@ func:function(){
 		name:'Juicy expertise',
 		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft.',
 		icon:[16,5,'magixmod'],
-		cost:{'Juices':2e4,'wisdom':25,'insight':30},
+		cost:{'Juices':5e3,'wisdom':25,'insight':30},
 		chance:6,//experimental
 		category:'knowledge',
 		req:{'Crafting a juice':true},
@@ -1263,6 +1263,15 @@ func:function(){
 		cost:{'culture':150,'wisdom':25,'insight':100,'influence':10},
 		chance:120,//experimental
 		req:{'joy of eating':true,'Crafting a juice':true},
+	});
+		new G.Trait({
+		name:'More healing ways',
+		desc:'Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [First aid], which will be obtainable in later stage of game.',
+		icon:[8,12,3,5],
+		cost:{'insight':50},
+		chance:1200,
+		category:'knowledge',
+		req:{'healing':true},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
@@ -1442,7 +1451,7 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'health':0.05}},
 		],
-		req:{'Juicy expertise':true},
+		req:{'More healing ways':true},
 	});
 		new G.Tech({
 		name:'Basic maths',
@@ -1481,13 +1490,6 @@ func:function(){
 		icon:[18,7,'magixmod'],
 		cost:{'insight':350},
 		req:{'Plain island building':true},
-	});
-		new G.Tech({
-		name:'Poetry',
-		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
-		icon:[18,8,'magixmod'],
-		cost:{'insight':650,'culture':300,'inspiration':25},
-		req:{'Plain island building':true,'Ink crafting':true},
 	});
 		new G.Tech({
 		name:'Poetry',
