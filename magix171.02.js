@@ -1488,7 +1488,7 @@ func:function(){
 		new G.Tech({
 		name:'Terrain conservacy',
 		desc:'@Unlocks subclass of [architect] which instead of setting up new houses etc. will set up some part of ground due to requirements of job group, for example [Alchemists]. Their stands and their "toys" will use [Alchemy zone] instead of [land]  <>',
-		icon:[16,9,'magixmod'],
+		icon:[17,5,'magixmod',24,1],
 		cost:{'insight':850,'wisdom':60},
 		req:{'Beginnings of alchemy':true,'Intermediate maths':true,'Proportion':true},
 	});
