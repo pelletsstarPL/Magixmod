@@ -2047,6 +2047,7 @@ func:function(){
 			{type:'convert',from:{'Sugar cane':2},into:{'sugar':1},every:5,mode:'sugar'},
 			{type:'convert',from:{'sugar':1,'Berries':0.95,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
 			{type:'convert',from:{'sugar':1,'Watermelon':0.4,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
+			{type:'convert',from:{'sugar':1,'fruit':0.4,'water':2},into:{'Fruit juice':2},every:5,mode:'juices',req:{'Moar juices':true}},
 		],
 		req:{'Crafting a juice':true},
 		category:'crafting',
