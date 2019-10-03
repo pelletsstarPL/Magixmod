@@ -469,6 +469,13 @@ func:function(){
 		category:'alchemypotions',
 		partOf:'Basic brews',
 	});
+		new G.Res({
+		name:'Sweet water pot',
+		desc:'Sweet brew. Can be used to craft more advanced brews/potions.',
+		icon:[0,10,'magixmod'],
+		category:'alchemypotions',
+		partOf:'Basic brews',
+	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -1931,6 +1938,23 @@ func:function(){
 		cost:{'basic building materials':3},
 		use:{'Alchemists':1,'Alchemy zone':0.33},
 		req:{'Beginnings of alchemy':true},
+		gizmos:true,
+		modes:{
+			'off':G.MODE_OFF,
+			'cobalt':{name:'Cobalt',icon:[8,2,'magixmod'],desc:'Gain [Cobalt ore] mainly from this mine.',use:{'worker':5,'metal tools':5}},
+			'salt':{name:'Salt',icon:[11,7],desc:'Mine for [salt].',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
+			'copper':{name:'Copper',icon:[9,8],desc:'Mine for [copper ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
+			'tin':{name:'Tin',icon:[13,8],desc:'Mine for [tin ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
+			'iron':{name:'Iron',icon:[10,8],desc:'Mine for [iron ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
+		},
+		effects:[
+			{type:'convert',from:{'Potion pot':1,'water':0.75,'sugar':0.33},into:{'Sweet water pot':1},every:4,mode:'cobalt'},
+			{type:'gather',context:'mine',what:{'salt':25},max:30,mode:'salt'},
+			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
+			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
+			{type:'gather',context:'mine',what:{'iron ore':25},max:30,mode:'iron'},
+			//{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','Plain island mine collapsed, wounding its workers','Plain island mines collapsed, wounding their workers'),chance:1/50} ERROR
+		],
 		category:'alchemy',
 	});
 		new G.Unit({
