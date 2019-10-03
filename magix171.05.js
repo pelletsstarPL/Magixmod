@@ -415,7 +415,7 @@ func:function(){
 		new G.Res({
 		name:'Alchemy zone',
 		desc:'This part of land will be occupied by [Alchemists] and their seats. Here they brew potions, antidotums and many more.',
-		icon:[17,6,'magixmod'],
+		icon:[17,7,'magixmod'],
 		category:'main',
 		displayUsed:true,
 	});
@@ -424,21 +424,18 @@ func:function(){
 		desc:'Common, basic thing used in [health,First Aid] to prevent infections enter into the wound. They will prevent wound from bleeding too much',
 		icon:[16,10,'magixmod'],
 		category:'misc',
-		displayUsed:true,
 	});
 		new G.Res({
 		name:'Bandage',
 		desc:'Common, basic thing used in [health,First Aid] to prevent wounds from bleeding too much mainly.',
 		icon:[17,10,'magixmod'],
 		category:'misc',
-		displayUsed:true,
 	});
 		new G.Res({
 		name:'Triangular bandage',
 		desc:'Basic thing used in [health,First Aid] to immobilize arm-wounds. Can be used to bandage other type of wounds.',
 		icon:[15,10,'magixmod'],
 		category:'misc',
-		displayUsed:true,
 	});
 		new G.Res({
 		name:'Fruit juice',
@@ -653,7 +650,6 @@ func:function(){
 		desc:'Adult alchemist. Can be hired to special category of jobs same as his younger version. While he will at [elder] age he will retire.//The number on the left is how many are currently being employed, while the number on the right is your total amount of adult alchemists.',
 		icon:[12,5,'magixmod'],
 		partOf:'Alchemists',
-		displayUsed:true,
 		tick:function(me,tick)
 		{
 			var n=randomFloor(G.getRes('Alchemist').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Alchemist',n,'aging up');
@@ -665,7 +661,6 @@ func:function(){
 		desc:'Younger alchemist. Can be hired to special category of jobs but chance for accidents will grow. Soon he will grow to [Alchemist].//The number on the left is how many are currently being employed, while the number on the right is your total amount of child alchemists.',
 		icon:[12,7,'magixmod'],
 		partOf:'Alchemists',
-		displayUsed:true,
 		tick:function(me,tick)
 		{
 			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('Alchemist',n,'aging up');G.lose('Child alchemist',n,'aging up');
@@ -1944,7 +1939,7 @@ func:function(){
 		new G.Unit({
 		name:'Basic brewing stand',
 		desc:'There you can brew basic potions.',
-		icon:[17,6,'magixmod'],
+		icon:[18,9,'magixmod'],
 		cost:{'basic building materials':3},
 		use:{'Alchemists':1,'Alchemy zone':0.33},
 		req:{'Beginnings of alchemy':true},
@@ -2061,7 +2056,8 @@ func:function(){
 		staff:{'stone tools':1},
 		upkeep:{'coin':0.2},
 		effects:[
-			{type:'convert',from:{'wounded':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33},into:{'adult':1},chance:4/10,every:10},
+			{type:'convert',from:{'wounded':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33},into:{'adult':1,'health':0.44},chance:4/10,every:10},
+			{type:'gather',context:'gather',what:{'health':0.1},req:{'Nutrition':true}},
 		],
 		req:{'healing':true,'first aid':true},
 		category:'spiritual',
