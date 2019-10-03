@@ -443,12 +443,8 @@ func:function(){
 			var n=randomFloor(G.getRes('Fruit juice').amount*0.4);
 			G.gain('happiness',randomFloor(spent*0.6),'drinking tasty juice');
 			G.gain('health',randomFloor(spent*1.15),'drinking tasty juice');
-		},
-		tick:function(me,tick)
-		{
 			if (G.has('Juicy expertise'))
 			{
-				var n=randomFloor(G.getRes('Fruit juice').amount*0.4);
 				G.gain('happiness',randomFloor(spent*0.15),'drinking tasty juice');
 				G.gain('health',randomFloor(spent*0.23),'drinking tasty juice');
 			}
