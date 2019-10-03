@@ -1913,18 +1913,6 @@ func:function(){
 		category:'plainisleunit',
 	});
 		new G.Unit({
-		name:'Terrain conservator',
-		desc:'@Each one hired [Terrain conservator] will convert 25 [land] into 25 [Alchemy zone]. Hire them more to get more of its zone but not too much. @<b>WARNING! If you will fire one conservator you will lose [Alchemy zone] and you will not receive back your [land] so choose amount of them wisely!<b> ',
-		icon:[17,5,'magixmod'],
-		cost:{'land':25},
-		use:{'worker':1},
-		effects:[
-			{type:'provide',what:{'Alchemy zone':25}},
-		],
-		req:{'Beginnings of alchemy':true,'Terrain conservacy':true},
-		category:'alchemy',
-	});
-		new G.Unit({
 		name:'terrain conservator',
 		desc:'@Each one hired [terrain conservator] will convert 25 [Land of the Plain Island] into 25 [Alchemy zone]. Hire them more to get more of its zone but not too much. @<b>WARNING! If you will fire one conservator you will lose [Alchemy zone] and you will not receive back your [Land of the Plain Island] so choose amount of them wisely!<b> ',
 		icon:[17,6,'magixmod'],
