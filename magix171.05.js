@@ -470,9 +470,23 @@ func:function(){
 		partOf:'Basic brews',
 	});
 		new G.Res({
-		name:'Sweet water pot',
-		desc:'Sweet brew. Can be used to craft more advanced brews/potions.',
-		icon:[0,10,'magixmod'],
+		name:'mundane water pot',
+		desc:'Mundane water. Can be used to craft more advanced brews/potions. Tastes a little bit like [muddy water] but it is not poisonous.',
+		icon:[1,10,'magixmod'],
+		category:'alchemypotions',
+		partOf:'Basic brews',
+	});
+		new G.Res({
+		name:'salted water pot',
+		desc:'Salted water. Can be used to craft more advanced brews/potions. It is not tasty water, believe me.',
+		icon:[2,10,'magixmod'],
+		category:'alchemypotions',
+		partOf:'Basic brews',
+	});
+		new G.Res({
+		name:'Bubbling water pot',
+		desc:'Bubbling water. Can be used to craft more advanced brews/potions. So hot, so do not drink. At least it releases bubbles.',
+		icon:[3,10,'magixmod'],
 		category:'alchemypotions',
 		partOf:'Basic brews',
 	});
@@ -1941,19 +1955,16 @@ func:function(){
 		gizmos:true,
 		modes:{
 			'off':G.MODE_OFF,
-			'cobalt':{name:'Cobalt',icon:[8,2,'magixmod'],desc:'Gain [Cobalt ore] mainly from this mine.',use:{'worker':5,'metal tools':5}},
-			'salt':{name:'Salt',icon:[11,7],desc:'Mine for [salt].',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
-			'copper':{name:'Copper',icon:[9,8],desc:'Mine for [copper ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
-			'tin':{name:'Tin',icon:[13,8],desc:'Mine for [tin ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
-			'iron':{name:'Iron',icon:[10,8],desc:'Mine for [iron ore] with x5 efficiency.',req:{'prospecting':true},use:{'worker':3,'metal tools':3}},
+			'sweetwater':{name:'Sweet water',icon:[0,10,'magixmod'],desc:'Gain [Sweet water pot,Sweet water] out of its stand and its owner.',use:{'Alchemists':1,'Alchemy zone':0.33}},
+			'mundanewater':{name:'Mundane water',icon:[1,10,'magixmod'],desc:'Gain [mundane water pot,Mundane water] out of its stand and its owner.',use:{'Alchemists':1,'Alchemy zone':0.33}},
+			'saltwater':{name:'Saltwater',icon:[2,10,'magixmod'],desc:'Gain [salted water pot,Saltwater] out of its stand and its owner.',use:{'Alchemists':1,'Alchemy zone':0.33}},
+			'bubblingwater':{name:'Bubbling water',icon:[3,10,'magixmod'],desc:'Gain [Bubbling water pot,Bubbling water] out of its stand and its owner.',use:{'Alchemists':1,'Alchemy zone':0.33}},
 		},
 		effects:[
-			{type:'convert',from:{'Potion pot':1,'water':0.75,'sugar':0.33},into:{'Sweet water pot':1},every:4,mode:'cobalt'},
-			{type:'gather',context:'mine',what:{'salt':25},max:30,mode:'salt'},
-			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
-			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
-			{type:'gather',context:'mine',what:{'iron ore':25},max:30,mode:'iron'},
-			//{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','Plain island mine collapsed, wounding its workers','Plain island mines collapsed, wounding their workers'),chance:1/50} ERROR
+			{type:'convert',from:{'Potion pot':1,'water':0.75,'sugar':0.33},into:{'Sweet water pot':1},every:4,mode:'sweetwater'},
+			{type:'convert',from:{'Potion pot':1,'water':0.75,'muddy water':0.05,'herb':0.1},into:{'mundane water pot':1},every:4,mode:'mundanewater'},
+			{type:'convert',from:{'Potion pot':1,'water':0.8,'salt':0.2,'herb':0.1},into:{'salted water pot':1},every:4,mode:'saltwater'},
+			{type:'convert',from:{'Potion pot':1,'water':0.8,'salt':0.02,'fire pit':0.12},into:{'Bubbling water pot':1},every:4,mode:'bubblingwater'},
 		],
 		category:'alchemy',
 	});
