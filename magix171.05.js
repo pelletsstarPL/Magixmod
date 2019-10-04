@@ -1327,7 +1327,7 @@ func:function(){
 		desc:'Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [first aid], which will be obtainable in later stage of legacy.',
 		icon:[8,12,3,5],
 		cost:{'insight':50},
-		chance:400,
+		chance:120,
 		category:'knowledge',
 		req:{'healing':true,'Will to know more':true},
 	});
