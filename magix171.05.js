@@ -423,18 +423,33 @@ func:function(){
 		name:'Plaster',
 		desc:'Common, basic thing used in [health,First Aid] to prevent infections enter into the wound. They will prevent wound from bleeding too much',
 		icon:[16,10,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Bandage',
 		desc:'Common, basic thing used in [health,First Aid] to prevent wounds from bleeding too much mainly.',
 		icon:[17,10,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Triangular bandage',
 		desc:'Basic thing used in [health,First Aid] to immobilize arm-wounds. Can be used to bandage other type of wounds.',
 		icon:[15,10,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'misc',
 	});
 		new G.Res({
@@ -468,6 +483,11 @@ func:function(){
 		desc:'Sweet brew. Can be used to craft more advanced brews/potions.',
 		icon:[0,10,'magixmod'],
 		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		partOf:'Basic brews',
 	});
 		new G.Res({
@@ -475,6 +495,11 @@ func:function(){
 		desc:'Mundane water. Can be used to craft more advanced brews/potions. Tastes a little bit like [muddy water] but it is not poisonous.',
 		icon:[1,10,'magixmod'],
 		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		partOf:'Basic brews',
 	});
 		new G.Res({
@@ -482,6 +507,11 @@ func:function(){
 		desc:'Salted water. Can be used to craft more advanced brews/potions. It is not tasty water, believe me.',
 		icon:[2,10,'magixmod'],
 		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		partOf:'Basic brews',
 	});
 		new G.Res({
@@ -489,6 +519,11 @@ func:function(){
 		desc:'Bubbling water. Can be used to craft more advanced brews/potions. So hot, so do not drink. At least it releases bubbles.',
 		icon:[3,10,'magixmod'],
 		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		partOf:'Basic brews',
 	});
 	//To make game not crash by precious pots i had to add it
