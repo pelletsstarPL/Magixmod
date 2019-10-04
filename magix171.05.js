@@ -461,6 +461,7 @@ func:function(){
 		name:'Basic brews',
 		desc:'[Basic brews] may be used to craft more advanced potions',
 		icon:[6,10,'magixmod'],
+		meta:true,
 	});
 		new G.Res({
 		name:'Sweet water pot',
