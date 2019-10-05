@@ -1669,7 +1669,7 @@ func:function(){
 		name:'Proportion',
 		desc:'@Without it you won\'t be able to start alchemy/chemistry. Without it people will use too much or less ingredient with bad consequences of it. I would research it now.',
 		icon:[18,4,'magixmod'],
-		cost:{'insight':380,'wisdom':10},
+		cost:{'insight':360,'wisdom':10},
 		effects:[
 			{type:'provide res',what:{'education':0.6}},
 			{type:'provide res',what:{'science':1}},
