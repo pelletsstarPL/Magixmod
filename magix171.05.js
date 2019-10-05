@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/BCCnBrn.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/g07yREC.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -47,7 +47,7 @@ func:function(){
 			'alchemypotions':{
 				name:'Alchemy - Potions', //It won't be added quickly but i will code this category
 				base:[],
-				side:['Basic brews'],
+				side:['Basic brews','Alcohol brews'],
 		},
 			'alchemyingredients':{
 				name:'Alchemy - Ingredients', //It won't be added quickly but i will code this category
@@ -526,6 +526,81 @@ func:function(){
 		},
 		partOf:'Basic brews',
 	});
+		new G.Res({
+		name:'Alcohol brews',
+		desc:'Main reason of [drunk,alcoholism]. But some of alcohol brews will have its use to make other potions.',
+		icon:[11,10,'magixmod'],
+		meta:true,
+	});
+		new G.Res({
+		name:'Alcohol pot',
+		desc:'Can be used to craft [Wine] or [Vodka]. Let\'s not forget about usage to other potions.',
+		icon:[7,10,'magixmod'],
+		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		partOf:'Alcohol brews',
+	});
+		new G.Res({
+		name:'Wine',
+		desc:'Edible alcohol. Drinking it will increase [happiness] by low rate, but harm [health] at low rate. Can make [drunk] people appear.',
+		icon:[8,10,'magixmod'],
+		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		partOf:'Alcohol brews',
+	});
+		new G.Res({
+		name:'Pot of vodka',
+		desc:'Dangerous for health alcohol drink. Has bigger chance to make a person become a [drunk] than a [Wine]',
+		icon:[10,10,'magixmod'],
+		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		partOf:'Alcohol brews',
+	});
+		new G.Res({
+		name:'Herb syrup',
+		desc:'Not so tasty. Made out of healthy [herb,Herbs] , [Flowers,various flowers] . Can heal [sick] and [drunk] person.',
+		icon:[5,10,'magixmod'],
+		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
+		new G.Res({
+		name:'Essenced herb syrup',
+		desc:'A little bit tastier than [Herb syrup]. Made out of healthy [herb,Herbs] , [Flowers,various flowers] with little addition of [Water essence],[Nature essence]. Can heal [sick] and [drunk] person.',
+		icon:[9,10,'magixmod'],
+		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
+		new G.Res({
+		name:'Antidotum',
+		desc:'Made out of [mundane water pot], tiny amount of [Alcohol pot,Alcohol],[herb,Herbs] and tiny amount of [salt]. This brew is used to heal [drunk] with a bigger chance to succesful heal.',
+		icon:[4,10,'magixmod'],
+		category:'alchemypotions',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -592,7 +667,7 @@ func:function(){
 				{
 					//drink water
 					var toConsume=0;
-					var weights={'Child alchemist':0.3,'Alchemist':0.5,'Instructor':0.5};
+					var weights={'Child alchemist':0.3,'Alchemist':0.5,'Instructor':0.5,'drunk':0.4};
 					for (var i in weights)
 					{toConsume+=G.getRes(i).amount*weights[i];}
 					var rations=G.checkPolicy('water rations');
@@ -656,7 +731,7 @@ func:function(){
 							var toDie=(lacking/5)*0.05;
 							if (G.year<1) toDie/=5;//less deaths in the first year
 							var died=0;
-							var weights={'Child alchemist':0.2,'Alchemist':0.5,'Instructor':0.5};//the elderly are the first to starve off
+							var weights={'Child alchemist':0.2,'Alchemist':0.5,'Instructor':0.5,'drunk':0.4};//the elderly are the first to starve off
 							var sum=0;for (var i in weights){sum+=weights[i];}for (var i in weights){weights[i]/=sum;}//normalize
 							for (var i in weights){var ratio=(G.getRes(i).amount/me.amount);weights[i]=ratio+(1-ratio)*weights[i];}
 							for (var i in weights)
@@ -1659,6 +1734,21 @@ func:function(){
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
+		name:'Syrup healer',
+		desc:'This is other subclass of [healer] which heals with brews instead of herbs or bandages. He will mainly heal [sick] and [drunk].',
+		icon:[18,0,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		upkeep:{'food':0.2},
+		effects:[
+			{type:'convert',from:{'sick':1,'Essenced herb syrup':0.15,'Herb syrup':1},into:{'adult':1,'health':0.44},chance:4/10,every:10},
+			{type:'convert',from:{'drunk':1,'Essenced herb syrup':0.25,'Herb syrup':0.9},into:{'adult':1,'health':0.44},chance:3/10,every:10},
+			{type:'gather',context:'gather',what:{'health':0.1},req:{'Nutrition':true}},
+		],
+		req:{'healing':true,'Healing with brews':true},
+		category:'spiritual',
+	});
+		new G.Unit({
 		name:'Fire wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Fire essence] by consuming mana.',
 		icon:[2,4,'magixmod'],
@@ -1672,7 +1762,7 @@ func:function(){
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true},
 		category:'housing',
 		limitPer:{'land':2},
-	});//Usage for dyes
+	});
 		new G.Unit({
 		name:'Painter',
 		desc:'@generates [culture] by using [Dyes] to make a paintings. Requires artistic thinking.',
@@ -1824,10 +1914,23 @@ func:function(){
 		upkeep:{'faith':0.001},
 		use:{'land':1},
 		req:{'churches':true},
-		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'faith':0.05}},
-			{type:'gather',what:{'spirituality':0.0000001}},
+			{type:'gather',what:{'faith':0.03}},
+			{type:'gather',what:{'spirituality':0.00000001}},
+	],
+		category:'spiritual',
+	});
+		new G.Unit({
+		name:'Cathedral',
+		desc:'A precious place for worship. Commonly generates [faith] at the bigger rate than [soothsayer].',
+		icon:[19,4,'magixmod'],
+		cost:{'basic building materials':1700,'precious building materials':400},
+		upkeep:{'faith':0.003},
+		use:{'land':1},
+		req:{'churches':true,'Stronger faith':true},
+		effects:[
+			{type:'gather',what:{'faith':0.09}},
+			{type:'gather',what:{'faith':0.03},req:{'symbolism':true,'Stronger faith':true}},
 	],
 		category:'spiritual',
 	});
