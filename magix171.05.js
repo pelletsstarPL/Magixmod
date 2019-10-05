@@ -2171,6 +2171,23 @@ func:function(){
 		category:'alchemy',
 	});
 		new G.Unit({
+		name:'Mana crafting stand',
+		desc:'There [Alchemists] can craft [Mana] with the same recipe as your [Mana maker] primarily did.',
+		icon:[19,10,'magixmod'],
+		cost:{'basic building materials':4},
+		req:{'Beginnings of alchemy':true,'Mana brewery II':true},
+		use:{'Alchemy zone':0.5},
+		gizmos:true,
+		modes:{
+			'hireadult':{name:'Hire adult alchemist to craft mana',icon:[12,5,'magixmod'],desc:'Hire [Alchemist] to craft mana.',use:{'Alchemist':1}},
+			'hirechild':{name:'Hire child alchemist to craft mana',icon:[12,7,'magixmod'],desc:'Hire [Child alchemist] to craft mana. Each stand used by children has 0.5% chance to make accident happen, but if you need adult [Alchemist] to other purposes you\'ll have\'em.',use:{'Child alchemist':1},req:{'Alchemy for children':'on'}},
+		},
+		effects:[
+			{type:'gather',what:{'Mana':0.75}},
+        ],
+		category:'alchemy',
+	});
+		new G.Unit({
 		name:'School of alchemy',
 		desc:'@The building where people may learn basics of alchemy. You can decide who may learn it in Policies tab. Needs water to work... you know why it does need water.',
 		icon:[5,6,'magixmod'],
