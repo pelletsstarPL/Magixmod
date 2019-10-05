@@ -2159,6 +2159,18 @@ func:function(){
 		category:'alchemy',
 	});
 		new G.Unit({
+		name:'Alcohol brewing stand',
+		desc:'There [Alchemists] can brew alcohol. Harmful for health but may be needed to make more potions.',
+		icon:[19,9,'magixmod'],
+		cost:{'basic building materials':4},
+		req:{'Beginnings of alchemy':true,'Alcohol brewing':true},
+		use:{'Alchemy zone':0.5,'Alchemist':1},
+		effects:[
+			{type:'convert',from:{'mundane water pot':0.75,'water':0.2,'Bubbling water pot':0.25},into:{'Alcohol pot':1},every:4},
+		],
+		category:'alchemy',
+	});
+		new G.Unit({
 		name:'School of alchemy',
 		desc:'@The building where people may learn basics of alchemy. You can decide who may learn it in Policies tab. Needs water to work... you know why it does need water.',
 		icon:[5,6,'magixmod'],
