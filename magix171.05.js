@@ -1687,7 +1687,7 @@ func:function(){
 		name:'Poetry',
 		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
 		icon:[18,8,'magixmod'],
-		cost:{'insight':650,'culture':300,'inspiration':25},
+		cost:{'insight':635,'culture':300,'inspiration':25},
 		req:{'Plain island building':true,'Ink crafting':true},
 	});
 		new G.Tech({
