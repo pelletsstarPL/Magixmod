@@ -730,6 +730,12 @@ func:function(){
 		partOf:'population',
 		icon:[17,0,'magixmod'],
 	});
+		new G.Res({
+		name:'wild corpse',//InDevelopment
+		desc:'Effect of [Revenants] trait. Dangerous for common, alive people will kill them, so think about hiring soldiers. ',
+		partOf:'population',
+		icon:[19,11,'magixmod'],
+	});
 //FLOWERS!,DYES!
 		new G.Res({
 		name:'Flowers',
@@ -1367,6 +1373,15 @@ func:function(){
 		category:'knowledge',
 		req:{'healing':true,'Will to know more':true},
 	});
+		new G.Trait({
+		name:'Revenants',//InDevelopment
+		desc:'The dark powers got mad that your people are using [corpse,corpses] as a toy or ritual thing. Since now some of them will come back to live but they will behave like zombie. Do not worry they won\'t replicate. You will need to defend your people against them. Each one will harm your [happiness] and kill your [population,people]. ',
+		icon:[19,0,'magixmod'],
+		cost:{'insight':50,'corpse':5e4},
+		chance:500,
+		category:'long',
+		req:{'belief in revenants':true,'ritual necrophagy':true},
+	});
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -1433,8 +1448,8 @@ func:function(){
 		req:{'masonry':true,'smelting':true},
 	});
 		new G.Tech({
-		name:'floating islands',
-		desc:'Wizards got knowledge enough to start making floating isles.',
+		name:'churches',
+		desc:'Will generate milennialy some [spirituality]. Generates some faith at the lower rate than [soothsayer]. ',
 		icon:[7,2,'magixmod'], //WIP
 		cost:{'insight':95},
 		req:{'Wizardry':true,'Wizard wisdom':true},
@@ -1606,6 +1621,41 @@ func:function(){
 		cost:{'insight':950},
 		req:{'Plain island building':true,'Crafting a juice':true},
 	});
+		new G.Tech({
+		name:'Medicaments brewing',
+		desc:'[Alchemists] will now be able to craft at their stands medicaments out of [flowers,various flowers] and a [herb,herbs].',
+		icon:[18,2,'magixmod'],
+		cost:{'insight':750},
+		req:{'Beginnings of alchemy':true},
+	});
+		new G.Tech({
+		name:'Alcohol brewing',
+		desc:'[Alchemists] will now be able to craft at their stands alcohol by created by them own recipe. Alcohol can be used to craft trunks.',
+		icon:[18,3,'magixmod'],
+		cost:{'insight':750},
+		req:{'Beginnings of alchemy':true},
+	});
+		new G.Tech({
+		name:'Mana brewery II',
+		desc:'[Alchemists] will now be able to craft at their stands [Mana]. To do it they will use same recipe as the [Mana maker]. Will gain same amounts like he.',
+		icon:[19,2,'magixmod'],
+		cost:{'insight':1000},
+		req:{'Beginnings of alchemy':true},
+	});
+		new G.Tech({
+		name:'Stronger faith',
+		desc:'Unlocks cathedrals. Soothsayer will gain less [faith] but [Church] will gain more than [soothsayer] since now.',
+		icon:[19,3,'magixmod'],
+		cost:{'insight':1000},
+		req:{'Wizard complex':true,'ritualism':true},
+	});
+		new G.Tech({
+		name:'Healing with brews',
+		desc:'@[sick],[drunk] will have bigger chance to get recovered. Obtaining this research will unlock new type of [healer] who heals [sick] and [drunk] using medical brews.',
+		icon:[15,9,'magixmod'],
+		cost:{'insight':650,'wisdom':60},
+		req:{'More healing ways':true,'Medicaments brewing':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Fire wizard tower',
@@ -1766,18 +1816,19 @@ func:function(){
 		limitPer:{'land':2},
 	});
 		new G.Unit({
-		name:'Floating island',
-		desc:'@provides 6 [land]<> Land consumes nature essence, wind essence, a bit fire & water essences but only at first cast. Needs a bit of stones and mud to form its island',
+		name:'Church',
+		desc:'Millenially generates some [spirituality]. Commonly generates [faith] at the lower rate than [soothsayer]. Further religion improvements may change it.',
 		icon:[6,3,'magixmod'],
-		cost:{'Mana':4000,'mud':1000,'stone':3000,'Nature essence':1500,'Wind essence':1500,'Fire essence':600,'Water essence':600},
-		upkeep:{'Mana':6,'Nature essence':3,'Wind essence':5},
-		req:{'floating islands':true},
+		cost:{'basic building materials':2000,'precious building materials':20},
+		upkeep:{'faith':0.001},
+		use:{'land':1},
+		req:{'churches':true},
 		//require:{'wizard':3},
 		effects:[
-			{type:'provide',what:{'land':6}},
+			{type:'gather',what:{'faith':0.05}},
+			{type:'gather',what:{'spirituality':0.0000001}},
 	],
-		category:'housing',
-		limitPer:{'Land of the Plain Island':250},
+		category:'spiritual',
 	});
 		new G.Unit({
 		name:'Poet',
