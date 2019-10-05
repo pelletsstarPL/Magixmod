@@ -2037,7 +2037,6 @@ func:function(){
 		desc:'There you can brew basic potions.',
 		icon:[18,9,'magixmod'],
 		cost:{'basic building materials':3},
-		use:{'Alchemists':1,'Alchemy zone':0.33},
 		req:{'Beginnings of alchemy':true},
 		gizmos:true,
 		modes:{
