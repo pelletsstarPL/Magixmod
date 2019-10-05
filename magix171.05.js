@@ -1639,7 +1639,7 @@ func:function(){
 		name:'first aid',
 		desc:'@[sick],[wounded] will have bigger chance to get recovered. Obtaining this research will unlock better healers for you. <b>This research generates [health] by [healer] at low rate but it does.<>',
 		icon:[15,9,'magixmod'],
-		cost:{'insight':650,'wisdom':60},
+		cost:{'insight':680,'wisdom':60},
 		effects:[
 			{type:'gather',what:{'health':0.05}},
 		],
