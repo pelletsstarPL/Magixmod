@@ -1912,7 +1912,7 @@ func:function(){
 		icon:[6,3,'magixmod'],
 		cost:{'basic building materials':2000,'precious building materials':20},
 		upkeep:{'faith':0.001},
-		use:{'land':1},
+		use:{'land':1,'worker':2},
 		req:{'churches':true},
 		effects:[
 			{type:'gather',what:{'faith':0.03}},
@@ -1926,7 +1926,7 @@ func:function(){
 		icon:[19,4,'magixmod'],
 		cost:{'basic building materials':1700,'precious building materials':400},
 		upkeep:{'faith':0.003},
-		use:{'land':1},
+		use:{'land':1,'worker':4},
 		req:{'churches':true,'Stronger faith':true},
 		effects:[
 			{type:'gather',what:{'faith':0.09}},
