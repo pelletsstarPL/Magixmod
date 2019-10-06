@@ -1936,7 +1936,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Poet',
-		desc:'@generates [culture] every now and then<>[Poet]s spends his free time in his private life to write novels, stories, poems about any topic. Gathers a little bit more [culture] than storyteller but needs [Ink] as upkeep(he needs something with sense to write).',
+		desc:'@generates [culture] every now and then<>[Poet] spends his free time in his private life to write novels, stories, poems about any topic. Gathers a little bit more [culture] than storyteller but needs [Ink] as upkeep(he needs something with sense to write).',
 		icon:[18,5,'magixmod'],
 		cost:{},
 		use:{'worker':1},
