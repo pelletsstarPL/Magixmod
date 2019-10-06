@@ -534,7 +534,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Alcohol pot',
-		desc:'Can be used to craft [Wine] or [Vodka]. Let\'s not forget about usage to other potions.',
+		desc:'Can be used to craft [Wine] or [Pot of vodka]. Let\'s not forget about usage to other potions.',
 		icon:[7,10,'magixmod'],
 		category:'alchemypotions',
 		tick:function(me,tick)
