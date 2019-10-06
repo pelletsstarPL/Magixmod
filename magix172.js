@@ -2557,7 +2557,7 @@ func:function(){
 			icon:[15,8,'magixmod'],
 			desc:'Your potter will craft [Precious pot] out of both [clay] and [mud].',
 			req:{'Precious pottery':true},
-			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':1},
+			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':0.33},
 		};	
 		G.getDict('potter').effects.push({type:'convert',from:{'clay':5,'mud':12,'fire pit':0.03},into:{'Precious pot':1},every:3,repeat:2,mode:'Craft precious pots'});
 		G.getDict('potter').modes['Craft potion pots']={
@@ -2565,7 +2565,7 @@ func:function(){
 			icon:[14,8,'magixmod'],
 			desc:'Your potter will craft [Potion pot] out of both [clay] and [mud]. These pots do not provide additional [food storage].',
 			req:{'Precious pottery':true},
-			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':1},
+			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':0.5},
 		};	
 		G.getDict('potter').effects.push({type:'convert',from:{'clay':4,'mud':11,'fire pit':0.025},into:{'Potion pot':1},every:3,repeat:1,mode:'Craft potion pots'});
 	//Category for portals
