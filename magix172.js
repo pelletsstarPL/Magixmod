@@ -1421,7 +1421,7 @@ func:function(){
 		cost:{'culture':5,'wisdom':25},
 		chance:3,
 		category:'knowledge',
-		req:{'First portal to new world':true},
+		req:{'Plain island building':true},
 	});
 		new G.Trait({
 		name:'Juicy expertise',
