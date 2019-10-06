@@ -1917,6 +1917,7 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'faith':0.03}},
 			{type:'gather',what:{'spirituality':0.00000001}},
+			{type:'waste',chance:0.01/1000}
 	],
 		category:'spiritual',
 	});
@@ -1931,6 +1932,7 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'faith':0.09}},
 			{type:'gather',what:{'faith':0.03},req:{'symbolism':true,'Stronger faith':true}},
+			{type:'waste',chance:0.003/1000}
 	],
 		category:'spiritual',
 	});
