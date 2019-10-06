@@ -2024,7 +2024,7 @@ func:function(){
 		desc:'@can mine new resource such as [Cobalt ore]. They will be able to mine few other resources.',
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
-		use:{'Land of the Plain Island':5,'worker':4,'metal tools':4},
+		use:{'Land of the Plain Island':5},
 		req:{'Plain island building':true},
 		gizmos:true,
 		modes:{
@@ -2273,7 +2273,7 @@ func:function(){
 		desc:'@This subclass of [artisan] can make juices for you. In default he will extract sugar out of [Sugar cane]. Just switch mode to start crafting juices',
 		icon:[15,5,'magixmod'],
 		cost:{},
-		use:{'worker':1},
+		use:{},
 		gizmos:true,
 		//upkeep:{'coin':0.2},
 		modes:{
