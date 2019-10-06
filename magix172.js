@@ -2396,7 +2396,7 @@ func:function(){
 		G.getDict('artisan').modes['CraftFirstAid']={
 			name:'Craft first aid things',
 			icon:[16,10,'magixmod',15,10,'magixmod'],
-			desc:'Your artisan will craft equipment for [First Aid Healer]. He will craft: [Triangular bandage],[Bandage],[Plaster].',
+			desc:'Your artisan will craft equipment for [First aid healer]. He will craft: [Triangular bandage],[Bandage],[Plaster].',
 			req:{'first aid':true},
 			use:{'worker':1,'stone tools':1},
 		};
