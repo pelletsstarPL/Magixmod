@@ -1700,7 +1700,7 @@ func:function(){
 		new G.Tech({
 		name:'Medicaments brewing',
 		desc:'[Alchemists] will now be able to craft at their stands medicaments out of [Flowers,various flowers] and a [herb,herbs].',
-		icon:[18,2,'magixmod'],
+		icon:[19,6,'magixmod'],
 		cost:{'insight':750},
 		req:{'Beginnings of alchemy':true},
 	});
