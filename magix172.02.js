@@ -1467,7 +1467,7 @@ func:function(){
 		req:{'belief in the afterlife':true},
 		tick:function(me,tick)
 		{
-			if (G.has('belief in the afterlife')) deathUnhappinessMult/=2;
+			if (G.has('culture of the afterlife')) deathUnhappinessMult/=2;
 		},
 	});
 //Then we add a new technology for wizards:
