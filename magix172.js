@@ -1700,7 +1700,7 @@ func:function(){
 		new G.Tech({
 		name:'Medicaments brewing',
 		desc:'[Alchemists] will now be able to craft at their stands medicaments out of [Flowers,various flowers] and a [herb,herbs].',
-		icon:[19,6,'magixmod'],
+		icon:[18,2,'magixmod'],
 		cost:{'insight':750},
 		req:{'Beginnings of alchemy':true},
 	});
@@ -1728,7 +1728,7 @@ func:function(){
 		new G.Tech({
 		name:'Healing with brews',
 		desc:'@[sick],[drunk] will have bigger chance to get recovered. Obtaining this research will unlock new type of [healer] who heals [sick] and [drunk] using medical brews.',
-		icon:[15,9,'magixmod'],
+		icon:[19,6,'magixmod'],
 		cost:{'insight':650,'wisdom':60},
 		req:{'More healing ways':true,'Medicaments brewing':true},
 	});
