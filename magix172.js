@@ -2242,7 +2242,7 @@ func:function(){
 		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
 		icon:[1,2],
 		cost:{},
-		use:{'worker':1},
+		use:{},
 		gizmos:true,
 		//upkeep:{'coin':0.2},
 		modes:{
