@@ -1453,10 +1453,22 @@ func:function(){
 		name:'Revenants',//InDevelopment
 		desc:'The dark powers got mad that your people are using [corpse,corpses] as a toy or ritual thing. Since now some of them will come back to live but they will behave like zombie. Do not worry they won\'t replicate. You will need to defend your people against them. Each one will harm your [happiness] and kill your [population,people]. ',
 		icon:[19,0,'magixmod'],
-		cost:{'insight':50,'corpse':5e4},
+		cost:{'insight':50,'corpse':500},
 		chance:500,
 		category:'long',
 		req:{'belief in revenants':true,'ritual necrophagy':true},
+	});
+		new G.Trait({
+		name:'culture of the afterlife',
+		desc:'<b>Believements have turned into the culture. People will now try to be closer to gods or god they worship, Who knows if they will build another wonder.<\b> @unhappiness from death is halved. ',
+		icon:[19,1,'magixmod'],
+		cost:{'insight':50,'culture':200,'inspiration':20,'authority':20,'spirituality':30,'faith':40},
+		chance:500,
+		req:{'belief in the afterlife':true},
+		tick:function(me,tick)
+		{
+			if (G.has('belief in the afterlife')) deathUnhappinessMult/=2;
+		},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
