@@ -320,10 +320,10 @@ func:function(){
 		icon:[14,5,'magixmod'],
 		tick:function(me,tick)
 		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
 			if (G.checkPolicy('drink spoiled juice')=='on')
 			{
-				var toSpoil=me.amount*0.01;
-				var spent=G.lose('Spoiled juices',randomFloor(toSpoil),'decay');
 				G.gain('happiness',randomFloor(spent*-1.17),'drinking spoiled juice');
 				G.gain('health',randomFloor(spent*-1.35),'drinking spoiled juice');
 			}
@@ -2199,6 +2199,24 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'Mana':0.75}},
         ],
+		category:'alchemy',
+	});
+		new G.Unit({
+		name:'Alcohol drinks brewing stand',
+		desc:'There [Alchemists] can brew drinks with help of [Alcohol pot,alcohol] . Tasty but harmful for health drinks are crafted there. Can craft [Wine] or [Pot of vodka].',
+		icon:[19,8,'magixmod'],
+		cost:{'basic building materials':4.3},
+		req:{'Beginnings of alchemy':true,'Alcohol brewing':true},
+		use:{'Alchemy zone':0.5,'Alchemist':1},
+		gizmos:true,
+		modes:{
+			'wine':{name:'Craft wine at this stand',icon:[8,10,'magixmod'],desc:'At this stand you may craft [Wine], an [Alcohol brews,Alcohol brew].',use:{'Alchemist':1}},
+			'vodka':{name:'Craft vodka at this stand',icon:[10,10,'magixmod'],desc:'At this stand you may craft [Vodka], an [Alcohol brews,Alcohol brew]. This drink is very harmful for health so take care about health of your people.',use:{'Alchemist':1}},
+		},	
+		effects:[
+			{type:'convert',from:{'Alcohol pot':0.1,'water':0.7,'mundane water pot':0.15,'fruit':0.6},into:{'Wine':1},every:4,mode:'wine'},
+			{type:'convert',from:{'Alcohol pot':0.5,'mundane water pot':0.3,'Bubbling water pot':0.05,'water':0.15},into:{'Vodka':1},every:5,mode:'vodka'},
+		],
 		category:'alchemy',
 	});
 		new G.Unit({
