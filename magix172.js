@@ -1460,7 +1460,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'culture of the afterlife',
-		desc:'<b>Believements have turned into the culture. People will now try to be closer to gods or god they worship, Who knows if they will build another wonder.<\b> @unhappiness from death is halved. ',
+		desc:'<b>Believements have turned into the culture. People will now try to be closer to gods or god they worship, Who knows if they will build another wonder. @unhappiness from death is halved. ',
 		icon:[19,1,'magixmod'],
 		cost:{'insight':50,'culture':200,'inspiration':20,'authority':20,'spirituality':30,'faith':40},
 		chance:500,
