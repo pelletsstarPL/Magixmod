@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/g07yREC.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/CKRf71E.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -1744,6 +1744,26 @@ func:function(){
 		cost:{'insight':650,'wisdom':60},
 		req:{'More healing ways':true,'Medicaments brewing':true},
 	});
+		new G.Tech({
+		name:'Laws of physics(basic)',
+		desc:'People acknowledged with physics will understand why towers are falling, why thrown up apple will fall down, why water pushes up light objects while heavy objects sink in it.',
+		icon:[13,10,'magixmod'],
+		cost:{'insight':1000,'science':1},
+		effects:[
+			{type:'provide res',what:{'education':2}},
+		],
+		req:{'Intermediate maths':true,'Will to know more':true},
+	});
+		new G.Tech({
+		name:'monument-building II',
+		desc:'@unlocks the [Temple of Heaven], an mid-legacy wonder. Much bigger than [mausoleum], may lead to victory<>',
+		icon:[14,10,'magixmod'],
+		cost:{'insight':1400,'culture':300,'spirituality':15,'faith':125},
+		req:{'construction':true,'burial':true,'culture in the afterlife':true,'Laws of physics(basic)':true},
+		effects:[
+		],
+	});
+	
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -2413,6 +2433,25 @@ func:function(){
     		limitPer:{'land':100000000000000},//It is something like max 1
     		category:'dimensions',
 	});
+//New wonder. Temple of heaven.
+		new G.Unit({
+		name:'Temple of Heaven',
+		desc:'@leads to the <b>Heavenly victory</b><>A mystical monument dedicated to angels, archangels and seraphins where.//A temple housing a tomb deep under its rocky platform, where the Temple\'s relics lie and there is last bastion of your religion if it will start fall. @The tower it does have is high, above clouds, despite fact there is cold on top some brave people may come up to prey its god, or listen heavenly symphonies and hums.',
+		wonder:'Temple of Heaven',
+		icon:[1,11,'magixmod'],
+		wideIcon:[0,11,'magixmod'],
+		cost:{'basic building materials':35000,'gem block':10},
+		costPerStep:{'basic building materials':2500,'precious building materials':1250,'gem block':2,'concrete':25},
+		steps:300,
+		messageOnStart:'You begin the construction of the Temple. Its highest tower is a pass between land of people and sky of angels. No one may go on top unless it is coated. This temple will be last bastion of religion and a storage of relics. Your people with full of hope are building this mass, full of glory wonder.',
+		finalStepCost:{'population':1000,'precious building materials':25000,'faith':100,'influence':75,'basic building materials':3000},
+		finalStepDesc:'To complete the Temple, 1000 of your [population,People] and many more resources needed to finish Temple completely must be sacrificed to accompany you as servants in the afterlife and Angels of the Afterlife. Are you ready?',
+		use:{'land':75},
+		//require:{'worker':10,'stone tools':10},
+		req:{'monument-building II':true},
+		category:'wonder',
+	});
+	
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={
 			name:'Craft wands',
@@ -2618,6 +2657,20 @@ func:function(){
 			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':0.5},
 		};	
 		G.getDict('potter').effects.push({type:'convert',from:{'clay':4,'mud':11,'fire pit':0.025},into:{'Potion pot':1},every:3,repeat:1,mode:'Craft potion pots'});
+//Temple achiev
+		new G.Achiev({
+		tier:1,
+		name:'Heavenly',
+		icon:[1,11,'magixmod'],
+		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
+		fromUnit:'Temple of Heaven',
+		effects:[
+			{type:'addFastTicksOnStart',amount:300},
+			{type:'addFastTicksOnResearch',amount:10},
+			
+		],
+	});
+	
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
