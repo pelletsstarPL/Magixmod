@@ -601,6 +601,20 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 	});
+		new G.Res({
+		name:'metal weapons',
+		desc:'Solid, durable weapons made of metal and wood. One of many parts of soldiers equipment.'+numbersInfo,
+		icon:[15,11,'magixmod'],
+		displayUsed:true,
+		category:'gear',
+	});
+		new G.Res({
+		name:'armor set',
+		desc:'Solid, durable armor set made for soldiers to protect against not every, but common threats like ambush for instance.'+numbersInfo,
+		icon:[16,11,'magixmod'],
+		displayUsed:true,
+		category:'gear',
+	});
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -1763,7 +1777,33 @@ func:function(){
 		effects:[
 		],
 	});
-	
+		new G.Tech({
+		name:'Weapon blacksmithery',
+		desc:'[blacksmith workshop,Blacksmiths] can now craft [metal weapons] at the same rules as the [metal tools] were.<>',
+		icon:[13,11,'magixmod'],
+		cost:{'insight':50},
+		req:{'smelting':true},
+		effects:[
+		],
+	});
+		new G.Tech({
+		name:'Armor blacksmithery',
+		desc:'[blacksmith workshop,Blacksmiths] can now craft [armor set] at the same rules as the [metal tools] were.<>',
+		icon:[12,11,'magixmod'],
+		cost:{'insight':50},
+		req:{'smelting':true},
+		effects:[
+		],
+	});
+		new G.Tech({
+		name:'Mo\' floorz',
+		desc:'Now each [Blockhouse] will have 6th floor allowing them to fit 10 more [population,People] per [Blockhouse].<>',
+		icon:[14,11,'magixmod'],
+		cost:{'insight':750,'wisdom':15},
+		req:{'Laws of physics(basic)':true},
+		effects:[
+		],
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -2047,6 +2087,7 @@ func:function(){
 		use:{'Land of the Plain Island':3},
 		effects:[
 			{type:'provide',what:{'housing':50}},
+			{type:'provide',what:{'housing':10},req:{'Mo\' floorz':true}},
 			{type:'waste',chance:0.00001/1000},
 		],
 		req:{'construction II':true,'Concrete making':true},
@@ -2657,6 +2698,49 @@ func:function(){
 			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':0.5},
 		};	
 		G.getDict('potter').effects.push({type:'convert',from:{'clay':4,'mud':11,'fire pit':0.025},into:{'Potion pot':1},every:3,repeat:1,mode:'Craft potion pots'});
+//4 modes for blacksmiths so they can forge armor/weapons out of soft/hard metals
+		G.getDict('blacksmith workshop').modes['forgeweapon']={
+			name:'Forge weapons out of soft metals',
+			icon:[15,11,'magixmod'],
+			desc:'Forge [metal weapons] out of 2[soft metal ingot]s each.',
+			req:{'Weapon blacksmithery':true},
+			use:{'worker':1,'metal tools':1,'stone tools':1},
+		};	
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'soft metal ingot':2},into:{'metal weapons':1},repeat:2,mode:'forgeweapon'});
+		G.getDict('blacksmith workshop').modes['forgeweaponhard']={
+			name:'Forge weapons out of hard metals',
+			icon:[15,11,'magixmod'],
+			desc:'Forge [metal weapons] out of 1[hard metal ingot] each.',
+			req:{'Weapon blacksmithery':true},
+			use:{'worker':1,'metal tools':1,'stone tools':1},
+		};	
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'hard metal ingot':1},into:{'metal weapons':1},every:3,repeat:1,mode:'forgeweaponhard'});
+		G.getDict('blacksmith workshop').modes['forgearmor']={
+			name:'Forge armor out of soft metals',
+			icon:[16,11,'magixmod'],
+			desc:'Forge [armor set] out of 8[soft metal ingot]s each.',
+			req:{'Armor blacksmithery':true},
+			use:{'worker':1,'metal tools':1,'stone tools':1,'Instructor':0.25},
+		};	
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'soft metal ingot':8},into:{'armor':1},every:4,mode:'forgearmor'});
+		G.getDict('blacksmith workshop').modes['forgearmorhard']={
+			name:'Forge armor out of hard metals',
+			icon:[16,11,'magixmod'],
+			desc:'Forge [armor set] out of 5[hard metal ingot] each.',
+			req:{'Armor blacksmithery':true},
+			use:{'worker':1,'metal tools':1,'stone tools':1,'Instructor':0.25},
+		};	
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'hard metal ingot':5},into:{'metal weapons':5},every:4,mode:'forgearmorhard'});
+//Firekeeper can set fires with help of Fire essence
+		G.getDict('firekeeper').modes['firesfromessence']={
+			name:'Set up fires out of its essence',
+			icon:[0,2,'magixmod'],
+			desc:'Craft 2[fire pit]s with use of: 1[Fire essence],13[stick]s',
+			req:{'Wizard complex':true},
+			use:{'worker':1,'wand':1,'knapped tools':1},
+		};	
+		G.getDict('firekeeper').effects.push({type:'convert',from:{'Fire essence':1,'stick':13},into:{'fire pit':5},mode:'firesfromessence'});
+	
 //Temple achiev
 		new G.Achiev({
 		tier:1,
