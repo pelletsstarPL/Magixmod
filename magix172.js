@@ -1756,7 +1756,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'monument-building II',
-		desc:'@unlocks the [Temple of Heaven], an mid-legacy wonder. Much bigger than [mausoleum], may lead to victory<>',
+		desc:'@unlocks the [temple of heaven,Temple of Heaven], an mid-legacy wonder. Much bigger than [mausoleum], may lead to victory<>',
 		icon:[14,10,'magixmod'],
 		cost:{'insight':1400,'culture':300,'spirituality':15,'faith':125},
 		req:{'construction':true,'burial':true,'culture of the afterlife':true,'Laws of physics(basic)':true},
