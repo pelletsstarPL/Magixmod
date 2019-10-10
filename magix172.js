@@ -1805,6 +1805,13 @@ func:function(){
 		effects:[
 		],
 	});
+		new G.Tech({
+		name:'Spell of capacity',
+		desc:'Smart wizards figured out a spell which will increase maximum food/material storage of [warehouse] , [barn] , [granary] , [storage pit], [stockpile] by 20%.<>',
+		icon:[4,1,'magixmod',23,1],
+		cost:{'insight':750,'wisdom':15,'Mana':1e5,'Wind essence':3000},
+		req:{'Laws of physics(basic)':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -2932,6 +2939,12 @@ func:function(){
 //Healer generates health by trait and research(it is temporary)
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nutrition':true}});
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'first aid':true}}); 
+//Effects of "Spell of Capacity"
+		G.getDict('warehouse').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
+		G.getDict('barn').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
+		G.getDict('granary').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
+		G.getDict('stockpile').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
+		G.getDict('storage pit').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
