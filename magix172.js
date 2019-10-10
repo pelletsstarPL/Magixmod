@@ -2435,7 +2435,7 @@ func:function(){
 	});
 //New wonder. Temple of heaven.
 		new G.Unit({
-		name:'Temple of Heaven',
+		name:'temple of heaven',
 		desc:'@leads to the <b>Heavenly victory</b><>A mystical monument dedicated to angels, archangels and seraphins where.//A temple housing a tomb deep under its rocky platform, where the Temple\'s relics lie and there is last bastion of your religion if it will start fall. @The tower it does have is high, above clouds, despite fact there is cold on top some brave people may come up to prey its god, or listen heavenly symphonies and hums.',
 		wonder:'Temple of Heaven',
 		icon:[1,11,'magixmod'],
@@ -2663,11 +2663,10 @@ func:function(){
 		name:'Heavenly',
 		icon:[1,11,'magixmod'],
 		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
-		fromUnit:'Temple of Heaven',
+		fromUnit:'temple of heaven',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
-			{type:'addFastTicksOnResearch',amount:10},
-			
+			{type:'addFastTicksOnResearch',amount:10}	
 		],
 	});
 	
