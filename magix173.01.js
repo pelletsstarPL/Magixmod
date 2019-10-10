@@ -831,7 +831,7 @@ func:function(){
 						if (me.amount<=15) toChange*=0.5;
 						for (var i in weights)
 						{var n=G.lose(i,randomFloor(Math.random()*G.getRes(i).amount*toChange*weights[i]),'-');changed+=n;}
-						G.gain('drunk',changed,'drinking alohol);
+						G.gain('drunk',changed,'drinking alcohol');
 						if (changed>0) G.Message({type:'bad',mergeId:'fellDrunk',textFunc:function(args){return B(args.n)+' '+(args.n==1?'person':'people')+' fell drunk after drinking alcohol drink.';},args:{n:changed},icon:[17,0,'magixmod']});
 						G.lose('Wine',n,'drinking');
 					}
