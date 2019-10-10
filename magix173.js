@@ -819,6 +819,24 @@ func:function(){
 		desc:'[adult,People] may get [drunk] due to drinking too much alcohol brews. They do not [worker,work], but may slowly get better over time. Common healer cannot aid with it. Unhealed by any (except) default [healer] alcohol sickness will lead [drunk,drunken] people to death. ',
 		partOf:'population',
 		icon:[17,0,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toChange=0.00003;
+			if (G.getRes('health').amount<0)
+			{
+				toChange*=(1+Math.abs(G.getRes('health').amount/me.amount));
+			}
+				if (toChange>0)
+				{
+						if (me.amount<=15) toChange*=0.5;
+						for (var i in weights)
+						{var n=G.lose(i,randomFloor(Math.random()*G.getRes(i).amount*toChange*weights[i]),'-');changed+=n;}
+						G.gain('drunk',changed,'drinking alohol);
+						if (changed>0) G.Message({type:'bad',mergeId:'fellDrunk',textFunc:function(args){return B(args.n)+' '+(args.n==1?'person':'people')+' fell drunk after drinking alcohol drink.';},args:{n:changed},icon:[17,0,'magixmod']});
+						G.lose('Wine',n,'drinking');
+					}
+		},
+		category:'demog',
 	});
 		new G.Res({
 		name:'wild corpse',//InDevelopment
