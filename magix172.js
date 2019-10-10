@@ -2663,7 +2663,7 @@ func:function(){
 		name:'Heavenly',
 		icon:[1,11,'magixmod'],
 		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
-		fromUnit:'temple of heaven',
+		fromUnit:'Temple of Heaven',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:10}	
