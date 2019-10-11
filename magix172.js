@@ -603,14 +603,14 @@ func:function(){
 	});
 		new G.Res({
 		name:'metal weapons',
-		desc:'Solid, durable weapons made of metal and wood. One of many parts of soldiers equipment.'+numbersInfo,
+		desc:'Solid, durable weapons made of metal and wood. One of many parts of soldiers equipment.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[15,11,'magixmod'],
 		displayUsed:true,
 		category:'gear',
 	});
 		new G.Res({
 		name:'armor set',
-		desc:'Solid, durable armor set made for soldiers to protect against not every, but common threats like ambush for instance.'+numbersInfo,
+		desc:'Solid, durable armor set made for soldiers to protect against not every, but common threats like ambush for instance.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[16,11,'magixmod'],
 		displayUsed:true,
 		category:'gear',
