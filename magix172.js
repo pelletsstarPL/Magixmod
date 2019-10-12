@@ -606,6 +606,11 @@ func:function(){
 		desc:'Solid, durable weapons made of metal and wood. One of many parts of soldiers equipment.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[15,11,'magixmod'],
 		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'gear',
 	});
 		new G.Res({
@@ -613,6 +618,11 @@ func:function(){
 		desc:'Solid, durable armor set made for soldiers to protect against not every, but common threats like ambush for instance.@Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[16,11,'magixmod'],
 		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'gear',
 	});
 	//To make game not crash by precious pots i had to add it
