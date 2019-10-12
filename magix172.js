@@ -2942,9 +2942,9 @@ func:function(){
 //Effects of "Spell of Capacity"
 		G.getDict('warehouse').effects.push({type:'provide',what:{'material storage':800},req:{'Spell of capacity':true}});
 		G.getDict('barn').effects.push({type:'provide',what:{'food storage':800},req:{'Spell of capacity':true}});
-		G.getDict('granary').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
-		G.getDict('stockpile').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
-		G.getDict('storage pit').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
+		G.getDict('granary').effects.push({type:'provide',what:{'food storage':200},req:{'Spell of capacity':true}});
+		G.getDict('stockpile').effects.push({type:'provide',what:{'material storage':200},req:{'Spell of capacity':true}});
+		G.getDict('storage pit').effects.push({type:'provide',what:{'food storage':100,'material storage':100},req:{'Spell of capacity':true}});
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
