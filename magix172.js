@@ -2943,7 +2943,7 @@ func:function(){
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berries': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds': 0.0001},amount:1,max:1});
+		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds':0.0001},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.008},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.005},amount:1,max:1});
 //Healer generates health by trait and research(it is temporary)
@@ -2954,7 +2954,7 @@ func:function(){
 		G.getDict('barn').effects.push({type:'provide',what:{'food storage':800},req:{'Spell of capacity':true}});
 		G.getDict('granary').effects.push({type:'provide',what:{'food storage':200},req:{'Spell of capacity':true}});
 		G.getDict('stockpile').effects.push({type:'provide',what:{'material storage':200},req:{'Spell of capacity':true}});
-		G.getDict('storage pit').effects.push({type:'provide',what:{'food storage':100,'material storage':100},req:{'Spell of capacity':true}});
+		G.getDict('storage pit').effects.push({type:'provide',what:{'food storage':80,'material storage':80},req:{'Spell of capacity':true}});
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
