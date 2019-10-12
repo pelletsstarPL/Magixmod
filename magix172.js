@@ -2486,7 +2486,7 @@ func:function(){
 		new G.Unit({
 		name:'temple of heaven',
 		desc:'@leads to the <b>Heavenly victory</b><>A mystical monument dedicated to angels, archangels and seraphins where.//A temple housing a tomb deep under its rocky platform, where the Temple\'s relics lie and there is last bastion of your religion if it will start fall. @The tower it does have is high, above clouds, despite fact there is cold on top some brave people may come up to prey its god, or listen heavenly symphonies and hums.',
-		wonder:'Temple of Heaven',
+		wonder:'temple of heaven',
 		icon:[1,11,'magixmod'],
 		wideIcon:[0,11,'magixmod'],
 		cost:{'basic building materials':35000,'gem block':10},
