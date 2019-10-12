@@ -1807,7 +1807,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Spell of capacity',
-		desc:'Smart wizards figured out a spell which will increase maximum food/material storage of [warehouse] , [barn] , [granary] , [storage pit], [stockpile] by 20%.<>',
+		desc:'Smart wizards figured out a spell which will increase maximum food/material storage of [warehouse] , [barn] , [granary] , [storage pit], [stockpile] by 20%. @<b>Note: 20% bonus only applies to newly built storage buildings not already existing.<>',
 		icon:[4,1,'magixmod',23,1],
 		cost:{'insight':750,'wisdom':15,'Mana':1e5,'Wind essence':3000},
 		req:{'Laws of physics(basic)':true},
@@ -2730,7 +2730,7 @@ func:function(){
 			req:{'Armor blacksmithery':true},
 			use:{'worker':1,'metal tools':1,'stone tools':1,'Instructor':0.25},
 		};	
-		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'soft metal ingot':8},into:{'armor':1},every:4,mode:'forgearmor'});
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'soft metal ingot':8},into:{'armor set':1},every:4,mode:'forgearmor'});
 		G.getDict('blacksmith workshop').modes['forgearmorhard']={
 			name:'Forge armor out of hard metals',
 			icon:[16,11,'magixmod'],
@@ -2738,14 +2738,14 @@ func:function(){
 			req:{'Armor blacksmithery':true},
 			use:{'worker':1,'metal tools':1,'stone tools':1,'Instructor':0.25},
 		};	
-		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'hard metal ingot':5},into:{'metal weapons':5},every:4,mode:'forgearmorhard'});
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'hard metal ingot':5},into:{'armor set':2},every:4,mode:'forgearmorhard'});
 //Firekeeper can set fires with help of Fire essence
 		G.getDict('firekeeper').modes['firesfromessence']={
 			name:'Set up fires out of its essence',
 			icon:[0,2,'magixmod'],
 			desc:'Craft 2[fire pit]s with use of: 1[Fire essence],13[stick]s',
 			req:{'Wizard complex':true},
-			use:{'worker':1,'wand':1,'knapped tools':1},
+			use:{'worker':1,'Wand':1,'knapped tools':1},
 		};	
 		G.getDict('firekeeper').effects.push({type:'convert',from:{'Fire essence':1,'stick':13},into:{'fire pit':5},mode:'firesfromessence'});
 	
@@ -2940,8 +2940,8 @@ func:function(){
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nutrition':true}});
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'first aid':true}}); 
 //Effects of "Spell of Capacity"
-		G.getDict('warehouse').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
-		G.getDict('barn').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
+		G.getDict('warehouse').effects.push({type:'provide',what:{'material storage':800},req:{'Spell of capacity':true}});
+		G.getDict('barn').effects.push({type:'provide',what:{'food storage':800},req:{'Spell of capacity':true}});
 		G.getDict('granary').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
 		G.getDict('stockpile').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
 		G.getDict('storage pit').effects.push({type:'mult',value:1.2,req:{'Spell of capacity':true}});
