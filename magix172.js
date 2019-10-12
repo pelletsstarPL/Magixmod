@@ -2276,7 +2276,7 @@ func:function(){
 		icon:[19,8,'magixmod'],
 		cost:{'basic building materials':4.3},
 		req:{'Beginnings of alchemy':true,'Alcohol brewing':true},
-		use:{'Alchemy zone':0.5,'Alchemist':1},
+		use:{'Alchemy zone':0.5},
 		gizmos:true,
 		modes:{
 			'wine':{name:'Craft wine at this stand',icon:[8,10,'magixmod'],desc:'At this stand you may craft [Wine], an [Alcohol brews,Alcohol brew].',use:{'Alchemist':1}},
@@ -2294,7 +2294,7 @@ func:function(){
 		icon:[19,5,'magixmod'],
 		cost:{'basic building materials':4.3},
 		req:{'Beginnings of alchemy':true,'Medicaments brewing':true},
-		use:{'Alchemy zone':0.5,'Alchemist':1},
+		use:{'Alchemy zone':0.5},
 		gizmos:true,
 		modes:{
 			'herbsyrup':{name:'Craft syrup out of herbs',icon:[5,10,'magixmod'],desc:'At this stand you may craft [Herb syrup] a medicament used to heal people.',use:{'Alchemist':1}},
