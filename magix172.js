@@ -1212,7 +1212,7 @@ func:function(){
 		new G.Res({
 		name:'Gray rose',
 		desc:'One of few versions of roses. As the other roses they fit perfectly for proposal.',
-		icon:[10,9,'magixmod'],
+		icon:[11,9,'magixmod'],
 		partOf:'Flowers',
 		tick:function(me,tick)
 		{
@@ -1224,7 +1224,7 @@ func:function(){
 		new G.Res({
 		name:'Gray tulip',
 		desc:'One of few versions of tulips. As the other tulips they fit perfectly for proposal.',
-		icon:[11,9,'magixmod'],
+		icon:[10,9,'magixmod'],
 		partOf:'Flowers',
 		tick:function(me,tick)
 		{
