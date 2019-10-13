@@ -654,8 +654,8 @@ func:function(){
 		icon:[12,10,'magixmod'],
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
-		G.getDict('grass').res['gather']['Beet']=0.00002;
-		G.getDict('grass').res['gather']['Berries']=0.00003;
+		G.getDict('grass').res['gather']['Beet']=0.00001;
+		G.getDict('grass').res['gather']['Berries']=0.00002;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.00035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.0006;
 		G.getDict('freshwater').res['gather']['Sugar cane']=0.000004;
