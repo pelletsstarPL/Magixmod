@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/CKRf71E.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/WcLgZvp.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -1829,6 +1829,13 @@ func:function(){
 		cost:{'insight':750,'wisdom':15,'Mana':1e5,'Wind essence':3000},
 		req:{'Laws of physics(basic)':true},
 	});
+		new G.Tech({
+		name:'Better house construction',
+		desc:'At the same land of usage [house] and [Brick house with a silo] will grant bonuses: @ +1 [housing] from [house] every 8 [house]s , @ +1 [housing] from [Brick house with a silo] every 5 [Brick house with a silo,Brick houses].<>',
+		icon:[8,11,'magixmod'],
+		cost:{'insight':750,'wisdom':15},
+		req:{'Laws of physics(basic)':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -2357,7 +2364,7 @@ func:function(){
 		name:'Florist',
 		startWith:0,
 		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use. The further you will research the more types of [Flowers] he will be able to collect.',
-		icon:[0,2],
+		icon:[7,11,'magixmod'],
 		cost:{},
 		req:{},
 		use:{'worker':1},
