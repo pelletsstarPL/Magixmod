@@ -2732,7 +2732,7 @@ func:function(){
 			icon:[13,0,'magixmod'],
 			desc:'Your clothier will now weave fiber but colored clothing.',
 			req:{'weaving':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};
 		G.getDict('clothier').effects.push({type:'convert',from:{'herb':52,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Weave fiber colored clothing'});
 		G.getDict('clothier').modes['Dye already made clothing']={
@@ -2740,7 +2740,7 @@ func:function(){
 			icon:[13,0,'magixmod'],
 			desc:'Your clothier will now dye already made [basic clothes] making them become[Colored clothing].',
 			req:{'weaving':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};
 		G.getDict('clothier').effects.push({type:'convert',from:{'basic clothes':1,'Dyes':4},into:{'Colored clothing':1},every:6,mode:'Dye already made clothing'});
 		G.getDict('clothier').modes['Craft thread']={
@@ -2748,7 +2748,7 @@ func:function(){
 			icon:[13,9,'magixmod'],
 			desc:'Your clothier will now craft [Thread] out of [herb].',
 			req:{'Sewing II':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};
 		G.getDict('clothier').effects.push({type:'convert',from:{'herb':18},into:{'Thread':3},every:6,mode:'Craft thread'});
 //Hunter will now be able to hunt animals with Crossbow
