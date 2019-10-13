@@ -641,7 +641,9 @@ func:function(){
 		partOf:'food',
 		category:'food',
 	});
-		G.getDict('grass').res['gather']['Beet']=0.06;
+		G.getDict('grass').res['gather']['Beet']=0.00005;
+		G.getDict('grass').res['gather']['Berries']=0.00003;
+		G.getDict('palm tree').res['gather']['Bamboo']=0.0006;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -2977,7 +2979,6 @@ func:function(){
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds':0.0001},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.008},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.005},amount:1,max:1});
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Beet': 0.005},amount:1,max:1});
 //Healer generates health by trait and research(it is temporary)
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nutrition':true}});
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'first aid':true}}); 
