@@ -573,6 +573,7 @@ func:function(){
 		desc:'Not so tasty. Made out of healthy [herb,Herbs] , [Flowers,various flowers] . Can heal [sick] and [drunk] person.',
 		icon:[5,10,'magixmod'],
 		category:'alchemypotions',
+		partOf:'Medicament brews',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
@@ -584,6 +585,7 @@ func:function(){
 		desc:'A little bit tastier than [Herb syrup]. Made out of healthy [herb,Herbs] , [Flowers,various flowers] with little addition of [Water essence],[Nature essence]. Can heal [sick] and [drunk] person.',
 		icon:[9,10,'magixmod'],
 		category:'alchemypotions',
+		partOf:'Medicament brews',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
@@ -595,6 +597,7 @@ func:function(){
 		desc:'Made out of [mundane water pot], tiny amount of [Alcohol pot,Alcohol],[herb,Herbs] and tiny amount of [salt]. This brew is used to heal [drunk] with a bigger chance to succesful heal.',
 		icon:[4,10,'magixmod'],
 		category:'alchemypotions',
+		partOf:'Medicament brews',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
@@ -652,6 +655,7 @@ func:function(){
 		name:'Medicament brews',
 		desc:'A brews used to heal people from sickness.',
 		icon:[12,10,'magixmod'],
+		meta:true,
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('grass').res['gather']['Beet']=0.00001;
