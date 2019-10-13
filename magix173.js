@@ -658,11 +658,11 @@ func:function(){
 		meta:true,
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
-		G.getDict('grass').res['gather']['Beet']=0.00001;
-		G.getDict('grass').res['gather']['Berries']=0.000014;
-		G.getDict('palm tree').res['gather']['Bamboo']=0.00035;
-		G.getDict('jungle fruits').res['gather']['Watermelon']=0.0004;
-		G.getDict('freshwater').res['gather']['Sugar cane']=0.000004;
+		G.getDict('grass').res['gather']['Beet']=0.00000001;
+		G.getDict('grass').res['gather']['Berries']=0.000000014;
+		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
+		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
+		G.getDict('freshwater').res['gather']['Sugar cane']=0.000000004;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
