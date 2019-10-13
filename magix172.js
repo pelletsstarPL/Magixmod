@@ -2957,7 +2957,7 @@ func:function(){
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nutrition':true}});
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'first aid':true}}); 
 //Effects of "Spell of Capacity"
-		G.getDict('warehouse').effects.push({type:'provide',what:{'material storage debug':800},req:{'Spell of capacity':true}});
+		G.getDict('warehouse').effects.push({req:{'Spell of capacity':false}});
 		G.getDict('barn').effects.push({type:'provide',what:{'food storage debug pots':800},req:{'Spell of capacity':true}});
 		G.getDict('granary').effects.push({type:'provide',what:{'food storage debug pots':200},req:{'Spell of capacity':true}});
 		G.getDict('stockpile').effects.push({type:'provide',what:{'material storage debug':200},req:{'Spell of capacity':true}});
