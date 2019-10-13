@@ -2536,7 +2536,7 @@ func:function(){
 		req:{'Farms in the new land':true,'Farm of the Beet':true},
 		use:{'worker':8,'land':35},
 		upkeep:{'water':14},
-		category:'gathering',
+		category:'production',
 		effects:[
 			{type:'gather',context:'gather',what:{'Sugar cane':0.85}},
 		],
