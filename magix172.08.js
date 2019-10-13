@@ -1868,7 +1868,7 @@ func:function(){
 		new G.Tech({
 		name:'Farm of the Beet',
 		desc:'@Makes [Beet] farm possible to be built.',
-		icon:[11,11,'magixmod',24,1],
+		icon:[10,11,'magixmod',24,1],
 		cost:{'insight':450,'wisdom':30},
 		req:{'Farms in the new land':true},
 	});
@@ -2459,7 +2459,7 @@ func:function(){
 		//upkeep:{'coin':0.2},
 		modes:{
 			'sugar':{name:'Extract sugar out of cane',icon:[15,2,'magixmod'],desc:'This artisan will only extract [sugar] out of [Sugar cane]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
-			'sugarbeet':{name:'Extract sugar out of beet',icon:[11,11,'magixmod'],desc:'This artisan will only extract [sugar] out of [Beet]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
+			'sugarbeet':{name:'Extract sugar out of beet',icon:[10,11,'magixmod'],desc:'This artisan will only extract [sugar] out of [Beet]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
 			'juices':{name:'Craft juices',icon:[14,3,'magixmod'],desc:'This artisan will craft [Juices] out of [Watermelon] or [Berries] , [sugar] and [water]. Have a good taste. <b>:)',use:{'worker':1}},
 		},
 		effects:[
@@ -3016,6 +3016,9 @@ func:function(){
 		G.getDict('granary').effects.push({type:'provide',what:{'food storage debug pots':200},req:{'Spell of capacity':true}});
 		G.getDict('stockpile').effects.push({type:'provide',what:{'material storage debug':200},req:{'Spell of capacity':true}});
 		G.getDict('storage pit').effects.push({type:'provide',what:{'food storage debug pots':80,'material storage debug':80},req:{'Spell of capacity':true}});
+//Effects of better house construction research
+		G.getDict('house').effects.push({type:'provide',what:{'housing':0.125},req:{'Better house construction':true}});
+		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
