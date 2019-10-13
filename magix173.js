@@ -1862,7 +1862,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Spell of capacity',
-		desc:'Smart wizards figured out a spell which will increase maximum food/material storage of [warehouse] , [barn] , [granary] , [storage pit], [stockpile] by 20%. @<b>Note: 20% bonus only applies to newly built storage buildings not already existing.<>',
+		desc:'Smart wizards figured out a spell which will increase maximum food/material storage of [warehouse] , [barn] , [granary] , [storage pit], [stockpile] by 20%.<>',
 		icon:[4,1,'magixmod',23,1],
 		cost:{'insight':750,'wisdom':15,'Mana':1e5,'Wind essence':3000},
 		req:{'Laws of physics(basic)':true},
