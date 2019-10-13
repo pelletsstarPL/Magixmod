@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/WcLgZvp.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/puM4x85.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -635,15 +635,25 @@ func:function(){
 	});
 		new G.Res({
 		name:'Beet',
-		desc:'Good source of sugar but not as high rates as [Sugar cane] provides. Tasty, edible.',
+		desc:'Good source of [sugar] but not as high rates as [Sugar cane] provides. Tasty, edible.',
 		icon:[10,11,'magixmod'],
 		turnToByContext:{'eating':{'health':0.1,'happiness':0.005},'decay':{'spoiled food':1}},
 		partOf:'food',
 		category:'food',
 	});
+		new G.Res({
+		name:'Beet seeds',
+		desc:'If you want to start farming [Beet] and crafting [sugar] these seeds are a must.',
+		icon:[6,11,'magixmod'],
+		partOf:'misc materials',
+		category:'misc',
+	});
+		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('grass').res['gather']['Beet']=0.00005;
 		G.getDict('grass').res['gather']['Berries']=0.00003;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0006;
+		G.getDict('jungle fruits').res['gather']['Watermelon']=0.0006;
+		G.getDict('freshwater').res['gather']['Sugar cane']=0.000004;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -1855,6 +1865,13 @@ func:function(){
 		cost:{'insight':750,'wisdom':15},
 		req:{'Laws of physics(basic)':true},
 	});
+		new G.Tech({
+		name:'Farm of the Beet',
+		desc:'@Makes [Beet] farm possible to be built.',
+		icon:[11,11,'magixmod',24,1],
+		cost:{'insight':450,'wisdom':30},
+		req:{'Farms in the new land':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -2402,7 +2419,7 @@ func:function(){
 		new G.Unit({
 		name:'Thoughts sharer',
 		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
-		icon:[1,2],
+		icon:[19,12,'magixmod'],
 		cost:{},
 		use:{},
 		gizmos:true,
@@ -2503,6 +2520,19 @@ func:function(){
 		cost:{'Sugar cane':500},
 		req:{'Farms in the new land':true,'Farm of the Sugar cane':true},
 		use:{'worker':8,'Land of the Plain Island':35,'Instructor':1},
+		upkeep:{'water':36},
+		category:'plainisleunit',
+		effects:[
+			{type:'gather',context:'gather',what:{'Sugar cane':0.85}},
+		],
+	});
+		new G.Unit({
+		name:'Beet farm',
+		desc:'@Specialized farm which will harvest useful in [Juices] crafting [Beet] - another source of [sugar].',
+		icon:[9,11,'magixmod'],
+		cost:{'Beet seeds':300},
+		req:{'Farms in the new land':true,'Farm of the Beet':true},
+		use:{'worker':8,'land':35},
 		upkeep:{'water':36},
 		category:'plainisleunit',
 		effects:[
@@ -2973,12 +3003,8 @@ func:function(){
 		category:'food',
 	});
 	//New gains for gatherer
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berries': 0.005},amount:1,max:1});
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon': 0.0001},amount:1,max:1}); 
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Watermelon seeds':0.0001},amount:1,max:1});
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Sugar cane': 0.008},amount:1,max:1}); 
-		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Bamboo': 0.005},amount:1,max:1});
 //Healer generates health by trait and research(it is temporary)
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.008},amount:1,max:1,req:{'Nutrition':true}});
 		G.getDict('healer').effects.push({type:'gather',context:'gather',what:{'health': 0.001},amount:1,max:1,req:{'first aid':true}}); 
