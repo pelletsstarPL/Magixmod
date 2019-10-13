@@ -2459,10 +2459,12 @@ func:function(){
 		//upkeep:{'coin':0.2},
 		modes:{
 			'sugar':{name:'Extract sugar out of cane',icon:[15,2,'magixmod'],desc:'This artisan will only extract [sugar] out of [Sugar cane]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
+			'sugarbeet':{name:'Extract sugar out of beet',icon:[11,11,'magixmod'],desc:'This artisan will only extract [sugar] out of [Beet]. At least he will craft needed ingredient of tasty [Juices].',use:{'worker':1}},
 			'juices':{name:'Craft juices',icon:[14,3,'magixmod'],desc:'This artisan will craft [Juices] out of [Watermelon] or [Berries] , [sugar] and [water]. Have a good taste. <b>:)',use:{'worker':1}},
 		},
 		effects:[
 			{type:'convert',from:{'Sugar cane':1.5},into:{'sugar':1},every:5,mode:'sugar'},
+			{type:'convert',from:{'Beet':1},into:{'sugar':0.125},every:5,mode:'sugarbeet'},
 			{type:'convert',from:{'sugar':1,'Berries':0.95,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
 			{type:'convert',from:{'sugar':1,'Watermelon':0.4,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
 			{type:'convert',from:{'sugar':1,'fruit':0.4,'water':2},into:{'Fruit juice':2},every:5,mode:'juices',req:{'Moar juices':true}},
@@ -2533,8 +2535,8 @@ func:function(){
 		cost:{'Beet seeds':300},
 		req:{'Farms in the new land':true,'Farm of the Beet':true},
 		use:{'worker':8,'land':35},
-		upkeep:{'water':36},
-		category:'plainisleunit',
+		upkeep:{'water':14},
+		category:'gathering',
 		effects:[
 			{type:'gather',context:'gather',what:{'Sugar cane':0.85}},
 		],
