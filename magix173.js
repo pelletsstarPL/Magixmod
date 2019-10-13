@@ -2543,11 +2543,11 @@ func:function(){
 		icon:[9,11,'magixmod'],
 		cost:{'Beet seeds':300},
 		req:{'Farms in the new land':true,'Farm of the Beet':true},
-		use:{'worker':8,'land':35},
+		use:{'worker':8,'land':15},
 		upkeep:{'water':14},
 		category:'production',
 		effects:[
-			{type:'gather',context:'gather',what:{'Beet':0.33}},
+			{type:'gather',context:'gather',what:{'Beet':0.1}},
 		],
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
