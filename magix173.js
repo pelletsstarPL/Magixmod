@@ -45,12 +45,12 @@ func:function(){
 				side:['Flowers','Dyes'],
 		},
 			'alchemypotions':{
-				name:'Alchemy - Potions', //It won't be added quickly but i will code this category
+				name:'Alchemy - Potions', 
 				base:[],
-				side:['Basic brews','Alcohol brews'],
+				side:['Basic brews','Alcohol brews','Medicament brews'],
 		},
 			'alchemyingredients':{
-				name:'Alchemy - Ingredients', //It won't be added quickly but i will code this category
+				name:'Alchemy - Ingredients', 
 				base:[],
 				side:[],
 		},
@@ -647,6 +647,11 @@ func:function(){
 		icon:[6,11,'magixmod'],
 		partOf:'misc materials',
 		category:'misc',
+	});
+		new G.Res({
+		name:'Medicament brews',
+		desc:'A brews used to heal people from sickness.',
+		icon:[12,10,'magixmod'],
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('grass').res['gather']['Beet']=0.00005;
@@ -2538,7 +2543,7 @@ func:function(){
 		upkeep:{'water':14},
 		category:'production',
 		effects:[
-			{type:'gather',context:'gather',what:{'Sugar cane':0.85}},
+			{type:'gather',context:'gather',what:{'Beet':0.33}},
 		],
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
