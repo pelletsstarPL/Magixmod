@@ -717,12 +717,12 @@ func:function(){
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
 		G.getDict('freshwater').res['gather']['Sugar cane']=0.000000004;
-		G.getDict('rocky substrate').res['mine']['Granite']=0.2;
-		G.getDict('rocky substrate').res['mine']['Diorite']=0.2;
-		G.getDict('rocky substrate').res['mine']['Andesite']=0.2;
-		G.getDict('rocky substrate').res['quarry']['cut granite']=0.2;
-		G.getDict('rocky substrate').res['quarry']['cut diorite']=0.2;
-		G.getDict('rocky substrate').res['quarry']['cut andesite']=0.2;
+		G.getDict('rocky substrate').res['mine']['Granite']=0.07;
+		G.getDict('rocky substrate').res['mine']['Diorite']=0.07;
+		G.getDict('rocky substrate').res['mine']['Andesite']=0.07;
+		G.getDict('rocky substrate').res['quarry']['cut granite']=0.07;
+		G.getDict('rocky substrate').res['quarry']['cut diorite']=0.07;
+		G.getDict('rocky substrate').res['quarry']['cut andesite']=0.07;
 		G.getDict('rocky substrate').res['mine']['nickel ore']=0.03;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
