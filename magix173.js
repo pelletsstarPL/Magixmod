@@ -723,7 +723,6 @@ func:function(){
 		G.getDict('rocky substrate').res['quarry']['cut granite']=0.2;
 		G.getDict('rocky substrate').res['quarry']['cut diorite']=0.2;
 		G.getDict('rocky substrate').res['quarry']['cut andesite']=0.2;
-		G.getDict('rocky substrate').res['quarry']['platinum ore']=0.003;
 		G.getDict('rocky substrate').res['mine']['nickel ore']=0.03;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
@@ -1945,14 +1944,14 @@ func:function(){
 	});
 		new G.Tech({
 		name:'prospecting II',
-		desc:'@[mine]s can now dig in search of [nickel ore,Nickel] or focus to mine [granite],[diorite],[andesite] instead of any prospected mineral.',
+		desc:'@[mine]s can now dig in search of [nickel ore,Nickel] or focus to mine [granite],[diorite],[andesite] with 3x efficiency instead of any prospected mineral.',
 		icon:[11,12,'magixmod'],
 		cost:{'insight':250},
 		req:{'prospecting':true,'mining':true},
 	});
 		new G.Tech({
 		name:'quarrying II',
-		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1% chance to gain [platinum ore].',
+		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1% chance to gain 3 to 5 [platinum ore]s .',
 		icon:[10,12,'magixmod'],
 		cost:{'insight':340},
 		req:{'prospecting II':true,'quarrying':true},
