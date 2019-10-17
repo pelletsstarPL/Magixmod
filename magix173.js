@@ -723,7 +723,7 @@ func:function(){
 		G.getDict('rocky substrate').res['quarry']['cut granite']=0.2;
 		G.getDict('rocky substrate').res['quarry']['cut diorite']=0.2;
 		G.getDict('rocky substrate').res['quarry']['cut andesite']=0.2;
-		G.getDict('rocky substrate').res['quarry']['platinum ore']=0.2;
+		G.getDict('rocky substrate').res['quarry']['platinum ore']=0.003;
 		G.getDict('rocky substrate').res['mine']['nickel ore']=0.03;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
@@ -1943,6 +1943,20 @@ func:function(){
 		cost:{'insight':450,'wisdom':30},
 		req:{'Farms in the new land':true},
 	});
+		new G.Tech({
+		name:'prospecting II',
+		desc:'@[mine]s can now dig in search of [nickel ore,Nickel] or focus to mine [granite],[diorite],[andesite] instead of any prospected mineral.',
+		icon:[11,12,'magixmod'],
+		cost:{'insight':250},
+		req:{'prospecting':true,'mining':true},
+	});
+		new G.Tech({
+		name:'quarrying II',
+		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1% chance to gain [platinum ore].',
+		icon:[10,12,'magixmod'],
+		cost:{'insight':340},
+		req:{'prospecting II':true,'quarrying':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -1998,7 +2012,7 @@ func:function(){
 		icon:[6,1,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
-		upkeep:{'food':15},
+		upkeep:{'food':14},
 		req:{'Wizardry':true},
 		//require:{'wizard':3},
 		effects:[
