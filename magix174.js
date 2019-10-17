@@ -680,23 +680,35 @@ func:function(){
 	});
 		new G.Res({
 		name:'cut granite',
-		desc:'[granite] carved into blocks for easier hauling and building.',
+		desc:'[Granite] carved into blocks for easier hauling and building.',
 		icon:[4,12,'magixmod'],
 		partOf:'basic building materials',
 		category:'build',
 	});
 		new G.Res({
 		name:'cut diorite',
-		desc:'[diorite] carved into blocks for easier hauling and building.',
+		desc:'[Diorite] carved into blocks for easier hauling and building.',
 		icon:[3,12,'magixmod'],
 		partOf:'basic building materials',
 		category:'build',
 	});
 		new G.Res({
 		name:'cut andesite',
-		desc:'[andesite] carved into blocks for easier hauling and building.',
+		desc:'[Andesite] carved into blocks for easier hauling and building.',
 		icon:[2,12,'magixmod'],
 		partOf:'basic building materials',
+		category:'build',
+	});
+		new G.Res({
+		name:'nickel ore',
+		desc:'[nickel ore,Nickel] can be found with better prospecting. May be processed into [hard metal ingot].',
+		icon:[8,12,'magixmod'],
+		category:'build',
+	});
+		new G.Res({
+		name:'platinum ore',
+		desc:'[platinum ore,Platinum] can be found with better prospecting and only with small chance by [quarry] and only that unit. May be processed into [precious metal ingot].',
+		icon:[7,12,'magixmod'],
 		category:'build',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
@@ -705,6 +717,14 @@ func:function(){
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
 		G.getDict('freshwater').res['gather']['Sugar cane']=0.000000004;
+		G.getDict('rocky substrate').res['mine']['Granite']=0.2;
+		G.getDict('rocky substrate').res['mine']['Diorite']=0.2;
+		G.getDict('rocky substrate').res['mine']['Andesite']=0.2;
+		G.getDict('rocky substrate').res['quarry']['cut granite']=0.2;
+		G.getDict('rocky substrate').res['quarry']['cut diorite']=0.2;
+		G.getDict('rocky substrate').res['quarry']['cut andesite']=0.2;
+		G.getDict('rocky substrate').res['quarry']['platinum ore']=0.2;
+		G.getDict('rocky substrate').res['mine']['nickel ore']=0.03;
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
