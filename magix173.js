@@ -2907,6 +2907,15 @@ func:function(){
 			use:{'worker':1,'Wand':1,'knapped tools':1},
 		};	
 		G.getDict('firekeeper').effects.push({type:'convert',from:{'Fire essence':1,'stick':13},into:{'fire pit':5},mode:'firesfromessence'});
+//Nickel mines
+		G.getDict('mine').modes['nickel']={
+			name:'Nickel',
+			icon:[9,12,'magixmod'],
+			desc:'Mine for [nickel ore] with 5x efficiency.',
+			req:{'prospecting II':true},
+			use:{'worker':3,'metal tools':3},
+		};	
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'nickel ore':40},max:25,mode:'nickel'});
 	
 //Temple achiev
 		new G.Achiev({
