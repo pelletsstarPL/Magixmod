@@ -660,21 +660,21 @@ func:function(){
 		new G.Res({
 		name:'Granite',
 		desc:'One of few types of stone. Is harder to find than regular [stone].',
-		icon:[4,12,'magixmod'],
+		icon:[5,12,'magixmod'],
 		category:'build',
 		partOf:'archaic building materials',
 	});
 		new G.Res({
 		name:'Diorite',
 		desc:'One of few types of stone. Is harder to find than regular [stone].',
-		icon:[6,12,'magixmod'],
+		icon:[7,12,'magixmod'],
 		category:'build',
 		partOf:'archaic building materials',
 	});
 		new G.Res({
 		name:'Andesite',
 		desc:'One of few types of stone. Is harder to find than regular [stone].',
-		icon:[5,12,'magixmod'],
+		icon:[6,12,'magixmod'],
 		category:'build',
 		partOf:'archaic building materials',
 	});
@@ -702,13 +702,13 @@ func:function(){
 		new G.Res({
 		name:'nickel ore',
 		desc:'[nickel ore,Nickel] can be found with better prospecting. May be processed into [hard metal ingot].',
-		icon:[8,12,'magixmod'],
+		icon:[9,12,'magixmod'],
 		category:'build',
 	});
 		new G.Res({
 		name:'platinum ore',
 		desc:'[platinum ore,Platinum] can be found with better prospecting and only with small chance by [quarry] and only that unit. May be processed into [precious metal ingot].',
-		icon:[7,12,'magixmod'],
+		icon:[8,12,'magixmod'],
 		category:'build',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
