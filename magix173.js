@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/puM4x85.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/BZ9C5Ya.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -656,6 +656,48 @@ func:function(){
 		desc:'A brews used to heal people from sickness.',
 		icon:[12,10,'magixmod'],
 		meta:true,
+	});
+		new G.Res({
+		name:'Granite',
+		desc:'One of few types of stone. Is harder to find than regular [stone].',
+		icon:[4,12,'magixmod'],
+		category:'build',
+		partOf:'archaic building materials',
+	});
+		new G.Res({
+		name:'Diorite',
+		desc:'One of few types of stone. Is harder to find than regular [stone].',
+		icon:[6,12,'magixmod'],
+		category:'build',
+		partOf:'archaic building materials',
+	});
+		new G.Res({
+		name:'Andesite',
+		desc:'One of few types of stone. Is harder to find than regular [stone].',
+		icon:[5,12,'magixmod'],
+		category:'build',
+		partOf:'archaic building materials',
+	});
+		new G.Res({
+		name:'cut granite',
+		desc:'[granite] carved into blocks for easier hauling and building.',
+		icon:[4,12,'magixmod'],
+		partOf:'basic building materials',
+		category:'build',
+	});
+		new G.Res({
+		name:'cut diorite',
+		desc:'[diorite] carved into blocks for easier hauling and building.',
+		icon:[3,12,'magixmod'],
+		partOf:'basic building materials',
+		category:'build',
+	});
+		new G.Res({
+		name:'cut andesite',
+		desc:'[andesite] carved into blocks for easier hauling and building.',
+		icon:[2,12,'magixmod'],
+		partOf:'basic building materials',
+		category:'build',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('grass').res['gather']['Beet']=0.00000001;
