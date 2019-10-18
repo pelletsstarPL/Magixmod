@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/BZ9C5Ya.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/piy82kT.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -721,19 +721,38 @@ func:function(){
 		},
 		category:'build',
 	});
+		new G.Res({
+		name:'platinum ingot',
+		desc:'[platinum ingot,Platinum ingot] is used to craft precious items, building materials and more.',
+		icon:[3,11,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'build',
+	});
+		new G.Res({
+		name:'platinum block',
+		desc:'A valuable, if unreliable construction material. Made from [platinum ingot]. Has same uses as [gold block] or [gem block].',
+		icon:[4,11,'magixmod'],
+		partOf:'precious building materials',
+		category:'build',
+	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('grass').res['gather']['Beet']=0.00000001;
 		G.getDict('grass').res['gather']['Berries']=0.000000014;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
 		G.getDict('freshwater').res['gather']['Sugar cane']=0.000000004;
-		G.getDict('rocky substrate').res['mine']['Granite']=0.07;
-		G.getDict('rocky substrate').res['mine']['Diorite']=0.07;
-		G.getDict('rocky substrate').res['mine']['Andesite']=0.07;
+		G.getDict('rocky substrate').res['mine']['Granite']=0.075;
+		G.getDict('rocky substrate').res['mine']['Diorite']=0.075;
+		G.getDict('rocky substrate').res['mine']['Andesite']=0.075;
 		G.getDict('rocky substrate').res['quarry']['cut granite']=0.07;
 		G.getDict('rocky substrate').res['quarry']['cut diorite']=0.07;
 		G.getDict('rocky substrate').res['quarry']['cut andesite']=0.07;
 		G.getDict('rocky substrate').res['mine']['nickel ore']=0.03;
+		G.getDict('rocky substrate').res['quarry']['platinum ore']=0.00001;//test
 	//To make game not crash by precious pots i had to add it
 		new G.Res({
 		name:'food storage debug pots',
@@ -1966,6 +1985,24 @@ func:function(){
 		cost:{'insight':340},
 		req:{'prospecting II':true,'quarrying':true},
 	});
+		new G.Tech({
+		name:'platinum-working',
+		desc:'@[furnace]s can now make [platinum ingot]s from [platinum ore]@[blacksmith workshop]s can now forge [platinum block]s out of [platinum ingot]s<>',
+		icon:[5,11,'magixmod'],
+		cost:{'insight':100},
+		req:{'smelting':true,'prospecting II':true},
+		effects:[
+		],
+	});
+		new G.Tech({
+		name:'nickel-working',
+		desc:'@[furnace]s can now make [hard metal ingot]s from [nickel ore]@[blacksmith workshop]s.<>',
+		icon:[1,12,'magixmod'],
+		cost:{'insight':100},
+		req:{'smelting':true,'prospecting II':true},
+		effects:[
+		],
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
@@ -2800,10 +2837,18 @@ func:function(){
 			name:'Nickel smelting',
 			icon:[10,9],
 			desc:'Cast 1[hard metal ingot] out of 6[nickel ore]s each.',
-			req:{'prospecting II':true},
+			req:{'prospecting II':true,'nickel-working':true},
 			use:{'worker':2,'metal tools':2},
 		};	
 		G.getDict('furnace').effects.push({type:'convert',from:{'nickel ore':6},into:{'hard metal ingot':1},every:5,mode:'nickel'});
+		G.getDict('furnace').modes['platinum']={
+			name:'Platinum smelting',
+			icon:[3,11,'magixmod'],
+			desc:'Cast 1[platinum ingot] out of 5[platinum ore]s each.',
+			req:{'prospecting II':true,'platinum-working':true},
+			use:{'worker':2,'metal tools':2},
+		};	
+		G.getDict('furnace').effects.push({type:'convert',from:{'platinum ore':5},into:{'platinum ingot':1},every:5,mode:'platinum'});
 //Carving wooden statuettes
 		G.getDict('carver').modes['Carve wooden statuettes']={
 			name:'Carve wooden statuettes',
@@ -2915,6 +2960,14 @@ func:function(){
 			use:{'worker':1,'metal tools':1,'stone tools':1,'Instructor':0.25},
 		};	
 		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'hard metal ingot':5},into:{'armor set':2},every:4,mode:'forgearmorhard'});
+		G.getDict('blacksmith workshop').modes['platinum blocks']={
+			name:'Craft platinum blocks',
+			icon:[4,11,'magixmod'],
+			desc:'Forge [platinum block]s out of 10[platinum ingot] each.',
+			req:{'platinum-working':true},
+			use:{'worker':1,'metal tools':1,'stone tools':1},
+		};	
+		G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'platinum ingot':10},into:{'platinum block':1},every:4,mode:'platinum blocks'});
 //Firekeeper can set fires with help of Fire essence
 		G.getDict('firekeeper').modes['firesfromessence']={
 			name:'Set up fires out of its essence',
