@@ -3185,8 +3185,8 @@ func:function(){
 //Effects of better house construction research
 		G.getDict('house').effects.push({type:'provide',what:{'housing':0.125},req:{'Better house construction':true}});
 		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
-//Quarrying II Platinum ore drop chance
-		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'platinum ore':6},max:13,chance:17/1000,mode:{'advanced quarry':true}});
+//Quarrying II Platinum ore drop chance ()maybe
+	
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
