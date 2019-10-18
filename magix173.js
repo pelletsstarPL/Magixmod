@@ -703,12 +703,22 @@ func:function(){
 		name:'nickel ore',
 		desc:'[nickel ore,Nickel] can be found with better prospecting. May be processed into [hard metal ingot].',
 		icon:[9,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'build',
 	});
 		new G.Res({
 		name:'platinum ore',
 		desc:'[platinum ore,Platinum] can be found with better prospecting and only with small chance by [quarry] and only that unit. May be processed into [precious metal ingot].',
 		icon:[8,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'build',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
@@ -2786,14 +2796,14 @@ func:function(){
 			use:{'worker':2,'metal tools':2,'stone tools':1},
 		};	
 		G.getDict('furnace').effects.push({type:'convert',from:{'Cobalt ore':8},into:{'Cobalt ingot':1},every:5,mode:'Cobalt smelting'});
-		G.getDict('furnace').modes['Nickel smelting']={
+		G.getDict('furnace').modes['nickel']={
 			name:'Nickel smelting',
 			icon:[10,9],
 			desc:'Cast 1[hard metal ingot] out of 6[nickel ore]s each.',
 			req:{'prospecting II':true},
 			use:{'worker':2,'metal tools':2},
 		};	
-		G.getDict('furnace').effects.push({type:'convert',from:{'nickel ore':6},into:{'hard metal ingot':1},every:5,mode:'Nickel smelting'});
+		G.getDict('furnace').effects.push({type:'convert',from:{'nickel ore':6},into:{'hard metal ingot':1},every:5,mode:'nickel'});
 //Carving wooden statuettes
 		G.getDict('carver').modes['Carve wooden statuettes']={
 			name:'Carve wooden statuettes',
@@ -2923,6 +2933,8 @@ func:function(){
 			use:{'worker':3,'metal tools':3},
 		};	
 		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'nickel ore':40},max:25,mode:'nickel'});
+//Other stones prospected mine
+//Other stones prospected quarry
 	
 //Temple achiev
 		new G.Achiev({
@@ -3120,6 +3132,9 @@ func:function(){
 //Effects of better house construction research
 		G.getDict('house').effects.push({type:'provide',what:{'housing':0.125},req:{'Better house construction':true}});
 		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
+//Quarrying II Platinum ore drop chance
+		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'platinum ore'},amount:6,max:13,chance:17/1000,mode:{'advanced quarry':true}});
+		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'platinum ore'},amount:6,max:13,chance:17/1000,mode:{'advanced quarry':true}});
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
