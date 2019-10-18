@@ -1944,14 +1944,14 @@ func:function(){
 	});
 		new G.Tech({
 		name:'prospecting II',
-		desc:'@[mine]s can now dig in search of [nickel ore,Nickel] or focus to mine [granite],[diorite],[andesite] with 3x efficiency instead of any prospected mineral.',
+		desc:'@[mine]s can now dig in search of [nickel ore,Nickel] or focus to mine [Granite],[Diorite],[Andesite] with 3x efficiency instead of any prospected mineral.',
 		icon:[11,12,'magixmod'],
 		cost:{'insight':250},
 		req:{'prospecting':true,'mining':true},
 	});
 		new G.Tech({
 		name:'quarrying II',
-		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1% chance to gain 3 to 5 [platinum ore]s .',
+		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1.7% chance to gain 6 to 13 [platinum ore]s .',
 		icon:[10,12,'magixmod'],
 		cost:{'insight':340},
 		req:{'prospecting II':true,'quarrying':true},
@@ -2777,7 +2777,7 @@ func:function(){
 			use:{'worker':1,'stone tools':1},
 		};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
-//Furnaces will be now able to smelt Cobalt
+//Furnaces will be now able to smelt Cobalt, Nickel and Platinum
 		G.getDict('furnace').modes['Cobalt smelting']={
 			name:'Cobalt smelting',
 			icon:[14,0,'magixmod'],
@@ -2786,7 +2786,14 @@ func:function(){
 			use:{'worker':2,'metal tools':2,'stone tools':1},
 		};	
 		G.getDict('furnace').effects.push({type:'convert',from:{'Cobalt ore':8},into:{'Cobalt ingot':1},every:5,mode:'Cobalt smelting'});
-	
+		G.getDict('furnace').modes['Nickel smelting']={
+			name:'Nickel smelting',
+			icon:[10,9],
+			desc:'Cast 1[hard metal ingot] out of 6[nickel ore]s each.',
+			req:{'prospecting II':true},
+			use:{'worker':2,'metal tools':2},
+		};	
+		G.getDict('furnace').effects.push({type:'convert',from:{'nickel ore':6},into:{'hard metal ingot':1},every:5,mode:'Nickel smelting'});
 //Carving wooden statuettes
 		G.getDict('carver').modes['Carve wooden statuettes']={
 			name:'Carve wooden statuettes',
