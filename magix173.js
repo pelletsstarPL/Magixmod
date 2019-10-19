@@ -2003,6 +2003,15 @@ func:function(){
 		effects:[
 		],
 	});
+		new G.Tech({
+		name:'papercrafting',
+		desc:'@unlocks (paper-crafting shack). There you can craft: @(papyrus) out of [Sugar cane], @(pergamin) out of [hide] , [leather] , and (common paper) out of [Bamboo] with help of secret non-magic recipe.<>',
+		icon:[18,12,'magixmod'],
+		cost:{'insight':500,'wisdom':5},
+		req:{'city planning':true},
+		effects:[
+		],
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Syrup healer',
