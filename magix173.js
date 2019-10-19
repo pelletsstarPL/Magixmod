@@ -2531,7 +2531,7 @@ func:function(){
 		use:{'land':1},
 		effects:[
 			{type:'waste',chance:0.001/1000},
-			{type:'convert',from:{'leather':2},into:{'Dried leather':2},every:20},
+			{type:'convert',from:{'leather':4},into:{'Dried leather':4},every:20},
 		],
 		req:{'Sewing II':true},
 		category:'crafting',
