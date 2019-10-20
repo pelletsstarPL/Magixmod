@@ -3194,8 +3194,22 @@ func:function(){
 //Effects of better house construction research
 		G.getDict('house').effects.push({type:'provide',what:{'housing':0.125},req:{'Better house construction':true}});
 		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
-//Quarrying II Platinum ore drop chance ()maybe
-	
+////////////////////////////////////////////
+* //About magix tab
+		G.tabs.push({
+			name:'Magix history',
+			id:'magixhistory',
+			popup:true,
+			addClass:'right',
+			desc:'Options and information about the Magix and its update history.'
+		});
+		// Don't make assumptions about the existing tabs
+		// (or another mod that does the same thing)
+		// make sure everything is numbered and built properly
+		for (var i=0;i<G.tabs.length;i++){G.tabs[i].I=i;}
+		G.buildTabs();
+		
+	}	
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
