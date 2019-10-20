@@ -1620,7 +1620,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'culture of the afterlife',
-		desc:'<b>Believements have turned into the culture. People will now try to be closer to gods or god they worship, Who knows if they will build another wonder. @unhappiness from death is halved. ',
+		desc:'<b>Believements have turned into the culture. People will now try to be closer to gods or god they worship, Who knows if they will build another wonder</b>. @unhappiness from death is halved. ',
 		icon:[19,1,'magixmod'],
 		cost:{'insight':50,'culture':200,'inspiration':20,'authority':20,'spirituality':30,'faith':40},
 		chance:500,
@@ -3345,14 +3345,15 @@ G.writeMSettingButton=function(obj)
 		
 		// disclaimer blurb for the top
 		str+='<div class="par">'+
-		'<b>NeverEnding Heritage</b> is a modpack for NeverEnding Legacy by <a href="https://github.com/geekahedron/heritage" target="_blank">geekahedron</a>.'+
-		'It is currently in early alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+
-		'<div class="par">While in development, the modpack may be unstable and subject to changes, but the overall goal is to '+
+		'<b>The Magix mod</b> is a mod for NeverEnding Legacy made by <b>pelletsstarPL</b>.'+
+		'It is currently in semi-alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+
+		'<div class="par">While in development, the mod may be unstable and subject to changes, but the overall goal is to '+
 		'expand and improve the legacy with flexible, balanced, user-created content and improvements to existing mechanics.</div>'+
-		'<div class="fancyText title">Heritage Modpack</div>'+
-		G.writeMSettingCategories()+
-		'<div class="divider"></div>'+
-		'<div class="buttonBox">'+
+		'<div class="fancyText title">The Magix mod - why did I make this mod?</div>'+
+		str+='<div class="par">'+
+		'<b>The Magix mod</b> has been made while i was wondering how legacy would look if last update was at February 2019 let\'s say.'+
+		'I was checking bunch of mods and noticed... <b>There is none mod about magic... But I am gonna change it</b>'+
+		'As i said i did and effect of that is at your screen.'+
 		G.dialogue.getCloseButton()+
 		'</div>';
 		return str;
