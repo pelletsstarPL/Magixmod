@@ -3399,7 +3399,7 @@ G.writeMSettingButton=function(obj)
 		'As i said i did and effect of that is at your screen.'+
 		'Even today i am proud of fruits of my creativity and time i sacrificed to make this entertaining mod.'+
 		'I made this mod due to my hobby: IT. I like things like coding, networking. Who knows... maybe i will become expert of javascript.'+
-		'<div class="fancyText title">Why does this mod has a lot of content?</div>'+
+		'<div class="fancyText title">Why does this mod have a lot of content?</div>'+
 		'This mod has a lot of content thanks to my creativity.'+
 		'Let\'s be serious. This mod will get more and more content sometime. These concepts, ideas... i have \'em a lot.'+
 		'Not everything of my conceptions, imaginations will be added. I wanted to improve vanilla units too, hope you like it.'+
