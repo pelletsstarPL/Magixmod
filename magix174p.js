@@ -3221,6 +3221,142 @@ func:function(){
 	}
 	G.initializeFixIcons();
 //Magix tab
+G.writeMSettingButton=function(obj)
+	{
+		G.pushCallback(function(obj){return function(){
+			var div=l('MsettingButton-'+obj.id);
+			if (div)
+			{
+				var me=G.getMSetting(obj.name);
+				if (me.binary==true)
+				{
+					var on = (G.checkMSetting(obj.name)=="on");
+
+					div.innerHTML=obj.text||me.name;
+					if (on) div.classList.add('on');
+				}
+
+				div.onclick=function(div,name,value,siblings){return function(){G.clickMSettingButton(div,name,value,siblings);}}(div,obj.name,obj.value,obj.siblings);
+				if (obj.tooltip) G.addTooltip(div,function(str){return function(){return str;};}(obj.tooltip),{offY:-8});
+			}
+		}}(obj));
+		return '<div class="button" id="msettingButton-'+obj.id+'"></div>';
+	}
+
+	G.clickmSettingButton=function(div,name,value,siblings)
+	{
+		var me=G.getmSetting(name);
+
+		if (me.binary)
+		{
+			if (G.checkmSetting(name)=="on")
+			{
+				G.setmSettingMode(me,me.modes["off"]);
+			}
+			else{
+				G.setmSettingMode(me,me.modes["on"]);
+			}
+		}
+		else
+		{
+			G.setmSettingMode(me,me.modes[value]);
+		}
+
+		if (div)
+		{
+			var on=(me.mode.id=="on");
+			if (on) div.classList.add('on'); else div.classList.remove('on');
+			if (siblings)
+			{
+				for (var i in siblings)
+				{
+					if (('msettingButton-'+siblings[i])!=div.id)
+					{l('msettingButton-'+siblings[i]).classList.remove('on');}
+				}
+			}
+		}
+	}
+
+	// A function to write each category of settings and buttons
+	G.writeMSettingCategories=function()
+	{
+		var str='';
+		for (c in G.mSettingCategory)
+		{
+			if (c=='hidden') continue;
+			var category=G.mSettingCategory[c];
+			str+='<div class="barred fancyText">'+category.displayName+'</div>';
+			for (var i in G.mSetting)
+			{
+				var s = G.mSetting[i];
+				if (s.hcategory == c)
+				{
+					if (s.type=='setting')
+					{
+						str+=G.writeSettingButton({
+							id:s.id,
+							name:s.name,
+							text:s.displayName,
+							tooltip:s.desc
+						});
+					} else {
+						str+=G.writeMSettingButton({
+							id:s.name,
+							name:s.name,
+							text:s.displayName,
+							tooltip:s.desc,
+						});
+					}
+				}
+			}
+			str+='<br /><br />';
+		}
+		return str;
+	}
+
+	// only add the tab once per page load (otherwise tab will duplicate itself with new game or mod reloading)
+	for (t in G.tabs) {
+		if (G.tabs[t].name=='Magix:About')
+		{
+			G.mSettingsLoaded = true;
+		}
+	}
+
+	if (!G.HSettingsLoaded)
+	{
+		G.tabs.push({
+			name:'Magix:About',
+			id:'Magix:About',
+			popup:true,
+			addClass:'right',
+			desc:'Options and information about the Magix mod.'
+		});
+		// Don't make assumptions about the existing tabs
+		// (or another mod that does the same thing)
+		// make sure everything is numbered and built properly
+		for (var i=0;i<G.tabs.length;i++){G.tabs[i].I=i;}
+		G.buildTabs();
+		
+	}
+
+	G.tabPopup['heritage']=function()
+	{
+		var str='';
+		
+		// disclaimer blurb for the top
+		str+='<div class="par">'+
+		'<b>NeverEnding Heritage</b> is a modpack for NeverEnding Legacy by <a href="https://github.com/geekahedron/heritage" target="_blank">geekahedron</a>.'+
+		'It is currently in early alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+
+		'<div class="par">While in development, the modpack may be unstable and subject to changes, but the overall goal is to '+
+		'expand and improve the legacy with flexible, balanced, user-created content and improvements to existing mechanics.</div>'+
+		'<div class="fancyText title">Heritage Modpack</div>'+
+		G.writeMSettingCategories()+
+		'<div class="divider"></div>'+
+		'<div class="buttonBox">'+
+		G.dialogue.getCloseButton()+
+		'</div>';
+		return str;
+	}
 
 		//New tile generation is InDev. I am open to any programming tips
 	
