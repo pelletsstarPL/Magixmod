@@ -3244,6 +3244,20 @@ func:function(){
 		category:'Education',
 	});
 		new G.Policy({
+		name:'School of Alchemy - length of education cycle',
+		desc:'The shorter length you choose the accidents rate with [Alchemists] as a victim will grow slightly.',
+		icon:[2,0,'magixmod'],
+		cost:{'influence':15},
+		startMode:'medium',
+		modes:{
+			'short':{name:'Short',desc:'Teaching 1 [Alchemist] or 1 [Child alchemist] takes 400 days. Choosing this length you will increase rate of accidents at alchemy by 33%'},
+			'medium':{name:'Medium',desc:'Teaching 1 [Alchemist] or 1 [Child alchemist] takes 600 days. Normal accident rate.'},
+			'long':{name:'Long',desc:'Teaching 1 [Alchemist] or 1 [Child alchemist] takes 800 days. Choosing this length you will decrease rate of accidents at alchemy by 33%.'},
+		},
+		req:{'Will to know more':true},
+		category:'Education',
+	});
+		new G.Policy({
 		name:'Gather roses',
 		desc:'Makes florist start gathering all types of rose.',
 		icon:[0,7,'magixmod'],
