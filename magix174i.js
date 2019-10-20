@@ -3196,12 +3196,13 @@ func:function(){
 		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
 ////////////////////////////////////////////
 //About magix tab
+
 		G.tabs.push({
-			name:'Magix history',
-			id:'magixhistory',
+			name:'Magix:About',
+			id:'magix',
 			popup:true,
 			addClass:'right',
-			desc:'Options and information about the Magix and its update history.'
+			desc:'Options and information about the Magix. Update history'
 		});
 		// Don't make assumptions about the existing tabs
 		// (or another mod that does the same thing)
@@ -3209,7 +3210,27 @@ func:function(){
 		for (var i=0;i<G.tabs.length;i++){G.tabs[i].I=i;}
 		G.buildTabs();
 		
-	}	
+	}
+
+	G.tabPopup['magix']=function()
+	{
+		var str='';
+		
+		// disclaimer blurb for the top
+		str+='<div class="par">'+
+		'<b>The Magix mod</b> is a mod for NeverEnding Legacy by pelletsstarPL.'+
+		'It is currently in semi-alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+
+		'<div class="par">While in development, the mod may be unstable and subject to changes, but the overall goal is to '+
+		'expand and improve the legacy with flexible, balanced, magic content and improvements to existing mechanics.</div>'+
+		'<div class="fancyText title">The Magix</div>'+
+		G.writeHSettingCategories()+
+		'<div class="divider"></div>'+
+		'<div class="buttonBox">'+
+		G.dialogue.getCloseButton()+
+		'</div>';
+		return str;
+	};
+
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
