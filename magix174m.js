@@ -3220,6 +3220,11 @@ func:function(){
 		}
 	}
 	G.initializeFixIcons();
+//Magix tab
+	G.tabs=
+	[
+		{name:'Magix:About',id:'aboutmagix',popup:true,addClass:'right',desc:'View mod history and many more.'}
+	];
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
