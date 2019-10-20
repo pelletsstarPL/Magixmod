@@ -3349,10 +3349,19 @@ G.writeMSettingButton=function(obj)
 		'It is currently in semi-alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+
 		'<div class="par">While in development, the mod may be unstable and subject to changes, but the overall goal is to '+
 		'expand and improve the legacy with flexible, balanced, user-created content and improvements to existing mechanics.</div>'+
+		'Below this description you will see something like Q&A with me.</div>'+
 		'<div class="fancyText title">The Magix mod - why did I make this mod?</div>'+
 		'<b>The Magix mod</b> has been made while i was wondering how legacy would look if last update was at February 2019 let\'s say.'+
-		'I was checking bunch of mods and noticed... <b>There is none mod about magic... But I am gonna change it</b>'+
+		'I was checking bunch of mods and noticed... <b>There is none mod about magic... But I am gonna change it</b>.'+
 		'As i said i did and effect of that is at your screen.'+
+		'Even today i am proud of fruits of my creativity and time i sacrificed to make this entertaining mod.'+
+		'I made this mod due to my hobby: IT. I like things like coding, networking. Who knows... maybe i will become expert of javascript.'+
+		'<div class="fancyText title">Why does this mod has a lot of content?</div>'+
+		'This mod has a lot of content thanks to my creativity.'+
+		'Let\'s be serious. This mod will get more and more content sometime. These concepts, ideas... i have \'em a lot.'+
+		'Not everything of my conceptions, imaginations will be added.'+
+		'<div class="fancyText title">What will Magix get soon?</div>'+
+		'I do not want to spoil and <b>ruin the fun</b> so i won\'t answer that question. :)'+
 		G.dialogue.getCloseButton()+
 		'</div>';
 		return str;
