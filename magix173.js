@@ -2930,6 +2930,27 @@ func:function(){
 			use:{'worker':1,'knapped tools':1},
 		};	
 		G.getDict('carver').effects.push({type:'convert',from:{'log':1},into:{'Wooden statuette':1,'Scobs':3},every:7,mode:'Carve wooden statuettes'});
+//Carver will be able to smash granite, diorite, andesite blocks and craft them
+		G.getDict('carver').modes['gdablockscraft']={
+			name:'Cut other stones',
+			icon:[4,12,'magixmod'],
+			desc:'Your carver will craft [cut granite] , [cut diorite] , [cut andesite] out of 9 [Granite] , [Diorite] , [Andesite] each.',
+			use:{'worker':1,'knapped tools':1},
+			req:{'masonry':true},
+		};	
+		G.getDict('carver').effects.push({type:'convert',from:{'Granite':9},into:{'cut granite':1},every:5,mode:'gdablockscraft'});
+		G.getDict('carver').effects.push({type:'convert',from:{'Diorite':9},into:{'cut diorite':1},every:5,mode:'gdablockscraft'});
+		G.getDict('carver').effects.push({type:'convert',from:{'Andesite':9},into:{'cut andesite':1},every:5,mode:'gdablockscraft'});
+		G.getDict('carver').modes['gdablockssmash']={
+			name:'Smash other stone blocks',
+			icon:[4,12,'magixmod'],
+			desc:'Your carver will smash [cut granite] , [cut diorite] , [cut andesite] into 9 [Granite] , [Diorite] , [Andesite].',
+			use:{'worker':1,'knapped tools':1},
+			req:{'masonry':true},
+		};	
+		G.getDict('carver').effects.push({type:'convert',from:{'cut granite':1},into:{'Granite':9},every:5,mode:'gdablockssmash'});
+		G.getDict('carver').effects.push({type:'convert',from:{'cut diorite':1},into:{'Diorite':9},every:5,mode:'gdablockssmash'});
+		G.getDict('carver').effects.push({type:'convert',from:{'cut andesite':1},into:{'Andesite':9},every:5,mode:'gdablockssmash'});
 //While woodcutter cuts tree to grant logs
 		G.getDict('woodcutter').effects.push({type:'gather',context:'gather',what:{'Scobs': 0.1},amount:1,max:1});
 //Weaving colored clothing
