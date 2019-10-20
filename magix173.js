@@ -2048,7 +2048,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'papercrafting',
-		desc:'@unlocks [paper-crafting shack]. There you can craft: @[papyrus] out of [Sugar cane], @[pergamin] out of [hide] , [leather] , and [common paper] out of [Bamboo] with help of secret non-magic recipe.<>',
+		desc:'@unlocks [Paper-crafting shack]. There you can craft: @[papyrus] out of [Sugar cane], @[pergamin] out of [hide] , [leather] , and [common paper] out of [Bamboo] with help of secret non-magic recipe.<>',
 		icon:[18,12,'magixmod'],
 		cost:{'insight':500,'wisdom':5},
 		req:{'city planning':true},
@@ -2058,14 +2058,24 @@ func:function(){
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Paper-crafting shack',
-		desc:'Allows to make you concrete using some [limestone] and [water].',
-		icon:[26,3,25,2],
-		cost:{'basic building materials':1000},
-		use:{'land':1,'worker':1},
+		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] .',
+		icon:[0,12,'magixmod',25,2],
+		cost:{'basic building materials':800},
+		use:{'land':0.9},
+		gizmos:true,
+		modes:{
+			'off':G.MODE_OFF,
+			'papyrus':{name:'Papyrus',icon:[15,12,'magixmod'],desc:'Gain mainly [papyrus] out of this shack. To craft [papyrus] , [worker] will use [Sugar cane] .',use:{'worker':1,'stone tools':1}},
+			'pergamin':{name:'Pergamin',icon:[16,12,'magixmod'],desc:'Gain mainly [pergamin] out of this shack. To craft [pergamin] , [worker] will use [hide] or [leather] .',use:{'worker':1,'stone tools':1}},
+			'commonpaper':{name:'Common paper',icon:[17,12,'magixmod'],desc:'Craft [common paper] out of [Bamboo] with help of secret non-magic recipe.',use:{'worker':1,'stone tools':1}},
+		},
 		effects:[
-			{type:'convert',from:{'water':8,'limestone':2},into:{'concrete':2},every:7},
+			{type:'convert',from:{'Sugar cane':3.25},into:{'papyrus':1.2},every:3,mode:'papyrus'},
+			{type:'convert',from:{'hide':1.75},into:{'pergamin':1},every:5,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.75},into:{'pergamin':1},every:5,mode:'pergamin'},
+			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.2},every:4,mode:'commonpaper'},
 		],
-		req:{'construction':true,'Concrete making':true},
+		req:{'papercrafting':true},
 		category:'crafting',
 	});
 		new G.Unit({
