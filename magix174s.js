@@ -3350,7 +3350,6 @@ G.writeMSettingButton=function(obj)
 		'<div class="par">While in development, the mod may be unstable and subject to changes, but the overall goal is to '+
 		'expand and improve the legacy with flexible, balanced, user-created content and improvements to existing mechanics.</div>'+
 		'<div class="fancyText title">The Magix mod - why did I make this mod?</div>'+
-		str+='<div class="par">'+
 		'<b>The Magix mod</b> has been made while i was wondering how legacy would look if last update was at February 2019 let\'s say.'+
 		'I was checking bunch of mods and noticed... <b>There is none mod about magic... But I am gonna change it</b>'+
 		'As i said i did and effect of that is at your screen.'+
