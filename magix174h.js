@@ -3195,7 +3195,7 @@ func:function(){
 		G.getDict('house').effects.push({type:'provide',what:{'housing':0.125},req:{'Better house construction':true}});
 		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
 ////////////////////////////////////////////
-* //About magix tab
+//About magix tab
 		G.tabs.push({
 			name:'Magix history',
 			id:'magixhistory',
