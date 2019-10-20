@@ -3220,7 +3220,6 @@ func:function(){
 		}
 	}
 	G.initializeFixIcons();
-}
 		//New tile generation is InDev. I am open to any programming tips
 	
 				//var biomes=[];
@@ -3275,4 +3274,4 @@ func:function(){
 			//}
 		//}
 		//return lvl; //*
-}}));
+}});
