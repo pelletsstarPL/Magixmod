@@ -3394,7 +3394,7 @@ G.writeMSettingButton=function(obj)
 		'expand and improve the legacy with flexible, balanced, user-created content and improvements to existing mechanics.</div>'+
 		'Below this description you will see something like Q&A with me.</div>'+
 		'<div class="fancyText title">The Magix mod - why did I make this mod?</div>'+
-		'<b>The Magix mod</b> has been made while i was wondering how legacy would look if last update was at February 2019 let\'s say.'+
+		'<b>The Magix mod</b> has been made while i was wondering how legacy would look if last update was at February 2019(to 2017 it would be 3 more vanilla game updates) let\'s say.'+
 		'I was checking bunch of mods and noticed... <b>There is none mod about magic... But I am gonna change it</b>.'+
 		'As i said i did and effect of that is at your screen.'+
 		'Even today i am proud of fruits of my creativity and time i sacrificed to make this entertaining mod.'+
@@ -3406,7 +3406,7 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">What will Magix get soon?</div>'+
 		'I do not want to spoil and <b>ruin the fun</b> so i won\'t answer that question.:)'+
 		'But i can say sooner or later if it will be <b>possible and reasonable</b> i may think about compatibilty with mods of other people.</div>'+
-		'<div class="fancyText title">Will you add more wonders of portals?</div>'+
+		'<div class="fancyText title">Will you add more wonders or portals?</div>'+
 		'Yes i will... unless i run out of ideas so then i won\'t :D'+
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a>.'+
