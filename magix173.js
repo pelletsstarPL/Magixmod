@@ -5,7 +5,7 @@ desc:'Magic! Magic!. Fit more people, discover essences which have its secret us
 engineVersion:1,
 manifest:'ModManifest.js',
 requires:['Default dataset*'],
-sheets:{'magixmod':'https://i.imgur.com/piy82kT.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'magixmod':'https://i.imgur.com/uJwiKaL.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function(){
 //Mana and essences.
 		G.resCategories={
@@ -2048,7 +2048,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'papercrafting',
-		desc:'@unlocks (paper-crafting shack). There you can craft: @[papyrus] out of [Sugar cane], @[pergamin] out of [hide] , [leather] , and [common paper] out of [Bamboo] with help of secret non-magic recipe.<>',
+		desc:'@unlocks [paper-crafting shack]. There you can craft: @[papyrus] out of [Sugar cane], @[pergamin] out of [hide] , [leather] , and [common paper] out of [Bamboo] with help of secret non-magic recipe.<>',
 		icon:[18,12,'magixmod'],
 		cost:{'insight':500,'wisdom':5},
 		req:{'city planning':true},
@@ -2056,6 +2056,18 @@ func:function(){
 		],
 	});
 //Towers of the Wizards and the wizard unit in its own person.
+		new G.Unit({
+		name:'Paper-crafting shack',
+		desc:'Allows to make you concrete using some [limestone] and [water].',
+		icon:[26,3,25,2],
+		cost:{'basic building materials':1000},
+		use:{'land':1,'worker':1},
+		effects:[
+			{type:'convert',from:{'water':8,'limestone':2},into:{'concrete':2},every:7},
+		],
+		req:{'construction':true,'Concrete making':true},
+		category:'crafting',
+	});
 		new G.Unit({
 		name:'Syrup healer',
 		desc:'This is other subclass of [healer] which heals with brews instead of herbs or bandages. He will mainly heal [sick] and [drunk].',
@@ -2301,7 +2313,6 @@ func:function(){
 		limitPer:{'land':300},
 		limitPer:{'population':9000},
 	});
-//House with mana silo to increase mana capacity
 		new G.Unit({
 		name:'Brick house with a silo',
 		desc:'@provides 15 [housing]<>. Even harder construction makes people feel more safe. Increases food storage by 65 per building.',
