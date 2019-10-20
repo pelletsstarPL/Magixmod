@@ -38,6 +38,7 @@ func:function(){
 			'misc':{
 				name:'Miscellaneous',
 				base:[],
+				side:['Paper'],
 		},
 			'flowersanddyes':{
 				name:'Flowers & Dyes',
@@ -738,6 +739,48 @@ func:function(){
 		icon:[4,11,'magixmod'],
 		partOf:'precious building materials',
 		category:'build',
+	});
+		new G.Res({
+		name:'Paper',
+		desc:'Describes amount of all paper types you have currently in total.',
+		icon:[14,12,'magixmod'],
+		meta:true,
+	});
+		new G.Res({
+		name:'papyrus',
+		desc:'Paper made out of [Sugar cane]. Better than stone carving.',
+		icon:[15,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		partOf:'Paper',
+	});
+		new G.Res({
+		name:'pergamin',
+		desc:'Paper made out of [hide] or [leather].',
+		icon:[16,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		partOf:'Paper',
+	});
+		new G.Res({
+		name:'common paper',
+		desc:'Paper made out of [Bamboo]. In later stages you may craft this paper out of [log].',
+		icon:[17,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		partOf:'Paper',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('grass').res['gather']['Beet']=0.00000001;
@@ -1996,7 +2039,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'nickel-working',
-		desc:'@[furnace]s can now make [hard metal ingot]s from [nickel ore]@[blacksmith workshop]s.<>',
+		desc:'@[furnace]s can now make [hard metal ingot]s from [nickel ore].<>',
 		icon:[1,12,'magixmod'],
 		cost:{'insight':100},
 		req:{'smelting':true,'prospecting II':true},
@@ -2005,7 +2048,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'papercrafting',
-		desc:'@unlocks (paper-crafting shack). There you can craft: @(papyrus) out of [Sugar cane], @(pergamin) out of [hide] , [leather] , and (common paper) out of [Bamboo] with help of secret non-magic recipe.<>',
+		desc:'@unlocks (paper-crafting shack). There you can craft: @[papyrus] out of [Sugar cane], @[pergamin] out of [hide] , [leather] , and [common paper] out of [Bamboo] with help of secret non-magic recipe.<>',
 		icon:[18,12,'magixmod'],
 		cost:{'insight':500,'wisdom':5},
 		req:{'city planning':true},
