@@ -3430,7 +3430,7 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">Will you add more wonders or portals?</div>'+
 		'Yes i will... unless i run out of ideas so then i won\'t :D'+
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
-		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a>.'+
+		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>.'+
 		G.dialogue.getCloseButton()+
 		'</div>';
 		return str;
