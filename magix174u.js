@@ -3359,9 +3359,14 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">Why does this mod has a lot of content?</div>'+
 		'This mod has a lot of content thanks to my creativity.'+
 		'Let\'s be serious. This mod will get more and more content sometime. These concepts, ideas... i have \'em a lot.'+
-		'Not everything of my conceptions, imaginations will be added.'+
+		'Not everything of my conceptions, imaginations will be added. I wanted to improve vanilla units too, hope you like it.'+
 		'<div class="fancyText title">What will Magix get soon?</div>'+
-		'I do not want to spoil and <b>ruin the fun</b> so i won\'t answer that question. :)'+
+		'I do not want to spoil and <b>ruin the fun</b> so i won\'t answer that question.:)'+
+		'But i can say sooner or later if it will be <b>possible and reasonable</b> i may think about compatibilty with mods of other people.</div>'+
+		'<div class="fancyText title">Will you add more wonders of portals?</div>'+
+		'Yes i will... unless i run out of ideas so then i won\'t :D'+
+		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
+		'Find me at: <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a>.'+
 		G.dialogue.getCloseButton()+
 		'</div>';
 		return str;
