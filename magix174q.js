@@ -3339,7 +3339,7 @@ G.writeMSettingButton=function(obj)
 		
 	}
 
-	G.tabPopup['heritage']=function()
+	G.tabPopup['Magix:About']=function()
 	{
 		var str='';
 		
