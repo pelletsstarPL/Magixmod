@@ -2592,10 +2592,10 @@ func:function(){
 		desc:'@This small rack may dry [leather] making it become [Dried leather]. [Dried leather] is used to make even harder clothing, which decays much slower.',
 		icon:[13,3,'magixmod'],
 		cost:{'basic building materials':100},
-		use:{'land':1},
+		use:{'land':0.75},
 		effects:[
 			{type:'waste',chance:0.001/1000},
-			{type:'convert',from:{'leather':4},into:{'Dried leather':4},every:20},
+			{type:'convert',from:{'leather':5},into:{'Dried leather':5},every:20},
 		],
 		req:{'Sewing II':true},
 		category:'crafting',
