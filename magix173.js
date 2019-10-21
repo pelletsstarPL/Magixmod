@@ -2059,7 +2059,7 @@ func:function(){
 		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] .',
 		icon:[0,12,'magixmod',25,2],
 		cost:{'basic building materials':800},
-		use:{'land':0.9},
+		use:{'land':0.7},
 		gizmos:true,
 		modes:{
 			'off':G.MODE_OFF,
