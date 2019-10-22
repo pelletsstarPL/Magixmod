@@ -3477,18 +3477,21 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
+		'<div class="divider"></div>'+
 		'<div class="default">22 X 2019: Added policy which will decide how long will be education cycle for alchemists.<div>'+
 		'->Added new trait which requires culture of the afterlife to occur.<div>'+
 		'->Small improvements to vanilla things(platinum and nickel ores).<div>'+
+		'<div class="divider"></div>'+
 		'<div class="barred fancyText">October 2019: 2nd wonder. Revenants trait - the first long term trait<div>'+
 		'->Brews are available.<div>'+
 		'->New culture source.<div>'+
 		'->Vanilla improvements(armor , weapon blacksmithery).<div>'+
 		'->Papercrafting added.<div>'+
+		'<div class="divider"></div>'+
 		'<div class="barred fancyText">September 2019: Juicery, farms, ink, instructors, alchemists added<div>'+
 		'->Thoughts sharer.<div>'+
 		'->Florist. Two new early game units<div>'+
-		{date:'3/24/2017',title:'Alpha patch',text:['added an outline to your explored territory on the map','hunters dying, quarries/mines collapsing and scouts getting lost should no longer disproportionately harm your population; those effects have also been made less frequent','people get sick less often','added a new policy to control birth rate','mines can now mine for salt','resources now display how much you\'re gaining and losing every tick']},
+		'<div class="divider"></div>'+
 		'<div class="barred fancyText">july - august 2019 Magix starts being developed<div>'+
 		G.writeMSettingCategories()+
 		'<div class="divider"></div>'+
