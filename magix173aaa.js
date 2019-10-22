@@ -3488,6 +3488,7 @@ G.writeMSettingButton=function(obj)
 		'<div class="barred fancyText">September 2019: Juicery, farms, ink, instructors, alchemists added<div>'+
 		'->Thoughts sharer.<div>'+
 		'->Florist. Two new early game units<div>'+
+		{date:'3/24/2017',title:'Alpha patch',text:['added an outline to your explored territory on the map','hunters dying, quarries/mines collapsing and scouts getting lost should no longer disproportionately harm your population; those effects have also been made less frequent','people get sick less often','added a new policy to control birth rate','mines can now mine for salt','resources now display how much you\'re gaining and losing every tick']},
 		'<div class="barred fancyText">july - august 2019 Magix starts being developed<div>'+
 		G.writeMSettingCategories()+
 		'<div class="divider"></div>'+
