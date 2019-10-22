@@ -3477,7 +3477,9 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
-		'<div class="par">added example heellooo world!'+
+		'<div class="par">22 X 2019: Added policy which will decide how long will be education cycle for alchemists.<div>'+
+		'->Added new trait which requires culture of the afterlife to occur.<div>'+
+		'->Small improvements to vanilla things.<div>'+
 		G.writeMSettingCategories()+
 		'<div class="divider"></div>'+
 		'<div class="buttonBox">'+
