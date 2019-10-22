@@ -3479,7 +3479,16 @@ G.writeMSettingButton=function(obj)
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="par">22 X 2019: Added policy which will decide how long will be education cycle for alchemists.<div>'+
 		'->Added new trait which requires culture of the afterlife to occur.<div>'+
-		'->Small improvements to vanilla things.<div>'+
+		'->Small improvements to vanilla things(platinum and nickel ores).<div>'+
+		'<div class="barred fancyText">October 2019: 2nd wonder. Revenants trait - the first long term trait<div>'+
+		'->Brews are available.<div>'+
+		'->New culture source.<div>'+
+		'->Vanilla improvements(armor , weapon blacksmithery).<div>'+
+		'->Papercrafting added.<div>'+
+		'<div class="barred fancyText">September 2019: Juicery, farms, ink, instructors, alchemists added<div>'+
+		'->Thoughts sharer.<div>'+
+		'->Florist. Two new early game units<div>'+
+		'<div class="barred fancyText">july - august 2019 Magix starts being developed<div>'+
 		G.writeMSettingCategories()+
 		'<div class="divider"></div>'+
 		'<div class="buttonBox">'+
