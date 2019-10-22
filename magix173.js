@@ -1671,6 +1671,14 @@ func:function(){
 			if (G.has('culture of the afterlife')) deathUnhappinessMult/=2;
 		},
 	});
+		new G.Trait({
+		name:'The God\'s call',
+		desc:'<b>The god... he called your people... to his world... full of hopes... full of new adventures... to... his... Paradise...',
+		icon:[20,2,'magixmod'],
+		cost:{'insight':650,'culture':200,'inspiration':20,'authority':20,'spirituality':30,'faith':40},
+		chance:175,
+		req:{'culture of the afterlife':true},
+	});
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
