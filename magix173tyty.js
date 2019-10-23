@@ -3483,6 +3483,7 @@ G.writeMSettingButton=function(obj)
 		'->Small improvements to vanilla things(platinum and nickel ores).<div>'+
 		'<div class="divider"></div>'+
 		'<div class="barred fancyText">October 2019: 2nd wonder. Revenants trait - the first long term trait<div>'+
+		'<div class="par">Aktualiczacja.</div>'+
 		'->Brews are available.<div>'+
 		'->New culture source.<div>'+
 		'->Vanilla improvements(armor , weapon blacksmithery).<div>'+
