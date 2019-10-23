@@ -816,6 +816,13 @@ func:function(){
 		icon:[0,0,'magixmod'],
 		hidden:true,
 	});
+		new G.Res({
+		name:'wizard wisdom',
+		hidden:true,
+		icon:[8,5],
+		category:'main',
+		partOf:'wisdom',
+	});
 //New types of people
 		new G.Res({
 		name:'Instructor',
@@ -2061,6 +2068,15 @@ func:function(){
 		effects:[
 		],
 	});
+		new G.Tech({
+		name:'ingredient crafting',
+		desc:'Alchemists can now craft a special ingredients for more advanced potions. They will use up [Basic brews] and [misc materials].',
+		icon:[17,9,'magixmod'],
+		cost:{'insight':500,'wisdom':5},
+		req:{'Beginnings of alchemy'true},
+		effects:[
+		],
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'Paper-crafting shack',
@@ -2143,7 +2159,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.025}},
-            		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}}
+            		{type:'provide',what:{'wizard wisdom':1},req:{'Wizard wisdom':true}}
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -3005,6 +3021,15 @@ func:function(){
 			use:{'worker':1,'Crossbow':1,'Crossbow belt':150},
 		};
 		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
+//Quarry's mode
+			G.getDict('').modes['Crossbow hunting']={
+			name:'Crossbow hunting',
+			icon:[13,6,'magixmod'],
+			desc:'Hunt animals with crossbows.',
+			req:{'Hunting II':true},
+			use:{'worker':1,'Crossbow':1,'Crossbow belt':150},
+		};
+		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
 //Fisher can fish with new fishing nets
 			G.getDict('fisher').modes['Net fishing']={
 			name:'Net fishing',
@@ -3483,7 +3508,6 @@ G.writeMSettingButton=function(obj)
 		'->Small improvements to vanilla things(platinum and nickel ores).<div>'+
 		'<div class="divider"></div>'+
 		'<div class="barred fancyText">October 2019: 2nd wonder. Revenants trait - the first long term trait</div>'+
-		'<div class="par">Aktualiczacja.</div>'+
 		'->Brews are available.<div>'+
 		'->New culture source.<div>'+
 		'->Vanilla improvements(armor , weapon blacksmithery).<div>'+
