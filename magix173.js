@@ -795,7 +795,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Enchanted ice',
-		desc:'Effect of mana + ice + wind essence. Used into resistant potions.',
+		desc:'Effect of [Mana] + [ice] + [Wind essence]. Used into resistant potions.',
 		icon:[17,11,'magixmod'],
 		tick:function(me,tick)
 		{
@@ -1668,7 +1668,7 @@ func:function(){
 		name:'Juicy expertise',
 		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft. @[artisan of juice] has a small chance to craft 1 additional [Juices,juice].',
 		icon:[16,5,'magixmod'],
-		cost:{'Juices':5e3,'wisdom':25,'insight':30},
+		cost:{'Juices':6.5e3,'wisdom':25,'insight':30},
 		chance:6,//experimental
 		category:'knowledge',
 		req:{'Crafting a juice':true},
@@ -2120,16 +2120,14 @@ func:function(){
 		gizmos:true,
 		modes:{
 			'off':G.MODE_OFF,
-			'sweetwater':{name:'Sweet water',icon:[0,10,'magixmod'],desc:'Gain [Sweet water pot,Sweet water] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
-			'mundanewater':{name:'Mundane water',icon:[1,10,'magixmod'],desc:'Gain [mundane water pot,Mundane water] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
-			'saltwater':{name:'Saltwater',icon:[2,10,'magixmod'],desc:'Gain [salted water pot,Saltwater] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
-			'bubblingwater':{name:'Bubbling water',icon:[3,10,'magixmod'],desc:'Gain [Bubbling water pot,Bubbling water] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
+			'bonedust':{name:'Bone dust',icon:[0,10,'magixmod'],desc:'Gain [Bone dust] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25}},
+			'flowsugar':{name:'Flowered sugar',icon:[1,10,'magixmod'],desc:'Gain [Flowered sugar] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25}},
+			'enchice':{name:'Enchanted ice',icon:[2,10,'magixmod'],desc:'Gain [Enchanted ice] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25,'Wand':1}},
 		},
 		effects:[
-			{type:'convert',from:{'Potion pot':1,'water':0.75,'sugar':0.33},into:{'Sweet water pot':1},every:4,mode:'sweetwater'},
-			{type:'convert',from:{'Potion pot':1,'water':0.75,'muddy water':0.05,'herb':0.1},into:{'mundane water pot':1},every:4,mode:'mundanewater'},
-			{type:'convert',from:{'Potion pot':1,'water':0.8,'salt':0.2,'herb':0.1},into:{'salted water pot':1},every:4,mode:'saltwater'},
-			{type:'convert',from:{'Potion pot':1,'water':0.8,'salt':0.02,'fire pit':0.12},into:{'Bubbling water pot':1},every:4,mode:'bubblingwater'},
+			{type:'convert',from:{'bone':1.25},into:{'Bone dust':1},every:4,mode:'bonedust'},
+			{type:'convert',from:{'Flowers':1.5,'sugar':1},into:{'Flowered sugar':1},every:4,mode:'flowsugar'},
+			{type:'convert',from:{'Mana':0.75,'ice':2,'Wind essence':1},into:{'Enchanted ice':2},every:4,mode:'saltwater'},
 		],
 		category:'alchemy',
 	});
@@ -2753,6 +2751,7 @@ func:function(){
 			{type:'convert',from:{'sugar':1,'Berries':0.95,'water':1},into:{'Berry juice':1},every:5,mode:'juices'},
 			{type:'convert',from:{'sugar':1,'Watermelon':0.4,'water':2},into:{'Watermelon juice':2},every:5,mode:'juices'},
 			{type:'convert',from:{'sugar':1,'fruit':0.4,'water':2},into:{'Fruit juice':2},every:5,mode:'juices',req:{'Moar juices':true}},
+			{type:'convert',from:{'sugar':3,'fruit':0.9,'water':6,'Berries':1,'Watermelon':0.25},into:{'Fruit juice':12,'Berry juice':8,'Watermelon juice':9},every:5,mode:'juices',req:{'Moar juices':true},chance:1/20},
 		],
 		req:{'Crafting a juice':true},
 		category:'crafting',
@@ -3567,6 +3566,11 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
+		'<div class="divider"></div>'+
+		'<div class="default">24 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
+		'->Fixed bug with wisdom going below 100 caused by wizards.<div>'+
+		'->Rest of effects which prospecting II and quarrying II provides now work ingame.<div>'+
+		'->Improved juicy expertise trait effect and increased its cost a little bit (from 5k juice to 6.5k).<div>'+
 		'<div class="divider"></div>'+
 		'<div class="default">22 X 2019: Added policy which will decide how long will be education cycle for alchemists.<div>'+
 		'->Added new trait which requires culture of the afterlife to occur.<div>'+
