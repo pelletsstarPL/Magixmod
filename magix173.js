@@ -782,6 +782,39 @@ func:function(){
 		category:'misc',
 		partOf:'Paper',
 	});
+		new G.Res({
+		name:'Bone dust',
+		desc:'Made with knapping in bone. Ingredient used to make strenghtening brews or brews of revenant.',
+		icon:[18,11,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Enchanted ice',
+		desc:'Effect of mana + ice + wind essence. Used into resistant potions.',
+		icon:[17,11,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Flowered sugar',
+		desc:'[sugar] + [Flowers] . Additive ingredient for other potions.',
+		icon:[17,11,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
@@ -2079,6 +2112,28 @@ func:function(){
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
+		name:'ingredient crafting stand',
+		desc:'There you can craft ingredients for more advanced potions.',
+		icon:[19,7,'magixmod'],
+		cost:{'basic building materials':5},
+		req:{'Beginnings of alchemy':true,'ingredient crafting':true},
+		gizmos:true,
+		modes:{
+			'off':G.MODE_OFF,
+			'sweetwater':{name:'Sweet water',icon:[0,10,'magixmod'],desc:'Gain [Sweet water pot,Sweet water] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
+			'mundanewater':{name:'Mundane water',icon:[1,10,'magixmod'],desc:'Gain [mundane water pot,Mundane water] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
+			'saltwater':{name:'Saltwater',icon:[2,10,'magixmod'],desc:'Gain [salted water pot,Saltwater] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
+			'bubblingwater':{name:'Bubbling water',icon:[3,10,'magixmod'],desc:'Gain [Bubbling water pot,Bubbling water] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.33}},
+		},
+		effects:[
+			{type:'convert',from:{'Potion pot':1,'water':0.75,'sugar':0.33},into:{'Sweet water pot':1},every:4,mode:'sweetwater'},
+			{type:'convert',from:{'Potion pot':1,'water':0.75,'muddy water':0.05,'herb':0.1},into:{'mundane water pot':1},every:4,mode:'mundanewater'},
+			{type:'convert',from:{'Potion pot':1,'water':0.8,'salt':0.2,'herb':0.1},into:{'salted water pot':1},every:4,mode:'saltwater'},
+			{type:'convert',from:{'Potion pot':1,'water':0.8,'salt':0.02,'fire pit':0.12},into:{'Bubbling water pot':1},every:4,mode:'bubblingwater'},
+		],
+		category:'alchemy',
+	});
+		new G.Unit({
 		name:'Paper-crafting shack',
 		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] .',
 		icon:[0,12,'magixmod',25,2],
@@ -2237,7 +2292,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'provide',what:{'housing':33}},
-			{type:'gather',what:{'Lightning essence':2}},
+			{type:'gather',what:{'Lightning essence':2}}
 	],
 		category:'housing',
 		limitPer:{'land':2},
@@ -2969,7 +3024,7 @@ func:function(){
 		G.getDict('carver').effects.push({type:'convert',from:{'Andesite':9},into:{'cut andesite':1},every:5,mode:'gdablockscraft'});
 		G.getDict('carver').modes['gdablockssmash']={
 			name:'Smash other stone blocks',
-			icon:[4,12,'magixmod'],
+			icon:[7,12,'magixmod'],
 			desc:'Your carver will smash [cut granite] , [cut diorite] , [cut andesite] into 9 [Granite] , [Diorite] , [Andesite].',
 			use:{'worker':1,'knapped tools':1},
 			req:{'masonry':true},
@@ -3022,14 +3077,16 @@ func:function(){
 		};
 		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
 //Quarry's mode
-			G.getDict('').modes['Crossbow hunting']={
-			name:'Crossbow hunting',
-			icon:[13,6,'magixmod'],
-			desc:'Hunt animals with crossbows.',
-			req:{'Hunting II':true},
-			use:{'worker':1,'Crossbow':1,'Crossbow belt':150},
+			G.getDict('quarry').modes['Quarry other stones']={
+			name:'Quarry other stones',
+			icon:[3,12,'magixmod'],
+			desc:'Strike the Earth for other than common [cut stone] stones.',
+			req:{'quarrying II':true},
+			use:{'worker':3,'metal tools':3},
 		};
-		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
+		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut granite'},amount:3,max:6,mode:'Quarry other stones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut diorite'},amount:3,max:6,mode:'Quarry other stones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut andesite'},amount:3,max:6,mode:'Quarry other stones'});
 //Fisher can fish with new fishing nets
 			G.getDict('fisher').modes['Net fishing']={
 			name:'Net fishing',
@@ -3116,8 +3173,16 @@ func:function(){
 		};	
 		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'nickel ore':40},max:25,mode:'nickel'});
 //Other stones prospected mine
-//Other stones prospected quarry
-	
+		G.getDict('mine').modes['ostones']={
+			name:'Other stones',
+			icon:[6,12,'magixmod'],
+			desc:'Mine for other stones with 3x efficiency than common [stone].',
+			req:{'prospecting II':true},
+			use:{'worker':3,'metal tools':3},
+		};	
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Granite':30},max:25,mode:'ostones'});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Diorite':30},max:25,mode:'ostones'});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Andesite':30},max:25,mode:'ostones'});
 //Temple achiev
 		new G.Achiev({
 		tier:1,
