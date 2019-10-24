@@ -3083,9 +3083,9 @@ func:function(){
 			req:{'quarrying II':true},
 			use:{'worker':3,'metal tools':3},
 		};
-		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut granite'},amount:3,max:6,mode:'Quarry other stones'});
-		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut diorite'},amount:3,max:6,mode:'Quarry other stones'});
-		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut andesite'},amount:3,max:6,mode:'Quarry other stones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'cut granite'},amount:3,max:6,mode:'Quarry other stones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'cut diorite'},amount:3,max:6,mode:'Quarry other stones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'cut andesite'},amount:3,max:6,mode:'Quarry other stones'});
 //Fisher can fish with new fishing nets
 			G.getDict('fisher').modes['Net fishing']={
 			name:'Net fishing',
@@ -3567,7 +3567,7 @@ G.writeMSettingButton=function(obj)
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="divider"></div>'+
-		'<div class="default">24 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
+		'<div class="default">25 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
 		'->Fixed bug with wisdom going below 100 caused by wizards.<div>'+
 		'->Rest of effects which prospecting II and quarrying II provides now work ingame.<div>'+
 		'->Improved juicy expertise trait effect and increased its cost a little bit (from 5k juice to 6.5k).<div>'+
