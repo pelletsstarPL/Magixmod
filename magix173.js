@@ -2106,7 +2106,7 @@ func:function(){
 		desc:'Alchemists can now craft a special ingredients for more advanced potions. They will use up [Basic brews] and [misc materials].',
 		icon:[17,9,'magixmod'],
 		cost:{'insight':500,'wisdom':5},
-		req:{'Beginnings of alchemy'true},
+		req:{'Beginnings of alchemy':true},
 		effects:[
 		],
 	});
