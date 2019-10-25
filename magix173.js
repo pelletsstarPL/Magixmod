@@ -3076,16 +3076,16 @@ func:function(){
 		};
 		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
 //Quarry's mode
-			G.getDict('quarry').modes['Quarry other stones']={
+			G.getDict('quarry').modes['quarryotherstones']={
 			name:'Quarry other stones',
 			icon:[3,12,'magixmod'],
 			desc:'Strike the Earth for other than common [cut stone] stones.',
 			req:{'quarrying II':true},
 			use:{'worker':3,'metal tools':3},
 		};
-		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'cut granite'},amount:3,max:6,mode:'Quarry other stones'});
-		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'cut diorite'},amount:3,max:6,mode:'Quarry other stones'});
-		G.getDict('quarry').effects.push({type:'gather',context:'gather',what:{'cut andesite'},amount:3,max:6,mode:'Quarry other stones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut granite':5},mode:'quarryotherstones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut diorite':5},max:6,mode:'quarryotherstones'});
+		G.getDict('quarry').effects.push({type:'gather',context:'quarry',what:{'cut andesite':5},max:6,mode:'quarryotherstones'});
 //Fisher can fish with new fishing nets
 			G.getDict('fisher').modes['Net fishing']={
 			name:'Net fishing',
