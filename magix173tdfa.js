@@ -857,9 +857,14 @@ func:function(){
 		partOf:'wisdom',
 		meta:'true',
 	});
-		G.getDict.res['wisdom']{
-		meta:true,
-		},		
+		G.getDict.G.Res({
+		name:'wisdom',
+		hidden:true,
+		icon:[8,5],
+		category:'main',
+		partOf:'wisdom',
+		meta:'true',
+	});
 //New types of people
 		new G.Res({
 		name:'Instructor',
