@@ -857,7 +857,7 @@ func:function(){
 		partOf:'wisdom',
 		meta:'true',
 	});
-		G.getDict.res({
+		G.getDict('wisdom'){
 		name:'wisdom',
 		hidden:true,
 		icon:[8,5],
