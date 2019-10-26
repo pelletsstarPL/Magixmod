@@ -855,6 +855,7 @@ func:function(){
 		icon:[8,5],
 		category:'main',
 		partOf:'wisdom',
+		meta:'true',
 	});
 //New types of people
 		new G.Res({
