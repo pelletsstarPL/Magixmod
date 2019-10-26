@@ -857,13 +857,6 @@ func:function(){
 		partOf:'wisdom',
 		meta:'true',
 	});
-		G.getDict('wisdom').res({
-		hidden:true,
-		icon:[8,5],
-		category:'main',
-		partOf:'wisdom',
-		meta:'true',
-	});
 //New types of people
 		new G.Res({
 		name:'Instructor',
@@ -2220,7 +2213,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.015}},
-            		{type:'provide',what:{'wizard wisdom':1},req:{'Wizard wisdom':true}}
+            		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}}
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -3576,7 +3569,7 @@ G.writeMSettingButton=function(obj)
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="divider"></div>'+
 		'<div class="default">25 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
-		'->Fixed bug with wisdom going below 100 caused by wizards.<div>'+
+		'->Failed to fix bug with wisdom going below 100 caused by wizards.<div>'+
 		'->Rest of effects which prospecting II and quarrying II provides now work ingame.<div>'+
 		'->Improved juicy expertise trait effect and increased its cost a little bit (from 5k juice to 6.5k).<div>'+
 		'<div class="divider"></div>'+
