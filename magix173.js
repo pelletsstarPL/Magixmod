@@ -2212,7 +2212,7 @@ func:function(){
 		req:{'Wizardry':true},
 		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'insight':0.025}},
+			{type:'gather',what:{'insight':0.015}},
             		{type:'provide',what:{'wizard wisdom':1},req:{'Wizard wisdom':true}}
         ],
 		category:'discovery',
