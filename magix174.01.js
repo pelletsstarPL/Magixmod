@@ -38,7 +38,7 @@ func:function(){
 			'misc':{
 				name:'Miscellaneous',
 				base:[],
-				side:['Paper'],
+				side:['Paper','Magic essences'],
 		},
 			'flowersanddyes':{
 				name:'Flowers & Dyes',
@@ -106,7 +106,7 @@ func:function(){
 		name:'Fire essence',
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
-		partOf:'misc materials',
+		partOf:,
 		category:'misc',
 	});
 		new G.Res({
@@ -807,13 +807,25 @@ func:function(){
 		new G.Res({
 		name:'Flowered sugar',
 		desc:'[sugar] + [Flowers] . Additive ingredient for other potions.',
-		icon:[17,11,'magixmod'],
+		icon:[18,10,'magixmod'],
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Paradise emblem',
+		desc:'A thing you will get after activating a Paradise portal. Needed to unlock further researching. A pass for further things and more adventures. You can obtain only one Emblem of this type. <b>@God called you to his world... But God\'s paradise has rules that you & your people must follow or Paradise will be closed for you and your people... so in fact your adventure has not ended yet even after adventure in Plain Island. Good luck.<b>',
+		icon:[20,9,'magixmod'],
+		category:'main',
+	});
+		new G.Res({
+		name:'Magic essences',
+		desc:'This is how many you have all <b>Essences</b> in total currently.',
+		icon:[20,13,'magixmod'],
+		meta:true,
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
