@@ -175,8 +175,21 @@ func:function(){
 	});
 		new G.Res({
 		name:'Wind essence',
-		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in mirror world spellcasting.',
+		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in spellcasting.',
 		icon:[1,1,'magixmod'],
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
+		category:'misc',
+	});
+		new G.Res({
+		name:'Essence of the Holiness',
+		desc:'[Essence of the Holiness] this one should not be used by everyone due to risk of mass blindness. Anyway this one will have its faithful uses.',
+		icon:[20,6,'magixmod'],
 		partOf:'Magic essences',
 		tick:function(me,tick)
 		{
@@ -850,6 +863,50 @@ func:function(){
 		name:'Flowered sugar',
 		desc:'[sugar] + [Flowers] . Additive ingredient for other potions.',
 		icon:[18,10,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Dark fire pit',
+		desc:'[fire pit] + [Dark essence] . Used to craft bunch of Dark Potions.',//Coming very very soon types of potions
+		icon:[20,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Withering salt',
+		desc:'[salt] + [Dark essence] . Part of few Dark Potions. Do not use it for meals, kills people from inside very quickly',
+		icon:[20,10,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Herb of the undead',
+		desc:'[herb] + [Dark essence] + [fruit] . Used to be one of ingredients of the Defense Dark Potions. Weakens deadly power of [Dark essence], does not weaken potions effect',//Coming very very soon types of potions
+		icon:[20,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemyingredients',
+	});
+		new G.Res({
+		name:'Scobs of life',
+		desc:'[Scobs] + [Nature essence] + [water] + [Mana] . Used in Nature Combat Potions. One of strongest and most allergic for undead ingredient.',
+		icon:[17,13,'magixmod'],
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
@@ -2202,10 +2259,20 @@ func:function(){
 	});
 		new G.Tech({
 		name:'7th essence',
-		desc:'Discovers another essence which can be feeled in Paradise\'s air. Needs some things to be gathered.',
+		desc:'Discovers another essence which can be feeled in Paradise\'s air. Needs some things to be gathered.@unlocks [Light wizard tower]',
 		icon:[20,6,'magixmod',8,12,23,1], 
 		cost:{'insight':1300},
+		effects:[
+			{type:'provide res',what:{'science':2}},
+		],
 		req:{'Second portal to new world':true},
+	});
+		new G.Tech({
+		name:'7th complex tower',
+		desc:'Due to 7th essence discovered [Wizard Complex] has a need to build up new tower specially for new essence.@More housing and since now [Wizard Complex] will use more [Mana] just to craft new essence too.',
+		icon:[20,6,'magixmod',8,12,23,1], 
+		cost:{'insight':700},
+		req:{'7th essence':true,'Wizard complex':true},
 	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
@@ -2424,6 +2491,22 @@ func:function(){
 		limitPer:{'land':2},
 	});
 		new G.Unit({
+		name:'Holy wizard tower',
+		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Essence of the Holiness] by consuming mana.',
+		icon:[4,4,'magixmod'],
+		cost:{'basic building materials':750,'precious building materials':350},
+		use:{'land':1},
+		upkeep:{'Mana':6},
+		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'7th essence':true},
+		//require:{'wizard':3},
+		effects:[
+			{type:'provide',what:{'housing':33}},
+			{type:'gather',what:{'Essence of the Holiness':2.15}},
+	],
+		category:'housing',
+		limitPer:{'land':2},
+	});
+		new G.Unit({
 		name:'Church',
 		desc:'Millenially generates some [spirituality]. Commonly generates [faith] at the lower rate than [soothsayer]. Further religion improvements may change it.',
 		icon:[6,3,'magixmod'],
@@ -2472,15 +2555,16 @@ func:function(){
 	
 		new G.Unit({
 		name:'Wizard Complex',
-		desc:'@provides 690 [housing]<>A towers for 660 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana.',
+		desc:'@provides 690 [housing]<>A towers for 660 citizens and 30 wizards. Gathers all type of essences three times better than usual tower and consuming same mana. May provide more housing with further researches.',
 		icon:[3,3,'magixmod'],
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
-		upkeep:{'Mana':36},
+		upkeep:{'Mana':36.25},
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		//require:{'wizard':30},
 		effects:[
 			{type:'provide',what:{'housing':690}},
+			{type:'provide',what:{'housing':115},req:{'7th complex tower':true}},
 			{type:'provide',what:{'authority':15}},
 			{type:'provide',what:{'spirituality':15}},
 			{type:'provide',what:{'inspiration':30}},
@@ -2490,10 +2574,11 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Lightning essence':6}},
 			{type:'gather',context:'gather',what:{'Wind essence':6}},
 			{type:'gather',context:'gather',what:{'Dark essence':6}},
+			{type:'convert',from:{'Mana':6.33},into:{'Essence of the Holiness':6},every:4,req:{'7th essence':true}},
 		],
 		category:'housing',
 		limitPer:{'land':300},
-		limitPer:{'population':9000},
+		limitPer:{'population':9300},
 	});
 		new G.Unit({
 		name:'Brick house with a silo',
@@ -3678,6 +3763,13 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
+		'<div class="divider"></div>'+
+		'<div class="default">31 X 2019: Second portal to second world. Feel lights everywhere<div>'+
+		'->Attempting fixing wizard wisdom bug.<div>'+
+		'->Changes at power of Wizard Complex.<div>'+
+		'->Added few more researches. They are for alchemy and new world.<div>'+
+		'->New ingredients which can be made. To unlock them just buy some researches that may unlock them for you.<div>'+
+		'->Migrated image sheet from imgur to other website which allows for sharing image sheet for content like this mod.<div>'+
 		'<div class="divider"></div>'+
 		'<div class="default">25 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
 		'->Failed to fix bug with wisdom going below 100 caused by wizards.<div>'+
