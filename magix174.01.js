@@ -13,7 +13,7 @@ func:function(){
 			'main':{
 				name:'Essentials',
 				base:[],
-				side:['population','worker','happiness','health','land','coin','Land of the Plain Island'],
+				side:['population','worker','happiness','health','land','coin','Land of the Plain Island','Land of the Paradise'],
 		},
 			'demog':{
 				name:'Demographics',
@@ -103,45 +103,87 @@ func:function(){
 		displayUsed:true,
 	});
 		new G.Res({
+		name:'Land of the Paradise',
+		desc:'The land you got from activating a portal to the Paradise. Place for new buildings.',
+		icon:[20,4,'magixmod'],
+		displayUsed:true,
+	});
+		new G.Res({
 		name:'Fire essence',
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
-		partOf:,
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Water essence',
 		desc:'[Water essence] this essence is undrinkable but can be used to cast rain.',
 		icon:[0,1,'magixmod'],
-		partOf:'misc materials',
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Nature essence',
 		desc:'[Nature essence] is used by wizards to reviewe their beloved flowers or make harvests more plentiful.',
 		icon:[1,2,'magixmod'],
-		partOf:'misc materials',
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Dark essence',
 		desc:'[Dark essence] used to make a blackholes for graves or to even bigger spellworks like mirror world. .',
 		icon:[1,3,'magixmod'],
-		partOf:'misc materials',
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Lightning essence',
 		desc:'[Lightning essence] can make a storms safer for people granting satisfaction  and good entertainment for storm hunters. Who knows what would happen if its essence can start elecricity age.',
 		icon:[0,3,'magixmod'],
-		partOf:'misc materials',
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 		category:'misc',
 	});
 		new G.Res({
 		name:'Wind essence',
 		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in mirror world spellcasting.',
 		icon:[1,1,'magixmod'],
-		partOf:'misc materials',
+		partOf:'Magic essences',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0001;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+		},
 		category:'misc',
 	});
 		new G.Res({
@@ -2123,6 +2165,48 @@ func:function(){
 		effects:[
 		],
 	});
+		new G.Tech({
+		name:'Second portal to new world',
+		desc:'After your people heard [The God\'s call] your wizards with help of full of faith people figured out a way to acrivate portal to the Paradise at the top of their latest wonder.',
+		icon:[20,3,'magixmod'], //WIP
+		cost:{'insight':1600,'culture':300,'Mana':2500,'influence':70,'spirituality':50,'population':1000},
+		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true,'First portal to new world':true,'The God\'s call':true,'monument-building II':true},
+	});
+		new G.Tech({
+		name:'Paradise building',
+		desc:'Unlocks sheet of buildings which can be only built in newly opened <b>Paradise</b>.',
+		icon:[19,13,'magixmod'], 
+		cost:{'insight':4,'Paradise emblem':1},
+		req:{'Second portal to new world':true},
+	});
+		new G.Tech({
+		name:'Dark-essenced ingredients',
+		desc:'Unlocks sheet of ingredients made with [Dark essence] as a part of recipe.',
+		icon:[20,5,'magixmod'], 
+		cost:{'insight':450,'Dark essence':4e3,'wisdom':10},
+		req:{'ingredient crafting':true},
+	});
+		new G.Tech({
+		name:'Wind-essenced ingredients',
+		desc:'Unlocks sheet of ingredients made with [Wind essence] as a part of recipe.',
+		icon:[15,13,'magixmod'], 
+		cost:{'insight':450,'Wind essence':4e3,'wisdom':10},
+		req:{'ingredient crafting':true},
+	});
+		new G.Tech({
+		name:'Nature-essenced ingredients',
+		desc:'Unlocks sheet of ingredients made with [Nature essence] as a part of recipe.',
+		icon:[18,13,'magixmod'], 
+		cost:{'insight':450,'Nature essence':4e3,'wisdom':10},
+		req:{'ingredient crafting':true},
+	});
+		new G.Tech({
+		name:'7th essence',
+		desc:'Discovers another essence which can be feeled in Paradise\'s air. Needs some things to be gathered.',
+		icon:[20,6,'magixmod',8,12,23,1], 
+		cost:{'insight':1300},
+		req:{'Second portal to new world':true},
+	});
 //Towers of the Wizards and the wizard unit in its own person.
 		new G.Unit({
 		name:'ingredient crafting stand',
@@ -2133,9 +2217,9 @@ func:function(){
 		gizmos:true,
 		modes:{
 			'off':G.MODE_OFF,
-			'bonedust':{name:'Bone dust',icon:[0,10,'magixmod'],desc:'Gain [Bone dust] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25}},
-			'flowsugar':{name:'Flowered sugar',icon:[1,10,'magixmod'],desc:'Gain [Flowered sugar] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25}},
-			'enchice':{name:'Enchanted ice',icon:[2,10,'magixmod'],desc:'Gain [Enchanted ice] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25,'Wand':1}},
+			'bonedust':{name:'Bone dust',icon:[18,11,'magixmod'],desc:'Gain [Bone dust] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25}},
+			'flowsugar':{name:'Flowered sugar',icon:[18,10,'magixmod'],desc:'Gain [Flowered sugar] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25}},
+			'enchice':{name:'Enchanted ice',icon:[17,11,'magixmod'],desc:'Gain [Enchanted ice] out of its stand and its owner.',use:{'Alchemist':1,'Alchemy zone':0.25,'Wand':1}},
 		},
 		effects:[
 			{type:'convert',from:{'bone':1.25},into:{'Bone dust':1},every:4,mode:'bonedust'},
@@ -2841,12 +2925,27 @@ func:function(){
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
     		name:'Plain island portal',
-    		desc:'@opens a portal to a huge </b>Plain Island<>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
+    		desc:'@opens a portal to a huge <b>Plain Island</b>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
     		wideIcon:[7,3,'magixmod'],
     		cost:{'precious building materials':5000,'insight':1500,'faith':100,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750},
     		effects:[
     			{type:'provide',what:{'Land of the Plain Island':25000}},
 			{type:'provide',what:{'Plain Island emblem':1}},
+    		],
+    		use:{'land':10},
+		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
+    		req:{'First portal to new world':true,'Belief in portals':true},
+    		limitPer:{'land':100000000000000},//It is something like max 1
+    		category:'dimensions',
+	});
+		new G.Unit({
+    		name:'Portal to the Paradise',
+    		desc:'@opens a portal to a huge <b>God\'s Paradise</b>A very hard project, allowed by God.//A Dream to see Paradise, angels and much, much more comes real. You will grant +26500 paradise land at your own but you <b>must</b> follow some of God\'s rules.',
+    		wideIcon:[7,4,'magixmod'],
+    		cost:{'precious building materials':35000,'insight':1500,'faith':250,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750,'precious metal ingot':1e4},
+    		effects:[
+    			{type:'provide',what:{'Land of the Paradise':26500}},
+			{type:'provide',what:{'Paradise emblem':1}},
     		],
     		use:{'land':10},
 		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
