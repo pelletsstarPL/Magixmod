@@ -3068,7 +3068,7 @@ func:function(){
     		],
     		use:{'land':10},
 		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
-    		req:{'First portal to new world':true,'Belief in portals':true},
+    		req:{'Second portal to new world':true,'Belief in portals':true},
     		limitPer:{'land':100000000000000},//It is something like max 1
     		category:'dimensions',
 	});
