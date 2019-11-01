@@ -2292,7 +2292,7 @@ func:function(){
 		new G.Tech({
 		name:'7th complex tower',
 		desc:'Due to 7th essence discovered [Wizard Complex] has a need to build up new tower specially for new essence.@More housing and since now [Wizard Complex] will use more [Mana] just to craft new essence too.',
-		icon:[20,6,'magixmod',8,12,23,1], 
+		icon:[20,8,'magixmod',8,12,23,1], 
 		cost:{'insight':700},
 		req:{'7th essence':true,'Wizard complex':true},
 	});
@@ -2527,7 +2527,7 @@ func:function(){
 		new G.Unit({
 		name:'Holy wizard tower',
 		desc:'@provides 33 [housing]<>A tower for 30 citizens and 3 wizards. Gathers [Essence of the Holiness] by consuming mana.',
-		icon:[4,4,'magixmod'],
+		icon:[20,7,'magixmod'],
 		cost:{'basic building materials':750,'precious building materials':350},
 		use:{'land':1},
 		upkeep:{'Mana':6},
