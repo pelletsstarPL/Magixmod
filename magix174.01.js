@@ -2292,7 +2292,7 @@ func:function(){
 		new G.Tech({
 		name:'7th complex tower',
 		desc:'Due to 7th essence discovered [Wizard Complex] has a need to build up new tower specially for new essence.@More housing and since now [Wizard Complex] will use more [Mana] just to craft new essence too.',
-		icon:[20,8,'magixmod',8,12,23,1], 
+		icon:[20,8,'magixmod'], 
 		cost:{'insight':700},
 		req:{'7th essence':true,'Wizard complex':true},
 	});
