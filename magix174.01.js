@@ -895,7 +895,7 @@ func:function(){
 		new G.Res({
 		name:'Herb of the undead',
 		desc:'[herb] + [Dark essence] + [fruit] . Used to be one of ingredients of the Defense Dark Potions. Weakens deadly power of [Dark essence], does not weaken potions effect',//Coming very very soon types of potions
-		icon:[20,12,'magixmod'],
+		icon:[20,11,'magixmod'],
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
