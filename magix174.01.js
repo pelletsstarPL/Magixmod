@@ -2612,7 +2612,7 @@ func:function(){
 		],
 		category:'housing',
 		limitPer:{'land':300},
-		limitPer:{'population':9200},
+		limitPer:{'population':9000},
 	});
 		new G.Unit({
 		name:'Brick house with a silo',
