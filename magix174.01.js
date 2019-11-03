@@ -2593,7 +2593,7 @@ func:function(){
 		icon:[3,3,'magixmod'],
 		cost:{'basic building materials':12500,'precious building materials':3000},
 		use:{'land':9},
-		upkeep:{'Mana':36.25},
+		upkeep:{'Mana':37},
 		req:{'construction':true,'Wizard towers':true,'Wizard wisdom':true,'Well of Mana':true,'Wizard complex':true},
 		//require:{'wizard':30},
 		effects:[
