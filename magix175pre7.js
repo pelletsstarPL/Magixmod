@@ -57,11 +57,6 @@ func:function(){
 		},
 	};
 	var limitDesc=function(limit){return 'It is limited by your '+limit+'; the closer to the limit, the slower it is to produce more.';};
-	var researchGetDisplayAmount=function()
-		{
-			var limit=G.getDict(this.limit).displayedAmount;
-			return B(this.displayedAmount)+'<wbr>/'+B(limit);
-		};
 	var researchWhenGathered=function(me,amount,by)
 		{
 			var limit=G.getDict(this.limit).amount;
