@@ -1983,6 +1983,14 @@ func:function(){
 		desc:'Essence has to be stored somewhere. So do not wait and build!',
 		icon:[5,0,'magixmod'], //WIP
 		cost:{'insight':100,'Mana':317,'faith':8,'Wand':260},
+		effects:[
+			{type:'provide res',what:{'fire essence limit':1}},
+			{type:'provide res',what:{'water essence limit':1}},
+			{type:'provide res',what:{'lightning essence limit':1}},
+			{type:'provide res',what:{'dark essence limit':1}},
+			{type:'provide res',what:{'wind essence limit':1}},
+			{type:'provide res',what:{'nature essence limit':1}},
+		],
 		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true},
 	});
 		new G.Tech({
