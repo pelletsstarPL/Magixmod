@@ -968,7 +968,6 @@ func:function(){
 		name:'fire essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,2,'magixmod'],
-		meta:true,
 		hidden:true,
 		category:'main',
 	});
@@ -976,28 +975,24 @@ func:function(){
 		name:'water essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,1,'magixmod'],
-		meta:true,
 		category:'main',
 	});
 		new G.Res({
 		name:'lightning essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,3,'magixmod'],
-		meta:true,
 		category:'main',
 	});
 		new G.Res({
 		name:'wind essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,1,'magixmod'],
-		meta:true,
 		category:'main',
 	});
 		new G.Res({
 		name:'nature essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,2,'magixmod'],
-		meta:true,
 		hidden:true,
 		category:'main',
 	});
@@ -1005,7 +1000,6 @@ func:function(){
 		name:'dark essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,3,'magixmod'],
-		meta:true,
 		hidden:true,
 		category:'main',
 	});
