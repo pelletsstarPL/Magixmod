@@ -113,6 +113,9 @@ func:function(){
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
+		limit:'Fire essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -126,6 +129,9 @@ func:function(){
 		desc:'[Water essence] this essence is undrinkable but can be used to cast rain.',
 		icon:[0,1,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
+		limit:'Water essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -139,6 +145,9 @@ func:function(){
 		desc:'[Nature essence] is used by wizards to reviewe their beloved flowers or make harvests more plentiful.',
 		icon:[1,2,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
+		limit:'Nature essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -152,6 +161,9 @@ func:function(){
 		desc:'[Dark essence] used to make a blackholes for graves or to even bigger spellworks like mirror world. .',
 		icon:[1,3,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
+		limit:'Dark essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -165,6 +177,9 @@ func:function(){
 		desc:'[Lightning essence] can make a storms safer for people granting satisfaction  and good entertainment for storm hunters. Who knows what would happen if its essence can start elecricity age.',
 		icon:[0,3,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
+		limit:'Lightning essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -178,6 +193,9 @@ func:function(){
 		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in spellcasting.',
 		icon:[1,1,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
+		limit:'Wind essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -191,6 +209,8 @@ func:function(){
 		desc:'[Essence of the Holiness] this one should not be used by everyone due to risk of mass blindness. Anyway this one will have its faithful uses.',
 		icon:[20,6,'magixmod'],
 		partOf:'Magic essences',
+		getDisplayAmount:researchGetDisplayAmount,
+		whenGathered:researchWhenGathered,
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -948,6 +968,48 @@ func:function(){
 		icon:[20,13,'magixmod'],
 		meta:true,
 	});
+		new G.Res({
+		name:'Fire essence limit',
+		desc:'The bigger limit the more essence.',
+		icon:[0,2,'magixmod'],
+		meta:true,
+		hidden:true,
+	});
+		new G.Res({
+		name:'Water essence limit',
+		desc:'The bigger limit the more essence.',
+		icon:[0,1,'magixmod'],
+		meta:true,
+		hidden:true,
+	});
+		new G.Res({
+		name:'Lightning essence limit',
+		desc:'The bigger limit the more essence.',
+		icon:[0,3,'magixmod'],
+		meta:true,
+		hidden:true,
+	});
+		new G.Res({
+		name:'Wind essence limit',
+		desc:'The bigger limit the more essence.',
+		icon:[1,1,'magixmod'],
+		meta:true,
+		hidden:true,
+	});
+		new G.Res({
+		name:'Nature essence limit',
+		desc:'The bigger limit the more essence.',
+		icon:[1,2,'magixmod'],
+		meta:true,
+		hidden:true,
+	});
+		new G.Res({
+		name:'Dark essence limit',
+		desc:'The bigger limit the more essence.',
+		icon:[1,3,'magixmod'],
+		meta:true,
+		hidden:true,
+	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
@@ -981,14 +1043,6 @@ func:function(){
 		partOf:'material storage',
 		icon:[0,0,'magixmod'],
 		hidden:true,
-	});
-		new G.Res({
-		name:'wizard wisdom',
-		hidden:true,
-		icon:[8,5],
-		category:'main',
-		partOf:'wisdom',
-		meta:'true',
 	});
 //New types of people
 		new G.Res({
@@ -2400,16 +2454,30 @@ func:function(){
 		category:'cultural',
 	});
 		new G.Unit({
-		name:'Wizard',
-		desc:'A man needed to make his towers even exist. ',
+		name:'Archaic wizard',
+		desc:'A man needed to make his towers even exist. Primitive wizard',
 		icon:[6,1,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
 		upkeep:{'food':14},
-		req:{'Wizardry':true},
+		req:{'Wizardry':true,'Wizard wisdom':false},
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.015}},
+        ],
+		category:'discovery',
+		limitPer:{'population':3},
+	});
+		new G.Unit({
+		name:'Wizard',
+		desc:'A man needed to make his towers even exist. ',
+		icon:[21,8,'magixmod'],
+		cost:{'insight':1,'stick':2,'food':1,'water':1},
+		use:{'worker':1,'Wand':3},
+		upkeep:{'food':14},
+		req:{'Wizard wisdom':true},
+		//require:{'wizard':3},
+		effects:[
             		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}}
         ],
 		category:'discovery',
