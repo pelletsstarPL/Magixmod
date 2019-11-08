@@ -130,7 +130,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -145,7 +144,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -160,7 +158,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -175,7 +172,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -190,7 +186,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -205,7 +200,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -218,7 +212,6 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
 		},
 		category:'misc',
 	});
@@ -983,21 +976,22 @@ func:function(){
 		desc:'The bigger limit the more essence.',
 		icon:[0,1,'magixmod'],
 		meta:true,
-		hidden:true,
+		category:'food',
+			
 	});
 		new G.Res({
 		name:'Lightning essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,3,'magixmod'],
 		meta:true,
-		hidden:true,
+		category:'food',
 	});
 		new G.Res({
 		name:'Wind essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,1,'magixmod'],
 		meta:true,
-		hidden:true,
+		category:'food',
 	});
 		new G.Res({
 		name:'Nature essence limit',
@@ -2423,11 +2417,11 @@ func:function(){
 		new G.Unit({
 		name:'Wind essence storage',
 		desc:'@One storage allows you to store 11500 [Wind essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
-		icon:[5,5,'magixmod'],
+		icon:[4,5,'magixmod'],
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'WInd essence limit':11500}},
+			{type:'provide',what:{'Wind essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
