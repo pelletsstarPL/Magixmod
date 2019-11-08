@@ -62,6 +62,17 @@ func:function(){
 			var limit=G.getDict(this.limit).displayedAmount;
 			return B(this.displayedAmount)+'<wbr>/'+B(limit);
 		};
+	var researchWhenGathered=function(me,amount,by)
+		{
+			var limit=G.getDict(this.limit).amount;
+			if (limit>0)
+			{
+				var mult=1;
+				if (G.year<5) mult=1.25;//faster research the first 5 years
+				me.amount+=randomFloor(Math.pow(1-me.amount/limit,2)*(Math.random()*amount*me.mult*mult));
+				me.amount=Math.min(me.amount,limit);
+			}
+		};
 		new G.Res({
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
