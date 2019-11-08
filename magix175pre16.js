@@ -72,6 +72,8 @@ func:function(){
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
 		icon:[2,3,'magixmod'],
 		partOf:'misc materials',
+		whenGathered:researchWhenGathered,
+		limit:'mana capacity',
 		category:'misc',
 	});
 		new G.Res({
@@ -1003,6 +1005,13 @@ func:function(){
 		name:'dark essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,3,'magixmod'],
+		hidden:true,
+		category:'main',
+	});
+		new G.Res({
+		name:'mana capacity',
+		desc:'The bigger limit the more mana can be stored.',
+		icon:[2,3,'magixmod'],
 		hidden:true,
 		category:'main',
 	});
@@ -2354,8 +2363,29 @@ func:function(){
 		cost:{'insight':700},
 		req:{'7th essence':true,'Wizard complex':true},
 	});
+		new G.Tech({
+		name:'Architects knowledge',
+		desc:'[architect,Architects] can now plan for you: [Brick house with a silo] & [Blockhouse] .',
+		icon:[21,7,'magixmod'], 
+		cost:{'insight':700,'wisdom':2},
+		req:{'construction II':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+		new G.Unit({
+		name:'Mana silo',
+		desc:'Big silo. Can waste like [Fire essence storage,Essence storages] . Each one allows you to store 32500 [Mana].',
+		icon:[6,5,'magixmod'],
+		cost:{'basic building materials':700,'pot':850},
+		use:{'land':1.2},
+		//require:{'wizard':3},
+		effects:[
+			{type:'provide',what:{'mana capacity':32500}},
+			{type:'waste',chance:0.0004/1000},
+		],
+		req:{'Mana brewery':true},
+		category:'storage',
+	});
 		new G.Unit({
 		name:'Fire essence storage',
 		desc:'@One storage allows you to store 11500 [Fire essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
