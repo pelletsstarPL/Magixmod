@@ -970,28 +970,28 @@ func:function(){
 		icon:[0,2,'magixmod'],
 		meta:true,
 		hidden:true,
+		category:'main',
 	});
 		new G.Res({
 		name:'water essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,1,'magixmod'],
 		meta:true,
-		category:'food',
-			
+		category:'main',
 	});
 		new G.Res({
 		name:'lightning essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,3,'magixmod'],
 		meta:true,
-		category:'food',
+		category:'main',
 	});
 		new G.Res({
 		name:'wind essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,1,'magixmod'],
 		meta:true,
-		category:'food',
+		category:'main',
 	});
 		new G.Res({
 		name:'nature essence limit',
@@ -999,6 +999,7 @@ func:function(){
 		icon:[1,2,'magixmod'],
 		meta:true,
 		hidden:true,
+		category:'main',
 	});
 		new G.Res({
 		name:'dark essence limit',
@@ -1006,6 +1007,7 @@ func:function(){
 		icon:[1,3,'magixmod'],
 		meta:true,
 		hidden:true,
+		category:'main',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
