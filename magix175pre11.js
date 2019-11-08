@@ -125,7 +125,7 @@ func:function(){
 		icon:[0,2,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'Fire essence limit',
+		limit:'fire essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -139,7 +139,7 @@ func:function(){
 		icon:[0,1,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'Water essence limit',
+		limit:'water essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -153,7 +153,7 @@ func:function(){
 		icon:[1,2,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'Nature essence limit',
+		limit:'wature essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -167,7 +167,7 @@ func:function(){
 		icon:[1,3,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'Dark essence limit',
+		limit:'dark essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -181,7 +181,7 @@ func:function(){
 		icon:[0,3,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'Lightning essence limit',
+		limit:'lightning essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -195,7 +195,7 @@ func:function(){
 		icon:[1,1,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'Wind essence limit',
+		limit:'wind essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -965,14 +965,14 @@ func:function(){
 		meta:true,
 	});
 		new G.Res({
-		name:'Fire essence limit',
+		name:'fire essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,2,'magixmod'],
 		meta:true,
 		hidden:true,
 	});
 		new G.Res({
-		name:'Water essence limit',
+		name:'water essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,1,'magixmod'],
 		meta:true,
@@ -980,28 +980,28 @@ func:function(){
 			
 	});
 		new G.Res({
-		name:'Lightning essence limit',
+		name:'lightning essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,3,'magixmod'],
 		meta:true,
 		category:'food',
 	});
 		new G.Res({
-		name:'Wind essence limit',
+		name:'wind essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,1,'magixmod'],
 		meta:true,
 		category:'food',
 	});
 		new G.Res({
-		name:'Nature essence limit',
+		name:'nature essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,2,'magixmod'],
 		meta:true,
 		hidden:true,
 	});
 		new G.Res({
-		name:'Dark essence limit',
+		name:'dark essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,3,'magixmod'],
 		meta:true,
@@ -2356,7 +2356,7 @@ func:function(){
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'Fire essence limit':11500}},
+			{type:'provide',what:{'fire essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
@@ -2369,7 +2369,7 @@ func:function(){
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'Water essence limit':11500}},
+			{type:'provide',what:{'water essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
@@ -2382,7 +2382,7 @@ func:function(){
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'Lightning essence limit':11500}},
+			{type:'provide',what:{'lightning essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
@@ -2395,7 +2395,7 @@ func:function(){
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'Dark essence limit':11500}},
+			{type:'provide',what:{'dark essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
@@ -2408,7 +2408,7 @@ func:function(){
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'Nature essence limit':11500}},
+			{type:'provide',what:{'nature essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
@@ -2421,7 +2421,7 @@ func:function(){
 		cost:{'basic building materials':100,'glass':200},
 		use:{'land':0.8},
 		effects:[
-			{type:'provide',what:{'Wind essence limit':11500}},
+			{type:'provide',what:{'wind essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
