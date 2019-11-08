@@ -57,23 +57,11 @@ func:function(){
 		},
 	};
 	var limitDesc=function(limit){return 'It is limited by your '+limit+'; the closer to the limit, the slower it is to produce more.';};
-	var researchGetDisplayAmount=function()
+	var researchGetDisplayAmountM=function()
 		{
 			var limit=G.getDict(this.limit).displayedAmount;
 			return B(this.displayedAmount)+'<wbr>/'+B(limit);
 		};
-	var researchWhenGathered=function(me,amount,by)
-		{
-			var limit=G.getDict(this.limit).amount;
-			if (limit>0)
-			{
-				var mult=1;
-				if (G.year<5) mult=1.25;//faster research the first 5 years
-				me.amount+=randomFloor(Math.pow(1-me.amount/limit,2)*(Math.random()*amount*me.mult*mult));
-				me.amount=Math.min(me.amount,limit);
-			}
-		};
-	
 		new G.Res({
 		name:'Mana',
 		desc:'[Mana] is used to make essences. Thing used by beginner wizards. ',
@@ -131,8 +119,7 @@ func:function(){
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
 		partOf:'Magic essences',
-		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
+		getDisplayAmount:researchGetDisplayAmountM,
 		limit:'Fire essence limit',
 		tick:function(me,tick)
 		{
@@ -147,8 +134,7 @@ func:function(){
 		desc:'[Water essence] this essence is undrinkable but can be used to cast rain.',
 		icon:[0,1,'magixmod'],
 		partOf:'Magic essences',
-		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
+		getDisplayAmount:researchGetDisplayAmountM,
 		limit:'Water essence limit',
 		tick:function(me,tick)
 		{
@@ -163,8 +149,7 @@ func:function(){
 		desc:'[Nature essence] is used by wizards to reviewe their beloved flowers or make harvests more plentiful.',
 		icon:[1,2,'magixmod'],
 		partOf:'Magic essences',
-		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
+		getDisplayAmount:researchGetDisplayAmountM,
 		limit:'Nature essence limit',
 		tick:function(me,tick)
 		{
@@ -179,8 +164,7 @@ func:function(){
 		desc:'[Dark essence] used to make a blackholes for graves or to even bigger spellworks like mirror world. .',
 		icon:[1,3,'magixmod'],
 		partOf:'Magic essences',
-		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
+		getDisplayAmount:researchGetDisplayAmountM,
 		limit:'Dark essence limit',
 		tick:function(me,tick)
 		{
@@ -195,8 +179,7 @@ func:function(){
 		desc:'[Lightning essence] can make a storms safer for people granting satisfaction  and good entertainment for storm hunters. Who knows what would happen if its essence can start elecricity age.',
 		icon:[0,3,'magixmod'],
 		partOf:'Magic essences',
-		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
+		getDisplayAmount:researchGetDisplayAmountM,
 		limit:'Lightning essence limit',
 		tick:function(me,tick)
 		{
@@ -211,8 +194,7 @@ func:function(){
 		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in spellcasting.',
 		icon:[1,1,'magixmod'],
 		partOf:'Magic essences',
-		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
+		getDisplayAmount:researchGetDisplayAmountM,
 		limit:'Wind essence limit',
 		tick:function(me,tick)
 		{
