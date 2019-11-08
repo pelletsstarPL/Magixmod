@@ -153,7 +153,7 @@ func:function(){
 		icon:[1,2,'magixmod'],
 		partOf:'Magic essences',
 		whenGathered:researchWhenGathered,
-		limit:'wature essence limit',
+		limit:'nature essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
@@ -976,18 +976,21 @@ func:function(){
 		desc:'The bigger limit the more essence.',
 		icon:[0,1,'magixmod'],
 		category:'main',
+		hidden:true,
 	});
 		new G.Res({
 		name:'lightning essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[0,3,'magixmod'],
 		category:'main',
+		hidden:true,
 	});
 		new G.Res({
 		name:'wind essence limit',
 		desc:'The bigger limit the more essence.',
 		icon:[1,1,'magixmod'],
 		category:'main',
+		hidden:true,
 	});
 		new G.Res({
 		name:'nature essence limit',
