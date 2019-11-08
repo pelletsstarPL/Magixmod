@@ -68,7 +68,6 @@ func:function(){
 			if (limit>0)
 			{
 				var mult=1;
-				if (G.year<5) mult=1.25;//faster research the first 5 years
 				me.amount+=randomFloor(Math.pow(1-me.amount/limit,2)*(Math.random()*amount*me.mult*mult));
 				me.amount=Math.min(me.amount,limit);
 			}
@@ -221,7 +220,6 @@ func:function(){
 		icon:[20,6,'magixmod'],
 		partOf:'Magic essences',
 		getDisplayAmount:researchGetDisplayAmount,
-		whenGathered:researchWhenGathered,
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
