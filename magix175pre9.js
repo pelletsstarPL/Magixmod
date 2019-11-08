@@ -1983,7 +1983,7 @@ func:function(){
 		req:{'Wizardry':true,'Wizard wisdom':true},
 	});
 		new G.Tech({
-		name:'Essence storages', //COMING SOON , RESEARCH AVAILABLE, BUT WON'T UNLOCK ANYTHING.
+		name:'Essence storages',
 		desc:'Essence has to be stored somewhere. So do not wait and build!',
 		icon:[5,0,'magixmod'], //WIP
 		cost:{'insight':100,'Mana':317,'faith':8,'Wand':260},
@@ -2353,7 +2353,86 @@ func:function(){
 		cost:{'insight':700},
 		req:{'7th essence':true,'Wizard complex':true},
 	});
-//Towers of the Wizards and the wizard unit in its own person.
+/////////////////////////////////////////////////////////////////////
+	//UNITS
+		new G.Unit({
+		name:'Fire essence storage',
+		desc:'@One storage allows you to store 11500 [Fire essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[2,5,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'land':0.8},
+		effects:[
+			{type:'provide',what:{'Fire essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true},
+		category:'storage',
+	});
+		new G.Unit({
+		name:'Water essence storage',
+		desc:'@One storage allows you to store 11500 [Water essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[0,5,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'land':0.8},
+		effects:[
+			{type:'provide',what:{'Water essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true},
+		category:'storage',
+	});
+		new G.Unit({
+		name:'Lightning essence storage',
+		desc:'@One storage allows you to store 11500 [Lightning essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[5,5,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'land':0.8},
+		effects:[
+			{type:'provide',what:{'Lightning essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true},
+		category:'storage',
+	});
+		new G.Unit({
+		name:'Dark essence storage',
+		desc:'@One storage allows you to store 11500 [Dark essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[1,5,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'land':0.8},
+		effects:[
+			{type:'provide',what:{'Dark essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true},
+		category:'storage',
+	});
+		new G.Unit({
+		name:'Nature essence storage',
+		desc:'@One storage allows you to store 11500 [Nature essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[3,5,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'land':0.8},
+		effects:[
+			{type:'provide',what:{'Nature essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true},
+		category:'storage',
+	});
+		new G.Unit({
+		name:'Wind essence storage',
+		desc:'@One storage allows you to store 11500 [Wind essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[5,5,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'land':0.8},
+		effects:[
+			{type:'provide',what:{'WInd essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true},
+		category:'storage',
+	});
 		new G.Unit({
 		name:'ingredient crafting stand',
 		desc:'There you can craft ingredients for more advanced potions.',
@@ -2458,7 +2537,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Archaic wizard',
-		desc:'A man needed to make his towers even exist. Primitive wizard',
+		desc:'A man needed to make his towers even exist. Primitive wizard, occasionaly gains insight in very low rates.',
 		icon:[6,1,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
@@ -2466,14 +2545,14 @@ func:function(){
 		req:{'Wizardry':true,'Wizard wisdom':false},
 		//require:{'wizard':3},
 		effects:[
-			{type:'gather',what:{'insight':0.015}},
+			{type:'gather',what:{'insight':0.012}},
         ],
 		category:'discovery',
 		limitPer:{'population':3},
 	});
 		new G.Unit({
 		name:'Wizard',
-		desc:'A man needed to make his towers even exist. ',
+		desc:'A man needed to make his towers even exist. Provides 1 [wisdom] per each one instead of gaining [insight] like [Archaic wizard]',
 		icon:[21,8,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
