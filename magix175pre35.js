@@ -4216,7 +4216,6 @@ G.writeMSettingButton=function(obj)
 		var str='';
 		str+='<div class="scrollBox underTitle" style="width:248px;left:0px;">';		
 		// disclaimer blurb for the top
-		str+='<div class="par">'+
 		'<b>The Magix mod</b> is a mod for NeverEnding Legacy made by <b>pelletsstarPL</b>.'+
 		'It is currently in semi-alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+
 		'<div class="par">While in development, the mod may be unstable and subject to changes, but the overall goal is to '+
@@ -4241,8 +4240,8 @@ G.writeMSettingButton=function(obj)
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="divider"></div>'+
-		str+='<div class="scrollBox underTitle" style="width:380px;right:0px;left:auto;background:rgba(0,0,0,0.25);">';
-			str+='<div class="fancyText barred bitBiggerText" style="text-align:center;">Achievements</div>';
+		//str+='<div class="scrollBox underTitle" style="width:380px;right:0px;left:auto;background:rgba(0,0,0,0.25);">';
+			//str+='<div class="fancyText barred bitBiggerText" style="text-align:center;">Achievements</div>';
 			'<div class="default" style="color":#b3e>10 XI 2019: Big changes caused by Books & Politics update!<div>'+
 			'->Made wizard become unlockable after getting Wizard wisdom tech. Before getting it you will own Archaic one<div>'+
 			'->Changes at costs of some researches.<div>'+
