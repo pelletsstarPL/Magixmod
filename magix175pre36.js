@@ -4280,7 +4280,6 @@ G.writeMSettingButton=function(obj)
 			'->Florist. Two new early game units<div>'+
 			'<div class="divider"></div>'+
 			'<div class="barred fancyText">july - august 2019 Magix starts being developed<div>'+
-		}
 		G.writeMSettingCategories()+
 		'<div class="divider"></div>'+
 		'<div class="buttonBox">'+
