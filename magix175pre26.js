@@ -2370,6 +2370,13 @@ func:function(){
 		cost:{'insight':673,'wisdom':2},
 		req:{'construction II':true},
 	});
+		new G.Tech({
+		name:'Bookcrafting',
+		desc:'[artisan] can craft books .',
+		icon:[21,7,'magixmod'], 
+		cost:{'insight':300},
+		req:{'papercrafting':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
 		new G.Unit({
@@ -3604,7 +3611,7 @@ func:function(){
 		G.getDict('architect')
 		effects:[
 		{type:'function',func:function(me){
-		var wiggleRoom=10;
+		var wiggleRoom=3;
 		var homeless=Math.max(0,(G.getRes('population').amount+wiggleRoom)-G.getRes('housing').amount);
 		if (toMake>0 && G.canBuyUnitByName('house',toMake))
 		{
@@ -3621,7 +3628,7 @@ func:function(){
 		G.getDict('architect')
 		effects:[
 		{type:'function',func:function(me){
-		var wiggleRoom=40;
+		var wiggleRoom=3;
 		var homeless=Math.max(0,(G.getRes('population').amount+wiggleRoom)-G.getRes('housing').amount);
 		if (toMake>0 && G.canBuyUnitByName('house',toMake))
 		{
