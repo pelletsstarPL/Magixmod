@@ -3618,7 +3618,6 @@ func:function(){
 			desc:'This architect will build more advanced [housing,housing] like [Blockhouse] .',
 			use:{'worker':1},
 			req:{'Architects knowledge':true,'city planning':true}},
-		};
 		G.getDict('architect')
 		effects:[
 		{type:'function',func:function(me){
