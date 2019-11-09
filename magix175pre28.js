@@ -2008,6 +2008,14 @@ func:function(){
 		chance:175,
 		req:{'culture of the afterlife':true},
 	});
+		new G.Trait({
+		name:'Moderated politics',
+		desc:'Makes politics more moderated. It may boost happiness of people and with same power make it drop down.',//Next update: something which will require this trait
+		icon:[8,13,'magixmod'],
+		cost:{},
+		chance:175,
+		req:{'culture of moderation':true},
+	});
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -2502,7 +2510,7 @@ func:function(){
 		icon:[21,5,'magixmod'],
 		cost:{'basic building materials':1100},
 		use:{'land':1,'worker':5},
-		req:{'Bookwriting':true,'construcion':true},
+		req:{'Bookwriting':true,'construction':true},
 		category:'civil',
 	});
 		new G.Unit({
@@ -2705,7 +2713,7 @@ func:function(){
 		icon:[6,1,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
-		upkeep:{'food':14},
+		upkeep:{'food':11},
 		req:{'Wizardry':true,'Wizard wisdom':false},
 		//require:{'wizard':3},
 		effects:[
@@ -2721,7 +2729,7 @@ func:function(){
 		icon:[21,8,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
-		upkeep:{'food':14},
+		upkeep:{'food':12},
 		req:{'Wizard wisdom':true},
 		//require:{'wizard':3},
 		effects:[
