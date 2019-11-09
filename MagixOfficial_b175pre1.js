@@ -2044,7 +2044,7 @@ func:function(){
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
-		desc:'@unlocks [Wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
+		desc:'@unlocks [Archaic wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
 		icon:[5,3,'magixmod'],
 		cost:{'insight':75,'faith':5},
 		req:{'well-digging':true},
@@ -2080,7 +2080,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Wizard wisdom',
-		desc:'Now each wizard will increase wisdom.',
+		desc:'Evolves up [Archaic wizard] into [Wizard] . New one may gain wisdom.',
 		icon:[3,0,'magixmod'], //WIP
 		cost:{'insight':85,'culture': 30,'Mana':40,'influence':10},
 		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true},
