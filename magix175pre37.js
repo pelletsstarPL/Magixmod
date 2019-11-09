@@ -4240,8 +4240,7 @@ G.writeMSettingButton=function(obj)
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="divider"></div>'+
-		//str+='<div class="scrollBox underTitle" style="width:380px;right:0px;left:auto;background:rgba(0,0,0,0.25);">';
-			//str+='<div class="fancyText barred bitBiggerText" style="text-align:center;">Achievements</div>';
+		str+='<div class="scrollBox underTitle" style="width:496px;right:0px;">';
 			'<div class="default" style="color":#b3e>10 XI 2019: Big changes caused by Books & Politics update!<div>'+
 			'->Made wizard become unlockable after getting Wizard wisdom tech. Before getting it you will own Archaic one<div>'+
 			'->Changes at costs of some researches.<div>'+
