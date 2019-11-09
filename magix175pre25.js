@@ -3604,8 +3604,8 @@ func:function(){
 		G.getDict('architect')
 		effects:[
 		{type:'function',func:function(me){
-		var wiggleRoom=15;
-		var toMake=Math.min(me.amount-me.idle,Math.max(0,(G.getRes('population').amount+wiggleRoom)-(G.getRes('housing').amount-G.getRes('burial spot').used)));
+		var wiggleRoom=10;
+		var homeless=Math.max(0,(G.getRes('population').amount+wiggleRoom)-G.getRes('housing').amount);
 		if (toMake>0 && G.canBuyUnitByName('house',toMake))
 		{
 			G.buyUnitByName('Brick house with a silo',toMake,true);
@@ -3621,8 +3621,8 @@ func:function(){
 		G.getDict('architect')
 		effects:[
 		{type:'function',func:function(me){
-		var wiggleRoom=50;
-		var toMake=Math.min(me.amount-me.idle,Math.max(0,(G.getRes('population').amount+wiggleRoom)-(G.getRes('housing').amount-G.getRes('burial spot').used)));
+		var wiggleRoom=40;
+		var homeless=Math.max(0,(G.getRes('population').amount+wiggleRoom)-G.getRes('housing').amount);
 		if (toMake>0 && G.canBuyUnitByName('house',toMake))
 		{
 			G.buyUnitByName('Blockhouse',toMake,true);
