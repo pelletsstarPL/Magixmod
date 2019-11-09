@@ -2524,7 +2524,7 @@ func:function(){
 		name:'Better influence & authority',
 		desc:'Unlocks [Lawyer] and [Mediator]. Mediator will solve conflicts and gain [happiness] from solving them , while [Lawyer] will copy and share code of law.',
 		icon:[21,0,'magixmod'], 
-		cost:{'insight':1000},
+		cost:{'insight':1015},
 		req:{'Wizard complex':true},
 	});
 /////////////////////////////////////////////////////////////////////
@@ -2540,6 +2540,7 @@ func:function(){
        		],
 		req:{'Better influence & authority':true},
 		category:'political',
+		limitPer:{'population':400},
 	});
 		new G.Unit({
 		name:'Mediator',
@@ -2553,6 +2554,7 @@ func:function(){
 		use:{'worker':1},
 		req:{'Better influence & authority':true},
 		category:'political',
+		limitPer:{'population':600},
 	});
 		new G.Unit({
 		name:'Lodge of writers',
@@ -4238,6 +4240,17 @@ G.writeMSettingButton=function(obj)
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
+		'<div class="divider"></div>'+
+		'<div class="default" style="color":#b3e>10 XI 2019: Big changes caused by Books & Politics update!<div>'+
+		'->Made wizard become unlockable after getting Wizard wisdom tech. Before getting it you will own Archaic one<div>'+
+		'->Changes at costs of some researches.<div>'+
+		'->5 new researches & units, 1 new trait & policy, bunch of new resources.<div>'+
+		'->Added modes for Architects but why does not they build brickhouses and blockhouses i dunno.<div>'+
+		'->Changed link to mod.<div>'+
+		'->Essence storages tech now works causing amount of mana and essences limited.<div>'+
+		'->Bigger usage for Ink and Paper. Books , notes(not that musical one yet), lodge of writers and library to store books<div>'+
+		'->Note: If you are playing in debug mode I am NOT responsible for any of bugs caused by it.<div>'+
+		'->Bug with 0/0 insight caused by wizards is unfixable.<div>'+
 		'<div class="divider"></div>'+
 		'<div class="default" style="color":#b3e>31 X 2019: Second portal to second world. Feel lights everywhere<div>'+
 		'->Attempting fixing wizard wisdom bug.<div>'+
