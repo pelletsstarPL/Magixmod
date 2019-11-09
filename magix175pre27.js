@@ -966,6 +966,7 @@ func:function(){
 		icon:[20,13,'magixmod'],
 		meta:true,
 	});
+//Essence limits which can be increased by buying storages for essences
 		new G.Res({
 		name:'fire essence limit',
 		desc:'The bigger limit the more essence.',
@@ -1015,6 +1016,101 @@ func:function(){
 		hidden:true,
 		category:'main',
 	});
+//New content
+		new G.Res({
+		name:'Florist\'s notes',
+		desc:'Notes where [Florist] said about its discoveries and tips for future [Florist,florists] .',
+		icon:[21,3,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		hidden:true,
+	});
+		new G.Res({
+		name:'Wizard\'s notes',
+		desc:'Notes where [Wizard] / [Archaic wizard] said about its discoveries and basic spells. Some philosophy you can find there too.',
+		icon:[21,2,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		hidden:true,
+	});
+		new G.Res({
+		name:'Poet\'s notes',
+		desc:'Text which was written by [Poet] . May summon some cultural traits.',
+		icon:[21,1,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		hidden:true,
+	});
+		new G.Res({
+		name:'Lawyer\'s notes',
+		desc:'The code of law.',
+		icon:[21,1,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		hidden:true,
+	});
+		new G.Res({
+		name:'Empty book',
+		desc:'The book which can be filled by knowledge of people , instructions and many , many more.',
+		icon:[13,12,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+//Types of books
+		new G.Res({
+		name:'nature book',
+		desc:'The book written by writers with help of [Florist]\'s notes.',
+		icon:[2,13,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.003;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+		new G.Res({
+		name:'spellbook',
+		desc:'The book written by writers with help of [Wizard]\'s notes.',
+		icon:[3,13,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.003;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+		new G.Res({
+		name:'novel',
+		desc:'The book written by writers with help of [Poet]\'s  beautiful notes.',
+		icon:[1,13,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.003;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+//But books has to be stored somewhere right?
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
@@ -2372,13 +2468,43 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bookcrafting',
-		desc:'[artisan] can craft books .',
-		icon:[21,7,'magixmod'], 
+		desc:'[artisan] can craft books.',
+		icon:[12,12,'magixmod'], 
 		cost:{'insight':300},
 		req:{'papercrafting':true},
 	});
+		new G.Tech({
+		name:'Bookwriting',
+		desc:'[Florist], [Wizard] , [Poet] , (lawyer) will write their notes. Notes can be used to write specified books which may summon some <b>Knowledge</b> traits and turn into [insight]. @unlocks [Lodge of writers] who will convert their notes into books.',
+		icon:[12,13,'magixmod'], 
+		cost:{'insight':300},
+		req:{'Bookcrafting':true,'Ink crafting':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+		new G.Unit({
+		name:'Lodge of writers',
+		desc:'There writers will write books. Sources of information contained in them are notes of people from many jobs(manuals for instance).',
+		icon:[11,13,'magixmod'],
+		cost:{'basic building materials':700},
+		use:{'land':1,'worker':7},
+		effects:[
+			{type:'convert',from:{'Florist\'s notes':1,'Empty book':1,'Ink':15},into:{'nature book':1},every:12,mode:'papyrus'},
+			{type:'convert',from:{'Poet\'s notes':1.05,'Empty book':1,'Ink':16},into:{'novel':1},every:13,mode:'pergamin'},
+			{type:'convert',from:{'Wizard\'s notes':1,'Empty book':1,'Ink':15},into:{'spellbook':1},every:12,mode:'pergamin'},
+		],
+		req:{'Bookwriting':true},
+		category:'civil',
+	});
+		new G.Unit({
+		name:'Library',
+		desc:'Books from each source(delivered, written at [Lodge of writers] etc.) may be stored there to slow down their decay.',
+		icon:[21,5,'magixmod'],
+		cost:{'basic building materials':1100},
+		use:{'land':1,'worker':5},
+		req:{'Bookwriting':true,'construcion':true},
+		category:'civil',
+	});
 		new G.Unit({
 		name:'Mana silo',
 		desc:'Big silo. Can waste like [Fire essence storage,Essence storages] . Each one allows you to store 32500 [Mana].',
@@ -2584,6 +2710,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.012}},
+			{type:'convert',from:{'Paper':13},into:{'Poet\'s notes':1},every:30,req:{'Bookwriting':true}},
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -2598,7 +2725,8 @@ func:function(){
 		req:{'Wizard wisdom':true},
 		//require:{'wizard':3},
 		effects:[
-            		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}}
+            		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}},
+			{type:'convert',from:{'Paper':14},into:{'Wizard\'s notes':1},every:11,req:{'Bookwriting':true}}
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -2769,7 +2897,8 @@ func:function(){
 			{type:'gather',what:{'culture':0.13}},
 			{type:'gather',what:{'culture':0.05},req:{'symbolism':true}},
 			{type:'mult',value:1.31,req:{'artistic thinking':true}},
-			{type:'mult',value:1.21,req:{'wisdom rituals':'on'}}
+			{type:'mult',value:1.21,req:{'wisdom rituals':'on'}},
+			{type:'convert',from:{'Paper':21},into:{'Poet\'s notes':1},every:11,req:{'Bookwriting':true}},
 		],
 		req:{'oral tradition':true,'Poetry':true},
 		category:'cultural',
@@ -3100,7 +3229,8 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Brown flower':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'gather',context:'gather',what:{'Daisy':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'gather',context:'gather',what:{'Bachelor\'s button':1,'Black lily':1},amount:1,max:1,req:{'plant lore':true}},	
-			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}}
+			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}},
+			{type:'convert',from:{'Paper':12,'Ink':3},into:{'Florist\'s notes':1},every:11,req:{'Bookwriting':true}},
 		],
 	});
 		new G.Unit({
