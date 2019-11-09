@@ -4236,7 +4236,6 @@ G.writeMSettingButton=function(obj)
 		'Yes i will... unless i run out of ideas so then i won\'t :D'+
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
-		str+='<div class="scrollBox underTitle" style="width:412px;right:0px;">';
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="divider"></div>'+
 		'<div class="default" style="color":#b3e>10 XI 2019: Big changes caused by Books & Politics update!<div>'+
