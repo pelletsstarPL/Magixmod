@@ -126,13 +126,13 @@ func:function(){
 		desc:'[Fire essence] is warm in hands and dangerous. Might be used to fight against cold winters.',
 		icon:[0,2,'magixmod'],
 		partOf:'Magic essences',
-		whenGathered:researchWhenGathered,
-		limit:'fire essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'fire essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -140,13 +140,13 @@ func:function(){
 		desc:'[Water essence] this essence is undrinkable but can be used to cast rain.',
 		icon:[0,1,'magixmod'],
 		partOf:'Magic essences',
-		whenGathered:researchWhenGathered,
-		limit:'water essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'water essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -154,13 +154,13 @@ func:function(){
 		desc:'[Nature essence] is used by wizards to reviewe their beloved flowers or make harvests more plentiful.',
 		icon:[1,2,'magixmod'],
 		partOf:'Magic essences',
-		whenGathered:researchWhenGathered,
-		limit:'nature essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'nature essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -168,13 +168,13 @@ func:function(){
 		desc:'[Dark essence] used to make a blackholes for graves or to even bigger spellworks like mirror world. .',
 		icon:[1,3,'magixmod'],
 		partOf:'Magic essences',
-		whenGathered:researchWhenGathered,
-		limit:'dark essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'dark essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -182,13 +182,13 @@ func:function(){
 		desc:'[Lightning essence] can make a storms safer for people granting satisfaction  and good entertainment for storm hunters. Who knows what would happen if its essence can start elecricity age.',
 		icon:[0,3,'magixmod'],
 		partOf:'Magic essences',
-		whenGathered:researchWhenGathered,
-		limit:'lightning essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'lightning essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -196,13 +196,13 @@ func:function(){
 		desc:'[Wind essence] this one should not be used by everyone due to risk of tornado disaster. Anyway this one will have its use in spellcasting.',
 		icon:[1,1,'magixmod'],
 		partOf:'Magic essences',
-		whenGathered:researchWhenGathered,
-		limit:'wind essence limit',
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'wind essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -2031,7 +2031,7 @@ func:function(){
 		name:'Sewing II',
 		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing. @Now artisans can sew [Fishing net] and craft [Thread].',
 		icon:[13,5,'magixmod'], 
-		cost:{'insight':365,'wisdom':10},
+		cost:{'insight':360,'wisdom':10},
 		req:{'Wizardry':true,'sewing':true,},
 	});
 		new G.Tech({
@@ -2052,7 +2052,7 @@ func:function(){
 		name:'Cobalt-working',
 		desc:'@[furnace]s can now make [Cobalt ingot]s from [Cobalt ore]<>',
 		icon:[16,0,'magixmod'],
-		cost:{'insight':150},
+		cost:{'insight':145},
 		req:{'smelting':true,'construction II':true},
 	});
 		new G.Tech({
@@ -2066,14 +2066,14 @@ func:function(){
 		name:'Crafting a juice',
 		desc:'@Makes juices possible to be crafted. Any [fruit] + [sugar] + [water] = [Juices]. Be careful. Juices may spoil same like normal water. Spoiled juice grants even more <b>unhappiness and unhealth<b> than normal muddy water.<>',
 		icon:[16,4,'magixmod'],
-		cost:{'insight':450,'wisdom':50},
+		cost:{'insight':495,'wisdom':50},
 		req:{'Farms in the new land':true},
 	});
 		new G.Tech({
 		name:'Farm of the Sugar cane',
 		desc:'@Makes [Sugar cane] farm possible to be built. This farm will have increased upkeep cost and will need more people to run.<>',
 		icon:[15,7,'magixmod'],
-		cost:{'insight':450,'wisdom':50},
+		cost:{'insight':495,'wisdom':50},
 		req:{'Farms in the new land':true},
 	});
 		new G.Tech({
@@ -2142,7 +2142,7 @@ func:function(){
 		name:'Ink crafting',
 		desc:'Now [artisan] will be able to craft [Ink]. Ink will be used by [Poet] later. You can craft ink choosing new working mode for [artisan].',
 		icon:[18,7,'magixmod'],
-		cost:{'insight':350},
+		cost:{'insight':335},
 		req:{'Plain island building':true},
 	});
 		new G.Tech({
@@ -2367,7 +2367,7 @@ func:function(){
 		name:'Architects knowledge',
 		desc:'[architect,Architects] can now plan for you: [Brick house with a silo] & [Blockhouse] .',
 		icon:[21,7,'magixmod'], 
-		cost:{'insight':700,'wisdom':2},
+		cost:{'insight':673,'wisdom':2},
 		req:{'construction II':true},
 	});
 /////////////////////////////////////////////////////////////////////
@@ -3594,6 +3594,43 @@ func:function(){
 		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Granite':30},max:25,mode:'ostones'});
 		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Diorite':30},max:25,mode:'ostones'});
 		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Andesite':30},max:25,mode:'ostones'});
+//2 modes for architect
+		G.getDict('architect').modes['Brickhouser']={
+			name:'Brickhouse building',
+			icon:[5,1,'magixmod'],
+			desc:'This architect will build more useful housing like [Brick house with a silo]',
+			use:{'worker':1},
+			req:{'Architects knowledge':true,'city planning':true}},
+		};
+		G.getDict('architect')
+		effects:[
+		{type:'function',func:function(me){
+		var wiggleRoom=5;
+		var toMake=Math.min(me.amount-me.idle,Math.max(0,(G.getRes('population').amount+wiggleRoom)-(G.getRes('housing').amount-G.getRes('burial spot').used)));
+		if (toMake>0 && G.canBuyUnitByName('house',toMake))
+		{
+			G.buyUnitByName('Brick house with a silo',toMake,true);
+		}
+	},mode:'Brickhouser'}
+],
+		G.getDict('architect').modes['Blockhouser']={
+			name:'Blockhouse building',
+			icon:[9,1,'magixmod'],
+			desc:'This architect will build more advanced [housing,housing] like [Blockhouse] .',
+			use:{'worker':1},
+			req:{'Architects knowledge':true,'city planning':true}},
+		};
+		G.getDict('architect')
+		effects:[
+		{type:'function',func:function(me){
+		var wiggleRoom=5;
+		var toMake=Math.min(me.amount-me.idle,Math.max(0,(G.getRes('population').amount+wiggleRoom)-(G.getRes('housing').amount-G.getRes('burial spot').used)));
+		if (toMake>0 && G.canBuyUnitByName('house',toMake))
+		{
+			G.buyUnitByName('Blockhouse',toMake,true);
+		}
+	},mode:'Brickhouser'}
+],	
 //Temple achiev
 		new G.Achiev({
 		tier:1,
@@ -3606,7 +3643,7 @@ func:function(){
 			{type:'addFastTicksOnResearch',amount:10}	
 		],
 	});
-	
+
 	//Category for portals
 	G.unitCategories.unshift({
 			id:'dimensions',
