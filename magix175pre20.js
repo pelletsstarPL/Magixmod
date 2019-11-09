@@ -3612,7 +3612,6 @@ func:function(){
 		}
 	},mode:'Brickhouser'}
 ],	
-		],
 		G.getDict('architect').modes['Blockhouser']={
 			name:'Blockhouse building',
 			icon:[9,1,'magixmod'],
