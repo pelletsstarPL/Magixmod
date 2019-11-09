@@ -3600,16 +3600,18 @@ func:function(){
 			icon:[5,1,'magixmod'],
 			desc:'This architect will build more useful housing like [Brick house with a silo]',
 			use:{'worker':1},
-			req:{'Architects knowledge':true,'city planning':true}},
-			effects:[
-				{type:'function',func:function(me){
-				var wiggleRoom=5;
-				var toMake=Math.min(me.amount-me.idle,Math.max(0,(G.getRes('population').amount+wiggleRoom)-(G.getRes('housing').amount-G.getRes('burial spot').used)));
-				if (toMake>0 && G.canBuyUnitByName('house',toMake))
-				{
-					G.buyUnitByName('Brick house with a silo',toMake,true);
-				}
-			},mode:'Brickhouser'}
+			req:{'Architects knowledge':true,'city planning':true}};
+		G.getDict('architect')
+		effects:[
+		{type:'function',func:function(me){
+		var wiggleRoom=5;
+		var toMake=Math.min(me.amount-me.idle,Math.max(0,(G.getRes('population').amount+wiggleRoom)-(G.getRes('housing').amount-G.getRes('burial spot').used)));
+		if (toMake>0 && G.canBuyUnitByName('house',toMake))
+		{
+			G.buyUnitByName('Brick house with a silo',toMake,true);
+		}
+	},mode:'Brickhouser'}
+],	
 		],
 		G.getDict('architect').modes['Blockhouser']={
 			name:'Blockhouse building',
@@ -3627,7 +3629,7 @@ func:function(){
 		{
 			G.buyUnitByName('Blockhouse',toMake,true);
 		}
-	},mode:'Brickhouser'}
+	},mode:'Blockhouser'}
 ],	
 //Temple achiev
 		new G.Achiev({
