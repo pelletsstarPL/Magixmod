@@ -4213,7 +4213,8 @@ G.writeMSettingButton=function(obj)
 
 	G.tabPopup['Magix:About']=function()
 	{
-		var str='';		
+		var str='';
+		str+='<div class="par">'+	
 		'<b>The Magix mod</b> is a mod for NeverEnding Legacy made by <b>pelletsstarPL</b>.'+'It is currently in semi-alpha, may feature strange and exotic bugs, and may be updated at any time.</div>'+'<div class="par">While in development, the mod may be unstable and subject to changes, but the overall goal is to '+
 		'expand and improve the legacy with flexible, balanced, user-created content and improvements to existing mechanics.</div>'+
 		'Below this description you will see something like Q&A with me.</div>'+
