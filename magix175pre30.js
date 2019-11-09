@@ -1110,6 +1110,17 @@ func:function(){
 		},
 		category:'misc',
 	});
+		new G.Res({
+		name:'Book of law',
+		desc:'The book written with help of [Lawyer]\'s thoughts contained in his own notes.',
+		icon:[0,13,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.003;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
 //But books has to be stored somewhere right?
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
@@ -2466,7 +2477,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'7th essence',
-		desc:'Discovers another essence which can be feeled in Paradise\'s air. Needs some things to be gathered.@unlocks [Light wizard tower]',
+		desc:'Discovers another essence which can be feeled in Paradise\'s air. Needs some things to be gathered.@unlocks [Holy wizard tower]',
 		icon:[20,6,'magixmod',8,12,23,1], 
 		cost:{'insight':1300},
 		effects:[
@@ -2496,14 +2507,53 @@ func:function(){
 		req:{'papercrafting':true},
 	});
 		new G.Tech({
-		name:'Bookwriting',
-		desc:'[Florist], [Wizard] , [Poet] , (lawyer) will write their notes. Notes can be used to write specified books which may summon some <b>Knowledge</b> traits and turn into [insight]. @unlocks [Lodge of writers] who will convert their notes into books.',
+		name:'Notewriting',
+		desc:'[Florist], [Wizard] , [Poet] , (lawyer) will write their notes. Notes can be used to write specified books which may summon some <b>Knowledge</b> traits and turn into [insight].',
 		icon:[12,13,'magixmod'], 
 		cost:{'insight':300},
 		req:{'Bookcrafting':true,'Ink crafting':true},
 	});
+		new G.Tech({
+		name:'Bookwriting',
+		desc:'[Florist\'s notes],[Poet\'s notes],[Wizard\'s notes] may now be written into some book.  @unlocks [Lodge of writers] who will convert their notes into books.',
+		icon:[21,6,'magixmod'], 
+		cost:{'insight':300},
+		req:{'Bookcrafting':true,'Ink crafting':true},
+	});
+		new G.Tech({
+		name:'Better influence & authority',
+		desc:'Unlocks [Lawyer] and [Mediator]. Mediator will solve conflicts and gain [happiness] from solving them , while [Lawyer] will copy and share code of law.',
+		icon:[21,0,'magixmod'], 
+		cost:{'insight':1000},
+		req:{'Wizard complex':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+		new G.Unit({
+		name:'Lawyer', 
+		desc:'Lawyer will share code of law to people and comparing people\'s decisions with code of law.',
+		icon:[10,13,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		effects:[
+			{type:'convert',from:{'Paper':14,'Ink':8},into:{'Lawyer\'s notes':1},every:11,req:{'Notewriting':true}}
+       		],
+		req:{'Better influence & authority':true},
+		category:'political',
+	});
+		new G.Unit({
+		name:'Mediator',
+		desc:'Solves people\' argues with help of law to prevent prisoning people. Generates happiness every now and then.',
+		icon:[9,13,'magixmod'],
+		cost:{},
+		upkeep:{'food':0.2},
+		effects:[
+			{type:'gather',what:{'happiness':0.17}},
+		],
+		use:{'worker':1},
+		req:{'Better influence & authority':true},
+		category:'political',
+	});
 		new G.Unit({
 		name:'Lodge of writers',
 		desc:'There writers will write books. Sources of information contained in them are notes of people from many jobs(manuals for instance).',
@@ -2514,6 +2564,7 @@ func:function(){
 			{type:'convert',from:{'Florist\'s notes':1,'Empty book':1,'Ink':15},into:{'nature book':1},every:12,mode:'papyrus'},
 			{type:'convert',from:{'Poet\'s notes':1.05,'Empty book':1,'Ink':16},into:{'novel':1},every:13,mode:'pergamin'},
 			{type:'convert',from:{'Wizard\'s notes':1,'Empty book':1,'Ink':15},into:{'spellbook':1},every:12,mode:'pergamin'},
+			{type:'convert',from:{'Lawyer\'s notes':1,'Empty book':1,'Ink':15},into:{'Book of law':1},every:12,mode:'pergamin'},
 		],
 		req:{'Bookwriting':true},
 		category:'civil',
@@ -2733,7 +2784,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'insight':0.012}},
-			{type:'convert',from:{'Paper':13},into:{'Poet\'s notes':1},every:30,req:{'Bookwriting':true}},
+			{type:'convert',from:{'Paper':13},into:{'Poet\'s notes':1},every:30,req:{'Notewriting':true}},
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -2749,7 +2800,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
             		{type:'provide',what:{'wisdom':1},req:{'Wizard wisdom':true}},
-			{type:'convert',from:{'Paper':14},into:{'Wizard\'s notes':1},every:11,req:{'Bookwriting':true}}
+			{type:'convert',from:{'Paper':14},into:{'Wizard\'s notes':1},every:11,req:{'Notewriting':true}}
         ],
 		category:'discovery',
 		limitPer:{'population':3},
@@ -3254,7 +3305,7 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Daisy':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'gather',context:'gather',what:{'Bachelor\'s button':1,'Black lily':1},amount:1,max:1,req:{'plant lore':true}},	
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}},
-			{type:'convert',from:{'Paper':12,'Ink':3},into:{'Florist\'s notes':1},every:11,req:{'Bookwriting':true}},
+			{type:'convert',from:{'Paper':12,'Ink':3},into:{'Florist\'s notes':1},every:11,req:{'Notewriting':true}},
 		],
 	});
 		new G.Unit({
@@ -3940,7 +3991,7 @@ func:function(){
 	});
 		new G.Policy({
 		name:'Crafting & farm rituals',
-		desc:'Improves [Paper-making shack] , [Well of mana] and <b>Farms</b> efficiency by 17%. Consumes 15 [faith] & 15 [influence] every 15 days; will stop if you run out.',
+		desc:'Improves [Paper-crafting shack] , [Well of mana] and <b>Farms</b> efficiency by 17%. Consumes 15 [faith] & 15 [influence] every 15 days; will stop if you run out.',
 		icon:[8,12,14,2,'magixmod'],
 		cost:{'faith':5,'influence':5},
 		startMode:'off',
