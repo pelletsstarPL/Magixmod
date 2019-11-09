@@ -4240,45 +4240,45 @@ G.writeMSettingButton=function(obj)
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
 		'<div class="barred fancyText">Update log<div>'+
 		'<div class="divider"></div>'+
-		str+='<div class="scrollBox underTitle" style="width:496px;right:0px;">';
-			'<div class="default" style="color":#b3e>10 XI 2019: Big changes caused by Books & Politics update!<div>'+
-			'->Made wizard become unlockable after getting Wizard wisdom tech. Before getting it you will own Archaic one<div>'+
-			'->Changes at costs of some researches.<div>'+
-			'->5 new researches & units, 1 new trait & policy, bunch of new resources.<div>'+
-			'->Added modes for Architects but why does not they build brickhouses and blockhouses i dunno.<div>'+
-			'->Changed link to mod.<div>'+
-			'->Essence storages tech now works causing amount of mana and essences limited.<div>'+
-			'->Bigger usage for Ink and Paper. Books , notes(not that musical one yet), lodge of writers and library to store books<div>'+
-			'->Note: If you are playing in debug mode I am NOT responsible for any of bugs caused by it.<div>'+
-			'->Bug with 0/0 insight caused by wizards is unfixable.<div>'+
-			'<div class="divider"></div>'+
-			'<div class="default" style="color":#b3e>31 X 2019: Second portal to second world. Feel lights everywhere<div>'+
-			'->Attempting fixing wizard wisdom bug.<div>'+
-			'->Changes at power of Wizard Complex.<div>'+
-			'->Added few more researches. They are for alchemy and new world.<div>'+
-			'->New ingredients which can be made. To unlock them just buy some researches that may unlock them for you.<div>'+
-			'->Migrated image sheet from imgur to other website which allows for sharing image sheet for content like this mod.<div>'+
-			'<div class="divider"></div>'+
-			'<div class="default">25 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
-			'->Failed to fix bug with wisdom going below 100 caused by wizards.<div>'+
-			'->Rest of effects which prospecting II and quarrying II provides now work ingame.<div>'+
-			'->Improved juicy expertise trait effect and increased its cost a little bit (from 5k juice to 6.5k).<div>'+
-			'<div class="divider"></div>'+
-			'<div class="default">22 X 2019: Added policy which will decide how long will be education cycle for alchemists.<div>'+
-			'->Added new trait which requires culture of the afterlife to occur.<div>'+
-			'->Small improvements to vanilla things(platinum and nickel ores).<div>'+
-			'<div class="divider"></div>'+
-			'<div class="barred fancyText">October 2019: 2nd wonder. Revenants trait - the first long term trait</div>'+
-			'->Brews are available.<div>'+
-			'->New culture source.<div>'+
-			'->Vanilla improvements(armor , weapon blacksmithery).<div>'+
-			'->Papercrafting added.<div>'+
-			'<div class="divider"></div>'+
-			'<div class="barred fancyText">September 2019: Juicery, farms, ink, instructors, alchemists added<div>'+
-			'->Thoughts sharer.<div>'+
-			'->Florist. Two new early game units<div>'+
-			'<div class="divider"></div>'+
-			'<div class="barred fancyText">july - august 2019 Magix starts being developed<div>'+
+		str+='<div class="scrollBox underTitle" style="width:496px;left:0px;">';
+		'<div class="default" style="color":#b3e>10 XI 2019: Big changes caused by Books & Politics update!<div>'+
+		'->Made wizard become unlockable after getting Wizard wisdom tech. Before getting it you will own Archaic one<div>'+
+		'->Changes at costs of some researches.<div>'+
+		'->5 new researches & units, 1 new trait & policy, bunch of new resources.<div>'+
+		'->Added modes for Architects but why does not they build brickhouses and blockhouses i dunno.<div>'+
+		'->Changed link to mod.<div>'+
+		'->Essence storages tech now works causing amount of mana and essences limited.<div>'+
+		'->Bigger usage for Ink and Paper. Books , notes(not that musical one yet), lodge of writers and library to store books<div>'+
+		'->Note: If you are playing in debug mode I am NOT responsible for any of bugs caused by it.<div>'+
+		'->Bug with 0/0 insight caused by wizards is unfixable.<div>'+
+		'<div class="divider"></div>'+
+		'<div class="default" style="color":#b3e>31 X 2019: Second portal to second world. Feel lights everywhere<div>'+
+		'->Attempting fixing wizard wisdom bug.<div>'+
+		'->Changes at power of Wizard Complex.<div>'+
+		'->Added few more researches. They are for alchemy and new world.<div>'+
+		'->New ingredients which can be made. To unlock them just buy some researches that may unlock them for you.<div>'+
+		'->Migrated image sheet from imgur to other website which allows for sharing image sheet for content like this mod.<div>'+
+		'<div class="divider"></div>'+
+		'<div class="default">25 X 2019: Improved alchemy by ingredient crafting tech.<div>'+
+		'->Failed to fix bug with wisdom going below 100 caused by wizards.<div>'+
+		'->Rest of effects which prospecting II and quarrying II provides now work ingame.<div>'+
+		'->Improved juicy expertise trait effect and increased its cost a little bit (from 5k juice to 6.5k).<div>'+
+		'<div class="divider"></div>'+
+		'<div class="default">22 X 2019: Added policy which will decide how long will be education cycle for alchemists.<div>'+
+		'->Added new trait which requires culture of the afterlife to occur.<div>'+
+		'->Small improvements to vanilla things(platinum and nickel ores).<div>'+
+		'<div class="divider"></div>'+
+		'<div class="barred fancyText">October 2019: 2nd wonder. Revenants trait - the first long term trait</div>'+
+		'->Brews are available.<div>'+
+		'->New culture source.<div>'+
+		'->Vanilla improvements(armor , weapon blacksmithery).<div>'+
+		'->Papercrafting added.<div>'+
+		'<div class="divider"></div>'+
+		'<div class="barred fancyText">September 2019: Juicery, farms, ink, instructors, alchemists added<div>'+
+		'->Thoughts sharer.<div>'+
+		'->Florist. Two new early game units<div>'+
+		'<div class="divider"></div>'+
+		'<div class="barred fancyText">july - august 2019 Magix starts being developed<div>'+
 		G.writeMSettingCategories()+
 		'<div class="divider"></div>'+
 		'<div class="buttonBox">'+
