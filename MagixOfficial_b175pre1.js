@@ -2509,14 +2509,14 @@ func:function(){
 		new G.Tech({
 		name:'Notewriting',
 		desc:'[Florist], [Wizard] , [Poet] , (lawyer) will write their notes. Notes can be used to write specified books which may summon some <b>Knowledge</b> traits and turn into [insight].',
-		icon:[12,13,'magixmod'], 
+		icon:[21,6,'magixmod'], 
 		cost:{'insight':300},
 		req:{'Bookcrafting':true,'Ink crafting':true},
 	});
 		new G.Tech({
 		name:'Bookwriting',
 		desc:'[Florist\'s notes],[Poet\'s notes],[Wizard\'s notes] may now be written into some book.  @unlocks [Lodge of writers] who will convert their notes into books.',
-		icon:[21,6,'magixmod'], 
+		icon:[12,13,'magixmod'], 
 		cost:{'insight':300},
 		req:{'Bookcrafting':true,'Ink crafting':true},
 	});
