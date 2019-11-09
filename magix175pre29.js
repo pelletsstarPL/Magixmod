@@ -1186,6 +1186,20 @@ func:function(){
 						}
 					}
 				}
+				if (tick%50==0)
+				{
+					var rituals=['Crafting & farm rituals'];
+					for (var i in rituals)
+					{
+						if (G.checkPolicy(rituals[i])=='on')
+						{
+							if (G.getRes('faith').amount<=0) G.setPolicyModeByName(rituals[i],'off');
+							else G.lose('faith',15,'rituals');
+							if (G.getRes('influence').amount<=0) G.setPolicyModeByName(rituals[i],'off');
+							else G.lose('influence',15,'rituals');
+						}
+					}
+				}
 				
 				var productionMult=G.doFunc('production multiplier',1);
 				
@@ -2655,6 +2669,7 @@ func:function(){
 			{type:'convert',from:{'hide':1.75},into:{'pergamin':1},every:5,mode:'pergamin'},
 			{type:'convert',from:{'leather':1.75},into:{'pergamin':1},every:5,mode:'pergamin'},
 			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.2},every:3,mode:'commonpaper'},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 		req:{'papercrafting':true},
 		category:'crafting',
@@ -2828,6 +2843,7 @@ func:function(){
 		//require:{'wizard':3},
 		effects:[
 			{type:'gather',what:{'Mana':13}},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
         ],
 		category:'crafting',
 		limitPer:{'land':75},
@@ -3326,6 +3342,7 @@ func:function(){
 		category:'plainisleunit',
 		effects:[
 			{type:'gather',context:'gather',what:{'Berries':0.33}},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
 		new G.Unit({
@@ -3339,6 +3356,7 @@ func:function(){
 		category:'plainisleunit',
 		effects:[
 			{type:'gather',context:'gather',what:{'Watermelon':0.14}},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
 		new G.Unit({
@@ -3352,6 +3370,7 @@ func:function(){
 		category:'plainisleunit',
 		effects:[
 			{type:'gather',context:'gather',what:{'Sugar cane':0.85}},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
 		new G.Unit({
@@ -3365,6 +3384,7 @@ func:function(){
 		category:'production',
 		effects:[
 			{type:'gather',context:'gather',what:{'Beet':0.1}},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
@@ -3916,6 +3936,15 @@ func:function(){
 		cost:{'faith':1,'influence':3},
 		startMode:'off',
 		req:{'ritualism':true},
+		category:'faith',
+	});
+		new G.Policy({
+		name:'Crafting & farm rituals',
+		desc:'Improves [Paper-making shack] , [Well of mana] and <b>Farms</b> efficiency by 17%. Consumes 15 [faith] & 15 [influence] every 15 days; will stop if you run out.',
+		icon:[8,12,14,2,'magixmod'],
+		cost:{'faith':5,'influence':5},
+		startMode:'off',
+		req:{'ritualism':true,'papercrafting':true},
 		category:'faith',
 	});
 		new G.Policy({
