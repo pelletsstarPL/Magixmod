@@ -3598,6 +3598,15 @@ func:function(){
 	//After researching Hunting II Artisans with Craft bows mode will now be able to craft Crossbows and ammo to it
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':3,'stone':2},into:{'Crossbow':1},every:5,req:{'Hunting II':true},mode:'bows'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'lumber':1,'stone':25},into:{'Crossbow belt':20},every:5,req:{'Hunting II':true},mode:'bows'});
+//Bookcrafting
+		G.getDict('artisan').modes['Craftbook']={
+			name:'Craft book',
+			icon:[13,12,'magixmod'],
+			desc:'Your artisan will craft [Empty book,books].',
+			req:{'Bookcrafting':true},
+			use:{'worker':1,'stone tools':1},
+		};
+		G.getDict('artisan').effects.push({type:'convert',from:{'Paper':30,'hide':1},into:{'Empty book':1},every:7,mode:'Craftbook'});
 	//Kilns will be able to make glass out of sand
 		G.getDict('kiln').modes['Craftglass']={
 			name:'Craft glass',
