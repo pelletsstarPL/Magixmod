@@ -4214,7 +4214,7 @@ G.writeMSettingButton=function(obj)
 	G.tabPopup['Magix:About']=function()
 	{
 		var str='';
-		
+		str+='<div class="scrollBox underTitle" style="width:248px;left:0px;">';		
 		// disclaimer blurb for the top
 		str+='<div class="par">'+
 		'<b>The Magix mod</b> is a mod for NeverEnding Legacy made by <b>pelletsstarPL</b>.'+
