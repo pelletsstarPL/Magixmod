@@ -960,8 +960,8 @@ func:function(){
 		icon:[20,9,'magixmod'],
 		tick:function(me,tick)
 		{
-			var n=randomFloor();
-			if (G.Res(me.name).amount=1)
+			var n=randomFloor(G.Res(me.name).amount=1);
+			if (n=1)
 			{
 				var str='<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hit next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>';
 				G.Message({type:'good',text:str,icon:[8,4,'magixmod']});
