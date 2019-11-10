@@ -958,6 +958,7 @@ func:function(){
 		name:'Paradise emblem',
 		desc:'A thing you will get after activating a Paradise portal. Needed to unlock further researching. A pass for further things and more adventures. You can obtain only one Emblem of this type. <b>@God called you to his world... But God\'s paradise has rules that you & your people must follow or Paradise will be closed for you and your people... so in fact your adventure has not ended yet even after adventure in Plain Island. Good luck.<b>',
 		icon:[20,9,'magixmod'],
+		startWith:0,
 		tick:function(me,tick)
 		{
 			if (me.amount=1){
