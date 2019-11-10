@@ -961,7 +961,7 @@ func:function(){
 		tick:function(me,tick)
 		{
 			var n=randomFloor(G.getRes('Paradise emblem').amount*1);
-			if (n=1) G.Message({type:'bad',mergeId:'paradiseON',textFunc:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hit next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod']});
+			if (n=1) G.Message({type:'bad',mergeId:'paradiseON',textFunc:(me.args);'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hit next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod']});
 		},
 		category:'main',
 	});
@@ -1374,6 +1374,13 @@ func:function(){
 			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*drunkHealing),'healing');G.gain('adult',n,'-');changed+=n;
 			G.gain('happiness',changed*10,'recovery');
 			if (changed>0) G.Message({type:'good',mergeId:'drunkRecovered',textFunc:function(args){return B(args.n)+' drunk '+(args.n==1?'person':'people')+' got better.';},args:{n:changed},icon:[4,3]});
+			//Drunk's death
+			var drunkMortality=0.005;
+			var changed=0;
+			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*woundMortality),'drunk');G.gain('corpse',n,'alcohol sickness');changed+=n;
+			G.gain('happiness',-changed*15*deathUnhappinessMult,'death');
+			G.getRes('died this year').amount+=changed;
+			if (changed>0) G.Message({type:'bad',mergeId:'diedDrunk',textFunc:function(args){return B(args.n)+' '+(args.n==1?'person':'people')+' died from alcohol sickness.';},args:{n:changed},icon:[5,4]});
 		},
 		category:'demog',
 	});
