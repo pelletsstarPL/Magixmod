@@ -1363,6 +1363,12 @@ func:function(){
 		{
 			var n=randomFloor(G.getRes('Wine').amount*0.009);G.gain('drunk',n,'alcohol drinking');G.lose('adult',n,'alcohol drinking');G.lose('Wine',n,'drinking');
 			if (n>0) G.Message({type:'bad',mergeId:'fellDrunk',textFunc:function(args){return B(args.n)+' '+(args.n==1?'person':'people')+' fell drunk.';},args:{n},icon:[17,0,'magixmod']});
+			var drunkHealing=0.01;
+			if (G.checkPolicy('flower rituals')=='on') drunkHealing*=1.2;
+			var changed=0;
+			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*sickHealing),'healing');G.gain('adult',n,'-');changed+=n;
+			G.gain('happiness',changed*10,'recovery');
+			if (changed>0) G.Message({type:'good',mergeId:'drunkRecovered',textFunc:function(args){return B(args.n)+' drunk '+(args.n==1?'person':'people')+' got better.';},args:{n:changed},icon:[4,3]});
 		},
 		category:'demog',
 	});
@@ -3079,7 +3085,6 @@ func:function(){
 			{type:'gather',context:'mine',what:{'copper ore':25},max:30,mode:'copper'},
 			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
 			{type:'gather',context:'mine',what:{'iron ore':25},max:30,mode:'iron'},
-			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','Plain island mine collapsed, wounding its workers','Plain island mines collapsed, wounding their workers'),chance:1/50},
 		],
 		category:'plainisleunit',
 		limitPer:{'land':35},
