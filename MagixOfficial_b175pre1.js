@@ -2536,7 +2536,7 @@ func:function(){
 		cost:{},
 		use:{'worker':1},
 		effects:[
-			{type:'convert',from:{'Paper':14,'Ink':8},into:{'Lawyer\'s notes':1},every:11,req:{'Notewriting':true}}
+			{type:'convert',from:{'Paper':14,'Ink':8},into:{'Lawyer\'s notes':1},every:11,req:{'Notewriting':true},chance:1/4}
        		],
 		req:{'Better influence & authority':true},
 		category:'political',
@@ -3307,7 +3307,7 @@ func:function(){
 			{type:'gather',context:'gather',what:{'Daisy':1},amount:1,max:1,req:{'plant lore':true}},
 			{type:'gather',context:'gather',what:{'Bachelor\'s button':1,'Black lily':1},amount:1,max:1,req:{'plant lore':true}},	
 			{type:'mult',value:1.05,req:{'harvest rituals for flowers':'on'}},
-			{type:'convert',from:{'Paper':12,'Ink':3},into:{'Florist\'s notes':1},every:11,req:{'Notewriting':true}},
+			{type:'convert',from:{'Paper':12,'Ink':3},into:{'Florist\'s notes':1},every:11,req:{'Notewriting':true},chance:1/95},
 		],
 	});
 		new G.Unit({
