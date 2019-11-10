@@ -2718,10 +2718,10 @@ func:function(){
 			'commonpaper':{name:'Common paper',icon:[17,12,'magixmod'],desc:'Craft [common paper] out of [Bamboo] with help of secret non-magic recipe.',use:{'worker':1,'stone tools':1}},
 		},
 		effects:[
-			{type:'convert',from:{'Sugar cane':3.25},into:{'papyrus':1.2},every:2,mode:'papyrus'},
-			{type:'convert',from:{'hide':1.75},into:{'pergamin':1},every:5,mode:'pergamin'},
-			{type:'convert',from:{'leather':1.75},into:{'pergamin':1},every:5,mode:'pergamin'},
-			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.2},every:3,mode:'commonpaper'},
+			{type:'convert',from:{'Sugar cane':3.25},into:{'papyrus':1.2},every:1,mode:'papyrus'},
+			{type:'convert',from:{'hide':1.75},into:{'pergamin':1},every:4,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.75},into:{'pergamin':1},every:4,mode:'pergamin'},
+			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.2},every:2,mode:'commonpaper'},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 		req:{'papercrafting':true},
