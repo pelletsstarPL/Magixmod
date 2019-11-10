@@ -2549,7 +2549,7 @@ func:function(){
 		cost:{},
 		upkeep:{'food':0.2},
 		effects:[
-			{type:'gather',what:{'happiness':0.17}},
+			{type:'gather',what:{'happiness':0.1}},
 		],
 		use:{'worker':1},
 		req:{'Better influence & authority':true},
