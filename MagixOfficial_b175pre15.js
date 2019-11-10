@@ -1381,7 +1381,7 @@ func:function(){
 			//Drunk's death
 			var drunkMortality=0.005;
 			var changed=0;
-			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*woundMortality),'drunk');G.gain('corpse',n,'alcohol sickness');changed+=n;
+			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*drunkMortality),'drunk');G.gain('corpse',n,'alcohol sickness');changed+=n;
 			G.gain('happiness',-changed*15*deathUnhappinessMult,'death');
 			G.getRes('died this year').amount+=changed;
 			if (changed>0) G.Message({type:'bad',mergeId:'diedDrunk',textFunc:function(args){return B(args.n)+' '+(args.n==1?'person':'people')+' died from alcohol sickness.';},args:{n:changed},icon:[5,4]});
