@@ -1366,7 +1366,7 @@ func:function(){
 			var drunkHealing=0.01;
 			if (G.checkPolicy('flower rituals')=='on') drunkHealing*=1.2;
 			var changed=0;
-			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*sickHealing),'healing');G.gain('adult',n,'-');changed+=n;
+			var n=G.lose('drunk',randomFloor(Math.random()*G.getRes('drunk').amount*drunkHealing),'healing');G.gain('adult',n,'-');changed+=n;
 			G.gain('happiness',changed*10,'recovery');
 			if (changed>0) G.Message({type:'good',mergeId:'drunkRecovered',textFunc:function(args){return B(args.n)+' drunk '+(args.n==1?'person':'people')+' got better.';},args:{n:changed},icon:[4,3]});
 		},
