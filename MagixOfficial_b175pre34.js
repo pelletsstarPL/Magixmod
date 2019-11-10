@@ -965,7 +965,7 @@ func:function(){
 					G.Message({type:'good',text:str,icon:[8,4,'magixmod']});
 			}
 			else{
-		},
+		}
 		category:'main',
 	});
 		new G.Res({
