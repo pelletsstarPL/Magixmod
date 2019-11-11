@@ -3424,7 +3424,7 @@ func:function(){
 		use:{'worker':8,'Land of the Plain Island':35},
 		category:'plainisleunit',
 		effects:[
-			{type:'gather',context:'gather',what:{'Berries':0.33}},
+			{type:'gather',context:'gather',what:{'Berries':5.3}},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
