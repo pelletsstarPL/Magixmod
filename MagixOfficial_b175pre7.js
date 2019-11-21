@@ -215,6 +215,8 @@ func:function(){
 			var toSpoil=me.amount*0.0001;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		whenGathered:researchWhenGathered,
+		limit:'holy essence limit',
 		category:'misc',
 	});
 		new G.Res({
@@ -532,6 +534,18 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'misc',
+	});
+		new G.Res({
+		name:'Cloudy water',
+		desc:'Water which cannot spoil in any way (but it still can decay).',
+		icon:[11,14,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		partOf:'water',
+		category:'food',
 	});
 		new G.Res({
 		name:'Fruit juice',
@@ -980,6 +994,31 @@ func:function(){
 		icon:[20,13,'magixmod'],
 		meta:true,
 	});
+//Currency
+		new G.Res({
+		name:'Industry point',
+		desc:'You can use these points to set up some industry in new world. @using 90% of all points in total may make God mad.',
+		icon:[0,14,'magixmod'],
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'main',
+	});
+		new G.Res({
+		name:'Worship point',
+		desc:'You can use these points to decide which seraphin will be worshipped.',//Seraphins won't be added quickly it may be January /February 2020 when you will be able to see them for the first time
+		icon:[1,14,'magixmod'],
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'main',
+	});
 //Essence limits which can be increased by buying storages for essences
 		new G.Res({
 		name:'fire essence limit',
@@ -1027,6 +1066,13 @@ func:function(){
 		name:'mana capacity',
 		desc:'The bigger limit the more mana can be stored.',
 		icon:[2,3,'magixmod'],
+		hidden:true,
+		category:'main',
+	});
+		new G.Res({
+		name:'holy essence limit',
+		desc:'The bigger limit the more essence can be stored.',
+		icon:[20,6,'magixmod'],
 		hidden:true,
 		category:'main',
 	});
@@ -2600,7 +2646,7 @@ func:function(){
 		desc:'@provides 6000 [material storage] .<>A large building for storing materials. Staffed with two guards to prevent theft even if it will be constructed in Paradise.',
 		icon:[2,14,'magixmod'],
 		cost:{'basic building materials':900},
-		use:{'Land of the Paradise':3},
+		use:{'Land of the Paradise':3,'Industry point':0.2},
 		staff:{'worker':2},
 		effects:[
 			{type:'provide',what:{'added material storage':6000}},
@@ -2610,11 +2656,26 @@ func:function(){
 		category:'paradiseunit',
 	});
 		new G.Unit({
+		name:'Guru',
+		desc:'@The one who can gain Insight^2 so in short we can say it is... [science,Science] used to much more complicated researches.',
+		icon:[6,14,'magixmod'],
+		cost:{},
+		use:{'worker':1},
+		staff:{'worker':1},
+		limitPer:{'population':1e5},
+		effects:[
+			{type:'gather',what:{'insight':0.3}},
+			{type:'gather',what:{'science':0.0005}},
+		],
+		req:{'God\'s trait #3 Science^2':true},
+		category:'discovery',
+	});
+		new G.Unit({
 		name:'Floored warehouse',
 		desc:'@provides 3000 [material storage] and 3000 [food storage] .<>A large building for storing materials and food. Staffed with four guards to prevent theft even if it will be constructed in Paradise.',
 		icon:[5,14,'magixmod'],
 		cost:{'basic building materials':8500},
-		use:{'Land of the Paradise':4},
+		use:{'Land of the Paradise':4,'Industry point':0.2},
 		staff:{'worker':4},
 		effects:[
 			{type:'provide',what:{'added material storage':3000}},
@@ -2767,6 +2828,35 @@ func:function(){
 		req:{'stockpiling':true,'building':true,'Essence storages':true},
 		category:'storage',
 	});
+		new G.Unit({
+		name:'Holy essence storage',
+		desc:'@One storage allows you to store 11500 [Wind essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		icon:[3,14,'magixmod'],
+		cost:{'basic building materials':100,'glass':200},
+		use:{'Land of the Paradise':0.8},
+		effects:[
+			{type:'provide',what:{'holy essence limit':11500}},
+			{type:'waste',chance:1/100000}
+		],
+		req:{'stockpiling':true,'building':true,'Essence storages':true,'Paradise building':true,'7th essence':true},
+		category:'storage',
+	});
+		new G.Unit({
+		name:'holy well',
+		desc:'@produces fresh [Cloudy water], up to 24 per day<>The [holy well] is a steady source of drinkable water.',
+		icon:[10,14,'magixmod'],
+		cost:{'stone':50,'basic building materials':120},
+		use:{'Land of the paradise':1},
+		//require:{'worker':2,'stone tools':2},
+		//upkeep:{'coin':0.2},
+		effects:[
+			{type:'gather',what:{'Cloudy water':24}},
+		],
+		category:'paradiseunit',
+		req:{'well-digging':true,'Paradise building':true},
+		limitPer:{'land':10},
+	});
+	
 		new G.Unit({
 		name:'ingredient crafting stand',
 		desc:'There you can craft ingredients for more advanced potions.',
