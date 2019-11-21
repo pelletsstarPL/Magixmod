@@ -2596,6 +2596,35 @@ func:function(){
 /////////////////////////////////////////////////////////////////////
 	//UNITS
 		new G.Unit({
+		name:'hardened warehouse',
+		desc:'@provides 6000 [material storage] .<>A large building for storing materials. Staffed with two guards to prevent theft even if it will be constructed in Paradise.',
+		icon:[2,14,'magixmod'],
+		cost:{'basic building materials'900},
+		use:{'Land of the Paradise':3},
+		staff:{'worker':2},
+		effects:[
+			{type:'provide',what:{'added material storage':6000}},
+			{type:'waste',chance:0.001/1000}
+		],
+		req:{'stockpiling':true,'construction':true,'Paradise building':true},
+		category:'paradiseunit',
+	});
+		new G.Unit({
+		name:'Floored warehouse',
+		desc:'@provides 3000 [material storage] and 3000 [food storage] .<>A large building for storing materials and food. Staffed with four guards to prevent theft even if it will be constructed in Paradise.',
+		icon:[5,14,'magixmod'],
+		cost:{'basic building materials'8500},
+		use:{'Land of the Paradise':4},
+		staff:{'worker':4},
+		effects:[
+			{type:'provide',what:{'added material storage':3000}},
+			{type:'provide',what:{'food storage':3000}},
+			{type:'waste',chance:0.001/1000}
+		],
+		req:{'stockpiling':true,'construction':true,'Paradise building':true},
+		category:'paradiseunit',
+	});
+		new G.Unit({
 		name:'Lawyer', 
 		desc:'Lawyer will share code of law to people and comparing people\'s decisions with code of law.',
 		icon:[10,13,'magixmod'],
@@ -3945,6 +3974,11 @@ func:function(){
 			id:'plainisleunit',
 			name:'Plain Island'
 		});
+	//Category for buildings which can only be built on lands of Paradise
+	G.unitCategories.unshift({
+			id:'paradiseunit',
+			name:'Paradise'
+		});
 	//Category for Alchemy
 	G.unitCategories.unshift({
 			id:'alchemy',
@@ -3957,7 +3991,7 @@ func:function(){
 			{id:'Education',name:'Education'}
 	);
 	//
-	G.policyCategories.push(
+	G.traitCategories.push(
 			{id:'gods',name:'God\'s traits'}
 	);
 	G.contextNames['flowers']='Flowers';
