@@ -23,7 +23,7 @@ func:function(){
 			'food':{
 				name:'Food & Water',
 				base:[],
-				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices','Holy food'],
+				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices'],
 		},
 			'build':{
 				name:'Crafting & Construction',
