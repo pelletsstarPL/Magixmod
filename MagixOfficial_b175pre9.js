@@ -2146,7 +2146,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'God\'s trait #3 Science^2',
-		desc:'You can hire a guru who will gather [insight] & [science].',
+		desc:'You can hire a [Guru] who will gather [insight] & [science].',
 		icon:[21,12,'magixmod'],
 		cost:{},
 		chance:275,
@@ -2564,6 +2564,9 @@ func:function(){
 		desc:'Unlocks sheet of buildings which can be only built in newly opened <b>Paradise</b>.',
 		icon:[19,13,'magixmod'], 
 		cost:{'insight':4,'Paradise emblem':1},
+		effects:[
+			{type:'provide res',what:{'Industry point':1e3}}
+		],
 		req:{'Second portal to new world':true},
 	});
 		new G.Tech({
