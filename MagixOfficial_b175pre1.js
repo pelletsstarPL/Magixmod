@@ -23,7 +23,7 @@ func:function(){
 			'food':{
 				name:'Food & Water',
 				base:[],
-				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices'],
+				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices','Holy food'],
 		},
 			'build':{
 				name:'Crafting & Construction',
@@ -2071,6 +2071,30 @@ func:function(){
 		cost:{},
 		chance:175,
 		req:{'culture of moderation':true},
+	});
+		new G.Trait({
+		name:'Land acknowledge',
+		desc:'Your people will easier acknowledge with any new lands thanks to Paradise exploration. This trait does not add any bonuses.',
+		icon:[21,10,'magixmod'],
+		cost:{},
+		chance:100,
+		req:{'Second portal to new world':true},
+	});
+		new G.Trait({
+		name:'God\'s trait #1 Housing',
+		desc:'Less capable construction obtains small housing bonus with that trait. <b>Bonuses:</b> @[hovel] +1 [housing] every 2 [hovel]s , @[hut] , [bamboo hut] + 1 [housing] to every [hut] & [bamboo hut] same with [branch shelter] , [mud shelter]',
+		icon:[21,14,'magixmod'],
+		cost:{},
+		chance:275,
+		req:{'The God\'s call':true,'7th essence':true},
+	});
+		new G.Trait({
+		name:'God\'s trait #2 Berry rush',
+		desc:'[Berry farm,Berry farms] are 8x as efficient so they gather 8 times as much [Berries]',
+		icon:[21,13,'magixmod'],
+		cost:{},
+		chance:275,
+		req:{'The God\'s call':true,'7th essence':true},
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
