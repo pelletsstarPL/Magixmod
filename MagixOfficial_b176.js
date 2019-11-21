@@ -2822,7 +2822,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Holy essence storage',
-		desc:'@One storage allows you to store 11500 [Wind essence] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		desc:'@One storage allows you to store 11500 [Essence of the Holliness] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
 		icon:[3,14,'magixmod'],
 		cost:{'basic building materials':100,'glass':200},
 		use:{'Land of the Paradise':0.8},
