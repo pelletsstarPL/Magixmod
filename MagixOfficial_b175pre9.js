@@ -1000,11 +1000,6 @@ func:function(){
 		desc:'You can use these points to set up some industry in new world. @using 90% of all points in total may make God mad.',
 		icon:[0,14,'magixmod'],
 		displayUsed:true,
-		tick:function(me,tick)
-		{
-			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-		},
 		category:'main',
 	});
 		new G.Res({
@@ -1012,11 +1007,6 @@ func:function(){
 		desc:'You can use these points to decide which seraphin will be worshipped.',//Seraphins won't be added quickly it may be January /February 2020 when you will be able to see them for the first time
 		icon:[1,14,'magixmod'],
 		displayUsed:true,
-		tick:function(me,tick)
-		{
-			var toSpoil=me.amount*0.01;
-			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-		},
 		category:'main',
 	});
 //Essence limits which can be increased by buying storages for essences
@@ -2664,7 +2654,6 @@ func:function(){
 		icon:[6,14,'magixmod'],
 		cost:{},
 		use:{'worker':1},
-		staff:{'worker':1},
 		limitPer:{'population':1e5},
 		effects:[
 			{type:'gather',what:{'insight':0.3}},
