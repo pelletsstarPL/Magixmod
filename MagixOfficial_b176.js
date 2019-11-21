@@ -537,11 +537,11 @@ func:function(){
 	});
 		new G.Res({
 		name:'Cloudy water',
-		desc:'Water which cannot spoil in any way (but it still can decay).',
+		desc:'Water which cannot spoil in any way (but it still can decay but slower). Gathered from Paradise\'s lakes, ponds, rivers.',
 		icon:[11,14,'magixmod'],
 		tick:function(me,tick)
 		{
-			var toSpoil=me.amount*0.01;
+			var toSpoil=me.amount*0.004;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		partOf:'water',
@@ -2835,12 +2835,12 @@ func:function(){
 	});
 		new G.Unit({
 		name:'holy well',
-		desc:'@produces fresh [Cloudy water], up to 24 per day<>The [holy well] is a steady source of drinkable water.',
+		desc:'@produces fresh [Cloudy water], up to 28 per day<>The [holy well] is a steady source of drinkable water.',
 		icon:[10,14,'magixmod'],
 		cost:{'stone':50,'basic building materials':120},
 		use:{'Land of the Paradise':1},
 		effects:[
-			{type:'gather',what:{'Cloudy water':24}},
+			{type:'gather',what:{'Cloudy water':28}},
 		],
 		category:'paradiseunit',
 		req:{'well-digging':true,'Paradise building':true},
