@@ -2599,7 +2599,7 @@ func:function(){
 		name:'hardened warehouse',
 		desc:'@provides 6000 [material storage] .<>A large building for storing materials. Staffed with two guards to prevent theft even if it will be constructed in Paradise.',
 		icon:[2,14,'magixmod'],
-		cost:{'basic building materials'900},
+		cost:{'basic building materials':900},
 		use:{'Land of the Paradise':3},
 		staff:{'worker':2},
 		effects:[
@@ -2613,7 +2613,7 @@ func:function(){
 		name:'Floored warehouse',
 		desc:'@provides 3000 [material storage] and 3000 [food storage] .<>A large building for storing materials and food. Staffed with four guards to prevent theft even if it will be constructed in Paradise.',
 		icon:[5,14,'magixmod'],
-		cost:{'basic building materials'8500},
+		cost:{'basic building materials':8500},
 		use:{'Land of the Paradise':4},
 		staff:{'worker':4},
 		effects:[
