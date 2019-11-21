@@ -2087,6 +2087,7 @@ func:function(){
 		cost:{},
 		chance:275,
 		req:{'The God\'s call':true,'7th essence':true},
+		category:'gods',
 	});
 		new G.Trait({
 		name:'God\'s trait #2 Berry rush',
@@ -2095,6 +2096,16 @@ func:function(){
 		cost:{},
 		chance:275,
 		req:{'The God\'s call':true,'7th essence':true},
+		category:'gods',
+	});
+		new G.Trait({
+		name:'God\'s trait #3 Science^2',
+		desc:'You can hire a guru who will gather [insight] & [science].',
+		icon:[21,12,'magixmod'],
+		cost:{},
+		chance:275,
+		req:{'The God\'s call':true,'7th essence':true},
+		category:'gods',
 	});
 //Then we add a new technology for wizards:
 	new G.Tech({
@@ -3449,7 +3460,8 @@ func:function(){
 		category:'plainisleunit',
 		effects:[
 			{type:'gather',context:'gather',what:{'Berries':5.3}},
-			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}},
+			{type:'mult',value:8,req:{'God\'s trait #2 Berry rush':true}}
 		],
 	});
 		new G.Unit({
@@ -3944,6 +3956,10 @@ func:function(){
 	G.policyCategories.push(
 			{id:'Education',name:'Education'}
 	);
+	//
+	G.policyCategories.push(
+			{id:'gods',name:'God\'s traits'}
+	);
 	G.contextNames['flowers']='Flowers';
 		new G.Goods({
 		name:'Tulips',
@@ -4129,6 +4145,12 @@ func:function(){
 //Effects of better house construction research
 		G.getDict('house').effects.push({type:'provide',what:{'housing':0.125},req:{'Better house construction':true}});
 		G.getDict('Brick house with a silo').effects.push({type:'provide',what:{'housing':0.2},req:{'Better house construction':true}});
+//Effects of God's trait number one
+		G.getDict('hovel').effects.push({type:'provide',what:{'housing':0.5},req:{'God\'s trait #1 Housing':true}});
+		G.getDict('hut').effects.push({type:'provide',what:{'housing':1},req:{'God\'s trait #1 Housing':true}});
+		G.getDict('bamboo hut').effects.push({type:'provide',what:{'housing':1},req:{'God\'s trait #1 Housing':true}});
+		G.getDict('mud shelter').effects.push({type:'provide',what:{'housing':1},req:{'God\'s trait #1 Housing':true}});
+		G.getDict('branch shelter').effects.push({type:'provide',what:{'housing':1},req:{'God\'s trait #1 Housing':true}});
 ////////////////////////////////////////////
 //Fixes copied out of heritage mod
 	G.fixTooltipIcons=function()
