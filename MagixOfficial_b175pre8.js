@@ -2846,9 +2846,7 @@ func:function(){
 		desc:'@produces fresh [Cloudy water], up to 24 per day<>The [holy well] is a steady source of drinkable water.',
 		icon:[10,14,'magixmod'],
 		cost:{'stone':50,'basic building materials':120},
-		use:{'Land of the paradise':1},
-		//require:{'worker':2,'stone tools':2},
-		//upkeep:{'coin':0.2},
+		use:{'Land of the Paradise':1},
 		effects:[
 			{type:'gather',what:{'Cloudy water':24}},
 		],
