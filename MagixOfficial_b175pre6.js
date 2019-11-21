@@ -3991,7 +3991,7 @@ func:function(){
 			{id:'Education',name:'Education'}
 	);
 	//
-	G.traitCategories.push(
+	G.knowCategories.push(
 			{id:'gods',name:'God\'s traits'}
 	);
 	G.contextNames['flowers']='Flowers';
