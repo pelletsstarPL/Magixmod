@@ -2435,7 +2435,7 @@ func:function(){
 		name:'Poetry',
 		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
 		icon:[18,8,'magixmod'],
-		cost:{'insight':635,'culture':300,'inspiration':25},
+		cost:{'insight':650,'culture':300,'inspiration':25},
 		req:{'Plain island building':true,'Ink crafting':true},
 	});
 		new G.Tech({
@@ -2551,7 +2551,7 @@ func:function(){
 		name:'prospecting II',
 		desc:'@[mine]s can now dig in search of [nickel ore,Nickel] or focus to mine [Granite],[Diorite],[Andesite] with 3x efficiency instead of any prospected mineral.',
 		icon:[11,12,'magixmod'],
-		cost:{'insight':250},
+		cost:{'insight':270},
 		req:{'prospecting':true,'mining':true},
 	});
 		new G.Tech({
