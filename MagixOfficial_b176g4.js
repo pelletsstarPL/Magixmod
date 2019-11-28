@@ -38,7 +38,7 @@ func:function(){
 			'misc':{
 				name:'Miscellaneous',
 				base:[],
-				side:['Paper','Magic essences'],
+				side:['Paper','Magic essences','book storage'],
 		},
 			'flowersanddyes':{
 				name:'Flowers & Dyes',
@@ -2839,7 +2839,7 @@ func:function(){
 		desc:'@processes goods with fire<>This specific [Kiln] is an impressive edifice for those not yet accustomed to its roaring fire. @This one can do more than its primary brother but needs to be <b>fueled</b>',
 		icon:[17,14,'magixmod'],
 		cost:{'archaic building materials':40,'basic building materials':70},
-		use:{'Land of the Paradise':1},
+		use:{'Land of the Paradise':1,'Industry point':1},
 		require:{'worker':1,'stone tools':1},
 		upkeep:{'log':0.5},
 		modes:{
@@ -3486,7 +3486,7 @@ func:function(){
 		desc:'@processes wood<>The [carpenter workshop,Carpenter] is equipped with all kinds of tools to coerce wood into more useful shapes. Can do little more than its mortal brother.',
 		icon:[16,14,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':150},
-		use:{'land':1},
+		use:{'land':1,'Industry point':1},
 		modes:{
 			'off':G.MODE_OFF,
 			'lumber':{name:'Cut logs into lumber',icon:[1,8],desc:'Cut [log]s into 3 [lumber] each.',use:{'worker':1,'stone tools':1},req:{}},
@@ -3504,7 +3504,7 @@ func:function(){
 		desc:'@forges metal goods out of ingots<>The [Paradise blacksmith workshop,Blacksmith] takes the same pride in shaping the tool that tills as they do the sword that slays.',
 		icon:[19,14,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':150},
-		use:{'land':1},
+		use:{'land':1,'Industry point':1},
 		modes:{
 			'off':G.MODE_OFF,
 			'metal tools':{name:'Forge tools from soft metals',icon:[2,9],desc:'Forge [metal tools] out of 2 [soft metal ingot]s each.',use:{'worker':1,'stone tools':1},req:{}},
