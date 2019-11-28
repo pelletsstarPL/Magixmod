@@ -1171,7 +1171,48 @@ func:function(){
 		},
 		category:'misc',
 	});
+		new G.Res({
+		name:'Ambrosium leaf',
+		desc:'Thing which can be used to gather [Ambrosium shard]s with help of some other ingredients.',
+		icon:[12,14,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.003;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+		hidden:true
+	});
+		new G.Res({
+		name:'Ambrosium shard',
+		desc:'People call it merged and hardened [Ambrosium leaf,Ambrosium leaves] . These shinies probably will have their own use.',
+		icon:[14,14,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.003;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
 //But books has to be stored somewhere right?
+	new G.Res({
+		name:'food storage',
+		desc:'Each [food storage] unit slows down decay for one [food] unit.//The number on the left is how much food storage is occupied, while the number on the right is how much you have in total.',
+		icon:[12,5],
+		tick:function(me,tick)
+		{
+			var amount=0;
+			amount+=G.getRes('basket').amount*10;
+			amount+=G.getRes('pot').amount*25;
+			amount+=G.getRes('ice').amount;
+			amount+=G.getRes('added food storage').amount;
+			me.amount=amount;
+		},
+		getDisplayAmount:function()
+		{
+			return B(Math.min(this.displayedAmount,G.getRes('food').displayedAmount))+'<wbr>/'+B(this.displayedAmount);
+		},
+	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
 		G.getDict('jungle fruits').res['gather']['Watermelon']=0.00004;
@@ -2632,8 +2673,48 @@ func:function(){
 		cost:{'insight':1015},
 		req:{'Wizard complex':true},
 	});
+		new G.Tech({
+		name:'Ambrosium treeplanting',
+		desc:'@Unlocks [Holy orchard] from which you can get [Armbrosium leaf,Ambrosium leaves] .',
+		icon:[21,11,'magixmod'], 
+		cost:{'insight':1015},
+		req:{'Paradise building':true},
+	});
+		new G.Tech({
+		name:'Ambrosium crafting',
+		desc:'@Unlocks [Ambrosium shard shack] which can craft [Ambrosium shard]s with use of [Mana] , [Cloudy water] & [Ambrosium leaf,Ambrosium leaves] of course.',
+		icon:[13,14,'magixmod'], 
+		cost:{'insight':1015},
+		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+		new G.Unit({
+		name:'Holy orchard',
+		desc:'An orchard with planted trees with ambrosium leaves which are most common type of trees in new world. Gathers falling [ambrosium leaves]<>',
+		icon:[4,14,'magixmod'],
+		cost:{'basic building materials':900},
+		use:{'Land of the Paradise':50,'Industry point':5},
+		staff:{'worker':10},
+		upkeep:{'Cloudy water':30},
+		effects:[
+		],
+		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+		category:'paradiseunit',
+	});
+		new G.Unit({
+		name:'Holy orchard',
+		desc:'An orchard with planted trees with ambrosium leaves which are most common type of trees in new world. Gathers falling [ambrosium leaves]<>',
+		icon:[4,14,'magixmod'],
+		cost:{'basic building materials':900},
+		use:{'Land of the Paradise':50,'Industry point':5},
+		staff:{'worker':10},
+		upkeep:{'Cloudy water':30},
+		effects:[
+		],
+		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+		category:'paradiseunit',
+	});
 		new G.Unit({
 		name:'hardened warehouse',
 		desc:'@provides 6000 [material storage] .<>A large building for storing materials. Staffed with two guards to prevent theft even if it will be constructed in Paradise.',
