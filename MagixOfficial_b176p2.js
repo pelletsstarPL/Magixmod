@@ -2289,7 +2289,7 @@ func:function(){
 		name:'Concrete making',
 		desc:'Use limestone and water to craft a concrete, an [advanced building materials].',
 		icon:[8,0,'magixmod'], //WIP
-		cost:{'insight':75},
+		cost:{'insight':70},
 		req:{'masonry':true,'smelting':true,'Crafting a glass':true},
 	});
 		new G.Tech({
@@ -2324,7 +2324,7 @@ func:function(){
 		name:'Hunting II',
 		desc:'Upgrades hunting skills of your civilization. @Unlocks way to craft [Crossbow] - new weapon. Artisans can now craft [bow] & [Crossbow] and [Crossbow belt] in <b>Craft bows<b> mode.',
 		icon:[15,0,'magixmod'], 
-		cost:{'insight':330,'wisdom':10},
+		cost:{'insight':350,'wisdom':10},
 		req:{'Wizardry':true,'hunting':true,},
 	});
 		new G.Tech({
@@ -2345,7 +2345,7 @@ func:function(){
 		name:'Farms in the new land',
 		desc:'@Now at the Lands of Plain island you may start opening farms to let your people make more [Berries] & [Watermelon]. You are doing it here because you may have trouble to find free land in your mortal world.<>',
 		icon:[16,2,'magixmod'],
-		cost:{'insight':550},
+		cost:{'insight':575},
 		req:{'construction II':true},
 	});
 		new G.Tech({
@@ -2558,7 +2558,7 @@ func:function(){
 		name:'quarrying II',
 		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1.7% chance to gain 6 to 13 [platinum ore]s .',
 		icon:[10,12,'magixmod'],
-		cost:{'insight':340},
+		cost:{'insight':335},
 		req:{'prospecting II':true,'quarrying':true},
 	});
 		new G.Tech({
@@ -2601,7 +2601,7 @@ func:function(){
 		name:'Second portal to new world',
 		desc:'After your people heard [The God\'s call] your wizards with help of full of faith people figured out a way to acrivate portal to the Paradise at the top of their latest wonder.',
 		icon:[20,3,'magixmod'], //WIP
-		cost:{'insight':1600,'culture':300,'Mana':2500,'influence':70,'spirituality':50,'population':1000},
+		cost:{'insight':1595,'culture':300,'Mana':2500,'influence':70,'spirituality':50,'population':1000},
 		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true,'First portal to new world':true,'The God\'s call':true,'monument-building II':true},
 	});
 		new G.Tech({
@@ -2656,7 +2656,7 @@ func:function(){
 		name:'Architects knowledge',
 		desc:'[architect,Architects] can now plan for you: [Brick house with a silo] & [Blockhouse] .',
 		icon:[21,7,'magixmod'], 
-		cost:{'insight':673,'wisdom':2},
+		cost:{'insight':668,'wisdom':2},
 		req:{'construction II':true},
 	});
 		new G.Tech({
@@ -2698,7 +2698,7 @@ func:function(){
 		name:'Ambrosium crafting',
 		desc:'@Unlocks [Ambrosium shard shack] which can craft [Ambrosium shard]s with use of [Mana] , [Cloudy water] & [Ambrosium leaf,Ambrosium leaves] of course.',
 		icon:[13,14,'magixmod'], 
-		cost:{'insight':1015},
+		cost:{'insight':980},
 		req:{'Ambrosium treeplanting':true,'Paradise building':true},
 	});
 		new G.Tech({
