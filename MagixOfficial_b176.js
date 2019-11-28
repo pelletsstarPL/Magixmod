@@ -3473,7 +3473,7 @@ func:function(){
 		name:'Terrain conservator',
 		desc:'@Each one hired [Terrain conservator] will convert 25 [Land of the Paradise] into 25 [Alchemy zone]. Hire them more to get more of its zone but not too much. @<b>WARNING! If you will fire one conservator you will lose [Alchemy zone] and you will not receive back your [Land of the Paradise] so choose amount of them wisely!<b> ',
 		icon:[18,14,'magixmod'],
-		cost:{'Land of the Plain Island':25},
+		cost:{'Land of the Paradise':25},
 		use:{'worker':1},
 		effects:[
 			{type:'provide',what:{'Alchemy zone':25}},
