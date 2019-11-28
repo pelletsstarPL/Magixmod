@@ -1207,6 +1207,7 @@ func:function(){
 		{
 			return B(Math.min(this.displayedAmount,G.getRes('Books').displayedAmount))+'<wbr>/'+B(this.displayedAmount);
 		},
+		meta:true
 	});
 		new G.Res({
 		name:'Books',
