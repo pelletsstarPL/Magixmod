@@ -1125,6 +1125,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'misc',
+		partOf:'Books',
 	});
 //Types of books
 		new G.Res({
@@ -1147,6 +1148,7 @@ func:function(){
 			var toSpoil=me.amount*0.003;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		partOf:'Books',
 		category:'misc',
 	});
 		new G.Res({
@@ -1158,6 +1160,7 @@ func:function(){
 			var toSpoil=me.amount*0.003;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		partOf:'Books',
 		category:'misc',
 	});
 		new G.Res({
@@ -1169,6 +1172,7 @@ func:function(){
 			var toSpoil=me.amount*0.003;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
+		partOf:'Books',
 		category:'misc',
 	});
 		new G.Res({
@@ -1196,22 +1200,21 @@ func:function(){
 	});
 //But books has to be stored somewhere right?
 	new G.Res({
-		name:'food storage',
-		desc:'Each [food storage] unit slows down decay for one [food] unit.//The number on the left is how much food storage is occupied, while the number on the right is how much you have in total.',
-		icon:[12,5],
-		tick:function(me,tick)
-		{
-			var amount=0;
-			amount+=G.getRes('basket').amount*10;
-			amount+=G.getRes('pot').amount*25;
-			amount+=G.getRes('ice').amount;
-			amount+=G.getRes('added food storage').amount;
-			me.amount=amount;
-		},
+		name:'book storage',
+		desc:'Each [book storage] unit slows down decay for one [Books] unit.',
+		icon:[21,4,'magixmod'],
 		getDisplayAmount:function()
 		{
-			return B(Math.min(this.displayedAmount,G.getRes('food').displayedAmount))+'<wbr>/'+B(this.displayedAmount);
+			return B(Math.min(this.displayedAmount,G.getRes('Books').displayedAmount))+'<wbr>/'+B(this.displayedAmount);
 		},
+	});
+		new G.Res({
+		name:'Books',
+		desc:'All books you own in total.',
+		icon:[13,12,'magixmod'],
+		meta:true,
+		hidden:true,
+		category:'misc',
 	});
 		G.getDict('grass').res['gather']['vegetable']=0.001;
 		G.getDict('palm tree').res['gather']['Bamboo']=0.0000035;
@@ -2158,6 +2161,16 @@ func:function(){
 		req:{'Second portal to new world':true},
 	});
 		new G.Trait({
+		name:'Treeplanting',
+		desc:'May begin the orchards existence.',
+		icon:[6,1,8,12],
+		cost:{'insight':250,'wisdom':15},
+		chance:100,
+		category:'knowledge',
+		req:{'Second portal to new world':true,'Paradise building':true},
+	});
+	//God's traits
+		new G.Trait({
 		name:'God\'s trait #1 Housing',
 		desc:'Less capable construction obtains small housing bonus with that trait. <b>Bonuses:</b> @[hovel] +1 [housing] every 2 [hovel]s , @[hut] , [bamboo hut] + 1 [housing] to every [hut] & [bamboo hut] same with [branch shelter] , [mud shelter]',
 		icon:[21,14,'magixmod'],
@@ -2184,6 +2197,7 @@ func:function(){
 		req:{'The God\'s call':true,'7th essence':true},
 		category:'gods',
 	});
+	
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -2678,7 +2692,7 @@ func:function(){
 		desc:'@Unlocks [Holy orchard] from which you can get [Armbrosium leaf,Ambrosium leaves] .',
 		icon:[21,11,'magixmod'], 
 		cost:{'insight':1015},
-		req:{'Paradise building':true},
+		req:{'Paradise building':true,'Land acknowledge':true,'Treeplanting':true},
 	});
 		new G.Tech({
 		name:'Ambrosium crafting',
@@ -2687,30 +2701,38 @@ func:function(){
 		cost:{'insight':1015},
 		req:{'Ambrosium treeplanting':true,'Paradise building':true},
 	});
+		new G.Tech({
+		name:'Paradise crafting',
+		desc:'@Some buildings / crafting shacks from mortal world can be built in Paradise as a separated unit.',
+		icon:[0,14,'magixmod',21,15,'magixmod'], 
+		cost:{'insight':650},
+		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
 		new G.Unit({
 		name:'Holy orchard',
-		desc:'An orchard with planted trees with ambrosium leaves which are most common type of trees in new world. Gathers falling [ambrosium leaves]<>',
+		desc:'An orchard with planted trees with ambrosium leaves which are most common type of trees in new world. Gathers falling [Ambrosium leaf,Ambrosium leaves]<>',
 		icon:[4,14,'magixmod'],
 		cost:{'basic building materials':900},
 		use:{'Land of the Paradise':50,'Industry point':5},
 		staff:{'worker':10},
 		upkeep:{'Cloudy water':30},
 		effects:[
+			{type:'gather',what:{'Ambrosium leaf':40}},
 		],
 		req:{'Ambrosium treeplanting':true,'Paradise building':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
-		name:'Holy orchard',
-		desc:'An orchard with planted trees with ambrosium leaves which are most common type of trees in new world. Gathers falling [ambrosium leaves]<>',
-		icon:[4,14,'magixmod'],
+		name:'Ambrosium shard shack',
+		desc:'A shack where out of [Ambrosium leaf] not one but many and some [Mana] <b>and</b> [Cloudy water] you can gain [Ambrosium shard] which may find its use later.<>',
+		icon:[15,14,'magixmod'],
 		cost:{'basic building materials':900},
-		use:{'Land of the Paradise':50,'Industry point':5},
-		staff:{'worker':10},
-		upkeep:{'Cloudy water':30},
+		use:{'Land of the Paradise':1},
+		staff:{'worker':1},
 		effects:[
+			{type:'convert',from:{'Ambrosium leaf':75,'Cloudy water':5,'Essence of the Holliness':4,'Mana':8},into:{'Ambrosium shard':1},every:4},
 		],
 		req:{'Ambrosium treeplanting':true,'Paradise building':true},
 		category:'paradiseunit',
@@ -2802,12 +2824,36 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Library',
-		desc:'Books from each source(delivered, written at [Lodge of writers] etc.) may be stored there to slow down their decay.',
+		desc:'Books from each source(delivered, written at [Lodge of writers] etc.) may be stored there to slow down their decay. Provides 4500 [book storage] .',
 		icon:[21,5,'magixmod'],
 		cost:{'basic building materials':1100},
 		use:{'land':1,'worker':5},
 		req:{'Bookwriting':true,'construction':true},
+		effects:[
+			{type:'provide',what:{'book storage':4500}}
+		],
 		category:'civil',
+	});
+	new G.Unit({
+		name:'Kiln',
+		desc:'@processes goods with fire<>This specific [Kiln] is an impressive edifice for those not yet accustomed to its roaring fire. @This one can do more than its primary brother but needs to be <b>fueled</b>',
+		icon:[17,14,'magixmod'],
+		cost:{'archaic building materials':40,'basic building materials':70},
+		use:{'Land of the Paradise':1},
+		require:{'worker':1,'stone tools':1},
+		upkeep:{'log':0.5},
+		modes:{
+			'off':G.MODE_OFF,
+			'bricks':{name:'Fire bricks',icon:[3,8],desc:'Produce 10 [brick]s out of 1 [clay].',use:{'worker':1,'stone tools':1},req:{}},
+			'glass':{name:'Craft glass',icon:[4,8],desc:'Produce 2 panes of [glass] out of 8 [sand].',use:{'worker':1,'stone tools':1},req:{}}
+		},
+		effects:[
+			{type:'convert',from:{'clay':1},into:{'brick':10},every:5,mode:'bricks'},
+			{type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'glass'},
+		],
+		gizmos:true,
+		req:{'masonry':true,'Paradise building':true,'Paradise crafting':true},
+		category:'paradiseunit',
 	});
 		new G.Unit({
 		name:'Mana silo',
@@ -3422,6 +3468,68 @@ func:function(){
 		],
 		req:{'Beginnings of alchemy':true,'Terrain conservacy':true},
 		category:'alchemy',
+	});
+		new G.Unit({
+		name:'Terrain conservator',
+		desc:'@Each one hired [Terrain conservator] will convert 25 [Land of the Paradise] into 25 [Alchemy zone]. Hire them more to get more of its zone but not too much. @<b>WARNING! If you will fire one conservator you will lose [Alchemy zone] and you will not receive back your [Land of the Paradise] so choose amount of them wisely!<b> ',
+		icon:[18,14,'magixmod'],
+		cost:{'Land of the Plain Island':25},
+		use:{'worker':1},
+		effects:[
+			{type:'provide',what:{'Alchemy zone':25}},
+		],
+		req:{'Beginnings of alchemy':true,'Terrain conservacy':true,'Paradise building':true},
+		category:'alchemy',
+	});
+	new G.Unit({
+		name:'Carpenter workshop',
+		desc:'@processes wood<>The [carpenter workshop,Carpenter] is equipped with all kinds of tools to coerce wood into more useful shapes. Can do little more than its mortal brother.',
+		icon:[16,14,'magixmod',20,14,'magixmod'],
+		cost:{'basic building materials':150},
+		use:{'land':1},
+		modes:{
+			'off':G.MODE_OFF,
+			'lumber':{name:'Cut logs into lumber',icon:[1,8],desc:'Cut [log]s into 3 [lumber] each.',use:{'worker':1,'stone tools':1},req:{}},
+		},
+		effects:[
+			{type:'convert',from:{'log':1},into:{'lumber':3},repeat:2,mode:'lumber'},
+			{type:'waste',chance:0.001/1000},
+		],
+		gizmos:true,
+		req:{'carpentry':true,'Paradise crafting':true},
+		category:'paradiseunit',
+	});
+		new G.Unit({
+		name:'Paradse blacksmith workshop',
+		desc:'@forges metal goods out of ingots<>The [Paradise blacksmith workshop,Blacksmith] takes the same pride in shaping the tool that tills as they do the sword that slays.',
+		icon:[19,14,'magixmod',20,14,'magixmod'],
+		cost:{'basic building materials':150},
+		use:{'land':1},
+		modes:{
+			'off':G.MODE_OFF,
+			'metal tools':{name:'Forge tools from soft metals',icon:[2,9],desc:'Forge [metal tools] out of 2 [soft metal ingot]s each.',use:{'worker':1,'stone tools':1},req:{}},
+			'hard metal tools':{name:'Forge tools from hard metals',icon:[2,9],desc:'Forge 3 [metal tools] out of 1 [hard metal ingot].',use:{'worker':1,'metal tools':1},req:{}},
+			'gold blocks':{name:'Forge gold blocks',icon:[14,8],desc:'Forge [gold block]s out of 10 [precious metal ingot]s each.',use:{'worker':1,'stone tools':1},req:{'gold-working':true}},
+			'platinum block':{name:'Forge platinum blocks',icon:[4,11,'magixmod'],desc:'Forge [platinum block]s out of 10 [platinum ingot]s each.',use:{'worker':1,'stone tools':1},req:{'platinum-working':true}},
+			'metal weapon':{name:'Forge weapons from soft metals',icon:[15,11,'magixmod'],desc:'Forge [metal weapons] out of 2 [soft metal ingot]s each.',use:{'worker':1,'stone tools':1,'metal tools':1},req:{'Weapon blacksmithery':true}},
+			'hard metal weapon':{name:'Forge weapons from hard metals',icon:[15,11,'magixmod'],desc:'Forge 3 [metal weapons] out of 1 [hard metal ingot].',use:{'worker':1,'metal tools':1,'stone tools':1},req:{'Weapon blacksmithery':true}},
+			'metal armor':{name:'Forge armor from soft metals',icon:[16,11,'magixmod'],desc:'Forge [armor set] out of 8 [soft metal ingot]s each.',use:{'worker':1,'stone tools':1,'metal tools':1,'instructor':0.25},req:{'Armor blacksmithery':true}},
+			'hard metal armor':{name:'Forge armor from hard metals',icon:[16,11,'magixmod'],desc:'Forge [armor set] out of 5 [hard metal ingot].',use:{'worker':1,'metal tools':1,'stone tools':1,'instructor':0.25},req:{'Armor blacksmithery':true}},
+		},
+		effects:[
+			{type:'convert',from:{'soft metal ingot':2},into:{'metal tools':1},repeat:3,mode:'metal tools'},
+			{type:'convert',from:{'hard metal ingot':1},into:{'metal tools':3},repeat:3,mode:'hard metal tools'},
+			{type:'convert',from:{'precious metal ingot':10},into:{'gold block':1},mode:'gold blocks'},
+			{type:'convert',from:{'platinum ingot':10},into:{'platinum block':1},mode:'platinum block'},
+			{type:'convert',from:{'hard metal ingot':1},into:{'metal weapons':1},every:3,repeat:1,mode:'hard metal weapon'},
+			{type:'convert',from:{'soft metal ingot':2},into:{'metal weapons':1},every:3,repeat:1,mode:'metal weapon'},
+			{type:'convert',from:{'hard metal ingot':5},into:{'armor set':2},every:3,repeat:1,mode:'hard metal armor'},
+			{type:'convert',from:{'soft metal ingot':8},into:{'armor set':2},every:3,repeat:1,mode:'metal armor'},
+			{type:'waste',chance:0.001/1000},
+		],
+		gizmos:true,
+		req:{'smelting':true,'Paradise crafting':true},
+		category:'paradiseunit',
 	});
 		new G.Unit({
 		name:'Basic brewing stand',
