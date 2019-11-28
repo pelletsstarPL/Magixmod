@@ -2225,7 +2225,7 @@ func:function(){
 		name:'Well of Mana',
 		desc:'Now you may get a well which contains mana instead of water. ',
 		icon:[4,3,'magixmod'], //WIP
-		cost:{'insight':40,'faith':4,'Mana':20},
+		cost:{'insight':46,'faith':4,'Mana':20},
 		req:{'Mana brewery':true,'More useful housing':true},
 	});
 		new G.Tech({
@@ -2558,7 +2558,7 @@ func:function(){
 		name:'quarrying II',
 		desc:'@[quarry] can now dig for [cut granite],[cut diorite],[cut andesite] by new special mode. @<b>"Advanced quarry stone" mode and "Quarry other stones mode(non advanced)" has 1.7% chance to gain 6 to 13 [platinum ore]s .',
 		icon:[10,12,'magixmod'],
-		cost:{'insight':335},
+		cost:{'insight':355},
 		req:{'prospecting II':true,'quarrying':true},
 	});
 		new G.Tech({
@@ -2583,7 +2583,7 @@ func:function(){
 		name:'papercrafting',
 		desc:'@unlocks [Paper-crafting shack]. There you can craft: @[papyrus] out of [Sugar cane], @[pergamin] out of [hide] , [leather] , and [common paper] out of [Bamboo] with help of secret non-magic recipe.<>',
 		icon:[18,12,'magixmod'],
-		cost:{'insight':500,'wisdom':5},
+		cost:{'insight':480,'wisdom':5},
 		req:{'city planning':true},
 		effects:[
 		],
@@ -2663,7 +2663,7 @@ func:function(){
 		name:'Bookcrafting',
 		desc:'[artisan] can craft books.',
 		icon:[12,12,'magixmod'], 
-		cost:{'insight':300},
+		cost:{'insight':325},
 		req:{'papercrafting':true},
 	});
 		new G.Tech({
@@ -2689,7 +2689,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Ambrosium treeplanting',
-		desc:'@Unlocks [Holy orchard] from which you can get [Armbrosium leaf,Ambrosium leaves] .',
+		desc:'@Unlocks [Holy orchard] from which you can get [Ambrosium leaf,Ambrosium leaves] .',
 		icon:[21,11,'magixmod'], 
 		cost:{'insight':1015},
 		req:{'Paradise building':true,'Land acknowledge':true,'Treeplanting':true},
