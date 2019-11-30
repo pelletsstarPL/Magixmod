@@ -3800,7 +3800,7 @@ func:function(){
 		upkeep:{'water':14},
 		category:'production',
 		effects:[
-			{type:'gather',context:'gather',what:{'Beet':0.1}},
+			{type:'gather',context:'gather',what:{'Beet':3}},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
