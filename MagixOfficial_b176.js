@@ -3861,7 +3861,7 @@ func:function(){
 			icon:[6,4,'magixmod'],
 			desc:'Your artisan will craft tool used by wizards. It is not any junk tool.',
 			req:{'Wizardry':true},
-			use:{'worker':1,'stone tools':2},
+			use:{'stone tools':2},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'stick':4,'stone':2},into:{'Wand':1},every:5,mode:'Craftwands'});
 //Artisans will craft fishing nets for fishers
@@ -3870,7 +3870,7 @@ func:function(){
 			icon:[13,8,'magixmod'],
 			desc:'Your artisan will craft [Fishing net]. Needs [Instructor] because net <b> must be strong. Will use [Dried leather] to make it stronger.',
 			req:{'Fishing II':true},
-			use:{'worker':1,'stone tools':2,'Instructor':1},
+			use:{'stone tools':2,'Instructor':1},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':35,'Dried leather':1},into:{'Fishing net':1},every:5,mode:'Craftnet'});
 //Artisans will craft fishing nets for fishers
@@ -3879,7 +3879,7 @@ func:function(){
 			icon:[18,6,'magixmod'],
 			desc:'Your artisan will craft [Ink]. Will use water and [Black dye],[Blue dye] or [Brown dye].',
 			req:{'Ink crafting':true},
-			use:{'worker':1},
+			use:{},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'Black dye':1,'mud':0.0015,'water':0.015},into:{'Ink':0.75},every:4,mode:'Craftink'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Brown dye':1,'mud':0.0015,'water':0.015},into:{'Ink':0.75},every:4,mode:'Craftink'});
@@ -3890,7 +3890,7 @@ func:function(){
 			icon:[16,10,'magixmod',15,10,'magixmod'],
 			desc:'Your artisan will craft equipment for [First aid healer]. He will craft: [Triangular bandage],[Bandage],[Plaster].',
 			req:{'first aid':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':1.5,'herb':0.75},into:{'Bandage':1},every:5,mode:'CraftFirstAid'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Thread':0.5,'herb':1},into:{'Plaster':1},every:5,mode:'CraftFirstAid'});
@@ -3901,7 +3901,7 @@ func:function(){
 			name:'Make dyes from flowers(Set 1)',
 			desc:'Your artisan will convert these flowers into dyes: [Lavender],[Salvia],[Bachelor\'s button],[Desert rose],[Cosmos],[Pink rose],[Pink tulip],[Coreopsis].',
 			req:{'plant lore':true},
-			use:{'worker':1},
+			use:{},
 			icon:[11,7,'magixmod'],
 		};
 
@@ -3918,7 +3918,7 @@ func:function(){
 			name:'Make dyes from flowers(Set 2)',
 			desc:'Your artisan will convert these flowers into dyes: [Crown imperial],[Cyan rose],[Himalayan blue poopy],[Cockscomb],[Red tulip],[Green Zinnia],[cactus],[Lime rose]. @Bonus: While crafting dyes out of [cactus] you will get its spikes and a dye as usual.',
 			req:{'plant lore':true},
-			use:{'worker':1},
+			use:{},
 			icon:[11,7,'magixmod'],
 		};	
 		G.getDict('artisan').effects.push({type:'convert',from:{'Crown imperial':2},into:{'Orange dye':1},every:5,mode:'Make dyes from flowers(Set 2)'});
@@ -3934,7 +3934,7 @@ func:function(){
 			name:'Make dyes from flowers(Set 3)',
 			desc:'Your artisan will convert these flowers into dyes: [Lime tulip],[Azure bluet],[Daisy],[Sunflower],[Dandelion],[Black lily],[Black Hollyhock],[Cattail]. @Bonus: While crafting dyes out of [Sunflower] you will get its edible [Sunflower seeds] and a dye as usual.',
 			req:{'plant lore':true},
-			use:{'worker':1},
+			use:{},
 			icon:[11,7,'magixmod'],
 		};	
 		G.getDict('artisan').effects.push({type:'convert',from:{'Lime tulip':2},into:{'Lime dye':1},every:5,mode:'Make dyes from flowers(Set 3)'});
@@ -3951,7 +3951,7 @@ func:function(){
 			icon:[11,7,'magixmod'],
 			desc:'Your artisan will convert these flowers into dyes: [Flax],[Blue orchid],[White tulip],[Lily of the Valley],[Gray rose],[Gray tulip],[Brown flower].',
 			req:{'plant lore':true},
-			use:{'worker':1},
+			use:{},
 		};	
 		G.getDict('artisan').effects.push({type:'convert',from:{'Flax':3},into:{'Light blue dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
 		G.getDict('artisan').effects.push({type:'convert',from:{'Blue orchid':2},into:{'Light blue dye':1},every:5,mode:'Make dyes from flowers(Set 4)'});
@@ -3969,7 +3969,7 @@ func:function(){
 			icon:[13,12,'magixmod'],
 			desc:'Your artisan will craft [Empty book,books].',
 			req:{'Bookcrafting':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};
 		G.getDict('artisan').effects.push({type:'convert',from:{'Paper':30,'hide':1},into:{'Empty book':1},every:7,mode:'Craftbook'});
 	//Kilns will be able to make glass out of sand
@@ -3978,7 +3978,7 @@ func:function(){
 			icon:[4,8],
 			desc:'Your kiln will now use sand to make a glass.',
 			req:{'Crafting a glass':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};	
 		G.getDict('kiln').effects.push({type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'Craftglass'});
 //Furnaces will be now able to smelt Cobalt, Nickel and Platinum
@@ -4011,7 +4011,7 @@ func:function(){
 			name:'Carve wooden statuettes',
 			icon:[13,1,'magixmod'],
 			desc:'Your carver will now use carve statuettes out of [log].',
-			use:{'worker':1,'knapped tools':1},
+			use:{'knapped tools':1},
 		};	
 		G.getDict('carver').effects.push({type:'convert',from:{'log':1},into:{'Wooden statuette':1,'Scobs':3},every:7,mode:'Carve wooden statuettes'});
 //Carver will be able to smash granite, diorite, andesite blocks and craft them
@@ -4019,7 +4019,7 @@ func:function(){
 			name:'Cut other stones',
 			icon:[4,12,'magixmod'],
 			desc:'Your carver will craft [cut granite] , [cut diorite] , [cut andesite] out of 9 [Granite] , [Diorite] , [Andesite] each.',
-			use:{'worker':1,'knapped tools':1},
+			use:{'knapped tools':1},
 			req:{'masonry':true},
 		};	
 		G.getDict('carver').effects.push({type:'convert',from:{'Granite':9},into:{'cut granite':1},every:5,mode:'gdablockscraft'});
@@ -4029,7 +4029,7 @@ func:function(){
 			name:'Smash other stone blocks',
 			icon:[7,12,'magixmod'],
 			desc:'Your carver will smash [cut granite] , [cut diorite] , [cut andesite] into 9 [Granite] , [Diorite] , [Andesite].',
-			use:{'worker':1,'knapped tools':1},
+			use:{'knapped tools':1},
 			req:{'masonry':true},
 		};	
 		G.getDict('carver').effects.push({type:'convert',from:{'cut granite':1},into:{'Granite':9},every:5,mode:'gdablockssmash'});
@@ -4043,7 +4043,7 @@ func:function(){
 			icon:[13,0,'magixmod'],
 			desc:'Your clothier will now weave [leather] but colored clothing.',
 			req:{'weaving':true},
-			use:{'worker':1,'stone tools':1},
+			use:{'stone tools':1},
 		};	
 		G.getDict('clothier').effects.push({type:'convert',from:{'leather':2,'Dyes':3},into:{'Colored clothing':1},every:6,mode:'Weave leather colored clothing'});
 		G.getDict('clothier').modes['Weave fiber colored clothing']={
@@ -4076,7 +4076,7 @@ func:function(){
 			icon:[13,6,'magixmod'],
 			desc:'Hunt animals with crossbows.',
 			req:{'Hunting II':true},
-			use:{'worker':1,'Crossbow':1,'Crossbow belt':150},
+			use:{'Crossbow':1,'Crossbow belt':150},
 		};
 		G.getDict('hunter').effects.push({type:'gather',context:'hunt',amount:5,max:6,mode:'Crossbow hunting'});
 //Quarry's mode
@@ -4105,7 +4105,7 @@ func:function(){
 			icon:[15,8,'magixmod'],
 			desc:'Your potter will craft [Precious pot] out of both [clay] and [mud].',
 			req:{'Precious pottery':true},
-			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':0.33},
+			use:{'knapped tools':1,'stone tools':1,'Instructor':0.33},
 		};	
 		G.getDict('potter').effects.push({type:'convert',from:{'clay':5,'mud':12,'fire pit':0.03},into:{'Precious pot':1},every:3,repeat:2,mode:'Craft precious pots'});
 		G.getDict('potter').modes['Craft potion pots']={
@@ -4113,7 +4113,7 @@ func:function(){
 			icon:[14,8,'magixmod'],
 			desc:'Your potter will craft [Potion pot] out of both [clay] and [mud]. These pots do not provide additional [food storage].',
 			req:{'Precious pottery':true},
-			use:{'worker':1,'knapped tools':1,'stone tools':1,'Instructor':0.5},
+			use:{'knapped tools':1,'stone tools':1,'Instructor':0.5},
 		};	
 		G.getDict('potter').effects.push({type:'convert',from:{'clay':4,'mud':11,'fire pit':0.025},into:{'Potion pot':1},every:3,repeat:1,mode:'Craft potion pots'});
 //4 modes for blacksmiths so they can forge armor/weapons out of soft/hard metals
@@ -4163,7 +4163,7 @@ func:function(){
 			icon:[0,2,'magixmod'],
 			desc:'Craft 2[fire pit]s with use of: 1[Fire essence],13[stick]s',
 			req:{'Wizard complex':true},
-			use:{'worker':1,'Wand':1,'knapped tools':1},
+			use:{'Wand':1,'knapped tools':1},
 		};	
 		G.getDict('firekeeper').effects.push({type:'convert',from:{'Fire essence':1,'stick':13},into:{'fire pit':5},mode:'firesfromessence'});
 //Nickel mines
@@ -4191,7 +4191,7 @@ func:function(){
 			name:'Brickhouse building',
 			icon:[5,1,'magixmod'],
 			desc:'This architect will build more useful housing like [Brick house with a silo]',
-			use:{'worker':1},
+			use:{},
 			req:{'Architects knowledge':true,'city planning':true}};
 		G.getDict('architect')
 		effects:[
@@ -4208,7 +4208,7 @@ func:function(){
 			name:'Blockhouse building',
 			icon:[9,1,'magixmod'],
 			desc:'This architect will build more advanced [housing,housing] like [Blockhouse] .',
-			use:{'worker':1},
+			use:{},
 			req:{'Architects knowledge':true,'city planning':true}},
 		G.getDict('architect')
 		effects:[
