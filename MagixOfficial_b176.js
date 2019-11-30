@@ -2761,7 +2761,7 @@ func:function(){
 		limitPer:{'population':1e5},
 		effects:[
 			{type:'gather',what:{'insight':0.3}},
-			{type:'gather',what:{'science':0.0005}},
+			{type:'gather',what:{'science':0.00005}},
 		],
 		req:{'God\'s trait #3 Science^2':true},
 		category:'discovery',
