@@ -2841,7 +2841,6 @@ func:function(){
 		icon:[17,14,'magixmod'],
 		cost:{'archaic building materials':40,'basic building materials':70},
 		use:{'Land of the Paradise':1,'Industry point':1},
-		require:{'worker':1,'stone tools':1},
 		upkeep:{'log':0.5},
 		modes:{
 			'off':G.MODE_OFF,
@@ -2950,7 +2949,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Holy essence storage',
-		desc:'@One storage allows you to store 11500 [Essence of the Holliness] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
+		desc:'@One storage allows you to store 11500 [Essence of the Holiness] more<>A simple glass shielded storage with essence faucet. It is more tall than wide so that is why it consumes only 0.8 [land].',
 		icon:[3,14,'magixmod'],
 		cost:{'basic building materials':100,'glass':200},
 		use:{'Land of the Paradise':0.8},
