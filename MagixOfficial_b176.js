@@ -3501,7 +3501,7 @@ func:function(){
 		category:'paradiseunit',
 	});
 		new G.Unit({
-		name:'Paradse blacksmith workshop',
+		name:'Paradise blacksmith workshop',
 		desc:'@forges metal goods out of ingots<>The [Paradise blacksmith workshop,Blacksmith] takes the same pride in shaping the tool that tills as they do the sword that slays.',
 		icon:[19,14,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':150},
