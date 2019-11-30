@@ -2735,7 +2735,7 @@ func:function(){
 		effects:[
 			{type:'convert',from:{'Ambrosium leaf':75,'Cloudy water':5,'Essence of the Holiness':4,'Mana':8},into:{'Ambrosium shard':1},every:4},
 		],
-		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+		req:{'Ambrosium treeplanting':true,'Paradise building':true,'Ambrosium crafting':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
