@@ -2644,7 +2644,7 @@ func:function(){
 		effects:[
 			{type:'provide res',what:{'science':2}},
 		],
-		req:{'Second portal to new world':true},
+		req:{'Second portal to new world':true,'Paradise building':true},
 	});
 		new G.Tech({
 		name:'7th complex tower',
