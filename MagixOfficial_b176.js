@@ -4095,7 +4095,7 @@ func:function(){
 			icon:[13,8,'magixmod'],
 			desc:'Catch fish with [Fishing net].',
 			req:{'Fishing II':true},
-			use:{'worker':1,'Fishing net':1},
+			use:{'Fishing net':1},
 		};
 		G.getDict('fishing').effects.push({type:'gather',context:'gather',what:{'Seafood':5},amount:5,max:6,mode:'Net fishing'});
 //2 new modes for potters. First one for precious pots, second for potion pots.
