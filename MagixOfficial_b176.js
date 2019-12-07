@@ -2207,14 +2207,13 @@ func:function(){
 		cost:{'insight':75,'faith':5},
 		req:{'well-digging':true},
 	});
-	new G.Tech({
-		name:'Firework crafting',
-		desc:'@unlocks [Archaic wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
-		icon:[0,0,'seasonal'],
-		cost:{},
-		req:{},
-		
-	});
+	//new G.Tech({
+		//name:'Firework crafting',
+		//desc:'@unlocks [Archaic wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
+		//icon:[0,0,'seasonal'],
+		//cost:{},
+		//req:{},
+	//});
 //New tech to allow wizards progressing
 		new G.Tech({
 		name:'Mana brewery',
