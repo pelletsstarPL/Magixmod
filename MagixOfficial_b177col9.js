@@ -4297,7 +4297,7 @@ func:function(){
 	);
 	//
 	G.knowCategories.push(
-			{id:'gods',name:'God\'s traits'}
+			{id:'gods',name:'<span style="color: #FFD700">God\'s traits</span>'}
 	);
 	G.contextNames['flowers']='Flowers';
 		new G.Goods({
