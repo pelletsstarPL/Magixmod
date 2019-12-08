@@ -2193,7 +2193,7 @@ func:function(){
 		req:{'Second portal to new world':true,'Paradise building':true},
 	});
 		new G.Trait({
-		name:'Culture of celebration',
+		name:'<span style="color: yellow">Culture of celebration</span>',
 		desc:'Unlocks seasonal content. <b><span style="color: aqua">Seasonal content is a content available for some time like Christmas content. This one will be available in second half December of course. Currently added events: Xmas, New year eve, halloween, Valentine day.</span></b>',
 		icon:[18,15,'magixmod'],
 		cost:{'insight':10,'culture':40},
