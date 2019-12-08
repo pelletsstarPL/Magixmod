@@ -1198,6 +1198,28 @@ func:function(){
 		},
 		category:'misc',
 	});
+		new G.Res({
+		name:'Sulfur',
+		desc:'Thing used to craft pyromaniacs\' toys. It is gonna be nice show.',
+		icon:[17,15,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0075;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+		new G.Res({
+		name:'Light explosives',
+		desc:'Dangerous and useful. May be use to break wall or in mining. This second one is dangerous so be careful. Light explosives are these which has small power of explosion. There are some excepts.',
+		icon:[19,15,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.009;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
 //But books has to be stored somewhere right?
 	new G.Res({
 		name:'book storage',
@@ -2164,11 +2186,19 @@ func:function(){
 		new G.Trait({
 		name:'Treeplanting',
 		desc:'May begin the orchards existence.',
-		icon:[6,1,8,12],
+		icon:[8,12,6,1],
 		cost:{'insight':250,'wisdom':15},
 		chance:100,
 		category:'knowledge',
 		req:{'Second portal to new world':true,'Paradise building':true},
+	});
+		new G.Trait({
+		name:'Culture of celebration',
+		desc:'Unlocks seasonal content. <b><span style="color: aqua">Seasonal content is a content available for some time like Christmas content. This one will be available in second half December of course. Currently added events: Xmas, New year eve, halloween, Valentine day.</span></b>',
+		icon:[18,15,'magixmod'],
+		cost:{'insight':10,'culture':40},
+		chance:100,
+		req:{'artistic thinking':true},
 	});
 	//God's traits
 		new G.Trait({
@@ -2190,7 +2220,7 @@ func:function(){
 		category:'gods',
 	});
 		new G.Trait({
-		name:'God\'s trait #3 Science^2',
+		name:'God\'s trait #3 Science<sup>2</sup>',
 		desc:'You can hire a [Guru] who will gather [insight] & [science].',
 		icon:[21,12,'magixmod'],
 		cost:{},
@@ -4694,4 +4724,6 @@ G.writeMSettingButton=function(obj)
 			//}
 		//}
 		//return lvl; //*
+	
+	//SEASONAL CONTENT//CONTENT WHICH WILL BE AVAILABLE FOR PLAYERS AT SOME TIME LIKE XMAS OR VALENTINE'S DAY
 }});
