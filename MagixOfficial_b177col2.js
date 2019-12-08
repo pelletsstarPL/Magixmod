@@ -2220,6 +2220,15 @@ func:function(){
 		category:'gods',
 	});
 		new G.Trait({
+		name:'God\'s trait #3 Science^2',
+		desc:'You can hire a [Guru] who will gather [insight] & [science].',
+		icon:[21,12,'magixmod'],
+		cost:{},
+		chance:275,
+		req:{'The God\'s call':true,'7th essence':true},
+		category:'gods',
+	});
+		new G.Trait({
 		name:'God\'s trait #3 Science<sup>2</sup>',
 		desc:'You can hire a [Guru] who will gather [insight] & [science].',
 		icon:[21,12,'magixmod'],
