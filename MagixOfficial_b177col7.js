@@ -2110,7 +2110,7 @@ func:function(){
 		cost:{'culture':5,'wisdom':25},
 		chance:3,
 		category:'knowledge',
-		req:{'Plain island building':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Trait({
 		name:'Juicy expertise',
@@ -2190,7 +2190,7 @@ func:function(){
 		cost:{'insight':250,'wisdom':15},
 		chance:100,
 		category:'knowledge',
-		req:{'Second portal to new world':true,'Paradise building':true},
+		req:{'Second portal to new world':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Trait({
 		name:'<span style="color: yellow">Culture of celebration</span>',
@@ -2341,7 +2341,7 @@ func:function(){
 		desc:'Allows your people to build [Blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
 		icon:[8,1,'magixmod'], 
 		cost:{'insight':65},
-		req:{'Plain island portal':true,'<span style="color: ##FF0900">Plain island building</span>':true,'Plain island building':true},
+		req:{'Plain island portal':true,'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Tech({
 		name:'Burial in new world',
