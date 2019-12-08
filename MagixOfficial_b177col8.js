@@ -3514,7 +3514,7 @@ func:function(){
 		effects:[
 			{type:'provide',what:{'Alchemy zone':25}},
 		],
-		req:{'Beginnings of alchemy':true,'Terrain conservacy':true,'Paradise building':true},
+		req:{'Beginnings of alchemy':true,'Terrain conservacy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		category:'alchemy',
 	});
 	new G.Unit({
