@@ -3006,7 +3006,7 @@ func:function(){
 			{type:'gather',what:{'Cloudy water':28}},
 		],
 		category:'paradiseunit',
-		req:{'well-digging':true,'Paradise building':true},
+		req:{'well-digging':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		limitPer:{'land':10},
 	});
 	
