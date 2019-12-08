@@ -2139,7 +2139,7 @@ func:function(){
 		req:{'healing':true,'Will to know more':true},
 	});
 		new G.Trait({
-		name:'Revenants',//InDevelopment
+		name:'<span style="color: red">Revenants</span>',//InDevelopment
 		desc:'The dark powers got mad that your people are using [corpse,corpses] as a toy or ritual thing. Since now some of them will come back to live but they will behave like zombie. Do not worry they won\'t replicate. You will need to defend your people against them. Each one will harm your [happiness] and kill your [population,people]. ',
 		icon:[19,0,'magixmod'],
 		cost:{'insight':50,'corpse':500},
@@ -2228,16 +2228,6 @@ func:function(){
 		req:{'The God\'s call':true,'7th essence':true},
 		category:'gods',
 	});
-		new G.Trait({
-		name:'God\'s trait #3 Science<sup>2</sup>',
-		desc:'You can hire a [Guru] who will gather [insight] & [science].',
-		icon:[21,12,'magixmod'],
-		cost:{},
-		chance:275,
-		req:{'The God\'s call':true,'7th essence':true},
-		category:'gods',
-	});
-	
 //Then we add a new technology for wizards:
 	new G.Tech({
 		name:'Wizardry',
@@ -2298,7 +2288,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'First portal to new world',
-		desc:'Your wizards discovered way to make a portal and now they plan to open a new dimension. What would it mean? It means, more place to build, more housing, more everything!',
+		desc:'<span style="color: #00A012">Your wizards discovered way to make a portal and now they plan to open a new dimension. What would it mean? It means, more place to build, more housing, more everything!</span>',
 		icon:[2,1,'magixmod'], //WIP
 		cost:{'insight':1400,'culture':30,'Mana':2500,'influence':70},
 		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true},
@@ -2319,7 +2309,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Essence storages',
-		desc:'Essence has to be stored somewhere. So do not wait and build!',
+		desc:'<span style="color: #FF00FF">Essence has to be stored somewhere. So do not wait and build!</span>',
 		icon:[5,0,'magixmod'], //WIP
 		cost:{'insight':100,'Mana':317,'faith':8,'Wand':260},
 		effects:[
@@ -2340,8 +2330,8 @@ func:function(){
 		req:{'masonry':true,'smelting':true,'Crafting a glass':true},
 	});
 		new G.Tech({
-		name:'Plain island building',
-		desc:'Unlocks sheet of buildings which can be only built in new dimension.',
+		name:'<span style="color: ##FF0900">Plain island building</span>',
+		desc:'<span style="color: ##FF0900">Unlocks sheet of buildings which can be only built in new dimension.</span>',
 		icon:[9,0,'magixmod'], 
 		cost:{'insight':4,'Plain Island emblem':1},
 		req:{'Plain island portal':true},
@@ -2351,14 +2341,14 @@ func:function(){
 		desc:'Allows your people to build [Blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
 		icon:[8,1,'magixmod'], 
 		cost:{'insight':65},
-		req:{'Plain island portal':true,'Plain island building':true,'Plain island building':true},
+		req:{'Plain island portal':true,'<span style="color: ##FF0900">Plain island building</span>':true,'Plain island building':true},
 	});
 		new G.Tech({
 		name:'Burial in new world',
 		desc:'Provides even better use of the Plain Island. You may build now few cemetries which consume much more [Land of the Plain Island], but they can store more corpses.',
 		icon:[1,6,'magixmod'], 
 		cost:{'insight':65},
-		req:{'Plain island portal':true,'Plain island building':true},
+		req:{'Plain island portal':true,'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Tech({
 		name:'Sewing II',
@@ -2469,28 +2459,28 @@ func:function(){
 			{type:'provide res',what:{'education':0.6}},
 			{type:'provide res',what:{'science':1}},
 		],
-		req:{'oral tradition':true,'Intermediate maths':true,'Plain island building':true},
+		req:{'oral tradition':true,'Intermediate maths':true,'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Tech({
 		name:'Ink crafting',
 		desc:'Now [artisan] will be able to craft [Ink]. Ink will be used by [Poet] later. You can craft ink choosing new working mode for [artisan].',
 		icon:[18,7,'magixmod'],
 		cost:{'insight':335},
-		req:{'Plain island building':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Tech({
 		name:'Poetry',
 		desc:'Beautiful art of culture. Poems, stories, essays, novels and many more.',
 		icon:[18,8,'magixmod'],
 		cost:{'insight':650,'culture':300,'inspiration':25},
-		req:{'Plain island building':true,'Ink crafting':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true,'Ink crafting':true},
 	});
 		new G.Tech({
 		name:'Moar juices',
 		desc:'Allows you to craft juice out of [fruit]s.',
 		icon:[17,4,'magixmod'],
 		cost:{'insight':950},
-		req:{'Plain island building':true,'Crafting a juice':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true,'Crafting a juice':true},
 	});
 		new G.Tech({
 		name:'Medicaments brewing',
@@ -2652,8 +2642,8 @@ func:function(){
 		req:{'Mana brewery':true,'More useful housing':true,'Wizardry':true,'Wizard wisdom':true,'Wizard complex':true,'Belief in portals':true,'First portal to new world':true,'The God\'s call':true,'monument-building II':true},
 	});
 		new G.Tech({
-		name:'Paradise building',
-		desc:'Unlocks sheet of buildings which can be only built in newly opened <b>Paradise</b>.',
+		name:'<span style="color: ##FF0900">Paradise building</span>',
+		desc:'<span style="color: ##FF0900">Unlocks sheet of buildings which can be only built in newly opened <b>Paradise</b>.</span>',
 		icon:[19,13,'magixmod'], 
 		cost:{'insight':4,'Paradise emblem':1},
 		effects:[
@@ -2690,7 +2680,7 @@ func:function(){
 		effects:[
 			{type:'provide res',what:{'science':2}},
 		],
-		req:{'Second portal to new world':true,'Paradise building':true},
+		req:{'Second portal to new world':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'7th complex tower',
@@ -2739,21 +2729,21 @@ func:function(){
 		desc:'@Unlocks [Holy orchard] from which you can get [Ambrosium leaf,Ambrosium leaves] .',
 		icon:[21,11,'magixmod'], 
 		cost:{'insight':1015},
-		req:{'Paradise building':true,'Land acknowledge':true,'Treeplanting':true},
+		req:{'<span style="color: ##FF0900">Paradise building</span>':true,'Land acknowledge':true,'Treeplanting':true},
 	});
 		new G.Tech({
 		name:'Ambrosium crafting',
 		desc:'@Unlocks [Ambrosium shard shack] which can craft [Ambrosium shard]s with use of [Mana] , [Cloudy water] & [Ambrosium leaf,Ambrosium leaves] of course.',
 		icon:[13,14,'magixmod'], 
 		cost:{'insight':980},
-		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'Paradise crafting',
 		desc:'@Some buildings / crafting shacks from mortal world can be built in Paradise as a separated unit.',
 		icon:[0,14,'magixmod',21,15,'magixmod'], 
 		cost:{'insight':650},
-		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
@@ -2768,7 +2758,7 @@ func:function(){
 		effects:[
 			{type:'gather',what:{'Ambrosium leaf':40}},
 		],
-		req:{'Ambrosium treeplanting':true,'Paradise building':true},
+		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
@@ -2781,7 +2771,7 @@ func:function(){
 		effects:[
 			{type:'convert',from:{'Ambrosium leaf':75,'Cloudy water':5,'Essence of the Holiness':4,'Mana':8},into:{'Ambrosium shard':1},every:4},
 		],
-		req:{'Ambrosium treeplanting':true,'Paradise building':true,'Ambrosium crafting':true},
+		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true,'Ambrosium crafting':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
@@ -2795,7 +2785,7 @@ func:function(){
 			{type:'provide',what:{'added material storage':6000}},
 			{type:'waste',chance:0.001/1000}
 		],
-		req:{'stockpiling':true,'construction':true,'Paradise building':true},
+		req:{'stockpiling':true,'construction':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
@@ -2824,7 +2814,7 @@ func:function(){
 			{type:'provide',what:{'food storage':3000}},
 			{type:'waste',chance:0.001/1000}
 		],
-		req:{'stockpiling':true,'construction':true,'Paradise building':true},
+		req:{'stockpiling':true,'construction':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
@@ -2898,7 +2888,7 @@ func:function(){
 			{type:'convert',from:{'sand':8},into:{'glass':2},every:5,mode:'glass'},
 		],
 		gizmos:true,
-		req:{'masonry':true,'Paradise building':true,'Paradise crafting':true},
+		req:{'masonry':true,'<span style="color: ##FF0900">Paradise building</span>':true,'Paradise crafting':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
@@ -3003,7 +2993,7 @@ func:function(){
 			{type:'provide',what:{'holy essence limit':11500}},
 			{type:'waste',chance:1/100000}
 		],
-		req:{'stockpiling':true,'building':true,'Essence storages':true,'Paradise building':true,'7th essence':true},
+		req:{'stockpiling':true,'building':true,'Essence storages':true,'<span style="color: ##FF0900">Paradise building</span>':true,'7th essence':true},
 		category:'storage',
 	});
 		new G.Unit({
@@ -3405,7 +3395,7 @@ func:function(){
 		icon:[9,2,'magixmod'],
 		cost:{'basic building materials':100},
 		use:{'Land of the Plain Island':5},
-		req:{'Plain island building':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true},
 		gizmos:true,
 		modes:{
 			'off':G.MODE_OFF,
@@ -3435,7 +3425,7 @@ func:function(){
 		effects:[
 			{type:'provide',what:{'burial spot':7500}},
 		],
-		req:{'Plain island building':true,'Burial in new world':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true,'Burial in new world':true},
 		category:'plainisleunit',
 		limitPer:{'land':400},
 	});
@@ -3448,7 +3438,7 @@ func:function(){
 		effects:[
 			{type:'provide',what:{'burial spot':100}},
 		],
-		req:{'Plain island building':true,'Burial in new world':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true,'Burial in new world':true},
 		category:'plainisleunit',
 		limitPer:{'land':40},
 	});
@@ -3461,7 +3451,7 @@ func:function(){
 		effects:[
 			{type:'provide',what:{'burial spot':1}},
 		],
-		req:{'Plain island building':true,'Burial in new world':true},
+		req:{'<span style="color: ##FF0900">Plain island building</span>':true,'Burial in new world':true},
 		category:'plainisleunit',
 	});
 		new G.Unit({
@@ -3474,7 +3464,7 @@ func:function(){
 			{type:'gather',what:{'water':20}},
 		],
 		category:'plainisleunit',
-		req:{'well-digging':true,'First portal to new world':true,'Plain island building':true},
+		req:{'well-digging':true,'First portal to new world':true,'<span style="color: ##FF0900">Plain island building</span>':true},
 		limitPer:{'Land of the Plain Island':10},
 	});
 		new G.Unit({
@@ -3532,7 +3522,7 @@ func:function(){
 		desc:'@processes wood<>The [carpenter workshop,Carpenter] is equipped with all kinds of tools to coerce wood into more useful shapes. Can do little more than its mortal brother.',
 		icon:[16,14,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':150},
-		use:{'land':1,'Industry point':1},
+		use:{'Land of the Paradise':1,'Industry point':1},
 		modes:{
 			'off':G.MODE_OFF,
 			'lumber':{name:'Cut logs into lumber',icon:[1,8],desc:'Cut [log]s into 3 [lumber] each.',use:{'worker':1,'stone tools':1},req:{}},
@@ -3550,7 +3540,7 @@ func:function(){
 		desc:'@forges metal goods out of ingots<>The [Paradise blacksmith workshop,Blacksmith] takes the same pride in shaping the tool that tills as they do the sword that slays.',
 		icon:[19,14,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':150},
-		use:{'land':1,'Industry point':1},
+		use:{'Land of the Paradise':1,'Industry point':1},
 		modes:{
 			'off':G.MODE_OFF,
 			'metal tools':{name:'Forge tools from soft metals',icon:[2,9],desc:'Forge [metal tools] out of 2 [soft metal ingot]s each.',use:{'worker':1,'stone tools':1},req:{}},
