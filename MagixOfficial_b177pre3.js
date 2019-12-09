@@ -2766,7 +2766,7 @@ func:function(){
 		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] . @<span style="color: ##FF6B40">It is paradise version of this shack and works at same rates as its mortal bro.</span>',
 		icon:[0,12,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':800},
-		use:{'land':0.7},
+		use:{'Land of the Paradise':0.7,'Industry point':0.05},
 		gizmos:true,
 		modes:{
 			'off':G.MODE_OFF,
@@ -2782,7 +2782,7 @@ func:function(){
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 		req:{'papercrafting':true},
-		category:'crafting',
+		category:'paradiseunit',
 	});
 		new G.Unit({
 		name:'Pyro-Artisan',
@@ -3899,7 +3899,7 @@ func:function(){
 	});
 //New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
 		new G.Unit({
-    		name:'Plain island portal',
+    		name:'<span style="color: #E0CE00">Plain island portal</span>',
     		desc:'@opens a portal to a huge <b>Plain Island</b>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
     		wideIcon:[7,3,'magixmod'],
     		cost:{'precious building materials':5000,'insight':1500,'faith':100,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750},
@@ -3914,7 +3914,7 @@ func:function(){
     		category:'dimensions',
 	});
 		new G.Unit({
-    		name:'Portal to the Paradise',
+    		name:'<span style="color: #E0CE00">Portal to the Paradise</span>',
     		desc:'@opens a portal to a huge <b>God\'s Paradise</b>A very hard project, allowed by God.//A Dream to see Paradise, angels and much, much more comes real. You will grant +26500 paradise land at your own but you <b>must</b> follow some of God\'s rules.',
     		wideIcon:[7,4,'magixmod'],
     		cost:{'precious building materials':35000,'insight':1500,'faith':250,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750,'precious metal ingot':1e4},
