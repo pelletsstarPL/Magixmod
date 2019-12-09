@@ -2105,7 +2105,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Will to know more',
-		desc:'<span style="color: #e7ffff">@After opening a portal to Plain Island people started to become more curious. @Curiosity has gotten even stronger with this trait</span>',
+		desc:'<span style="color: #aaffff">@After opening a portal to Plain Island people started to become more curious. @Curiosity has gotten even stronger with this trait</span>',
 		icon:[8,12,8,5],
 		cost:{'culture':5,'wisdom':25},
 		chance:3,
@@ -2114,7 +2114,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Juicy expertise',
-		desc:'<span style="color: #e7ffff">After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft. @[artisan of juice] has a small chance to craft 1 additional [Juices,juice].</span>',
+		desc:'<span style="color: #aaffff">After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft. @[artisan of juice] has a small chance to craft 1 additional [Juices,juice].</span>',
 		icon:[16,5,'magixmod'],
 		cost:{'Juices':6.5e3,'wisdom':25,'insight':30},
 		chance:6,//experimental
@@ -2131,7 +2131,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'More healing ways',
-		desc:'<span style="color: #e7ffff">Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [first aid], which will be obtainable in later stage of legacy.</span>',
+		desc:'<span style="color: #aaffff">Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [first aid], which will be obtainable in later stage of legacy.</span>',
 		icon:[8,12,3,5],
 		cost:{'insight':50},
 		chance:120,
@@ -2140,7 +2140,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'<span style="color: red">Revenants</span>',//InDevelopment
-		desc:'The dark powers got mad that your people are using [corpse,corpses] as a toy or ritual thing. Since now some of them will come back to live but they will behave like zombie. Do not worry they won\'t replicate. You will need to defend your people against them. Each one will harm your [happiness] and kill your [population,people]. ',
+		desc:'<span style="color: #E13700">The dark powers got mad that your people are using [corpse,corpses] as a toy or ritual thing. Since now some of them will come back to live but they will behave like zombie. Do not worry they won\'t replicate. You will need to defend your people against them. Each one will harm your [happiness] and kill your [population,people]. ',
 		icon:[19,0,'magixmod'],
 		cost:{'insight':50,'corpse':500},
 		chance:500,
@@ -2185,7 +2185,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Treeplanting',
-		desc:'<span style="color: #e7ffff">May begin the orchards existence.</span>',
+		desc:'<span style="color: #aaffff">May begin the orchards existence.</span>',
 		icon:[8,12,6,1],
 		cost:{'insight':250,'wisdom':15},
 		chance:100,
