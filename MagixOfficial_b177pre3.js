@@ -2781,7 +2781,7 @@ func:function(){
 			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
-		req:{'papercrafting':true},
+		req:{'papercrafting':true,'Paradise crafting':true},
 		category:'paradiseunit',
 	});
 		new G.Unit({
