@@ -2354,21 +2354,21 @@ func:function(){
 		name:'Sewing II',
 		desc:'Upgrades sewing skills of your civilization. @Unlocks <b>Drying racks<b> to make [Dried leather] used to craft better quality clothing. @Now artisans can sew [Fishing net] and craft [Thread].',
 		icon:[13,5,'magixmod'], 
-		cost:{'insight':360,'wisdom':10},
+		cost:{'insight':380,'wisdom':10},
 		req:{'Wizardry':true,'sewing':true,},
 	});
 		new G.Tech({
 		name:'Hunting II',
 		desc:'Upgrades hunting skills of your civilization. @Unlocks way to craft [Crossbow] - new weapon. Artisans can now craft [bow] & [Crossbow] and [Crossbow belt] in <b>Craft bows<b> mode.',
 		icon:[15,0,'magixmod'], 
-		cost:{'insight':350,'wisdom':10},
+		cost:{'insight':385,'wisdom':10},
 		req:{'Wizardry':true,'hunting':true,},
 	});
 		new G.Tech({
 		name:'Fishing II',
 		desc:'Upgrades fishing skills of your civilization. @Makes [Fishing net] introduced into common use.',
 		icon:[8,12,25,1], 
-		cost:{'insight':350,'wisdom':10},
+		cost:{'insight':385,'wisdom':10},
 		req:{'Wizardry':true,'fishing':true,},
 	});
 		new G.Tech({
