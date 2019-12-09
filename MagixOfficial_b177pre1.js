@@ -1211,7 +1211,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Light explosives',
-		desc:'Dangerous and useful. May be use to break wall or in mining. This second one is dangerous so be careful. Light explosives are these which has small power of explosion. There are some excepts.',
+		desc:'Dangerous and useful. May be use to break wall or in mining. This second one is dangerous so be careful. Light explosives are these which has small power of explosion <b><span style="color: #e7ffff">but they are still dangerous for human.</span></b> There are some excepts.',
 		icon:[19,15,'magixmod'],
 		tick:function(me,tick)
 		{
@@ -2105,7 +2105,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Will to know more',
-		desc:'@After opening a portal to Plain Island people started to become more curious. @Curiosity has gotten even stronger with this trait',
+		desc:'<span style="color: #e7ffff">@After opening a portal to Plain Island people started to become more curious. @Curiosity has gotten even stronger with this trait</span>',
 		icon:[8,12,8,5],
 		cost:{'culture':5,'wisdom':25},
 		chance:3,
@@ -2114,7 +2114,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Juicy expertise',
-		desc:'After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft. @[artisan of juice] has a small chance to craft 1 additional [Juices,juice].',
+		desc:'<span style="color: #e7ffff">After few years since you started crafting [Juices] you noticed your people make most <b>tasty juice<b> ever you drank. Since gaining this trait you\'ll get these bonuses: @Happiness caused by drinking juices boosted by 25%. @Health given by drinking juices boosted by 25%. @Due to these bonuses [Juices] will now need little bit more ingredients to craft. @[artisan of juice] has a small chance to craft 1 additional [Juices,juice].</span>',
 		icon:[16,5,'magixmod'],
 		cost:{'Juices':6.5e3,'wisdom':25,'insight':30},
 		chance:6,//experimental
@@ -2131,7 +2131,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'More healing ways',
-		desc:'Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [first aid], which will be obtainable in later stage of legacy.',
+		desc:'<span style="color: #e7ffff">Since moment you got able to hire [healer] your dreamers started thinking how to boost healing and decrease amount of failed healing attempts. @This trait unlocks you [first aid], which will be obtainable in later stage of legacy.</span>',
 		icon:[8,12,3,5],
 		cost:{'insight':50},
 		chance:120,
@@ -2185,7 +2185,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Treeplanting',
-		desc:'May begin the orchards existence.',
+		desc:'<span style="color: #e7ffff">May begin the orchards existence.</span>',
 		icon:[8,12,6,1],
 		cost:{'insight':250,'wisdom':15},
 		chance:100,
@@ -2745,8 +2745,65 @@ func:function(){
 		cost:{'insight':650},
 		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
+		new G.Tech({
+		name:'Explosive crafting & mining',
+		desc:'Unlocks [Explosive mine] <b>( not at all, needs [Intelligent blasting] )</b> . You think it is joke but you will quickly get into big mistake. @Unlocks [Pyro-Artisan] (artisan for explosives, which requires mostly [Sulfur] for explosion power).',
+		icon:[20,15,'magixmod'], 
+		cost:{'insight':850,'wisdom':10},
+		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
+	});
+		new G.Tech({
+		name:'Intelligent blasting',
+		desc:'Unlocks [Explosive mine] . WIth explosives supplies now miners will be able to... Blast underground. However these mines cannot be [prospecting,prospected] so they may be turned on/off . These mines have bigger rate of accidents than other ones which do not use explosives to mine undeground.',
+		icon:[14,15,'magixmod'], 
+		cost:{'insight':850,'science':1,'wisdom':9},
+		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+		new G.Unit({
+		name:'paper-crafting shack',
+		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] . @<span style="color: ##FF6B40">It is paradise version of this shack and works at same rates as its mortal bro.</span>',
+		icon:[0,12,'magixmod',20,14,'magixmod'],
+		cost:{'basic building materials':800},
+		use:{'land':0.7},
+		gizmos:true,
+		modes:{
+			'off':G.MODE_OFF,
+			'papyrus':{name:'Papyrus',icon:[15,12,'magixmod'],desc:'Gain mainly [papyrus] out of this shack. To craft [papyrus] , [worker] will use [Sugar cane] .',use:{'worker':1,'stone tools':1}},
+			'pergamin':{name:'Pergamin',icon:[16,12,'magixmod'],desc:'Gain mainly [pergamin] out of this shack. To craft [pergamin] , [worker] will use [hide] or [leather] .',use:{'worker':1,'stone tools':1}},
+			'commonpaper':{name:'Common paper',icon:[17,12,'magixmod'],desc:'Craft [common paper] out of [Bamboo] with help of secret non-magic recipe.',use:{'worker':1,'stone tools':1}},
+		},
+		effects:[
+			{type:'convert',from:{'Sugar cane':3.4},into:{'papyrus':1.5},every:1,mode:'papyrus'},
+			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
+		],
+		req:{'papercrafting':true},
+		category:'crafting',
+	});
+		new G.Unit({
+		name:'Pyro-Artisan',
+		desc:'@This subclass of [artisan] can craft explosives. In default he will craft [Light explosives]. Deliver a lot of [Sulfur] to this guy... without it how is he supposed to craft TNT or other <b>boomer</b> ?',
+		icon:[15,15,'magixmod'],
+		cost:{},
+		use:{},
+		gizmos:true,
+		modes:{
+			'explosivesS':{name:'Craft light explosives',icon:[19,15,'magixmod'],desc:'This [Pyro-Artisan] will craft some [Light explosives] with use of [Paper] , [Sulfur] , [Thread]',use:{'worker':1}},
+			//Medium explosives COMING SOON
+			//Essenced explosives COMING LATER
+			//Vortex TNT COMING EVEN LATER
+			//Nuke NEVER, EVER COMING NOT SOON AND NOT LATE
+		},
+		effects:[
+			{type:'convert',from:{'Sulfur':3,'Paper':2,'Thread':3},into:{'Light explosives':1},every:1,repeat:2,mode:'sugar'},
+		],
+		req:{'Explosive crafting & mining':true},
+		category:'crafting',
+	});
 		new G.Unit({
 		name:'Holy orchard',
 		desc:'An orchard with planted trees with ambrosium leaves which are most common type of trees in new world. Gathers falling [Ambrosium leaf,Ambrosium leaves]<>',
@@ -3056,10 +3113,10 @@ func:function(){
 			'commonpaper':{name:'Common paper',icon:[17,12,'magixmod'],desc:'Craft [common paper] out of [Bamboo] with help of secret non-magic recipe.',use:{'worker':1,'stone tools':1}},
 		},
 		effects:[
-			{type:'convert',from:{'Sugar cane':3.25},into:{'papyrus':1.3},every:1,mode:'papyrus'},
-			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.05},every:4,mode:'pergamin'},
-			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.05},every:4,mode:'pergamin'},
-			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.3},every:2,mode:'commonpaper'},
+			{type:'convert',from:{'Sugar cane':3.4},into:{'papyrus':1.5},every:1,mode:'papyrus'},
+			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 		req:{'papercrafting':true},
