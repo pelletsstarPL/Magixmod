@@ -3470,11 +3470,11 @@ func:function(){
 			{type:'gather',context:'mine',what:{'tin ore':25},max:30,mode:'tin'},
 			{type:'gather',context:'mine',what:{'iron ore':25},max:30,mode:'iron'},
 			//Sulfur
-			{type:'gather',context:'mine',what:{'Sulfur':25},max:30,mode:'iron',req:'Explosive crafting & mining':true},
-			{type:'gather',context:'mine',what:{'Sulfur':28},max:37,mode:'cobalt',req:'Explosive crafting & mining':true},
-			{type:'gather',context:'mine',what:{'Sulfur':24},max:31,mode:'tin',req:'Explosive crafting & mining':true},
-			{type:'gather',context:'mine',what:{'Sulfur':24},max:31,mode:'copper',req:'Explosive crafting & mining':true},
-			{type:'gather',context:'mine',what:{'Sulfur':17},max:26,mode:'salt',req:'Explosive crafting & mining':true},
+			{type:'gather',context:'mine',what:{'Sulfur':25},max:30,mode:'iron',req:{'Explosive crafting & mining':true}},
+			{type:'gather',context:'mine',what:{'Sulfur':28},max:37,mode:'cobalt',req:{'Explosive crafting & mining':true}},
+			{type:'gather',context:'mine',what:{'Sulfur':24},max:31,mode:'tin',req:{'Explosive crafting & mining':true}},
+			{type:'gather',context:'mine',what:{'Sulfur':24},max:31,mode:'copper',req:{'Explosive crafting & mining':true}},
+			{type:'gather',context:'mine',what:{'Sulfur':17},max:26,mode:'salt',req:{'Explosive crafting & mining':true}},
 		],
 		category:'plainisleunit',
 		limitPer:{'land':35},
@@ -4554,14 +4554,14 @@ func:function(){
 		G.getDict('mud shelter').effects.push({type:'provide',what:{'housing':1},req:{'God\'s trait #1 Housing':true}});
 		G.getDict('branch shelter').effects.push({type:'provide',what:{'housing':1},req:{'God\'s trait #1 Housing':true}});
 //Mortal mine sulfur gains
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':17},max:31,mode:'salt',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':26},max:28,mode:'gold',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':25},max:31,mode:'ostones',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':26},max:28,mode:'iron',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':26},max:28,mode:'nickel',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':24},max:28,mode:'tin',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':1},max:3,mode:'coal',req:'Explosive crafting & mining':true});
-		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':38},max:52,mode:'any',req:'Explosive crafting & mining':true});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':17},max:31,mode:'salt',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':26},max:28,mode:'gold',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':25},max:31,mode:'ostones',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':26},max:28,mode:'iron',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':26},max:28,mode:'nickel',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':24},max:28,mode:'tin',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':1},max:3,mode:'coal',req:{'Explosive crafting & mining':true}});
+		G.getDict('mine').effects.push({type:'gather',context:'mine',what:{'Sulfur':38},max:52,mode:'any',req:{'Explosive crafting & mining':true}});
 ////////////////////////////////////////////
 //Fixes copied out of heritage mod
 	G.fixTooltipIcons=function()
