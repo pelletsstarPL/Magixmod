@@ -2763,7 +2763,7 @@ func:function(){
 	//UNITS
 		new G.Unit({
 		name:'paper-crafting shack',
-		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] . @<span style="color: ##FF6B40">It is paradise version of this shack and works at same rates as its mortal bro.</span>',
+		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] . <span style="color: ##FF6B40">It is paradise version of this shack and works at same rates as its mortal bro.</span>',
 		icon:[0,12,'magixmod',20,14,'magixmod'],
 		cost:{'basic building materials':800},
 		use:{'Land of the Paradise':0.7,'Industry point':0.05},
