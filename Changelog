@@ -10,6 +10,15 @@
                                                      ✚          ✚     •       •        ✚✚✚✚✚✚✚              ✦            ✚       ✚
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
+10 XII 2019
+Gotta blast underground!
+-> Explosive mines added to the game
+   >>Explosive mines uses TNT(light explosives) gathers more, has bigger upkeep but has bigger chance to waste/collapse wounding their miners.
+-> Since some research each mode of mine / plain island mine allows to gather Sulfur used to craft currently Light explosives.
+-> Light explosives are used to make Explosive mine work
+-> Added third type of artisan
+-> Figured out text coloring so that means that trait names , descriptions of units, technologies, traits can be coloured in all >12 Million colours (RGB)
+   >>So some description and unit names etc. gained colours
 28 XI 2019
 Paradise constructions part 2 and last one of this update
 -> Constructions which can only be built in Paradise at the cost of Industry Points.
