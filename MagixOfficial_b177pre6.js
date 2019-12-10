@@ -2334,7 +2334,7 @@ func:function(){
 		desc:'<span style="color: ##FF0900">Unlocks sheet of buildings which can be only built in new dimension.</span>',
 		icon:[9,0,'magixmod'], 
 		cost:{'insight':4,'Plain Island emblem':1},
-		req:{'Plain island portal':true},
+		req:{'<span style="color: #E0CE00">Plain island portal</span>':true},
 	});
 		new G.Tech({
 		name:'construction II',
