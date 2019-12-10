@@ -2770,11 +2770,11 @@ func:function(){
 		upkeep:{'fire pit':0.1,'Light explosives':4,'Thread':8,'Sulfur':1},
 		modes:{
 			'off':G.MODE_OFF,
-			'on':{name:'Active',icon:[8,8],desc:'Mine without focusing on specific ores.',use:{'worker':3,'stone tools':3}},
+			'on':{name:'Active',icon:[8,8],desc:'<span style="color: ##FFa000">Mining with explosives will be activated.</span>',use:{'worker':3,'stone tools':3}},
 		},
 		effects:[
-			{type:'gather',context:'mine',amount:28,max:75,mode:'any'},
-			{type:'function',func:unitGetsConverted({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners. <b>Sadly :(</b>'),chance:7/50}
+			{type:'gather',context:'mine',amount:28,max:84,mode:'any'},
+			{type:'function',func:{unitGetsConverted}({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners. <b>Sadly :[</b>'),chance:7/50}
 		],
 		gizmos:true,
 		req:{'mining':true,'Intelligent blasting':true},
