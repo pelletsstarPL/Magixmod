@@ -2747,14 +2747,14 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Explosive crafting & mining',
-		desc:'Unlocks [Explosive mine] <b>( not at all, needs [Intelligent blasting] )</b> . You think it is joke but you will quickly get into big mistake. @Unlocks [Pyro-Artisan] (artisan for explosives, which requires mostly [Sulfur] for explosion power). Mines will start gathering some [Sulfur] at <b>any</> of modes chosen. Both [mine] and [Mine of Plain Island] can gather it.',
+		desc:'Unlocks [explosive mine] <b>( not at all, needs [Intelligent blasting] )</b> . You think it is joke but you will quickly get into big mistake. @Unlocks [Pyro-Artisan] (artisan for explosives, which requires mostly [Sulfur] for explosion power). Mines will start gathering some [Sulfur] at <b>any</> of modes chosen. Both [mine] and [Mine of the plain island] can gather it.',
 		icon:[20,15,'magixmod'], 
 		cost:{'insight':850,'wisdom':10},
 		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'Intelligent blasting',
-		desc:'Unlocks [Explosive mine] . WIth explosives supplies now miners will be able to... Blast underground. However these mines cannot be [prospecting,prospected] so they may be turned on/off . These mines have bigger rate of accidents than other ones which do not use explosives to mine undeground.',
+		desc:'Unlocks [explosive mine] . WIth explosives supplies now miners will be able to... Blast underground. However these mines cannot be [prospecting,prospected] so they may be turned on/off . These mines have bigger rate of accidents than other ones which do not use explosives to mine undeground.',
 		icon:[14,15,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Ambrosium treeplanting':true,'<span style="color: ##FF0900">Paradise building</span>':true},
@@ -2808,7 +2808,7 @@ func:function(){
 			'on':{name:'Active',icon:[8,8],desc:'<span style="color: ##FFa000">Mining with explosives will be activated.</span>',use:{'worker':3,'stone tools':3}},
 		},
 		effects:[
-			{type:'gather',context:'mine',amount:28,max:84,mode:'any'},
+			{type:'gather',context:'mine',what:{'iron ore'},amount:28,max:84,mode:'any'},
 			{type:'function',func:unitGetsConverted({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners.'),chance:7/50}
 		],
 		gizmos:true,
@@ -3529,6 +3529,8 @@ func:function(){
 			{type:'gather',context:'mine',what:{'Sulfur':24},max:31,mode:'tin',req:{'Explosive crafting & mining':true}},
 			{type:'gather',context:'mine',what:{'Sulfur':24},max:31,mode:'copper',req:{'Explosive crafting & mining':true}},
 			{type:'gather',context:'mine',what:{'Sulfur':17},max:26,mode:'salt',req:{'Explosive crafting & mining':true}},
+			//Collapsing chance
+			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.01,'[X] [people].','mine of Plain Island has collapsed, wounding its miners','mines of Plain Island collapsed, wounding their miners.'),chance:1/50}
 		],
 		category:'plainisleunit',
 		limitPer:{'land':35},
