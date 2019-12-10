@@ -2808,7 +2808,7 @@ func:function(){
 			'on':{name:'Active',icon:[8,8],desc:'<span style="color: ##FFa000">Mining with explosives will be activated.</span>',use:{'worker':3,'stone tools':3}},
 		},
 		effects:[
-			{type:'gather',context:'mine',what:{'iron ore'},amount:28,max:84,mode:'any'},
+			{type:'gather',context:'mine',amount:28,max:84,mode:'on'},
 			{type:'function',func:unitGetsConverted({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners.'),chance:7/50}
 		],
 		gizmos:true,
