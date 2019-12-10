@@ -2341,14 +2341,14 @@ func:function(){
 		desc:'Allows your people to build [Blockhouse] out of [advanced building materials]. Provides much more housing but it is limited to prevent global warmings etc.',
 		icon:[8,1,'magixmod'], 
 		cost:{'insight':65},
-		req:{'Plain island portal':true,'<span style="color: ##FF0900">Plain island building</span>':true},
+		req:{'<span style="color: #E0CE00">Plain island portal</span>':true,'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Tech({
 		name:'Burial in new world',
 		desc:'Provides even better use of the Plain Island. You may build now few cemetries which consume much more [Land of the Plain Island], but they can store more corpses.',
 		icon:[1,6,'magixmod'], 
 		cost:{'insight':65},
-		req:{'Plain island portal':true,'<span style="color: ##FF0900">Plain island building</span>':true},
+		req:{'<span style="color: #E0CE00">Plain island portal</span>':true,'<span style="color: ##FF0900">Plain island building</span>':true},
 	});
 		new G.Tech({
 		name:'Sewing II',
