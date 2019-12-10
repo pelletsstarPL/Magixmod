@@ -2761,6 +2761,25 @@ func:function(){
 	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+	new G.Unit({
+		name:'explosive mine',
+		desc:'@extracts ores, [coal] and [stone] out of the ground using <span style="color: #FF002a"> Dynamite</span> . <span style="color: #FF002a">Has even bigger chances to collapse due to used in work material</span>The workers in [mine]s blasts deep into the earth to provide all kinds of minerals. @cannot be [prospecting,prospected] like normal [mine] .',
+		icon:[16,15,'magixmod'],
+		cost:{'archaic building materials':400},
+		use:{'land':3},
+		upkeep:{'fire pit':0.1,'Light explosives':4,'Thread':8,'Sulfur':1},
+		modes:{
+			'off':G.MODE_OFF,
+			'on':{name:'Active',icon:[8,8],desc:'Mine without focusing on specific ores.',use:{'worker':3,'stone tools':3}},
+		},
+		effects:[
+			{type:'gather',context:'mine',amount:28,max:75,mode:'any'},
+			{type:'function',func:unitGetsConverted({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners. <b>Sadly :(</b>'),chance:7/50}
+		],
+		gizmos:true,
+		req:{'mining':true,'Intelligent blasting':true},
+		category:'production',
+	});
 		new G.Unit({
 		name:'paper-crafting shack',
 		desc:'Allows to make [Paper] You can choose between 3 types of paper: [papyrus] , [pergamin] , [common paper] . <span style="color: ##FF6B40">It is paradise version of this shack and works at same rates as its mortal bro.</span>',
