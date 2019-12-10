@@ -2799,7 +2799,7 @@ func:function(){
 			//Nuke NEVER, EVER COMING NOT SOON AND NOT LATE
 		},
 		effects:[
-			{type:'convert',from:{'Sulfur':3,'Paper':2,'Thread':3},into:{'Light explosives':1},every:1,repeat:2,mode:'sugar'},
+			{type:'convert',from:{'Sulfur':3,'Paper':2,'Thread':3},into:{'Light explosives':1.25},every:2,repeat:2,mode:'sugar'},
 		],
 		req:{'Explosive crafting & mining':true},
 		category:'crafting',
