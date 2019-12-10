@@ -2761,6 +2761,41 @@ func:function(){
 	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
+//Unit gets converted. Needed to make mine collapsions possible or other wasting with wounding people and else things
+	var unitGetsConverted=function(into,min,max,message,single,plural)
+	{
+		//the unit is destroyed and its workers are converted into something else (such as wounded or dead)
+		//min and max define the random percent of the unit's amount that gets wounded every day
+		return function(me)
+		{
+			var toChange=Math.min(1,Math.random()*(max-min)+min);
+			toChange=randomFloor(me.amount*toChange);
+			var workers=0;
+			if (me.mode && me.mode.use && me.mode.use['worker']) workers+=me.mode.use['worker'];
+			if (me.unit.use['worker']) workers+=me.unit.use['worker'];
+			if (me.unit.staff['worker']) workers+=me.unit.staff['worker'];
+			if (toChange>0 && workers>0)
+			{
+				peopleToChange=toChange*workers;
+				var changed=0;
+				if (true) {var i='adult';var n=G.lose(i,peopleToChange);changed+=n;}
+				if (changed<peopleToChange && G.checkPolicy('elder workforce')=='on') {var i='elder';var n=G.lose(i,peopleToChange);changed+=n;}
+				if (changed<peopleToChange && G.checkPolicy('child workforce')=='on') {var i='child';var n=G.lose(i,peopleToChange);changed+=n;}
+				
+				for (var i in into)
+				{
+					G.gain(i,randomFloor(changed*into[i]),me.unit.displayName+' accident');
+				}
+				changed/=workers;
+				G.wasteUnit(me,changed);
+				
+				if (changed>0) G.Message({type:'bad',mergeId:'unitGotConverted-'+me.unit.name,textFunc:function(args){
+						return args.str.replaceAll('\\[people\\]',(args.n==1?args.single:args.plural)).replaceAll('\\[X\\]',B(args.n));
+					},args:{n:changed,str:message,single:single,plural:plural},icon:me.unit.icon});
+			}
+		}
+	}
+	//Units for real
 	new G.Unit({
 		name:'explosive mine',
 		desc:'@extracts ores, [coal] and [stone] out of the ground using <span style="color: #FF002a"> Dynamite</span> . <span style="color: #FF002a">Has even bigger chances to collapse due to used in work material</span>The workers in [mine]s blasts deep into the earth to provide all kinds of minerals. @cannot be [prospecting,prospected] like normal [mine] .',
@@ -2774,7 +2809,7 @@ func:function(){
 		},
 		effects:[
 			{type:'gather',context:'mine',amount:28,max:84,mode:'any'},
-			{type:'function',func:{unitGetsConverted}({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners. <b>Sadly :[</b>'),chance:7/50}
+			{type:'function',func:unitGetsConverted({'wounded':2},0.001,0.01,'[X] [people].','mine collapsed because of underground explosives blasting, wounding its miners','mines collapsed because of underground explosives blasting, wounding their miners.'),chance:7/50}
 		],
 		gizmos:true,
 		req:{'mining':true,'Intelligent blasting':true},
