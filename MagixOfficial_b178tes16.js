@@ -1385,8 +1385,9 @@ func:function(){
 		{
 			var n=randomFloor(G.getRes('Instructor').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
 			
-					var weights={'baby':0.2,'child':0.6,'adult':0.9,'elder':0.85,'sick':0.45,'wounded':0.45,'Instructor':0.9,'Alchemists':0.85,'wounded alchemist':0.45,'wounded child alchemist':0.4};
-					for (var i in weights)
+					var Healthylife=0.6;
+					Healthylife+=Math.pow(Math.max(0,G.getRes('population').amount-50),0.1)*0.1;//more people means more contagion
+					G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife),'healthy life');//people randomly get sick
 					if (G.has('Supreme healthy life'))
 					{
 						G.gain('health',G.getRes('population')*1.6,'supreme healthy life')};
