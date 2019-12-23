@@ -1387,7 +1387,7 @@ func:function(){
 			
 				if (G.has('Supreme healthy life'))
 				{
-					var n=randomFloor(G.getRes('population').amount*0.48);G.gain('health',n,'supreme healthy life');
+					var n=randomFloor(G.getRes('population').amount*0.38);G.gain('health',n,'supreme healthy life');
 				if (G.has('Healthy life'))
 				{
 					var n=randomFloor(G.getRes('population').amount*0.13);G.gain('health',n,'healthy life');
@@ -2332,7 +2332,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Healthy life',
-		desc:'Intelligent people came with doctrines of healthier life, all because of moderation. Then they shared their thoughts. Surprisingly they were right but wasn\'t happy in rules of moderation. People got even healthier, feel even better. @This trait makes [health] generated per each person. Each person will add some [health]. People won\'t eat even more food so do not worry. Has its better version . Can\'t occur if you get this worse one, because [Healthy life] is not from joy, it is from moderation',
+		desc:'Intelligent people came with doctrines of healthier life, all because of moderation. Then they shared their thoughts. Surprisingly they were right but wasn\'t happy in rules of moderation. People got even healthier, feel even better. @This trait makes [health] generated per each person. Each person will add some [health]. People won\'t eat even more food so do not worry. Has its better version which can\'t occur if you get this worse one, because [Healthy life] is not from joy, it is from moderation',
 		icon:[22,1,'magixmod'],
 		cost:{'culture':150,'insight':100,'influence':15},
 		chance:330,
@@ -2948,6 +2948,30 @@ func:function(){
 		}
 	}
 	//Units for real
+		new G.Unit({
+		name:'Combat potions brewing stand',
+		desc:'There you can craft [Combat potions] which are not so safe.',
+		icon:[14,16,'magixmod'],
+		cost:{},
+		use:{'Alchemy zone':0.3},
+		upkeep:{},
+		modes:{
+			'off':G.MODE_OFF,
+			'papyrus':{name:'Papyrus',icon:[15,12,'magixmod'],desc:'Gain mainly [papyrus] out of this shack. To craft [papyrus] , [worker] will use [Sugar cane] .',use:{'worker':1,'stone tools':1}},
+			'pergamin':{name:'Pergamin',icon:[16,12,'magixmod'],desc:'Gain mainly [pergamin] out of this shack. To craft [pergamin] , [worker] will use [hide] or [leather] .',use:{'worker':1,'stone tools':1}},
+			'commonpaper':{name:'Common paper',icon:[17,12,'magixmod'],desc:'Craft [common paper] out of [Bamboo] with help of secret non-magic recipe.',use:{'worker':1,'stone tools':1}},
+		},
+		effects:[
+			{type:'convert',from:{'Sugar cane':3.4},into:{'papyrus':1.5},every:1,mode:'papyrus'},
+			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
+		],
+		req:{'Combat potion & concoction brewing':true},
+		gizmos:true,
+		category:'alchemy',
+	});
 		new G.Unit({
 		name:'Specified potter (alchemy)',
 		desc:'@Converts [Potion pot] into [Combat potion pot]. Can craft [Jar for concoctions,Jars for concoctions].',
