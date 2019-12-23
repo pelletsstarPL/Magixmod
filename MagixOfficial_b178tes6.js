@@ -11,22 +11,22 @@ func:function(){
 		G.resCategories={
 
 			'main':{
-				name:'Essentials',
+				name:'<span style "color= #DA4F37">Essentials</span>',
 				base:[],
 				side:['population','worker','happiness','health','land','coin','Land of the Plain Island','Land of the Paradise'],
 		},
 			'demog':{
-				name:'Demographics',
+				name:'<span style "color= #0DA42B">Demographics</span>',
 				base:['baby','child','adult','elder','worker','sick','wounded'],
 				side:['population','housing','corpse','burial spot','Alchemists'],
 		},
 			'food':{
-				name:'Food & Water',
+				name:'<span style "color= #0080FF">Food & Water</span>',
 				base:[],
 				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices'],
 		},
 			'build':{
-				name:'Crafting & Construction',
+				name:'<span style "color= #FFCCCC">Crafting & Construction</span>',
 				base:[],
 				side:['archaic building materials','basic building materials','advanced building materials','precious building materials','material storage'],
 		},
@@ -41,17 +41,17 @@ func:function(){
 				side:['Paper','Magic essences','book storage'],
 		},
 			'flowersanddyes':{
-				name:'Flowers & Dyes',
+				name:'<span style "color=green">Flowers & Dyes</span>',
 				base:[],
 				side:['Flowers','Dyes'],
 		},
 			'alchemypotions':{
-				name:'Alchemy - Potions', 
+				name:'<span style "color=#B266ff">Alchemy - Potions</span>', 
 				base:[],
-				side:['Basic brews','Alcohol brews','Medicament brews'],
+				side:['Basic brews','Alcohol brews','Medicament brews','combat potions'],
 		},
 			'alchemyingredients':{
-				name:'Alchemy - Ingredients', 
+				name:'<span style "color=#B266ff">Alchemy - Ingredients</span>', 
 				base:[],
 				side:[],
 		},
@@ -987,6 +987,23 @@ func:function(){
 			}
 		},	
 		category:'main',
+	});
+		new G.Res({
+		name:'Combat potion pot',
+		desc:'Type of potions that are harmful. Can be use to defend people and not only. Some of them can work sectorally. One of soldiers weapon<b>',//soldiers are InFartherDev
+		icon:[17,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+		new G.Res({
+		name:'combat potions',
+		desc:'This is how many you have all <b>combat potions</b> in total currently.',
+		icon:[16,16,'magixmod'],
+		meta:true,
 	});
 		new G.Res({
 		name:'Magic essences',
@@ -2797,7 +2814,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Combat potion & concoction brewing',
-		desc:'<span style "color= #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [Ingredient crafting shack] workers ingredients.</span>                <span style "color=#C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
+		desc:'<span style "color= #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients.</span>                <span style "color=#C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
 		icon:[20,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
