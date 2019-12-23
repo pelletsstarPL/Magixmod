@@ -4422,7 +4422,7 @@ func:function(){
 	//Category for seasonal content units
 	G.unitCategories.unshift({
 			id:'seasonal',
-			name:'<font family="Comic Sans MS"><span style="color:#7fffd4">Seasonal</span></font>'
+			name:'<span style="color:#7fffd4" font family="Comic Sans MS">Seasonal</span>'
 		});
 	//Category for buildings which can only be built on lands of Plain island
 	G.unitCategories.unshift({
