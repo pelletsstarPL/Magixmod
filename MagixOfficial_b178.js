@@ -1068,7 +1068,6 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'alchemypotions',
-		partOf:'combat potions'
 	});
 		new G.Res({
 		name:'Nature concoction',
@@ -1080,7 +1079,6 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'alchemypotions',
-		partOf:'combat potions'
 	});
 		new G.Res({
 		name:'combat potions',
@@ -2972,7 +2970,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Combat potions brewing stand',
-		desc:'There you can craft [Combat potions] which are not so safe. Alchemists are creative people who name their creations with creative names.<span style "color:red">Warning! Some modes has a chance to accidents wounding a worker</span>',
+		desc:'There you can craft [combat potions] which are not so safe. Alchemists are creative people who name their creations with creative names.<span style "color:red">Warning! Some modes has a chance to accidents wounding a worker</span>',
 		icon:[14,16,'magixmod'],
 		cost:{},
 		use:{'Alchemy zone':0.3},
@@ -3004,7 +3002,7 @@ func:function(){
 	});
 		new G.Unit({
 		name:'Combat potions brewing stand (child stand)',
-		desc:'There you can craft [Combat potions] which are not so safe. Alchemists are creative people who name their creations with creative names.<span style "color:red">Warning! Some modes has a chance to accidents wounding a worker. Chance is even more increased while children work</span>',
+		desc:'There you can craft [combat potions] which are not so safe. Alchemists are creative people who name their creations with creative names.<span style "color:red">Warning! Some modes has a chance to accidents wounding a worker. Chance is even more increased while children work</span>',
 		icon:[14,16,'magixmod'],
 		cost:{},
 		use:{'Alchemy zone':0.3},
