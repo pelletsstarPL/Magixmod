@@ -2949,9 +2949,9 @@ func:function(){
 	}
 	//Units for real
 		new G.Unit({
-		name:'Combat potions brewing stand',
+		name:'Concoctions crafting stand',
 		desc:'There you can craft [Jar for concoctions,Concoctions] which are not so safe. At stand there are recipes already but you will decide who you will hire. No accident chance there.</span>',
-		icon:[14,16,'magixmod'],
+		icon:[15,16,'magixmod'],
 		cost:{},
 		use:{'Alchemy zone':0.3},
 		upkeep:{},
