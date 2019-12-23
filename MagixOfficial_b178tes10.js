@@ -1001,14 +1001,86 @@ func:function(){
 	});
 		new G.Res({
 		name:'Jar for concoctions',
-		desc:'Concoctions are used as ingredient for stronger potions or ',//soldiers are InFartherDev
-		icon:[17,16,'magixmod'],
+		desc:'Concoctions are used as ingredient for stronger potions or to store potions that cannot be stored in normal [Potion pot] ',//soldiers are InFartherDev
+		icon:[18,16,'magixmod'],
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.0008;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'misc',
+	});
+		new G.Res({
+		name:'Black fog',
+		desc:'This potion makes fog around victim after pot will be opened. Even more painful for eyes',
+		icon:[11,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemypotions',
+		partOf:'combat potions'
+	});
+		new G.Res({
+		name:'Point of venom',
+		desc:'This dark and nature essenced potion is a strong poison.',
+		icon:[10,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemypotions',
+		partOf:'combat potions'
+	});
+		new G.Res({
+		name:'Windy spikes',
+		desc:'Releases spikes made out [Wind essence] around and shatters.',
+		icon:[9,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemypotions',
+		partOf:'combat potions'
+	});
+		new G.Res({
+		name:'Back to grave',
+		desc:'Send [Wild corpse] to pernament death.',
+		icon:[8,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemypotions',
+		partOf:'combat potions'
+	});
+		new G.Res({
+		name:'Dark concoction',
+		desc:'Releases darkness from itself. Wrongly crafted may explode',
+		icon:[12,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemypotions',
+		partOf:'combat potions'
+	});
+		new G.Res({
+		name:'Nature concoction',
+		desc:'Can be used to grow flowers. Better don\'t hold it in hands for too long otherwise it may start grow vines on you.',
+		icon:[13,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'alchemypotions',
+		partOf:'combat potions'
 	});
 		new G.Res({
 		name:'combat potions',
@@ -2818,14 +2890,14 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bigger potion types pallet',
-		desc:'<span style "color: #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions.</span>                  <span style "color: #C3db70">Unlocks new mode to [potter] which will allow to craft pots for these types of potion out of [Potion pot] .</span>',
+		desc:'<span style "color: #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions. <b>Unlocks stand which allows to craft pots for these types of potion out of [Potion pot] .</b></span>',
 		icon:[21,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'Combat potion & concoction brewing',
-		desc:'<span style "color: ##93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients.</span>                <span style "color: #C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
+		desc:'<span style "color: ##93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients. <b>Unlocks stands which may brew these potions but there is chance that accident will occur during work.</b></span>',
 		icon:[20,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
@@ -2868,7 +2940,7 @@ func:function(){
 	}
 	//Units for real
 		new G.Unit({
-		name:'Specified potter',
+		name:'Specified potter (alchemy)',
 		desc:'@Converts [Potion pot] into [Combat potion pot]. Can craft [Jar for concoctions,Jars for concoctions].',
 		icon:[19,16,'magixmod'],
 		cost:{},
