@@ -1389,10 +1389,10 @@ func:function(){
 					for (var i in weights)
 					if (G.has('Supreme healthy life'));
 					{
-						G.gain('health',G.getRes('population')*1.03,'supreme healthy life')};
+						G.gain('health',G.getRes('population')*1.6,'supreme healthy life')};
 					if (G.has('Healthy life'));
 					{
-						G.gain('health',G.getRes('population')*0.6,'healthy life')};
+						G.gain('health',G.getRes('population')*0.9,'healthy life')};
 					toConsume=randomFloor(toConsume);
 		},
 	});
