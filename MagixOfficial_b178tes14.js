@@ -1393,7 +1393,6 @@ func:function(){
 					if (G.has('Healthy life'));
 					{
 						G.gain('health',G.getRes('population')*0.9,'healthy life')};
-					toConsume=randomFloor(toConsume);
 		},
 	});
 		new G.Res({
