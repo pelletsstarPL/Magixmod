@@ -2123,7 +2123,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'Nutrition',
-		desc:'Your dreamers were thinking once how to make eating more healthy. Then they shard its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait makes [healer] generate health. People won\'t eat even more food so do not worry.',
+		desc:'Your dreamers were thinking once how to make eating more healthy. Then they share its thoughts. Surprisingly they were right. People got healthier, feel better. @This trait makes [healer] generate health. People won\'t eat even more food so do not worry.',
 		icon:[16,7,'magixmod'],
 		cost:{'culture':150,'wisdom':25,'insight':100,'influence':10},
 		chance:120,//experimental
@@ -2199,6 +2199,22 @@ func:function(){
 		cost:{'insight':10,'culture':40},
 		chance:100,
 		req:{'artistic thinking':true},
+	});
+		new G.Trait({
+		name:'Supreme healthy life',
+		desc:'Intelligent people came with doctrines of healthier life. Then they shared their thoughts. Surprisingly they were right. People got even healthier, feel even better. @This trait makes [health] generated per each person. Each person will add some [health]. People won\'t eat even more food so do not worry. Better version of [Healthy life] . Can\'t occur if you get this worse one, because [Healthy life] is not from joy, it is from moderation',
+		icon:[22,0,'magixmod'],
+		cost:{'culture':150,'insight':100,'influence':15},
+		chance:120,
+		req:{'joy of eating':true,'Nurtrition':true,'Healthy life':false},
+	});
+		new G.Trait({
+		name:'Healthy life',
+		desc:'Intelligent people came with doctrines of healthier life, all because of moderation. Then they shared their thoughts. Surprisingly they were right but wasn\'t happy in rules of moderation. People got even healthier, feel even better. @This trait makes [health] generated per each person. Each person will add some [health]. People won\'t eat even more food so do not worry. Has its better version . Can\'t occur if you get this worse one, because [Healthy life] is not from joy, it is from moderation',
+		icon:[22,1,'magixmod'],
+		cost:{'culture':150,'insight':100,'influence':15},
+		chance:330,
+		req:{'culture of moderation':true},
 	});
 	//God's traits
 		new G.Trait({
@@ -4406,7 +4422,7 @@ func:function(){
 	//Category for seasonal content units
 	G.unitCategories.unshift({
 			id:'seasonal',
-			name:'<span style="color:#7fffd4">Seasonal</span>'
+			name:'<font family="Comic Sans MS"><span style="color:#7fffd4">Seasonal</span></font>'
 		});
 	//Category for buildings which can only be built on lands of Plain island
 	G.unitCategories.unshift({
