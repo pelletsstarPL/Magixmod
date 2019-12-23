@@ -1501,6 +1501,19 @@ func:function(){
 		partOf:'population',
 		icon:[19,11,'magixmod'],
 	});
+	new G.Res({
+		name:'wounded alchemist',
+		desc:'[Alchemists] may get [wounded,wounded] due to work injuries. They do not [worker,work] but may slowly get better over time.',
+		partOf:'population',
+		icon:[21,2,'magixmod'],
+	});
+	//To make recovery not like wounded child alch becomes adult alch
+	new G.Res({
+		name:'wounded child alchemist',
+		desc:'[Alchemists] may get [wounded,wounded] due to work injuries. They do not [worker,work] but may slowly get better over time.',
+		partOf:'population',
+		icon:[21,2,'magixmod'],
+	});
 //FLOWERS!,DYES!
 		new G.Res({
 		name:'Flowers',
@@ -2777,17 +2790,17 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bigger potion types pallet',
-		desc:'<span style "color= #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [concoction,concoctions] used to craft other potions.</span><br /><span style "color=#C3db70">Unlocks stand which can craft pots to these types of potion out of [Potion pot] .</span>',
+		desc:'<span style "color= #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [concoction,concoctions] used to craft other potions.</span>                  <span style "color=#C3db70">Unlocks stand which can craft pots to these types of potion out of [Potion pot] .</span>',
 		icon:[21,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
-		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true},
+		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'Combat potion & concoction brewing',
-		desc:'<span style "color= #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [Ingredient crafting shack] workers ingredients.</span><br /><span style "color=#C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
+		desc:'<span style "color= #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [Ingredient crafting shack] workers ingredients.</span>                <span style "color=#C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
 		icon:[20,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
-		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true},
+		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
@@ -3859,16 +3872,6 @@ func:function(){
 		],
 	});
 		new G.Unit({
-		name:'test',
-		startWith:0,
-		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use. The further you will research the more types of [Flowers] he will be able to collect.',
-		icon:[7,11,'magixmod'],
-		cost:{},
-		req:{},
-		use:{'worker':1},
-		category:'seasonal',
-	});
-		new G.Unit({
 		name:'Thoughts sharer',
 		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
 		icon:[19,12,'magixmod'],
@@ -3935,6 +3938,8 @@ func:function(){
 		upkeep:{'coin':0.2},
 		effects:[
 			{type:'convert',from:{'wounded':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33},into:{'adult':1,'health':0.44},chance:4/10,every:10},
+			{type:'convert',from:{'wounded alchemist':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33,'Medicament brews':0.3},into:{'alchemist':1,'health':0.44},chance:4/10,every:10},
+			{type:'convert',from:{'wounded child alchemist':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33,'Medicament brews':0.3},into:{'child alchemist':1,'health':0.44},chance:4/10,every:10},
 			{type:'gather',context:'gather',what:{'health':0.1},req:{'Nutrition':true}},
 		],
 		req:{'healing':true,'first aid':true},
