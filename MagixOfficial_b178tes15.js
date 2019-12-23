@@ -1387,10 +1387,10 @@ func:function(){
 			
 					var weights={'baby':0.2,'child':0.6,'adult':0.9,'elder':0.85,'sick':0.45,'wounded':0.45,'Instructor':0.9,'Alchemists':0.85,'wounded alchemist':0.45,'wounded child alchemist':0.4};
 					for (var i in weights)
-					if (G.has('Supreme healthy life'));
+					if (G.has('Supreme healthy life'))
 					{
 						G.gain('health',G.getRes('population')*1.6,'supreme healthy life')};
-					if (G.has('Healthy life'));
+					if (G.has('Healthy life'))
 					{
 						G.gain('health',G.getRes('population')*0.9,'healthy life')};
 		},
