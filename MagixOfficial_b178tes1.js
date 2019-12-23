@@ -3829,6 +3829,16 @@ func:function(){
 		],
 	});
 		new G.Unit({
+		name:'test',
+		startWith:0,
+		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use. The further you will research the more types of [Flowers] he will be able to collect.',
+		icon:[7,11,'magixmod'],
+		cost:{},
+		req:{},
+		use:{'worker':1},
+		category:'seasonal',
+	});
+		new G.Unit({
 		name:'Thoughts sharer',
 		desc:'@consumes [insight] to give it to his students. Dreams himself or asks other dreamers. Then all knowledge he has gotten gives to people. @It is way to make very smart and intelligent [Instructor] appear.',
 		icon:[19,12,'magixmod'],
@@ -4392,6 +4402,11 @@ func:function(){
 	G.unitCategories.unshift({
 			id:'dimensions',
 			name:'Portals'
+		});
+	//Category for seasonal content units
+	G.unitCategories.unshift({
+			id:'seasonal',
+			name:'<span style="color:#7fffd4">Seasonal</span>'
 		});
 	//Category for buildings which can only be built on lands of Plain island
 	G.unitCategories.unshift({
