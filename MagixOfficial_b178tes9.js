@@ -11,22 +11,22 @@ func:function(){
 		G.resCategories={
 
 			'main':{
-				name:'<span style "color= #DA4F37">Essentials</span>',
+				name:'<span style "color: #DA4F37">Essentials</span>',
 				base:[],
 				side:['population','worker','happiness','health','land','coin','Land of the Plain Island','Land of the Paradise'],
 		},
 			'demog':{
-				name:'<span style "color= #0DA42B">Demographics</span>',
+				name:'<span style "color: #0DA42B">Demographics</span>',
 				base:['baby','child','adult','elder','worker','sick','wounded'],
 				side:['population','housing','corpse','burial spot','Alchemists'],
 		},
 			'food':{
-				name:'<span style "color= #0080FF">Food & Water</span>',
+				name:'<span style "color: #0080FF">Food & Water</span>',
 				base:[],
 				side:['food','spoiled food','water','muddy water','food storage','Juices','Spoiled juices'],
 		},
 			'build':{
-				name:'<span style "color= #FFCCCC">Crafting & Construction</span>',
+				name:'<span style "color: #FFCCCC">Crafting & Construction</span>',
 				base:[],
 				side:['archaic building materials','basic building materials','advanced building materials','precious building materials','material storage'],
 		},
@@ -46,12 +46,12 @@ func:function(){
 				side:['Flowers','Dyes'],
 		},
 			'alchemypotions':{
-				name:'<span style "color=#B266ff">Alchemy - Potions</span>', 
+				name:'<span style "color: #B266ff">Alchemy - Potions</span>', 
 				base:[],
 				side:['Basic brews','Alcohol brews','Medicament brews','combat potions'],
 		},
 			'alchemyingredients':{
-				name:'<span style "color=#B266ff">Alchemy - Ingredients</span>', 
+				name:'<span style "color: #B266ff">Alchemy - Ingredients</span>', 
 				base:[],
 				side:[],
 		},
@@ -2818,14 +2818,14 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bigger potion types pallet',
-		desc:'<span style "color= #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions.</span>                  <span style "color=#C3db70">Unlocks new mode to [potter] which will allow to craft pots for these types of potion out of [Potion pot] .</span>',
+		desc:'<span style "color: #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions.</span>                  <span style "color: #C3db70">Unlocks new mode to [potter] which will allow to craft pots for these types of potion out of [Potion pot] .</span>',
 		icon:[21,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'Combat potion & concoction brewing',
-		desc:'<span style "color= #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients.</span>                <span style "color=#C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
+		desc:'<span style "color: ##93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients.</span>                <span style "color: #C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
 		icon:[20,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
@@ -4879,7 +4879,7 @@ G.writeMSettingButton=function(obj)
 		'Yes i will... unless i run out of ideas so then i won\'t :D'+
 		'<div class="fancyText title">How i can ask you by question which is not in Q&A there?</div>'+
 		'Find me at <a href="https://discordapp.com/invite/cookie" target="_blank">Dashnet discord server</a><div>'+
-		'<span style "color=red"><b>IMPORTANT NOTE! I am not responsible if some crazy bugs and issues will occur in debug mode</b></span>'+
+		'<span style "color: #FF0000"><b>IMPORTANT NOTE! I am not responsible if some crazy bugs and issues will occur in debug mode</b></span>'+
 		'<div class="barred fancyText"><a href="https://raw.githubusercontent.com/pelletsstarPL/Magixmod/master/Changelog" target="_blank">Update log</a><div><div>'+
 		'<div class="divider"></div>'+
 		G.writeMSettingCategories()+
