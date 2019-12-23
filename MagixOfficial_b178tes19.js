@@ -1393,7 +1393,8 @@ func:function(){
 					if (G.has('Healthy life'))
 					{
 						G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife*0.94),'healthy life');
-		}
+			}
+		},
 	});
 		new G.Res({
 		name:'Alchemists',//There is something more :)
