@@ -1385,16 +1385,14 @@ func:function(){
 		{
 			var n=randomFloor(G.getRes('Instructor').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
 			
-					var toConsume=0;
 					var weights={'baby':0.2,'child':0.6,'adult':0.9,'elder':0.85,'sick':0.45,'wounded':0.45,'Instructor':0.9,'Alchemists':0.85,'wounded alchemist':0.45,'wounded child alchemist':0.4};
 					for (var i in weights)
-					{toConsume+=G.getRes(i).amount*weights[i];}
 					if (G.has('Supreme healthy life'));
 					{
-						G.gain('health',G.getRes("population")*1.03,'water rations')};
+						G.gain('health',G.getRes('population')*1.03,'supreme healthy life')};
 					if (G.has('Healthy life'));
 					{
-						G.gain('health',G.getRes("population")*0.6,'water rations')};
+						G.gain('health',G.getRes('population')*0.6,'healthy life')};
 					toConsume=randomFloor(toConsume);
 		},
 	});
