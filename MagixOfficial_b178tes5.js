@@ -2777,14 +2777,14 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bigger potion types pallet',
-		desc:'<span style "color= #93db70>Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [concoction,concoctions] used to craft other potions.</span><br /><span style "color=#C3db70">Unlocks stand which can craft pots to these types of potion out of [Potion pot] .</span>',
+		desc:'<span style "color= #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [concoction,concoctions] used to craft other potions.</span><br /><span style "color=#C3db70">Unlocks stand which can craft pots to these types of potion out of [Potion pot] .</span>',
 		icon:[21,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true},
 	});
 		new G.Tech({
 		name:'Combat potion & concoction brewing',
-		desc:'<span style "color= #93db70>Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [Ingredient crafting shack] workers ingredients.</span><br /><span style "color=#C3db70>Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
+		desc:'<span style "color= #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [Ingredient crafting shack] workers ingredients.</span><br /><span style "color=#C3db70">Unlocks stands which may brew these potions but there is chance that accident will occur during work.</span>',
 		icon:[20,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicament brewing':true,'Beginnings of alchemy':true},
