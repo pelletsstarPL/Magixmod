@@ -1000,6 +1000,17 @@ func:function(){
 		category:'misc',
 	});
 		new G.Res({
+		name:'Jar for concoctions',
+		desc:'Concoctions are used as ingredient for stronger potions or ',//soldiers are InFartherDev
+		icon:[17,16,'magixmod'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.0008;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+		new G.Res({
 		name:'combat potions',
 		desc:'This is how many you have all <b>combat potions</b> in total currently.',
 		icon:[16,16,'magixmod'],
@@ -2807,7 +2818,7 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bigger potion types pallet',
-		desc:'<span style "color= #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [concoction,concoctions] used to craft other potions.</span>                  <span style "color=#C3db70">Unlocks stand which can craft pots to these types of potion out of [Potion pot] .</span>',
+		desc:'<span style "color= #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions.</span>                  <span style "color=#C3db70">Unlocks new mode to [potter] which will allow to craft pots for these types of potion out of [Potion pot] .</span>',
 		icon:[21,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
@@ -2856,6 +2867,20 @@ func:function(){
 		}
 	}
 	//Units for real
+		new G.Unit({
+		name:'Specified potter',
+		desc:'@Converts [Potion pot] into [Combat potion pot]. Can craft [Jar for concoctions,Jars for concoctions].',
+		icon:[19,16,'magixmod'],
+		cost:{},
+		use:{'worker':1,'metal tools':1,'Alchemy zone':0.3},
+		upkeep:{},
+		effects:[
+			{type:'convert',from:{'Potion pot':1,'clay':1,'hard metal ingot':0.02},into:{'Combat potion pot':1},repeat:1,every:3},
+			{type:'convert',from:{'clay':8,'mud':2},into:{'Jar for concoctions':1},repeat:1,every:3},
+		],
+		req:{'Bigger potion types pallet':true},
+		category:'alchemy',
+	});
 	new G.Unit({
 		name:'explosive mine',
 		desc:'@extracts ores, [coal] and [stone] out of the ground using <span style="color: #FF002a"> Dynamite</span> . <span style="color: #FF002a">Has even bigger chances to collapse due to used in work material</span>The workers in [mine]s blasts deep into the earth to provide all kinds of minerals. @cannot be [prospecting,prospected] like normal [mine] .',
