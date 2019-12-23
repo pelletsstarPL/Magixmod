@@ -1385,15 +1385,12 @@ func:function(){
 		{
 			var n=randomFloor(G.getRes('Instructor').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
 			
-					var Healthylife=0.6;
-					Healthylife+=Math.pow(Math.max(0,G.getRes('population').amount-50),0.1)*0.1;
 					if (G.has('Supreme healthy life'))
 					{
-						G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife*1.33),'supreme healthy life');
+						var n=randomFloor(G.getRes('population').amount*1.43);G.gain('health',n,'supreme healthy life');
 					if (G.has('Healthy life'))
 					{
-						G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife*0.94),'healthy life');
-			}
+						var n=randomFloor(G.getRes('population').amount*0.84);G.gain('health',n,'healthy life');
 		},
 	});
 		new G.Res({
