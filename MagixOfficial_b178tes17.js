@@ -1386,14 +1386,13 @@ func:function(){
 			var n=randomFloor(G.getRes('Instructor').amount*0.0002);G.gain('elder',n,'aging up');G.lose('Instructor',n,'aging up');
 			
 					var Healthylife=0.6;
-					Healthylife+=Math.pow(Math.max(0,G.getRes('population').amount-50),0.1)*0.1;//more people means more contagion
-					G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife),'healthy life');//people randomly get sick
+					Healthylife+=Math.pow(Math.max(0,G.getRes('population').amount-50),0.1)*0.1;
 					if (G.has('Supreme healthy life'))
 					{
-						G.gain('health',G.getRes('population')*1.6,'supreme healthy life')};
+						G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife*1.33),'supreme healthy life');
 					if (G.has('Healthy life'))
 					{
-						G.gain('health',G.getRes('population')*0.9,'healthy life')};
+						G.gain('health',G.getRes('population').amount*(Math.random()*Healthylife*0.94),'healthy life');
 		},
 	});
 		new G.Res({
