@@ -2331,7 +2331,7 @@ func:function(){
 		icon:[22,0,'magixmod'],
 		cost:{'culture':150,'insight':100,'influence':15},
 		chance:120,
-		req:{'joy of eating':true,'Nurtrition':true,'Healthy life':false},
+		req:{'joy of eating':true,'Nutrition':true,'Healthy life':false},
 	});
 		new G.Trait({
 		name:'Healthy life',
