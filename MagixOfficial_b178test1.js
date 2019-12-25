@@ -4260,6 +4260,23 @@ func:function(){
 		req:{'monument-building II':true},
 		category:'wonder',
 	});
+		new G.Unit({
+		name:'test of negative',
+		desc:'.',
+		wonder:'test',
+		icon:[1,11,'magixmod'],
+		wideIcon:[0,11,'magixmod'],
+		cost:{'archaic building materials':1},
+		costPerStep:{'burial spot':-2500},
+		steps:300,
+		messageOnStart:'You begin the construction of the Temple. Its highest tower is a pass between land of people and sky of angels. No one may go on top unless it is coated. This temple will be last bastion of religion and a storage of relics. Your people with full of hope are building this mass, full of glory wonder.',
+		finalStepCost:{'population':1000,'precious building materials':25000,'faith':100,'influence':75,'basic building materials':3000},
+		finalStepDesc:'To complete the Temple, 1000 of your [population,People] and many more resources needed to finish Temple completely must be sacrificed to accompany you as servants in the afterlife and Angels of the Afterlife. Are you ready?',
+		use:{'land':75},
+		//require:{'worker':10,'stone tools':10},
+		req:{},
+		category:'wonder',
+	});
 	
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={
