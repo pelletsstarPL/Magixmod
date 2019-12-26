@@ -335,7 +335,7 @@ func:function(){
 		hidden:true,
 		tick:function(me,tick)
 		{
-			var toSpoil=me.amount*1.3;
+			var toSpoil=me.amount*1.00143;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		partOf:'food',
@@ -427,7 +427,7 @@ func:function(){
 		partOf:'archaic building materials',
 		tick:function(me,tick)
 		{
-			var toSpoil=me.amount*1.1;
+			var toSpoil=me.amount*1.00345;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'build',
@@ -2391,13 +2391,6 @@ func:function(){
 		cost:{'insight':75,'faith':5},
 		req:{'well-digging':true},
 	});
-	//new G.Tech({
-		//name:'Firework crafting',
-		//desc:'@unlocks [Archaic wizard] .Here wizardry and essences will start to appear. Essences are not naturally generated so they consume mana to be made.',
-		//icon:[0,0,'seasonal'],
-		//cost:{},
-		//req:{},
-	//});
 //New tech to allow wizards progressing
 		new G.Tech({
 		name:'Mana brewery',
@@ -5159,4 +5152,26 @@ G.writeMSettingButton=function(obj)
 		//return lvl; //*
 	
 	//SEASONAL CONTENT//CONTENT WHICH WILL BE AVAILABLE FOR PLAYERS AT SOME TIME LIKE XMAS OR VALENTINE'S DAY
+	
+	//NEW YEAR 'S EVE//
+		new G.Unit({
+		name:'Artisan of new year',
+		desc:'This guy can craft new year fireworks for celebration',
+		icon:[0,19,'seasonal'],
+		cost:{},
+		use:{'worker':1},
+		effects:[
+			{type:'provide',what:{'burial spot':100}},
+		],
+		req:{'<span style="color: yellow">Culture of celebration</span>':true},
+		category:'seasonal',
+		//limitPer:{'land':40},
+	});
+		new G.Tech({
+		name:'Firework crafting',
+		desc:'@unlocks [Artisan of new year].',
+		icon:[0,0,'seasonal'],
+		cost:{'insight':30},
+		req:{'<span style="color: yellow">Culture of celebration</span>':true},
+	});
 }});
