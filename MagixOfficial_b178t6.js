@@ -1176,6 +1176,13 @@ func:function(){
 		hidden:true,
 		category:'main',
 	});
+		new G.Res({
+		name:'Dark skull construction point',
+		desc:'Gained from building [The Skull of Wild Death].',
+		icon:[22,4,'magixmod'],
+		hidden:true,
+		category:'main',
+	});
 //New content
 		new G.Res({
 		name:'Florist\'s notes',
@@ -4280,7 +4287,7 @@ func:function(){
 		icon:[1,16,'magixmod'],
 		wideIcon:[0,16,'magixmod'],
 		cost:{'basic building materials':1000,'gem block':30},
-		costPerStep:{'basic building materials':2500,'archaic building materials':1500,'burial spot':-6700},
+		costPerStep:{'basic building materials':2500,'archaic building materials':1500,'burial spot':-6700,'Dark skull construction point':-1},
 		steps:270,
 		messageOnStart:'You begin the construction of The Skull of Wild Death. First terrain marked for realm is getting look like this from graves where your people lie. You think that is going right way. You say: <b>I think wild corpses will go right there to leave us away. I want calm, for all price. It is right choice. I will make my soldiers take these living skulls right there.</b>',
 		finalStepCost:{'corpse':100,'faith':100,'Dark essence':25000,'Cobalt ingot':1000,'burial spot':-15000},
