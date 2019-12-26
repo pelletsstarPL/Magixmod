@@ -5246,10 +5246,10 @@ G.writeMSettingButton=function(obj)
 		desc:'@[Artisan of new year] now can craft [Dark Orange Firework] and [Dark Blue Firework].',
 		icon:[16,0,'seasonal'],
 		cost:{'insight':400},
-		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Fireowrk crafting':true,'Wizard complex':true},
+		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Firework crafting':true,'Wizard complex':true},
 	});
 		new G.Res({
-		name:'Dark Blue firework',
+		name:'Dark Blue Firework',
 		desc:'Happy new year and launch up this firework into the sky. Provides happiness per each firework launched into the sky. This is [Dark essence,dark essenced] firework so it can unleash its spectacular show at daylight./',
 		icon:[5,0,'seasonal'],
 		tick:function(me,tick)
@@ -5260,7 +5260,7 @@ G.writeMSettingButton=function(obj)
 		category:'seasonal',
 	});
 		new G.Res({
-		name:'Dark Orange firework',
+		name:'Dark Orange Firework',
 		desc:'Happy new year and launch up this firework into the sky. Provides happiness per each firework launched into the sky. Provides happiness per each firework launched into the sky. This is [Dark essence,dark essenced] firework so it can unleash its spectacular show at daylight.',
 		icon:[4,0,'seasonal'],
 		tick:function(me,tick)
