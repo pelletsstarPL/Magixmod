@@ -561,7 +561,6 @@ func:function(){
 			var toSpoil=me.amount*0.004;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
-		partOf:'water',
 		category:'food',
 	});
 		new G.Res({
@@ -1478,6 +1477,7 @@ func:function(){
 					else if (rations=='plentiful') {toConsume*=1.5;G.gain('happiness',me.amount*1,'water rations');}
 					toConsume=randomFloor(toConsume);
 					var lacking=toConsume-G.lose('water',toConsume,'drinking');
+					var lacking=toConsume-G.lose('Cloudy water',toConsume,'drinking');
 					if (rations=='none') lacking=me.amount*0.5;
 					if (lacking>0)//are we out of water?
 					{
