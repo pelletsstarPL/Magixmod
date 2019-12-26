@@ -4275,7 +4275,7 @@ func:function(){
 //Revenants trait wonder. People want to send these corpses right into its coils
 		new G.Unit({
 		name:'The Skull of Wild Death',
-		desc:'@leads to the <b>Deadly escape</b><>A big skull shaped construcion with fire roaring inside dedicated to bloodthirsty [Revenants] assaulting your world.//A realm around it is a burial for them. Home of [wild corpse] . There they can burn and in the terrain around buried. Per each step you will perform building it you will grant big amount of [burial spot] . <i>Let these corpses go into their rightenous home</i>',
+		desc:'@leads to the <b>Deadly escape</b><>A big skull shaped construcion with fire roaring inside dedicated to bloodthirsty [Renevants] assaulting your world.//A realm around it is a burial for them. Home of [wild corpse] . There they can burn and in the terrain around buried. Per each step you will perform building it you will grant big amount of [burial spot] . <i>Let these corpses go into their rightenous home</i>',
 		wonder:'wild death skull',
 		icon:[1,16,'magixmod'],
 		wideIcon:[0,16,'magixmod'],
@@ -4287,7 +4287,7 @@ func:function(){
 		finalStepDesc:'To complete this wonder in hope of wild corpses leaving you away for some time you will need pay some tools in order',
 		use:{'land':120},
 		require:{'worker':40,'stone tools':10},
-		req:{'monument-building II':true,'Revenants':true},
+		req:{'monument-building II':true,'Renevants':true},
 		category:'wonder',
 	});
 	//Artisans will make wands for wizards. Mode for it.
