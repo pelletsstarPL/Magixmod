@@ -332,6 +332,12 @@ func:function(){
 		icon:[15,1,'magixmod'],
 		turnToByContext:{'eat':{'health':0.045,'happiness':0.025},'decay':{'spoiled food':0.15}},
 		category:'food',
+		hidden:true,
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*1.3;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		partOf:'food',
 	});
 		new G.Res({
@@ -411,6 +417,7 @@ func:function(){
 		icon:[16,1,'magixmod'],
 		turnToByContext:{'eat':{'health':0.035,'happiness':0.025},'decay':{'spoiled food':0.8}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
 		partOf:'food',
+		hidden:true,
 		category:'food',
 	});
 		new G.Res({
@@ -418,6 +425,11 @@ func:function(){
 		desc:'This tropical material can be used for archaic constructions.',
 		icon:[14,4,'magixmod'],
 		partOf:'archaic building materials',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*1.1;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		category:'build',
 	});
 		new G.Res({
@@ -1293,6 +1305,11 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.003;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+				if (G.has('Healthy life')) //Healthy life trait power
+				{
+					var n=randomFloor(G.getRes('population').amount*0.13);G.gain('health',n,'healthy life');
+				}
+			}
 		},
 		category:'misc',
 	});
@@ -1386,11 +1403,6 @@ func:function(){
 				if (G.has('Supreme healthy life'))
 				{
 					var n=randomFloor(G.getRes('population').amount*0.38);G.gain('health',n,'supreme healthy life');
-				if (G.has('Healthy life'))
-				{
-					var n=randomFloor(G.getRes('population').amount*0.13);G.gain('health',n,'healthy life');
-				}
-			}
 		},
 	});
 		new G.Res({
@@ -2314,7 +2326,7 @@ func:function(){
 	});
 		new G.Trait({
 		name:'<span style="color: yellow">Culture of celebration</span>',
-		desc:'Unlocks seasonal content. <b><span style="color: aqua">Seasonal content is a content available for some time like Christmas content. This one will be available in second half December of course. Currently added events: Xmas, New year eve, halloween, Valentine day.</span></b>',
+		desc:'Unlocks seasonal content. <b><span style="color: aqua">Seasonal content is a content available for some time like Christmas content. Currently added events: Xmas, New year eve, halloween, Valentine day.</span></b>',
 		icon:[18,15,'magixmod'],
 		cost:{'insight':10,'culture':40},
 		chance:100,
@@ -2955,8 +2967,8 @@ func:function(){
 		upkeep:{},
 		modes:{
 			'off':G.MODE_OFF,
-			'ha':{name:'Hire adult alchemist',icon:[12,6,'magixmod'],desc:'Crafts [Black fog]. <span style "color=red">Beware of accidents. Chance low, depends on policy choices.</span>',use:{'Alchemist':1,'stone tools':1}},
-			'hc':{name:'Hire child alchemist',icon:[12,8,'magixmod'],desc:'Crafts [Windy spikes]. <span style "color=red">Beware of accidents. Chance low, depends on policy choices.</span>',use:{'Child alchemist':1,'stone tools':1},req:{'Alchemy for children':'on'}},
+			'ha':{name:'Hire adult alchemist',icon:[12,5,'magixmod'],desc:'Hires adult alchemist to the stand. ',use:{'Alchemist':1,'stone tools':1}},
+			'hc':{name:'Hire child alchemist',icon:[12,7,'magixmod'],desc:'Hires child alchemist to the stand. ',use:{'Child alchemist':1,'stone tools':1},req:{'Alchemy for children':'on'}},
 		},
 		effects:[
 			{type:'convert',from:{'Jar for concoctions':1,'water':0.4,'Dark essence':2,'Dark fire pit':0.5},into:{'Dark concoction':1},every:6,mode:'ha'},
@@ -2988,7 +3000,7 @@ func:function(){
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the alchemist','alchemy accidents occured wounding the alchemists'),chance:1/578,mode:'bf','School of Alchemy - length of education cycle':'medium'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the alchemist','alchemy accidents occured wounding the alchemists'),chance:1/769,mode:'bf','School of Alchemy - length of education cycle':'long'},
 			
-			{type:'convert',from:{'Combat potion pot':1,'water':1,'Wind essence':3,'windy sugar':1},into:{'Windy spikes':1},every:6,mode:'ws'},
+			{type:'convert',from:{'Combat potion pot':1,'water':1,'Wind essence':3,'Windy sugar':1},into:{'Windy spikes':1},every:6,mode:'ws'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the alchemist','alchemy accidents occured wounding the alchemists'),chance:1/300,mode:'ws','School of Alchemy - length of education cycle':'short'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the alchemist','alchemy accidents occured wounding the alchemists'),chance:1/450,mode:'ws','School of Alchemy - length of education cycle':'medium'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the alchemist','alchemy accidents occured wounding the alchemists'),chance:1/600,mode:'ws','School of Alchemy - length of education cycle':'long'},
@@ -3020,7 +3032,7 @@ func:function(){
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the child alchemist','alchemy accidents occured wounding the child alchemists'),chance:1/519,mode:'bf','School of Alchemy - length of education cycle':'medium'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the child alchemist','alchemy accidents occured wounding the child alchemists'),chance:1/690,mode:'bf','School of Alchemy - length of education cycle':'long'},
 			
-			{type:'convert',from:{'Combat potion pot':1,'water':1,'Wind essence':3,'windy sugar':1},into:{'Windy spikes':1},every:6,mode:'ws'},
+			{type:'convert',from:{'Combat potion pot':1,'water':1,'Wind essence':3,'Windy sugar':1},into:{'Windy spikes':1},every:6,mode:'ws'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the child alchemist','alchemy accidents occured wounding the child alchemists'),chance:1/277,mode:'ws','School of Alchemy - length of education cycle':'short'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the child alchemist','alchemy accidents occured wounding the child alchemists'),chance:1/400,mode:'ws','School of Alchemy - length of education cycle':'medium'},
 			{type:'function',func:unitGetsConverted({'wounded alchemist':1},0.001,0.01,'[X] [people] alchemy accident occured wounding the child alchemist','alchemy accidents occured wounding the child alchemists'),chance:1/533,mode:'ws','School of Alchemy - length of education cycle':'long'},
@@ -3103,7 +3115,7 @@ func:function(){
 			//Nuke NEVER, EVER COMING NOT SOON AND NOT LATE
 		},
 		effects:[
-			{type:'convert',from:{'Sulfur':3,'Paper':2,'Thread':3},into:{'Light explosives':1.25},every:2,repeat:2,mode:'sugar'},
+			{type:'convert',from:{'Sulfur':3,'Paper':2,'Thread':3},into:{'Light explosives':1.25},every:2,repeat:2,mode:'explosivesS'},
 		],
 		req:{'Explosive crafting & mining':true},
 		category:'crafting',
@@ -4260,6 +4272,24 @@ func:function(){
 		req:{'monument-building II':true},
 		category:'wonder',
 	});
+//Revenants trait wonder. People want to send these corpses right into its coils
+		new G.Unit({
+		name:'The Skull of Wild Death',
+		desc:'@leads to the <b>Deadly escape</b><>A big skull shaped construcion with fire roaring inside dedicated to bloodthirsty [Revenants] assaulting your world.//A realm around it is a burial for them. Home of [wild corpse] . There they can burn and in the terrain around buried. Per each step you will perform building it you will grant big amount of [burial spot] . <i>Let these corpses go into their rightenous home</i>',
+		wonder:'wild death skull',
+		icon:[1,16,'magixmod'],
+		wideIcon:[0,16,'magixmod'],
+		cost:{'basic building materials':1000,'gem block':30},
+		costPerStep:{'basic building materials':2500,'archaic building materials':1500,'burial spot':-6700},
+		steps:270,
+		messageOnStart:'You begin the construction of The Skull of Wild Death. First terrain marked for realm is getting look like this from graves where your people lie. You think that is going right way. You say: <b>I think wild corpses will go right there to leave us away. I want calm, for all price. It is right choice. I will make my soldiers take these living skulls right there.</b>',
+		finalStepCost:{'corpse':100,'faith':100,'Dark essence':25000,'Cobalt ingot':1000,'burial spot':-15000},
+		finalStepDesc:'To complete this wonder in hope of wild corpses leaving you away for some time you will need pay some tools in order',
+		use:{'land':120},
+		require:{'worker':40,'stone tools':10},
+		req:{'monument-building II':true,'Revenants':true},
+		category:'wonder',
+	});
 	//Artisans will make wands for wizards. Mode for it.
 		G.getDict('artisan').modes['Craftwands']={
 			name:'Craft wands',
@@ -4636,6 +4666,18 @@ func:function(){
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:10}	
+		],
+	});
+//skull achiev
+		new G.Achiev({
+		tier:1,
+		name:'Deadly escape',
+		icon:[1,16,'magixmod'],
+		desc:'You escaped and your soul got escorted right into the world of Underwold... you may discover it sometime.',
+		fromUnit:'The Skull of Wild Death',
+		effects:[
+			{type:'addFastTicksOnStart',amount:300},
+			{type:'addFastTicksOnResearch',amount:20}	
 		],
 	});
 
