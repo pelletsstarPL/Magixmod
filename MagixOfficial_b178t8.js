@@ -55,6 +55,11 @@ func:function(){
 				base:[],
 				side:[],
 		},
+			'seasonal':{
+				name:'Seasonal', 
+				base:[],
+				side:[],
+		},
 	};
 	var limitDesc=function(limit){return 'It is limited by your '+limit+'; the closer to the limit, the slower it is to produce more.';};
 	var researchWhenGathered=function(me,amount,by)
@@ -5156,12 +5161,13 @@ G.writeMSettingButton=function(obj)
 	//NEW YEAR 'S EVE//
 		new G.Unit({
 		name:'Artisan of new year',
-		desc:'This guy can craft new year fireworks for celebration',
-		icon:[0,19,'seasonal'],
+		desc:'This guy can craft new year fireworks for celebration. Sulfur? For fireworks? It is celebration so he has [Sulfur] already at his stock. He will just consume [Paper] , [Thread] to finish it up.',
+		icon:[19,0,'seasonal'],
 		cost:{},
 		use:{'worker':1},
+		upkeep:{'Thread':0.30,'Paper':0.3},
 		effects:[
-			{type:'provide',what:{'burial spot':100}},
+			{type:'gather',what:{'burial spot':100}},
 		],
 		req:{'<span style="color: yellow">Culture of celebration</span>':true},
 		category:'seasonal',
@@ -5173,5 +5179,47 @@ G.writeMSettingButton=function(obj)
 		icon:[0,0,'seasonal'],
 		cost:{'insight':30},
 		req:{'<span style="color: yellow">Culture of celebration</span>':true},
+	});
+		new G.Res({
+		name:'Blue firework',
+		desc:'Happy new year and launch up this firework into the sky. Provides happiness per each firework launched into the sky/',
+		icon:[2,0,'seasonal'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.009;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'seasonal',
+	});
+		new G.Res({
+		name:'Orange firework',
+		desc:'Happy new year and launch up this firework into the sky. Provides happiness per each firework launched into the sky.',
+		icon:[1,0,'seasonal'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.009;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'seasonal',
+	});
+		new G.Tech({
+		name:'Firework launching',
+		desc:'@unlocks [Firework launching guy]. By the way allows [Artisan of new year] to craft [Firecracker] .',
+		icon:[17,0,'seasonal'],
+		cost:{'insight':70},
+		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Fireowrk crafting':true},
+	});
+		new G.Unit({
+		name:'Firework launching guy',
+		desc:'There the guy launches fireworks right up into the sky. Generates happiness by itself and for every firework bunch launched up into the sky.',
+		icon:[18,0,'seasonal'],
+		cost:{'food':10},
+		use:{'worker':1,'land':1},
+		effects:[
+			{type:'gather',what:{'burial spot':100}},
+		],
+		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Firework launching':true},
+		category:'seasonal',
+		//limitPer:{'land':40},
 	});
 }});
