@@ -1309,7 +1309,6 @@ func:function(){
 				{
 					var n=randomFloor(G.getRes('population').amount*0.13);G.gain('health',n,'healthy life');
 				}
-			}
 		},
 		category:'misc',
 	});
