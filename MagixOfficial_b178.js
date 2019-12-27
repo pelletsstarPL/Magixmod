@@ -4702,7 +4702,7 @@ func:function(){
 		fromWonder:'Heavenly',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
-			{type:'addFastTicksOnResearch',amount:10}	
+			{type:'addFastTicksOnResearch',amount:25}	
 		],
 	});
 //skull achiev
@@ -4715,7 +4715,7 @@ func:function(){
 		fromWonder:'Deadly, revenantic',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
-			{type:'addFastTicksOnResearch',amount:20}	
+			{type:'addFastTicksOnResearch',amount:25}	
 		],
 	});
 
