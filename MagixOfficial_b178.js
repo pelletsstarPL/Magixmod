@@ -2735,7 +2735,7 @@ func:function(){
 		name:'Farm of the Beet',
 		desc:'@Makes [Beet] farm possible to be built.',
 		icon:[10,11,'magixmod',24,1],
-		cost:{'insight':450,'wisdom':30},
+		cost:{'insight':490,'wisdom':30},
 		req:{'Farms in the new land':true},
 	});
 		new G.Tech({
