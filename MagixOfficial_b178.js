@@ -4162,8 +4162,8 @@ func:function(){
 		upkeep:{'coin':0.2},
 		effects:[
 			{type:'convert',from:{'wounded':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33},into:{'adult':1,'health':0.44},chance:4/10,every:10},
-			{type:'convert',from:{'wounded alchemist':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33,'Medicament brews':0.3},into:{'alchemist':1,'health':0.44},chance:4/10,every:10},
-			{type:'convert',from:{'wounded child alchemist':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33,'Medicament brews':0.3},into:{'child alchemist':1,'health':0.44},chance:4/10,every:10},
+			{type:'convert',from:{'wounded alchemist':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33,'Medicament brews':0.3},into:{'Alchemist':1,'health':0.44},chance:4/10,every:10},
+			{type:'convert',from:{'wounded child alchemist':1,'herb':2.5,'Bandage':1,'Plaster':0.5,'Triangular bandage':0.33,'Medicament brews':0.3},into:{'Child alchemist':1,'health':0.44},chance:4/10,every:10},
 			{type:'gather',context:'gather',what:{'health':0.1},req:{'Nutrition':true}},
 		],
 		req:{'healing':true,'first aid':true},
