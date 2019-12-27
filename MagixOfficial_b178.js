@@ -1465,6 +1465,7 @@ func:function(){
 				var deathUnhappinessMult=1;
 				if (G.has('fear of death')) deathUnhappinessMult*=2;
 				if (G.has('belief in the afterlife')) deathUnhappinessMult/=2;
+				if (G.has('Hope of revenant abandoning')) deathUnhappinessMult/=2;
 				if (tick%3==0 && G.checkPolicy('disable eating')=='off')
 				{
 					//drink water
