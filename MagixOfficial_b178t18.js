@@ -2941,6 +2941,13 @@ func:function(){
 		cost:{'insight':955,'science':1,'wisdom':9,'Dark skull construction point':250},
 		req:{'<span style="color: red">Revenants</span>':true,'Dark wonder':true},
 	});
+		new G.Tech({
+		name:'Better papercrafting recipe',
+		desc:'Multiplies amount of [Paper] crafted in shacks by 40%. If you go into moderating culture you obtain additional 8%, while in joy path just 4%.',
+		icon:[8,12,14,12,'magixmod',21,15,'magixmod'], 
+		cost:{'insight':955,'wisdom':9},
+		req:{'Papercrafting':true,'Poetry':true},
+	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
 //Unit gets converted. Needed to make mine collapsions possible or other wasting with wounding people and else things
@@ -3115,7 +3122,9 @@ func:function(){
 			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
 			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
 			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
-			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}},
+			{type:'mult',value:1.44,req:{'Better papercrafting recipe':'true','joy of eating':true}},
+			{type:'mult',value:1.44,req:{'Better papercrafting recipe':'true','culture of moderation':true}}
 		],
 		req:{'papercrafting':true,'Paradise crafting':true},
 		category:'paradiseunit',
@@ -3453,7 +3462,9 @@ func:function(){
 			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
 			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
 			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
-			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
+			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}},
+			{type:'mult',value:1.44,req:{'Better papercrafting recipe':'true','joy of eating':true}},
+			{type:'mult',value:1.44,req:{'Better papercrafting recipe':'true','culture of moderation':true}}
 		],
 		req:{'papercrafting':true},
 		category:'crafting',
