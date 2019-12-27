@@ -754,6 +754,7 @@ func:function(){
 		turnToByContext:{'eating':{'health':0.1,'happiness':0.005},'decay':{'spoiled food':1}},
 		partOf:'food',
 		category:'food',
+		hidden:true,
 	});
 		new G.Res({
 		name:'Beet seeds',
@@ -4238,7 +4239,7 @@ func:function(){
 		upkeep:{'water':14},
 		category:'production',
 		effects:[
-			{type:'gather',context:'gather',what:{'Beet':3}},
+			{type:'gather',context:'gather',what:{'Beet':30}},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
@@ -5183,6 +5184,7 @@ G.writeMSettingButton=function(obj)
 		effects:[
 			{type:'gather',what:{'Blue firework':1.25}},
 			{type:'gather',what:{'Orange firework':1.25}},
+			{type:'gather',what:{'Firecracker':1}}
 		],
 		req:{'<span style="color: yellow">Culture of celebration</span>':true},'Firework crafting':true,
 		category:'seasonal',
@@ -5196,8 +5198,9 @@ G.writeMSettingButton=function(obj)
 		use:{'worker':1},
 		upkeep:{'Thread':0.30,'Paper':0.3,'Dark essence':0.15},
 		effects:[
-			{type:'gather',what:{'Dark Blue firework':1.25}},
-			{type:'gather',what:{'Dark Orange firework':1.25}},
+			{type:'gather',what:{'Dark Blue Firework':1.25}},
+			{type:'gather',what:{'Dark Orange Firework':1.25}},
+			{type:'gather',what:{'Firecracker':1}}
 		],
 		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Dark essenced fireworks':true},
 		category:'seasonal',
@@ -5281,6 +5284,18 @@ G.writeMSettingButton=function(obj)
 		{
 			var toSpoil=me.amount*0.009;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'seasonal',
+	});
+		new G.Res({
+		name:'Firecracker',
+		desc:'Firecrackers are fireworks but without thread.',
+		icon:[3,0,'seasonal'],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.009;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+			G.pseudoGather(G.getRes('happiness'),randomFloor(spent),'launching');
 		},
 		category:'seasonal',
 	});
