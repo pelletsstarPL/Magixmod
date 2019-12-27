@@ -2930,14 +2930,14 @@ func:function(){
 		name:'Dark wonder',
 		desc:'<font color:#000000>Unlocks dark wonder...</font>',
 		icon:[22,3,'magixmod'], 
-		cost:{'insight':850,'science':1,'wisdom':9},
+		cost:{'insight':770,'science':1,'wisdom':9},
 		req:{'<span style="color: red">Revenants</span>':true},
 	});
 		new G.Tech({
 		name:'Hope of revenant abandoning',
 		desc:'<font color:#000000>Happiness harm from [wild corpse] and corpses is HALVED.</font>',
 		icon:[22,5,'magixmod'], 
-		cost:{'insight':850,'science':1,'wisdom':9,'Dark skull construction point':250},
+		cost:{'insight':955,'science':1,'wisdom':9,'Dark skull construction point':250},
 		req:{'<span style="color: red">Revenants</span>':true,'Dark wonder':true},
 	});
 /////////////////////////////////////////////////////////////////////
