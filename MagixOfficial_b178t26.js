@@ -4710,7 +4710,7 @@ func:function(){
 		name:'Deadly escape',
 		icon:[1,16,'magixmod'],
 		desc:'You escaped and your soul got escorted right into the world of Underwold... you may discover it sometime.',
-		fromUnit:'Deadly escape',
+		fromWonder:'wild death skull',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:20}	
