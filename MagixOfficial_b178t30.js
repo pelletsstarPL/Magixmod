@@ -4697,6 +4697,7 @@ func:function(){
 		tier:1,
 		name:'Heavenly',
 		wideIcon:[0,11,'magixmod'],
+		icon:[1,11,'magixmod'],
 		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
 		fromWonder:'Heavenly',
 		effects:[
@@ -4709,6 +4710,7 @@ func:function(){
 		tier:1,
 		name:'Deadly, revenantic',
 		wideIcon:[0,16,'magixmod'],
+		icon:[1,16,'magixmod'],
 		desc:'You escaped and your soul got escorted right into the world of Underwold... you may discover it sometime.',
 		fromWonder:'Deadly, revenantic',
 		effects:[
