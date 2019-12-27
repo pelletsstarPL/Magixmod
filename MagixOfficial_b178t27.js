@@ -4695,7 +4695,7 @@ func:function(){
 //Temple achiev
 		new G.Achiev({
 		tier:1,
-		name:'Heavenly',
+		name:'temple of heaven',
 		icon:[1,11,'magixmod'],
 		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
 		fromWonder:'temple of heaven',
