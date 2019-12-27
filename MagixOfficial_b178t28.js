@@ -4294,7 +4294,7 @@ func:function(){
 		new G.Unit({
 		name:'temple of heaven',
 		desc:'@leads to the <b>Heavenly victory</b><>A mystical monument dedicated to angels, archangels and seraphins where.//A temple housing a tomb deep under its rocky platform, where the Temple\'s relics lie and there is last bastion of your religion if it will start fall. @The tower it does have is high, above clouds, despite fact there is cold on top some brave people may come up to prey its god, or listen heavenly symphonies and hums.',
-		wonder:'temple of heaven',
+		wonder:'Heavenly',
 		icon:[1,11,'magixmod'],
 		wideIcon:[0,11,'magixmod'],
 		cost:{'basic building materials':35000,'gem block':10},
@@ -4312,7 +4312,7 @@ func:function(){
 		new G.Unit({
 		name:'The Skull of Wild Death',
 		desc:'@leads to the <b>Deadly escape</b><>A big skull shaped construcion with fire roaring inside dedicated to bloodthirsty [<span style="color: red">Revenants</span>] assaulting your world.//A realm around it is a burial for them. Home of [wild corpse] . There they can burn and in the terrain around buried. Per each step you will perform building it you will grant big amount of [burial spot] . <i>Let these corpses go into their rightenous home</i>',
-		wonder:'wild death skull',
+		wonder:'Deadly, revenantic',
 		icon:[1,16,'magixmod'],
 		wideIcon:[0,16,'magixmod'],
 		cost:{'basic building materials':1000,'gem block':30},
@@ -4695,10 +4695,10 @@ func:function(){
 //Temple achiev
 		new G.Achiev({
 		tier:1,
-		name:'temple of heaven',
+		name:'Heavenly',
 		icon:[1,11,'magixmod'],
 		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
-		fromWonder:'temple of heaven',
+		fromWonder:'Heavenly',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:10}	
@@ -4707,10 +4707,10 @@ func:function(){
 //skull achiev
 		new G.Achiev({
 		tier:1,
-		name:'Deadly escape',
+		name:'Deadly, revenantic',
 		icon:[1,16,'magixmod'],
 		desc:'You escaped and your soul got escorted right into the world of Underwold... you may discover it sometime.',
-		fromWonder:'wild death skull',
+		fromWonder:'Deadly, revenantic',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:20}	
