@@ -4255,7 +4255,11 @@ func:function(){
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}}
 		],
 	});
-//New Wonder. The portal to Plain Island. If possible i make it being built same way as Mausoleum
+	G.legacyBonuses.push(
+		{id:'addFastTicksOnStart',name:'+[X] free fast ticks',desc:'Additional fast ticks when starting a new game.',icon:[0,0],func:function(obj){G.fastTicks+=obj.amount;},context:'new'},
+		{id:'addFastTicksOnResearch',name:'+[X] fast ticks from research',desc:'Additional fast ticks when completing research.',icon:[0,0],func:function(obj){G.props['fastTicksOnResearch']+=obj.amount;}}
+	);
+//New Wonder. The portal to Plain Island. If possible I make it being built same way as Mausoleum
 		new G.Unit({
     		name:'<span style="color: #E0CE00">Plain island portal</span>',
     		desc:'@opens a portal to a huge <b>Plain Island</b>A creation made of ideas of wizards and dreams of population more exactly kids.//A Dream comes real. You will grant +25000 max land upon activation of portal',
@@ -4694,7 +4698,7 @@ func:function(){
 		name:'Heavenly',
 		icon:[1,11,'magixmod'],
 		desc:'Your soul has been sent to Paradise as archangel with power of top Temple tower in an beautiful stone monument the purpose of which takes root in a pure religious thought.',
-		fromUnit:'temple of heaven',
+		fromWonder:'temple of heaven',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:10}	
@@ -4706,7 +4710,7 @@ func:function(){
 		name:'Deadly escape',
 		icon:[1,16,'magixmod'],
 		desc:'You escaped and your soul got escorted right into the world of Underwold... you may discover it sometime.',
-		fromUnit:'The Skull of Wild Death',
+		fromWonder:'wild death skull',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:20}	
