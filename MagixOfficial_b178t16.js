@@ -5295,7 +5295,6 @@ G.writeMSettingButton=function(obj)
 		{
 			var toSpoil=me.amount*0.009;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('happiness'),randomFloor(spent),'launching');
 		},
 		category:'seasonal',
 	});
