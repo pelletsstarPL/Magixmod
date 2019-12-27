@@ -2947,7 +2947,7 @@ func:function(){
 		desc:'Multiplies amount of [Paper] crafted in shacks by 40%. If you go into moderating culture you obtain additional 8%, while in joy path just 4%.',
 		icon:[8,12,14,12,'magixmod',21,15,'magixmod'], 
 		cost:{'insight':916,'wisdom':9},
-		req:{'Papercrafting':true,'Poetry':true},
+		req:{'papercrafting':true,'Poetry':true},
 	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
@@ -4710,7 +4710,7 @@ func:function(){
 		name:'Deadly escape',
 		icon:[1,16,'magixmod'],
 		desc:'You escaped and your soul got escorted right into the world of Underwold... you may discover it sometime.',
-		fromWonder:'wild death skull',
+		fromUnit:'Deadly escape',
 		effects:[
 			{type:'addFastTicksOnStart',amount:300},
 			{type:'addFastTicksOnResearch',amount:20}	
