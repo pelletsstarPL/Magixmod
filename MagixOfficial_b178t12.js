@@ -2914,17 +2914,31 @@ func:function(){
 	});
 		new G.Tech({
 		name:'Bigger potion types pallet',
-		desc:'<span style "color: #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions. <b>Unlocks stand which allows to craft pots for these types of potion out of [Potion pot] .</b></span>',
+		desc:'<font color: #93db70">Unlocks more potion types. These are [combat potions] which has a needle and grip so they are throwable and may be use in defense battle, unlocks a [Jar for concoctions,concoctions] used to craft other potions. <b>Unlocks stand which allows to craft pots for these types of potion out of [Potion pot] .</b></font>',
 		icon:[21,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 	});
 		new G.Tech({
 		name:'Combat potion & concoction brewing',
-		desc:'<span style "color: ##93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients. <b>Unlocks stands which may brew these potions but there is chance that accident will occur during work.</b></span>',
+		desc:'<font color: #93db70">Allows to craft basic 4 combat potions and 2 concoctions. Uses crafted by [ingredient crafting stand] workers ingredients. <b>Unlocks stands which may brew these potions but there is chance that accident will occur during work.</b></font>',
 		icon:[20,16,'magixmod'], 
 		cost:{'insight':850,'science':1,'wisdom':9},
 		req:{'Alcohol brewing':true,'Medicaments brewing':true,'Beginnings of alchemy':true,'<span style="color: ##FF0900">Paradise building</span>':true},
+	});
+		new G.Tech({
+		name:'Dark wonder',
+		desc:'<font color:#000000>Unlocks dark wonder...</font>',
+		icon:[22,3,'magixmod'], 
+		cost:{'insight':850,'science':1,'wisdom':9},
+		req:{'<span style="color: red">Revenants</span>':true},
+	});
+		new G.Tech({
+		name:'Hope of revenant abandoning',
+		desc:'<font color:#000000>Happiness harm from [wild corpse] and corpses is HALVED.</font>',
+		icon:[22,5,'magixmod'], 
+		cost:{'insight':850,'science':1,'wisdom':9,'Dark skull construction point':250},
+		req:{'<span style="color: red">Revenants</span>':true,'Dark wonder':true},
 	});
 /////////////////////////////////////////////////////////////////////
 	//UNITS
@@ -4292,7 +4306,7 @@ func:function(){
 		finalStepDesc:'To complete this wonder in hope of wild corpses leaving you away for some time you will need pay some tools in order',
 		use:{'land':120},
 		require:{'worker':40,'stone tools':10},
-		req:{'monument-building II':true,'<span style="color: red">Revenants</span>':true},
+		req:{'monument-building II':true,'<span style="color: red">Revenants</span>':true,'Dark wonder':true},
 		category:'wonder',
 	});
 	//Artisans will make wands for wizards. Mode for it.
