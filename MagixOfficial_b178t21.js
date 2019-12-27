@@ -2571,7 +2571,7 @@ func:function(){
 		name:'Terrain conservacy',
 		desc:'@Unlocks subclass of [architect] which instead of setting up new houses etc. will set up some part of ground due to requirements of job group, for example [Alchemists]. Their stands and their "toys" will use [Alchemy zone] instead of [land]  <>',
 		icon:[17,5,'magixmod',24,1],
-		cost:{'insight':850,'wisdom':60},
+		cost:{'insight':940,'wisdom':60},
 		req:{'Beginnings of alchemy':true,'Intermediate maths':true,'Proportion':true},
 	});
 		new G.Tech({
@@ -2633,7 +2633,7 @@ func:function(){
 		name:'Moar juices',
 		desc:'Allows you to craft juice out of [fruit]s.',
 		icon:[17,4,'magixmod'],
-		cost:{'insight':950},
+		cost:{'insight':805},
 		req:{'<span style="color: ##FF0900">Plain island building</span>':true,'Crafting a juice':true},
 	});
 		new G.Tech({
@@ -2840,7 +2840,7 @@ func:function(){
 		name:'7th complex tower',
 		desc:'Due to 7th essence discovered [Wizard Complex] has a need to build up new tower specially for new essence.@More housing and since now [Wizard Complex] will use more [Mana] just to craft new essence too.',
 		icon:[20,8,'magixmod'], 
-		cost:{'insight':700},
+		cost:{'insight':695},
 		req:{'7th essence':true,'Wizard complex':true},
 	});
 		new G.Tech({
