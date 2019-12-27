@@ -5240,7 +5240,7 @@ G.writeMSettingButton=function(obj)
 		desc:'@unlocks [Firework launching guy]. By the way allows [Artisan of new year] to craft [Firecracker] .',
 		icon:[17,0,'seasonal'],
 		cost:{'insight':70},
-		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Fireowrk crafting':true},
+		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Firework crafting':true},
 	});
 		new G.Unit({
 		name:'Firework launching guy',
