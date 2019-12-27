@@ -2945,7 +2945,7 @@ func:function(){
 		name:'Better papercrafting recipe',
 		desc:'Multiplies amount of [Paper] crafted in shacks by 40%. If you go into moderating culture you obtain additional 8%, while in joy path just 4%.',
 		icon:[8,12,14,12,'magixmod',21,15,'magixmod'], 
-		cost:{'insight':955,'wisdom':9},
+		cost:{'insight':926,'wisdom':9},
 		req:{'Papercrafting':true,'Poetry':true},
 	});
 /////////////////////////////////////////////////////////////////////
