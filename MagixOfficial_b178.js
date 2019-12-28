@@ -1484,6 +1484,8 @@ func:function(){
 					{
 						//resort to muddy water
 						if (rations!='none' && G.checkPolicy('drink muddy water')=='on') lacking=lacking-G.lose('muddy water',lacking,'drinking');
+						//resort to cloudy water
+						if (rations!='none' && G.checkPolicy('drink cloudy water')=='on') lacking=lacking-G.lose('Cloudy water',lacking,'drinking');
 						if (lacking>0 && G.checkPolicy('disable aging')=='off')//are we also out of muddy water?
 						{
 							G.gain('happiness',-lacking*5,'no water');
@@ -4920,6 +4922,15 @@ func:function(){
 		cost:{'influence':3},
 		startMode:'off',
 		req:{'rules of food':true,'Crafting a juice':true},
+		category:'food',
+	});
+		new G.Policy({
+		name:'drink cloudy water',
+		desc:'Your people will drink [Cloudy water] which is equal to [water].',
+		icon:[6,12,12,14,'magixmod'],
+		cost:{'influence':1},
+		startMode:'on',
+		req:{'rules of food':true,'Paradise building':true},
 		category:'food',
 	});
 	//New gains for gatherer
