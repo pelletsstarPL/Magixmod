@@ -1006,7 +1006,8 @@ func:function(){
 		{
 			if (me.amount=1.01){ 
 				G.Message({type:'good',text:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hits next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod']});
-				var spent=G.lose(me.amount*0.9900990099009901);
+				var toSpoil=me.amount*0.009900990099009901;
+				var spent=G.lose(me.name,randomFloor(toSpoil),'debug2message');
 			}
 		},	
 		category:'main',
