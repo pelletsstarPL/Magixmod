@@ -999,8 +999,9 @@ func:function(){
 		startWith:0,
 		tick:function(me,tick)
 		{
-			if (me.amount>=1){ 
-				G.Message({type:'good',text:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hits next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod'],repeat:0});
+			if (me.amount>=1.01){ 
+				G.Message({type:'good',text:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hits next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod']});
+				var spent=G.lose(me.name,0.01(toSpoil));
 			}
 		},	
 		category:'main',
@@ -4283,7 +4284,7 @@ func:function(){
     		cost:{'precious building materials':35000,'insight':1500,'faith':250,'Fire essence':45000,'Water essence':47500,'Dark essence':37500,'Wind essence':27500,'Lightning essence':37750,'Nature essence':100750,'precious metal ingot':1e4},
     		effects:[
     			{type:'provide',what:{'Land of the Paradise':26500}},
-			{type:'provide',what:{'Paradise emblem':1}},
+			{type:'provide',what:{'Paradise emblem':1.01}},
     		],
     		use:{'land':10},
 		messageOnStart:'You built a portal to Plain Island. It is big isle. On this island you may build houses , mines and other but not these one you built in your mortal world. You will unlock new category of buildings, a little bit better but limited housing. You may gain new minerals, who know maybe new food or anything else you did not see anytime earlier.',
@@ -4927,7 +4928,7 @@ func:function(){
 		new G.Policy({
 		name:'drink cloudy water',
 		desc:'Your people will drink [Cloudy water] which is equal to [water].',
-		icon:[6,12,12,14,'magixmod'],
+		icon:[6,12,11,14,'magixmod'],
 		cost:{'influence':1},
 		startMode:'on',
 		req:{'rules of food':true,'Paradise building':true},
