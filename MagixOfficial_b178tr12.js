@@ -1004,11 +1004,12 @@ func:function(){
 		startWith:0,
 		tick:function(me,tick)
 		{
-			if (me.amount=1){ 
-				G.Message({type:'good',text:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hits next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod']});
+			if (me.amount>=1){ 
+				G.Message({type:'good',text:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hits next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.',icon:[8,4,'magixmod']});
 			}
 		},	
 		category:'main',
+
 	});
 		new G.Res({
 		name:'Combat potion pot',
