@@ -4936,7 +4936,7 @@ func:function(){
 		icon:[6,12,11,14,'magixmod'],
 		cost:{'influence':1},
 		startMode:'on',
-		req:{'rules of food':true,'Paradise building':true},
+		req:{'rules of food':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		category:'food',
 	});
 	//New gains for gatherer
