@@ -86,6 +86,11 @@ func:function(){
 		desc:'Wands are basic of wizardry. Thing used by beginner wizards. Without it most of spells are impossible to be casted. @Number to the left means how much is now used, to the right how much is in stock.',
 		icon:[6,4,'magixmod'],
 		category:'gear',
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
 		displayUsed:true,
 	});
 		new G.Res({
