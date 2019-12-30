@@ -470,15 +470,15 @@ func:function(){
 		partOf:'misc materials',
 		category:'misc',
 	});
-	let madeUnlockMessage = false
-	new G.Res({
-        name:'Plain Island emblem',
-        desc:'A thing you will get after activating a Plain Island portal. Needed to unlock further researching. A pass for further things. You can obtain only one Emblem of this type. <b>@Your adventure has been finished... But portal hides a new secrets... so in fact your adventure has not ended yet.<b>',
+		let madeUnlockMessage = false
+		new G.Res({
+      	name:'Plain Island emblem',
+       	desc:'A thing you will get after activating a Plain Island portal. Needed to unlock further researching. A pass for further things. You can obtain only one Emblem of this type. <b>@Your adventure has been finished... But portal hides a new secrets... so in fact your adventure has not ended yet.<b>',
         icon:[14,9,'magixmod'],
         startWith:0,
         tick:function(me,tick)
         {
-            if (me.amount>=1 && madeUnlockMessage){ 
+            if (me.amount>=1 && !madeUnlockMessage){ 
                 G.Message({type:'good',text:'<b>You and your people activated passage to Plain Island. Out of portal an Emblem fall and hits on rock. Big rectangular portal shines and you can see what is beyond it. You come through and notice there are flat plains. Now it is time for more discoveries and build there some stuff.</b>',icon:[8,3,'magixmod']});
                 madeUnlockMessage = true
             }
