@@ -999,6 +999,7 @@ func:function(){
 		},
 		category:'alchemyingredients',
 	});
+		let madeUnlockMessage = false
 		new G.Res({
 		name:'Paradise emblem',
 		desc:'A thing you will get after activating a Paradise portal. Needed to unlock further researching. A pass for further things and more adventures. You can obtain only one Emblem of this type. <b>@God called you to his world... But God\'s paradise has rules that you & your people must follow or Paradise will be closed for you and your people... so in fact your adventure has not ended yet even after adventure in Plain Island. Good luck.<b>',
@@ -1006,8 +1007,9 @@ func:function(){
 		startWith:0,
 		tick:function(me,tick)
 		{
-			if (me.amount>=1){ 
+			if (me.amount>=1 && !madeUnlockMessage){ 
 				G.Message({type:'good',text:'<b>You and your people activated passage to Paradise. Out of portal an Emblem fall and hits next to your feet. Big golden portal shines and you can see what is beyond it. You come through and notice there is perfect heat to live. Now it is time for more discoveries.</b>',icon:[8,4,'magixmod']});
+				madeUnlockMessage = true
 			}
 		},	
 		category:'main',
