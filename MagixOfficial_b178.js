@@ -3132,7 +3132,7 @@ func:function(){
 		effects:[
 			{type:'convert',from:{'Sugar cane':3.4},into:{'papyrus':1.5},every:1,mode:'papyrus'},
 			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
-			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.5},into:{'pergamin':1.15},every:4,mode:'pergamin'},
 			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}},
 			{type:'mult',value:1.44,req:{'Better papercrafting recipe':'true','joy of eating':true}},
@@ -3472,7 +3472,7 @@ func:function(){
 		effects:[
 			{type:'convert',from:{'Sugar cane':3.4},into:{'papyrus':1.5},every:1,mode:'papyrus'},
 			{type:'convert',from:{'hide':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
-			{type:'convert',from:{'leather':1.75},into:{'pergamin':1.15},every:4,mode:'pergamin'},
+			{type:'convert',from:{'leather':1.5},into:{'pergamin':1.15},every:4,mode:'pergamin'},
 			{type:'convert',from:{'Bamboo':4},into:{'common paper':1.4},every:2,mode:'commonpaper'},
 			{type:'mult',value:1.17,req:{'Crafting & farm rituals':'on'}},
 			{type:'mult',value:1.44,req:{'Better papercrafting recipe':'true','joy of eating':true}},
