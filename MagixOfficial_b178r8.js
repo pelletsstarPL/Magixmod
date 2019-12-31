@@ -562,7 +562,7 @@ func:function(){
 		new G.Res({
 		name:'First aid things',
 		desc:'More advanced things, tools used by [healer,healers].',
-		icon:[choose([22,'magixmod',23,'magixmod']),6,'magixmod'],
+		icon:[choose([22,23]),6,'magixmod'],
 		tick:function(me,tick)
 		{
 			var toSpoil=me.amount*0.01;
