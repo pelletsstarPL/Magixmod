@@ -535,7 +535,7 @@ func:function(){
 			var toSpoil=me.amount*0.01;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
-		category:'misc',
+		partOf:'First aid things',
 	});
 		new G.Res({
 		name:'Bandage',
@@ -546,7 +546,7 @@ func:function(){
 			var toSpoil=me.amount*0.01;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
-		category:'misc',
+		partOf:'First aid things',
 	});
 		new G.Res({
 		name:'Triangular bandage',
@@ -557,7 +557,7 @@ func:function(){
 			var toSpoil=me.amount*0.01;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
-		category:'misc',
+		partOf:'First aid things',
 	});
 		new G.Res({
 		name:'First aid things',
@@ -569,6 +569,7 @@ func:function(){
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
 		},
 		category:'misc',
+		meta:true,
 	});
 		new G.Res({
 		name:'Cloudy water',
