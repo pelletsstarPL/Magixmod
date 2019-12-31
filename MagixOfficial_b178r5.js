@@ -560,6 +560,17 @@ func:function(){
 		category:'misc',
 	});
 		new G.Res({
+		name:'First aid things',
+		desc:'More advanced things, tools used by [healer,healers].',
+		icon:[choose([22,'magixmod']),6,7],
+		tick:function(me,tick)
+		{
+			var toSpoil=me.amount*0.01;
+			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		},
+		category:'misc',
+	});
+		new G.Res({
 		name:'Cloudy water',
 		desc:'Water which cannot spoil in any way (but it still can decay but slower). Gathered from Paradise\'s lakes, ponds, rivers.',
 		icon:[11,14,'magixmod'],
