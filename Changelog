@@ -11,6 +11,12 @@
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
                                                           
+31 XII 2019
+Fixes and improvements
+-> Fixed issue with infinitely repeating message upon getting an Portal Emblem
+ >>Instead it will show only once and only when you will obtain 1 and if you will leave game and at each enter of game at same time when you have Welcome Back as reminder of using Emblem to unlock next technologies
+-> Hid unnecesary subtypes of paper and first aid things
+                                                     
 27 XII 2019
 Revenant features
 -> Seasonal content for New Year Eve available since 27th December till 4th January
