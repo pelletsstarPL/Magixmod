@@ -3551,7 +3551,7 @@ func:function(){
 		use:{'worker':1,'Wand':3},
 		upkeep:{'food':11},
 		req:{'Wizardry':true,'Wizard wisdom':false},
-		hidden:true(if:'Wizard Wisdom':true),
+		hidden:true,
 		effects:[
 			{type:'gather',what:{'insight':0.012}},
 			{type:'convert',from:{'Paper':13},into:{'Poet\'s notes':1},every:30,req:{'Notewriting':true}},
