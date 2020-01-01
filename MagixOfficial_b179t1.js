@@ -1654,11 +1654,19 @@ func:function(){
 		},
 		category:'demog',
 	});
+		let madeWarnCorpseMesg = false
 		new G.Res({
 		name:'wild corpse',//InDevelopment
-		desc:'Effect of [Revenants] trait. Dangerous for common, alive people will kill them, so think about hiring soldiers. ',
-		partOf:'population',
+		desc:'Effect of [<span style="color: red">Revenants</span>] trait. Dangerous for common, alive people will kill them, so think about hiring soldiers. ',
 		icon:[19,11,'magixmod'],
+		tick:function(me,tick)
+		{
+			if (me.amount>=300 && !madeWarnCorpseMesg){ 
+			G.Message({type:'bad',text:'<b>Beware of Wild corpses!.</b> Since you obtained[<span style="color: red">Revenants</span>] as you noticed the Wild Corpses started to appear. They cause your [Dark essence] to leak and even worse they will kill your people. Slain them at any way you can do it.',icon:[24,0,'magixmod']});
+			madeWarnCorpseMesg = true
+			}
+		},
+		category:'demog',
 	});
 	new G.Res({
 		name:'wounded alchemist',
