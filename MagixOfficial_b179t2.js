@@ -1662,16 +1662,24 @@ func:function(){
 		tick:function(me,tick)
 		{
 			if (me.amount>=300 && !madeWarnCorpseMesg){ 
-			G.Message({type:'bad',text:'<b>Beware of Wild corpses!.</b> Since you obtained[<span style="color: red">Revenants</span>] as you noticed the Wild Corpses started to appear. They cause your [Dark essence] to leak and even worse they will kill your people. Slain them at any way you can do it.',icon:[24,0,'magixmod']});
+			G.Message({type:'bad',text:'<b>Beware of Wild corpses!.</b> Since you obtained[<b><span style="color: red">Revenants</span></b>] trait, as you noticed the Wild Corpses started to appear. They cause your <b><span style "color: #0000A0">Dark essence</span></b> to leak and even worse they will kill your people. Slain them at any way you can do it.',icon:[24,0,'magixmod']});
 			madeWarnCorpseMesg = true
 			}
 		},
 		category:'demog',
 	});
-	new G.Res({
+		let madeThievesWarn = false
+		new G.Res({
 		name:'wounded alchemist',
 		desc:'[Alchemists] may get [wounded,wounded] due to work injuries. They do not [worker,work] but may slowly get better over time.',
-		partOf:'population',
+		partOf:'population', //There we may add a message for thieves!
+		tick:function(me,tick)
+		{
+				if (G.year=90 && !madeThievesWarn){
+       				 G.Message({type:'bad',text:'<b>Beware of thievery!</b> It will occur since now. Soon your people will start to punish them. Craft equipment for them so it will be even easier deal!',icon:[23,1,'magixmod']});
+				madeThievesWarn = true
+				}
+		},
 		icon:[21,2,'magixmod'],
 	});
 	//To make recovery not like wounded child alch becomes adult alch
