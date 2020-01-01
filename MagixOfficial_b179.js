@@ -1438,7 +1438,7 @@ func:function(){
 			
 				if (G.has('Supreme healthy life'))
 				{
-					var n=randomFloor(G.getRes('population').amount*0.38);G.gain('health',n,'supreme healthy life');
+					var n=randomFloor(G.getRes('population').amount*0.24);G.gain('health',n,'supreme healthy life');
 				}
 		},
 	});
