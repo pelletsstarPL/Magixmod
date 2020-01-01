@@ -1675,7 +1675,7 @@ func:function(){
 		partOf:'population', //There we may add a message for thieves!
 		tick:function(me,tick)
 		{
-				if (G.year>=7 && G.year<=10 && !madeThievesWarn){
+				if (G.year>=89 && G.year<=101 && !madeThievesWarn){
        				 G.Message({type:'bad',text:'<b><span style="color: #FFA500">Beware of thievery!</span></b> It will occur since now. Soon your people will start to punish them. Craft equipment for them so it will be even easier deal! Thieves are unhappy adults. They will show their unhappiness by commiting crimes. Even 200% <span style "color= aqua">Happiness</span> won\'t decrease their spawn rate to 0. Civilians (except kids)have a chance to die to thief or to beat him up.',icon:[23,1,'magixmod']});
 				madeThievesWarn = true
 				}
@@ -1683,11 +1683,19 @@ func:function(){
 		icon:[21,2,'magixmod'],
 	});
 	//To make recovery not like wounded child alch becomes adult alch
-	new G.Res({
+		let madeThanks4playmesg = false
+		new G.Res({
 		name:'wounded child alchemist',
 		desc:'[Alchemists] may get [wounded,wounded] due to work injuries. They do not [worker,work] but may slowly get better over time.',
 		partOf:'population',
 		icon:[21,2,'magixmod'],
+		tick:function(me,tick)
+		{
+				if (G.year>=2 && G.year<=6 && !madeThanks4playmesg){
+       				 G.Message({type:'important',text:'Seems like you are doing preety well. It is been 150 years since you started magic adventure with Magix additions. Thank you for playing with this expansion. Your playing makes mod better and motivates for future updates. Remember mod is still getting bigger and gets more content. This means someday the mod may not be unavaiable to play for while. If you will lose progress due to update we are sorry. Anyway keep enjoying this adventure... <b>Farewell</b>',icon:[24,1,'magixmod']});
+				madeThanks4playmesg = true
+				}
+		},
 	});
 //FLOWERS!,DYES!
 		new G.Res({
