@@ -1691,7 +1691,7 @@ func:function(){
 		icon:[21,2,'magixmod'],
 		tick:function(me,tick)
 		{
-				if (G.year>=2 && G.year<=6 && !madeThanks4playmesg){
+				if (G.year>=149 && G.year<=158 && !madeThanks4playmesg){
        				 G.Message({type:'important',text:'<span style="color= aqua">Seems like you are doing preety well. It is been 150 years since you started magic adventure with Magix additions. Thank you for playing with this expansion. Your playing makes mod better and motivates for future updates. <br> <b> -> </b>Remember mod is still getting bigger and gets more content. This means someday the mod may not be unavaiable to play for while. If you will lose progress due to update we are sorry. Anyway keep enjoying this adventure... <br> </span><b>Farewell</b>',icon:[24,1,'magixmod']});
 				madeThanks4playmesg = true
 				}
