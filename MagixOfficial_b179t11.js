@@ -1692,7 +1692,7 @@ func:function(){
 		tick:function(me,tick)
 		{
 				if (G.year>=2 && G.year<=6 && !madeThanks4playmesg){
-       				 G.Message({type:'important',text:'Seems like you are doing preety well. It is been 150 years since you started magic adventure with Magix additions. Thank you for playing with this expansion. Your playing makes mod better and motivates for future updates. Remember mod is still getting bigger and gets more content. This means someday the mod may not be unavaiable to play for while. If you will lose progress due to update we are sorry. Anyway keep enjoying this adventure... <b>Farewell</b>',icon:[24,1,'magixmod']});
+       				 G.Message({type:'important',text:'Seems like you are doing preety well. It is been 150 years since you started magic adventure with Magix additions. Thank you for playing with this expansion. Your playing makes mod better and motivates for future updates. <br> &bull Remember mod is still getting bigger and gets more content. This means someday the mod may not be unavaiable to play for while. If you will lose progress due to update we are sorry. Anyway keep enjoying this adventure... <br> <b>Farewell</b>',icon:[24,1,'magixmod']});
 				madeThanks4playmesg = true
 				}
 		},
