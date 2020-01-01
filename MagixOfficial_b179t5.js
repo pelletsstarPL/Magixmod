@@ -1675,7 +1675,7 @@ func:function(){
 		partOf:'population', //There we may add a message for thieves!
 		tick:function(me,tick)
 		{
-				if (G.year==90 && !madeThievesWarn){
+				if (G.year==90 & !madeThievesWarn){
        				 G.Message({type:'bad',text:'<b><span style="color: #FFA500">Beware of thievery!</span></b> It will occur since now. Soon your people will start to punish them. Craft equipment for them so it will be even easier deal! Thieves are unhappy adults. They will show their unhappiness by commiting crimes. Even 200% <span style "color= aqua">Happiness</span> won\'t decrease their spawn rate to 0. Civilians (except kids)have a chance to die to thief or to beat him up.',icon:[23,1,'magixmod']});
 				madeThievesWarn = true
 				}
