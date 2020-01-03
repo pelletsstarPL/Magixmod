@@ -4988,7 +4988,7 @@ func:function(){
 		icon:[6,12,11,14,'magixmod'],
 		cost:{'influence':0},
 		startMode:'off',
-		req:{'nonflorism':'off'},
+		req:{'rules of food':true},
 		category:'food',
 	});
 	//New gains for gatherer
