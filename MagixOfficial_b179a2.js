@@ -4157,7 +4157,7 @@ func:function(){
 		desc:'@subclass of gatherer which instead of Food and water, will collect flowers which will have its specific use. The further you will research the more types of [Flowers] he will be able to collect.',
 		icon:[7,11,'magixmod'],
 		cost:{},
-		req:{},
+		req:{'nonflorism':'off'},
 		use:{'worker':1},
 		category:'production',
 		effects:[
@@ -4982,6 +4982,15 @@ func:function(){
 		req:{'rules of food':true,'<span style="color: ##FF0900">Paradise building</span>':true},
 		category:'food',
 	});
+		new G.Policy({
+		name:'nonflorism',
+		desc:'Hide florists.',
+		icon:[6,12,11,14,'magixmod'],
+		cost:{'influence':0},
+		startMode:'off',
+		req:{'nonflorism':'off'},
+		category:'food',
+	});
 	//New gains for gatherer
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Berry seeds': 0.005},amount:1,max:1});
 		G.getDict('gatherer').effects.push({type:'gather',context:'gather',what:{'Beet seeds': 0.005},amount:1,max:1});
@@ -5319,7 +5328,6 @@ G.writeMSettingButton=function(obj)
 		icon:[17,0,'seasonal'],
 		cost:{'insight':70},
 		req:{'<span style="color: yellow">Culture of celebration</span>':true,'Firework crafting':true},
-		hidden:true,
 	});
 		new G.Unit({
 		name:'Firework launching guy',
