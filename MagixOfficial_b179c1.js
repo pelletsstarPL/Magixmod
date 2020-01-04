@@ -3587,7 +3587,7 @@ func:function(){
 		new G.Unit({
 		name:'Wizard',
 		desc:'A man needed to make his towers even exist. Provides 1 [wisdom] per each one instead of gaining [insight] like [Archaic wizard]',
-		icon:[21,8,'magixmod'],
+		icon:[choose([21,22,23,24]),8,'magixmod'],
 		cost:{'insight':1,'stick':2,'food':1,'water':1},
 		use:{'worker':1,'Wand':3},
 		upkeep:{'food':12},
