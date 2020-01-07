@@ -5427,9 +5427,9 @@ G.writeMSettingButton=function(obj)
 	});
 			G.tabs.push({
 			name:'Paradise',
-			id:'para',
+			id:'Paradise',
 			popup:true,
-			update:para,
+			update:'para',
 			desc:'Check the Paradise map and capture it to unlock more functionalities.'
 		});
 }});
