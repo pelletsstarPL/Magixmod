@@ -5652,5 +5652,4 @@ G.funcs['create Paradise map']=function(w,h)
 		return lvl;
 	}
 }
-});
 }});
