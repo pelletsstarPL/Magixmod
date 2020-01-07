@@ -5425,11 +5425,4 @@ G.writeMSettingButton=function(obj)
 		category:'seasonal',
 		hidden:true,
 	});
-			G.tabs.push({
-			name:'Paradise',
-			id:'Paradise',
-			popup:true,
-			update:'para',
-			desc:'Check the Paradise map and capture it to unlock more functionalities.'
-		});
 }});
