@@ -23,7 +23,7 @@ func:function(){
 			'army':{
 				name:'<span style "color: #0DA42B">Army</span>',
 				base:[],
-				side:['Soldiers','Reqruit'],
+				side:['Soldiers','Recruit'],
 		},
 			'food':{
 				name:'<span style "color: #0080FF">Food & Water</span>',
@@ -1701,18 +1701,6 @@ func:function(){
 				madeThanks4playmesg = true
 				}
 		},
-	});
-		new G.Res({
-		name:'Child alchemist',
-		desc:'Younger alchemist. Can be hired to special category of jobs but chance for accidents will grow. Soon he will grow to [Alchemist].//The number on the left is how many are currently being employed, while the number on the right is your total amount of child alchemists.',
-		icon:[12,7,'magixmod'],
-		partOf:'Alchemists',
-		displayUsed:true,
-		tick:function(me,tick)
-		{
-			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('Alchemist',n,'aging up');G.lose('Child alchemist',n,'aging up');
-		},
-		category:'demog',
 	});
 		new G.Res({
 		name:'Soldiers',
