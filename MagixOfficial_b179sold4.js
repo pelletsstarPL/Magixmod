@@ -1704,7 +1704,7 @@ func:function(){
 	});
 		new G.Res({
 		name:'Soldiers',
-		desc:'Part of your safety. Trained well and prepared to face foes. Requires [Reqruit]s who can be hired to one of soldier classes. Crafting too less or none of armor & weapons makes\'em unhappy.',
+		desc:'Part of your safety. Trained well and prepared to face foes. Requires [Recruit]s who can be hired to one of soldier classes. Crafting too less or none of armor & weapons makes\'em unhappy.',
 		icon:[23,2,'magixmod'],
 		partOf:'population',
 		displayUsed:false,
