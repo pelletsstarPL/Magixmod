@@ -5429,6 +5429,7 @@ G.writeMSettingButton=function(obj)
 			name:'Paradise',
 			id:'para',
 			popup:true,
+			update:para,
 			desc:'Check the Paradise map and capture it to unlock more functionalities.'
 		});
 }});
