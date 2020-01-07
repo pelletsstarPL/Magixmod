@@ -18,7 +18,12 @@ func:function(){
 			'demog':{
 				name:'<span style "color: #0DA42B">Demographics</span>',
 				base:['baby','child','adult','elder','worker','sick','wounded'],
-				side:['population','housing','corpse','burial spot','Alchemists'],
+				side:['population','housing','corpse','burial spot','Alchemists','Soldiers'],
+		},
+			'army':{
+				name:'<span style "color: #0DA42B">Army</span>',
+				base:[],
+				side:['Soldiers','Reqruit'],
 		},
 			'food':{
 				name:'<span style "color: #0080FF">Food & Water</span>',
@@ -1696,6 +1701,58 @@ func:function(){
 				madeThanks4playmesg = true
 				}
 		},
+	});
+		new G.Res({
+		name:'Child alchemist',
+		desc:'Younger alchemist. Can be hired to special category of jobs but chance for accidents will grow. Soon he will grow to [Alchemist].//The number on the left is how many are currently being employed, while the number on the right is your total amount of child alchemists.',
+		icon:[12,7,'magixmod'],
+		partOf:'Alchemists',
+		displayUsed:true,
+		tick:function(me,tick)
+		{
+			var n=randomFloor(G.getRes('Child alchemist').amount*0.002);G.gain('Alchemist',n,'aging up');G.lose('Child alchemist',n,'aging up');
+		},
+		category:'demog',
+	});
+		new G.Res({
+		name:'Soldiers',
+		desc:'Part of your safety. Trained well and prepared to face foes. Requires [Reqruit]s who can be hired to one of soldier classes. Crafting too less or none of armor & weapons makes\'em unhappy.',
+		icon:[23,2,'magixmod'],
+		partOf:'population',
+		displayUsed:false,
+		meta:true,
+	});
+		new G.Res({
+		name:'Warrior',
+		desc:'Basic knight. Uses sword. Common fighter who is trained to use the sword. Can handle thieves.',
+		icon:[24,3,'magixmod'],
+		partOf:'Soldiers',
+		displayUsed:false,
+		category:'army',
+	});
+		new G.Res({
+		name:'CrossBowyer',
+		desc:'Uses [Crossbow] to fight. Requires [Crossbow belt]s to battle as ammo. Fights from range. Using belts makes opponent armor to deplete faster.',
+		icon:[23,4,'magixmod'],
+		partOf:'Soldiers',
+		displayUsed:false,
+		category:'army',
+	});
+		new G.Res({
+		name:'Tank',
+		desc:'Over armored guy. Requires some more armor. Has 2 daggers chained/bound to him to prevent disarming during duel or battle.',
+		icon:[24,4,'magixmod'],
+		partOf:'Soldiers',
+		displayUsed:false,
+		category:'army',
+	});
+		new G.Res({
+		name:'Recruit',
+		desc:'[Recruit] is an [adult] who is prepared to become a [Soldiers,soldier] . Can be hired to any class of fighting. May die during confrontations.',
+		icon:[24,4,'magixmod'],
+		partOf:'population',
+		displayUsed:false,
+		category:'army',
 	});
 //FLOWERS!,DYES!
 		new G.Res({
