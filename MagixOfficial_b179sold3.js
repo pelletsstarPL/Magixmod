@@ -1737,10 +1737,9 @@ func:function(){
 		new G.Res({
 		name:'Recruit',
 		desc:'[Recruit] is an [adult] who is prepared to become a [Soldiers,soldier] . Can be hired to any class of fighting. May die during confrontations.',
-		icon:[24,4,'magixmod'],
+		icon:[24,2,'magixmod'],
 		partOf:'population',
 		displayUsed:false,
-		category:'army',
 	});
 //FLOWERS!,DYES!
 		new G.Res({
