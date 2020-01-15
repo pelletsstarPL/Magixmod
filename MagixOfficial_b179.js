@@ -5333,7 +5333,7 @@ G.writeMSettingButton=function(obj)
 		icon:[0,0,'seasonal'],
 		cost:{'insight':30},
 		hidden:true,
-		req:{'<span style="color: yellow">Culture of celebration</span>':true,'<span style="color: yellow">Culture of celebration</span>':false},
+		req:{'<span style="color: yellow">Culture of celebration</span>':true,'<span style="color: yellow">Culture of celebration</span>':false,'tribalism':false},
 	});
 		new G.Res({
 		name:'Blue firework',
