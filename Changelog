@@ -10,7 +10,24 @@
                                                      ✚          ✚     •       •        ✚✚✚✚✚✚✚              ✦            ✚       ✚
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
-
+                                                          
+ 16 I 2020
+ Cheves & Thieves update Part I: Cheves
+ -> Cheves are workers acknowledge at cooking.
+ -> 1 new trait
+  >> Unit has modes which depends what chef will use to craft a meal.
+ -> Added new resource: Meals crafted by cheves.
+  >> It is new type of food. Makes people happier at bigger rate than other food.
+  >> Spoils and decays like a normal food.
+ -> Removed 6 resources. All hidden. They were like... first aid things and... (removed bandages, triangular bandages, plasters. Yeah they were 3 separated resources and all of them was part of another one so removed it.
+ Same fix with paper)
+ -> Hid Archaic wizard unit. Bye buddy.
+ -> Preparing to adding Thieves
+ -> Added wheat
+   >>Wheat can be gathered at farm then converted into flour.
+   >>Bakeries needs to be fueled by logs and crafts Bread out of flour.
+     >>Bread was existing in vanilla (data.js) but was unobtainable like concrete and glass.
+     
 03 I 2020
 Tiny patch
 -> Added warning messages as test and thanks for playing one
