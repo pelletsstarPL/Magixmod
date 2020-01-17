@@ -1365,6 +1365,7 @@ func:function(){
 		},
 		category:'misc',
 	});
+		let madeWarnToolDecayMesg = false
 		new G.Res({
 		name:'Light explosives',
 		desc:'Dangerous and useful. May be use to break wall or in mining. This second one is dangerous so be careful. Light explosives are these which has small power of explosion <b><span style="color: #e7ffff">but they are still dangerous for human.</span></b> There are some excepts.',
@@ -1373,6 +1374,10 @@ func:function(){
 		{
 			var toSpoil=me.amount*0.009;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
+		}
+			if (G.year==30 && !madeWarnToolDecayMesg){
+       				 G.Message({type:'important',text:'<font color="gray"><b>Your people noticed that tools they made started to decay. This doesn\'t seem good.</b></font>',icon:[24,6,'magixmod']});
+				madeWarnToolDecayMesg = true
 		},
 		category:'misc',
 	});
