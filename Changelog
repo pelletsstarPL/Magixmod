@@ -11,6 +11,25 @@
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
                                                           
+ 23 I 2020
+ Cheves & Thieves update Part II: Thieves
+ -> Made Mausoleum achievement useful!
+  >> Florists, Thought sharers and main part of Magix... Magic will be available after you get Mausoleum achievement for the first time
+ -> Merged resources
+  >>Granite , Diorite, Andesite merged into Various stones
+  >>Cut Granite, Cut Diorite, Cut Andesite merged into Cut Various Stones
+  >>Bandage, Triangular Bandage, Plaster merged into First Aid Things
+   >> All merges were done because of uselessness of subparts and it was causing using a little too much CPU power
+ -> Fixed bug with duplicating Magix:About tab
+ -> Thieves!
+  >> Thieves spawn at year 90 and later
+  >> They randomly steal your building materials, food
+  >> They have a chance to wound a person or even kill(currently not but they will coming soon)
+   >> But adult have "one of million" (becuase adults amount is much bigger than thieves) chance to neutralize a thief
+  >> You can hire a thief hunter to neutralize thieves
+ -> Slightly buffed new units from Part I of Cheves & Thieves update(except chef)                                                         
+ -> New early game mechanic: after year 30 tools will start to decay.
+ 
  16 I 2020
  Cheves & Thieves update Part I: Cheves
  -> Cheves are workers acknowledge at cooking.
