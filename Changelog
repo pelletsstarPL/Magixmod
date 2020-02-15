@@ -28,6 +28,7 @@
  -> New mod installation way is simple
      >- Instead of normal pasting link you replace a data.js line with link to Magixmod's code
      >- You will see while loading mods Default dataset instead of magix. Do not worry the modded game will load but I made this change for compatibility with other mods.
+    I had to change link to mod to prevent saves of other players from being corrupted due to "Migration"
     Next update will focus on fixes and who knows we may start introducing a Third portal to new world. What is gonna be?
     
   12 II 2020
