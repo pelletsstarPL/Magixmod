@@ -10,6 +10,26 @@
                                                      ✚          ✚     •       •        ✚✚✚✚✚✚✚              ✦            ✚       ✚
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
+                                                          
+ 15 II 2020
+ "Migration"
+ -> I have decided the cool way to make game more moddable will paste data.js code into Magix's code
+   >>Effects:
+     >>We can fully mod now vanilla units, resources, techs etc.
+     >>Added few new utilities making game having more sense
+       >>Tech choices per roll decreased
+         >> 5 ----> 4
+       >>Made separate category for land and lands of other dimensions
+       >>Kilns, furnaces (vanilla ofc) now require tree logs as upkeep
+       >>Wonders name unit category got painted
+       >>Few new day lines and changes in default messages
+       >>Architects blockhouser and brickhouser modes now works as they are supposed to
+       >>Now techs that costs points from WonderFULL update multiplies production of units that produces insight for instance instead of self gathering that was buggy
+ -> New mod installation way is simple
+     >- Instead of normal pasting link you replace a data.js line with link to Magixmod's code
+     >- You will see while loading mods Default dataset instead of magix. Do not worry the modded game will load but I made this change for compatibility with other mods.
+    Next update will focus on fixes and who knows we may start introducing a Third portal to new world. What is gonna be?
+    
   12 II 2020
  A step further update
  -> Moderation and Caretaking paths now lead to more things
