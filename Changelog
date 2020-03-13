@@ -10,6 +10,21 @@
                                                      ✚          ✚     •       •        ✚✚✚✚✚✚✚              ✦            ✚       ✚
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
+   13 III 2020
+ Update of Sounds and Mausoleum!
+ ->Mausoleum can evolve up.
+  >> Can you reach level 10?
+  >> Ascendning by Mausoleum at its final stage grants massive fast tick bonus(new achievement)
+  >> At each stage building the Mausoleum gets more and more expensive(not at each step!)
+  >> Each stage has its unique icon.
+ -> Sounds!
+  >> Currently sound has been implemented to:
+   >> Techs
+   >> Traits
+   >> at Game Over [0 population]
+  >> You can toggle these SFX off by policies tab (free in costs policy)
+ -> At start game screen now you will see note that says magix has been loaded.                                                        
+                                                          
   7 III 2020
  "Magical soil" update
  -> Now if some tech/trait says that some unit for example Potter will become useless you will see its icon slashed and gizmos that access unit's modes is disabled/hidden
