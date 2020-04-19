@@ -1907,7 +1907,7 @@ if (!document.getElementById(cssId))
 	new G.Unit({
 		name:'blacksmith workshop',
 		desc:'@forges metal goods out of ingots<>The [blacksmith workshop,Blacksmith] takes the same pride in shaping the tool that tills as they do the sword that slays.',
-		icon:[26,2,'c2'25,2,'c2'],
+		icon:[26,2,'c2',25,2,'c2'],
 		cost:{'basic building materials':100},
 		use:{'land':1},
 		//require:{'worker':2,'stone tools':2},
