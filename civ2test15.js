@@ -2422,10 +2422,10 @@ if (!document.getElementById(cssId))
 			if(!G.has('oral tradition')){
 			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
 			return {'discernment':cost};
-			}else if(G.has('oral tradition')){
+			}else if(G.has('oral tradition') && !G.has('ritualism')){
 			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
 			return {'discernment':cost,'gentility':cost};
-			}else if(G.has('oral tradition') && G.has('ritualism')){
+			}else if(G.has('oral tradition') && G.has('ritualism') && !G.has('chieftains')){
 			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
 			return {'discernment':cost,'gentility':cost,'faith':cost};
 			}else if(G.has('oral tradition') && G.has('ritualism') && G.has('chieftains')){
