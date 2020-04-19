@@ -192,7 +192,30 @@ if (!document.getElementById(cssId))
 		}
 		return mult;
 	}
-	
+	G.fixTooltipIcons=function()
+	{
+		G.parse=function(what)
+		{
+			var str='<div class="par">'+((what
+			.replaceAll(']s',',*PLURAL*]'))
+			.replace(/\[(.*?)\]/gi,G.parseFunc))
+			.replaceAll('http(s?)://','http$1:#SLASH#SLASH#')
+			.replaceAll('//','</div><div class="par">')
+			.replaceAll('#SLASH#SLASH#','//')
+			.replaceAll('@','</div><div class="par bulleted">')
+			.replaceAll('<>','</div><div class="divider"></div><div class="par">')+'</div>';
+			return str;
+		}
+	}
+	G.initializeFixIcons=function()
+	{
+		if (G.parse("http://").search("http://") == -1)
+		{
+			G.fixTooltipIcons();
+			setTimeout(G.initializeFixIcons,500);	// check again to make sure this version of the function stays applied during page load
+		}
+	}
+	G.initializeFixIcons();
 	/*=====================================================================================
 	RESOURCES
 	=======================================================================================*/
