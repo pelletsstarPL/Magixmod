@@ -478,7 +478,7 @@ if (!document.getElementById(cssId))
 					var changed=0;
 					var n=G.lose('sick',randomFloor(Math.random()*G.getRes('sick').amount*sickHealing),'healing');G.gain('adult',n,'-');changed+=n;
 					G.gain('happiness',changed*10,'recovery');
-					if (changed>0) G.Message({type:'good',mergeId:'sickRecovered',textFunc:function(args){return B(args.n)+' sick '+(args.n==1?'elf':'elves')+' got better.';},args:{n:changed},icon:[4,3,'c2]});
+					if (changed>0) G.Message({type:'good',mergeId:'sickRecovered',textFunc:function(args){return B(args.n)+' sick '+(args.n==1?'elf':'elves')+' got better.';},args:{n:changed},icon:[4,3,'c2']});
 					
 					//wounds
 					var toChange=0.00003;
