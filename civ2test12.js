@@ -23,7 +23,7 @@ if (!document.getElementById(cssId))
     link.media = 'all';
     head.appendChild(link);
 }
-	G.props['fastTicksOnResearch']=150;
+	G.props['fastTicksOnResearch']=75;
 	
 	G.funcs['new game blurb']=function()
 	{
