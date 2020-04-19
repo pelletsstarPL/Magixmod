@@ -3084,7 +3084,7 @@ if (!document.getElementById(cssId))
 		name:'joy of eating',
 		desc:'@elves consume 15% more [food], but are happier when eating',
 		icon:[4,12,'c2',19,1,'c2'],
-		cost:{'gentility':10,'discernment},
+		cost:{'gentility':10,'discernment':2},
 		chance:50,
 		req:{'tribalism':true,'culture of moderation':false},
 	});
