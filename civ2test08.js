@@ -7,12 +7,6 @@ manifest:0,
 sheets:{'magixmod':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/magixmod.png','c2':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/CiV2IconSheet.png'},
 func:function()
 {
-	/*
-		Note : unlike some other strategy games, this dataset does not attempt to replicate Earth human history. In fact, care has been taken not to mention any existing civilizations; other topics consciously avoided are the player's species (no "mankind" or "humans") and gender ("they" is used when referring to any single individual).
-		Similarly, technologies do not necessarily follow the order in which they were invented in real life, if it makes sense for them to do so.
-		Mods should feel free to follow along these guidelines or to implement real-world civilizations, species, and genders into the game if they wish to.
-			-Playable species may be added as a game concept at some point in the future.
-	*/
 	
 	/*=====================================================================================
 	PROPS & FUNCTIONS
@@ -41,7 +35,7 @@ if (!document.getElementById(cssId))
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('herb'))+'"></div><div class="freelabel">x250</div>','250 Herbs')+
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('water'))+'"></div><div class="freelabel">x250</div>','250 Water')+
 		'</div>'+
-		'<div class="par fancyText bitBiggerText">Your tribe finds a place to settle in the wilderness.<br>Resources are scarce, and everyone starts foraging.</div>'+
+		'<div class="par fancyText bitBiggerText">Your tribe finds a place to settle in the wilderness and at deepness of the mysterious world.<br>Resources are scarce, and everyone starts foraging.<br>They look insecure seeing you.</div>'+
 		'<div class="par fancyText bitBiggerText">You emerge as the tribe\'s leader. They call you :</div>';
 		return str;
 	}
