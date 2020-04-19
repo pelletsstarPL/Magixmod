@@ -2709,7 +2709,7 @@ if (!document.getElementById(cssId))
 	new G.Tech({
 		name:'plant lore',
 		desc:'@[gatherer]s find more [herb]s and [fruit]s<>The knowledge of which plants are good to eat and which mean certain death is a slow and perilous one to learn.',
-		icon:[23,7],
+		icon:[23,7,'c2'],
 		cost:{'discernment':10,'creativity':1,'gentility':1},
 		req:{'oral tradition':true},
 		effects:[
