@@ -1565,8 +1565,8 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		//upkeep:{'coin':0.2},
 		effects:[
-			{type:'gather',what:{'insight':0.1}},
-			{type:'gather',what:{'insight':0.05},req:{'symbolism':true}},
+			{type:'gather',what:{'discernment':0.1}},
+			{type:'gather',what:{'discernment':0.05},req:{'symbolism':true}},
 			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
 		],
 		req:{'speech':true},
@@ -1582,8 +1582,8 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		upkeep:{'coin':0.1},
 		effects:[
-			{type:'gather',what:{'culture':0.1}},
-			{type:'gather',what:{'culture':0.05},req:{'symbolism':true}},
+			{type:'gather',what:{'gentility':0.1}},
+			{type:'gather',what:{'gentility':0.05},req:{'symbolism':true}},
 			{type:'mult',value:1.3,req:{'artistic thinking':true}},
 			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
 		],
