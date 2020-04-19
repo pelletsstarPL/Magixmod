@@ -1582,10 +1582,10 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		//upkeep:{'coin':0.2},
 		effects:[
-			{type:'gather',what:{'discernment':0.1}},
+			{type:'gather',what:{'discernment':0.075}},
 			{type:'gather',what:{'creativity':0.025}},
 			{type:'gather',what:{'discernment':0.05},req:{'symbolism':true}},
-			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
+			{type:'mult',value:1.15,req:{'wisdom rituals':'on'}}
 		],
 		req:{'speech':true},
 		category:'discovery',
@@ -1600,10 +1600,10 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		upkeep:{'coin':0.1},
 		effects:[
-			{type:'gather',what:{'gentility':0.1}},
-			{type:'gather',what:{'gentility':0.05},req:{'symbolism':true}},
-			{type:'mult',value:1.3,req:{'artistic thinking':true}},
-			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
+			{type:'gather',what:{'gentility':0.075}},
+			{type:'gather',what:{'gentility':0.00375},req:{'symbolism':true}},
+			{type:'mult',value:1.2,req:{'artistic thinking':true}},
+			{type:'mult',value:1.15,req:{'wisdom rituals':'on'}}
 		],
 		req:{'oral tradition':true},
 		category:'cultural',
@@ -1989,7 +1989,7 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		upkeep:{'coin':0.2},
 		effects:[
-			{type:'gather',what:{'faith':0.1,'happiness':0.2}},
+			{type:'gather',what:{'faith':0.075,'happiness':0.2}},
 			{type:'gather',what:{'faith':0.05},req:{'symbolism':true}}
 		],
 		req:{'ritualism':true},
@@ -2422,9 +2422,15 @@ if (!document.getElementById(cssId))
 			if(!G.has('oral tradition')){
 			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
 			return {'discernment':cost};
-			}else{
+			}else if(G.has('oral tradition')){
 			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
 			return {'discernment':cost,'gentility':cost};
+			}else if(G.has('oral tradition') && G.has('ritualism')){
+			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
+			return {'discernment':cost,'gentility':cost,'faith':cost};
+			}else if(G.has('oral tradition') && G.has('ritualism') && G.has('chieftains')){
+			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
+			return {'discernment':cost,'gentility':cost,'faith':cost,'influence':cost};
 			}
 		},
 		getCardCosts:function(what)
@@ -2733,7 +2739,7 @@ if (!document.getElementById(cssId))
 	
 	new G.Tech({
 		name:'symbolism',
-		desc:'@[dreamer]s produce 50% more [discernment] and 12.5% more [creativity] @[storyteller]s produce 50% more [gentility]@[soothsayer]s produce 50% more [faith]<>The manifestation of one thing for the meaning of another - to make the cosmos relate to itself.',
+		desc:'@[dreamer]s produce 50% more [discernment] and 12.5% more [creativity] @[storyteller]s produce 40% more [gentility]@[soothsayer]s produce 40% more [faith]<>The manifestation of one thing for the meaning of another - to make the cosmos relate to itself.',
 		icon:[13,1,'c2'],
 		cost:{'gentility':20,'discernment':20,'creativity':4},
 		req:{'oral tradition':true},
@@ -2745,7 +2751,7 @@ if (!document.getElementById(cssId))
 		name:'burial',
 		desc:'@unlocks [grave]s@exposed [corpse]s make elves even more unhappy<>It is the belief that there might be more to death than is first apparent that drives us to bury our deceased.',
 		icon:[14,1,'c2'],
-		cost:{'insight':5},
+		cost:{'discernment':20,'creativity':4},
 		req:{'ritualism':true,'digging':true},
 		effects:[
 		],
@@ -3280,7 +3286,7 @@ if (!document.getElementById(cssId))
 	});
 	new G.Policy({
 		name:'wisdom rituals',
-		desc:'Improves [dreamer] and [storyteller] efficiency by 20%. Consumes 1 [faith] every 20 days; will stop if you run out.',
+		desc:'Improves [dreamer] and [storyteller] efficiency by 10%. Consumes 1 [faith] every 20 days; will stop if you run out.',
 		icon:[8,12,'c2',8,5,'c2'],
 		cost:{'faith':2},
 		startMode:'off',
