@@ -2532,12 +2532,12 @@ if (!document.getElementById(cssId))
 	
 	new G.Tech({
 		name:'oral tradition',
-		desc:'@unlocks [storyteller]@provides 20 [inspiration]@provides 20 [wisdom]<>[oral tradition] emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation.',
+		desc:'@unlocks [storyteller]@provides 20 [inspiration]@provides 20 [wisdom]@provides 10 [quick-wittinity]<>[oral tradition] emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation.',
 		icon:[5,1,'c2'],
 		cost:{'discernment':10,'creativity':2},
 		req:{'language':true},
 		effects:[
-			{type:'provide res',what:{'inspiration':20,'wisdom':20}},
+			{type:'provide res',what:{'inspiration':20,'wisdom':20,'quick-wittinity':10}},
 		],
 	});
 	
