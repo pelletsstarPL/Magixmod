@@ -1306,7 +1306,7 @@ if (!document.getElementById(cssId))
 		{
 			var toSpoil=me.amount*0.01;
 			var spent=G.lose(me.name,randomFloor(toSpoil),'decay');
-			G.pseudoGather(G.getRes('culture'),randomFloor(spent));
+			G.pseudoGather(G.getRes('gentility'),randomFloor(spent));
 		},
 	});
 	new G.Res({
