@@ -2333,7 +2333,7 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		effects:[
 			{type:'explore',explored:0.075,unexplored:0},
-			{type:'function',func:unitGetsConverted({},0.01,0.05,'[X] [elves].','wanderer got lost','wanderers got lost'),chance:1/100}
+			{type:'function',func:unitGetsConverted({},0.01,0.05,'[X] [people].','wanderer got lost','wanderers got lost'),chance:1/100}
 		],
 		req:{'speech':true},
 		category:'exploration',
