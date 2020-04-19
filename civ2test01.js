@@ -4,7 +4,7 @@ author:'pelletsstarPL',
 desc:'C2 update.',
 engineVersion:1,
 manifest:0,
-sheets:{'magixmod':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/magixmod.png','c2':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/CiV2IconSheet.png'}
+sheets:{'magixmod':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/magixmod.png','c2':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/CiV2IconSheet.png'},
 func:function()
 {
 	/*
@@ -29,7 +29,6 @@ if (!document.getElementById(cssId))
     link.media = 'all';
     head.appendChild(link);
 }
-		}
 	G.props['fastTicksOnResearch']=150;
 	
 	G.funcs['new game blurb']=function()
