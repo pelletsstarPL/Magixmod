@@ -2419,8 +2419,13 @@ if (!document.getElementById(cssId))
 		choicesN:4,
 		getCosts:function()
 		{
+			if(!G.has('oral tradition')){
 			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
 			return {'discernment':cost};
+			}else{
+			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
+			return {'discernment':cost,'gentility':cost};
+			}
 		},
 		getCardCosts:function(what)
 		{
