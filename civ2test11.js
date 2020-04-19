@@ -577,7 +577,7 @@ if (!document.getElementById(cssId))
 	});
 	new G.Res({
 		name:'corpse',
-		desc:'[corpse,Corpses] are the remains of [population,People] that died, whether from old age, accident, disease, starvation or war.//Corpses left in the open air tend to spread diseases and make people unhappy, which gets even worse as superstitions develop. To mitigate this, you need a [burial spot] for each corpse.',
+		desc:'[corpse,Corpses] are the remains of [population,Elves] that died, whether from old age, accident, disease, starvation or war.//Corpses left in the open air tend to spread diseases and make people unhappy, which gets even worse as superstitions develop. To mitigate this, you need a [burial spot] for each corpse.',
 		startWith:0,
 		icon:[8,3,'c2'],
 		tick:function(me,tick)
@@ -1404,7 +1404,7 @@ if (!document.getElementById(cssId))
 	
 	new G.Res({
 		name:'discernment',
-		desc:'[discernment] represents your elves\'s ideas and random sparks of intuition.//'+limitDesc('[wisdom]')+'//Many technologies require insight to be researched.',
+		desc:'[discernment] represents your elves\'s ideas and random sparks of intuition.//'+limitDesc('[wisdom]')+'//Many technologies require discernment to be researched.',
 		icon:[8,4,'c2'],
 		category:'main',
 		limit:'wisdom',
@@ -1583,6 +1583,7 @@ if (!document.getElementById(cssId))
 		//upkeep:{'coin':0.2},
 		effects:[
 			{type:'gather',what:{'discernment':0.1}},
+			{type:'gather',what:{'creativity':0.025}},
 			{type:'gather',what:{'discernment':0.05},req:{'symbolism':true}},
 			{type:'mult',value:1.2,req:{'wisdom rituals':'on'}}
 		],
@@ -2375,21 +2376,21 @@ if (!document.getElementById(cssId))
 	//debug units
 	new G.Unit({
 		name:'auto nanny',
-		desc:'@generates 50 [fruit], 50 [cooked meat,Meat], and 100 [water]<>Keeps your elves fed so you don\'t have to.//Powered by strange energies.',
+		desc:'@generates 30 [fruit], 30 [cooked meat,Meat], and 80 [water]<>Keeps your elves fed so you don\'t have to.//Powered by strange energies.',
 		icon:[4,2,'c2'],
 		cost:{},
 		effects:[
-			{type:'gather',what:{'fruit':50,'cooked meat':50,'water':100}}
+			{type:'gather',what:{'fruit':30,'cooked meat':30,'water':80}}
 		],
 		category:'debug',
 	});
 	new G.Unit({
 		name:'auto brain',
-		desc:'@generates 50 of [insight], [culture], [faith], [science] and [influence]<>Educates your elves so you don\'t have to.//Powered by strange energies.',
+		desc:'@generates 10 of [insight], [culture], [faith], [science] and [influence]<>Educates your elves so you don\'t have to.//Powered by strange energies.',
 		icon:[5,2,'c2'],
 		cost:{},
 		effects:[
-			{type:'gather',what:{'insight':50,'culture':50,'faith':50,'science':50,'influence':50}}
+			{type:'gather',what:{'discernment':10,'gentility':10,'faith':10,'science':10,'influence':10}}
 		],
 		category:'debug',
 	});
@@ -2503,7 +2504,7 @@ if (!document.getElementById(cssId))
 		effects:[
 			{type:'provide res',what:{'wisdom':50}},
       {type:'provide res',what:{'quick-wittinity':25}},
-			{type:'show res',what:['insight']},
+			{type:'show res',what:['discernment']},
 		],
 	});
 	new G.Tech({
