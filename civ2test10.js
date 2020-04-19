@@ -2544,7 +2544,7 @@ if (!document.getElementById(cssId))
 		name:'tool-making',
 		desc:'@[artisan]s can now create [stone tools]<>With proper [tool-making], new procedures arise to craft a multitude of specialized tools out of cheap materials - such as hammers, knives, and axes.',
 		icon:[4,1,'c2'],
-		cost:{'insight':10},
+		cost:{'creativity':6,'discernment':6},
 		req:{'stone-knapping':true,'carving':true},
 		effects:[
 		],
