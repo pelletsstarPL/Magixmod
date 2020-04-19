@@ -1735,7 +1735,7 @@ if (!document.getElementById(cssId))
 		modes:{
 			'stick fires':{name:'Start fires from sticks',icon:[0,6,'c2',13,7,'c2'],desc:'Craft [fire pit]s from 20 [stick]s each.'},
 			'cook':{name:'Cook',icon:[6,7,'c2',13,7,'c2'],desc:'Turn [meat] and [seafood] into [cooked meat] and [cooked seafood] in the embers of [fire pit]s',req:{'cooking':true}},
-			'cure':{name:'Cure & smoke',icon:[11,6,'c2'12,6,'c2'],desc:'Turn 1 [meat] or [seafood] into 2 [cured meat] or [cured seafood] using [salt] in the embers of [fire pit]s',req:{'curing':true}},
+			'cure':{name:'Cure & smoke',icon:[11,6,'c2',12,6,'c2'],desc:'Turn 1 [meat] or [seafood] into 2 [cured meat] or [cured seafood] using [salt] in the embers of [fire pit]s',req:{'curing':true}},
 		},
 		effects:[
 			{type:'convert',from:{'stick':20},into:{'fire pit':1},every:5,mode:'stick fires'},
