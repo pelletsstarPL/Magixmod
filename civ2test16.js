@@ -32,8 +32,9 @@ if (!document.getElementById(cssId))
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('adult'))+'"></div><div class="freelabel">x5</div>','5 Adults')+
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('elder'))+'"></div><div class="freelabel">x1</div>','1 Elder')+
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('child'))+'"></div><div class="freelabel">x2</div>','2 Children')+
-		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('herb'))+'"></div><div class="freelabel">x250</div>','250 Herbs')+
-		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('water'))+'"></div><div class="freelabel">x250</div>','250 Water')+
+		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('herb'))+'"></div><div class="freelabel">x175</div>','175 Herbs')+
+		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('water'))+'"></div><div class="freelabel">x200</div>','200 Water')+
+		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('fruit'))+'"></div><div class="freelabel">x25</div>','25 Fruits')+
 		'</div>'+
 		'<div class="par fancyText bitBiggerText">Your tribe finds a place to settle in the wilderness and at deepness of the mysterious world.<br>Resources are scarce, and everyone starts foraging.<br>They look insecure seeing you.</div>'+
 		'<div class="par fancyText bitBiggerText">You emerge as the tribe\'s leader. They call you :</div>';
@@ -846,7 +847,7 @@ if (!document.getElementById(cssId))
 		name:'water',
 		desc:'[water] is required to keep your [population,elves] hydrated, at the rate of half a unit per elf every 3 ticks (although babies and children drink less).//Without water, elves will resort to drinking [muddy water], which is unhealthy; if that runs out too, your elves will simply die off.//Most terrains have some fresh water up for gathering - from ponds, streams and rain; drier locations will have to rely on well digging.//Water turns into [muddy water] over time, if your water storage is insufficient.',
 		icon:[7,6,'c2'],
-		startWith:250,
+		startWith:200,
 		visible:true,
 		turnToByContext:{'drinking':{'health':0.01,'happiness':0}},
 		tick:function(me,tick)
@@ -916,7 +917,7 @@ if (!document.getElementById(cssId))
 		name:'herb',
 		desc:'[herb,Herbs] are various plants, roots and mushrooms that can be collected by simply foraging around. While relatively healthy to eat, they tend to taste fairly unpleasant.',
 		icon:[4,6,'c2'],
-		startWith:250,
+		startWith:175,
 		turnToByContext:{'eating':{'health':0.005,'happiness':-0.03},'decay':{'herb':0.2,'spoiled food':0.8}},
 		partOf:'food',
 		category:'food',
@@ -927,6 +928,7 @@ if (!document.getElementById(cssId))
 		icon:[4,7,'c2'],
 		turnToByContext:{'eating':{'health':0.02,'happiness':0.01},'decay':{'spoiled food':1}},
 		partOf:'food',
+		startWith:25,
 		category:'food',
 	});
 	new G.Res({
@@ -1562,12 +1564,12 @@ if (!document.getElementById(cssId))
 		//upkeep:{'food':0.2},
 		//alternateUpkeep:{'food':'spoiled food'},
 		effects:[
-			{type:'gather',context:'gather',amount:2,max:4},//,multMax:{'leather pouches':1.1}//TODO
+			{type:'gather',context:'gather',amount:1.75,max:3.5},//,multMax:{'leather pouches':1.1}//TODO
 			//{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3,req:{'gathering focus':'water'}},
 			{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3},
-			{type:'gather',context:'gather',what:{'herb':0.5,'fruit':0.5},amount:1,max:1,req:{'plant lore':true}},
+			{type:'gather',context:'gather',what:{'herb':0.45,'fruit':0.45},amount:1,max:1,req:{'plant lore':true}},
 			{type:'addFree',what:{'worker':0.1},req:{'scavenging':true}},
-			{type:'mult',value:1.2,req:{'harvest rituals':'on'}}
+			{type:'mult',value:1.1,req:{'harvest rituals':'on'}}
 		],
 		req:{'tribalism':true},
 		category:'production',
@@ -1602,7 +1604,7 @@ if (!document.getElementById(cssId))
 		effects:[
 			{type:'gather',what:{'gentility':0.075}},
 			{type:'gather',what:{'gentility':0.00375},req:{'symbolism':true}},
-			{type:'mult',value:1.2,req:{'artistic thinking':true}},
+			{type:'mult',value:1.1,req:{'artistic thinking':true}},
 			{type:'mult',value:1.15,req:{'wisdom rituals':'on'}}
 		],
 		req:{'oral tradition':true},
@@ -1632,7 +1634,7 @@ if (!document.getElementById(cssId))
 			{type:'convert',from:{'stick':1,'stone':1},into:{'stone weapons':1},every:8,mode:'stone weapons'},
 			{type:'convert',from:{'stick':1,'stone':1},into:{'bow':1},every:10,mode:'bows'},
 			{type:'convert',from:{'stick':15},into:{'basket':1},every:10,mode:'baskets'},
-			{type:'mult',value:1.2,req:{'ground stone tools':true}}
+			{type:'mult',value:1.1,req:{'ground stone tools':true}}
 		],
 		req:{'stone-knapping':true},
 		category:'crafting',
@@ -1659,7 +1661,7 @@ if (!document.getElementById(cssId))
 			{type:'convert',from:{'stone':10},into:{'cut stone':1},every:15,mode:'cut stone'},
 			{type:'convert',from:{'cut stone':1},into:{'stone':9},every:5,mode:'smash cut stone'},
 			{type:'convert',from:{'gems':10},into:{'gem block':1},every:15,mode:'gem blocks'},
-			{type:'mult',value:1.2,req:{'ground stone tools':true}}
+			{type:'mult',value:1.1,req:{'ground stone tools':true}}
 		],
 		req:{'carving':true},
 		category:'crafting',
@@ -1711,7 +1713,7 @@ if (!document.getElementById(cssId))
 			{type:'gather',context:'hunt',amount:2.5,max:5,mode:'spear hunting'},
 			{type:'gather',context:'hunt',amount:4,max:5,mode:'bow hunting'},//TODO : consuming arrows?
 			{type:'function',func:unitGetsConverted({'wounded':1},0.001,0.03,'[X] [people] wounded while hunting.','hunter was','hunters were'),chance:1/30},
-			{type:'mult',value:1.2,req:{'harvest rituals':'on'}}
+			{type:'mult',value:1.1,req:{'harvest rituals':'on'}}
 		],
 		req:{'hunting':true},
 		category:'production',
@@ -1735,7 +1737,7 @@ if (!document.getElementById(cssId))
 			{type:'gather',context:'fish',amount:1,max:5,mode:'catch by hand'},
 			{type:'gather',context:'fish',amount:2.5,max:5,mode:'spear fishing'},
 			{type:'gather',context:'fish',amount:4,max:5,mode:'line fishing'},
-			{type:'mult',value:1.2,req:{'harvest rituals':'on'}}
+			{type:'mult',value:1.1,req:{'harvest rituals':'on'}}
 		],
 		req:{'fishing':true},
 		category:'production',
@@ -1990,7 +1992,7 @@ if (!document.getElementById(cssId))
 		upkeep:{'coin':0.2},
 		effects:[
 			{type:'gather',what:{'faith':0.075,'happiness':0.2}},
-			{type:'gather',what:{'faith':0.05},req:{'symbolism':true}}
+			{type:'gather',what:{'faith':0.0375},req:{'symbolism':true}}
 		],
 		req:{'ritualism':true},
 		category:'spiritual',
@@ -2020,8 +2022,8 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		upkeep:{'coin':0.5},
 		effects:[
-			{type:'gather',what:{'influence':0.1}},
-			{type:'gather',what:{'influence':0.05},req:{'code of law':true}}
+			{type:'gather',what:{'influence':0.075}},
+			{type:'gather',what:{'influence':0.00375},req:{'code of law':true}}
 		],
 		limitPer:{'population':100},
 		req:{'chieftains':true},
@@ -2036,8 +2038,8 @@ if (!document.getElementById(cssId))
 		use:{'worker':1},
 		upkeep:{'coin':0.75},
 		effects:[
-			{type:'gather',what:{'influence':0.2}},
-			{type:'gather',what:{'influence':0.05},req:{'code of law':true}}
+			{type:'gather',what:{'influence':0.15}},
+			{type:'gather',what:{'influence':0.0375},req:{'code of law':true}}
 		],
 		limitPer:{'population':500},
 		req:{'clans':true},
@@ -2386,7 +2388,7 @@ if (!document.getElementById(cssId))
 	});
 	new G.Unit({
 		name:'auto brain',
-		desc:'@generates 10 of [insight], [culture], [faith], [science] and [influence]<>Educates your elves so you don\'t have to.//Powered by strange energies.',
+		desc:'@generates 10 of [discernment], [gentility], [faith], [science] and [influence]<>Educates your elves so you don\'t have to.//Powered by strange energies.',
 		icon:[5,2,'c2'],
 		cost:{},
 		effects:[
@@ -3268,7 +3270,7 @@ if (!document.getElementById(cssId))
 	});
 	new G.Policy({
 		name:'harvest rituals',
-		desc:'Improves [gatherer], [hunter] and [fisher] efficiency by 20%. Consumes 1 [faith] every 20 days; will stop if you run out.',
+		desc:'Improves [gatherer], [hunter] and [fisher] efficiency by 10%. Consumes 1 [faith] every 20 days; will stop if you run out.',
 		icon:[8,12,'c2',4,7,'c2'],
 		cost:{'faith':2},
 		startMode:'off',
