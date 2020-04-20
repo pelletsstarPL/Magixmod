@@ -36,7 +36,7 @@ if (!document.getElementById(cssId))
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('water'))+'"></div><div class="freelabel">x200</div>','200 Water')+
 		G.textWithTooltip('<div class="icon freestanding" style="'+G.getIconUsedBy(G.getRes('fruit'))+'"></div><div class="freelabel">x25</div>','25 Fruits')+
 		'</div>'+
-		'<div class="par fancyText bitBiggerText">Your tribe finds a place to settle in the wilderness and at deepness of the mysterious world.<br>Resources are scarce, and everyone starts foraging.<br>They look insecure seeing you.</div>'+
+		'<div class="par fancyText bitBiggerText">Your tribe finds a place to settle in the wilderness and at deepness of the mysterious world.<br>Resources are scarce, and everyone starts foraging.<br>They are insecure.</div>'+
 		'<div class="par fancyText bitBiggerText">You emerge as the tribe\'s leader. They call you :</div>';
 		return str;
 	}
