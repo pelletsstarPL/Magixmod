@@ -2363,9 +2363,9 @@ if (!document.getElementById(cssId))
 		wonder:'mausoleum',
 		icon:[1,14,'c2'],
 		wideIcon:[0,14,'c2'],
-		cost:{'basic building materials':1000},
-		costPerStep:{'basic building materials':200,'precious building materials':20},
-		steps:100,
+		cost:{'basic building materials':1200},
+		costPerStep:{'basic building materials':300,'precious building materials':30},
+		steps:120,
 		messageOnStart:'You begin the construction of the Mausoleum. Its towering mass already dominates the city, casting fear and awe wherever its shadow reaches.',
 		finalStepCost:{'population':100},
 		finalStepDesc:'To complete the Mausoleum, 100 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.',
@@ -2421,19 +2421,11 @@ if (!document.getElementById(cssId))
 		choicesN:4,
 		getCosts:function()
 		{
-			if(!G.has('oral tradition')){
-			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
-			return {'discernment':cost};
-			}else if(G.has('oral tradition') && !G.has('ritualism')){
-			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
-			return {'discernment':cost,'gentility':cost};
-			}else if(G.has('oral tradition') && G.has('ritualism') && !G.has('chieftains')){
-			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
-			return {'discernment':cost,'gentility':cost,'faith':cost};
-			}else if(G.has('oral tradition') && G.has('ritualism') && G.has('chieftains')){
-			var cost=Math.floor(G.getRes('wisdom').amount*(0.025+0.05*this.roll));
-			return {'discernment':cost,'gentility':cost,'faith':cost,'influence':cost};
-			}
+  	let calcCost = (name, constGain = 0.025, rollGain = 0.05) => Math.floor(G.getRes(name).amount * (constGain + this.roll * rollGain))
+            if (!G.has('oral tradition')){
+              return { 'discernment' : calcCost('wisdom') }
+            }
+            return { 'discernment' : calcCost('wisdom'), 'gentility': calcCost('inspiration', 0.05) }
 		},
 		getCardCosts:function(what)
 		{
