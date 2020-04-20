@@ -3020,7 +3020,7 @@ if (!document.getElementById(cssId))
 		name:'monument-building',
 		desc:'@unlocks the [mausoleum], an early wonder<>',
 		icon:[24,8,'c2'],
-		cost:{'discernment':97,'gentility':43,'creativity':12,'influence':9,'faith':3},
+		cost:{'discernment':97,'gentility':43,'creativity':42,'influence':9,'faith':3},
 		req:{'construction':true,'burial':true,'belief in the afterlife':true},
 		effects:[
 		],
