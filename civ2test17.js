@@ -1421,7 +1421,7 @@ if (!document.getElementById(cssId))
 	});
   	new G.Res({
 		name:'creativity',
-		desc:'[creativity] represents your elves\'s ideas and random sparks of intuition.//'+limitDesc('[quick-wittinity]')+'//Most technologies require creativity to be researched.',
+		desc:'[creativity] represents your elves\'s smartiness.//'+limitDesc('[quick-wittinity]')+'//Most technologies require creativity to be researched.',
 		icon:[9,5,'c2'],
 		category:'main',
 		limit:'quick-wittinity',
@@ -1453,7 +1453,7 @@ if (!document.getElementById(cssId))
 	
 	new G.Res({
 		name:'gentility',
-		desc:'[gentility] is produced when your elves create beautiful and thought-provoking things.//'+limitDesc('[inspiration]')+'//Culture is used to develop cultural traits.',
+		desc:'[gentility] is produced when your elves create beautiful and thought-provoking things.//'+limitDesc('[inspiration]')+'//Gentility is used to develop cultural traits.',
 		icon:[10,4,'c2'],
 		category:'main',
 		limit:'inspiration',
