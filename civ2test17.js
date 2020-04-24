@@ -7,7 +7,7 @@ manifest:0,
 sheets:{'magixmod':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/magixmod.png','c2':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/CiV2IconSheet.png'},
 func:function()
 {
-	//Biomes: Ancient grove(forest),Warplands(shrubland),Ocean,Arctic ocean,Frozen shrubland,Wet shrublands,Glacier,Stonelands,Mesa,Living desert,Autumnal swamps,Swamplands,Forest,Tall forest
+	//Biomes: Ancient grove(forest),Warplands(shrubland),Ocean,Arctic ocean,Frozen shrubland,Wet shrublands,Glacier,Stonelands,Mesa,Living desert,Autumnal swamps,Swamplands,Forest,Tall forest,Tundra
 	/*=====================================================================================
 	PROPS & FUNCTIONS
 	=======================================================================================*/
