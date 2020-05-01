@@ -11,6 +11,49 @@
 =================================================================================================================================================================================================================================
                                                           U   P   D   A   T   E                   L  O  G
 							  
+1 V 2020
+Big Update 3!
+Yeah third big update in a row! Cannot believe in that. Changes:
+->Revamped and nerfed Sugar cane
+	>>Added new good that will allow gathering sugar cane.
+	>>4 techs out of 23 added upgrade sugar cane farms
+->Removed Beet from the game
+	>>It had only one use: crafting sugar out of it: not worthy even though.
+	>>Tech that unlocks Beet farms has been replaced with tech that boosts wells
+	>>Removed beet farms from the game
+->Added in total:
+	>>1 new achievement
+	>>23 techs
+	>>2 traits
+	>>2 new units
+->New way to bury people:
+	>>Urns: Unlockable by gaining some techs.
+		>>1 urn takes 0.25 burial spot so 1 burial spot can store 4 urns
+		>>Corpse decay can affect Urns when tech related to that will be obtained
+	>>Unlocking crematoriums disables ritual necrophagy effect!
+->1 new biome added to the world map
+	>>Find a Glacier. It is one of the rare biomes too
+		>>Contains bunch of ice and sometimes you may find seals and freshwater fishes there
+->Added support to other people's mods
+	<>NOTE:I gotta support only Dashnet discord mods. If you are modder and have own mod and wanna me support your mod DM me and manage your mod to get pinned. 
+	I accept mods that are like Market (this mod adds 1 neat mechanic called trading)
+	>>Supported mods:
+		>>Bruno Supremo's Market Mod
+			>>4 techs out of 23 added are related to market mod and will only be obtainable while mod is installed
+			>>Items from Magix can be used in trading
+				>>Especially trading with essences
+			>>If you dare playing Magix and Market Mod without installing my utilities(URL to paste is below) game will on-purpose crash!
+			>>Here is the URL: https://cdn.jsdelivr.net/gh/MagixModLegacy/Magix@master/MagixUtilsForMarketA0.js
+				>>This link must be pasted below link to the Market mod!
+			>>I know that with no each item from Magix you can trade but it will change in next updates.
+		>>Laws Of Food
+			>>3 new policies that will let you decide if your people can/can't eat food from Magix
+			>>Policies cost from whole LoF and LoFFree (and from Market too) now can have their cost with Influence II upon policy revaluation
+->Probably in next update a achievement for 50 traits will be added to the game.
+->Increased chances for Moderation and Caretaking(they now have bigger chance to be adopted by your tribe)
+Enjoy!
+							  
+							  
 17 IV 2020
 Nerfs for Big Update 2!
 ->Nerfed florists
