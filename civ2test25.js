@@ -1504,8 +1504,9 @@ if (!document.getElementById(cssId))
 		desc:'Battery that can be charged by [dreamer]s while in specific mode. A fully charged battery allows for 1 tech rolling or 1 tech reroll.',
 		icon:[4,0,'c2'],
 		displayUsed:true,
-		getDisplayAmount:function()
+		getDisplayAmount:function(me)
 		{
+			var amount=me.amount;
 			if (amount>100) amount=100;
 			return B(amount)+'%';
 		},
