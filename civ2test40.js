@@ -3092,7 +3092,7 @@ if (!document.getElementById(cssId))
 	});
 	new G.Trait({
 		name:'ground stone tools',
-		desc:'@[artisan]s and [carver]s craft 20% faster',
+		desc:'@[artisan]s and [carver]s craft 10% faster',
 		icon:[4,1,'c2'],
 		cost:{'discernment':6},
 		chance:10,
