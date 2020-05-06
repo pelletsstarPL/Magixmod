@@ -1502,7 +1502,7 @@ if (!document.getElementById(cssId))
 		new G.Res({
 		name:'battery of discoveries',
 		desc:'Battery that can be charged by [dreamer]s while in specific mode. A fully charged battery allows for 1 tech rolling or 1 tech reroll.',
-		icon:[3,0,'c2'],
+		icon:[4,0,'c2'],
 		getDisplayAmount:function()
 		{
 			var amount=G.getRes('battery of discoveries').amount;
@@ -1512,16 +1512,16 @@ if (!document.getElementById(cssId))
 		getIcon:function(me)
 		{
 				var amount=me.amount;
-				if (amount>=100) return [12,0,'c2'];
-				if (amount>=84) return [11,0,'c2'];
-				if (amount>=62) return [10,0,'c2'];
-				if (amount>=50) return [9,0,'c2'];
-				if (amount>=45) return [8,0,'c2'];
-				else if (amount>=36) return [7,0,'c2'];
-				else if (amount>=24) return [6,0,'c2'];
-				else if (amount>=12) return [5,0,'c2'];
-				else if (amount>=4) return [4,0,'c2'];
-				else return [3,0,'c2']
+				if (amount>=100) return [13,0,'c2'];
+				if (amount>=84) return [12,0,'c2'];
+				if (amount>=62) return [11,0,'c2'];
+				if (amount>=50) return [10,0,'c2'];
+				if (amount>=45) return [9,0,'c2'];
+				else if (amount>=36) return [8,0,'c2'];
+				else if (amount>=24) return [7,0,'c2'];
+				else if (amount>=12) return [6,0,'c2'];
+				else if (amount>=4) return [5,0,'c2'];
+				else return [4,0,'c2']
 		},
 	});
 	
