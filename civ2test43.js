@@ -1505,8 +1505,9 @@ if (!document.getElementById(cssId))
 		icon:[4,0,'c2'],
 		tick:function(me,tick)
 			{
+				var overcap=G.getRes('battery of discoveries').amount-100;
 				if(G.getRes('battery of discoveries').amount>100){
-				 G.lose('battery of discoveries',1);
+				 G.lose('battery of discoveries',overcap);
 				}
 			},
 		getDisplayAmount:function()
