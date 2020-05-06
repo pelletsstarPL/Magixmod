@@ -1503,11 +1503,10 @@ if (!document.getElementById(cssId))
 		name:'battery of discoveries',
 		desc:'Battery that can be charged by [dreamer]s while in specific mode. A fully charged battery allows for 1 tech rolling or 1 tech reroll.',
 		icon:[4,0,'c2'],
-		limit:'battery of discoveries limit',
 		tick:function(me,tick)
 			{
 				if(G.getRes('battery of discoveries').amount>=100){
-				 me.amount==100;
+				 G.lose(G.getRes('battery of discoveries'),1);
 				}
 			},
 		getDisplayAmount:function()
@@ -1529,10 +1528,6 @@ if (!document.getElementById(cssId))
 				else if (amount>=12) return [5,0,'c2'];
 				else return [4,0,'c2']
 		},
-	});
-	new G.Res({
-		name:'battery of discoveries limit',
-		startWith:100
 	});
 	/*=====================================================================================
 	UNITS
