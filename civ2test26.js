@@ -1503,10 +1503,9 @@ if (!document.getElementById(cssId))
 		name:'battery of discoveries',
 		desc:'Battery that can be charged by [dreamer]s while in specific mode. A fully charged battery allows for 1 tech rolling or 1 tech reroll.',
 		icon:[4,0,'c2'],
-		displayUsed:true,
-		getDisplayAmount:function(me)
+		getDisplayAmount:function()
 		{
-			var amount=me.amount;
+			var amount=G.getRes('battery of discoveries').amount;
 			if (amount>100) amount=100;
 			return B(amount)+'%';
 		},
