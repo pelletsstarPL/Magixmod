@@ -1509,7 +1509,7 @@ if (!document.getElementById(cssId))
 			},
 		getDisplayAmount:function()
 		{
-			var amount=me.amount;
+			var amount=G.getRes('battery of discoveries').amount;
 			if (amount>100) amount=100;
 			return B(amount)+'%';
 		},
