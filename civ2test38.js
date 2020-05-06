@@ -2515,7 +2515,7 @@ if (!document.getElementById(cssId))
 		},
 		buttonTooltip:function()
 		{
-			if(G.has('oral tradition 2/2){
+			if(G.has('oral tradition 2/2'){
 			return '<div class="info"><div class="par">'+(this.choices.length==0?'Generate new research opportunities.<br>The cost scales with your <b>Wisdom</b> and <b>Inspiration</b> resources.':'Reroll into new research opportunities if none of the available choices suit you.<br>Cost increases with each reroll, but will decrease again over time.<br>To each reroll or rolling new technologies you need fully charged <b>Battery of Discoveries</b>.')+'</div><div>Cost : '+G.getCostString(this.getCosts(),true)+'.</div></div>';
 				 }else{
 			return '<div class="info"><div class="par">'+(this.choices.length==0?'Generate new research opportunities.<br>The cost scales with your <b>Wisdom</b> resource.':'Reroll into new research opportunities if none of the available choices suit you.<br>Cost increases with each reroll, but will decrease again over time.<br>To each reroll or rolling new technologies you need fully charged <b>Battery of Discoveries</b>.')+'</div><div>Cost : '+G.getCostString(this.getCosts(),true)+'.</div></div>';
