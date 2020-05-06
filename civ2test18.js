@@ -2525,13 +2525,23 @@ if (!document.getElementById(cssId))
 	});
 	
 	new G.Tech({
-		name:'oral tradition',
-		desc:'@unlocks [storyteller]@provides 20 [inspiration]@provides 20 [wisdom]@provides 10 [quick-wittinity]<>[oral tradition] emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation.',
-		icon:[5,1,'c2'],
+		name:'oral tradition 1/2',
+		desc:'@Makes elves think about culture @provides 10 [inspiration]@provides 10 [wisdom]@provides 5 [quick-wittinity]<>[oral tradition] emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation. //Get [oral tradition 2/2] to unlock [storyteller]',
+		icon:[27,3,'magixmod',5,1,'c2'],
 		cost:{'discernment':10,'creativity':2},
 		req:{'language':true},
 		effects:[
-			{type:'provide res',what:{'inspiration':20,'wisdom':20,'quick-wittinity':10}},
+			{type:'provide res',what:{'inspiration':10,'wisdom':10,'quick-wittinity':5}},
+		],
+	});
+		new G.Tech({
+		name:'oral tradition 2/2',
+		desc:'@unlocks [storyteller]@provides 10 [inspiration]@provides 10 [wisdom]@provides 5 [quick-wittinity]<>[oral tradition] emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation.',
+		icon:[27,2,'magixmod',5,1,'c2'],
+		cost:{'discernment':14,'creativity':3},
+		req:{'language':true,'oral tradition 1/2':true},
+		effects:[
+			{type:'provide res',what:{'inspiration':10,'wisdom':10,'quick-wittinity':5}},
 		],
 	});
 	
@@ -2736,7 +2746,7 @@ if (!document.getElementById(cssId))
 		desc:'@[dreamer]s produce 50% more [discernment] and 12.5% more [creativity] @[storyteller]s produce 40% more [gentility]@[soothsayer]s produce 40% more [faith]<>The manifestation of one thing for the meaning of another - to make the cosmos relate to itself.',
 		icon:[13,1,'c2'],
 		cost:{'gentility':20,'discernment':20,'creativity':4},
-		req:{'oral tradition':true},
+		req:{'oral tradition 1/2':true},
 		effects:[
 		],
 	});
@@ -2909,8 +2919,8 @@ if (!document.getElementById(cssId))
 		name:'chieftains',
 		desc:'@unlocks [chieftain]s, which generate [influence]@provides 5 [authority]<>',//TODO : desc
 		icon:[22,6,'c2'],
-		cost:{'discernment':18},
-		req:{'oral tradition':true},
+		cost:{'discernment':18,'gentility':4,'creativity':1,'influence':1},
+		req:{'oral tradition 2/2':true},
 		effects:[
 			{type:'provide res',what:{'authority':5}},
 		],
