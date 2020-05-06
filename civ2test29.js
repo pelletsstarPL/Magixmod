@@ -1505,24 +1505,28 @@ if (!document.getElementById(cssId))
 		icon:[4,0,'c2'],
 		getDisplayAmount:function()
 		{
-			var amount=G.getRes('battery of discoveries').amount;
+			var amount=G.getRes('battery charge point').amount;
 			if (amount>100) amount=100;
 			return B(amount)+'%';
 		},
 		getIcon:function(me)
 		{
 				var amount=me.amount;
-				if (amount>=100) return [13,0,'c2'];
-				if (amount>=84) return [12,0,'c2'];
-				if (amount>=62) return [11,0,'c2'];
-				if (amount>=50) return [10,0,'c2'];
-				if (amount>=45) return [9,0,'c2'];
-				else if (amount>=36) return [8,0,'c2'];
-				else if (amount>=24) return [7,0,'c2'];
-				else if (amount>=12) return [6,0,'c2'];
-				else if (amount>=4) return [5,0,'c2'];
+				if (amount>=100) return [12,0,'c2'];
+				if (amount>=84) return [11,0,'c2'];
+				if (amount>=62) return [10,0,'c2'];
+				if (amount>=50) return [9,0,'c2'];
+				if (amount>=45) return [8,0,'c2'];
+				else if (amount>=36) return [7,0,'c2'];
+				else if (amount>=24) return [6,0,'c2'];
+				else if (amount>=12) return [5,0,'c2'];
 				else return [4,0,'c2']
 		},
+	});
+		new G.Res({
+		name:'battery charge point',
+		hidden:true,
+		icon:[8,12,'c2'],
 	});
 	
 	/*=====================================================================================
@@ -1608,10 +1612,16 @@ if (!document.getElementById(cssId))
 		cost:{},
 		use:{'worker':1},
 		//upkeep:{'coin':0.2},
+		gizmos:true,
+		modes:{
+			'disc&creat':{name:'Gather discernment and creativity',icon:[8,4,'c2'],desc:'Gather [discernment] and [creativity].'},
+			'chargebattery':{name:'Charge battery of discoveries',icon:[4,0,'c2'],desc:'This dreamer will charge your [battery of discoveries]. It is required to roll or reroll technology choices.'},
+		},
 		effects:[
-			{type:'gather',what:{'discernment':0.075}},
-			{type:'gather',what:{'creativity':0.025}},
-			{type:'gather',what:{'discernment':0.05},req:{'symbolism':true}},
+			{type:'gather',what:{'discernment':0.075},mode:'disc&creat'},
+			{type:'gather',what:{'creativity':0.025},mode:'disc&creat'},
+			{type:'gather',what:{'battery charge point':0.25},mode:'chargebattery'},
+			{type:'gather',what:{'discernment':0.05},req:{'symbolism':true},mode:'disc&creat'},
 			{type:'mult',value:1.15,req:{'wisdom rituals':'on'}}
 		],
 		req:{'speech':true},
