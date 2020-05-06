@@ -1503,10 +1503,6 @@ if (!document.getElementById(cssId))
 		name:'battery of discoveries',
 		desc:'Battery that can be charged by [dreamer]s while in specific mode. A fully charged battery allows for 1 tech rolling or 1 tech reroll.',
 		icon:[4,0,'c2'],
-		tick:function(me,tick)
-			{
-				G.getRes('battery of discoveries').amount==G.getRes('battery charge point').amount;
-			},
 		getDisplayAmount:function()
 		{
 			var amount=G.getRes('battery of discoveries').amount;
@@ -1526,11 +1522,6 @@ if (!document.getElementById(cssId))
 				else if (amount>=12) return [5,0,'c2'];
 				else return [4,0,'c2']
 		},
-	});
-		new G.Res({
-		name:'battery charge point',
-		hidden:true,
-		icon:[8,12,'c2'],
 	});
 	
 	/*=====================================================================================
@@ -1624,7 +1615,7 @@ if (!document.getElementById(cssId))
 		effects:[
 			{type:'gather',what:{'discernment':0.075},mode:'disc&creat'},
 			{type:'gather',what:{'creativity':0.025},mode:'disc&creat'},
-			{type:'gather',what:{'battery charge point':0.25},mode:'chargebattery'},
+			{type:'gather',what:{'battery of discoveries':0.25},mode:'chargebattery'},
 			{type:'gather',what:{'discernment':0.05},req:{'symbolism':true},mode:'disc&creat'},
 			{type:'mult',value:1.15,req:{'wisdom rituals':'on'}}
 		],
@@ -2462,9 +2453,9 @@ if (!document.getElementById(cssId))
 		{
   	let calcCost = (name, constGain = 0.025, rollGain = 0.05) => Math.floor(G.getRes(name).amount * (constGain + this.roll * rollGain))
             if (!G.has('oral tradition 2/2')){
-              return { 'discernment' : calcCost('wisdom') }
+              return { 'discernment' : calcCost('wisdom') 'battery of discoveries':100 }
             }
-            return { 'discernment' : calcCost('wisdom'), 'gentility': calcCost('inspiration', 0.05) }
+            return { 'discernment' : calcCost('wisdom'), 'gentility': calcCost('inspiration', 0.05) 'battery of discoveries':100}
 		},
 		getCardCosts:function(what)
 		{
