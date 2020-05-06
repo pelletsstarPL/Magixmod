@@ -1607,7 +1607,7 @@ if (!document.getElementById(cssId))
 			{type:'mult',value:1.1,req:{'artistic thinking':true}},
 			{type:'mult',value:1.15,req:{'wisdom rituals':'on'}}
 		],
-		req:{'oral tradition':true},
+		req:{'oral tradition 2/2':true},
 		category:'cultural',
 	});
 	
@@ -3087,7 +3087,7 @@ if (!document.getElementById(cssId))
 		icon:[21,1,'c2'],
 		cost:{'gentility':10,'faith':2,'influence':1,'discernment':1},
 		chance:10,
-		req:{'fear of death':true,'oral tradition':true},
+		req:{'fear of death':true,'oral tradition 2/2':true},
 	});
 	new G.Trait({
 		name:'belief in revenants',
