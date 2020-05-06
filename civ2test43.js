@@ -1506,7 +1506,7 @@ if (!document.getElementById(cssId))
 		tick:function(me,tick)
 			{
 				if(G.getRes('battery of discoveries').amount>=100){
-				 G.getRes('battery of discoveries').amount==100;
+				 me.amount==100;
 				}
 			},
 		getDisplayAmount:function()
