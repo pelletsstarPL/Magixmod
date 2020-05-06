@@ -224,7 +224,7 @@ if (!document.getElementById(cssId))
 		'main':{
 			name:'Essentials',
 			base:[],
-			side:['population','worker','happiness','health','land','coin'],
+			side:['population','worker','happiness','health','land','coin','battery of discoveries'],
 		},
 		'demog':{
 			name:'Demographics',
