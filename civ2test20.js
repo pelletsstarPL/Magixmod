@@ -2715,7 +2715,7 @@ if (!document.getElementById(cssId))
 		desc:'@[gatherer]s find more [herb]s and [fruit]s<>The knowledge of which plants are good to eat and which mean certain death is a slow and perilous one to learn.',
 		icon:[23,7,'c2'],
 		cost:{'discernment':10,'creativity':1,'gentility':1},
-		req:{'oral tradition':true},
+		req:{'oral tradition 1/2':true},
 		effects:[
 		],
 	});
@@ -2735,7 +2735,7 @@ if (!document.getElementById(cssId))
 		desc:'@provides 10 [spirituality]@unlocks [soothsayer]s@unlocks some ritual policies<>Simple practices, eroded and polished by time, turn into rites and traditions.',
 		icon:[12,1,'c2'],
 		cost:{'gentility':10,'creativity':2},
-		req:{'oral tradition':true},
+		req:{'oral tradition 2/2':true},
 		effects:[
 			{type:'provide res',what:{'spirituality':10}},
 		],
@@ -3066,7 +3066,7 @@ if (!document.getElementById(cssId))
 	});
 	new G.Trait({
 		name:'artistic thinking',
-		desc:'@[storyteller]s are 30% more efficient@opens the way for more art forms',
+		desc:'@[storyteller]s are 10% more efficient@opens the way for more art forms',
 		icon:[12,1,'c2'],
 		cost:{'gentility':8},
 		chance:10,
