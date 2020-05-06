@@ -2453,9 +2453,9 @@ if (!document.getElementById(cssId))
 		{
   	let calcCost = (name, constGain = 0.025, rollGain = 0.05) => Math.floor(G.getRes(name).amount * (constGain + this.roll * rollGain))
             if (!G.has('oral tradition 2/2')){
-              return { 'discernment' : calcCost('wisdom') 'battery of discoveries':100 }
+              return { 'discernment' : calcCost('wisdom'), 'battery of discoveries':100 }
             }
-            return { 'discernment' : calcCost('wisdom'), 'gentility': calcCost('inspiration', 0.05) 'battery of discoveries':100}
+            return { 'discernment' : calcCost('wisdom'), 'gentility': calcCost('inspiration', 0.05), 'battery of discoveries':100}
 		},
 		getCardCosts:function(what)
 		{
