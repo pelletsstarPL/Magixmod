@@ -1505,7 +1505,7 @@ if (!document.getElementById(cssId))
 		icon:[4,0,'c2'],
 		tick:function(me,tick)
 			{
-				me.amount=G.getRes('battery charge point').amount;
+				G.getRes('battery of discoveries')=G.getRes('battery charge point').amount;
 			},
 		getDisplayAmount:function()
 		{
