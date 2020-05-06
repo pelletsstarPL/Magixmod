@@ -2526,7 +2526,7 @@ if (!document.getElementById(cssId))
 	
 	new G.Tech({
 		name:'oral tradition 1/2',
-		desc:'@Makes elves think about culture @provides 10 [inspiration]@provides 10 [wisdom]@provides 5 [quick-wittinity]<><b><font color="fuschia">oral tradition</font></b> emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation. //Get [oral tradition 2/2] to unlock [storyteller]',
+		desc:'@Makes elves think about culture @provides 10 [inspiration]@provides 10 [wisdom]@provides 5 [quick-wittinity]<><b><font color="fuschia">Oral tradition</font></b> emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation. //Get [oral tradition 2/2] to unlock [storyteller]',
 		icon:[27,3,'magixmod',5,1,'c2'],
 		cost:{'discernment':10,'creativity':2},
 		req:{'language':true},
@@ -2536,9 +2536,9 @@ if (!document.getElementById(cssId))
 	});
 		new G.Tech({
 		name:'oral tradition 2/2',
-		desc:'@unlocks [storyteller]@provides 10 [inspiration]@provides 10 [wisdom]@provides 5 [quick-wittinity]<><b><font color="fuschia">oral tradition</font></b> emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation.',
+		desc:'@unlocks [storyteller]@provides 10 [inspiration]@provides 10 [wisdom]@provides 5 [quick-wittinity]<><b><font color="fuschia">Oral tradition</font></b> emerges when the members of a tribe gather at night to talk about their day. Stories, ideas, and myths are all shared and passed on from generation to generation.',
 		icon:[27,2,'magixmod',5,1,'c2'],
-		cost:{'discernment':14,'creativity':3},
+		cost:{'discernment':21,'creativity':3},
 		req:{'language':true,'oral tradition 1/2':true},
 		effects:[
 			{type:'provide res',what:{'inspiration':10,'wisdom':10,'quick-wittinity':5}},
