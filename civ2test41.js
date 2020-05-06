@@ -1506,7 +1506,7 @@ if (!document.getElementById(cssId))
 		getDisplayAmount:function()
 		{
 			var amount=G.getRes('battery of discoveries').amount;
-			if (amount>100) amount=100;
+			if (amount>100){ amount=100; G.getRes('battery of discoveries').amount==100;}
 			return B(amount)+'%';
 		},
 		getIcon:function(me)
