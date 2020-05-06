@@ -2422,7 +2422,7 @@ if (!document.getElementById(cssId))
 		getCosts:function()
 		{
   	let calcCost = (name, constGain = 0.025, rollGain = 0.05) => Math.floor(G.getRes(name).amount * (constGain + this.roll * rollGain))
-            if (!G.has('oral tradition')){
+            if (!G.has('oral tradition 2/2')){
               return { 'discernment' : calcCost('wisdom') }
             }
             return { 'discernment' : calcCost('wisdom'), 'gentility': calcCost('inspiration', 0.05) }
