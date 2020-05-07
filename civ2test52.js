@@ -1549,6 +1549,158 @@ G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</
    G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
 G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - ???'
 		}
+					if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 2 && G.achievByName['the fortress'].won < 4 ) {
+			  G.setPolicyModeByName('fortress stage','3');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='3'){
+	G.getDict('the fortress').wideIcon = [0,17,'c2']
+        G.getDict('the fortress').icon = [1,17,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 3 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':2400}
+    G.getDict('the fortress').costPerStep = {'basic building materials':800,'precious building materials':60}
+    G.getDict('the fortress').steps = 180
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':550}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 550 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 3 && G.achievByName['the fortress'].won < 5 ) {
+			  G.setPolicyModeByName('fortress stage','4');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='4'){
+	G.getDict('the fortress').wideIcon = [0,18,'c2']
+        G.getDict('the fortress').icon = [1,18,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 4 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':2800}
+    G.getDict('the fortress').costPerStep = {'basic building materials':1000,'precious building materials':70}
+    G.getDict('the fortress').steps = 200
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':700}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 700 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 4 && G.achievByName['the fortress'].won < 6 ) {
+			  G.setPolicyModeByName('fortress stage','5');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='5'){
+	G.getDict('the fortress').wideIcon = [0,19,'c2']
+        G.getDict('the fortress').icon = [1,19,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 5 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':3200}
+    G.getDict('the fortress').costPerStep = {'basic building materials':1200,'precious building materials':80}
+    G.getDict('the fortress').steps = 220
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':850}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 850 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 5 && G.achievByName['the fortress'].won < 7 ) {
+			  G.setPolicyModeByName('fortress stage','6');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='6'){
+	G.getDict('the fortress').wideIcon = [0,20,'c2']
+        G.getDict('the fortress').icon = [1,20,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 6 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':3600}
+    G.getDict('the fortress').costPerStep = {'basic building materials':1400,'precious building materials':90}
+    G.getDict('the fortress').steps = 240
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':1000}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 1000 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - [food rations] and [water rations] policies no longer require [discernment].<hr><b>LV7</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 6 && G.achievByName['the fortress'].won < 8 ) {
+			  G.setPolicyModeByName('fortress stage','7');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='7'){
+	G.getDict('the fortress').wideIcon = [0,21,'c2']
+        G.getDict('the fortress').icon = [1,21,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 7 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':4000}
+    G.getDict('the fortress').costPerStep = {'basic building materials':1600,'precious building materials':100}
+    G.getDict('the fortress').steps = 260
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':1200}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 1200 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - [food rations] and [water rations] policies no longer require [discernment].<hr><b>LV7</b> - Start a game with +1 [creativity]<hr><b>LV8</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 7 && G.achievByName['the fortress'].won < 9 ) {
+			  G.setPolicyModeByName('fortress stage','8');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='8'){
+	G.getDict('the fortress').wideIcon = [0,22,'c2']
+        G.getDict('the fortress').icon = [1,22,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 8 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':4400}
+    G.getDict('the fortress').costPerStep = {'basic building materials':1800,'precious building materials':110}
+    G.getDict('the fortress').steps = 280
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':1400}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 1400 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - [food rations] and [water rations] policies no longer require [discernment].<hr><b>LV7</b> - Start a game with +1 [creativity]<hr><b>LV8</b> - Start a game with [battery of discoveries] charged to 5%<hr><b>LV9</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 8 && G.achievByName['the fortress'].won < 10 ) {
+			  G.setPolicyModeByName('fortress stage','9');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='9'){
+	G.getDict('the fortress').wideIcon = [0,23,'c2']
+        G.getDict('the fortress').icon = [1,23,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 9 of 10. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'the fortress'
+    G.getDict('the fortress').cost = {'basic building materials':4800}
+    G.getDict('the fortress').costPerStep = {'basic building materials':2000,'precious building materials':120}
+    G.getDict('the fortress').steps = 300
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':1600}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 1600 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - [food rations] and [water rations] policies no longer require [discernment].<hr><b>LV7</b> - Start a game with +1 [creativity]<hr><b>LV8</b> - Start a game with [battery of discoveries] charged to 5%<hr><b>LV9</b> - If year 3 will start you will get extra 1 year and 150 days of fast ticks.<hr><b>LV10</b> - ???'
+		}
+				if (G.achievByName['the fortress'].won) {
+  		  if (G.achievByName['the fortress'].won > 9) {
+			  G.setPolicyModeByName('fortress stage','10');
+		  }
+		}
+					if (G.checkPolicy('fortress stage')=='10'){
+	G.getDict('the fortress').wideIcon = [0,24,'c2']
+        G.getDict('the fortress').icon = [1,24,'c2']
+        G.getDict('the fortress').desc ='@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, The Fortress stands tall, its eternal shadow forever reminding your elves of your greatness. <font color="yellow">@The Fortress is evolved to level 10 of 10<b>(Final stage)</b>. Continue evolving up to unlock a special achievement. You can evolve up The to next stage by ascending with The Fortress at the stage you currently are. //Each level of [the fortress,The Fortress] provides special bonus. Check the description of [a power of the fortress] tech to learn more.</font>'
+    G.getDict('the fortress').wonder = 'fortress eternal'
+    G.getDict('the fortress').cost = {'basic building materials':5200}
+    G.getDict('the fortress').costPerStep = {'basic building materials':2200,'precious building materials':130}
+    G.getDict('the fortress').steps = 320
+    G.getDict('the fortress').messageOnStart = 'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in dense and tall forest, it is almost as tall as trees around you. This time The Fortress will be more massive.'
+    G.getDict('the fortress').finalStepCost = {'population':2000}
+    G.getDict('the fortress').finalStepDesc = 'To complete The Fortress, 2000 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.'
+   G.getDict('the fortress').use = {'land':10,'worker':5,'metal tools':5}
+G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - [food rations] and [water rations] policies no longer require [discernment].<hr><b>LV7</b> - Start a game with +1 [creativity]<hr><b>LV8</b> - Start a game with [battery of discoveries] charged to 5%<hr><b>LV9</b> - If year 3 will start you will get extra 1 year and 150 days of fast ticks.<hr><b>LV10</b> - Start a game with 1 extra [discernment] and [battery of discoveries] charged to 10%. Also instead of 1y 150d you will get full 2y of fast ticks.'
+		}
 			},
 		getDisplayAmount:function()
 		{
@@ -3117,7 +3269,7 @@ G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</
 	});
 	new G.Tech({
 		name:'a power of the fortress',
-		desc:'Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - To roll new researches or reroll you need 75% of [battery of discoveries,Battery] instead of 100%<hr><b>LV2</b> - C2 [wanderer]s are 2% better and [scout]s are 4% better<hr><b>LV3</b> - Unlocks 2nd tier for two C1 wonders: <b><font color="fuschia">Pagoda of Democracy</font></b>, <b><font color="aqua">Complex of dreamers</font></b>. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)<hr><b>LV4</b> - Unlocks 2nd tier for C1 wonder: <b><font color="green">Fortress of Cultural Legacy</font></b>. Doing a 2nd stage will increase its bonus by 2.<hr><b>LV5</b> - [battery of discoveries] can overcap. You can now have 115% of battery(still you will need just 75% of it)<hr><b>LV6</b> - [food rations] and [water rations] policies no longer require [discernment].<hr><b>LV7</b> - Start a game with +1 [creativity]<hr><b>LV8</b> - Start a game with [battery of discoveries] charged to 5%<hr><b>LV9</b> - If year 3 will start you will get extra 1 year and 150 days of fast ticks.<hr><b>LV10</b> - Start a game with 1 extra [discernment] and [battery of discoveries] charged to 10%. Also instead of 1y 150d you will get full 2y of fast ticks.',
+		desc:'Fortress evolution bonuses://<b>LV0</b> - nothing<hr><b>LV1</b> - ???',
 		icon:[4,12,'magixmod',24,9,'c2'],
 		cost:{},
 		req:{'tribalism':false},
