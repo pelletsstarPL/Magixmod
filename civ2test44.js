@@ -3068,7 +3068,7 @@ if (!document.getElementById(cssId))
 	
 	new G.Tech({
 		name:'monument-building',
-		desc:'@unlocks the [mausoleum], an early wonder<>',
+		desc:'@unlocks the [mausoleum], an early wonder<> <table border="1"><tr><td>AA</td><td>AB</td></tr><tr><td>BB</td><td>BC</td></tr></table>',
 		icon:[24,8,'c2'],
 		cost:{'discernment':97,'gentility':43,'creativity':42,'influence':9,'faith':3},
 		req:{'construction':true,'burial':true,'belief in the afterlife':true},
