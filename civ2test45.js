@@ -3068,13 +3068,23 @@ if (!document.getElementById(cssId))
 	
 	new G.Tech({
 		name:'monument-building',
-		desc:'@unlocks the [mausoleum], an early wonder<> <table border="1"><tr><td>AA</td><td>AB</td></tr><tr><td>BB</td><td>BC</td></tr></table>',
+		desc:'@unlocks the [the fortress], an early C2 wonder<> ',
 		icon:[24,8,'c2'],
 		cost:{'discernment':97,'gentility':43,'creativity':42,'influence':9,'faith':3},
 		req:{'construction':true,'burial':true,'belief in the afterlife':true},
 		effects:[
 		],
 	});
+	new G.Tech({
+		name:'a power of the fortress',
+		desc:'Fortress evolution bonuses://LV0 - nothing//LV1 - To roll new researches or reroll you need 75% of battery instead of 100%//LV2 - C2 Wanderers are 10% better//LV3 - Unlocks 2nd tier for two C1 wonders: Pagoda of Democracy, Complex of dreamers. Doing a 2nd stage will increase starting bonus by 1 (so if insight-ly was providing 6 insight now it will provide 7 if did second time)//Lv4 - Unlocks 2nd tier for C1 wonder: Fortress of Cultural Legacy. Doing a 2nd stage will increase its bonus by 2.//LV5 - Battery of Discoveries can overcap. You can now have 115% of battery(still you will need just 75% of it)//LV6 - Food and water rations policies no longer require Discernment.//LV7 - Start a game with 1 creativity//LV8 - Start a game with Battery of Discoveries charged to 5%//LV9 - If year 3 will start you will get extra 1 year and 150 days of fast ticks.//LV10 - Start a game with 1 extra discernment and Battery of Discoveries charged to 10%. Also instead of 1y 150d you will get full 2y of fast ticks.',
+		icon:[24,8,'c2'],
+		cost:{},
+		req:{'tribalism':false},
+		effects:[
+		],
+	});
+	
 	
 	/*=====================================================================================
 	TRAITS
@@ -3228,7 +3238,7 @@ if (!document.getElementById(cssId))
 		name:'food rations',
 		desc:'Define how much [food] your elves are given each day.//Bigger rations will make your elves happier, while smaller ones may lead to sickness and starvation.',
 		icon:[5,12,'c2',3,6,'c2'],
-		cost:{'influence':2,'discernment':1},
+		cost:{'influence':2,'discernment':2},
 		startMode:'sufficient',
 		req:{'rules of food':true},
 		modes:{
@@ -3243,7 +3253,7 @@ if (!document.getElementById(cssId))
 		name:'water rations',
 		desc:'Define how much [water] your elves are given each day.//Bigger rations will make your elves happier, while smaller ones may lead to sickness and dehydration.',
 		icon:[5,12,'c2',7,6,'c2'],
-		cost:{'influence':2,'discernment':1},
+		cost:{'influence':2,'discernment':2},
 		startMode:'sufficient',
 		req:{'rules of food':true},
 		modes:{
