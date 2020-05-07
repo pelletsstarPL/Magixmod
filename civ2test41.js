@@ -2394,17 +2394,17 @@ if (!document.getElementById(cssId))
 	//wonders
 	
 	new G.Unit({
-		name:'mausoleum',
-		desc:'@leads to the <b>Mausoleum Victory</b><>A mystical monument where the dead lie.//A temple housing a tomb deep under its rocky platform, the Mausoleum stands tall, its eternal shadow forever reminding your elves of your greatness.',
-		wonder:'mausoleum',
+		name:'the fortress',
+		desc:'@leads to the <b>Fortress Victory</b><>A mystical monument where the glory of elves is shown around. Built in the middle of dense and tall forest//A temple housing a tomb deep under its rocky platform, the Fortress stands tall, its eternal shadow forever reminding your elves of your greatness.',
+		wonder:'the fortress',
 		icon:[1,14,'c2'],
 		wideIcon:[0,14,'c2'],
 		cost:{'basic building materials':1200},
 		costPerStep:{'basic building materials':300,'precious building materials':30},
 		steps:120,
-		messageOnStart:'You begin the construction of the Mausoleum. Its towering mass already dominates the city, casting fear and awe wherever its shadow reaches.',
+		messageOnStart:'You begin the construction of The Fortress. Its towering mass already dominates the city hidden in the dense and tall forest. It is almost as tall as trees that are around you and your elves. They don\'t like woodcutting at all.',
 		finalStepCost:{'population':100},
-		finalStepDesc:'To complete the Mausoleum, 100 of your [population,Elves] must be sacrificed to accompany you as servants in the afterlife.',
+		finalStepDesc:'To complete The Fortress, 100 of your [population,Elves] must be sacrificed to accompany you as mighty servants in the afterlife.',
 		use:{'land':10},
 		//require:{'worker':10,'stone tools':10},
 		req:{'monument-building':true},
@@ -4033,12 +4033,25 @@ if (!document.getElementById(cssId))
 	
 	new G.Achiev({
 		tier:0,
-		name:'mausoleum',
-		desc:'You have been laid to rest in the Mausoleum, an ancient stone monument the purpose of which takes root in archaic religious thought.',
-		fromUnit:'mausoleum',
+		name:'the fortress',
+		desc:'You have been laid to rest in The Fortress, an ancient stone monument that was built in the middle of the forest the purpose of which takes root in archaic elven religious thought.',
+		fromWonder:'the fortress',
+		icon:[1,14,'c2'],
+		wideIcon:[0,14,'c2'],
 		effects:[
-			{type:'addFastTicksOnStart',amount:300},
-			{type:'addFastTicksOnResearch',amount:75}
+			{type:'addFastTicksOnResearch',amount:50}
+		],
+	});
+	new G.Achiev({
+		tier:1,
+		name:'fortress eternal',
+		displayName:'<font color="#Da4f37">fortress eternal</font>',
+		desc:'You have been laid to rest in The Fortress several times. After each of the time you were laid the Fortress was growing bigger and bigger. Reach 10/10 The Fortress stage to get this achievement. Bonuses: @[belief in the afterlife] chance is doubled for C2. @+1 <b>Insight</b> for C1 at start of run with people.',
+		//fromWonder:'the fortress',
+		icon:[1,14,'c2'],
+		wideIcon:[0,14,'c2'],
+		effects:[
+			{type:'addFastTicksOnResearch',amount:200}
 		],
 	});
 	
