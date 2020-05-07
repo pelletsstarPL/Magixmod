@@ -1574,7 +1574,7 @@ G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</
 	UNITS
 	=======================================================================================*/
 	G.unitCategories.push(
-		{id:'debug',name:'Debug'},
+		{id:'debug',name:'<font color="#1f4f22">Debug</font>'},
 		{id:'housing',name:'Housing'},
 		{id:'civil',name:'Civil'},
 		{id:'crafting',name:'Crafting'},
@@ -1585,7 +1585,7 @@ G.getDict('a power of the fortress').desc='Fortress evolution bonuses://<b>LV0</
 		{id:'spiritual',name:'Spiritual'},
 		{id:'exploration',name:'Exploration'},
 		{id:'storage',name:'Storage'},
-		{id:'wonder',name:'Wonders'}
+		{id:'wonder',name:'<font color="#ab20a2">Wonders</font>'},
 	);
 	
 	G.MODE_OFF={name:'Off',desc:'The unit will not produce anything.',icon:[1,0,'c2']};
