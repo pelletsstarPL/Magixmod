@@ -4048,8 +4048,8 @@ if (!document.getElementById(cssId))
 		displayName:'<font color="#Da4f37">fortress eternal</font>',
 		desc:'You have been laid to rest in The Fortress several times. After each of the time you were laid the Fortress was growing bigger and bigger. Reach 10/10 The Fortress stage to get this achievement. Bonuses: @[belief in the afterlife] chance is doubled for C2. @+1 <b>Insight</b> for C1 at start of run with people.',
 		//fromWonder:'the fortress',
-		icon:[1,14,'c2'],
-		wideIcon:[0,14,'c2'],
+		icon:[1,24,'c2'],
+		wideIcon:[0,24,'c2'],
 		effects:[
 			{type:'addFastTicksOnResearch',amount:200}
 		],
