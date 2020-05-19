@@ -1,6 +1,6 @@
 G.AddData({
-    Name:'Thot Mod - fixed',
-    Author:'fancy and torcado',
+    name:'Thot Mod - fixed',
+    author:'fancy and torcado',
     desc:'This mod makes it possible to create thots. Thots are an improved version of Dreamers. Fixed by pelletsstarPL(I made it playable)',
     engineVersion:1,
     manifest:0,
@@ -8,7 +8,7 @@ G.AddData({
     sheets:{'thotSheet':'https://raw.githubusercontent.com/paradoxrevolver/neverending-legacy-mods/master/thotModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
     func:function()
     {
-		new G.unit({
+		new G.Unit({
 		name:'thot',
 		desc:'@generates [insight] more frequently than a [dreamer]<>A [thot] spends their time observing, thinking, and wondering why things are the way they are.',
 		icon:[0,0,'thotSheet'],
