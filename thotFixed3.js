@@ -21,7 +21,7 @@ G.AddData({
 		],
 		category:'discovery',
 		req:{'construction':true},
-		limitPer:{'house':1},
+		limitPer:{'population':200},
 		});
     }
 });
