@@ -8,7 +8,7 @@ G.AddData({
     sheets:{'thotSheet':'https://raw.githubusercontent.com/paradoxrevolver/neverending-legacy-mods/master/thotModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
     func:function()
     {
-		new G.Unit({
+		new G.unit({
 		name:'thot',
 		desc:'@generates [insight] more frequently than a [dreamer]<>A [thot] spends their time observing, thinking, and wondering why things are the way they are.',
 		icon:[0,0,'thotSheet'],
