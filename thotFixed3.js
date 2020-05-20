@@ -1,5 +1,5 @@
 G.AddData({
-    name:'Thot Mod - fixed',
+    name:'Thot Mod',
     author:'fancy and torcado',
     desc:'This mod makes it possible to create thots. Thots are an improved version of Dreamers. Fixed by pelletsstarPL(I made it playable)',
     engineVersion:1,
