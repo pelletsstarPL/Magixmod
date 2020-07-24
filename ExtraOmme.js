@@ -140,8 +140,10 @@ new G.Tech({
   G.getDict('mine').modes['zinc']={name:'zinc',icon:[2,1,'extraores'],desc:'Mine for [zinc ore] with 4x efficiency.',req:{'deep mining & quarrying':true,'prospecting':true},use:{'metal tools':3,'worker':3}};
   G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore':40},max:30,mode:'lead'});
   G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore':40},max:30,mode:'zinc'});
-  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore','zinc ore'},amount:5,max:15,mode:'anydeep'});
-G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'dinium ore'},amount:2,max:4,mode:'anydeep'});
+	 G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'stone':1},mode:'anydeep'});
+  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore'},amount:5,max:15,mode:'anydeep'});
+G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore'},amount:5,max:15,mode:'anydeep'});
+G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'dinium ore'},amount:2,max:4,mode:'anydeep',req:{'unique ores':true}});
   G.getDict('quarry').effects.push({type:'gather',context:'quarry',amount:0.5,max:2,mode:'quarry for ores'});
    G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'mythril ore':2},max:4,mode:'quarry for ores'});
 G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'blackium ore':2},max:4,mode:'quarry for ores'});
