@@ -20,7 +20,7 @@ G.contextNames['deepquarrying']='Deep quarrying';
        // G.getDict('rocky substrate').res['deepquarrying']['salt']=0.0001;
 	
 //G.getDict('rocky substrate').res['deepmining']['dinium ore']=0.004,
-G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001,
+//G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001,
 	
 	new G.Res({
 		name:'lead ore',
