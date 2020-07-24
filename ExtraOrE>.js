@@ -8,8 +8,7 @@ requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
 	
-G.contextNames['deep mining']='Deep mining';
-G.contextNames['deep quarrying']='Deep quarrying';
+
 		G.getDict('rocky substrate').res['deep quarrying']['mythril ore']=0.004;
         G.getDict('rocky substrate').res['deep quarrying']['blackium ore']=0.001;
         G.getDict('rocky substrate').res['deep quarrying']['lead ore']=0.08;
