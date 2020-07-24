@@ -14,8 +14,8 @@ G.contextNames['gather']='Gathering';
 	G.contextNames['dig']='Digging';
 	G.contextNames['mine']='Mining';
 	G.contextNames['quarry']='Quarrying';
-G.contextNames['deep mining']='Deep mining';
-G.contextNames['deep quarrying']='Deep quarrying';
+G.contextNames.push['deep mining']='Deep mining';
+G.contextNames.push['deep quarrying']='Deep quarrying';
 	new G.Res({
 		name:'lead ore',
 		desc:'Ore that can be processed into [hard metal ingot]s.',
