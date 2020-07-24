@@ -9,17 +9,17 @@ sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20o
 func:function(){
 	
 
-		G.getDict('rocky substrate').res['deepquarrying']['mythril ore']=0.004;
-        G.getDict('rocky substrate').res['deepquarrying']['blackium ore']=0.001;
-        G.getDict('rocky substrate').res['deepquarrying']['lead ore']=0.08;
-        G.getDict('rocky substrate').res['deepmining']['zinc ore']=0.004;
+		//G.getDict('rocky substrate').res['deepquarrying']['mythril ore']=0.004;
+      //  G.getDict('rocky substrate').res['deepquarrying']['blackium ore']=0.001;
+       /// G.getDict('rocky substrate').res['deepquarrying']['lead ore']=0.08;
+       // G.getDict('rocky substrate').res['deepmining']['zinc ore']=0.004;
         G.getDict('rocky substrate').res['mine']['pyrite']=0.004;
-        G.getDict('rocky substrate').res['deepquarrying']['osmium ore']=0.001;
-        G.getDict('rocky substrate').res['deepmining']['gems']=0.0045;
-        G.getDict('rocky substrate').res['deepquarrying']['salt']=0.0001;
+      //  G.getDict('rocky substrate').res['deepquarrying']['osmium ore']=0.001;
+      //  G.getDict('rocky substrate').res['deepmining']['gems']=0.0045;
+       // G.getDict('rocky substrate').res['deepquarrying']['salt']=0.0001;
 	
-G.getDict('rocky substrate').res['deep mining']['dinium ore']=0.004,
-G.getDict('rocky substrate').res['deep quarrying']['unknownium ore']=0.001,
+//G.getDict('rocky substrate').res['deepmining']['dinium ore']=0.004,
+G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001,
 	
 	new G.Res({
 		name:'lead ore',
