@@ -160,7 +160,7 @@ G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001;}}
   G.getDict('furnace').effects.push({type:'convert',from:{'osmium ore':4},into:{'hard metal ingot':1},every:5,mode:'osmium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'blackium ore':6},into:{'strong metal ingot':1},every:5,mode:'blackium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'zinc ore':7},into:{'hard metal ingot':1},every:5,mode:'zinc'});
-  G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'lead ore':6},into:{'hard metal ingot':1},every:5,mode:'mythril blocks'});
+  G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'mythril ingot':10},into:{'myhtirl block':1},every:5,mode:'mythril blocks'});
 
 	
 }});
