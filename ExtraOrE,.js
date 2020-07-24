@@ -7,8 +7,7 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
-G.contextNames['deep mining']='Deep mining';
-G.contextNames['deep quarrying']='Deep quarrying';
+
 	new G.Res({
 		name:'lead ore',
 		desc:'Ore that can be processed into [hard metal ingot]s.',
@@ -170,4 +169,6 @@ new G.Tech({
         G.getDict('rocky substrate').res['deep quarrying']['osmium ore']=0.001;
         G.getDict('rocky substrate').res['deep mining']['gems']=0.0045;
         G.getDict('rocky substrate').res['deep quarrying']['salt']=0.0001;
+	G.contextNames['deep mining']='Deep mining';
+G.contextNames['deep quarrying']='Deep quarrying';
 }});
