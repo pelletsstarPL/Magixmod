@@ -7,7 +7,13 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
-
+G.contextNames['gather']='Gathering';
+	G.contextNames['fish']='Fishing';
+	G.contextNames['hunt']='Hunting';
+	G.contextNames['chop']='Chopping';
+	G.contextNames['dig']='Digging';
+	G.contextNames['mine']='Mining';
+	G.contextNames['quarry']='Quarrying';
 G.contextNames['deep mining']='Deep mining';
 G.contextNames['deep quarrying']='Deep quarrying';
 	new G.Res({
@@ -140,7 +146,7 @@ new G.Tech({
         {type:'function',func:function(){G.getDict('rocky substrate').res['deep quarrying']['salt']=0.0001;}},
     ]
 	});
-   new G.Tech({
+   new G.Trait({
 		name:'unique ores',
 		desc:'@people can find two new ores but... they will never know what to do with them. And [prospecting] cannot affect them<>',
 		icon:[8,12,4,2,'extraores'],
