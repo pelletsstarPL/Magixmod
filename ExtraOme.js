@@ -10,7 +10,7 @@ func:function(){
 	G.contextNames['deepmining']='Deep mining';
 G.contextNames['deepquarrying']='Deep quarrying';
 
-		//G.getDict('rocky substrate').res['deepquarrying']['mythril ore']=0.004;
+		G.getDict('rocky substrate').res['deepquarrying']['mythril ore']=0.004;
       //  G.getDict('rocky substrate').res['deepquarrying']['blackium ore']=0.001;
        /// G.getDict('rocky substrate').res['deepquarrying']['lead ore']=0.08;
        // G.getDict('rocky substrate').res['deepmining']['zinc ore']=0.004;
