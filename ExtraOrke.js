@@ -7,7 +7,16 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
-				
+	new G.Tech({
+		name:'Extra ores',
+		desc:'@Thanks for using that small mod',
+		icon:[0,1],
+		startWith:true,
+		effects:[
+		{type:'hide context',what:['deep mining']},
+      		{type:'hide context',what:['deep quarrying']}
+		]
+	});			
 
 	
 	new G.Res({
