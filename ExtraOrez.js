@@ -7,7 +7,7 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
-}
+
 G.contextNames['deep mining']='Deep mining';
 G.contextNames['deep quarrying']='Deep quarrying';
 	new G.Res({
@@ -176,4 +176,5 @@ new G.Tech({
   G.getDict('furnace').effects.push({type:'convert',from:{'blackium ore':6},into:{'strong metal ingot':1},every:5,mode:'blackium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'zinc ore':7},into:{'hard metal ingot':1},every:5,mode:'zinc'});
   G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'lead ore':6},into:{'hard metal ingot':1},every:5,mode:'mythril blocks'});
+}
 });
