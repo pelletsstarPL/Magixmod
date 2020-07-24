@@ -7,18 +7,6 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
-	new G.Tech({
-		name:'Extra ores',
-		desc:'@Thanks for using that small mod',
-		icon:[0,1],
-		startWith:true,
-		effects:[
-		{type:'hide context',what:['deep mining']},
-      		{type:'hide context',what:['deep quarrying']}
-		]
-	});			
-
-	
 	new G.Res({
 		name:'lead ore',
 		desc:'Ore that can be processed into [hard metal ingot]s.',
@@ -144,8 +132,6 @@ new G.Tech({
     chance:150,
     effects:[
     
-        {type:'function',func:function(){G.getDict('rocky substrate').res['deepmining']['dinium ore']=0.004;
-G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001;}}
     ]
 	});
   G.getDict('quarry').modes['quarry for ores']={name:'Quarry for ores',icon:[8,12,0,8],desc:'This quarry will gain 3x less [cut stone], [marble] but will be able to mine for ores like [mythril ore,Mythril] or [blackium ore,Blackium].',req:{'deep mining & quarrying':true},use:{'metal tools':4,'worker':4}};
@@ -154,9 +140,13 @@ G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001;}}
   G.getDict('mine').modes['zinc']={name:'zinc',icon:[2,1,'extraores'],desc:'Mine for [zinc ore] with 4x efficiency.',req:{'deep mining & quarrying':true,'prospecting':true},use:{'metal tools':3,'worker':3}};
   G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore':40},max:30,mode:'lead'});
   G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore':40},max:30,mode:'zinc'});
-  G.getDict('mine').effects.push({type:'gather',context:'deepmining',amount:5,max:15,mode:'anydeep'});
+  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore','zinc ore'},amount:5,max:15,mode:'anydeep'});
+G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'dinium ore'},amount:2,max:4,mode:'anydeep'});
   G.getDict('quarry').effects.push({type:'gather',context:'quarry',amount:0.5,max:2,mode:'quarry for ores'});
-   G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',amount:3,max:7,mode:'quarry for ores'});
+   G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'mythril ore':2},max:4,mode:'quarry for ores'});
+G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'blackium ore':2},max:4,mode:'quarry for ores'});
+	 G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'unknownium ore':2},max:4,mode:'quarry for ores',req:{'unique ores':true}});
+	G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'unknownium ore':2},max:4,mode:'quarry for ores',req:{'unique ores':true}});
   G.getDict('furnace').modes['lead']={name:'Lead smelting',icon:[10,9],desc:'Cast [hard metal ingot]s out of 6 [lead ore]s each.',req:{'deep mining & quarrying':true,'lead-working':true},use:{'metal tools':2,'worker':2}};
   G.getDict('furnace').modes['mythril']={name:'Mythril smelting',icon:[11,9],desc:'Cast [mythril ingot]s out of 6 [mythril ore]s and 1 [gold ore] each.',req:{'deep mining & quarrying':true,'mythril-working':true},use:{'metal tools':2,'worker':2}};
   G.getDict('furnace').modes['osmium']={name:'Osmium smelting',icon:[9,9],desc:'Cast [soft metal ingot]s out of 4 [osmium ore]s each.',req:{'deep mining & quarrying':true,'osmium-working':true},use:{'metal tools':2,'worker':2}};
