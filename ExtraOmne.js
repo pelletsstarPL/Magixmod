@@ -141,9 +141,9 @@ new G.Tech({
   G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore':40},max:30,mode:'lead'});
   G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore':40},max:30,mode:'zinc'});
 	 G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'stone':1},mode:'anydeep'});
-  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore'},amount:5,max:15,mode:'anydeep'});
-G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore'},amount:5,max:15,mode:'anydeep'});
-G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'dinium ore'},amount:2,max:4,mode:'anydeep',req:{'unique ores':true}});
+  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore':5},max:15,mode:'anydeep'});
+G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore':5},max:15,mode:'anydeep'});
+G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'dinium ore':2},max:4,mode:'anydeep',req:{'unique ores':true}});
   G.getDict('quarry').effects.push({type:'gather',context:'quarry',amount:0.5,max:2,mode:'quarry for ores'});
    G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'mythril ore':2},max:4,mode:'quarry for ores'});
 G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'blackium ore':2},max:4,mode:'quarry for ores'});
@@ -161,7 +161,7 @@ G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'b
   G.getDict('furnace').effects.push({type:'convert',from:{'osmium ore':4},into:{'hard metal ingot':1},every:5,mode:'osmium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'blackium ore':6},into:{'strong metal ingot':1},every:5,mode:'blackium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'zinc ore':7},into:{'hard metal ingot':1},every:5,mode:'zinc'});
-  G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'mythril ingot':10},into:{'myhtirl block':1},every:5,mode:'mythril blocks'});
+  G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'mythril ingot':10},into:{'myhtril block':1},every:5,mode:'mythril blocks'});
 
 	
 }});
