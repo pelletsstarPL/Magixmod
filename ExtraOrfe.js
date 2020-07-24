@@ -12,16 +12,16 @@ G.contextNames['deepquarrying']='Deepquarrying';
 G.getDict('rocky substrate').res['deepquarrying'][''];
 	G.getDict('rocky substrate').res['deepmining'][''];
 		G.getDict('rocky substrate').res['deepquarrying']['mythril ore']=0.004;
-      //  G.getDict('rocky substrate').res['deepquarrying']['blackium ore']=0.001;
-       /// G.getDict('rocky substrate').res['deepquarrying']['lead ore']=0.08;
-       // G.getDict('rocky substrate').res['deepmining']['zinc ore']=0.004;
+        G.getDict('rocky substrate').res['deepquarrying']['blackium ore']=0.001;
+        G.getDict('rocky substrate').res['deepquarrying']['lead ore']=0.08;
+        G.getDict('rocky substrate').res['deepmining']['zinc ore']=0.004;
         G.getDict('rocky substrate').res['mine']['pyrite']=0.004;
-      //  G.getDict('rocky substrate').res['deepquarrying']['osmium ore']=0.001;
-      //  G.getDict('rocky substrate').res['deepmining']['gems']=0.0045;
-       // G.getDict('rocky substrate').res['deepquarrying']['salt']=0.0001;
+        G.getDict('rocky substrate').res['deepquarrying']['osmium ore']=0.001;
+        G.getDict('rocky substrate').res['deepmining']['gems']=0.0045;
+        G.getDict('rocky substrate').res['deepquarrying']['salt']=0.0001;
 	
-//G.getDict('rocky substrate').res['deepmining']['dinium ore']=0.004,
-//G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001,
+G.getDict('rocky substrate').res['deepmining']['dinium ore']=0.004,
+G.getDict('rocky substrate').res['deepquarrying']['unknownium ore']=0.001,
 	
 	new G.Res({
 		name:'lead ore',
@@ -155,11 +155,11 @@ new G.Tech({
   G.getDict('mine').modes['anydeep']={name:'Any(Deep mining)',icon:[8,12,8,8],desc:'Works like <b>Any</b> mode but its gathering context is <b>Deep mining</b> instead of <b>Mining</b>',req:{'deep mining & quarrying':true},use:{'metal tools':3,'worker':3}};
   G.getDict('mine').modes['lead']={name:'lead',icon:[0,1,'extraores'],desc:'Mine for [lead ore] with 4x efficiency.',req:{'deep mining & quarrying':true,'prospecting':true},use:{'metal tools':3,'worker':3}};
   G.getDict('mine').modes['zinc']={name:'zinc',icon:[2,1,'extraores'],desc:'Mine for [zinc ore] with 4x efficiency.',req:{'deep mining & quarrying':true,'prospecting':true},use:{'metal tools':3,'worker':3}};
- // G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore':40},max:30,mode:'lead'});
- // G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore':40},max:30,mode:'zinc'});
-//  G.getDict('mine').effects.push({type:'gather',context:'deepmining',amount:5,max:15,mode:'anydeep'});
- // G.getDict('quarry').effects.push({type:'gather',context:'quarry',amount:0.5,max:2,mode:'quarry for ores'});
-  // G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',amount:3,max:7,mode:'quarry for ores'});
+  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'lead ore':40},max:30,mode:'lead'});
+  G.getDict('mine').effects.push({type:'gather',context:'deepmining',what:{'zinc ore':40},max:30,mode:'zinc'});
+  G.getDict('mine').effects.push({type:'gather',context:'deepmining',amount:5,max:15,mode:'anydeep'});
+  G.getDict('quarry').effects.push({type:'gather',context:'quarry',amount:0.5,max:2,mode:'quarry for ores'});
+   G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',amount:3,max:7,mode:'quarry for ores'});
   G.getDict('furnace').modes['lead']={name:'Lead smelting',icon:[10,9],desc:'Cast [hard metal ingot]s out of 6 [lead ore]s each.',req:{'deep mining & quarrying':true,'lead-working':true},use:{'metal tools':2,'worker':2}};
   G.getDict('furnace').modes['mythril']={name:'Mythril smelting',icon:[11,9],desc:'Cast [mythril ingot]s out of 6 [mythril ore]s and 1 [gold ore] each.',req:{'deep mining & quarrying':true,'mythril-working':true},use:{'metal tools':2,'worker':2}};
   G.getDict('furnace').modes['osmium']={name:'Osmium smelting',icon:[9,9],desc:'Cast [soft metal ingot]s out of 4 [osmium ore]s each.',req:{'deep mining & quarrying':true,'osmium-working':true},use:{'metal tools':2,'worker':2}};
