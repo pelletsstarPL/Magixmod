@@ -17,8 +17,8 @@ new G.Goods({
 			'dig':{'mud':2,'clay':0.15,'stone':0.6,'copper ore':0.01,'tin ore':0.01,'limestone':0.1,'salt':0.05},
 			'mine':{'stone':1,'copper ore':0.1,'tin ore':0.1,'iron ore':0.05,'gold ore':0.005,'coal':0.1,'salt':0.1,'gems':0.005,'pyrite':0.004},
 			'quarry':{'cut stone':1,'limestone':0.5,'marble':0.01,'osmium ore':0.001},
-      'deepmining':{'zinc ore':0.004,'gems':0.0045},
-      'deepquarrying':{'mythril ore':0.004,'blackium ore':0.001,'lead ore':0.08,'salt':0.0001}
+      'deepmining':{'zinc ore':0.004,'gems':0.0045,'dinium ore':0.004},
+      'deepquarrying':{'mythril ore':0.004,'blackium ore':0.001,'lead ore':0.08,'salt':0.0001,'unknownium ore':0.001}
 		},
 		affectedBy:['mineral depletion'],
 		noAmount:true,
