@@ -136,7 +136,6 @@ new G.Tech({
     	{type:'show context',what:['deep mining']},
       	{type:'show context',what:['deep quarrying']},
     {type:'function',func:function(){}}
-  }}
     ]
 	});
    new G.Trait({
