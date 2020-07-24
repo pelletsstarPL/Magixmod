@@ -11,6 +11,17 @@ func:function(){
 	{
 G.contextNames['deep mining']='Deep mining';
 G.contextNames['deep quarrying']='Deep quarrying';
+		G.getDict('rocky substrate').res['deep quarrying']['mythril ore']=0.004;
+        G.getDict('rocky substrate').res['deep quarrying']['blackium ore']=0.001;
+        G.getDict('rocky substrate').res['deep quarrying']['lead ore']=0.08;
+        G.getDict('rocky substrate').res['deep mining']['zinc ore']=0.004;
+        G.getDict('rocky substrate').res['mining']['pyrite']=0.004;
+        G.getDict('rocky substrate').res['deep quarrying']['osmium ore']=0.001;
+        G.getDict('rocky substrate').res['deep mining']['gems']=0.0045;
+        G.getDict('rocky substrate').res['deep quarrying']['salt']=0.0001;
+	
+G.getDict('rocky substrate').res['deep mining']['dinium ore']=0.004,
+G.getDict('rocky substrate').res['deep quarrying']['unknownium ore']=0.001,
 	}
 	new G.Res({
 		name:'lead ore',
@@ -125,15 +136,7 @@ new G.Tech({
     effects:[
     	{type:'show context',what:['deep mining']},
       	{type:'show context',what:['deep quarrying']},
-    {type:'function',func:function(){G.getDict('rocky substrate').res['deep quarrying']['mythril ore']=0.004;
-        G.getDict('rocky substrate').res['deep quarrying']['blackium ore']=0.001;
-        G.getDict('rocky substrate').res['deep quarrying']['lead ore']=0.08;
-        G.getDict('rocky substrate').res['deep mining']['zinc ore']=0.004;
-        G.getDict('rocky substrate').res['mining']['pyrite']=0.004;
-        G.getDict('rocky substrate').res['deep quarrying']['osmium ore']=0.001;
-        G.getDict('rocky substrate').res['deep mining']['gems']=0.0045;
-        G.getDict('rocky substrate').res['deep quarrying']['salt']=0.0001;
-	
+    {type:'function',func:function(){}}
   }}
     ]
 	});
@@ -147,8 +150,7 @@ new G.Tech({
     effects:[
     	{type:'show context',what:['deep mining']},
       	{type:'show context',what:['deep quarrying']},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['deep mining']['dinium ore']=0.004}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['deep quarrying']['unknownium ore']=0.001}},
+        {type:'function',func:function(){}}
     ]
 	});
   G.getDict('quarry').modes['quarry for ores']={name:'Quarry for ores',icon:[8,12,0,8],desc:'This quarry will gain 3x less [cut stone], [marble] but will be able to mine for ores like [mythril ore,Mythril] or [blackium ore,Blackium].',req:{'deep mining & quarrying':true},use:{'metal tools':4,'worker':4}};
