@@ -7,6 +7,31 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
+	//ICON FIXES
+	G.fixTooltipIcons=function()
+	{
+		G.parse=function(what)
+		{
+			var str='<div class="par">'+((what
+			.replaceAll(']s',',*PLURAL*]'))
+			.replace(/\[(.*?)\]/gi,G.parseFunc))
+			.replaceAll('http(s?)://','http$1:#SLASH#SLASH#')
+			.replaceAll('//','</div><div class="par">')
+			.replaceAll('#SLASH#SLASH#','//')
+			.replaceAll('@','</div><div class="par bulleted">')
+			.replaceAll('<>','</div><div class="divider"></div><div class="par">')+'</div>';
+			return str;
+		}
+	}
+	G.initializeFixIcons=function()
+	{
+		if (G.parse("http://").search("http://") == -1)
+		{
+			G.fixTooltipIcons();
+			setTimeout(G.initializeFixIcons,500);	// check again to make sure this version of the function stays applied during page load
+		}
+	}
+	G.initializeFixIcons();
 	new G.Res({
 		name:'lead ore',
 		desc:'Ore that can be processed into [hard metal ingot]s.',
@@ -161,7 +186,7 @@ G.getDict('quarry').effects.push({type:'gather',context:'deepquarrying',what:{'b
   G.getDict('furnace').effects.push({type:'convert',from:{'osmium ore':4},into:{'hard metal ingot':1},every:5,mode:'osmium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'blackium ore':6},into:{'strong metal ingot':1},every:5,mode:'blackium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'zinc ore':7},into:{'hard metal ingot':1},every:5,mode:'zinc'});
-  G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'mythril ingot':10},into:{'myhtril block':1},every:5,mode:'mythril blocks'});
+  G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'mythril ingot':10},into:{'mythril block':1},every:5,mode:'mythril blocks'});
 
 	
 }});
