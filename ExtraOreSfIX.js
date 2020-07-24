@@ -5,6 +5,6 @@ desc:'fix',
 engineVersion:1,
 manifest:'ModManifest.js',
 func:function(){
-G.context['deep mining']='Deep mining';
-G.context['deep quarrying']='Deep quarrying';
+G.contextNames['deepmining']='Deep mining';
+G.contextNames['deepquarrying']='Deep quarrying';
 }});
