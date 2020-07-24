@@ -79,13 +79,6 @@ G.contextNames['deep quarrying']='Deep quarrying';
 		partOf:'misc materials',
 		category:'build',
 	});
-   new G.Res({
-		name:'osmium ore',
-		desc:'Ore that can be processed into [soft metal ingot]s.',
-		icon:[3,1,'extraores'],
-		partOf:'misc materials',
-		category:'build',
-	});
     new G.Res({
 		name:'pyrite',
 		desc:'A fool\'s gold.',
@@ -136,14 +129,7 @@ new G.Tech({
     effects:[
     	{type:'show context',what:['deep mining']},
       	{type:'show context',what:['deep quarrying']},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['mythril ore']['deep quarrying']=0.004}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['blackium ore']['deep quarrying']=0.001}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['lead ore']['deep quarrying']=0.08}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['zinc ore']['deep mining']=0.004;}},
-         {type:'function',func:function(){G.getDict('rocky substrate').res['pyrite']['mining']=0.004;}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['osmium ore']['deep quarrying']=0.001;}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['gems']['deep mining']=0.0045;}},
-        {type:'function',func:function(){G.getDict('rocky substrate').res['salt']['deep quarrying']=0.0001;}},
+   
     ]
 	});
    new G.Trait({
@@ -182,5 +168,13 @@ new G.Tech({
   G.getDict('furnace').effects.push({type:'convert',from:{'blackium ore':6},into:{'strong metal ingot':1},every:5,mode:'blackium'});
   G.getDict('furnace').effects.push({type:'convert',from:{'zinc ore':7},into:{'hard metal ingot':1},every:5,mode:'zinc'});
   G.getDict('blacksmith workshop').effects.push({type:'convert',from:{'lead ore':6},into:{'hard metal ingot':1},every:5,mode:'mythril blocks'});
-}
-});
+
+	G.getDict('rocky substrate').res['deep quarrying']['mythril ore']=0.004;
+        G.getDict('rocky substrate').res['deep quarrying']['blackium ore']=0.001;
+        G.getDict('rocky substrate').res['deep quarrying']['lead ore']=0.08;
+        G.getDict('rocky substrate').res['deep mining']['zinc ore']=0.004;
+        G.getDict('rocky substrate').res['mining']['pyrite']=0.004;
+        G.getDict('rocky substrate').res['deep quarrying']['osmium ore']=0.001;
+        G.getDict('rocky substrate').res['deep mining']['gems']=0.0045;
+        G.getDict('rocky substrate').res['deep quarrying']['salt']=0.0001;
+}});
