@@ -5,8 +5,6 @@ desc:'fix',
 engineVersion:1,
 manifest:'ModManifest.js',
 func:function(){
-  if(G.year>=2){
 G.context.push['deep mining']='Deep mining';
 G.context.push['deep quarrying']='Deep quarrying';
-  }
 }});
