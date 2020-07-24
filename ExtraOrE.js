@@ -7,15 +7,8 @@ manifest:'ModManifest.js',
 requires:['Default dataset*'],
 sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20ores.png'},
 func:function(){
-G.contextNames['gather']='Gathering';
-	G.contextNames['fish']='Fishing';
-	G.contextNames['hunt']='Hunting';
-	G.contextNames['chop']='Chopping';
-	G.contextNames['dig']='Digging';
-	G.contextNames['mine']='Mining';
-	G.contextNames['quarry']='Quarrying';
-G.contextNames['deep mining']='Deep mining';
-G.contextNames['deep quarrying']='Deep quarrying';
+new G.contextNames['deep mining']='Deep mining';
+new G.contextNames['deep quarrying']='Deep quarrying';
 	new G.Res({
 		name:'lead ore',
 		desc:'Ore that can be processed into [hard metal ingot]s.',
