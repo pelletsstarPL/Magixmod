@@ -9,8 +9,6 @@ sheets:{'extraores':'https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Extra%20o
 func:function(){
 	G.contextNames['deepmining']='Deepmining';
 G.contextNames['deepquarrying']='Deepquarrying';
-G.getDict('rocky substrate').res['deepquarrying'][''];
-	G.getDict('rocky substrate').res['deepmining'][''];
 		G.getDict('rocky substrate').res['deepquarrying']['mythril ore']=0.004;
         G.getDict('rocky substrate').res['deepquarrying']['blackium ore']=0.001;
         G.getDict('rocky substrate').res['deepquarrying']['lead ore']=0.08;
