@@ -82,7 +82,7 @@ G.contextNames['deep quarrying']='Deep quarrying';
 	});
     new G.Res({
 		name:'pyrite',
-		desc:'A fool's gold.',
+		desc:'A fool\'s gold.',
 		icon:[2,2,'extraores'],
 		category:'misc',
 	});
