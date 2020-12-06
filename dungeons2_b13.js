@@ -88,6 +88,7 @@ var LaunchDungeons=function()
 		return str;
 	}//custom sheet
 	var D=new DungeonGen();
+	if(Game.Objects.Factory.dungeon.level%2==0){
 	D.loadTiles([
 	['wall',[1,0],'join'],
 	['wall corner',[1,0]],
@@ -98,8 +99,8 @@ var LaunchDungeons=function()
 	['potted plant',[3,4]],
 	['bookshelf',[4,5],'join'],
 	['door',[1,3],'join'],
-		(Game.Objects.Factory.dungeon.level%2==0 ? '+["alt wall",[7,0],"join"]+', : '+["alt wall",[4,0],"join"]+',)
-		(Game.Objects.Factory.dungeon.level%2==0 ? '+["alt wall corner",[7,0],"join"]+', : '+["alt wall corner",[4,0],"join"]+',)
+	['alt wall',[4,0],'join'],
+	['alt wall corner',[4,0]],
 	['alt floor',[4,1],'random3'],
 	['alt tiled floor',[4,2],'join'],
 	['alt round pillar',[4,4]],
@@ -107,15 +108,6 @@ var LaunchDungeons=function()
 	['alt potted plant',[6,4]],
 	['alt bookshelf',[4,6],'join'],
 	['alt door',[4,3],'join'],
-	['green wall',[7,0],'join'],
-	['green wall corner',[7,0]],
-	['green floor',[7,1],'random3'],
-	['green tiled floor',[7,2],'join'],
-	['green round pillar',[7,4]],
-	['green square pillar',[7,4]],
-	['green potted plant',[7,4]],
-	['green bookshelf',[7,6],'join'],
-	['green door',[7,3],'join'],
 	['water',[1,5]],
 	['green water',[2,5]],
 	['dark water',[3,5]],
@@ -126,7 +118,40 @@ var LaunchDungeons=function()
 	['alt entrance',[0,3]],
 	['exit',[0,2]],
 	['alt exit',[0,4]]
-	]);
+		]);
+		 }else{
+		D.loadTiles([
+	['wall',[1,0],'join'],
+	['wall corner',[1,0]],
+	['floor',[1,1],'random3'],
+	['tiled floor',[1,2],'join'],
+	['round pillar',[1,4]],
+	['square pillar',[2,4]],
+	['potted plant',[3,4]],
+	['bookshelf',[4,5],'join'],
+	['door',[1,3],'join'],
+	['alt wall',[7,0],'join'],
+	['alt wall corner',[7,0]],
+	['alt floor',[7,1],'random3'],
+	['alt tiled floor',[7,2],'join'],
+	['alt round pillar',[7,4]],
+	['alt square pillar',[8,4]],
+	['alt potted plant',[9,4]],
+	['alt bookshelf',[7,6],'join'],
+	['alt door',[7,3],'join'],
+	['water',[1,5]],
+	['green water',[2,5]],
+	['dark water',[3,5]],
+	['wooden wall',[1,7],'join'],
+	['wooden floor',[1,6],'random3'],
+	['conveyor belt',[7,7],'join'],
+	['entrance',[0,1]],
+	['alt entrance',[0,3]],
+	['exit',[0,2]],
+	['alt exit',[0,4]]
+		]);
+	
+		 }
 	
 	
 	/*=====================================================================================
