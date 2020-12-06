@@ -726,8 +726,8 @@ var LaunchDungeons=function()
 			}
 			//if(stg<=100){if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];}
 			//else{if (monsters.length==0) monsters=[choose(Game.BossMonsters).name+" II"];};
-			if(stg<=100){if (monsters.length==0) monsters=[choose['Ascended baking pod','Sentinent furnance'].name];}
-			else{if (monsters.length==0) monsters=[choose['Ascended baking pod II','Sentinent furnance II'].name];};
+			if(stg<=100){if (monsters.length==0) monsters=[choose['Ascended baking pod','Sentinent furnance']];}
+			else{if (monsters.length==0) monsters=[choose['Ascended baking pod II','Sentinent furnance II']];};
 			if (monsters.length>0)
 			{
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
