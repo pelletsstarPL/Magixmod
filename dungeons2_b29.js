@@ -196,9 +196,9 @@ var LaunchDungeons=function()
 	new Game.Monster('Ascended Baking Pod','ascendedBakingPod',[1,3],0,{hp:60,might:12,guard:14,speed:4,dodge:0,rarity:0.7},bossLoot);//boss
 	Game.Monsters['Ascended Baking Pod'].onKill=function(){Game.Win('Now this is pod-smashing');};Game.Monsters['Ascended Baking Pod'].AI='static';Game.Monsters['Ascended Baking Pod'].boss=1;Game.Monsters['Ascended Baking Pod'].quotes={fight:'rrrrrrrise.',defeat:'blrglblg.'};
 	new Game.Monster('Sentient Furnace II','sentientFurnace2',[2,3],0,{hp:220,might:20,guard:24,speed:8,dodge:0,rarity:1.2},bossLoot);//boss
-	Game.Monsters['Sentient Furnace'].onKill=function(){Game.Win('Getting even with the oven');};Game.Monsters['Sentient Furnace'].AI='static';Game.Monsters['Sentient Furnace II'].boss=1;Game.Monsters['Sentient Furnace II'].quotes={fight:'YOU ARE NOT READY! I AM WAY STRONGER NOW!',defeat:'OH... BURN.'};
+	Game.Monsters['Sentient Furnace'].onKill=function(){Game.Win('Getting even with the oven');};Game.Monsters['Sentient Furnace II'].AI='static';Game.Monsters['Sentient Furnace II'].boss=1;Game.Monsters['Sentient Furnace II'].quotes={fight:'YOU ARE NOT READY! I AM WAY STRONGER NOW!',defeat:'OH... BURN.'};
 	new Game.Monster('Ascended Baking Pod II','ascendedBakingPod2',[3,3],0,{hp:220,might:18,guard:30,speed:7,dodge:0,rarity:0.7},bossLoot);//boss
-	Game.Monsters['Ascended Baking Pod'].onKill=function(){Game.Win('Now this is pod-smashing');};Game.Monsters['Ascended Baking Pod'].AI='static';Game.Monsters['Ascended Baking Pod II'].boss=1;Game.Monsters['Ascended Baking Pod II'].quotes={fight:'rrrrrrrise. Now I am STRONGER!',defeat:'blrglblg. fussssss'};
+	Game.Monsters['Ascended Baking Pod'].onKill=function(){Game.Win('Now this is pod-smashing');};Game.Monsters['Ascended Baking Pod II'].AI='static';Game.Monsters['Ascended Baking Pod II'].boss=1;Game.Monsters['Ascended Baking Pod II'].quotes={fight:'rrrrrrrise. Now I am STRONGER!',defeat:'blrglblg. fussssss'};
 	
 	
 	Game.BossMonsters=[];
@@ -720,7 +720,7 @@ var LaunchDungeons=function()
 				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);
 				}else{
 					var me=Game.BossMonsters[ii];
-				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name+" II");
+				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name+' II');
 				}
 			}
 			if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];
