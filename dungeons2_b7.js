@@ -63,7 +63,30 @@ var LaunchDungeons=function()
 	/*=====================================================================================
 	CREATE TILE TYPES
 	=======================================================================================*/
-	
+	this.Map.prototype.drawDetailed=function()
+	{
+		//return a string containing a rough visual representation of the map (with graphics)
+		var str='';
+		var size=16;
+		for (var y=0;y<this.h;y++){for (var x=0;x<this.w;x++){
+				var room=this.getRoom(x,y);
+				//var opacity=Math.max(0.1,room.tiles[this.getRoomTile(room,x,y)].score);
+				var opacity=1;
+				var title='void';
+				if (room!=-1)
+				{
+					opacity=Math.max(0.1,1-room.gen/5);
+					if (this.data[x][y][0]==TILE_ENTRANCE || this.data[x][y][0]==TILE_EXIT) opacity=1;
+					title=(room.corridor?'corridor':'room')+' '+room.id+' | depth : '+room.gen+' | children : '+room.children.length;
+				}
+				var pic=this.getPic(x,y);
+				str+='<div style="opacity:'+opacity+';width:'+size+'px;height:'+size+'px;position:absolute;left:'+(x*size)+'px;top:'+(y*size)+'px;display:block;padding:0px;margin:0px;background:#'+colors[this.data[x][y][0]]+' url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonTiles.png) '+(-pic[0]*16)+'px '+(-pic[1]*16)+'px;color:#999;" title="'+title+'"></div>';
+			}
+			str+='<br>';
+		}
+		str='<div style="box-shadow:0px 0px 12px 6px #00061b;position:relative;width:'+(this.w*size)+'px;height:'+(this.h*size)+'px;background:#00061b;font-family:Courier;font-size:'+size+'px;float:left;margin:10px;">'+str+'</div>';
+		return str;
+	}//custom sheet
 	var D=new DungeonGen();
 	D.loadTiles([
 	['wall',[1,0],'join'],
@@ -75,8 +98,8 @@ var LaunchDungeons=function()
 	['potted plant',[3,4]],
 	['bookshelf',[4,5],'join'],
 	['door',[1,3],'join'],
-	['alt wall',[4,0],'join'],
-	['alt wall corner',[4,0]],
+	['alt wall',(Game.Objects.Factory.dungeon.level%2==0; ? [4,0]: [7,0]),'join'],
+	['alt wall corner',(Game.Objects.Factory.dungeon.level%2==0; ? [4,0]: [7,0])],
 	['alt floor',[4,1],'random3'],
 	['alt tiled floor',[4,2],'join'],
 	['alt round pillar',[4,4]],
