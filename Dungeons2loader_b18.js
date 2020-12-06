@@ -135,8 +135,8 @@ a.control.south{left:48px;top:96px;background-position:-48px -96px;}
 a.control.middle{left:48px;top:48px;background-position:-48px -48px;}
 `
     document.body.appendChild(style)
-    Game.LoadMod("https://cdn.jsdelivr.net/gh/pelletsstarPL/Magixmod@master/dungeon2Gen.js")
-    Game.LoadMod("https://cdn.jsdelivr.net/gh/pelletsstarPL/Magixmod@master/dungeons2_b17.js")
+    Game.LoadMod("https://cdn.jsdelivr.net/gh/pelletsstarPL/Magixmod@master/dungeon2Gen_b2.js")
+    Game.LoadMod("https://cdn.jsdelivr.net/gh/pelletsstarPL/Magixmod@master/dungeons2_b18.js")
     const intervalId = setInterval(() => {
         if (!window.LaunchDungeons) return
         clearInterval(intervalId)
