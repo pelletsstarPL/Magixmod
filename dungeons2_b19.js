@@ -195,6 +195,10 @@ var LaunchDungeons=function()
 	Game.Monsters['Sentient Furnace'].onKill=function(){Game.Win('Getting even with the oven');};Game.Monsters['Sentient Furnace'].AI='static';Game.Monsters['Sentient Furnace'].boss=1;Game.Monsters['Sentient Furnace'].quotes={fight:'YOU ARE NOT READY!',defeat:'OH... BURN.'};
 	new Game.Monster('Ascended Baking Pod','ascendedBakingPod',[1,3],0,{hp:60,might:12,guard:14,speed:4,dodge:0,rarity:0.7},bossLoot);//boss
 	Game.Monsters['Ascended Baking Pod'].onKill=function(){Game.Win('Now this is pod-smashing');};Game.Monsters['Ascended Baking Pod'].AI='static';Game.Monsters['Ascended Baking Pod'].boss=1;Game.Monsters['Ascended Baking Pod'].quotes={fight:'rrrrrrrise.',defeat:'blrglblg.'};
+	new Game.Monster('Sentient Furnace II','sentientFurnace',[2,3],0,{hp:180,might:20,guard:24,speed:8,dodge:0,rarity:1.2},bossLoot);//boss
+	Game.Monsters['Sentient Furnace'].onKill=function(){Game.Win('Getting even with the oven');};Game.Monsters['Sentient Furnace'].AI='static';Game.Monsters['Sentient Furnace'].boss=1;Game.Monsters['Sentient Furnace'].quotes={fight:'YOU ARE NOT READY! I AM WAY STRONGER NOW!',defeat:'OH... BURN.'};
+	new Game.Monster('Ascended Baking Pod II','ascendedBakingPod',[3,3],0,{hp:180,might:18,guard:30,speed:7,dodge:0,rarity:0.7},bossLoot);//boss
+	Game.Monsters['Ascended Baking Pod'].onKill=function(){Game.Win('Now this is pod-smashing');};Game.Monsters['Ascended Baking Pod'].AI='static';Game.Monsters['Ascended Baking Pod'].boss=1;Game.Monsters['Ascended Baking Pod'].quotes={fight:'rrrrrrrise. Now I am STRONGER!',defeat:'blrglblg. fussssss'};
 	
 	
 	Game.BossMonsters=[];
@@ -642,7 +646,7 @@ var LaunchDungeons=function()
 		{
 			if (this.level==0) this.name=Game.DungeonTypes[this.type].nameGenerator();
 			this.entities=[];
-			var M=new D.Map(40,40,Math.random(),{
+			var M=new D.Map(45,45,Math.random(),{
 				roomSize:10,
 				corridorSize:5,
 				fillRatio:1/2,
@@ -712,9 +716,12 @@ var LaunchDungeons=function()
 			for (var ii in Game.BossMonsters)
 			{
 				var me=Game.BossMonsters[ii];
-				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);
+				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);	
 			}
-			if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];
+			if (monsters.length==0 && me.level<=100) {monsters=[choose('Ascended baking pod','Sentinent furnace')];
+								 }else if(monsters.length==0 && me.level>100){
+						monsters=[choose('Ascended baking pod II','Sentinent furnace II')];			 
+								 }
 			if (monsters.length>0)
 			{
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
