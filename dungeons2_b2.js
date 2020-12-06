@@ -1057,7 +1057,7 @@ var LaunchDungeons=function()
 	hero.dialogue={
 		'intro':'I\'m Zee! I just really like exploring and modding stuff. Let\'s go have a modding!',
 		'greeting':'Hello there!|I\'m ready!|I do not need eyesight to predict your moves!|Adventure!',
-		'win':'Take that!|Hah!|You think that I don't see makes me lose?|That\'ll teach it',
+		'win':'Take that!|Hah!|You think that I don\'t see makes me lose?|That\'ll teach it',
 		'entrance':'Chipping in!|Whatever is this place ik I can deal with it.|I wonder what I\'ll find!|Hey, this place is new!|This place seems familiar.|Let\'s make it happen.',
 		'completion':'Smort|Oh yeah!|Let\'s explore some more!|That was easy!|That sure was fun!|I\'m not lost, am I?|More exploring? Sure, why not!',
 		'defeat':'B-b-better luck next time.|That really hurt!|I yield! I yield!|That went so abd.|No half-baked excuses next time.|I think I scraped my knee!|Owie.|Woopsie!|OOF',
