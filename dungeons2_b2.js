@@ -155,6 +155,7 @@ var LaunchDungeons=function()
 	new Game.Monster('Disgruntled worker','disgruntledWorker',[1,2],4,{hp:14,might:5,guard:5,speed:6,dodge:4,rarity:0.6},basicLoot);
 	new Game.Monster('Disgruntled overseer','disgruntledOverseer',[1,2],7,{hp:22,might:7,guard:5,speed:6,dodge:4,rarity:0.5},basicLoot);
 	new Game.Monster('Disgruntled cleaning lady','disgruntledCleaningLady',[2,2],4,{hp:13,might:4,guard:5,speed:7,dodge:6,rarity:0.3},basicLoot);
+	new Game.Monster('Corrupted grandma','disgruntledCleaningLady',[2,2],4,{hp:30,might:4,guard:5,speed:7,dodge:4,rarity:0.32},basicLoot);
 	
 	new Game.Monster('Sentient Furnace','sentientFurnace',[0,3],0,{hp:60,might:14,guard:12,speed:4,dodge:0,rarity:1},bossLoot);//boss
 	Game.Monsters['Sentient Furnace'].onKill=function(){Game.Win('Getting even with the oven');};Game.Monsters['Sentient Furnace'].AI='static';Game.Monsters['Sentient Furnace'].boss=1;Game.Monsters['Sentient Furnace'].quotes={fight:'YOU ARE NOT READY!',defeat:'OH... BURN.'};
