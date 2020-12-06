@@ -874,7 +874,7 @@ var LaunchDungeons=function()
 		{
 			this.hero.Say('completion');
 			this.level++;
-			stg=Game.objects.Factory.dungeons.level'
+			stg=Game.objects.Factory.dungeons.level;
 			this.Generate();
 			Game.HeroesById[0].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
 			this.Draw();
