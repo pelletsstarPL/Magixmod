@@ -136,7 +136,7 @@ a.control.middle{left:48px;top:48px;background-position:-48px -48px;}
 `
     document.body.appendChild(style)
     Game.LoadMod("http://orteil.dashnet.org/cookieclicker/betadungeons/DungeonGen.js")
-    Game.LoadMod("https://cdn.jsdelivr.net/gh/pelletsstarPL/Magixmod@master/dungeons2_b2.js")
+    Game.LoadMod("https://cdn.jsdelivr.net/gh/pelletsstarPL/Magixmod@master/dungeons2_b3.js")
     const intervalId = setInterval(() => {
         if (!window.LaunchDungeons) return
         clearInterval(intervalId)
