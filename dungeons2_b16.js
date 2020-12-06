@@ -88,7 +88,6 @@ var LaunchDungeons=function()
 		return str;
 	}//custom sheet
 		var D=new DungeonGen();
-	if(Game.Objects.Factory.dungeon.level%2==0){
 	D.loadTiles([
 	['alt wall',[4,0],'join'],
 	['alt wall corner',[4,0]],
@@ -129,7 +128,7 @@ var LaunchDungeons=function()
 	['alt exit',[0,4]]
 		]);
 	
-		 };
+		
 	
 	
 	/*=====================================================================================
