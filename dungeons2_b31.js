@@ -7,6 +7,7 @@ Optimizations to do (not mentioning the dozens of missing features) :
 */
 var LaunchDungeons=function()
 {
+	var stg=0; //stage
 	Game.GetWord=function(type)
 	{
 		if (type=='secret') return choose(['hidden','secret','mysterious','forgotten','forbidden','lost','sunk','buried','concealed','shrouded','invisible','elder']);
@@ -715,7 +716,7 @@ var LaunchDungeons=function()
 			var monsters=[];
 			for (var ii in Game.BossMonsters)
 			{
-				if(Game.Monster.level<=100){
+				if(stg<=100){
 				var me=Game.BossMonsters[ii];
 				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);
 				}else{
@@ -723,7 +724,8 @@ var LaunchDungeons=function()
 				if (me.level<=(depth+this.level) && me.name.endswith(" II") && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);
 				}
 			}
-			if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];
+			if(stg<=100){if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];}
+			else{if (monsters.length==0) monsters=[choose(Game.BossMonsters).name+" II"];};
 			if (monsters.length>0)
 			{
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
@@ -872,6 +874,7 @@ var LaunchDungeons=function()
 		{
 			this.hero.Say('completion');
 			this.level++;
+			stg=Game.objects.Factory.dungeons.level'
 			this.Generate();
 			Game.HeroesById[0].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
 			this.Draw();
