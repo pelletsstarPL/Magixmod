@@ -713,7 +713,7 @@ var LaunchDungeons=function()
 			//place a boss
 			var tile=this.map.exit;
 			var monsters=[];
-			var stg=Game.objects.Factory.dungeon.level;
+			var stg=Game.monsters.level;
 			for (var ii in Game.BossMonsters)
 			{
 				
