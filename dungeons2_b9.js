@@ -98,8 +98,18 @@ var LaunchDungeons=function()
 	['potted plant',[3,4]],
 	['bookshelf',[4,5],'join'],
 	['door',[1,3],'join'],
-	['alt wall',(Game.Objects.Factory.dungeon.level%2==0 ? [4,0]: [7,0]),'join'],
-	['alt wall corner',(Game.Objects.Factory.dungeon.level%2==0 ? [4,0]: [7,0])],
+	//['alt wall',(Game.Objects.Factory.dungeon.level%2==0 ? [4,0]: [7,0]),'join'],
+	//['alt wall corner',(Game.Objects.Factory.dungeon.level%2==0 ? [4,0]: [7,0])],
+		if(Game.Objects.Factory.dungeon.level%2==0){
+			['alt wall',[7,0],'join'],
+		}else{
+			['alt wall',[4,0],'join'],
+		}
+		    if(Game.Objects.Factory.dungeon.level%2==0){
+			['alt wall corner',[7,0],'join'],
+		}else{
+			['alt wall corner',[4,0],'join'],
+		}
 	['alt floor',[4,1],'random3'],
 	['alt tiled floor',[4,2],'join'],
 	['alt round pillar',[4,4]],
