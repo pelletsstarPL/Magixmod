@@ -861,7 +861,7 @@ var DungeonGen=function()
 					if (room.hidden) pic=[0,0];
 					title=(room.corridor?'corridor':'room')+' '+room.id+' | depth : '+room.gen+' | children : '+room.children.length;
 				}
-				str+='<div style="opacity:'+opacity+';width:'+size+'px;height:'+size+'px;position:absolute;left:'+(x*size)+'px;top:'+(y*size)+'px;display:block;padding:0px;margin:0px;background:#'+colors[this.data[x][y][0]]+' url(img/dungeonTiles.png) '+(-pic[0]*16)+'px '+(-pic[1]*16)+'px;color:#999;" title="'+title+'"></div>';
+				str+='<div style="opacity:'+opacity+';width:'+size+'px;height:'+size+'px;position:absolute;left:'+(x*size)+'px;top:'+(y*size)+'px;display:block;padding:0px;margin:0px;background:#'+colors[this.data[x][y][0]]+' url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonTiles.png) '+(-pic[0]*16)+'px '+(-pic[1]*16)+'px;color:#999;" title="'+title+'"></div>';
 			}
 			str+='<br>';
 		}
