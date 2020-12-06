@@ -713,15 +713,17 @@ var LaunchDungeons=function()
 			//place a boss
 			var tile=this.map.exit;
 			var monsters=[];
-			var stg=Game.Monster.level;
 			for (var ii in Game.BossMonsters)
 			{
-				
+				if(Game.Monster.level<=100){
 				var me=Game.BossMonsters[ii];
 				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);
+				}else{
+					var me=Game.BossMonsters[ii];
+				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name+" II");
+				}
 			}
-			if(stg<=100){if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];}
-			else{if (monsters.length==0) monsters=[choose(Game.BossMonsters).name+' II'];}
+			if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];
 			if (monsters.length>0)
 			{
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
