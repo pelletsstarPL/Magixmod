@@ -731,11 +731,11 @@ var LaunchDungeons=function()
 			{
 				if(stg<=100){
 					do{
-						monsters=[choose(Game.BossMonsters).name];};
+						monsters=[choose(Game.BossMonsters).name];
 					}while(monsters!='Ascended baking pod II' && monsters!='Sentinent furnace II');
 				}else{
 					do{
-						monsters=[choose(Game.BossMonsters).name];};
+						monsters=[choose(Game.BossMonsters).name];
 					}while(monsters=='Ascended baking pod II' || monsters=='Sentinent furnace II');
 				}
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
