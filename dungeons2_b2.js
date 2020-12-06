@@ -794,7 +794,7 @@ var LaunchDungeons=function()
 			{
 				l('monsterSlot'+this.id).style.visibility='visible';
 				l('hpMonster'+this.id).style.width=Math.round((this.currentOpponent.stats.hp/this.currentOpponent.stats.hpm)*100)+'%';
-				l('picMonster'+this.id).style.backgroundImage='url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/'+Game.Monsters[this.currentOpponent.subtype].pic+'.png)';
+				l('picMonster'+this.id).style.backgroundImage='url(img/'+Game.Monsters[this.currentOpponent.subtype].pic+'.png)';
 				l('nameMonster'+this.id).innerHTML=Game.Monsters[this.currentOpponent.subtype].name;
 				l('picHero'+this.id).style.backgroundImage='url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/'+this.hero.pic+'.png)';
 			}
