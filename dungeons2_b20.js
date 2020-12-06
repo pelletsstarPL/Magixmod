@@ -716,12 +716,10 @@ var LaunchDungeons=function()
 			for (var ii in Game.BossMonsters)
 			{
 				var me=Game.BossMonsters[ii];
-				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);	
+				if (me.level<=(depth+this.level) && Math.random()<(me.stats.rarity||1)) monsters.push(me.name);
 			}
-			if (monsters.length==0 && me.level<=100) {monsters=[choose('Ascended baking pod','Sentinent furnace')];
-								 }else if(monsters.length==0 && me.level>100){
-						monsters=[choose('Ascended baking pod II','Sentinent furnace II')];			 
-								 }
+			if(me.level<=100){if (monsters.length==0) monsters=[choose(Game.BossMonsters).name];}
+			else{if (monsters.length==0) monsters=[choose(Game.BossMonsters).name+' II'];}
 			if (monsters.length>0)
 			{
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
