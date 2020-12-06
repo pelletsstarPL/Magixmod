@@ -732,11 +732,11 @@ var LaunchDungeons=function()
 				if(stg<=100){
 					do{
 						monsters=[choose(Game.BossMonsters).name];
-					}while(monsters!='Ascended baking pod II' && monsters!='Sentinent furnace II');
+					}while(monsters!='Ascended Baking Pod II' && monsters!='Sentinent Furnace II');
 				}else{
 					do{
 						monsters=[choose(Game.BossMonsters).name];
-					}while(monsters=='Ascended baking pod II' || monsters=='Sentinent furnace II');
+					}while(monsters=='Ascended Baking Pod II' || monsters=='Sentinent Furnace II');
 				}
 				this.AddEntity('monster',choose(monsters),tile[0],tile[1]);
 				this.map.removeFreeTile(tile[0],tile[1]);
