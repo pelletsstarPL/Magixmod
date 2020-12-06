@@ -730,7 +730,7 @@ var LaunchDungeons=function()
 			
 			if (monsters.length>0)
 			{
-				if(stg<=100){
+				if(stg>=100){
 					do{
 						monsters=[choose(Game.BossMonsters).name];
 						var chosen=monsters;
