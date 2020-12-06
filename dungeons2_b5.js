@@ -661,7 +661,7 @@ var LaunchDungeons=function()
 			//set tile graphics
 			for (var i in M.rooms)
 			{
-				var altStr=choose(['alt ','green ','']);
+				var altStr=choose(['alt ','','']);
 				var tiles={
 				'void':altStr+'void',
 				'wall':altStr+'wall',
