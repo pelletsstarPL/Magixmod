@@ -31,7 +31,7 @@ window.CPPKIES_ONLOAD.push(() => {
     transition: top 0.1s ease-out, left 0.1s ease-out;
     */
 }
-.map .tile {background:url(img/dungeonTiles.png) no-repeat;z-index:100;}
+.map .tile {background:url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonIcons.png) no-repeat;z-index:100;}
 .map .thing {background:url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonIcons.png) no-repeat;z-index:200;}
  
 .dungeonName
