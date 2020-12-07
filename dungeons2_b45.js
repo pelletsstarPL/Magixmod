@@ -7,6 +7,7 @@ Optimizations to do (not mentioning the dozens of missing features) :
 */
 var LaunchDungeons=function()
 {
+	var extraDmg=0;//so weaknesses or whatsoever things
 	var stg=0; //stage
 	Game.GetWord=function(type)
 	{
@@ -180,8 +181,9 @@ var LaunchDungeons=function()
 	Game.Monsters['mimic'].AI='static';
 	new Game.Monster('Elder doughling','elderDoughling',[1,0],7,{hp:20,might:7,guard:7,speed:4,dodge:4,rarity:0.7},goodLoot);
 	new Game.Monster('Outdated Elder doughling','elderDoughling',[2,0],7,{hp:17,might:17,guard:8,speed:1,dodge:0,rarity:0.2},goodLoot);
+	Game.Monsters['Ancient Elder doughling'].onKill=function(){extraDmg--;};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
 	new Game.Monster('Ancient Elder doughling','elderDoughling',[3,0],7,{hp:50,might:17,guard:16,speed:2,dodge:0,rarity:0.011},chestLoot);
-	Game.Monsters['Ancient Elder doughling'].onKill=function(){Game.Win('Antic');};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
+	Game.Monsters['Ancient Elder doughling'].onKill=function(){Game.Win('Antic');extraDmg--;};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
 	new Game.Monster('Angry sentient cookie','angrySentientCookie',[5,0],5,{hp:16,might:8,guard:4,speed:5,dodge:5,rarity:1},basicLoot);
 	new Game.Monster('Baby sentient cookie','babySentientCookie',[4,0],1,{hp:3,might:1,guard:1,speed:7,dodge:7,rarity:1},basicLoot);
 	new Game.Monster('Burnt sentient cookie','burntSentientCookie',[6,0],5,{hp:16,might:12,guard:2,speed:3,dodge:2,rarity:0.2},basicLoot);
@@ -899,6 +901,7 @@ var LaunchDungeons=function()
 			this.Generate();
 			Game.HeroesById[0].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
 			this.Draw();
+			extraDmg=0;
 		}
 		this.FailLevel=function()
 		{
@@ -1135,7 +1138,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:27,
 		hpm:32,
-		might:6,
+		might:6+extraDmg,
 		guard:4,
 		speed:3,
 		dodge:8,
@@ -1155,7 +1158,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:30,
 		hpm:30,
-		might:5,
+		might:5+extraDmg,
 		guard:5,
 		speed:5,
 		dodge:5,
@@ -1175,7 +1178,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:5,
+		might:5+extraDmg,
 		guard:7,
 		speed:4,
 		dodge:4,
@@ -1195,7 +1198,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:4,
+		might:4+extraDmg,
 		guard:4,
 		speed:7,
 		dodge:5,
@@ -1214,7 +1217,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:5,
+		might:5+extraDmg,
 		guard:4,
 		speed:4,
 		dodge:5,
