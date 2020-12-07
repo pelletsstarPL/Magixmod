@@ -174,10 +174,14 @@ var LaunchDungeons=function()
 	new Game.Achievement('Tier up = Difficulty^2','Defeat <b>Sentient furnace II</b> or other boss which has <b>II</b> at end of its name. <br>Note:These guys are much harder to defeat and can be only found after level 100.',[13,7]);Game.last.pool='dungeon';
 	//general monsters
 	new Game.Monster('Doughling','doughling',[0,0],1,{hp:5,might:2,guard:2,speed:6,dodge:6,rarity:0.7},basicLoot);
+	new Game.Monster('Mimic','doughling',[2,-3],1,{hp:90,might:3,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
+	Game.Monsters['Mimic'].AI='static';
+	new Game.Monster('mimic','doughling',[4,-3],1,{hp:40,might:5,guard:8,speed:3,dodge:0,rarity:0.2},basicLoot);
+	Game.Monsters['mimic'].AI='static';
 	new Game.Monster('Elder doughling','elderDoughling',[1,0],7,{hp:20,might:7,guard:7,speed:4,dodge:4,rarity:0.7},goodLoot);
 	new Game.Monster('Outdated Elder doughling','elderDoughling',[2,0],7,{hp:17,might:17,guard:8,speed:1,dodge:0,rarity:0.2},goodLoot);
-	new Game.Monster('Ancient Elder doughling','elderDoughling',[3,0],7,{hp:50,might:17,guard:16,speed:2,dodge:0,rarity:0.04},chestLoot);
-	Game.Monsters['Ancient Elder doughling'].onKill=function(){Game.Win('Chirped out');};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
+	new Game.Monster('Ancient Elder doughling','elderDoughling',[3,0],7,{hp:50,might:17,guard:16,speed:2,dodge:0,rarity:0.0175},chestLoot);
+	Game.Monsters['Ancient Elder doughling'].onKill=function(){Game.Win('Antic');};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
 	new Game.Monster('Angry sentient cookie','angrySentientCookie',[5,0],5,{hp:16,might:8,guard:4,speed:5,dodge:5,rarity:1},basicLoot);
 	new Game.Monster('Baby sentient cookie','babySentientCookie',[4,0],1,{hp:3,might:1,guard:1,speed:7,dodge:7,rarity:1},basicLoot);
 	new Game.Monster('Burnt sentient cookie','burntSentientCookie',[6,0],5,{hp:16,might:12,guard:2,speed:3,dodge:2,rarity:0.2},basicLoot);
