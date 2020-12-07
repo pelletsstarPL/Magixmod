@@ -1044,7 +1044,7 @@ var LaunchDungeons=function()
 		this.stats={
 			hp:25,
 			hpm:25,
-			might:5,
+			might:5+extraDmg,
 			guard:5,
 			speed:5,
 			dodge:5,
@@ -1139,7 +1139,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:27,
 		hpm:32,
-		might:6+extraDmg,
+		might:5.5,
 		guard:4,
 		speed:3,
 		dodge:8,
@@ -1159,7 +1159,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:30,
 		hpm:30,
-		might:5+extraDmg,
+		might:5,
 		guard:5,
 		speed:5,
 		dodge:5,
@@ -1179,7 +1179,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:5+extraDmg,
+		might:5,
 		guard:7,
 		speed:4,
 		dodge:4,
@@ -1199,7 +1199,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:4+extraDmg,
+		might:4,
 		guard:4,
 		speed:7,
 		dodge:5,
@@ -1218,7 +1218,7 @@ var LaunchDungeons=function()
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:5+extraDmg,
+		might:5,
 		guard:4,
 		speed:4,
 		dodge:5,
