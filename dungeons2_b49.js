@@ -166,11 +166,11 @@ var LaunchDungeons=function()
 		this.quotes={};
 		Game.Monsters[this.name]=this;
 	}
-	var basicLoot={cookies:{min:1*Game.prestige,max:5*Game.prestige,prob:0.5}};
-	var goodLoot={cookies:{min:3*Game.prestige,max:8*Game.prestige,prob:1},gear:{prob:0.05}};
+	var basicLoot={cookies:{min:(1*Game.prestige),max:(5*Game.prestige),prob:0.5}};
+	var goodLoot={cookies:{min:(3*Game.prestige),max:(8*Game.prestige),prob:1},gear:{prob:0.05}};
 	var bossLoot={gear:{prob:1}};
-	var chestLoot={cookies:{min:2*Game.prestige,max:20*Game.prestige,prob:1},gear:{prob:0.1}};
-	var bossLoot={cookies:{min:10*Game.prestige,max:50*Game.prestige,prob:1},gear:{prob:0.2}};
+	var chestLoot={cookies:{min:(2*Game.prestige),max:(20*Game.prestige),prob:1},gear:{prob:0.1}};
+	var bossLoot={cookies:{min:(10*Game.prestige),max:(50*Game.prestige),prob:1},gear:{prob:0.2}};
 	new Game.Achievement('Antic','Find and defeat <b>Ancient Elder Doughling</b>, the one of very special doughlings for the first time!',[12,7]);Game.last.pool='dungeon';
 	new Game.Achievement('Tier up = Difficulty^2','Defeat <b>Sentient furnace II</b> or other boss which has <b>II</b> at end of its name. <br>Note:These guys are much harder to defeat and can be only found after level 100.',[13,7]);Game.last.pool='dungeon';
 	//general monsters
@@ -196,7 +196,7 @@ var LaunchDungeons=function()
 	new Game.Monster('Crazed kneader','crazedKneader',[0,2],6,{hp:18,might:6,guard:8,speed:3,dodge:2,rarity:0.5},goodLoot);
 	new Game.Monster('Crazed chip-spurter','crazedDoughSpurter',[0,2],6,{hp:15,might:6,guard:8,speed:5,dodge:3,rarity:0.5},goodLoot);
 	new Game.Monster('Alarm bot','alarmTurret',[3,2],2,{hp:6,might:3,guard:5,speed:8,dodge:8,rarity:0.5},basicLoot);
-	new Game.Monster('Chirpy','chirpy',[4,2],3,{hp:7,might:4,guard:6,speed:9,dodge:9,rarity:0.01},{cookies:{min:500,max:5000}});
+	new Game.Monster('Chirpy','chirpy',[4,2],3,{hp:7,might:4,guard:6,speed:9,dodge:9,rarity:0.01},{cookies:{min:500*Game.prestige,max:5000*Game.prestige}});
 	Game.Monsters['Chirpy'].onKill=function(){Game.Win('Chirped out');};Game.Monsters['Chirpy'].quotes={fight:'oh, hello <3'};
 	new Game.Monster('Disgruntled worker','disgruntledWorker',[1,2],4,{hp:14,might:5,guard:5,speed:6,dodge:4,rarity:0.6},basicLoot);
 	new Game.Monster('Disgruntled overseer','disgruntledOverseer',[1,2],7,{hp:22,might:7,guard:5,speed:6,dodge:4,rarity:0.5},basicLoot);
