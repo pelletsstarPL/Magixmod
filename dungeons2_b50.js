@@ -800,7 +800,7 @@ var LaunchDungeons=function()
 					{
 						if (Math.random()<0.6)
 						{
-							var value=Math.round(Math.pow(Math.random(),6)*(10+this.level));
+							var value=(Math.round(Math.pow(Math.random(),6)*(10+this.level))*Game.prestige);
 							if (value>0)
 							{
 								var entity=this.AddEntity('item','cookies',tile[0],tile[1]);//random cookies
