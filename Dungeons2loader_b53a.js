@@ -148,7 +148,7 @@ a.control.middle{left:48px;top:48px;background-position:-48px -48px;}
         }
         Game.Objects.Factory.minigameLoaded = true
         Game.Objects.Factory.minigameUrl = "kek"
-        Game.Objects.Factory.dungeon.Turn = Cppkies.injectCode(Game.Objects.Factory.dungeon.Turn, "http://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/'+Game.Monsters", `${prefix}`, "before").bind(Game.Objects.Factory.dungeon)
+        Game.Objects.Factory.dungeon.Turn = Cppkies.injectCode(Game.Objects.Factory.dungeon.Turn, "http://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/'+Game.Monsters", `${}`, "before").bind(Game.Objects.Factory.dungeon)
         Game.Objects.Factory.dungeon.Draw = Cppkies.injectCode(Game.Objects.Factory.dungeon.Draw, /height:100%;(.+);position:absolute/, "height:144px;$1;position:static", "replace").bind(Game.Objects.Factory.dungeon)
         Game.Objects.Factory.dungeon.Draw()
         Game.Objects.Factory.minigameName = 'Legacy Dungeons'
