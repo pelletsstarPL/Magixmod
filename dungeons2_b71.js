@@ -745,9 +745,9 @@ var LaunchDungeons=function()
 		this.map={};
 		this.Generate=function()
 		{
-			theme=Math.round(Math.random()*2);
-				if(theme==0){
-	D.loadTiles([
+			var E=new DungeonGen();
+	if(theme==0){
+	E.loadTiles([
 	['alt wall',[4,0],'join'],
 	['alt wall corner',[4,0]],
 	['alt floor',[4,1],'random3'],
