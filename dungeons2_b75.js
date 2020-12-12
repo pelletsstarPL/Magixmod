@@ -68,7 +68,6 @@ var LaunchDungeons=function()
 	=======================================================================================*/
 	this.Map.prototype.drawDetailed=function()
 	{
-		
 		//return a string containing a rough visual representation of the map (with graphics)
 		var str='';
 		var size=16;
@@ -83,7 +82,7 @@ var LaunchDungeons=function()
 					if (this.data[x][y][0]==TILE_ENTRANCE || this.data[x][y][0]==TILE_EXIT) opacity=1;
 					title=(room.corridor?'corridor':'room')+' '+room.id+' | depth : '+room.gen+' | children : '+room.children.length;
 				}
-				var pic=this.getPic(x,y);	
+				var pic=this.getPic(x,y);
 				str+='<div style="opacity:'+opacity+';width:'+size+'px;height:'+size+'px;position:absolute;left:'+(x*size)+'px;top:'+(y*size)+'px;display:block;padding:0px;margin:0px;background:#'+colors[this.data[x][y][0]]+' url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonTiles.png) '+(-pic[0]*16)+'px '+(-pic[1]*16)+'px;color:#999;" title="'+title+'"></div>';
 			}
 			str+='<br>';
@@ -91,9 +90,7 @@ var LaunchDungeons=function()
 		str='<div style="box-shadow:0px 0px 12px 6px #00061b;position:relative;width:'+(this.w*size)+'px;height:'+(this.h*size)+'px;background:#00061b;font-family:Courier;font-size:'+size+'px;float:left;margin:10px;">'+str+'</div>';
 		return str;
 	}//custom sheet
-		
-	};
-function Dungtheme(){
+		function Dungtheme(){
 			var D=new DungeonGen();
 	if(theme==0){
 	D.loadTiles([
@@ -224,6 +221,10 @@ function Dungtheme(){
 	};
 }
 Dungtheme();
+	
+		
+	
+	
 	/*=====================================================================================
 	CREATE MONSTER TYPES
 	=======================================================================================*/
@@ -257,16 +258,16 @@ Dungtheme();
 		this.quotes={};
 		Game.Monsters[this.name]=this;
 	}
-	var basicLoot={cookies:{min:(1*(Game.prestige+1)),max:(5*(Game.prestige+1)),prob:0.5}};
-	var goodLoot={cookies:{min:(3*(Game.prestige+1)),max:(8*(Game.prestige+1)),prob:1},gear:{prob:0.05}};
+	var basicLoot={cookies:{min:(1*Game.prestige),max:(5*Game.prestige),prob:0.5}};
+	var goodLoot={cookies:{min:(3*Game.prestige),max:(8*Game.prestige),prob:1},gear:{prob:0.05}};
 	var bossLoot={gear:{prob:1}};
-	var chestLoot={cookies:{min:(2*(Game.prestige+1)),max:(20*(Game.prestige+1)),prob:1},gear:{prob:0.1}};
-	var bossLoot={cookies:{min:(10*(Game.prestige+1)),max:(50*(Game.prestige+1)),prob:1},gear:{prob:0.2}};
+	var chestLoot={cookies:{min:(2*Game.prestige),max:(20*Game.prestige),prob:1},gear:{prob:0.1}};
+	var bossLoot={cookies:{min:(10*Game.prestige),max:(50*Game.prestige),prob:1},gear:{prob:0.2}};
 	new Game.Achievement('Antic','Find and defeat <b>Ancient Elder Doughling</b>, the one of very special doughlings for the first time!',[12,7]);Game.last.pool='dungeon';
 	new Game.Achievement('Tier up = Difficulty^2','Defeat <b>Sentient furnace II</b> or other boss which has <b>II</b> at end of its name. <br>Note:These guys are much harder to defeat and can be only found after level 100.',[13,7]);Game.last.pool='dungeon';
 	//general monsters
 	new Game.Monster('Doughling','doughling',[0,0],1,{hp:5,might:2,guard:2,speed:6,dodge:6,rarity:0.7},basicLoot);
-	new Game.Monster('Mimic','mimic',[2,-3],1,{hp:90,might:2,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
+	new Game.Monster('Mimic','mimic',[2,-3],1,{hp:90,might:3,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
 	Game.Monsters['Mimic'].AI='static';
 	new Game.Monster('mimic','mimic1',[4,-3],1,{hp:40,might:5,guard:8,speed:3,dodge:0,rarity:0.2},basicLoot);
 	Game.Monsters['mimic'].AI='static';
@@ -280,14 +281,14 @@ Dungtheme();
 	new Game.Monster('Baby sentient cookie','babySentientCookie',[4,0],1,{hp:3,might:1,guard:1,speed:7,dodge:7,rarity:1},basicLoot);
 	new Game.Monster('Burnt sentient cookie','burntSentientCookie',[6,0],5,{hp:16,might:12,guard:2,speed:3,dodge:2,rarity:0.2},basicLoot);
 	new Game.Monster('Raw sentient cookie','rawSentientCookie',[5,0],5,{hp:16,might:6,guard:4,speed:7,dodge:7,rarity:0.2},basicLoot);
-	new Game.Monster('Sugar bunny','sugarBunny',[8,0],5,{hp:10,might:3,guard:8,speed:12,dodge:9,rarity:0.001},{cookies:{min:(1000*(Game.prestige+1)),max:(10000*(Game.prestige+1))}});
+	new Game.Monster('Sugar bunny','sugarBunny',[8,0],5,{hp:10,might:3,guard:8,speed:12,dodge:9,rarity:0.001},{cookies:{min:(1000*Game.prestige),max:(10000*Game.prestige)}});
 	Game.Monsters['Sugar bunny'].onKill=function(){Game.Win('Follow the white rabbit');};Game.Monsters['Sugar bunny'].AI='flee';
 	
 	//factory monsters
 	new Game.Monster('Crazed kneader','crazedKneader',[0,2],6,{hp:18,might:6,guard:8,speed:3,dodge:2,rarity:0.5},goodLoot);
 	new Game.Monster('Crazed chip-spurter','crazedDoughSpurter',[0,2],6,{hp:15,might:6,guard:8,speed:5,dodge:3,rarity:0.5},goodLoot);
 	new Game.Monster('Alarm bot','alarmTurret',[3,2],2,{hp:6,might:3,guard:5,speed:8,dodge:8,rarity:0.5},basicLoot);
-	new Game.Monster('Chirpy','chirpy',[4,2],3,{hp:7,might:4,guard:6,speed:9,dodge:9,rarity:0.01},{cookies:{min:500*(Game.prestige+1),max:5000*(Game.prestige+1)}});
+	new Game.Monster('Chirpy','chirpy',[4,2],3,{hp:7,might:4,guard:6,speed:9,dodge:9,rarity:0.01},{cookies:{min:500*Game.prestige,max:5000*Game.prestige}});
 	Game.Monsters['Chirpy'].onKill=function(){Game.Win('Chirped out');};Game.Monsters['Chirpy'].quotes={fight:'oh, hello <3'};
 	new Game.Monster('Disgruntled worker','disgruntledWorker',[1,2],4,{hp:14,might:5,guard:5,speed:6,dodge:4,rarity:0.6},basicLoot);
 	new Game.Monster('Disgruntled overseer','disgruntledOverseer',[1,2],7,{hp:22,might:7,guard:5,speed:6,dodge:4,rarity:0.5},basicLoot);
@@ -749,10 +750,9 @@ Dungtheme();
 		{
 			theme=Math.round(Math.random()*2);
 			Dungtheme();
-	
 			if (this.level==0) this.name=Game.DungeonTypes[this.type].nameGenerator();
 			this.entities=[];
-			var M=new D.Map(47,47,Math.random(),{
+			var M=new D.Map(46,46,Math.random(),{
 				roomSize:10,
 				corridorSize:5,
 				fillRatio:1/2,
@@ -894,7 +894,7 @@ Dungtheme();
 					{
 						if (Math.random()<0.6)
 						{
-							var value=(Math.round(Math.pow(Math.random(),6)*(10+this.level))*(Game.prestige+1));
+							var value=(Math.round(Math.pow(Math.random(),6)*(10+this.level))*Game.prestige);
 							if (value>0)
 							{
 								var entity=this.AddEntity('item','cookies',tile[0],tile[1]);//random cookies
@@ -990,17 +990,13 @@ Dungtheme();
 		
 		this.CompleteLevel=function()
 		{
-			theme=Math.round(Math.random()*2);
 			this.hero.Say('completion');
 			this.level++;
 			stg=this.level;
-
-	};
 			this.Generate();
 			Game.HeroesById[0].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
 			this.Draw();
 			extraDmg=0;
-			
 		}
 		this.FailLevel=function()
 		{
