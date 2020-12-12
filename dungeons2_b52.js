@@ -175,9 +175,9 @@ var LaunchDungeons=function()
 	new Game.Achievement('Tier up = Difficulty^2','Defeat <b>Sentient furnace II</b> or other boss which has <b>II</b> at end of its name. <br>Note:These guys are much harder to defeat and can be only found after level 100.',[13,7]);Game.last.pool='dungeon';
 	//general monsters
 	new Game.Monster('Doughling','doughling',[0,0],1,{hp:5,might:2,guard:2,speed:6,dodge:6,rarity:0.7},basicLoot);
-	new Game.Monster('Mimic','doughling',[2,-3],1,{hp:90,might:3,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
+	new Game.Monster('Mimic','mimic',[2,-3],1,{hp:90,might:2,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
 	Game.Monsters['Mimic'].AI='static';
-	new Game.Monster('mimic','doughling',[4,-3],1,{hp:40,might:5,guard:8,speed:3,dodge:0,rarity:0.2},basicLoot);
+	new Game.Monster('mimic','mimic1',[4,-3],1,{hp:40,might:5,guard:8,speed:3,dodge:0,rarity:0.2},basicLoot);
 	Game.Monsters['mimic'].AI='static';
 	new Game.Monster('Elder doughling','elderDoughling',[1,0],7,{hp:20,might:7,guard:7,speed:4,dodge:4,rarity:0.7},goodLoot);
 	new Game.Monster('Outdated Elder doughling','elderDoughling',[2,0],7,{hp:17,might:17,guard:8,speed:1,dodge:0,rarity:0.2},goodLoot);
