@@ -873,10 +873,10 @@ var LaunchDungeons=function()
 	['green entrance',[20,5]],
 	['green exit',[20,6]]
 		]);
-	};
+	}};
 			if (this.level==0) this.name=Game.DungeonTypes[this.type].nameGenerator();
 			this.entities=[];
-			var M=new D.Map(45,45,Math.random(),{
+			var M=new D.Map(47,47,Math.random(),{
 				roomSize:10,
 				corridorSize:5,
 				fillRatio:1/2,
