@@ -62,133 +62,7 @@ var LaunchDungeons=function()
 		return str;
 	};
 	
-	var D=new DungeonGen();
-	if(theme==0){
-	D.loadTiles([
-	['alt wall',[4,0],'join'],
-	['alt wall corner',[4,0]],
-	['alt floor',[4,1],'random3'],
-	['alt tiled floor',[4,2],'join'],
-	['alt round pillar',[4,4]],
-	['alt square pillar',[5,4]],
-	['alt potted plant',[6,4]],
-	['alt bookshelf',[4,6],'join'],
-	['alt door',[4,3],'join'],
-	['wall',[1,0],'join'],
-	['wall corner',[1,0]],
-	['floor',[1,1],'random3'],
-	['tiled floor',[1,2],'join'],
-	['round pillar',[1,4]],
-	['square pillar',[2,4]],
-	['potted plant',[3,4]],
-	['bookshelf',[4,5],'join'],
-	['door',[1,3],'join'],
-	['green wall',[7,0],'join'],
-	['green wall corner',[7,0]],
-	['green floor',[7,1],'random3'],
-	['green tiled floor',[7,2],'join'],
-	['green round pillar',[7,4]],
-	['green square pillar',[8,4]],
-	['green potted plant',[9,4]],
-	['green bookshelf',[7,6],'join'],
-	['green door',[7,3],'join'],
-	['water',[1,5]],
-	['green water',[2,5]],
-	['dark water',[3,5]],
-	['wooden wall',[1,7],'join'],
-	['wooden floor',[1,6],'random3'],
-	['conveyor belt',[7,7],'join'],
-	['entrance',[0,1]],
-	['alt entrance',[0,3]],
-	['exit',[0,2]],
-	['alt exit',[0,4]],
-	['green entrance',[0,5]],
-	['green exit',[0,6]]
-		]);
-	}else if(theme==1){
-	D.loadTiles([
-	['alt wall',[14,0],'join'],
-	['alt wall corner',[14,0]],
-	['alt floor',[14,1],'random3'],
-	['alt tiled floor',[14,2],'join'],
-	['alt round pillar',[14,4]],
-	['alt square pillar',[15,4]],
-	['alt potted plant',[16,4]],
-	['alt bookshelf',[14,6],'join'],
-	['alt door',[14,3],'join'],
-	['wall',[11,0],'join'],
-	['wall corner',[11,0]],
-	['floor',[11,1],'random3'],
-	['tiled floor',[11,2],'join'],
-	['round pillar',[11,4]],
-	['square pillar',[12,4]],
-	['potted plant',[13,4]],
-	['bookshelf',[14,5],'join'],
-	['door',[11,3],'join'],
-	['green wall',[17,0],'join'],
-	['green wall corner',[17,0]],
-	['green floor',[17,1],'random3'],
-	['green tiled floor',[17,2],'join'],
-	['green round pillar',[17,4]],
-	['green square pillar',[18,4]],
-	['green potted plant',[19,4]],
-	['green bookshelf',[17,6],'join'],
-	['green door',[17,3],'join'],
-	['water',[11,5]],
-	['green water',[12,5]],
-	['dark water',[13,5]],
-	['wooden wall',[11,7],'join'],
-	['wooden floor',[11,6],'random3'],
-	['conveyor belt',[17,7],'join'],
-	['entrance',[10,1]],
-	['alt entrance',[10,3]],
-	['exit',[10,2]],
-	['alt exit',[10,4]],
-	['green entrance',[10,5]],
-	['green exit',[10,6]]
-		]);
-	}else if(theme==2){
-	D.loadTiles([
-	['alt wall',[24,0],'join'],
-	['alt wall corner',[24,0]],
-	['alt floor',[24,1],'random3'],
-	['alt tiled floor',[24,2],'join'],
-	['alt round pillar',[24,4]],
-	['alt square pillar',[25,4]],
-	['alt potted plant',[26,4]],
-	['alt bookshelf',[24,6],'join'],
-	['alt door',[24,3],'join'],
-	['wall',[21,0],'join'],
-	['wall corner',[21,0]],
-	['floor',[21,1],'random3'],
-	['tiled floor',[21,2],'join'],
-	['round pillar',[21,4]],
-	['square pillar',[22,4]],
-	['potted plant',[23,4]],
-	['bookshelf',[24,5],'join'],
-	['door',[21,3],'join'],
-	['green wall',[27,0],'join'],
-	['green wall corner',[27,0]],
-	['green floor',[27,1],'random3'],
-	['green tiled floor',[27,2],'join'],
-	['green round pillar',[27,4]],
-	['green square pillar',[28,4]],
-	['green potted plant',[29,4]],
-	['green bookshelf',[27,6],'join'],
-	['green door',[27,3],'join'],
-	['water',[21,5]],
-	['green water',[22,5]],
-	['dark water',[23,5]],
-	['wooden wall',[21,7],'join'],
-	['wooden floor',[21,6],'random3'],
-	['conveyor belt',[27,7],'join'],
-	['entrance',[20,1]],
-	['alt entrance',[20,3]],
-	['exit',[20,2]],
-	['alt exit',[20,4]],
-	['green entrance',[20,5]],
-	['green exit',[20,6]]
-		]);
+	
 	/*=====================================================================================
 	CREATE TILE TYPES
 	=======================================================================================*/
@@ -214,7 +88,12 @@ var LaunchDungeons=function()
 			}
 			str+='<br>';
 		}
-					
+		str='<div style="box-shadow:0px 0px 12px 6px #00061b;position:relative;width:'+(this.w*size)+'px;height:'+(this.h*size)+'px;background:#00061b;font-family:Courier;font-size:'+size+'px;float:left;margin:10px;">'+str+'</div>';
+		return str;
+	}//custom sheet
+		
+	};
+		var D=new DungeonGen();
 	if(theme==0){
 	D.loadTiles([
 	['alt wall',[4,0],'join'],
@@ -341,13 +220,7 @@ var LaunchDungeons=function()
 	['green entrance',[20,5]],
 	['green exit',[20,6]]
 		]);
-		str='<div style="box-shadow:0px 0px 12px 6px #00061b;position:relative;width:'+(this.w*size)+'px;height:'+(this.h*size)+'px;background:#00061b;font-family:Courier;font-size:'+size+'px;float:left;margin:10px;">'+str+'</div>';
-		return str;
-	}//custom sheet
-		
 	};
-		
-	
 	
 	/*=====================================================================================
 	CREATE MONSTER TYPES
@@ -872,6 +745,134 @@ var LaunchDungeons=function()
 		this.map={};
 		this.Generate=function()
 		{
+			theme=Math.round(Math.random()*2);
+				if(theme==0){
+	D.loadTiles([
+	['alt wall',[4,0],'join'],
+	['alt wall corner',[4,0]],
+	['alt floor',[4,1],'random3'],
+	['alt tiled floor',[4,2],'join'],
+	['alt round pillar',[4,4]],
+	['alt square pillar',[5,4]],
+	['alt potted plant',[6,4]],
+	['alt bookshelf',[4,6],'join'],
+	['alt door',[4,3],'join'],
+	['wall',[1,0],'join'],
+	['wall corner',[1,0]],
+	['floor',[1,1],'random3'],
+	['tiled floor',[1,2],'join'],
+	['round pillar',[1,4]],
+	['square pillar',[2,4]],
+	['potted plant',[3,4]],
+	['bookshelf',[4,5],'join'],
+	['door',[1,3],'join'],
+	['green wall',[7,0],'join'],
+	['green wall corner',[7,0]],
+	['green floor',[7,1],'random3'],
+	['green tiled floor',[7,2],'join'],
+	['green round pillar',[7,4]],
+	['green square pillar',[8,4]],
+	['green potted plant',[9,4]],
+	['green bookshelf',[7,6],'join'],
+	['green door',[7,3],'join'],
+	['water',[1,5]],
+	['green water',[2,5]],
+	['dark water',[3,5]],
+	['wooden wall',[1,7],'join'],
+	['wooden floor',[1,6],'random3'],
+	['conveyor belt',[7,7],'join'],
+	['entrance',[0,1]],
+	['alt entrance',[0,3]],
+	['exit',[0,2]],
+	['alt exit',[0,4]],
+	['green entrance',[0,5]],
+	['green exit',[0,6]]
+		]);
+	}else if(theme==1){
+	D.loadTiles([
+	['alt wall',[14,0],'join'],
+	['alt wall corner',[14,0]],
+	['alt floor',[14,1],'random3'],
+	['alt tiled floor',[14,2],'join'],
+	['alt round pillar',[14,4]],
+	['alt square pillar',[15,4]],
+	['alt potted plant',[16,4]],
+	['alt bookshelf',[14,6],'join'],
+	['alt door',[14,3],'join'],
+	['wall',[11,0],'join'],
+	['wall corner',[11,0]],
+	['floor',[11,1],'random3'],
+	['tiled floor',[11,2],'join'],
+	['round pillar',[11,4]],
+	['square pillar',[12,4]],
+	['potted plant',[13,4]],
+	['bookshelf',[14,5],'join'],
+	['door',[11,3],'join'],
+	['green wall',[17,0],'join'],
+	['green wall corner',[17,0]],
+	['green floor',[17,1],'random3'],
+	['green tiled floor',[17,2],'join'],
+	['green round pillar',[17,4]],
+	['green square pillar',[18,4]],
+	['green potted plant',[19,4]],
+	['green bookshelf',[17,6],'join'],
+	['green door',[17,3],'join'],
+	['water',[11,5]],
+	['green water',[12,5]],
+	['dark water',[13,5]],
+	['wooden wall',[11,7],'join'],
+	['wooden floor',[11,6],'random3'],
+	['conveyor belt',[17,7],'join'],
+	['entrance',[10,1]],
+	['alt entrance',[10,3]],
+	['exit',[10,2]],
+	['alt exit',[10,4]],
+	['green entrance',[10,5]],
+	['green exit',[10,6]]
+		]);
+	}else if(theme==2){
+	D.loadTiles([
+	['alt wall',[24,0],'join'],
+	['alt wall corner',[24,0]],
+	['alt floor',[24,1],'random3'],
+	['alt tiled floor',[24,2],'join'],
+	['alt round pillar',[24,4]],
+	['alt square pillar',[25,4]],
+	['alt potted plant',[26,4]],
+	['alt bookshelf',[24,6],'join'],
+	['alt door',[24,3],'join'],
+	['wall',[21,0],'join'],
+	['wall corner',[21,0]],
+	['floor',[21,1],'random3'],
+	['tiled floor',[21,2],'join'],
+	['round pillar',[21,4]],
+	['square pillar',[22,4]],
+	['potted plant',[23,4]],
+	['bookshelf',[24,5],'join'],
+	['door',[21,3],'join'],
+	['green wall',[27,0],'join'],
+	['green wall corner',[27,0]],
+	['green floor',[27,1],'random3'],
+	['green tiled floor',[27,2],'join'],
+	['green round pillar',[27,4]],
+	['green square pillar',[28,4]],
+	['green potted plant',[29,4]],
+	['green bookshelf',[27,6],'join'],
+	['green door',[27,3],'join'],
+	['water',[21,5]],
+	['green water',[22,5]],
+	['dark water',[23,5]],
+	['wooden wall',[21,7],'join'],
+	['wooden floor',[21,6],'random3'],
+	['conveyor belt',[27,7],'join'],
+	['entrance',[20,1]],
+	['alt entrance',[20,3]],
+	['exit',[20,2]],
+	['alt exit',[20,4]],
+	['green entrance',[20,5]],
+	['green exit',[20,6]]
+		]);
+	};
 			if (this.level==0) this.name=Game.DungeonTypes[this.type].nameGenerator();
 			this.entities=[];
 			var M=new D.Map(45,45,Math.random(),{
