@@ -29,6 +29,15 @@ if (1==1 || undefined==choose) {function choose(arr) {if (arr.length==0) return 
 
 var DungeonGen=function()
 {
+	var theme=Math.round(Math.random()*2);
+		var nrT;
+		if(theme==0){
+			nrT="";
+		}else if(theme==1){
+			nrT="1";
+		}else if(theme==2){
+			nrT="2";
+		}
 	var TILE_EMPTY=0;//solid
 	var TILE_LIMIT=-100;//can't build anything here; edges of map
 	var TILE_FLOOR_EDGE=100;
@@ -817,15 +826,7 @@ var DungeonGen=function()
 	
 	this.Map.prototype.drawDetailed=function()
 	{
-		var theme=Math.round(Math.random()*2);
-		var nrT;
-		if(theme==0){
-			nrT="";
-		}else if(theme==1){
-			nrT="1";
-		}else if(theme==2){
-			nrT="2";
-		}
+		
 		//return a string containing a rough visual representation of the map (with graphics)
 		var str='';
 		var size=16;
