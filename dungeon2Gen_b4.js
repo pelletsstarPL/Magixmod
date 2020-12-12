@@ -832,7 +832,7 @@ var DungeonGen=function()
 					title=(room.corridor?'corridor':'room')+' '+room.id+' | depth : '+room.gen+' | children : '+room.children.length;
 				}
 				var pic=this.getPic(x,y);
-			var theme=Math.round(Math.random()*3));
+			var theme=Math.round(Math.random()*3);
 			switch(theme){
 				case:0 str+='<div style="opacity:'+opacity+';width:'+size+'px;height:'+size+'px;position:absolute;left:'+(x*size)+'px;top:'+(y*size)+'px;display:block;padding:0px;margin:0px;background:#'+colors[this.data[x][y][0]]+' url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonTiles.png) '+(-pic[0]*16)+'px '+(-pic[1]*16)+'px;color:#999;" title="'+title+'"></div>'; break;
 				case:1 str+='<div style="opacity:'+opacity+';width:'+size+'px;height:'+size+'px;position:absolute;left:'+(x*size)+'px;top:'+(y*size)+'px;display:block;padding:0px;margin:0px;background:#'+colors[this.data[x][y][0]]+' url(https://pipe.miroware.io/5db9be8a56a97834b159fd5b/Dungeons2/img/dungeonTiles1.png) '+(-pic[0]*16)+'px '+(-pic[1]*16)+'px;color:#999;" title="'+title+'"></div>'; break;
