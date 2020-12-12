@@ -745,6 +745,7 @@ var LaunchDungeons=function()
 		this.map={};
 		this.Generate=function()
 		{
+			theme=Math.round(Math.random()*2);
 			var E=new DungeonGen();
 	if(theme==0){
 	E.loadTiles([
