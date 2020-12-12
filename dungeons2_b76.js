@@ -90,8 +90,9 @@ var LaunchDungeons=function()
 		str='<div style="box-shadow:0px 0px 12px 6px #00061b;position:relative;width:'+(this.w*size)+'px;height:'+(this.h*size)+'px;background:#00061b;font-family:Courier;font-size:'+size+'px;float:left;margin:10px;">'+str+'</div>';
 		return str;
 	}//custom sheet
+	var D=new DungeonGen();
 		function Dungtheme(){
-			var D=new DungeonGen();
+			
 	if(theme==0){
 	D.loadTiles([
 	['alt wall',[4,0],'join'],
