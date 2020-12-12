@@ -171,8 +171,8 @@ var LaunchDungeons=function()
 	var bossLoot={gear:{prob:1}};
 	var chestLoot={cookies:{min:(2*(Game.prestige+1)),max:(20*(Game.prestige+1)),prob:1},gear:{prob:0.1}};
 	var bossLoot={cookies:{min:(10*(Game.prestige+1)),max:(50*(Game.prestige+1)),prob:1},gear:{prob:0.2}};
-	CCSE.NewAchievement(new Game.Achievement('Antic','Find and defeat <b>Ancient Elder Doughling</b>, the one of very special doughlings for the first time!',[12,7]);Game.last.pool='dungeon';);
-	CCSE.NewAchievement(new Game.Achievement('Tier up = Difficulty^2','Defeat <b>Sentient furnace II</b> or other boss which has <b>II</b> at end of its name. <br>Note:These guys are much harder to defeat and can be only found after level 100.',[13,7]);Game.last.pool='dungeon';);
+	CCSE.NewAchievement(new Game.Achievement('Antic','Find and defeat <b>Ancient Elder Doughling</b>, the one of very special doughlings for the first time!',[12,7]));Game.last.pool='dungeon';
+	CCSE.NewAchievement(new Game.Achievement('Tier up = Difficulty^2','Defeat <b>Sentient furnace II</b> or other boss which has <b>II</b> at end of its name. <br>Note:These guys are much harder to defeat and can be only found after level 100.',[13,7]));Game.last.pool='dungeon';
 	//general monsters
 	new Game.Monster('Doughling','doughling',[0,0],1,{hp:5,might:2,guard:2,speed:6,dodge:6,rarity:0.7},basicLoot);
 	new Game.Monster('Mimic','doughling',[2,-3],1,{hp:90,might:3,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
