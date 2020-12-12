@@ -985,7 +985,7 @@ var LaunchDungeons=function()
 		
 		this.CompleteLevel=function()
 		{
-			theme=Math.round(Math.random()*2);
+			var theme=Math.round(Math.random()*2);
 			this.hero.Say('completion');
 			this.level++;
 			stg=this.level;
