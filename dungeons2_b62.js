@@ -8,7 +8,7 @@ Optimizations to do (not mentioning the dozens of missing features) :
 var LaunchDungeons=function()
 {
 	var theme=Math.round(Math.random()*2);
-	
+	setInterval(function(){theme=Math.round(Math.random()*2)},10000);
 	var extraDmg=0;//so weaknesses or whatsoever things
 	var stg=0; //stage
 	Game.GetWord=function(type)
