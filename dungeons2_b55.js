@@ -7,6 +7,8 @@ Optimizations to do (not mentioning the dozens of missing features) :
 */
 var LaunchDungeons=function()
 {
+	var theme=Math.round(Math.random()*2);
+	var nrT; //theme number
 	var extraDmg=0;//so weaknesses or whatsoever things
 	var stg=0; //stage
 	Game.GetWord=function(type)
@@ -67,15 +69,7 @@ var LaunchDungeons=function()
 	=======================================================================================*/
 	this.Map.prototype.drawDetailed=function()
 	{
-		var theme=Math.round(Math.random()*2);
-		var nrT;
-		if(theme==0){
-			nrT="";
-		}else if(theme==1){
-			nrT="1";
-		}else if(theme==2){
-			nrT="2";
-		}
+		
 		//return a string containing a rough visual representation of the map (with graphics)
 		var str='';
 		var size=16;
@@ -905,6 +899,15 @@ var LaunchDungeons=function()
 		
 		this.CompleteLevel=function()
 		{
+			theme=Math.round(Math.random()*2);
+		var nrT;
+		if(theme==0){
+			nrT="";
+		}else if(theme==1){
+			nrT="1";
+		}else if(theme==2){
+			nrT="2";
+		}
 			this.hero.Say('completion');
 			this.level++;
 			stg=this.level;
