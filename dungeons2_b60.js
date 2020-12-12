@@ -100,7 +100,7 @@ var LaunchDungeons=function()
 	['alt tiled floor',[(4+(theme*10)),2],'join'],
 	['alt round pillar',[(4+(theme*10)),4]],
 	['alt square pillar',[(5+(theme*10)),4]],
-	['alt potted plant',[6+(theme*10)),4]],
+	['alt potted plant',[(6+(theme*10)),4]],
 	['alt bookshelf',[(4+(theme*10)),6],'join'],
 	['alt door',[(4+(theme*10)),3],'join'],
 	['wall',[(4+(theme*10)),0],'join'],
