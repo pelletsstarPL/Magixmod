@@ -769,7 +769,7 @@ Dungtheme();
 							if (loot.cookies && (!loot.cookies.prob || Math.random()<loot.cookies.prob))
 							{
 								var entity=this.dungeon.AddEntity('item','cookies',this.x,this.y);//drop cookies
-								entity.value=Math.round(loot.cookies.min+Math.random()*(loot.cookies.max-loot.cookies.min))*(Game.prestige+1);
+								entity.value=Math.round(loot.cookies.min+Math.random()*(loot.cookies.max-loot.cookies.min));
 							}
 						}
 						if (this.onKill) this.onKill();
