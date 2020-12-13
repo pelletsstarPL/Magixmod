@@ -723,8 +723,13 @@ Dungtheme();
 				}
 				else
 				{
+					if(attackerName!='Chad'){
 					if (by.stats.luck && by.type=='hero' && Math.random()<by.stats.luck*0.01) {damage*=2;attackStr+=' <b>It\'s a critical!</b>';}//very rare critical based on luck
 					attackStr+=' <b>'+damage+'</b> damage!';
+					}else if(attackerName=='Chad'){
+					if (by.stats.luck && by.type=='hero' && Math.random()<by.stats.luck*0.01) {damage*=3;attackStr+=' <b>It\'s a critical!</b>';}//very rare critical based on luck. x3 only for Chad
+					attackStr+=' <b>'+damage+'</b> damage!';	
+					}
 					
 					this.stats.hp-=damage;
 					this.stats.hp=Math.max(this.stats.hp,0);
@@ -760,7 +765,7 @@ Dungtheme();
 							if (loot.cookies && (!loot.cookies.prob || Math.random()<loot.cookies.prob))
 							{
 								var entity=this.dungeon.AddEntity('item','cookies',this.x,this.y);//drop cookies
-								entity.value=Math.round(loot.cookies.min+Math.random()*(loot.cookies.max-loot.cookies.min));
+								entity.value=Math.round(loot.cookies.min+Math.random()*(loot.cookies.max-loot.cookies.min))*Game.prestige;
 							}
 						}
 						if (this.onKill) this.onKill();
@@ -802,7 +807,7 @@ Dungtheme();
 					if (entities[i].type=='item' && entities[i].subtype=='cookies')
 					{
 						var entity=entities[i];
-						var value=Math.ceil(entity.value*Game.Objects[this.dungeon.type].amount*50*(1+Math.random()*((this.stats.luck)/20)));//temporary; scale with matching building CpS later
+						var value=Math.ceil(entity.value*Game.Objects[this.dungeon.type].amount*50*(1+Math.random()*((this.stats.luck)/20))*Game.prestige);//temporary; scale with matching building CpS later
 						if (value>0)
 						{
 							this.dungeon.Log('<span style="color:#9f9;">Found <b>'+Beautify(value)+'</b> cookie'+(value==1?'':'s')+'!</span>');
@@ -1173,17 +1178,17 @@ Dungtheme();
 				mimicsIntro++;
 			}
 			if(this.level>=175 & shieldedIntro==0){ //Shielded general monsters appear since L175. It is ok if you will still face unshielded one :)
-	new Game.Monster('Shielded doughling','Shdoughling',[0,1],1,{hp:8,might:2,guard:21,speed:6,dodge:6,rarity:0.7},basicLoot);
-	new Game.Monster('Shielded elder doughling','ShelderDoughling',[1,1],7,{hp:23,might:7,guard:26,speed:4,dodge:4,rarity:0.7},goodLoot);
-	new Game.Monster('Shielded outdated E.d.','ShoutdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:22,speed:1,dodge:0,rarity:0.2},goodLoot);
+	new Game.Monster('Shielded doughling','Shdoughling',[0,1],1,{hp:8,might:2,guard:23,speed:6,dodge:6,rarity:0.7},basicLoot);
+	new Game.Monster('Shielded elder doughling','ShelderDoughling',[1,1],7,{hp:23,might:7,guard:28,speed:4,dodge:4,rarity:0.7},goodLoot);
+	new Game.Monster('Shielded outdated E.d.','ShoutdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:24,speed:1,dodge:0,rarity:0.2},goodLoot);
 	Game.Monsters['Shielded outdated E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded outdated E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
-	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,might:17,guard:35,speed:2,dodge:0,rarity:0.011},chestLoot);
+	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,might:17,guard:37,speed:2,dodge:0,rarity:0.011},chestLoot);
 	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
 	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){Game.Win('Antic');extraDmg=extraDmg-1.5;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
-	new Game.Monster('Shielded angry sen. cookie','ShangrySentientCookie',[5,1],5,{hp:19,might:8,guard:23,speed:5,dodge:5,rarity:1},basicLoot);
-	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:6,might:1,guard:20,speed:7,dodge:7,rarity:1},basicLoot);
-	new Game.Monster('Shielded burnt sen. cookie','ShburntSentientCookie',[6,1],5,{hp:19,might:12,guard:21,speed:3,dodge:2,rarity:0.2},basicLoot);
-	new Game.Monster('Shielded raw sen. cookie','ShrawSentientCookie',[5,1],5,{hp:19,might:6,guard:23,speed:7,dodge:7,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded angry sen. cookie','ShangrySentientCookie',[5,1],5,{hp:19,might:8,guard:25,speed:5,dodge:5,rarity:1},basicLoot);
+	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:6,might:1,guard:22,speed:7,dodge:7,rarity:1},basicLoot);
+	new Game.Monster('Shielded burnt sen. cookie','ShburntSentientCookie',[6,1],5,{hp:19,might:12,guard:23,speed:3,dodge:2,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded raw sen. cookie','ShrawSentientCookie',[5,1],5,{hp:19,might:6,guard:25,speed:7,dodge:7,rarity:0.2},basicLoot);
 				shieldedIntro++;
 			}
 			this.hero.Say('completion');
@@ -1424,17 +1429,20 @@ Dungtheme();
 		'completion':'See?|Oh yeah!|Let the show continue!|That was easy!|That sure was fun!|I\'m not lost, am I?|Let\'s go further.|More boxing vs douglings? Sure thing|More boxing vs disgruntled workers? Y not?',
 		'defeat':'Eek.|Oh gosh|I yield! I yield!|Damn|I\'ll come back with stronger fists.|I think I scraped my knee!|Owie.|Woopsie!|OOF',
 		'win against Sentient Furnace':'Oh boy.|Take that you big metal piece of garbage.|Bakery closed today.',
+		'meet Ascended Baking Pod':'Hmm. Let me help you outta here.',
+		'meet Ascended Baking Pod II':'Hmm. Let me help you outta here.|Your roars just make me stronger!',
 		'win against Ascended Baking Pod':'Such a weak pod|That was disturbing.|How I could break your glass cover just with one kick?.|How I could break your glass cover just with one heavy punch?',
+		'win against Ascended Baking Pod II':'That was a fight!|That was disturbing.|Yea boi.',
 		'win against Mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.',
 		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
 	};
 	hero.stats={
-		hp:15,
-		hpm:17,
-		might:2.5+extraDmg,
-		guard:34,
+		hp:10,
+		hpm:10,
+		might:1.5+extraDmg,
+		guard:33,
 		speed:1,
-		dodge:1,
+		dodge:0, //at cost of 3x crits
 		luck:3.25
 	};
   	var hero=new Game.Hero('Zee','boyscoutZee','portraitZee',[5,0]);
@@ -1534,6 +1542,10 @@ Dungtheme();
 		'completion':'Over already?|Let\'s explore some more!|That was lucky!|That was no luck, I\'m just that good.|Alright, let\'s move on!|I\'m just getting warmed up!',
 		'defeat':'I can\'t believe it!|...This is a joke, right?|Hey! No fair!|B-but...|I\'m gonna need a bandaid. And some hot chocolate.|I\'ll, uh, try again later.|Bad luck! Bad luck!',
 		'win against Ascended Baking Pod':'Golly, that was peculiar.',
+		'meet Ancient Elder Doughling':'It is you. But why are you angry?|That\'s one from atlases|That\'s one from ancient stories.',
+		'win against Ancient Elder Doughling':'I met you... And destroyed you.|That\'s one from atlases|That\'s one from ancient stories.',
+		'meet Shielded Anc. E.d.':'It is you. But why are you angry? Oh you now glow.|That\'s one from atlases|That\'s one from ancient stories.',
+		'win against Shielded Anc. E.d.':'Whatever it was , however it was helping you I destroyed you.',
 		'win against Mimic':'really?',
 		'win against mimic':'really?'
 	};
