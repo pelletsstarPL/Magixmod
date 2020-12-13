@@ -1429,7 +1429,7 @@ Dungtheme();
 		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
 	};
 	hero.stats={
-		hp:25,
+		hp:15,
 		hpm:17,
 		might:2.5+extraDmg,
 		guard:34,
