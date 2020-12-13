@@ -765,7 +765,7 @@ Dungtheme();
 							if (loot.cookies && (!loot.cookies.prob || Math.random()<loot.cookies.prob))
 							{
 								var entity=this.dungeon.AddEntity('item','cookies',this.x,this.y);//drop cookies
-								entity.value=Math.round(loot.cookies.min+Math.random()*(loot.cookies.max-loot.cookies.min))*Game.prestige;
+								entity.value=Math.round(loot.cookies.min+Math.random()*(loot.cookies.max-loot.cookies.min));
 							}
 						}
 						if (this.onKill) this.onKill();
@@ -807,7 +807,7 @@ Dungtheme();
 					if (entities[i].type=='item' && entities[i].subtype=='cookies')
 					{
 						var entity=entities[i];
-						var value=Math.ceil(entity.value*Game.Objects[this.dungeon.type].amount*50*(1+Math.random()*((this.stats.luck)/20)));//temporary; scale with matching building CpS later
+						var value=Math.ceil(entity.value*Game.Objects[this.dungeon.type].amount*50*(1+Math.random()*((this.stats.luck)/20))*Game.prestige);//temporary; scale with matching building CpS later
 						if (value>0)
 						{
 							this.dungeon.Log('<span style="color:#9f9;">Found <b>'+Beautify(value)+'</b> cookie'+(value==1?'':'s')+'!</span>');
