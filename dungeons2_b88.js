@@ -807,7 +807,7 @@ Dungtheme();
 					if (entities[i].type=='item' && entities[i].subtype=='cookies')
 					{
 						var entity=entities[i];
-						var value=Math.ceil(entity.value*Game.Objects[this.dungeon.type].amount*50*(1+Math.random()*((this.stats.luck)/20)))*Game.prestige;//temporary; scale with matching building CpS later
+						var value=Math.ceil(entity.value*Game.Objects[this.dungeon.type].amount*50*(1+Math.random()*((this.stats.luck)/20)));//temporary; scale with matching building CpS later
 						if (value>0)
 						{
 							this.dungeon.Log('<span style="color:#9f9;">Found <b>'+Beautify(value)+'</b> cookie'+(value==1?'':'s')+'!</span>');
