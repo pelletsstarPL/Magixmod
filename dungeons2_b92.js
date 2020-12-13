@@ -444,7 +444,7 @@ Dungtheme();
 	new Game.Monster('Elder doughling','elderDoughling',[1,0],7,{hp:20,might:7,guard:7,speed:4,dodge:4,rarity:0.7},goodLoot);
 	new Game.Monster('Outdated Elder doughling','outdatedelderDoughling',[2,0],7,{hp:17,might:17,guard:8,speed:1,dodge:0,rarity:0.2},goodLoot);
 	Game.Monsters['Outdated Elder doughling'].onKill=function(){extraDmg--;};Game.Monsters['Outdated Elder doughling'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
-	new Game.Monster('Ancient Elder doughling','ancientelderDoughling',[3,0],7,{hp:50,might:17,guard:16,speed:2,dodge:0,rarity:0.011},chestLoot);
+	new Game.Monster('Ancient Elder doughling','ancientelderDoughling',[3,0],7,{hp:50,hpm:2,might:17,guard:16,speed:2,dodge:0,rarity:0.011},chestLoot);
 	Game.Monsters['Ancient Elder doughling'].onKill=function(){extraDmg--;};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
 	Game.Monsters['Ancient Elder doughling'].onKill=function(){Game.Win('Antic');extraDmg=extraDmg-1.5;};Game.Monsters['Ancient Elder doughling'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
 	new Game.Monster('Angry sentient cookie','angrySentientCookie',[5,0],5,{hp:16,might:8,guard:4,speed:5,dodge:5,rarity:1},basicLoot);
@@ -1188,8 +1188,7 @@ Dungtheme();
 	new Game.Monster('Shielded elder doughling','ShelderDoughling',[1,1],7,{hp:23,might:7,guard:28,speed:4,dodge:4,rarity:0.7},goodLoot);
 	new Game.Monster('Shielded outdated E.d.','ShoutdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:24,speed:1,dodge:0,rarity:0.2},goodLoot);
 	Game.Monsters['Shielded outdated E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded outdated E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
-	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,might:17,guard:37,speed:2,dodge:0,rarity:0.011},chestLoot);
-	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
+	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,hpm:2,might:17,guard:37,speed:2,dodge:0,rarity:0.011},chestLoot);
 	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){Game.Win('Antic');extraDmg=extraDmg-1.5;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
 	new Game.Monster('Shielded angry sen. cookie','ShangrySentientCookie',[5,1],5,{hp:19,might:8,guard:25,speed:5,dodge:5,rarity:1},basicLoot);
 	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:6,might:1,guard:22,speed:7,dodge:7,rarity:1},basicLoot);
@@ -1444,10 +1443,10 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:10,
-		hpm:10,
+		hpm:3,
 		might:1.5+extraDmg,
 		guard:33,
-		speed:0.75,
+		speed:0.65,
 		dodge:0, //at cost of 3x crits
 		luck:3.25
 	};
@@ -1466,7 +1465,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:27,
-		hpm:32,
+		hpm:17,
 		might:5.5+extraDmg,
 		guard:4,
 		speed:3,
@@ -1488,7 +1487,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:30,
-		hpm:30,
+		hpm:20,
 		might:5+extraDmg,
 		guard:5,
 		speed:5,
@@ -1510,7 +1509,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:25,
-		hpm:25,
+		hpm:5,
 		might:5+extraDmg,
 		guard:7,
 		speed:4,
@@ -1532,7 +1531,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:25,
-		hpm:25,
+		hpm:20,
 		might:4+extraDmg,
 		guard:4,
 		speed:7,
@@ -1557,7 +1556,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:25,
-		hpm:25,
+		hpm:17,
 		might:5+extraDmg,
 		guard:4,
 		speed:4,
