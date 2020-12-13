@@ -526,10 +526,12 @@ Dungtheme();
 			var mult=Math.max(0,(Game.Objects[this.dungeon.type].amount/20-1));
 			this.stats.hpm+=Math.ceil(mult*2);
 			this.stats.hp=this.stats.hpm;
-			this.stats.might+=mult;
-			this.stats.guard+=mult;
-			this.stats.speed+=mult;
-			this.stats.dodge+=mult;
+			this.stats.might+=mult/1.75;
+			this.stats.guard+=mult/1.75;
+			this.stats.speed+=mult/1.75;
+			if(Game.Heroes[by.subtype].name!='Chad'){
+			this.stats.dodge+=mult/1.75;
+			}
 		}
 		else if (this.type=='item')
 		{
