@@ -529,7 +529,7 @@ Dungtheme();
 			this.stats.might+=mult/1.75;
 			this.stats.guard+=mult/1.75;
 			this.stats.speed+=mult/1.75;
-			if(Game.Heroes[by.subtype].name!='Chad'){
+			if(Game.Heroes[this.subtype].name!='Chad'){
 			this.stats.dodge+=mult/1.75;
 			}
 		}
