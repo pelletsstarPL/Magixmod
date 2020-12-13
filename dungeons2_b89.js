@@ -548,7 +548,7 @@ Dungtheme();
 			{
 				if (this.subtype=='random')
 				{
-					var value=Math.round(Math.pow(Math.random(),6)*(10+this.dungeon.level));
+					var value=Math.round(Math.pow(Math.random(),6)*(10+this.dungeon.level))*Game.prestige;
 					if (value>0)
 					{
 						var entity=this.dungeon.AddEntity('item','cookies',this.x,this.y);
@@ -1074,7 +1074,7 @@ Dungtheme();
 					{
 						if (Math.random()<0.6)
 						{
-							var value=(Math.round(Math.pow(Math.random(),6)*(10+this.level))*Game.prestige);
+							var value=(Math.round(Math.pow(Math.random(),6)*(10+this.level)));
 							if (value>0)
 							{
 								var entity=this.AddEntity('item','cookies',tile[0],tile[1]);//random cookies
