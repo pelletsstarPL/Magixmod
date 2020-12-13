@@ -7,7 +7,8 @@ Optimizations to do (not mentioning the dozens of missing features) :
 */
 var LaunchDungeons=function()
 {
-	var theme=Math.round(Math.random()*2);
+	var theme=Math.round(Math.random()*5);
+	var bunnyTheme=0; //0 or 1 special theme for next level if bunny killed
 	var extraDmg=0;//so weaknesses or whatsoever things
 	var stg=0; //stage
 	Game.GetWord=function(type)
@@ -219,6 +220,175 @@ var LaunchDungeons=function()
 	['green entrance',[20,5]],
 	['green exit',[20,6]]
 		]);
+	}else if(theme==3){
+	D.loadTiles([
+	['alt wall',[34,0],'join'],
+	['alt wall corner',[34,0]],
+	['alt floor',[34,1],'random3'],
+	['alt tiled floor',[34,2],'join'],
+	['alt round pillar',[34,4]],
+	['alt square pillar',[35,4]],
+	['alt potted plant',[36,4]],
+	['alt bookshelf',[34,6],'join'],
+	['alt door',[34,3],'join'],
+	['wall',[31,0],'join'],
+	['wall corner',[31,0]],
+	['floor',[31,1],'random3'],
+	['tiled floor',[31,2],'join'],
+	['round pillar',[31,4]],
+	['square pillar',[32,4]],
+	['potted plant',[33,4]],
+	['bookshelf',[34,5],'join'],
+	['door',[31,3],'join'],
+	['green wall',[37,0],'join'],
+	['green wall corner',[37,0]],
+	['green floor',[37,1],'random3'],
+	['green tiled floor',[37,2],'join'],
+	['green round pillar',[37,4]],
+	['green square pillar',[38,4]],
+	['green potted plant',[39,4]],
+	['green bookshelf',[37,6],'join'],
+	['green door',[37,3],'join'],
+	['water',[31,5]],
+	['green water',[32,5]],
+	['dark water',[33,5]],
+	['wooden wall',[31,7],'join'],
+	['wooden floor',[31,6],'random3'],
+	['conveyor belt',[37,7],'join'],
+	['entrance',[30,1]],
+	['alt entrance',[30,3]],
+	['exit',[30,2]],
+	['alt exit',[30,4]],
+	['green entrance',[30,5]],
+	['green exit',[30,6]]
+		]);
+	}else if(theme==4){
+	D.loadTiles([
+	['alt wall',[44,0],'join'],
+	['alt wall corner',[44,0]],
+	['alt floor',[44,1],'random3'],
+	['alt tiled floor',[44,2],'join'],
+	['alt round pillar',[44,4]],
+	['alt square pillar',[45,4]],
+	['alt potted plant',[46,4]],
+	['alt bookshelf',[44,6],'join'],
+	['alt door',[44,3],'join'],
+	['wall',[41,0],'join'],
+	['wall corner',[41,0]],
+	['floor',[41,1],'random3'],
+	['tiled floor',[41,2],'join'],
+	['round pillar',[41,4]],
+	['square pillar',[42,4]],
+	['potted plant',[43,4]],
+	['bookshelf',[44,5],'join'],
+	['door',[41,3],'join'],
+	['green wall',[47,0],'join'],
+	['green wall corner',[47,0]],
+	['green floor',[47,1],'random3'],
+	['green tiled floor',[47,2],'join'],
+	['green round pillar',[47,4]],
+	['green square pillar',[48,4]],
+	['green potted plant',[49,4]],
+	['green bookshelf',[47,6],'join'],
+	['green door',[47,3],'join'],
+	['water',[41,5]],
+	['green water',[42,5]],
+	['dark water',[43,5]],
+	['wooden wall',[41,7],'join'],
+	['wooden floor',[41,6],'random3'],
+	['conveyor belt',[47,7],'join'],
+	['entrance',[40,1]],
+	['alt entrance',[40,3]],
+	['exit',[40,2]],
+	['alt exit',[40,4]],
+	['green entrance',[40,5]],
+	['green exit',[40,6]]
+		]);
+	}else if(theme==5){
+	D.loadTiles([
+	['alt wall',[54,0],'join'],
+	['alt wall corner',[54,0]],
+	['alt floor',[54,1],'random3'],
+	['alt tiled floor',[54,2],'join'],
+	['alt round pillar',[54,4]],
+	['alt square pillar',[55,4]],
+	['alt potted plant',[56,4]],
+	['alt bookshelf',[54,6],'join'],
+	['alt door',[54,3],'join'],
+	['wall',[51,0],'join'],
+	['wall corner',[51,0]],
+	['floor',[51,1],'random3'],
+	['tiled floor',[51,2],'join'],
+	['round pillar',[51,4]],
+	['square pillar',[52,4]],
+	['potted plant',[53,4]],
+	['bookshelf',[54,5],'join'],
+	['door',[51,3],'join'],
+	['green wall',[57,0],'join'],
+	['green wall corner',[57,0]],
+	['green floor',[57,1],'random3'],
+	['green tiled floor',[57,2],'join'],
+	['green round pillar',[57,4]],
+	['green square pillar',[58,4]],
+	['green potted plant',[59,4]],
+	['green bookshelf',[57,6],'join'],
+	['green door',[57,3],'join'],
+	['water',[51,5]],
+	['green water',[52,5]],
+	['dark water',[53,5]],
+	['wooden wall',[51,7],'join'],
+	['wooden floor',[51,6],'random3'],
+	['conveyor belt',[57,7],'join'],
+	['entrance',[50,1]],
+	['alt entrance',[50,3]],
+	['exit',[50,2]],
+	['alt exit',[50,4]],
+	['green entrance',[50,5]],
+	['green exit',[50,6]]
+		]);
+	}else if(theme==6 && bunnyTheme>=1){
+	D.loadTiles([
+	['alt wall',[64,0],'join'],
+	['alt wall corner',[64,0]],
+	['alt floor',[64,1],'random3'],
+	['alt tiled floor',[64,2],'join'],
+	['alt round pillar',[64,4]],
+	['alt square pillar',[65,4]],
+	['alt potted plant',[66,4]],
+	['alt bookshelf',[64,6],'join'],
+	['alt door',[64,3],'join'],
+	['wall',[61,0],'join'],
+	['wall corner',[61,0]],
+	['floor',[61,1],'random3'],
+	['tiled floor',[61,2],'join'],
+	['round pillar',[61,4]],
+	['square pillar',[62,4]],
+	['potted plant',[63,4]],
+	['bookshelf',[64,5],'join'],
+	['door',[61,3],'join'],
+	['green wall',[67,0],'join'],
+	['green wall corner',[67,0]],
+	['green floor',[67,1],'random3'],
+	['green tiled floor',[67,2],'join'],
+	['green round pillar',[67,4]],
+	['green square pillar',[68,4]],
+	['green potted plant',[69,4]],
+	['green bookshelf',[67,6],'join'],
+	['green door',[67,3],'join'],
+	['water',[61,5]],
+	['green water',[62,5]],
+	['dark water',[63,5]],
+	['wooden wall',[61,7],'join'],
+	['wooden floor',[61,6],'random3'],
+	['conveyor belt',[67,7],'join'],
+	['entrance',[60,1]],
+	['alt entrance',[60,3]],
+	['exit',[60,2]],
+	['alt exit',[60,4]],
+	['green entrance',[60,5]],
+	['green exit',[60,6]]
+		]);
+		bunnyTheme--;
 	};
 }
 Dungtheme();
@@ -283,7 +453,7 @@ Dungtheme();
 	new Game.Monster('Burnt sentient cookie','burntSentientCookie',[6,0],5,{hp:16,might:12,guard:2,speed:3,dodge:2,rarity:0.2},basicLoot);
 	new Game.Monster('Raw sentient cookie','rawSentientCookie',[5,0],5,{hp:16,might:6,guard:4,speed:7,dodge:7,rarity:0.2},basicLoot);
 	new Game.Monster('Sugar bunny','sugarBunny',[8,0],5,{hp:10,might:3,guard:8,speed:12,dodge:9,rarity:0.001},{cookies:{min:(1000*Game.prestige),max:(10000*Game.prestige)}});
-	Game.Monsters['Sugar bunny'].onKill=function(){Game.Win('Follow the white rabbit');};Game.Monsters['Sugar bunny'].AI='flee';
+	Game.Monsters['Sugar bunny'].onKill=function(){Game.Win('Follow the white rabbit');bunnyTheme++;};Game.Monsters['Sugar bunny'].AI='flee';
 	
 	//factory monsters
 	new Game.Monster('Crazed kneader','crazedKneader',[0,2],6,{hp:18,might:6,guard:8,speed:3,dodge:2,rarity:0.5},goodLoot);
@@ -749,8 +919,13 @@ Dungtheme();
 		this.map={};
 		this.Generate=function()
 		{
-			theme=Math.round(Math.random()*2);
+			if(bunnyTheme==0){
+			theme=Math.round(Math.random()*5);
 			Dungtheme();
+			}else if(bunnyTheme>=1){
+				theme=6;
+			Dungtheme();
+			}
 			if (this.level==0) this.name=Game.DungeonTypes[this.type].nameGenerator();
 			this.entities=[];
 			var M=new D.Map(46,46,Math.random(),{
