@@ -11,6 +11,8 @@ var LaunchDungeons=function()
 	var bunnyTheme=0; //0 or 1 special theme for next level if bunny killed
 	var extraDmg=0;//so weaknesses or whatsoever things
 	var stg=0; //stage
+	var mimicsIntro=0;var shieldedIntro=0;
+	
 	Game.GetWord=function(type)
 	{
 		if (type=='secret') return choose(['hidden','secret','mysterious','forgotten','forbidden','lost','sunk','buried','concealed','shrouded','invisible','elder']);
@@ -1163,11 +1165,27 @@ Dungtheme();
 		
 		this.CompleteLevel=function()
 		{
-			if(this.level>=75){ //Mimics appear since L75
+			if(this.level>=75 & mimicsIntro==0){ //Mimics appear since L75
 			new Game.Monster('Mimic','mimic',[2,-3],1,{hp:90,might:3,guard:22,speed:3,dodge:0,rarity:0.2},basicLoot);
 	Game.Monsters['Mimic'].AI='static';
 	new Game.Monster('mimic','mimic1',[4,-3],1,{hp:40,might:5,guard:8,speed:3,dodge:0,rarity:0.2},basicLoot);
 	Game.Monsters['mimic'].AI='static';
+				mimicsIntro++;
+			}
+			if(this.level>=175 & shieldedIntro==0){ //Shielded general monsters appear since L175. It is ok if you will still face unshielded one :)
+				new Game.Monster('Shielded doughling','doughling',[0,1],1,{hp:5,might:2,guard:17,speed:6,dodge:6,rarity:0.7},basicLoot);
+	
+	new Game.Monster('Shielded elder doughling','elderDoughling',[1,1],7,{hp:20,might:7,guard:22,speed:4,dodge:4,rarity:0.7},goodLoot);
+	new Game.Monster('Shielded outdated E.d.','outdatedelderDoughling',[2,1],7,{hp:17,might:17,guard:8,speed:1,dodge:0,rarity:0.2},goodLoot);
+	Game.Monsters['Shielded outdated E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded outdated E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
+	new Game.Monster('Shielded Anc. E.d.','ancientelderDoughling',[3,1],7,{hp:50,might:17,guard:31,speed:2,dodge:0,rarity:0.011},chestLoot);
+	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
+	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){Game.Win('Antic');extraDmg=extraDmg-1.5;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
+	new Game.Monster('Shielded angry sen. cookie','angrySentientCookie',[5,1],5,{hp:16,might:8,guard:19,speed:5,dodge:5,rarity:1},basicLoot);
+	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:3,might:1,guard:16,speed:7,dodge:7,rarity:1},basicLoot);
+	new Game.Monster('Shielded burnt sen. cookie','burntSentientCookie',[6,1],5,{hp:16,might:12,guard:17,speed:3,dodge:2,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded raw sen. cookie','rawSentientCookie',[5,1],5,{hp:16,might:6,guard:19,speed:7,dodge:7,rarity:0.2},basicLoot);
+				shieldedIntro++;
 			}
 			this.hero.Say('completion');
 			this.level++;
