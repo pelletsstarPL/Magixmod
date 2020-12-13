@@ -1424,7 +1424,7 @@ Dungtheme();
 		'completion':'See?|Oh yeah!|Let the show continue!|That was easy!|That sure was fun!|I\'m not lost, am I?|Let\'s go further.|More boxing vs douglings? Sure thing|More boxing vs disgruntled workers? Y not?',
 		'defeat':'Eek.|Oh gosh|I yield! I yield!|Damn|I\'ll come back with stronger fists.|I think I scraped my knee!|Owie.|Woopsie!|OOF',
 		'win against Sentient Furnace':'Oh boy.|Take that you big metal piece of garbage.|Bakery closed today.',
-		'win against Ascended Baking Pod':'Such a weak pod|That was disturbing.|How I could break your glass cover just with one kick?.|How I could break your glass cover just with one heavy punch?'
+		'win against Ascended Baking Pod':'Such a weak pod|That was disturbing.|How I could break your glass cover just with one kick?.|How I could break your glass cover just with one heavy punch?',
 		'win against Mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.',
 		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
 	};
