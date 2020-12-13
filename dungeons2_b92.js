@@ -1443,7 +1443,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:10,
-		hpm:3,
+		hpm:13,
 		might:1.5+extraDmg,
 		guard:33,
 		speed:0.65,
@@ -1464,8 +1464,8 @@ Dungtheme();
 		'win against mimic':'Your texture is just programmed to seem like obstacle!|You can\'t cheat programmer.'
 	};
 	hero.stats={
-		hp:27,
-		hpm:17,
+		hp:20,
+		hpm:25,
 		might:5.5+extraDmg,
 		guard:4,
 		speed:3,
@@ -1486,8 +1486,8 @@ Dungtheme();
 		'win against mimic':'Oh you fakey.|Nice try.|Oh nice camouflage.'
 	};
 	hero.stats={
-		hp:30,
-		hpm:20,
+		hp:25,
+		hpm:30,
 		might:5+extraDmg,
 		guard:5,
 		speed:5,
@@ -1508,8 +1508,8 @@ Dungtheme();
 		'win against mimic':'Ha... ha... ha. Very funny|I am better prankster than you.'
 	};
 	hero.stats={
-		hp:25,
-		hpm:5,
+		hp:24,
+		hpm:29,
 		might:5+extraDmg,
 		guard:7,
 		speed:4,
@@ -1530,8 +1530,8 @@ Dungtheme();
 		'win against mimic':'Ooo.|i w-w-would l-like to have c-camouflage as well.|Oh n-no. You l-lost your camoufl-l-age?.'
 	};
 	hero.stats={
-		hp:25,
-		hpm:20,
+		hp:23,
+		hpm:30,
 		might:4+extraDmg,
 		guard:4,
 		speed:7,
@@ -1556,7 +1556,7 @@ Dungtheme();
 	};
 	hero.stats={
 		hp:25,
-		hpm:17,
+		hpm:28,
 		might:5+extraDmg,
 		guard:4,
 		speed:4,
