@@ -1173,17 +1173,17 @@ Dungtheme();
 				mimicsIntro++;
 			}
 			if(this.level>=175 & shieldedIntro==0){ //Shielded general monsters appear since L175. It is ok if you will still face unshielded one :)
-	new Game.Monster('Shielded doughling','doughling',[0,1],1,{hp:8,might:2,guard:21,speed:6,dodge:6,rarity:0.7},basicLoot);
-	new Game.Monster('Shielded elder doughling','elderDoughling',[1,1],7,{hp:23,might:7,guard:26,speed:4,dodge:4,rarity:0.7},goodLoot);
-	new Game.Monster('Shielded outdated E.d.','outdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:22,speed:1,dodge:0,rarity:0.2},goodLoot);
+	new Game.Monster('Shielded doughling','Shdoughling',[0,1],1,{hp:8,might:2,guard:21,speed:6,dodge:6,rarity:0.7},basicLoot);
+	new Game.Monster('Shielded elder doughling','ShelderDoughling',[1,1],7,{hp:23,might:7,guard:26,speed:4,dodge:4,rarity:0.7},goodLoot);
+	new Game.Monster('Shielded outdated E.d.','ShoutdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:22,speed:1,dodge:0,rarity:0.2},goodLoot);
 	Game.Monsters['Shielded outdated E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded outdated E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
-	new Game.Monster('Shielded Anc. E.d.','ancientelderDoughling',[3,1],7,{hp:53,might:17,guard:35,speed:2,dodge:0,rarity:0.011},chestLoot);
+	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,might:17,guard:35,speed:2,dodge:0,rarity:0.011},chestLoot);
 	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
 	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){Game.Win('Antic');extraDmg=extraDmg-1.5;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
-	new Game.Monster('Shielded angry sen. cookie','angrySentientCookie',[5,1],5,{hp:19,might:8,guard:23,speed:5,dodge:5,rarity:1},basicLoot);
+	new Game.Monster('Shielded angry sen. cookie','ShangrySentientCookie',[5,1],5,{hp:19,might:8,guard:23,speed:5,dodge:5,rarity:1},basicLoot);
 	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:6,might:1,guard:20,speed:7,dodge:7,rarity:1},basicLoot);
-	new Game.Monster('Shielded burnt sen. cookie','burntSentientCookie',[6,1],5,{hp:19,might:12,guard:21,speed:3,dodge:2,rarity:0.2},basicLoot);
-	new Game.Monster('Shielded raw sen. cookie','rawSentientCookie',[5,1],5,{hp:19,might:6,guard:23,speed:7,dodge:7,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded burnt sen. cookie','ShburntSentientCookie',[6,1],5,{hp:19,might:12,guard:21,speed:3,dodge:2,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded raw sen. cookie','ShrawSentientCookie',[5,1],5,{hp:19,might:6,guard:23,speed:7,dodge:7,rarity:0.2},basicLoot);
 				shieldedIntro++;
 			}
 			this.hero.Say('completion');
@@ -1415,7 +1415,29 @@ Dungtheme();
 	/*=====================================================================================
 	CREATE HEROES
 	=======================================================================================*/
-  	var hero=new Game.Hero('Zee','girlscoutZee','portraitZee',[5,0]);
+	var hero=new Game.Hero('Chad','boyscoutChad','portraitChad',[6,0]);
+	hero.dialogue={
+		'intro':'Chad the Cookieclad at your service!|I am Chad.',
+		'greeting':'I can\'t wait anymore till my fist will crush some doughlings.|Boxing time!|I am slow but heavy.',
+		'win':'Take that!|Hah!|You r no match against my fists|That\'ll teach you.|BOOM!|WA BEAAM!',
+		'entrance':'Chipping in!|Let me prepare for while.|I wonder what I\'ll find!|Hey, this place is new!|This place seems familiar.|Let\'s make it happen.',
+		'completion':'See?|Oh yeah!|Let the show continue!|That was easy!|That sure was fun!|I\'m not lost, am I?|Let\'s go further.|More boxing vs douglings? Sure thing|More boxing vs disgruntled workers? Y not?',
+		'defeat':'Eek.|Oh gosh|I yield! I yield!|Damn|I\'ll come back with stronger fists.|I think I scraped my knee!|Owie.|Woopsie!|OOF',
+		'win against Sentient Furnace':'Oh boy.|Take that you big metal piece of garbage.|Bakery closed today.',
+		'win against Ascended Baking Pod':'Such a weak pod|That was disturbing.|How I could break your glass cover just with one kick?.|How I could break your glass cover just with one heavy punch?'
+		'win against Mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.',
+		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
+	};
+	hero.stats={
+		hp:25,
+		hpm:17,
+		might:2.5+extraDmg,
+		guard:34,
+		speed:1,
+		dodge:1,
+		luck:3.25
+	};
+  	var hero=new Game.Hero('Zee','boyscoutZee','portraitZee',[5,0]);
 	hero.dialogue={
 		'intro':'I\'m Zee! I just really like exploring and modding stuff. Let\'s go have a modding!',
 		'greeting':'Hello there!|I\'m ready!|I do not need eyesight to predict your moves!|Adventure!',
@@ -1424,12 +1446,14 @@ Dungtheme();
 		'completion':'Smort|Oh yeah!|Let\'s explore some more!|That was easy!|That sure was fun!|I\'m not lost, am I?|More exploring? Sure, why not!',
 		'defeat':'B-b-better luck next time.|That really hurt!|I yield! I yield!|That went so abd.|No half-baked excuses next time.|I think I scraped my knee!|Owie.|Woopsie!|OOF',
 		'win against Sentient Furnace':'The irony, it burns! (...it\'s funny because it was burning. And made of iron. ...Moving on.)',
-		'win against Ascended Baking Pod':'Where is your pod now?|That was disturbing.|Who\'s the man here? Who?!'
+		'win against Ascended Baking Pod':'Where is your pod now?|That was disturbing.|Who\'s the man here? Who?!',
+		'win against Mimic':'Your texture is just programmed to seem like obstacle!|You can\'t cheat programmer.',
+		'win against mimic':'Your texture is just programmed to seem like obstacle!|You can\'t cheat programmer.'
 	};
 	hero.stats={
 		hp:27,
 		hpm:32,
-		might:5.5,
+		might:5.5+extraDmg,
 		guard:4,
 		speed:3,
 		dodge:8,
@@ -1444,12 +1468,14 @@ Dungtheme();
 		'completion':'I\'m one smart cookie.|Oh yeah!|Let\'s explore some more!|That was easy!|That sure was fun!|I\'m not lost, am I?|More exploring? Sure, why not!',
 		'defeat':'B-better luck next time.|That really hurt!|I yield! I yield!|That went badly.|No half-baked excuses next time.|I think I scraped my knee!|Owie.|Woopsie!',
 		'win against Sentient Furnace':'The irony, it burns! (...it\'s funny because it was burning. And made of iron. ...Moving on.)',
-		'win against Ascended Baking Pod':'Where is your pod now?|That was disturbing.'
+		'win against Ascended Baking Pod':'Where is your pod now?|That was disturbing.',
+		'win against Mimic':'Oh you fakey.|Nice try.|Oh nice camouflage.',
+		'win against mimic':'Oh you fakey.|Nice try.|Oh nice camouflage.'
 	};
 	hero.stats={
 		hp:30,
 		hpm:30,
-		might:5,
+		might:5+extraDmg,
 		guard:5,
 		speed:5,
 		dodge:5,
@@ -1464,12 +1490,14 @@ Dungtheme();
 		'completion':'I... I did it...|I\'m glad that\'s over.|What, there\'s more?|In I go, I guess.|It doesn\'t end, does it?|But it\'s dark in there.',
 		'defeat':'I, uh, ouch.|Why does that always happen to me?|I\'m just no good, am I?|Oh no.|I\'m... I\'m not crying.|Well that wasn\'t fun at all.|I\'m sorry I failed you.|Please... make them go away...',
 		'meet Ascended Baking Pod':'That thing shouldn\'t even be alive.|Is that where they all came from?',
-		'win against Ascended Baking Pod':'Hm. Fascinating.'
+		'win against Ascended Baking Pod':'Hm. Fascinating.',
+		'win against Mimic':'Ha... ha... ha. Very funny|I am better prankster than you.',
+		'win against mimic':'Ha... ha... ha. Very funny|I am better prankster than you.'
 	};
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:5,
+		might:5+extraDmg,
 		guard:7,
 		speed:4,
 		dodge:4,
@@ -1484,12 +1512,14 @@ Dungtheme();
 		'completion':'Oh... oh my.|That\'s... I uh, I\'m glad.|Y-yeah that was real easy. Piece of pie!|T-too easy, right?|S-so many cookies...|Ooh? F-fascinating.',
 		'defeat':'I-if you can\'t beat them... join them.|I-it\'s because I stutter, isn\'t it?|W-well that\'s just no good at all.|I, uh, I meant for that to happen.|H-how embarrassing.',
 		'meet Ascended Baking Pod':'W-whoah... it\'s... magnificent...',
-		'win against Ascended Baking Pod':'I\'m sorry, buddy.|I... I think I hurt it...|Oh no... I-I think I broke it...'
+		'win against Ascended Baking Pod':'I\'m sorry, buddy.|I... I think I hurt it...|Oh no... I-I think I broke it...',
+		'win against Mimic':'Ooo.|i w-w-would l-like to have c-camouflage as well.|Oh n-no. You l-lost your camoufl-l-age?.',
+		'win against mimic':'Ooo.|i w-w-would l-like to have c-camouflage as well.|Oh n-no. You l-lost your camoufl-l-age?.'
 	};
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:4,
+		might:4+extraDmg,
 		guard:4,
 		speed:7,
 		dodge:5,
@@ -1503,16 +1533,18 @@ Dungtheme();
 		'entrance':'Glad to be of service!|Oooh this one\'ll be interesting.|This will be a good one, I can feel it!|Here I come!',
 		'completion':'Over already?|Let\'s explore some more!|That was lucky!|That was no luck, I\'m just that good.|Alright, let\'s move on!|I\'m just getting warmed up!',
 		'defeat':'I can\'t believe it!|...This is a joke, right?|Hey! No fair!|B-but...|I\'m gonna need a bandaid. And some hot chocolate.|I\'ll, uh, try again later.|Bad luck! Bad luck!',
-		'win against Ascended Baking Pod':'Golly, that was peculiar.'
+		'win against Ascended Baking Pod':'Golly, that was peculiar.',
+		'win against Mimic':'really?',
+		'win against mimic':'really?'
 	};
 	hero.stats={
 		hp:25,
 		hpm:25,
-		might:5,
+		might:5+extraDmg,
 		guard:4,
 		speed:4,
 		dodge:5,
-		luck:7
+		luck:7.1
 	};
 
 };
