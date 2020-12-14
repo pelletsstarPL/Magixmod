@@ -529,8 +529,9 @@ Dungtheme();
 			this.stats.might+=mult/1.75;
 			this.stats.guard+=mult/1.75;
 			this.stats.speed+=mult/1.75;
-			if(Game.Heroes[this.subtype].name!='Chad'){
-			this.stats.dodge+=mult/1.75;
+			switch(Game.Heroes[this.subtype].name){
+				case 'Chad':this.stats.dodge+=0;break;
+				default:this.stats.dodge+=mult/1.75;break;
 			}
 		}
 		else if (this.type=='item')
