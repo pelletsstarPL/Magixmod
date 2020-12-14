@@ -675,7 +675,7 @@ Dungtheme();
 			{
 				by.stuck=0;
 				if(Game.Heroes[by.subtype].name=='Chad'){
-				this.life-=1.5; //The only one that can destroy doors within 2 hits.
+				this.life-=1.5; //The only one that can destroy doors/crates within 2 hits.
 				}else{
 				this.life--;	
 				}
@@ -734,13 +734,11 @@ Dungtheme();
 					attackStr+=' <b>'+damage+'</b> damage!';
 					}else if(attackerName=='Chad'){
 					if (by.stats.luck && by.type=='hero' && Math.random()<by.stats.luck*0.01) {damage*=3.2;attackStr+=' <b>It\'s a critical!</b>';}//very rare critical based on luck. x3 only for Chad
-					attackStr+=' <b>'+damage+'</b> damage!';	
+					attackStr+=' <b>'+Math.round(damage)+'</b> damage!';	
 					}
-					if(Game.Heroes[by.subtype].name=='Chad'){
-					this.stats.hp-=damage/2;
-					}else{
+					
 					this.stats.hp-=damage;	
-					}
+					
 					this.stats.hp=Math.max(this.stats.hp,0);
 					if (this.stats.luck && this.type=='hero')
 					{
@@ -1187,16 +1185,16 @@ Dungtheme();
 				mimicsIntro++;
 			}
 			if(this.level>=175 & shieldedIntro==0){ //Shielded general monsters appear since L175. It is ok if you will still face unshielded one :)
-	new Game.Monster('Shielded doughling','Shdoughling',[0,1],1,{hp:8,might:2,guard:23,speed:6,dodge:6,rarity:0.7},basicLoot);
-	new Game.Monster('Shielded elder doughling','ShelderDoughling',[1,1],7,{hp:23,might:7,guard:28,speed:4,dodge:4,rarity:0.7},goodLoot);
-	new Game.Monster('Shielded outdated E.d.','ShoutdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:24,speed:1,dodge:0,rarity:0.2},goodLoot);
+	new Game.Monster('Shielded doughling','Shdoughling',[0,1],1,{hp:8,might:2,guard:20,speed:6,dodge:6,rarity:0.7},basicLoot);
+	new Game.Monster('Shielded elder doughling','ShelderDoughling',[1,1],7,{hp:23,might:7,guard:25,speed:4,dodge:4,rarity:0.7},goodLoot);
+	new Game.Monster('Shielded outdated E.d.','ShoutdatedelderDoughling',[2,1],7,{hp:20,might:7,guard:21,speed:1,dodge:0,rarity:0.2},goodLoot);
 	Game.Monsters['Shielded outdated E.d.'].onKill=function(){extraDmg--;};Game.Monsters['Shielded outdated E.d.'].quotes={fight:'Reeeeh',defeat:'Destroyed doughling unleashed old disgusting smell. Hero attacks are weaker until Boss isn\'t defeated.'};
-	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,hpm:2,might:17,guard:37,speed:2,dodge:0,rarity:0.011},chestLoot);
+	new Game.Monster('Shielded Anc. E.d.','ShancientelderDoughling',[3,1],7,{hp:53,hpm:2,might:17,guard:34,speed:2,dodge:0,rarity:0.011},chestLoot);
 	Game.Monsters['Shielded Anc. E.d.'].onKill=function(){Game.Win('Antic');extraDmg=extraDmg-1.5;};Game.Monsters['Shielded Anc. E.d.'].quotes={fight:'Reeeeh',defeat:'The spirit of the ancient seeps into the hero increasing its max health by 1 and healing 15HP. For the cookies!'};
-	new Game.Monster('Shielded angry sen. cookie','ShangrySentientCookie',[5,1],5,{hp:19,might:8,guard:25,speed:5,dodge:5,rarity:1},basicLoot);
-	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:6,might:1,guard:22,speed:7,dodge:7,rarity:1},basicLoot);
-	new Game.Monster('Shielded burnt sen. cookie','ShburntSentientCookie',[6,1],5,{hp:19,might:12,guard:23,speed:3,dodge:2,rarity:0.2},basicLoot);
-	new Game.Monster('Shielded raw sen. cookie','ShrawSentientCookie',[5,1],5,{hp:19,might:6,guard:25,speed:7,dodge:7,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded angry sen. cookie','ShangrySentientCookie',[5,1],5,{hp:19,might:8,guard:22,speed:5,dodge:5,rarity:1},basicLoot);
+	new Game.Monster('Shielded baby sen. cookie','babySentientCookie',[4,1],1,{hp:6,might:1,guard:19,speed:7,dodge:7,rarity:1},basicLoot);
+	new Game.Monster('Shielded burnt sen. cookie','ShburntSentientCookie',[6,1],5,{hp:19,might:12,guard:20,speed:3,dodge:2,rarity:0.2},basicLoot);
+	new Game.Monster('Shielded raw sen. cookie','ShrawSentientCookie',[5,1],5,{hp:19,might:6,guard:22,speed:7,dodge:7,rarity:0.2},basicLoot);
 				shieldedIntro++;
 			}
 			this.hero.Say('completion');
@@ -1445,8 +1443,8 @@ Dungtheme();
 		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
 	};
 	hero.stats={
-		hp:30,
-		hpm:50,
+		hp:45,
+		hpm:75,
 		might:2.25+extraDmg,
 		guard:33,
 		speed:0.65,
