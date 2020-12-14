@@ -1448,7 +1448,7 @@ Dungtheme();
 		might:3.25+extraDmg,
 		guard:33,
 		speed:3.75,
-		dodge:0, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
+		dodge:1, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
 		luck:3.25,
 	};
   	var hero=new Game.Hero('Zee','boyscoutZee','portraitZee',[5,0]);
