@@ -1447,7 +1447,7 @@ Dungtheme();
 		hpm:125,
 		might:3.25+extraDmg,
 		guard:33,
-		speed:0.65,
+		speed:1.15,
 		dodge:0, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
 		luck:3.25
 	};
