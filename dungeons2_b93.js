@@ -733,11 +733,14 @@ Dungtheme();
 					if (by.stats.luck && by.type=='hero' && Math.random()<by.stats.luck*0.01) {damage*=2;attackStr+=' <b>It\'s a critical!</b>';}//very rare critical based on luck
 					attackStr+=' <b>'+damage+'</b> damage!';
 					}else if(attackerName=='Chad'){
-					if (by.stats.luck && by.type=='hero' && Math.random()<by.stats.luck*0.01) {damage*=3;attackStr+=' <b>It\'s a critical!</b>';}//very rare critical based on luck. x3 only for Chad
+					if (by.stats.luck && by.type=='hero' && Math.random()<by.stats.luck*0.01) {damage*=3.2;attackStr+=' <b>It\'s a critical!</b>';}//very rare critical based on luck. x3 only for Chad
 					attackStr+=' <b>'+damage+'</b> damage!';	
 					}
-					
-					this.stats.hp-=damage;
+					if(Game.Heroes[by.subtype].name=='Chad'){
+					this.stats.hp-=damage/2;
+					}else{
+					this.stats.hp-=damage;	
+					}
 					this.stats.hp=Math.max(this.stats.hp,0);
 					if (this.stats.luck && this.type=='hero')
 					{
@@ -1442,12 +1445,12 @@ Dungtheme();
 		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
 	};
 	hero.stats={
-		hp:10,
-		hpm:13,
-		might:1.5+extraDmg,
+		hp:30,
+		hpm:50,
+		might:2.25+extraDmg,
 		guard:33,
 		speed:0.65,
-		dodge:0, //at cost of 3x crits
+		dodge:0, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
 		luck:3.25
 	};
   	var hero=new Game.Hero('Zee','boyscoutZee','portraitZee',[5,0]);
