@@ -1198,7 +1198,7 @@ Dungtheme();
 			this.level++;
 			stg=this.level;
 			this.Generate();
-			Game.HeroesById[0].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
+			Game.HeroesById[1].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
 			this.Draw();
 			extraDmg=0;
 		}
@@ -1209,7 +1209,7 @@ Dungtheme();
 			this.monstersKilledThisRun=0;
 			this.level=0;
 			this.Generate();
-			Game.HeroesById[0].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
+			Game.HeroesById[hero].EnterDungeon(this,this.map.entrance[0],this.map.entrance[1]);
 			this.Draw();
 		}
 	}
@@ -1430,7 +1430,7 @@ Dungtheme();
 		'win':'Take that!|Hah!|You r no match against my fists|That\'ll teach you.|BOOM!|WA BEAAM!',
 		'entrance':'Chipping in!|Let me prepare for while.|I wonder what I\'ll find!|Hey, this place is new!|This place seems familiar.|Let\'s make it happen.',
 		'completion':'See?|Oh yeah!|Let the show continue!|That was easy!|That sure was fun!|I\'m not lost, am I?|Let\'s go further.|More boxing vs douglings? Sure thing|More boxing vs disgruntled workers? Y not?',
-		'defeat':'Eek.|Oh gosh|I yield! I yield!|Damn|I\'ll come back with stronger fists.|I think I scraped my knee!|Owie.|Woopsie!|OOF',
+		'defeat':'Eek.|Oh gosh|I yield! I yield!|Damn|I\'ll come back with stronger fists.|I think I scraped my knee!|Woopsie!|OOF',
 		'win against Sentient Furnace':'Oh boy.|Take that you big metal piece of garbage.|Bakery closed today.',
 		'meet Ascended Baking Pod':'Hmm. Let me help you outta here.',
 		'meet Ascended Baking Pod II':'Hmm. Let me help you outta here.|Your roars just make me stronger!',
