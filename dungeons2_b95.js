@@ -1443,9 +1443,9 @@ Dungtheme();
 		'win against mimic':'Nice try!|Good catch but I am still the winner.|BEAAM faker.'
 	};
 	hero.stats={
-		hp:45,
-		hpm:75,
-		might:2.25+extraDmg,
+		hp:80,
+		hpm:125,
+		might:3.25+extraDmg,
 		guard:33,
 		speed:0.65,
 		dodge:0, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
@@ -1489,7 +1489,7 @@ Dungtheme();
 	hero.stats={
 		hp:25,
 		hpm:30,
-		might:5+extraDmg,
+		might:5.1+extraDmg,
 		guard:5,
 		speed:5,
 		dodge:5,
@@ -1511,7 +1511,7 @@ Dungtheme();
 	hero.stats={
 		hp:24,
 		hpm:29,
-		might:5+extraDmg,
+		might:5.1+extraDmg,
 		guard:7,
 		speed:4,
 		dodge:4,
@@ -1533,7 +1533,7 @@ Dungtheme();
 	hero.stats={
 		hp:23,
 		hpm:30,
-		might:4+extraDmg,
+		might:4.1+extraDmg,
 		guard:4,
 		speed:7,
 		dodge:5,
@@ -1558,7 +1558,7 @@ Dungtheme();
 	hero.stats={
 		hp:25,
 		hpm:28,
-		might:5+extraDmg,
+		might:5.1+extraDmg,
 		guard:4,
 		speed:4,
 		dodge:5,
