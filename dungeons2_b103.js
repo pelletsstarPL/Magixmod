@@ -674,10 +674,9 @@ Dungtheme();
 			if (this.type=='destructible' && by.type=='hero')//break destructibles
 			{
 				by.stuck=0;
-				if(Game.Heroes[by.subtype].name=='Chad'){
-				this.life-=1.5; //The only one that can destroy doors/crates within 2 hits.
-				}else{
-				this.life--;	
+				switch(Game.Heroes[by.subtype].name){
+					case 'Chad':this.life-=1.5; break;//The only one that can destroy doors/crates within 2 hits.
+					default: this.life--;break;
 				}
 				if (this.life<=0)
 				{
