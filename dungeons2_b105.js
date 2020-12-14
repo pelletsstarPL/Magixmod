@@ -529,10 +529,7 @@ Dungtheme();
 			this.stats.might+=mult/1.75;
 			this.stats.guard+=mult/1.75;
 			this.stats.speed+=mult/1.75;
-			switch(Game.Heroes[this.subtype].name){
-				case 'Chad':this.stats.dodge+=0;break;
-				default:this.stats.dodge+=mult/1.75;break;
-			}
+			this.stats.dodge+=mult/1.75;
 		}
 		else if (this.type=='item')
 		{
@@ -1448,7 +1445,7 @@ Dungtheme();
 		might:3.25+extraDmg,
 		guard:33,
 		speed:3.75,
-		dodge:1, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
+		dodge:0, //at cost of 3x crits and breaking doors/obstacles/crates in 2 instead of 3 hits
 		luck:3.25,
 	};
   	var hero=new Game.Hero('Zee','boyscoutZee','portraitZee',[5,0]);
