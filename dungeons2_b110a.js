@@ -723,14 +723,8 @@ Dungtheme();
 				//battle formulas (have fun with these)
 				attackStr+=attackerName+' swings at '+defenderName+'!';
 				var damage=Math.round(Math.max(1,Math.min(by.stats.might,Math.pow(((by.stats.might+2.5)/Math.max(1,this.stats.guard)),2)))*(0.8+Math.random()*0.4+Math.pow(Math.random()*0.8,6)));
-				if(attackerName=="Chad"){
-					if((hero.hp/hero.hpm)<0.4){
-					damage=damage*1.75;
-					}else{
-					damage=damage;
-					}
-				}else{
-				 damage=damage;	
+				if(attackerName=="Chad" && (hero.hp/hero.hpm)<0.4){
+					damage*=1.75;
 				};
 				var dodge=Math.random()>(by.stats.speed/Math.max(1,this.stats.dodge+2.5));
 				if (dodge)
