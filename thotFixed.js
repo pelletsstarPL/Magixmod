@@ -4,7 +4,6 @@ G.AddData({
     desc:'This mod makes it possible to create thots. Thots are an improved version of Dreamers. Fixed by pelletsstarPL(I made it playable)',
     engineVersion:1,
     manifest:0,
-    requires:['Default dataset*'],
     sheets:{'thotSheet':'https://raw.githubusercontent.com/paradoxrevolver/neverending-legacy-mods/master/thotModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
     func:function()
     {
